@@ -229,6 +229,24 @@ export const organisms: Tier = {
           </DialogContent>
         </Dialog>
       ),
+      code: `import {
+  Dialog, DialogTrigger, DialogContent, DialogHeader,
+  DialogTitle, DialogDescription, DialogFooter,
+} from "@/components/ui/dialog"
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button variant="outline">Edit profile</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Edit profile</DialogTitle>
+      <DialogDescription>Make changes to your profile.</DialogDescription>
+    </DialogHeader>
+    …
+    <DialogFooter><Button type="submit">Save changes</Button></DialogFooter>
+  </DialogContent>
+</Dialog>`,
     },
     {
       id: "alert-dialog",
@@ -253,6 +271,27 @@ export const organisms: Tier = {
           </AlertDialogContent>
         </AlertDialog>
       ),
+      code: `import {
+  AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader,
+  AlertDialogTitle, AlertDialogDescription, AlertDialogFooter,
+  AlertDialogCancel, AlertDialogAction,
+} from "@/components/ui/alert-dialog"
+
+<AlertDialog>
+  <AlertDialogTrigger asChild>
+    <Button variant="destructive">Delete account</Button>
+  </AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+      <AlertDialogDescription>This cannot be undone.</AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction>Continue</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>`,
     },
     {
       id: "sheet",
@@ -273,6 +312,21 @@ export const organisms: Tier = {
           </SheetContent>
         </Sheet>
       ),
+      code: `import {
+  Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription,
+} from "@/components/ui/sheet"
+
+<Sheet>
+  <SheetTrigger asChild>
+    <Button variant="outline">Open sheet</Button>
+  </SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Edit profile</SheetTitle>
+      <SheetDescription>Make changes to your profile.</SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>`,
     },
     {
       id: "drawer",
@@ -297,6 +351,26 @@ export const organisms: Tier = {
           </DrawerContent>
         </Drawer>
       ),
+      code: `import {
+  Drawer, DrawerTrigger, DrawerContent, DrawerHeader,
+  DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose,
+} from "@/components/ui/drawer"
+
+<Drawer>
+  <DrawerTrigger asChild>
+    <Button variant="outline">Open drawer</Button>
+  </DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Mobile-friendly drawer</DrawerTitle>
+      <DrawerDescription>Drag down to dismiss.</DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter>
+      <Button>Submit</Button>
+      <DrawerClose asChild><Button variant="outline">Cancel</Button></DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>`,
     },
     {
       id: "command",
@@ -328,6 +402,23 @@ export const organisms: Tier = {
           </CommandList>
         </Command>
       ),
+      code: `import {
+  Command, CommandInput, CommandList, CommandEmpty,
+  CommandGroup, CommandItem, CommandSeparator, CommandShortcut,
+} from "@/components/ui/command"
+
+<Command className="rounded-lg border shadow-sm">
+  <CommandInput placeholder="Type a command…" />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem><CalendarDays /> Calendar</CommandItem>
+      <CommandItem>
+        <Settings /> Settings <CommandShortcut>⌘S</CommandShortcut>
+      </CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>`,
     },
     {
       id: "context-menu",
@@ -351,6 +442,19 @@ export const organisms: Tier = {
           </ContextMenuContent>
         </ContextMenu>
       ),
+      code: `import {
+  ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem,
+  ContextMenuSeparator, ContextMenuShortcut, ContextMenuCheckboxItem,
+} from "@/components/ui/context-menu"
+
+<ContextMenu>
+  <ContextMenuTrigger className="…">Right-click here</ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuItem>Back <ContextMenuShortcut>⌘[</ContextMenuShortcut></ContextMenuItem>
+    <ContextMenuSeparator />
+    <ContextMenuCheckboxItem defaultChecked>Show toolbar</ContextMenuCheckboxItem>
+  </ContextMenuContent>
+</ContextMenu>`,
     },
     {
       id: "menubar",
@@ -378,6 +482,21 @@ export const organisms: Tier = {
           </MenubarMenu>
         </Menubar>
       ),
+      code: `import {
+  Menubar, MenubarMenu, MenubarTrigger, MenubarContent,
+  MenubarItem, MenubarSeparator, MenubarShortcut,
+} from "@/components/ui/menubar"
+
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>New Tab <MenubarShortcut>⌘T</MenubarShortcut></MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Print</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>`,
     },
     {
       id: "navigation-menu",
@@ -420,6 +539,27 @@ export const organisms: Tier = {
           </NavigationMenuList>
         </NavigationMenu>
       ),
+      code: `import {
+  NavigationMenu, NavigationMenuList, NavigationMenuItem,
+  NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <ul className="grid w-[280px] gap-1 p-2">
+          <li><NavigationMenuLink href="#">Introduction</NavigationMenuLink></li>
+        </ul>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+    <NavigationMenuItem>
+      <NavigationMenuLink href="#" className={navigationMenuTriggerStyle()}>Docs</NavigationMenuLink>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>`,
     },
     {
       id: "table",
@@ -446,6 +586,30 @@ export const organisms: Tier = {
           </TableBody>
         </Table>
       ),
+      code: `import {
+  Table, TableCaption, TableHeader, TableBody,
+  TableRow, TableHead, TableCell,
+} from "@/components/ui/table"
+
+<Table>
+  <TableCaption>Recent invoices.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Invoice</TableHead>
+      <TableHead>Status</TableHead>
+      <TableHead className="text-right">Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    {invoices.map((row) => (
+      <TableRow key={row.id}>
+        <TableCell className="font-medium">{row.id}</TableCell>
+        <TableCell>{row.status}</TableCell>
+        <TableCell className="text-right">{row.amount}</TableCell>
+      </TableRow>
+    ))}
+  </TableBody>
+</Table>`,
     },
     {
       id: "carousel",
@@ -468,6 +632,21 @@ export const organisms: Tier = {
           <CarouselNext />
         </Carousel>
       ),
+      code: `import {
+  Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext,
+} from "@/components/ui/carousel"
+
+<Carousel className="w-full max-w-xs">
+  <CarouselContent>
+    {items.map((item, i) => (
+      <CarouselItem key={i}>
+        <Card><CardContent>{item}</CardContent></Card>
+      </CarouselItem>
+    ))}
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>`,
     },
     {
       id: "resizable",
@@ -491,6 +670,16 @@ export const organisms: Tier = {
           </ResizablePanel>
         </ResizablePanelGroup>
       ),
+      code: `import {
+  ResizablePanelGroup, ResizablePanel, ResizableHandle,
+} from "@/components/ui/resizable"
+
+// react-resizable-panels v4 uses \`orientation\` (not \`direction\`)
+<ResizablePanelGroup orientation="horizontal" className="rounded-lg border">
+  <ResizablePanel defaultSize={50}>One</ResizablePanel>
+  <ResizableHandle withHandle />
+  <ResizablePanel defaultSize={50}>Two</ResizablePanel>
+</ResizablePanelGroup>`,
     },
     {
       id: "chart",
@@ -512,12 +701,60 @@ export const organisms: Tier = {
           </BarChart>
         </ChartContainer>
       ),
+      code: `import {
+  type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent,
+} from "@/components/ui/chart"
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+
+const chartConfig = {
+  desktop: { label: "Desktop", color: "var(--chart-1)" },
+  mobile: { label: "Mobile", color: "var(--chart-2)" },
+} satisfies ChartConfig
+
+<ChartContainer config={chartConfig} className="h-[220px] w-full">
+  <BarChart accessibilityLayer data={chartData}>
+    <CartesianGrid vertical={false} />
+    <XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+    <ChartTooltip content={<ChartTooltipContent />} />
+    <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+    <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+  </BarChart>
+</ChartContainer>`,
     },
     {
       id: "form",
       title: "Form",
       description: "react-hook-form + zod validation.",
       node: <FormDemo />,
+      code: `"use client"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import {
+  Form, FormField, FormItem, FormLabel,
+  FormControl, FormDescription, FormMessage,
+} from "@/components/ui/form"
+
+const schema = z.object({ username: z.string().min(2) })
+
+const form = useForm<z.infer<typeof schema>>({
+  resolver: zodResolver(schema),
+  defaultValues: { username: "" },
+})
+
+<Form {...form}>
+  <form onSubmit={form.handleSubmit(onSubmit)}>
+    <FormField control={form.control} name="username" render={({ field }) => (
+      <FormItem>
+        <FormLabel>Username</FormLabel>
+        <FormControl><Input placeholder="duckking" {...field} /></FormControl>
+        <FormDescription>Your public display name.</FormDescription>
+        <FormMessage />
+      </FormItem>
+    )} />
+    <Button type="submit">Submit</Button>
+  </form>
+</Form>`,
     },
     {
       id: "sidebar",
@@ -532,6 +769,28 @@ export const organisms: Tier = {
           trigger in the header to collapse it.
         </p>
       ),
+      code: `import {
+  SidebarProvider, Sidebar, SidebarContent, SidebarGroup,
+  SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarTrigger, SidebarInset,
+} from "@/components/ui/sidebar"
+
+<SidebarProvider>
+  <Sidebar>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild><a href="#">Home</a></SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+  <SidebarInset>
+    <SidebarTrigger />
+    {/* page content */}
+  </SidebarInset>
+</SidebarProvider>`,
     },
   ],
 }

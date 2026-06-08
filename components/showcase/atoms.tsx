@@ -59,6 +59,18 @@ export const atoms: Tier = {
           <Button disabled>Disabled</Button>
         </div>
       ),
+      code: `import { Button } from "@/components/ui/button"
+
+<Button>Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="destructive">Destructive</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+<Button size="sm">Small</Button>
+<Button size="lg">Large</Button>
+<Button size="icon" aria-label="Add"><Plus /></Button>
+<Button disabled>Disabled</Button>`,
     },
     {
       id: "badge",
@@ -72,6 +84,12 @@ export const atoms: Tier = {
           <Badge variant="outline">Outline</Badge>
         </div>
       ),
+      code: `import { Badge } from "@/components/ui/badge"
+
+<Badge>Default</Badge>
+<Badge variant="secondary">Secondary</Badge>
+<Badge variant="destructive">Destructive</Badge>
+<Badge variant="outline">Outline</Badge>`,
     },
     {
       id: "input",
@@ -83,12 +101,19 @@ export const atoms: Tier = {
           <Input placeholder="Disabled" disabled />
         </div>
       ),
+      code: `import { Input } from "@/components/ui/input"
+
+<Input placeholder="you@example.com" />
+<Input placeholder="Disabled" disabled />`,
     },
     {
       id: "textarea",
       title: "Textarea",
       description: "Multi-line text field.",
       node: <Textarea className="max-w-sm" placeholder="Type your message…" />,
+      code: `import { Textarea } from "@/components/ui/textarea"
+
+<Textarea placeholder="Type your message…" />`,
     },
     {
       id: "label",
@@ -100,6 +125,9 @@ export const atoms: Tier = {
           <Label htmlFor="label-demo">Subscribe to updates</Label>
         </div>
       ),
+      code: `import { Label } from "@/components/ui/label"
+
+<Label htmlFor="email">Subscribe to updates</Label>`,
     },
     {
       id: "checkbox",
@@ -117,6 +145,13 @@ export const atoms: Tier = {
           </div>
         </div>
       ),
+      code: `import { Checkbox } from "@/components/ui/checkbox"
+import { Label } from "@/components/ui/label"
+
+<div className="flex items-center gap-2">
+  <Checkbox id="terms" defaultChecked />
+  <Label htmlFor="terms">Checked</Label>
+</div>`,
     },
     {
       id: "radio-group",
@@ -138,6 +173,19 @@ export const atoms: Tier = {
           </div>
         </RadioGroup>
       ),
+      code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Label } from "@/components/ui/label"
+
+<RadioGroup defaultValue="comfortable">
+  <div className="flex items-center gap-2">
+    <RadioGroupItem value="default" id="r1" />
+    <Label htmlFor="r1">Default</Label>
+  </div>
+  <div className="flex items-center gap-2">
+    <RadioGroupItem value="comfortable" id="r2" />
+    <Label htmlFor="r2">Comfortable</Label>
+  </div>
+</RadioGroup>`,
     },
     {
       id: "switch",
@@ -149,6 +197,13 @@ export const atoms: Tier = {
           <Label htmlFor="switch-demo">Notifications</Label>
         </div>
       ),
+      code: `import { Switch } from "@/components/ui/switch"
+import { Label } from "@/components/ui/label"
+
+<div className="flex items-center gap-2">
+  <Switch id="notifications" defaultChecked />
+  <Label htmlFor="notifications">Notifications</Label>
+</div>`,
     },
     {
       id: "toggle",
@@ -164,6 +219,12 @@ export const atoms: Tier = {
           </Toggle>
         </div>
       ),
+      code: `import { Toggle } from "@/components/ui/toggle"
+import { Bold } from "lucide-react"
+
+<Toggle aria-label="Bold" defaultPressed>
+  <Bold />
+</Toggle>`,
     },
     {
       id: "toggle-group",
@@ -182,18 +243,32 @@ export const atoms: Tier = {
           </ToggleGroupItem>
         </ToggleGroup>
       ),
+      code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { Bold, Italic, Underline } from "lucide-react"
+
+<ToggleGroup type="multiple" defaultValue={["bold"]} variant="outline">
+  <ToggleGroupItem value="bold" aria-label="Bold"><Bold /></ToggleGroupItem>
+  <ToggleGroupItem value="italic" aria-label="Italic"><Italic /></ToggleGroupItem>
+  <ToggleGroupItem value="underline" aria-label="Underline"><Underline /></ToggleGroupItem>
+</ToggleGroup>`,
     },
     {
       id: "slider",
       title: "Slider",
       description: "Pick a value from a range.",
       node: <Slider defaultValue={[50]} max={100} step={1} className="max-w-sm" />,
+      code: `import { Slider } from "@/components/ui/slider"
+
+<Slider defaultValue={[50]} max={100} step={1} />`,
     },
     {
       id: "progress",
       title: "Progress",
       description: "Completion indicator.",
       node: <Progress value={66} className="max-w-sm" />,
+      code: `import { Progress } from "@/components/ui/progress"
+
+<Progress value={66} />`,
     },
     {
       id: "spinner",
@@ -209,6 +284,12 @@ export const atoms: Tier = {
           </Button>
         </div>
       ),
+      code: `import { Spinner } from "@/components/ui/spinner"
+import { Button } from "@/components/ui/button"
+
+<Spinner />
+<Spinner className="size-6" />
+<Button disabled><Spinner /> Loading</Button>`,
     },
     {
       id: "skeleton",
@@ -223,6 +304,15 @@ export const atoms: Tier = {
           </div>
         </div>
       ),
+      code: `import { Skeleton } from "@/components/ui/skeleton"
+
+<div className="flex items-center gap-4">
+  <Skeleton className="size-12 rounded-full" />
+  <div className="flex flex-col gap-2">
+    <Skeleton className="h-4 w-[180px]" />
+    <Skeleton className="h-4 w-[120px]" />
+  </div>
+</div>`,
     },
     {
       id: "avatar",
@@ -246,6 +336,17 @@ export const atoms: Tier = {
           </AvatarGroup>
         </div>
       ),
+      code: `import { Avatar, AvatarFallback, AvatarImage, AvatarGroup } from "@/components/ui/avatar"
+
+<Avatar>
+  <AvatarImage src="/avatar.png" alt="DK" />
+  <AvatarFallback>DK</AvatarFallback>
+</Avatar>
+
+<AvatarGroup>
+  <Avatar><AvatarFallback>AB</AvatarFallback></Avatar>
+  <Avatar><AvatarFallback>CD</AvatarFallback></Avatar>
+</AvatarGroup>`,
     },
     {
       id: "separator",
@@ -264,6 +365,10 @@ export const atoms: Tier = {
           </div>
         </div>
       ),
+      code: `import { Separator } from "@/components/ui/separator"
+
+<Separator />
+<Separator orientation="vertical" />`,
     },
     {
       id: "kbd",
@@ -275,6 +380,12 @@ export const atoms: Tier = {
           <Kbd>K</Kbd>
         </KbdGroup>
       ),
+      code: `import { Kbd, KbdGroup } from "@/components/ui/kbd"
+
+<KbdGroup>
+  <Kbd>⌘</Kbd>
+  <Kbd>K</Kbd>
+</KbdGroup>`,
     },
     {
       id: "aspect-ratio",
@@ -289,6 +400,11 @@ export const atoms: Tier = {
           </AspectRatio>
         </div>
       ),
+      code: `import { AspectRatio } from "@/components/ui/aspect-ratio"
+
+<AspectRatio ratio={16 / 9}>
+  <img src="/photo.jpg" alt="" className="size-full rounded-md object-cover" />
+</AspectRatio>`,
     },
     {
       id: "native-select",
@@ -301,6 +417,13 @@ export const atoms: Tier = {
           <NativeSelectOption value="team">Team</NativeSelectOption>
         </NativeSelect>
       ),
+      code: `import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select"
+
+<NativeSelect defaultValue="pro">
+  <NativeSelectOption value="free">Free</NativeSelectOption>
+  <NativeSelectOption value="pro">Pro</NativeSelectOption>
+  <NativeSelectOption value="team">Team</NativeSelectOption>
+</NativeSelect>`,
     },
     {
       id: "input-otp",
@@ -321,6 +444,23 @@ export const atoms: Tier = {
           </InputOTPGroup>
         </InputOTP>
       ),
+      code: `import {
+  InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot,
+} from "@/components/ui/input-otp"
+
+<InputOTP maxLength={6}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+  </InputOTPGroup>
+  <InputOTPSeparator />
+  <InputOTPGroup>
+    <InputOTPSlot index={3} />
+    <InputOTPSlot index={4} />
+    <InputOTPSlot index={5} />
+  </InputOTPGroup>
+</InputOTP>`,
     },
   ],
 }

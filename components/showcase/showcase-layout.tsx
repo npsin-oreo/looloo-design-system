@@ -33,9 +33,15 @@ import {
 
 const TOTAL = TIERS.reduce((n, t) => n + t.demos.length, 0)
 
-function currentLabel(pathname: string) {
-  const tier = TIERS.find((t) => TIER_ROUTES[t.id] === pathname)
-  return tier?.label ?? "Foundations"
+function headerLabel(pathname: string) {
+  if (pathname === FOUNDATIONS_ROUTE) return "Foundations"
+  for (const tier of TIERS) {
+    const route = TIER_ROUTES[tier.id]
+    if (pathname === route) return tier.label
+    const demo = tier.demos.find((d) => pathname === `${route}/${d.id}`)
+    if (demo) return `${tier.label} / ${demo.title}`
+  }
+  return "Component library"
 }
 
 export function ShowcaseLayout({ children }: { children: React.ReactNode }) {
@@ -65,7 +71,7 @@ export function ShowcaseLayout({ children }: { children: React.ReactNode }) {
                     >
                       <Link href={FOUNDATIONS_ROUTE}>
                         <Palette />
-                        <span>Color tokens</span>
+                        <span>Tokens &amp; foundations</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
@@ -76,27 +82,31 @@ export function ShowcaseLayout({ children }: { children: React.ReactNode }) {
             {TIERS.map((tier) => {
               const Icon = TIER_ICONS[tier.id] ?? Atom
               const route = TIER_ROUTES[tier.id]
-              const onThisTier = pathname === route
               return (
                 <SidebarGroup key={tier.id}>
-                  <SidebarGroupLabel>
-                    <Icon className="size-3.5" />
-                    {tier.label}
+                  <SidebarGroupLabel asChild>
+                    <Link href={route}>
+                      <Icon className="size-3.5" />
+                      {tier.label}
+                    </Link>
                   </SidebarGroupLabel>
                   <SidebarGroupContent>
                     <SidebarMenu>
-                      {tier.demos.map((demo) => (
-                        <SidebarMenuItem key={demo.id}>
-                          <SidebarMenuButton asChild isActive={false}>
-                            <Link
-                              href={`${route}#${demo.id}`}
-                              scroll={onThisTier}
+                      {tier.demos.map((demo) => {
+                        const href = `${route}/${demo.id}`
+                        return (
+                          <SidebarMenuItem key={demo.id}>
+                            <SidebarMenuButton
+                              asChild
+                              isActive={pathname === href}
                             >
-                              <span>{demo.title}</span>
-                            </Link>
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
-                      ))}
+                              <Link href={href}>
+                                <span>{demo.title}</span>
+                              </Link>
+                            </SidebarMenuButton>
+                          </SidebarMenuItem>
+                        )
+                      })}
                     </SidebarMenu>
                   </SidebarGroupContent>
                 </SidebarGroup>
@@ -110,7 +120,7 @@ export function ShowcaseLayout({ children }: { children: React.ReactNode }) {
           <header className="bg-background sticky top-0 z-10 flex h-14 shrink-0 items-center gap-2 border-b px-4">
             <SidebarTrigger />
             <Separator orientation="vertical" className="h-5" />
-            <span className="font-semibold">{currentLabel(pathname)}</span>
+            <span className="font-semibold">{headerLabel(pathname)}</span>
             <Badge variant="secondary" className="ml-auto">
               {TOTAL} components
             </Badge>

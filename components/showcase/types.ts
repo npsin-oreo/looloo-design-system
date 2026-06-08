@@ -2,7 +2,7 @@ import type { ReactNode } from "react"
 
 /** A single component demo rendered in the showcase. */
 export type Demo = {
-  /** Anchor id — also the sidebar link target. */
+  /** Anchor / route id — also the sidebar link target. */
   id: string
   /** Display title (component name). */
   title: string
@@ -10,6 +10,8 @@ export type Demo = {
   description?: string
   /** The rendered demo. */
   node: ReactNode
+  /** JSX usage snippet shown in the "Code" tab. */
+  code: string
 }
 
 /** An Atomic-Design tier (Atoms / Molecules / Organisms). */

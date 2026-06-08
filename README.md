@@ -50,14 +50,16 @@ Open **<http://localhost:3000>** to explore the component showcase.
 
 ## 🔭 Component showcase
 
-A living preview, split into one page per Atomic-Design tier. Use the sidebar to jump to any component.
+A living preview where **each component has its own page** with **Preview + Code** tabs. Use the sidebar to jump anywhere.
 
-| Route | Tier | Count | Examples |
-| --- | --- | :---: | --- |
-| `/` | **Foundations** | — | Color tokens (live CSS-variable swatches) |
-| `/atoms` | **Atoms** | 20 | Button, Input, Badge, Checkbox, Switch, Avatar, Slider… |
-| `/molecules` | **Molecules** | 21 | Card, Tabs, Select, Combobox, Calendar, Accordion… |
-| `/organisms` | **Organisms** | 14 | Dialog, Table, Chart, Form, Command, Carousel… |
+| Route | Shows | Count |
+| --- | --- | :---: |
+| `/` | **Foundations** — color, typography, spacing, radius, elevation, border (live tokens) | — |
+| `/atoms` · `/atoms/{id}` | **Atoms** — overview grid + one page per component | 20 |
+| `/molecules` · `/molecules/{id}` | **Molecules** | 21 |
+| `/organisms` · `/organisms/{id}` | **Organisms** | 14 |
+
+Each component page shows a **Preview** tab (live, interactive) and a **Code** tab (copy-paste usage snippet in Geist Mono).
 
 ---
 
@@ -134,14 +136,14 @@ Requires a **Figma Dev Mode MCP** connection and view/Dev access to the file.
 ├── app/
 │   ├── globals.css              # All design tokens (:root · .dark · @theme inline)
 │   ├── layout.tsx               # Root layout
-│   └── (showcase)/              # Sidebar-wrapped showcase — one route per tier
-│       ├── page.tsx             #   /            → Foundations (color tokens)
-│       ├── atoms/page.tsx       #   /atoms
-│       ├── molecules/page.tsx   #   /molecules
-│       └── organisms/page.tsx   #   /organisms
+│   ├── fonts/                   # Google Sans + Geist Mono (next/font/local)
+│   └── (showcase)/              # Sidebar-wrapped showcase
+│       ├── page.tsx             #   /                  → Foundations
+│       ├── [tier]/page.tsx      #   /atoms             → tier overview grid
+│       └── [tier]/[item]/page.tsx  # /atoms/button     → component + code
 ├── components/
 │   ├── ui/                      # Full shadcn/ui library (56 components)
-│   └── showcase/                # Demos grouped by Atomic Design + sidebar shell
+│   └── showcase/                # Demos (atoms/molecules/organisms) + sections + layout
 ├── tokens.json                  # ⭐ Figma DTCG export — the token source of truth
 ├── DESIGN.md                    # Design-system spec (single source of truth)
 ├── CLAUDE.md · AGENTS.md        # AI-agent instructions

@@ -12,6 +12,13 @@ const googleSans = localFont({
   display: "swap",
 })
 
+// Geist Mono — the kit's `family/mono`, bundled as a local variable font.
+const geistMono = localFont({
+  src: [{ path: "./fonts/GeistMono.ttf", style: "normal" }],
+  variable: "--font-geist-mono",
+  display: "swap",
+})
+
 export const metadata: Metadata = {
   title: "Design → Dev Handoff",
   description:
@@ -24,7 +31,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={googleSans.variable} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${googleSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
       <body>{children}</body>
     </html>
   )

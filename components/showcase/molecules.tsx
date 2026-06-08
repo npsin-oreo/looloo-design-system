@@ -232,6 +232,22 @@ export const molecules: Tier = {
           </CardFooter>
         </Card>
       ),
+      code: `import {
+  Card, CardHeader, CardTitle, CardDescription,
+  CardAction, CardContent, CardFooter,
+} from "@/components/ui/card"
+
+<Card>
+  <CardHeader>
+    <CardTitle>Account</CardTitle>
+    <CardDescription>Manage your account settings.</CardDescription>
+    <CardAction><Badge variant="secondary">Pro</Badge></CardAction>
+  </CardHeader>
+  <CardContent>…</CardContent>
+  <CardFooter>
+    <Button size="sm">Save</Button>
+  </CardFooter>
+</Card>`,
     },
     {
       id: "alert",
@@ -246,6 +262,14 @@ export const molecules: Tier = {
           </AlertDescription>
         </Alert>
       ),
+      code: `import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
+import { Bell } from "lucide-react"
+
+<Alert>
+  <Bell />
+  <AlertTitle>Heads up</AlertTitle>
+  <AlertDescription>Tokens are synced from Figma.</AlertDescription>
+</Alert>`,
     },
     {
       id: "tooltip",
@@ -259,6 +283,17 @@ export const molecules: Tier = {
           <TooltipContent>Adds to your library</TooltipContent>
         </Tooltip>
       ),
+      code: `import {
+  Tooltip, TooltipTrigger, TooltipContent, TooltipProvider,
+} from "@/components/ui/tooltip"
+
+// Wrap your app once with <TooltipProvider>
+<Tooltip>
+  <TooltipTrigger asChild>
+    <Button variant="outline">Hover me</Button>
+  </TooltipTrigger>
+  <TooltipContent>Adds to your library</TooltipContent>
+</Tooltip>`,
     },
     {
       id: "popover",
@@ -279,6 +314,14 @@ export const molecules: Tier = {
           </PopoverContent>
         </Popover>
       ),
+      code: `import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
+
+<Popover>
+  <PopoverTrigger asChild>
+    <Button variant="outline">Open popover</Button>
+  </PopoverTrigger>
+  <PopoverContent className="w-72">…</PopoverContent>
+</Popover>`,
     },
     {
       id: "hover-card",
@@ -302,6 +345,16 @@ export const molecules: Tier = {
           </HoverCardContent>
         </HoverCard>
       ),
+      code: `import {
+  HoverCard, HoverCardTrigger, HoverCardContent,
+} from "@/components/ui/hover-card"
+
+<HoverCard>
+  <HoverCardTrigger asChild>
+    <Button variant="link">@duckking</Button>
+  </HoverCardTrigger>
+  <HoverCardContent className="w-72">…</HoverCardContent>
+</HoverCard>`,
     },
     {
       id: "accordion",
@@ -323,6 +376,16 @@ export const molecules: Tier = {
           </AccordionItem>
         </Accordion>
       ),
+      code: `import {
+  Accordion, AccordionItem, AccordionTrigger, AccordionContent,
+} from "@/components/ui/accordion"
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="a">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>Yes — WAI-ARIA disclosure pattern.</AccordionContent>
+  </AccordionItem>
+</Accordion>`,
     },
     {
       id: "collapsible",
@@ -345,6 +408,16 @@ export const molecules: Tier = {
           </CollapsibleContent>
         </Collapsible>
       ),
+      code: `import {
+  Collapsible, CollapsibleTrigger, CollapsibleContent,
+} from "@/components/ui/collapsible"
+
+<Collapsible>
+  <CollapsibleTrigger asChild>
+    <Button variant="ghost" size="icon"><ChevronDown /></Button>
+  </CollapsibleTrigger>
+  <CollapsibleContent>…</CollapsibleContent>
+</Collapsible>`,
     },
     {
       id: "tabs",
@@ -364,6 +437,16 @@ export const molecules: Tier = {
           </TabsContent>
         </Tabs>
       ),
+      code: `import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+
+<Tabs defaultValue="account">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">…</TabsContent>
+  <TabsContent value="password">…</TabsContent>
+</Tabs>`,
     },
     {
       id: "breadcrumb",
@@ -386,6 +469,18 @@ export const molecules: Tier = {
           </BreadcrumbList>
         </Breadcrumb>
       ),
+      code: `import {
+  Breadcrumb, BreadcrumbList, BreadcrumbItem,
+  BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem><BreadcrumbLink href="#">Home</BreadcrumbLink></BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem><BreadcrumbPage>Breadcrumb</BreadcrumbPage></BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>`,
     },
     {
       id: "pagination",
@@ -417,6 +512,18 @@ export const molecules: Tier = {
           </PaginationContent>
         </Pagination>
       ),
+      code: `import {
+  Pagination, PaginationContent, PaginationItem,
+  PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis,
+} from "@/components/ui/pagination"
+
+<Pagination>
+  <PaginationContent>
+    <PaginationItem><PaginationPrevious href="#" /></PaginationItem>
+    <PaginationItem><PaginationLink href="#" isActive>2</PaginationLink></PaginationItem>
+    <PaginationItem><PaginationNext href="#" /></PaginationItem>
+  </PaginationContent>
+</Pagination>`,
     },
     {
       id: "select",
@@ -437,6 +544,22 @@ export const molecules: Tier = {
           </SelectContent>
         </Select>
       ),
+      code: `import {
+  Select, SelectTrigger, SelectValue, SelectContent,
+  SelectGroup, SelectLabel, SelectItem,
+} from "@/components/ui/select"
+
+<Select>
+  <SelectTrigger className="w-[220px]">
+    <SelectValue placeholder="Select a fruit" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectGroup>
+      <SelectLabel>Fruits</SelectLabel>
+      <SelectItem value="apple">Apple</SelectItem>
+    </SelectGroup>
+  </SelectContent>
+</Select>`,
     },
     {
       id: "dropdown-menu",
@@ -467,18 +590,73 @@ export const molecules: Tier = {
           </DropdownMenuContent>
         </DropdownMenu>
       ),
+      code: `import {
+  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
+  DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuItem,
+} from "@/components/ui/dropdown-menu"
+
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline">Open menu</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent align="start">
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem><User /> Profile</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`,
     },
     {
       id: "combobox",
       title: "Combobox",
       description: "Searchable select (Popover + Command).",
       node: <ComboboxDemo />,
+      code: `"use client"
+// Combobox = Popover + Command
+const [open, setOpen] = React.useState(false)
+const [value, setValue] = React.useState("")
+
+<Popover open={open} onOpenChange={setOpen}>
+  <PopoverTrigger asChild>
+    <Button variant="outline" role="combobox" aria-expanded={open}>
+      {value || "Select framework…"}
+      <ChevronDown className="opacity-50" />
+    </Button>
+  </PopoverTrigger>
+  <PopoverContent className="p-0">
+    <Command>
+      <CommandInput placeholder="Search framework…" />
+      <CommandList>
+        <CommandEmpty>No framework found.</CommandEmpty>
+        <CommandGroup>
+          {frameworks.map((f) => (
+            <CommandItem key={f.value} value={f.value} onSelect={setValue}>
+              <Check className={cn("size-4", value === f.value ? "opacity-100" : "opacity-0")} />
+              {f.label}
+            </CommandItem>
+          ))}
+        </CommandGroup>
+      </CommandList>
+    </Command>
+  </PopoverContent>
+</Popover>`,
     },
     {
       id: "calendar",
       title: "Calendar",
       description: "Date selection grid.",
       node: <CalendarDemo />,
+      code: `"use client"
+import { Calendar } from "@/components/ui/calendar"
+
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+<Calendar
+  mode="single"
+  selected={date}
+  onSelect={setDate}
+  className="rounded-md border"
+/>`,
     },
     {
       id: "scroll-area",
@@ -495,6 +673,11 @@ export const molecules: Tier = {
           </div>
         </ScrollArea>
       ),
+      code: `import { ScrollArea } from "@/components/ui/scroll-area"
+
+<ScrollArea className="h-40 w-full rounded-md border p-4">
+  {items.map((item) => <div key={item}>{item}</div>)}
+</ScrollArea>`,
     },
     {
       id: "input-group",
@@ -508,6 +691,15 @@ export const molecules: Tier = {
           <InputGroupInput placeholder="Search…" />
         </InputGroup>
       ),
+      code: `import {
+  InputGroup, InputGroupAddon, InputGroupInput,
+} from "@/components/ui/input-group"
+import { Search } from "lucide-react"
+
+<InputGroup>
+  <InputGroupAddon><Search /></InputGroupAddon>
+  <InputGroupInput placeholder="Search…" />
+</InputGroup>`,
     },
     {
       id: "button-group",
@@ -521,6 +713,14 @@ export const molecules: Tier = {
           <Button variant="outline">Month</Button>
         </ButtonGroup>
       ),
+      code: `import { ButtonGroup, ButtonGroupSeparator } from "@/components/ui/button-group"
+
+<ButtonGroup>
+  <Button variant="outline">Day</Button>
+  <Button variant="outline">Week</Button>
+  <ButtonGroupSeparator />
+  <Button variant="outline">Month</Button>
+</ButtonGroup>`,
     },
     {
       id: "field",
@@ -535,6 +735,17 @@ export const molecules: Tier = {
           </Field>
         </FieldGroup>
       ),
+      code: `import {
+  FieldGroup, Field, FieldLabel, FieldDescription,
+} from "@/components/ui/field"
+
+<FieldGroup>
+  <Field>
+    <FieldLabel htmlFor="email">Email</FieldLabel>
+    <Input id="email" placeholder="you@example.com" />
+    <FieldDescription>We'll never share your email.</FieldDescription>
+  </Field>
+</FieldGroup>`,
     },
     {
       id: "item",
@@ -560,6 +771,21 @@ export const molecules: Tier = {
           </Item>
         </ItemGroup>
       ),
+      code: `import {
+  ItemGroup, Item, ItemMedia, ItemContent,
+  ItemTitle, ItemDescription, ItemActions,
+} from "@/components/ui/item"
+
+<ItemGroup>
+  <Item variant="outline">
+    <ItemMedia><Avatar><AvatarFallback>DK</AvatarFallback></Avatar></ItemMedia>
+    <ItemContent>
+      <ItemTitle>Duck King</ItemTitle>
+      <ItemDescription>napasin.int@gmail.com</ItemDescription>
+    </ItemContent>
+    <ItemActions><Button size="sm" variant="outline">View</Button></ItemActions>
+  </Item>
+</ItemGroup>`,
     },
     {
       id: "empty",
@@ -582,6 +808,19 @@ export const molecules: Tier = {
           </EmptyContent>
         </Empty>
       ),
+      code: `import {
+  Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent,
+} from "@/components/ui/empty"
+import { Inbox } from "lucide-react"
+
+<Empty>
+  <EmptyHeader>
+    <EmptyMedia variant="icon"><Inbox /></EmptyMedia>
+    <EmptyTitle>No messages</EmptyTitle>
+    <EmptyDescription>You're all caught up.</EmptyDescription>
+  </EmptyHeader>
+  <EmptyContent><Button size="sm">Compose</Button></EmptyContent>
+</Empty>`,
     },
     {
       id: "sonner",
@@ -600,6 +839,20 @@ export const molecules: Tier = {
           Show toast
         </Button>
       ),
+      code: `import { toast } from "sonner"
+// Mount <Toaster /> once at the app root (components/ui/sonner)
+
+<Button
+  variant="outline"
+  onClick={() =>
+    toast("Event created", {
+      description: "Sunday, June 8 at 9:00 AM",
+      action: { label: "Undo", onClick: () => {} },
+    })
+  }
+>
+  Show toast
+</Button>`,
     },
   ],
 }
