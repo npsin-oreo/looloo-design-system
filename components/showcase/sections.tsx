@@ -86,16 +86,31 @@ const COLOR_GROUPS: { label: string; tokens: string[] }[] = [
 
 const SPACING = [0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24]
 
-const TYPE_SCALE: { name: string; cls: string; meta: string }[] = [
-  { name: "4xl", cls: "text-4xl font-semibold", meta: "36 / 40 · SemiBold" },
-  { name: "3xl", cls: "text-3xl font-bold", meta: "30 / 36 · Bold" },
-  { name: "2xl", cls: "text-2xl font-semibold", meta: "24 / 32 · SemiBold" },
-  { name: "xl", cls: "text-xl font-medium", meta: "20 / 28 · Medium" },
-  { name: "lg", cls: "text-lg font-medium", meta: "18 / 28 · Medium" },
-  { name: "base", cls: "text-base", meta: "16 / 24 · Regular" },
-  { name: "sm", cls: "text-sm", meta: "14 / 20 · Regular" },
-  { name: "xs", cls: "text-xs", meta: "12 / 16 · Regular" },
-]
+// Figma text styles (Text-{size}/{weight}), synced 1:1 from the kit.
+const WEIGHT_LABEL: Record<number, string> = {
+  400: "Regular",
+  500: "Medium",
+  600: "SemiBold",
+  700: "Bold",
+}
+
+const TEXT_STYLES: { name: string; size: number; lh: number; weight: number }[] =
+  [
+    { name: "Text-4xl/Semi Bold", size: 36, lh: 40, weight: 600 },
+    { name: "Text-3xl/Bold", size: 30, lh: 36, weight: 700 },
+    { name: "Text-2xl/Semi Bold", size: 24, lh: 32, weight: 600 },
+    { name: "Text-lg/Semi Bold", size: 18, lh: 28, weight: 600 },
+    { name: "Text-base/Semi Bold", size: 16, lh: 24, weight: 600 },
+    { name: "Text-base/Medium", size: 16, lh: 24, weight: 500 },
+    { name: "Text-base/Regular", size: 16, lh: 24, weight: 400 },
+    { name: "Text-sm/Bold", size: 14, lh: 20, weight: 700 },
+    { name: "Text-sm/Semi Bold", size: 14, lh: 20, weight: 600 },
+    { name: "Text-sm/Medium", size: 14, lh: 20, weight: 500 },
+    { name: "Text-sm/Regular", size: 14, lh: 20, weight: 400 },
+    { name: "Text-xs/Semi Bold", size: 12, lh: 16, weight: 600 },
+    { name: "Text-xs/Medium", size: 12, lh: 16, weight: 500 },
+    { name: "Text-xs/Regular", size: 12, lh: 16, weight: 400 },
+  ]
 
 const RADII: { name: string; cls: string; px: string }[] = [
   { name: "xs", cls: "rounded-xs", px: "2" },
@@ -108,7 +123,14 @@ const RADII: { name: string; cls: string; px: string }[] = [
   { name: "4xl", cls: "rounded-4xl", px: "32" },
 ]
 
-const SHADOWS = ["shadow-xs", "shadow-sm", "shadow-md", "shadow-lg", "shadow-xl"]
+// Figma effect styles (Box Shadow/*), synced 1:1 from the kit.
+const EFFECTS: { name: string; cls: string; value: string }[] = [
+  { name: "shadow-xs", cls: "shadow-xs", value: "0 1px 2px 0 · 10%" },
+  { name: "shadow-sm", cls: "shadow-sm", value: "0 1px 3px 0 · 10%" },
+  { name: "shadow-md", cls: "shadow-md", value: "0 2px 4px -2px, 0 4px 6px -1px" },
+  { name: "shadow-lg", cls: "shadow-lg", value: "0 4px 6px -4px, 0 10px 15px -3px" },
+  { name: "Focus ring", cls: "shadow-focus", value: "0 0 0 3px · #A1A1A1 50%" },
+]
 
 const BORDERS: { name: string; cls: string }[] = [
   { name: "border", cls: "border" },
@@ -176,15 +198,26 @@ function ColorContent() {
 function TypographyContent() {
   return (
     <div className="flex flex-col divide-y rounded-lg border">
-      {TYPE_SCALE.map((t) => (
+      {TEXT_STYLES.map((t) => (
         <div
           key={t.name}
           className="flex items-baseline justify-between gap-4 p-4"
         >
-          <span className={`${t.cls} truncate`}>Almost before we knew it</span>
+          <span
+            className="truncate"
+            style={{
+              fontSize: `${t.size}px`,
+              lineHeight: `${t.lh}px`,
+              fontWeight: t.weight,
+            }}
+          >
+            Almost before we knew it
+          </span>
           <span className="text-muted-foreground shrink-0 text-right text-xs">
-            <code>text-{t.name}</code>
-            <span className="block">{t.meta}</span>
+            <code>{t.name}</code>
+            <span className="block">
+              {t.size} / {t.lh} · {WEIGHT_LABEL[t.weight]}
+            </span>
           </span>
         </div>
       ))}
@@ -225,11 +258,12 @@ function RadiusContent() {
 
 function ElevationContent() {
   return (
-    <div className="grid grid-cols-2 gap-6 sm:grid-cols-5">
-      {SHADOWS.map((s) => (
-        <div key={s} className="flex flex-col items-center gap-2">
-          <div className={`bg-card size-16 rounded-lg ${s}`} />
-          <code className="text-xs">{s}</code>
+    <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
+      {EFFECTS.map((e) => (
+        <div key={e.name} className="flex flex-col items-center gap-2 text-center">
+          <div className={`bg-card size-16 rounded-lg ${e.cls}`} />
+          <code className="text-xs">{e.name}</code>
+          <span className="text-muted-foreground text-[11px]">{e.value}</span>
         </div>
       ))}
     </div>
@@ -282,7 +316,7 @@ export const FOUNDATIONS: Foundation[] = [
     id: "typography",
     label: "Typography",
     description:
-      "Type scale rendered in the kit font (Google Sans). size / line-height · weight.",
+      "Figma text styles (Text-{size}/{weight}) — exact size / line-height / weight, in Google Sans.",
     render: () => <TypographyContent />,
   },
   {
@@ -303,7 +337,7 @@ export const FOUNDATIONS: Foundation[] = [
     id: "elevation",
     label: "Elevation",
     description:
-      "shadow-xs is the kit override (10% alpha); the rest are Tailwind v4 defaults.",
+      "Figma effect styles (Box Shadow/*), synced 1:1 — every layer is black @ 10%, plus the Focus ring.",
     render: () => <ElevationContent />,
   },
   {
