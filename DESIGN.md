@@ -109,7 +109,7 @@ This table is **1:1 with [`app/globals.css`](./app/globals.css)** and with the F
 | Variable | Utility | Light | Dark | Purpose |
 | --- | --- | --- | --- | --- |
 | `--sidebar` / `--sidebar-foreground` | `bg-sidebar` / `text-sidebar-foreground` | `#fafafa` / `#0a0a0a` | `#171717` / `#fafafa` | Sidebar surface and text |
-| `--sidebar-primary` / `--sidebar-primary-foreground` | `bg-sidebar-primary` / `text-sidebar-primary-foreground` | `#211f26` / `#fafafa` | `#0588f0` / `#fafafa` | Active / primary nav item |
+| `--sidebar-primary` / `--sidebar-primary-foreground` | `bg-sidebar-primary` / `text-sidebar-primary-foreground` | `#171717` / `#fafafa` | `#e5e5e5` / `#fafafa` | Active / primary nav item (aligned with `--primary`) |
 | `--sidebar-accent` / `--sidebar-accent-foreground` | `bg-sidebar-accent` / `text-sidebar-accent-foreground` | `#f5f5f5` / `#171717` | `#262626` / `#fafafa` | Sidebar hover / accent |
 | `--sidebar-border` | `border-sidebar-border` | `#d4d4d4` | `rgb(255 255 255 / 0.8)` | Sidebar borders / separators |
 | `--sidebar-ring` | `ring-sidebar-ring` | `#737373` | `#737373` | Focus ring inside the sidebar |
