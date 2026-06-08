@@ -1,5 +1,16 @@
 import type { Metadata } from "next"
+import localFont from "next/font/local"
 import "./globals.css"
+
+// Google Sans — the kit's `family/sans`, bundled as a local variable font.
+const googleSans = localFont({
+  src: [
+    { path: "./fonts/GoogleSans.ttf", style: "normal" },
+    { path: "./fonts/GoogleSans-Italic.ttf", style: "italic" },
+  ],
+  variable: "--font-google-sans",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "Design → Dev Handoff",
@@ -13,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={googleSans.variable} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   )

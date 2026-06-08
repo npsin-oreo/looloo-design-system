@@ -164,7 +164,7 @@ Requires a **Figma Dev Mode MCP** connection and view/Dev access to the file.
 
 ## 🔤 Fonts
 
-Fonts are **data-driven from the Figma `family/*` token** — this kit resolves to **Inter** (sans) and **Geist Mono** (mono). They're declared in `globals.css` but the files are **not bundled**; install them to match Figma exactly (e.g. via `next/font`). For Thai projects, append a Thai sans (IBM Plex Sans Thai / Noto Sans Thai) to `--font-sans`.
+Fonts are **data-driven from the Figma `family/*` token**. This kit uses **Google Sans** (sans) — bundled as a local variable font in [`app/fonts/`](./app/fonts) and wired via `next/font/local` in `app/layout.tsx`, so it renders exactly like Figma out of the box. **Geist Mono** (mono) is declared but not bundled. For Thai projects, append a Thai sans (Noto Sans Thai / IBM Plex Sans Thai) to `--font-sans`.
 
 ## 🌗 Dark mode
 
