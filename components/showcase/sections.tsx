@@ -341,6 +341,89 @@ function CodeBlock({ code }: { code: string }) {
   )
 }
 
+/** kebab data-slot → PascalCase component name (card-header → CardHeader). */
+function slotToName(slot: string) {
+  return slot
+    .split("-")
+    .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
+    .join("")
+}
+
+type SlotNode = { name: string; children: SlotNode[] }
+
+/** Walk a DOM subtree, building a tree of [data-slot] elements (skipping
+ *  plain wrappers by hoisting their slotted descendants). */
+function buildSlotTree(el: Element): SlotNode[] {
+  const out: SlotNode[] = []
+  for (const child of Array.from(el.children)) {
+    const slot = child.getAttribute("data-slot")
+    const kids = buildSlotTree(child)
+    if (slot) out.push({ name: slotToName(slot), children: kids })
+    else out.push(...kids)
+  }
+  return out
+}
+
+function TreeLines({
+  nodes,
+  prefix = "",
+}: {
+  nodes: SlotNode[]
+  prefix?: string
+}) {
+  return (
+    <>
+      {nodes.map((node, i) => {
+        const last = i === nodes.length - 1
+        return (
+          <React.Fragment key={`${prefix}-${node.name}-${i}`}>
+            <div className="whitespace-pre leading-6">
+              <span className="text-muted-foreground">
+                {prefix}
+                {last ? "└─ " : "├─ "}
+              </span>
+              <span className="text-foreground">{`<${node.name} />`}</span>
+            </div>
+            {node.children.length > 0 ? (
+              <TreeLines
+                nodes={node.children}
+                prefix={`${prefix}${last ? "   " : "│  "}`}
+              />
+            ) : null}
+          </React.Fragment>
+        )
+      })}
+    </>
+  )
+}
+
+function AnatomyTree({ node }: { node: React.ReactNode }) {
+  const ref = React.useRef<HTMLDivElement>(null)
+  const [tree, setTree] = React.useState<SlotNode[]>([])
+
+  React.useEffect(() => {
+    if (ref.current) setTree(buildSlotTree(ref.current))
+  }, [])
+
+  return (
+    <div className="rounded-lg border">
+      {/* hidden mount used only to read the rendered data-slot structure */}
+      <div ref={ref} className="hidden" aria-hidden>
+        {node}
+      </div>
+      <div className="overflow-x-auto p-4 font-mono text-sm">
+        {tree.length > 0 ? (
+          <TreeLines nodes={tree} />
+        ) : (
+          <p className="text-muted-foreground">
+            No nested parts (single element, or content renders in a portal).
+          </p>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export function ComponentView({
   tierId,
   demo,
@@ -367,6 +450,7 @@ export function ComponentView({
         <TabsList>
           <TabsTrigger value="preview">Preview</TabsTrigger>
           <TabsTrigger value="code">Code</TabsTrigger>
+          <TabsTrigger value="tree">Tree</TabsTrigger>
         </TabsList>
         <TabsContent value="preview">
           <div className="flex min-h-[220px] flex-wrap items-start gap-4 rounded-lg border p-8">
@@ -375,6 +459,9 @@ export function ComponentView({
         </TabsContent>
         <TabsContent value="code">
           <CodeBlock code={demo.code} />
+        </TabsContent>
+        <TabsContent value="tree">
+          <AnatomyTree node={demo.node} />
         </TabsContent>
       </Tabs>
     </div>
