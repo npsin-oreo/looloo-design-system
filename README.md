@@ -97,6 +97,38 @@ Components only ever use **Tier 3**. Tier-2 names match the Figma variable names
 
 ---
 
+## 🏷️ White-label & per-brand theming
+
+This repo is a **white-label base**. Each brand lives on its **own branch** and changes **one file** — everything else (components, scales, docs, agent rules) is inherited.
+
+**The brand layer**
+
+```
+brand.config.json   ← edit this (colors + radius) — the only per-brand source
+   │  npm run brand:build
+   ▼
+app/brand.css       ← AUTO-GENERATED :root / .dark (do not edit)
+   │  @import
+   ▼
+app/globals.css     ← structural @theme (scales, shadows, mappings) — shared, stable
+```
+
+`brand:build` runs automatically before `dev` and `build`.
+
+**Theme a new brand**
+
+```bash
+git checkout -b brand/acme
+# edit brand.config.json — at minimum set light.primary (foreground auto-derives)
+npm run dev          # regenerates app/brand.css and previews
+```
+
+Only `brand.config.json` (and `app/brand.css`) differ from the base, so pulling white-label updates (`git merge main`) rarely conflicts. A designer/agent can theme a brand by setting just `light.primary` — a readable `*-foreground` is derived by luminance.
+
+> Fonts are swapped per brand in `app/layout.tsx` + `app/fonts/` (see [Fonts](#-fonts)).
+
+---
+
 ## 🤖 Figma → Code workflow
 
 For AI-assisted implementation, this repo bundles a skill at

@@ -23,7 +23,9 @@ npx shadcn@latest info --json
 
 ## Token source
 
-Design tokens are synced 1:1 from [`tokens.json`](./tokens.json) (Figma DTCG export, `shadcn-ui/Mode 1`) into `app/globals.css`. Light mode only — `.dark` holds shadcn defaults. The **full** shadcn/ui library is already in `components/ui/`. `react-day-picker` is pinned to v9 (the version `calendar.tsx` targets).
+This is a **white-label base**; brands live on their own branch. Brand colors + radius live ONLY in [`brand.config.json`](./brand.config.json) → generated into `app/brand.css` by `npm run brand:build` (auto-runs on dev/build). **To change a brand's colors, edit `brand.config.json` — never hand-edit `app/brand.css` or the `:root`/`.dark` values.** `app/globals.css` holds only structural `@theme` (scales, shadows, var mappings) shared across brands.
+
+The default brand values trace to [`tokens.json`](./tokens.json) (Figma DTCG export, `shadcn-ui/Mode 1`). Light mode only — `.dark` holds shadcn defaults. The **full** shadcn/ui library is in `components/ui/`. `react-day-picker` is pinned to v9 (the version `calendar.tsx` targets).
 
 ## Hard rules
 

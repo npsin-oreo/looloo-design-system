@@ -1,108 +1,16 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./brand.css";
 
 @custom-variant dark (&:is(.dark *));
 
 /*
-  Tokens below are synced 1:1 from the Figma DTCG export `tokens.json`
-  (repo root), token set "shadcn-ui/Mode 1" — aliases resolved against
-  "tw-colors/Mode 1" (Tailwind palette). Values are the export's exact
-  sRGB output so code renders byte-identical to the Figma source.
-  Do not edit values here — re-export from Figma, replace tokens.json,
-  and regenerate. See DESIGN.md §2.
-
-  NOTE: the export ships LIGHT MODE ONLY (no dark token set). The .dark
-  block below retains shadcn/ui's canonical neutral dark values as a
-  sensible default until a dark set is exported.
+  Design tokens (colors + radius) live in the BRAND LAYER: app/brand.css,
+  generated from brand.config.json by `npm run brand:build`.
+  A per-brand fork edits brand.config.json only. The @theme inline block
+  below is structural (white-label) — scales, font + shadow tokens, and the
+  var() mappings — and is shared across all brands.
 */
-
-:root {
-  /* Radius — kit uses the Tailwind v4 static scale; --radius is the kit
-     default (rounded-lg = 8px), kept for shadcn components that read it. */
-  --radius: 0.5rem;
-
-  /* shadcn/ui · light mode */
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --card: #ffffff;
-  --card-foreground: #0a0a0a;
-  --popover: #ffffff;
-  --popover-foreground: #0a0a0a;
-  --primary: #171717;
-  --primary-foreground: #fafafa;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #0a0a0a;
-  --muted: #f5f5f5;
-  --muted-foreground: #737373;
-  --accent: #f5f5f5;
-  --accent-foreground: #171717;
-  --destructive: #dc2626;
-  --border: #e5e5e5;
-  --input: #e5e5e5;
-  --ring: #737373;
-  --chart-1: #5eb1ef;
-  --chart-2: #0090ff;
-  --chart-3: #0588f0;
-  --chart-4: #0d74ce;
-  --chart-5: #113264;
-  /* Synced from live Figma (file aZs8…, 2026-06-08): sidebar = neutral-50.
-     (The original tokens.json export had a stale #737373 binding.) */
-  --sidebar: #fafafa;
-  --sidebar-foreground: #0a0a0a;
-  --sidebar-primary: #171717;
-  --sidebar-primary-foreground: #fafafa;
-  --sidebar-accent: #f5f5f5;
-  --sidebar-accent-foreground: #171717;
-  --sidebar-border: #d4d4d4;
-  --sidebar-ring: #737373;
-
-  /* kit-specific extras (not standard shadcn — kept for 1:1 fidelity) */
-  --background-color: rgb(0 0 0 / 0.3);
-  --semantic-background: #6b7280;
-  --semantic-foreground: #ffffff;
-  --semantic-border: #4b5563;
-}
-
-.dark {
-  /* shadcn/ui · dark mode */
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --card: #171717;
-  --card-foreground: #fafafa;
-  --popover: #262626;
-  --popover-foreground: #fafafa;
-  --primary: #e5e5e5;
-  --primary-foreground: #171717;
-  --secondary: #262626;
-  --secondary-foreground: #fafafa;
-  --muted: #262626;
-  --muted-foreground: #a3a3a3;
-  --accent: #404040;
-  --accent-foreground: #fafafa;
-  --destructive: #f87171;
-  --border: #404040;
-  --input: #171717;
-  --ring: #737373;
-  --chart-1: #5eb1ef;
-  --chart-2: #0090ff;
-  --chart-3: #0588f0;
-  --chart-4: #0d74ce;
-  --chart-5: #113264;
-  --sidebar: #0a0a0a;
-  --sidebar-foreground: #fafafa;
-  --sidebar-primary: #e5e5e5;
-  --sidebar-primary-foreground: #171717;
-  --sidebar-accent: #262626;
-  --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: rgb(255 255 255 / 0.8);
-  --sidebar-ring: #737373;
-
-  /* kit-specific extras */
-  --background-color: rgb(0 0 0 / 0.3);
-  --semantic-background: #374151;
-  --semantic-foreground: #ffffff;
-  --semantic-border: #4b5563;
-}
 
 @theme inline {
   /* Radius — kit/Tailwind v4 static scale (px → rem @16) */
