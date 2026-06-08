@@ -11,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { atoms } from "./atoms"
 import { molecules } from "./molecules"
 import { organisms } from "./organisms"
+import { rdxColors, twColors } from "./palettes"
 import type { Demo, Tier } from "./types"
 
 export const TIERS: Tier[] = [atoms, molecules, organisms]
@@ -116,6 +117,32 @@ const BORDERS: { name: string; cls: string }[] = [
   { name: "border-8", cls: "border-8" },
 ]
 
+function PaletteGrid({
+  palette,
+}: {
+  palette: Record<string, Record<string, string>>
+}) {
+  return (
+    <div className="flex flex-col gap-2">
+      {Object.entries(palette).map(([family, steps]) => (
+        <div key={family} className="flex items-center gap-3">
+          <code className="w-16 shrink-0 truncate text-xs">{family}</code>
+          <div className="flex flex-1 gap-1">
+            {Object.entries(steps).map(([step, hex]) => (
+              <div
+                key={step}
+                title={`${family}${step ? `-${step}` : ""} · ${hex}`}
+                className="h-8 flex-1 rounded-sm border"
+                style={{ background: hex }}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function FoundationBlock({
   icon: Icon,
   title,
@@ -182,6 +209,24 @@ export function FoundationsSection() {
             </div>
           ))}
         </div>
+      </FoundationBlock>
+
+      {/* Tailwind palette (Tier 1 primitives) */}
+      <FoundationBlock
+        icon={Palette}
+        title="Tailwind palette"
+        description="Tier-1 primitives (tw-colors). Hover a swatch for its hex. Semantic tokens above alias into these."
+      >
+        <PaletteGrid palette={twColors} />
+      </FoundationBlock>
+
+      {/* Radix palette (Tier 1 primitives) */}
+      <FoundationBlock
+        icon={Palette}
+        title="Radix palette"
+        description="Tier-1 primitives (rdx-colors), steps 1–12. Hover a swatch for its hex."
+      >
+        <PaletteGrid palette={rdxColors} />
       </FoundationBlock>
 
       {/* Typography */}
