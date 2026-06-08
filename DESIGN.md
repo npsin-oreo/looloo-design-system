@@ -80,7 +80,7 @@ This table is **1:1 with [`app/globals.css`](./app/globals.css)** and with the F
 
 | Variable | Utility | Light | Dark | Purpose |
 | --- | --- | --- | --- | --- |
-| `--primary` / `--primary-foreground` | `bg-primary` / `text-primary-foreground` | `#211f26` / `#60cfcb` | `#e5e5e5` / `#171717` | Primary actions — the kit re-themed primary to a warm near-black with a **teal** foreground (light). Dark is shadcn default (see §11.2) |
+| `--primary` / `--primary-foreground` | `bg-primary` / `text-primary-foreground` | `#171717` / `#fafafa` | `#e5e5e5` / `#171717` | Primary actions — light = `neutral/900` on `neutral/50` |
 | `--secondary` / `--secondary-foreground` | `bg-secondary` / `text-secondary-foreground` | `#f5f5f5` / `#0a0a0a` | `#262626` / `#fafafa` | Secondary actions |
 | `--muted` / `--muted-foreground` | `bg-muted` / `text-muted-foreground` | `#f5f5f5` / `#737373` | `#262626` / `#a3a3a3` | Muted surfaces and helper text |
 | `--accent` / `--accent-foreground` | `bg-accent` / `text-accent-foreground` | `#f5f5f5` / `#171717` | `#404040` / `#fafafa` | Hover and accent states |
@@ -129,7 +129,7 @@ This table is **1:1 with [`app/globals.css`](./app/globals.css)** and with the F
 
 ### 2.4 Color format
 
-Values are the kit's **exact sRGB output**, written as hex (`#rrggbb`) or `rgb(r g b / a)` when the kit token carries alpha. Most trace back to a named Tailwind/Radix swatch (e.g. `--secondary` light = `neutral/100` = `#f5f5f5`), but a few are bespoke brand values that aren't palette aliases — notably `--primary` = `#211f26` and `--primary-foreground` = `#60cfcb` (teal). sRGB is used — not OKLCH — so code is byte-identical to the original Figma. If you need OKLCH later, convert at high precision; do not eyeball it, or the kit match breaks.
+Values are the kit's **exact sRGB output**, written as hex (`#rrggbb`) or `rgb(r g b / a)` when the kit token carries alpha. They are aliases of the kit's `tw-colors` collection (the Tailwind palette), so each value traces back to a named swatch — e.g. `--primary` light = `neutral/900` = `#171717`, `--primary-foreground` = `neutral/50` = `#fafafa`. sRGB is used — not OKLCH — so code is byte-identical to the original Figma. If you need OKLCH later, convert at high precision; do not eyeball it, or the kit match breaks.
 
 ### 2.5 Base color
 
