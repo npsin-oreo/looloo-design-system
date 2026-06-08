@@ -61,7 +61,7 @@ The complete scaffold lives in [`app/globals.css`](./app/globals.css). Values ar
 | `--secondary-foreground` (light) | `oklch(0.205 0 0)` ≈ `#262626` | `#0a0a0a` (= `foreground`) |
 | `--chart-1…5` | multi-hue | single **blue ramp** (`#5eb1ef → #113264`) |
 | `--destructive` (dark) | desaturated red | `#f87171` (red-400) |
-| Fonts | unset (Tailwind default) | `--font-sans` Inter · `--font-mono` Geist Mono |
+| Fonts | unset (Tailwind default) | `--font-sans` Google Sans · `--font-mono` Geist Mono (bundled via `next/font/local`) |
 | Extras | — | `--background-color`, `--semantic-background/-foreground/-border` |
 
 ### 2.3 Token reference
@@ -80,7 +80,7 @@ This table is **1:1 with [`app/globals.css`](./app/globals.css)** and with the F
 
 | Variable | Utility | Light | Dark | Purpose |
 | --- | --- | --- | --- | --- |
-| `--primary` / `--primary-foreground` | `bg-primary` / `text-primary-foreground` | `#171717` / `#fafafa` | `#e5e5e5` / `#171717` | Primary actions |
+| `--primary` / `--primary-foreground` | `bg-primary` / `text-primary-foreground` | `#211f26` / `#60cfcb` | `#e5e5e5` / `#171717` | Primary actions — the kit re-themed primary to a warm near-black with a **teal** foreground (light). Dark is shadcn default (see §11.2) |
 | `--secondary` / `--secondary-foreground` | `bg-secondary` / `text-secondary-foreground` | `#f5f5f5` / `#0a0a0a` | `#262626` / `#fafafa` | Secondary actions |
 | `--muted` / `--muted-foreground` | `bg-muted` / `text-muted-foreground` | `#f5f5f5` / `#737373` | `#262626` / `#a3a3a3` | Muted surfaces and helper text |
 | `--accent` / `--accent-foreground` | `bg-accent` / `text-accent-foreground` | `#f5f5f5` / `#171717` | `#404040` / `#fafafa` | Hover and accent states |
@@ -109,7 +109,7 @@ This table is **1:1 with [`app/globals.css`](./app/globals.css)** and with the F
 | Variable | Utility | Light | Dark | Purpose |
 | --- | --- | --- | --- | --- |
 | `--sidebar` / `--sidebar-foreground` | `bg-sidebar` / `text-sidebar-foreground` | `#fafafa` / `#0a0a0a` | `#171717` / `#fafafa` | Sidebar surface and text |
-| `--sidebar-primary` / `--sidebar-primary-foreground` | `bg-sidebar-primary` / `text-sidebar-primary-foreground` | `#171717` / `#fafafa` | `#0588f0` / `#fafafa` | Active / primary nav item |
+| `--sidebar-primary` / `--sidebar-primary-foreground` | `bg-sidebar-primary` / `text-sidebar-primary-foreground` | `#211f26` / `#fafafa` | `#0588f0` / `#fafafa` | Active / primary nav item |
 | `--sidebar-accent` / `--sidebar-accent-foreground` | `bg-sidebar-accent` / `text-sidebar-accent-foreground` | `#f5f5f5` / `#171717` | `#262626` / `#fafafa` | Sidebar hover / accent |
 | `--sidebar-border` | `border-sidebar-border` | `#d4d4d4` | `rgb(255 255 255 / 0.8)` | Sidebar borders / separators |
 | `--sidebar-ring` | `ring-sidebar-ring` | `#737373` | `#737373` | Focus ring inside the sidebar |
@@ -129,7 +129,7 @@ This table is **1:1 with [`app/globals.css`](./app/globals.css)** and with the F
 
 ### 2.4 Color format
 
-Values are the kit's **exact sRGB output**, written as hex (`#rrggbb`) or `rgb(r g b / a)` when the kit token carries alpha. They are aliases of the kit's `tw/colors` collection (the Tailwind color palette), so each value traces back to a named Tailwind swatch (e.g. `--primary` light = `neutral/900` = `#171717`). sRGB is used — not OKLCH — so code is byte-identical to the original Figma. If you need OKLCH later, convert at high precision; do not eyeball it, or the kit match breaks.
+Values are the kit's **exact sRGB output**, written as hex (`#rrggbb`) or `rgb(r g b / a)` when the kit token carries alpha. Most trace back to a named Tailwind/Radix swatch (e.g. `--secondary` light = `neutral/100` = `#f5f5f5`), but a few are bespoke brand values that aren't palette aliases — notably `--primary` = `#211f26` and `--primary-foreground` = `#60cfcb` (teal). sRGB is used — not OKLCH — so code is byte-identical to the original Figma. If you need OKLCH later, convert at high precision; do not eyeball it, or the kit match breaks.
 
 ### 2.5 Base color
 
@@ -164,29 +164,14 @@ To re-shape the UI, re-export the kit's `border-radius` collection and regenerat
 
 | Variable | Stack | Source |
 | --- | --- | --- |
-| `--font-sans` | `"Inter", ui-sans-serif, system-ui, sans-serif` | kit `family/sans` = Inter |
-| `--font-mono` | `"Geist Mono", ui-monospace, SFMono-Regular, monospace` | kit `family/mono` = Geist Mono |
+| `--font-sans` | `var(--font-google-sans), "Inter", ui-sans-serif, system-ui, sans-serif` | kit `family/sans` = Google Sans |
+| `--font-mono` | `var(--font-geist-mono), "Geist Mono", ui-monospace, SFMono-Regular, monospace` | kit `family/mono` = Geist Mono |
 
-Set in `@theme inline`. **The font is data-driven from the Figma `family/*` token, not a project default** — for this kit it resolves to Inter / Geist Mono; if the Figma file specifies different fonts, re-export and regenerate `--font-*` (don't hardcode or assume Inter). Custom fonts are fully supported — follow whatever the source file declares. The variables alone don't load the fonts — install them (shadcn font registry or `next/font`) for the exact look; otherwise the stack falls back gracefully.
+Set in `@theme inline`. **The font is data-driven from the Figma `family/*` token, not a project default.** For this kit it resolves to **Google Sans** (sans) and **Geist Mono** (mono) — both **bundled** as local variable fonts in [`app/fonts/`](./app/fonts) and wired via `next/font/local` in `app/layout.tsx` (`--font-google-sans`, `--font-geist-mono`). If the Figma file specifies different fonts, re-export and regenerate `--font-*` (don't hardcode). 
 
-Registry example:
+To swap a font, drop the file in `app/fonts/`, register it with `localFont({ variable: "--font-x" })`, and point `--font-sans`/`--font-mono` at it in `globals.css`.
 
-```json
-{
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "font-inter",
-  "type": "registry:font",
-  "font": {
-    "family": "'Inter', sans-serif",
-    "provider": "google",
-    "import": "Inter",
-    "variable": "--font-sans",
-    "subsets": ["latin"]
-  }
-}
-```
-
-For Thai projects, pair Inter with a Thai sans (e.g. IBM Plex Sans Thai, Noto Sans Thai) in the `--font-sans` stack so Thai glyphs resolve automatically.
+For Thai projects, append a Thai sans (e.g. Noto Sans Thai, IBM Plex Sans Thai) to the `--font-sans` stack so Thai glyphs resolve automatically.
 
 ### 4.2 Font size (Tailwind v4 default = kit `size/*`)
 
@@ -250,18 +235,16 @@ Two non-negotiable rules:
 
 ## 6. Shadows & Effects
 
-The kit exposes one shadow as a variable; the rest fall back to Tailwind v4 defaults.
+Effect styles are synced 1:1 from the Figma kit (`Box Shadow/*`) into `@theme inline`. Every layer uses `#0000001A` (black @ 10%). The kit defines xs/sm/md/lg plus a Focus ring; xl/2xl fall back to Tailwind v4 defaults.
 
 | Utility | Value | Source |
 | --- | --- | --- |
-| `shadow-2xs` | `0 1px rgb(0 0 0 / 0.05)` | Tailwind v4 default |
-| `shadow-xs` | `0 1px 2px 0 rgb(0 0 0 / 0.1)` | **kit override** (`@theme inline`, 10% — Tailwind default is 5%) |
-| `shadow-sm` | `0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)` | Tailwind v4 default |
-| `shadow-md` | `0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)` | Tailwind v4 default |
-| `shadow-lg` | `0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)` | Tailwind v4 default |
-| `shadow-xl` | `0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)` | Tailwind v4 default |
-| `shadow-2xl` | `0 25px 50px -12px rgb(0 0 0 / 0.25)` | Tailwind v4 default |
-| `shadow-none` | `0 0 #0000` | Tailwind v4 default |
+| `shadow-xs` | `0 1px 2px 0 rgb(0 0 0 / 0.1)` | **kit** (`Box Shadow/shadow-xs`) |
+| `shadow-sm` | `0 1px 3px 0 rgb(0 0 0 / 0.1)` | **kit** (`Box Shadow/shadow-sm`) |
+| `shadow-md` | `0 2px 4px -2px rgb(0 0 0 / 0.1), 0 4px 6px -1px rgb(0 0 0 / 0.1)` | **kit** (`Box Shadow/shadow-md`) |
+| `shadow-lg` | `0 4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1)` | **kit** (`Box Shadow/shadow-lg`) |
+| `shadow-focus` | `0 0 0 3px rgb(161 161 161 / 0.5)` | **kit** (`Box Shadow/Focus ring`) |
+| `shadow-xl` / `shadow-2xl` / `shadow-none` | Tailwind v4 defaults | not in kit |
 
 **Opacity:** use Tailwind opacity modifiers (`bg-primary/30`, `opacity-80`). The kit's `--background-color` (`rgb(0 0 0 / 0.3)`) is the standard modal/scrim overlay — apply via `bg-background-color`.
 

@@ -24,6 +24,8 @@ import {
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 
+import { ModeToggle } from "./mode-toggle"
+
 import {
   FOUNDATIONS,
   FOUNDATIONS_ROUTE,
@@ -136,6 +138,7 @@ export function ShowcaseLayout({ children }: { children: React.ReactNode }) {
             <Badge variant="secondary" className="ml-auto">
               {TOTAL} components
             </Badge>
+            <ModeToggle />
           </header>
 
           <main className="flex flex-col gap-12 p-6 lg:p-8">{children}</main>

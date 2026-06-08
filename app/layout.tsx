@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
 
+import { ThemeProvider } from "@/components/theme-provider"
+
 // Google Sans — the kit's `family/sans`, bundled as a local variable font.
 const googleSans = localFont({
   src: [
@@ -36,7 +38,16 @@ export default function RootLayout({
       className={`${googleSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
