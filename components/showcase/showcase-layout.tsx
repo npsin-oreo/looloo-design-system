@@ -25,7 +25,9 @@ import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 
 import {
+  FOUNDATIONS,
   FOUNDATIONS_ROUTE,
+  FOUNDATIONS_ROUTE_BASE,
   TIER_ICONS,
   TIER_ROUTES,
   TIERS,
@@ -35,6 +37,10 @@ const TOTAL = TIERS.reduce((n, t) => n + t.demos.length, 0)
 
 function headerLabel(pathname: string) {
   if (pathname === FOUNDATIONS_ROUTE) return "Foundations"
+  const foundation = FOUNDATIONS.find(
+    (f) => pathname === `${FOUNDATIONS_ROUTE_BASE}/${f.id}`
+  )
+  if (foundation) return `Foundations / ${foundation.label}`
   for (const tier of TIERS) {
     const route = TIER_ROUTES[tier.id]
     if (pathname === route) return tier.label
@@ -61,20 +67,26 @@ export function ShowcaseLayout({ children }: { children: React.ReactNode }) {
           </SidebarHeader>
           <SidebarContent>
             <SidebarGroup>
-              <SidebarGroupLabel>Foundations</SidebarGroupLabel>
+              <SidebarGroupLabel asChild>
+                <Link href={FOUNDATIONS_ROUTE}>
+                  <Palette className="size-3.5" />
+                  Foundations
+                </Link>
+              </SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton
-                      asChild
-                      isActive={pathname === FOUNDATIONS_ROUTE}
-                    >
-                      <Link href={FOUNDATIONS_ROUTE}>
-                        <Palette />
-                        <span>Tokens &amp; foundations</span>
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
+                  {FOUNDATIONS.map((f) => {
+                    const href = `${FOUNDATIONS_ROUTE_BASE}/${f.id}`
+                    return (
+                      <SidebarMenuItem key={f.id}>
+                        <SidebarMenuButton asChild isActive={pathname === href}>
+                          <Link href={href}>
+                            <span>{f.label}</span>
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    )
+                  })}
                 </SidebarMenu>
               </SidebarGroupContent>
             </SidebarGroup>

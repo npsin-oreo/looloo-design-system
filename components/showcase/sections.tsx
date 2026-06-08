@@ -143,34 +143,186 @@ function PaletteGrid({
   )
 }
 
-function FoundationBlock({
-  icon: Icon,
-  title,
-  description,
-  children,
-}: {
-  icon: typeof Atom
-  title: string
-  description: string
-  children: React.ReactNode
-}) {
+/* Each foundation's content (without page chrome). */
+
+function ColorContent() {
   return (
-    <section className="flex scroll-mt-20 flex-col gap-5">
-      <div className="flex flex-col gap-1">
-        <div className="flex items-center gap-2">
-          <Icon className="size-5" />
-          <h2 className="text-xl font-semibold tracking-tight">{title}</h2>
+    <div className="flex flex-col gap-6">
+      {COLOR_GROUPS.map((group) => (
+        <div key={group.label} className="flex flex-col gap-3">
+          <h3 className="text-muted-foreground text-xs font-medium uppercase tracking-wide">
+            {group.label}
+          </h3>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
+            {group.tokens.map((token) => (
+              <div
+                key={token}
+                className="flex items-center gap-3 rounded-lg border p-3"
+              >
+                <div
+                  className="size-9 shrink-0 rounded-md border"
+                  style={{ background: `var(--${token})` }}
+                />
+                <code className="truncate text-xs">--{token}</code>
+              </div>
+            ))}
+          </div>
         </div>
-        <p className="text-muted-foreground max-w-2xl text-sm">{description}</p>
-      </div>
-      {children}
-    </section>
+      ))}
+    </div>
   )
 }
 
-export function FoundationsSection() {
+function TypographyContent() {
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col divide-y rounded-lg border">
+      {TYPE_SCALE.map((t) => (
+        <div
+          key={t.name}
+          className="flex items-baseline justify-between gap-4 p-4"
+        >
+          <span className={`${t.cls} truncate`}>Almost before we knew it</span>
+          <span className="text-muted-foreground shrink-0 text-right text-xs">
+            <code>text-{t.name}</code>
+            <span className="block">{t.meta}</span>
+          </span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function SpacingContent() {
+  return (
+    <div className="flex flex-col gap-2">
+      {SPACING.map((n) => (
+        <div key={n} className="flex items-center gap-4">
+          <code className="text-muted-foreground w-12 shrink-0 text-xs">{n}</code>
+          <div
+            className="bg-primary h-3 rounded-sm"
+            style={{ width: `${n * 4}px` }}
+          />
+          <span className="text-muted-foreground text-xs">{n * 4}px</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function RadiusContent() {
+  return (
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+      {RADII.map((r) => (
+        <div key={r.name} className="flex flex-col items-center gap-2">
+          <div className={`bg-muted size-16 border ${r.cls} border-primary/40`} />
+          <code className="text-xs">rounded-{r.name}</code>
+          <span className="text-muted-foreground text-xs">{r.px}px</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function ElevationContent() {
+  return (
+    <div className="grid grid-cols-2 gap-6 sm:grid-cols-5">
+      {SHADOWS.map((s) => (
+        <div key={s} className="flex flex-col items-center gap-2">
+          <div className={`bg-card size-16 rounded-lg ${s}`} />
+          <code className="text-xs">{s}</code>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function BorderContent() {
+  return (
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+      {BORDERS.map((b) => (
+        <div key={b.name} className="flex flex-col items-center gap-2">
+          <div className={`bg-card size-16 rounded-lg ${b.cls}`} />
+          <code className="text-xs">{b.name}</code>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export type Foundation = {
+  id: string
+  label: string
+  description: string
+  render: () => React.ReactNode
+}
+
+export const FOUNDATIONS: Foundation[] = [
+  {
+    id: "color",
+    label: "Color",
+    description:
+      "Semantic tokens from the shadcn-ui set, grouped by role. Light mode shown.",
+    render: () => <ColorContent />,
+  },
+  {
+    id: "tailwind",
+    label: "Tailwind palette",
+    description:
+      "Tier-1 primitives (tw-colors). Hover a swatch for its hex. Semantic tokens alias into these.",
+    render: () => <PaletteGrid palette={twColors} />,
+  },
+  {
+    id: "radix",
+    label: "Radix palette",
+    description:
+      "Tier-1 primitives (rdx-colors), steps 1–12. Hover a swatch for its hex.",
+    render: () => <PaletteGrid palette={rdxColors} />,
+  },
+  {
+    id: "typography",
+    label: "Typography",
+    description:
+      "Type scale rendered in the kit font (Google Sans). size / line-height · weight.",
+    render: () => <TypographyContent />,
+  },
+  {
+    id: "spacing",
+    label: "Spacing",
+    description:
+      "Tailwind v4 base unit = 4px. Every p / m / gap / size step is n × 4px.",
+    render: () => <SpacingContent />,
+  },
+  {
+    id: "radius",
+    label: "Radius",
+    description:
+      "Tailwind v4 static radius scale. --radius (default) = rounded-lg = 8px.",
+    render: () => <RadiusContent />,
+  },
+  {
+    id: "elevation",
+    label: "Elevation",
+    description:
+      "shadow-xs is the kit override (10% alpha); the rest are Tailwind v4 defaults.",
+    render: () => <ElevationContent />,
+  },
+  {
+    id: "border",
+    label: "Border width",
+    description: "Border widths from the --border token color.",
+    render: () => <BorderContent />,
+  },
+]
+
+export const FOUNDATIONS_ROUTE_BASE = "/foundations"
+
+export function findFoundation(id: string): Foundation | undefined {
+  return FOUNDATIONS.find((f) => f.id === id)
+}
+
+export function FoundationsOverview() {
+  return (
+    <div className="flex flex-col gap-6">
       <header className="flex flex-col gap-3">
         <h1 className="text-3xl font-bold tracking-tight">Foundations</h1>
         <p className="text-muted-foreground max-w-2xl text-sm">
@@ -179,150 +331,40 @@ export function FoundationsSection() {
           (Figma export). All swatches and samples read the live CSS variables.
         </p>
       </header>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {FOUNDATIONS.map((f) => (
+          <Link
+            key={f.id}
+            href={`${FOUNDATIONS_ROUTE_BASE}/${f.id}`}
+            className="hover:bg-accent flex flex-col gap-1 rounded-lg border p-4 transition-colors"
+          >
+            <span className="font-medium">{f.label}</span>
+            <span className="text-muted-foreground text-sm">{f.description}</span>
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
+}
 
-      {/* Colors */}
-      <FoundationBlock
-        icon={Palette}
-        title="Color"
-        description="Semantic tokens from the shadcn-ui set, grouped by role. Light mode shown."
-      >
-        <div className="flex flex-col gap-6">
-          {COLOR_GROUPS.map((group) => (
-            <div key={group.label} className="flex flex-col gap-3">
-              <h3 className="text-muted-foreground text-xs font-medium uppercase tracking-wide">
-                {group.label}
-              </h3>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
-                {group.tokens.map((token) => (
-                  <div
-                    key={token}
-                    className="flex items-center gap-3 rounded-lg border p-3"
-                  >
-                    <div
-                      className="size-9 shrink-0 rounded-md border"
-                      style={{ background: `var(--${token})` }}
-                    />
-                    <code className="truncate text-xs">--{token}</code>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+export function FoundationView({ foundation }: { foundation: Foundation }) {
+  return (
+    <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-1">
+        <span className="text-muted-foreground text-xs uppercase tracking-wide">
+          Foundations
+        </span>
+        <div className="flex items-center gap-2">
+          <Palette className="size-5" />
+          <h1 className="text-2xl font-semibold tracking-tight">
+            {foundation.label}
+          </h1>
         </div>
-      </FoundationBlock>
-
-      {/* Tailwind palette (Tier 1 primitives) */}
-      <FoundationBlock
-        icon={Palette}
-        title="Tailwind palette"
-        description="Tier-1 primitives (tw-colors). Hover a swatch for its hex. Semantic tokens above alias into these."
-      >
-        <PaletteGrid palette={twColors} />
-      </FoundationBlock>
-
-      {/* Radix palette (Tier 1 primitives) */}
-      <FoundationBlock
-        icon={Palette}
-        title="Radix palette"
-        description="Tier-1 primitives (rdx-colors), steps 1–12. Hover a swatch for its hex."
-      >
-        <PaletteGrid palette={rdxColors} />
-      </FoundationBlock>
-
-      {/* Typography */}
-      <FoundationBlock
-        icon={Palette}
-        title="Typography"
-        description="Type scale rendered in the kit font (Google Sans). size / line-height · weight."
-      >
-        <div className="flex flex-col divide-y rounded-lg border">
-          {TYPE_SCALE.map((t) => (
-            <div
-              key={t.name}
-              className="flex items-baseline justify-between gap-4 p-4"
-            >
-              <span className={`${t.cls} truncate`}>Almost before we knew it</span>
-              <span className="text-muted-foreground shrink-0 text-right text-xs">
-                <code>text-{t.name}</code>
-                <span className="block">{t.meta}</span>
-              </span>
-            </div>
-          ))}
-        </div>
-      </FoundationBlock>
-
-      {/* Spacing */}
-      <FoundationBlock
-        icon={Palette}
-        title="Spacing"
-        description="Tailwind v4 base unit = 4px. Every p / m / gap / size step is n × 4px."
-      >
-        <div className="flex flex-col gap-2">
-          {SPACING.map((n) => (
-            <div key={n} className="flex items-center gap-4">
-              <code className="text-muted-foreground w-12 shrink-0 text-xs">
-                {n}
-              </code>
-              <div
-                className="bg-primary h-3 rounded-sm"
-                style={{ width: `${n * 4}px` }}
-              />
-              <span className="text-muted-foreground text-xs">{n * 4}px</span>
-            </div>
-          ))}
-        </div>
-      </FoundationBlock>
-
-      {/* Radius */}
-      <FoundationBlock
-        icon={Palette}
-        title="Radius"
-        description="Tailwind v4 static radius scale. --radius (default) = rounded-lg = 8px."
-      >
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {RADII.map((r) => (
-            <div key={r.name} className="flex flex-col items-center gap-2">
-              <div
-                className={`bg-muted size-16 border ${r.cls} border-primary/40`}
-              />
-              <code className="text-xs">rounded-{r.name}</code>
-              <span className="text-muted-foreground text-xs">{r.px}px</span>
-            </div>
-          ))}
-        </div>
-      </FoundationBlock>
-
-      {/* Shadow */}
-      <FoundationBlock
-        icon={Palette}
-        title="Elevation"
-        description="shadow-xs is the kit override (10% alpha); the rest are Tailwind v4 defaults."
-      >
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-5">
-          {SHADOWS.map((s) => (
-            <div key={s} className="flex flex-col items-center gap-2">
-              <div className={`bg-card size-16 rounded-lg ${s}`} />
-              <code className="text-xs">{s}</code>
-            </div>
-          ))}
-        </div>
-      </FoundationBlock>
-
-      {/* Border */}
-      <FoundationBlock
-        icon={Palette}
-        title="Border width"
-        description="Border widths from the --border token color."
-      >
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {BORDERS.map((b) => (
-            <div key={b.name} className="flex flex-col items-center gap-2">
-              <div className={`bg-card size-16 rounded-lg ${b.cls}`} />
-              <code className="text-xs">{b.name}</code>
-            </div>
-          ))}
-        </div>
-      </FoundationBlock>
+        <p className="text-muted-foreground max-w-2xl text-sm">
+          {foundation.description}
+        </p>
+      </div>
+      {foundation.render()}
     </div>
   )
 }
