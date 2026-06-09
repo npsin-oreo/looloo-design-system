@@ -221,7 +221,7 @@ Before handing a brand to engineering:
 Yes — so a fresh clone builds without running the generator first. It's regenerated automatically before `dev`/`build`, so it always matches the config.
 
 **Can one branch hold multiple brands?**
-This base is one-brand-per-branch (simplest, zero-config). Multi-brand-at-once (a brand switcher via `[data-brand]`) is a planned base feature — not yet in.
+Production theming is one-brand-per-branch (the committed `brand.config.json`). For **previewing**, the showcase header has a **brand switcher** that tints the brand tokens at runtime (`components/showcase/brands.ts`) — handy to see the system under different brand colors without changing the branch's real theme. It doesn't write to `brand.config.json`.
 
 **How does an AI agent theme a brand?**
 Point it at `brand.config.json` (validated by `brand.schema.json`) and ask for a primary (and optionally accent/radius). The agent edits the config only — see [`CLAUDE.md`](./CLAUDE.md) and the bundled skill.
