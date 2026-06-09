@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "npm run brand:build",
-    "predev": "npm run brand:build",
+    "prebuild": "npm run brand:build && npm run tokens:data",
+    "predev": "npm run brand:build && npm run tokens:data",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "brand:build": "node scripts/build-brand.mjs",
+    "tokens:data": "node scripts/build-token-data.mjs",
     "tokens:import": "node scripts/import-figma-tokens.mjs"
   },
   "dependencies": {

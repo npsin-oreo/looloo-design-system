@@ -1,4 +1,4 @@
-// AUTO-GENERATED from tokens.json (tw-colors + rdx-colors). Do not edit by hand.
+// AUTO-GENERATED from tokens.json by scripts/build-token-data.mjs. Do not edit.
 export const twColors: Record<string, Record<string, string>> = {
   "slate": {
     "50": "#f8fafc",
@@ -756,5 +756,34 @@ export const rdxColors: Record<string, Record<string, string>> = {
     "10": "#ffffffcc",
     "11": "#ffffffe6",
     "12": "#fffffff2"
+  }
+}
+
+export const brandColors: Record<string, Record<string, string>> = {
+  "primary": {
+    "50": "#faf9fb",
+    "100": "#f2eff3",
+    "200": "#eae7ec",
+    "300": "#e3dfe6",
+    "400": "#dbd8e0",
+    "500": "#d0cdd7",
+    "600": "#bcbac7",
+    "700": "#8e8c99",
+    "800": "#84828e",
+    "900": "#65636d",
+    "950": "#211f26"
+  },
+  "secondary": {
+    "50": "#f2fbfa",
+    "100": "#d3f4f1",
+    "200": "#a7e8e3",
+    "300": "#60cfcb",
+    "400": "#46bbba",
+    "500": "#2d9e9f",
+    "600": "#217d80",
+    "700": "#1f6366",
+    "800": "#1d4f52",
+    "900": "#1c4345",
+    "950": "#0b2528"
   }
 }

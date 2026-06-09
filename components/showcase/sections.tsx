@@ -11,7 +11,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { atoms } from "./atoms"
 import { molecules } from "./molecules"
 import { organisms } from "./organisms"
-import { rdxColors, twColors } from "./palettes"
+import { brandColors, rdxColors, twColors } from "./palettes"
+import { TOKEN_COVERAGE } from "./token-coverage"
 import type { Demo, Tier } from "./types"
 
 export const TIERS: Tier[] = [atoms, molecules, organisms]
@@ -283,6 +284,48 @@ function BorderContent() {
   )
 }
 
+function CoverageContent() {
+  const total = TOKEN_COVERAGE.reduce((n, c) => n + c.count, 0)
+  return (
+    <div className="flex flex-col gap-4">
+      <p className="text-muted-foreground max-w-2xl text-sm">
+        Every collection in{" "}
+        <code className="bg-muted rounded px-1 py-0.5 text-xs">tokens.json</code>{" "}
+        (Figma export): {TOKEN_COVERAGE.length} collections,{" "}
+        <strong className="text-foreground">{total}</strong> variables. Scale
+        collections (margin, padding, gap, sizing…) are Tailwind utilities that
+        alias into the <code>tokens</code> primitive scale — shown here resolved.
+        Color collections live on the palette pages.
+      </p>
+      {TOKEN_COVERAGE.map((c) => (
+        <div key={c.name} className="flex flex-col gap-2 rounded-lg border p-4">
+          <div className="flex items-center gap-2">
+            <code className="text-sm font-medium">{c.name}</code>
+            <Badge variant="secondary">{c.count}</Badge>
+            <span className="text-muted-foreground text-xs">{c.kind}</span>
+          </div>
+          {c.kind === "scale" ? (
+            <div className="flex flex-wrap gap-1">
+              {c.values.map((v) => (
+                <code
+                  key={v}
+                  className="bg-muted rounded px-1.5 py-0.5 text-xs"
+                >
+                  {v}
+                </code>
+              ))}
+            </div>
+          ) : (
+            <span className="text-muted-foreground text-xs">
+              {c.count} colors — see the Tailwind / Radix / Brand palette pages
+            </span>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export type Foundation = {
   id: string
   label: string
@@ -311,6 +354,13 @@ export const FOUNDATIONS: Foundation[] = [
     description:
       "Tier-1 primitives (rdx-colors), steps 1–12. Hover a swatch for its hex.",
     render: () => <PaletteGrid palette={rdxColors} />,
+  },
+  {
+    id: "brand",
+    label: "Brand palette",
+    description:
+      "Brand-color primitives (primary + secondary ramps) from the Figma kit. Hover a swatch for its hex.",
+    render: () => <PaletteGrid palette={brandColors} />,
   },
   {
     id: "typography",
@@ -345,6 +395,13 @@ export const FOUNDATIONS: Foundation[] = [
     label: "Border width",
     description: "Border widths from the --border token color.",
     render: () => <BorderContent />,
+  },
+  {
+    id: "coverage",
+    label: "All tokens",
+    description:
+      "Full coverage of every tokens.json collection — counts + resolved values. Nothing hidden.",
+    render: () => <CoverageContent />,
   },
 ]
 
