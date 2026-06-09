@@ -6,7 +6,7 @@
  * everything else (component structure, spacing/radius/type scales, shadows,
  * docs) stays inherited from the white-label base.
  *
- * Brand: White Label
+ * Brand: Kindmore Clinic
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -17,31 +17,31 @@
   --card-foreground: #0a0a0a;
   --popover: #ffffff;
   --popover-foreground: #0a0a0a;
-  --primary: #171717;
-  --primary-foreground: #fafafa;
+  --primary: #1051e3;
+  --primary-foreground: #ffffff;
   --secondary: #f5f5f5;
   --secondary-foreground: #0a0a0a;
   --muted: #f5f5f5;
   --muted-foreground: #737373;
-  --accent: #f5f5f5;
-  --accent-foreground: #171717;
+  --accent: #e8edfd;
+  --accent-foreground: #1051e3;
   --destructive: #dc2626;
   --border: #e5e5e5;
   --input: #e5e5e5;
-  --ring: #737373;
-  --chart-1: #5eb1ef;
-  --chart-2: #0090ff;
-  --chart-3: #0588f0;
-  --chart-4: #0d74ce;
-  --chart-5: #113264;
+  --ring: #1051e3;
+  --chart-1: #1051e3;
+  --chart-2: #4f7cf0;
+  --chart-3: #84a6f6;
+  --chart-4: #b3c8fb;
+  --chart-5: #0a3aa3;
   --sidebar: #fafafa;
   --sidebar-foreground: #0a0a0a;
-  --sidebar-primary: #171717;
-  --sidebar-primary-foreground: #fafafa;
-  --sidebar-accent: #f5f5f5;
-  --sidebar-accent-foreground: #171717;
+  --sidebar-primary: #1051e3;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8edfd;
+  --sidebar-accent-foreground: #1051e3;
   --sidebar-border: #d4d4d4;
-  --sidebar-ring: #737373;
+  --sidebar-ring: #1051e3;
   --background-color: #0000004d;
   --semantic-background: #6b7280;
   --semantic-foreground: #ffffff;
@@ -55,31 +55,31 @@
   --card-foreground: #fafafa;
   --popover: #262626;
   --popover-foreground: #fafafa;
-  --primary: #e5e5e5;
-  --primary-foreground: #171717;
+  --primary: #4f8bff;
+  --primary-foreground: #08183b;
   --secondary: #262626;
   --secondary-foreground: #fafafa;
   --muted: #262626;
   --muted-foreground: #a3a3a3;
-  --accent: #404040;
-  --accent-foreground: #fafafa;
+  --accent: #16233f;
+  --accent-foreground: #cdddff;
   --destructive: #f87171;
   --border: #404040;
   --input: #171717;
-  --ring: #737373;
-  --chart-1: #5eb1ef;
-  --chart-2: #0090ff;
-  --chart-3: #0588f0;
-  --chart-4: #0d74ce;
-  --chart-5: #113264;
+  --ring: #4f8bff;
+  --chart-1: #4f8bff;
+  --chart-2: #84a6f6;
+  --chart-3: #3b6fe0;
+  --chart-4: #2453c0;
+  --chart-5: #9bb8fb;
   --sidebar: #0a0a0a;
   --sidebar-foreground: #fafafa;
-  --sidebar-primary: #e5e5e5;
-  --sidebar-primary-foreground: #171717;
-  --sidebar-accent: #262626;
-  --sidebar-accent-foreground: #fafafa;
+  --sidebar-primary: #4f8bff;
+  --sidebar-primary-foreground: #08183b;
+  --sidebar-accent: #16233f;
+  --sidebar-accent-foreground: #cdddff;
   --sidebar-border: rgb(255 255 255 / 0.8);
-  --sidebar-ring: #737373;
+  --sidebar-ring: #4f8bff;
   --background-color: rgb(0 0 0 / 0.3);
   --semantic-background: #374151;
   --semantic-foreground: #ffffff;
