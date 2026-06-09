@@ -50,6 +50,33 @@ const palettesTs =
   "\n"
 writeFileSync(join(root, "components/showcase/palettes.ts"), palettesTs)
 
+/* ---------- primitive CSS layer (app/primitives.css) ---------- */
+function paletteVars(prefix, palette) {
+  const lines = []
+  for (const [fam, steps] of Object.entries(palette)) {
+    const f = fam.toLowerCase().replace(/\s+/g, "-")
+    for (const [step, hex] of Object.entries(steps)) {
+      lines.push(`  --${prefix}-${f}${step ? `-${step}` : ""}: ${hex};`)
+    }
+  }
+  return lines
+}
+const primitivesCss =
+  "/* AUTO-GENERATED primitive color layer from tokens.json by\n" +
+  " * scripts/build-token-data.mjs. Do NOT edit. Semantic tokens in\n" +
+  " * app/brand.css alias into these (var(--tw-*), var(--brand-*), …). */\n" +
+  ":root {\n" +
+  [
+    "  /* Tailwind palette */",
+    ...paletteVars("tw", twColors),
+    "\n  /* Radix palette */",
+    ...paletteVars("rdx", rdxColors),
+    "\n  /* Brand palette */",
+    ...paletteVars("brand", brandColors),
+  ].join("\n") +
+  "\n}\n"
+writeFileSync(join(root, "app/primitives.css"), primitivesCss)
+
 /* ---------- coverage (every collection: count + distinct RESOLVED values) ---------- */
 // Global name→value map so DTCG aliases ({4}, {neutral.900}) can be resolved.
 const GLOBAL = {}
@@ -122,3 +149,8 @@ console.log(
 console.log(
   `✓ token-coverage.ts (${coverage.length} collections, ${totalVars} variables)`
 )
+const primCount =
+  paletteVars("tw", twColors).length +
+  paletteVars("rdx", rdxColors).length +
+  paletteVars("brand", brandColors).length
+console.log(`✓ app/primitives.css (${primCount} primitive vars)`)

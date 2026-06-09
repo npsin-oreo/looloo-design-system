@@ -16,6 +16,43 @@ import { dirname, join } from "node:path"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const config = JSON.parse(readFileSync(join(root, "brand.config.json"), "utf8"))
+const tokens = JSON.parse(readFileSync(join(root, "tokens.json"), "utf8"))
+
+// hex → primitive CSS-var name, so semantics can alias to the primitive layer
+// (app/primitives.css). First palette wins for shared hexes (tw > rdx > brand).
+function buildPrimMap() {
+  const map = {}
+  const add = (prefix, collKey) => {
+    const coll = tokens[collKey]
+    if (!coll) return
+    for (const [fam, steps] of Object.entries(coll)) {
+      if (!steps || typeof steps !== "object") continue
+      const f = fam.toLowerCase().replace(/\s+/g, "-")
+      if ("$value" in steps && steps.$type === "color") {
+        const hex = String(steps.$value).toLowerCase()
+        if (!(hex in map)) map[hex] = `${prefix}-${f}`
+        continue
+      }
+      for (const [step, v] of Object.entries(steps)) {
+        if (v && v.$value && v.$type === "color") {
+          const hex = String(v.$value).toLowerCase()
+          if (!(hex in map)) map[hex] = `${prefix}-${f}-${step}`
+        }
+      }
+    }
+  }
+  add("tw", "tw-colors/Mode 1")
+  add("rdx", "rdx-colors/light mode")
+  add("brand", "brand-color/Mode 1")
+  return map
+}
+const PRIM = buildPrimMap()
+
+/** Alias a color to its primitive var if it matches one, else keep the value. */
+function aliased(value) {
+  const prim = PRIM[String(value).toLowerCase()]
+  return prim ? `var(--${prim})` : value
+}
 
 // Pairs where a missing `-foreground` is auto-derived from the base color.
 const PAIRS = [
@@ -60,7 +97,11 @@ function emit(mode) {
     const fg = `${base}-foreground`
     if (tokens[base] && !tokens[fg]) tokens[fg] = contrast(tokens[base])
   }
-  const lines = Object.entries(tokens).map(([k, v]) => `  --${k}: ${v};`)
+  const lines = Object.entries(tokens).map(([k, v]) => {
+    const alias = aliased(v)
+    const note = alias !== v ? ` /* ${v} */` : ""
+    return `  --${k}: ${alias};${note}`
+  })
   return lines.join("\n")
 }
 
