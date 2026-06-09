@@ -84,21 +84,7 @@ const COLOR_GROUPS: { label: string; tokens: string[] }[] = [
   },
 ]
 
-// Kindmore spacing tokens (Scale and Dimensions/Spacing) — the brand's
-// design scale (non-linear). Component utilities still use Tailwind's scale.
-const SPACING: { step: number; px: number }[] = [
-  { step: 0, px: 0 },
-  { step: 1, px: 2 },
-  { step: 2, px: 4 },
-  { step: 3, px: 8 },
-  { step: 4, px: 12 },
-  { step: 5, px: 16 },
-  { step: 6, px: 24 },
-  { step: 7, px: 32 },
-  { step: 8, px: 40 },
-  { step: 9, px: 48 },
-  { step: 10, px: 80 },
-]
+const SPACING = [0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24]
 
 // Figma text styles (Text-{size}/{weight}), synced 1:1 from the kit.
 const WEIGHT_LABEL: Record<number, string> = {
@@ -108,30 +94,33 @@ const WEIGHT_LABEL: Record<number, string> = {
   700: "Bold",
 }
 
-// Kindmore type styles (Typography/Mode 1) — family Anuphan; headers SemiBold,
-// body Regular.
 const TEXT_STYLES: { name: string; size: number; lh: number; weight: number }[] =
   [
-    { name: "Display", size: 48, lh: 64, weight: 600 },
-    { name: "Headline", size: 32, lh: 40, weight: 600 },
-    { name: "Title", size: 24, lh: 32, weight: 600 },
-    { name: "Subtitle", size: 20, lh: 28, weight: 600 },
-    { name: "Body Base", size: 16, lh: 24, weight: 400 },
-    { name: "Body Small", size: 14, lh: 20, weight: 400 },
-    { name: "Caption", size: 12, lh: 16, weight: 400 },
-    { name: "Button Base", size: 16, lh: 24, weight: 600 },
-    { name: "Button Small", size: 16, lh: 20, weight: 600 },
+    { name: "Text-4xl/Semi Bold", size: 36, lh: 40, weight: 600 },
+    { name: "Text-3xl/Bold", size: 30, lh: 36, weight: 700 },
+    { name: "Text-2xl/Semi Bold", size: 24, lh: 32, weight: 600 },
+    { name: "Text-lg/Semi Bold", size: 18, lh: 28, weight: 600 },
+    { name: "Text-base/Semi Bold", size: 16, lh: 24, weight: 600 },
+    { name: "Text-base/Medium", size: 16, lh: 24, weight: 500 },
+    { name: "Text-base/Regular", size: 16, lh: 24, weight: 400 },
+    { name: "Text-sm/Bold", size: 14, lh: 20, weight: 700 },
+    { name: "Text-sm/Semi Bold", size: 14, lh: 20, weight: 600 },
+    { name: "Text-sm/Medium", size: 14, lh: 20, weight: 500 },
+    { name: "Text-sm/Regular", size: 14, lh: 20, weight: 400 },
+    { name: "Text-xs/Semi Bold", size: 12, lh: 16, weight: 600 },
+    { name: "Text-xs/Medium", size: 12, lh: 16, weight: 500 },
+    { name: "Text-xs/Regular", size: 12, lh: 16, weight: 400 },
   ]
 
 const RADII: { name: string; cls: string; px: string }[] = [
-  { name: "xs", cls: "rounded-xs", px: "4" },
-  { name: "sm", cls: "rounded-sm", px: "8" },
-  { name: "md", cls: "rounded-md", px: "12" },
-  { name: "lg", cls: "rounded-lg", px: "16" },
-  { name: "xl", cls: "rounded-xl", px: "24" },
-  { name: "2xl", cls: "rounded-2xl", px: "32" },
-  { name: "3xl", cls: "rounded-3xl", px: "40" },
-  { name: "4xl", cls: "rounded-4xl", px: "48" },
+  { name: "xs", cls: "rounded-xs", px: "2" },
+  { name: "sm", cls: "rounded-sm", px: "4" },
+  { name: "md", cls: "rounded-md", px: "6" },
+  { name: "lg", cls: "rounded-lg", px: "8" },
+  { name: "xl", cls: "rounded-xl", px: "12" },
+  { name: "2xl", cls: "rounded-2xl", px: "16" },
+  { name: "3xl", cls: "rounded-3xl", px: "24" },
+  { name: "4xl", cls: "rounded-4xl", px: "32" },
 ]
 
 // Figma effect styles (Box Shadow/*), synced 1:1 from the kit.
@@ -239,13 +228,14 @@ function TypographyContent() {
 function SpacingContent() {
   return (
     <div className="flex flex-col gap-2">
-      {SPACING.map(({ step, px }) => (
-        <div key={step} className="flex items-center gap-4">
-          <code className="text-muted-foreground w-12 shrink-0 text-xs">
-            {step}
-          </code>
-          <div className="bg-primary h-3 rounded-sm" style={{ width: `${px}px` }} />
-          <span className="text-muted-foreground text-xs">{px}px</span>
+      {SPACING.map((n) => (
+        <div key={n} className="flex items-center gap-4">
+          <code className="text-muted-foreground w-12 shrink-0 text-xs">{n}</code>
+          <div
+            className="bg-primary h-3 rounded-sm"
+            style={{ width: `${n * 4}px` }}
+          />
+          <span className="text-muted-foreground text-xs">{n * 4}px</span>
         </div>
       ))}
     </div>
@@ -326,21 +316,21 @@ export const FOUNDATIONS: Foundation[] = [
     id: "typography",
     label: "Typography",
     description:
-      "Kindmore type styles (Anuphan) — size / line-height / weight. Headers SemiBold, body Regular.",
+      "Figma text styles (Text-{size}/{weight}) — exact size / line-height / weight, in Google Sans.",
     render: () => <TypographyContent />,
   },
   {
     id: "spacing",
     label: "Spacing",
     description:
-      "Kindmore spacing tokens (1–10). Note: component utilities (p-/gap-/size-*) still use Tailwind's 4px scale.",
+      "Tailwind v4 base unit = 4px. Every p / m / gap / size step is n × 4px.",
     render: () => <SpacingContent />,
   },
   {
     id: "radius",
     label: "Radius",
     description:
-      "Kindmore radius scale (XS 4 → 2XL 32px), applied to the rounded-* utilities.",
+      "Tailwind v4 static radius scale. --radius (default) = rounded-lg = 8px.",
     render: () => <RadiusContent />,
   },
   {

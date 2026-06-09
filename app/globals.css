@@ -13,20 +13,19 @@
 */
 
 @theme inline {
-  /* Radius — Kindmore scale (Scale and Dimensions/Radius): XS 4 · SM 8 ·
-     MD 12 · LG 16 · XL 24 · 2XL 32; 3xl/4xl extrapolated. */
-  --radius-xs: 0.25rem;  /* 4px  */
-  --radius-sm: 0.5rem;   /* 8px  */
-  --radius-md: 0.75rem;  /* 12px */
-  --radius-lg: 1rem;     /* 16px */
-  --radius-xl: 1.5rem;   /* 24px */
-  --radius-2xl: 2rem;    /* 32px */
-  --radius-3xl: 2.5rem;  /* 40px */
-  --radius-4xl: 3rem;    /* 48px */
+  /* Radius — kit/Tailwind v4 static scale (px → rem @16) */
+  --radius-xs: 0.125rem; /* 2px  */
+  --radius-sm: 0.25rem;  /* 4px  */
+  --radius-md: 0.375rem; /* 6px  */
+  --radius-lg: 0.5rem;   /* 8px  — kit default (var(--radius)) */
+  --radius-xl: 0.75rem;  /* 12px */
+  --radius-2xl: 1rem;    /* 16px */
+  --radius-3xl: 1.5rem;  /* 24px */
+  --radius-4xl: 2rem;    /* 32px */
 
   /* Fonts — kit: sans = Google Sans (bundled via next/font in app/layout.tsx),
      mono = Geist Mono (install to apply). */
-  --font-sans: var(--font-anuphan), var(--font-google-sans), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-google-sans), "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), "Geist Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* Effect styles — synced 1:1 from the Figma kit (Box Shadow/*).
