@@ -151,6 +151,24 @@ The base ships **Google Sans** (sans) + **Geist Mono** (mono). For Thai, append 
 
 ---
 
+## Sync tokens from Figma
+
+If a brand's tokens come from a Figma DTCG export, you don't hand-copy values — import them:
+
+```bash
+# Replace tokens.json with the brand's Figma export, then:
+npm run tokens:import            # tokens.json → brand.config.json (light)
+# or point at any export:
+npm run tokens:import path/to/acme-tokens.json
+npm run brand:build              # regenerate app/brand.css
+```
+
+[`scripts/import-figma-tokens.mjs`](./scripts/import-figma-tokens.mjs) resolves the export's `shadcn-ui/Mode 1` semantic tokens (aliases → hex via `tw-colors` / `rdx-colors`), normalizes the kit's Figma typos (`backgrund` → `background`, `*-foregrund` → `*-foreground`, `Card` → `card`), and merges the result into `brand.config.json` `light`. Your `name`, `radius`, `fonts`, `dark`, and any non-exported extras are preserved.
+
+> The export is **light-only** — `dark` is left untouched. Re-run after every Figma export to keep code and design in lockstep (no drift).
+
+---
+
 ## Staying in sync with the white-label base
 
 When the base gets new components, fixes, or docs:

@@ -327,9 +327,10 @@ For Tailwind v3, register in `tailwind.config.js` with `var(--warning)`.
 Default token values are synced **1:1 from the Figma kit** (exact sRGB). **Never run
 `npx shadcn@latest apply --preset`** — it overwrites the values and makes generated
 code drift from Figma. To re-theme a **brand**, edit `brand.config.json` and run
-`npm run brand:build` (see [`WHITELABEL.md`](../../../WHITELABEL.md)). To change the
-white-label **default**, re-export the Figma `shadcn/ui` collection and update
-`brand.config.json` on `main`. See `DESIGN.md` §2.5.
+`npm run brand:build` (see [`WHITELABEL.md`](../../../WHITELABEL.md)). From a Figma
+DTCG export, run `npm run tokens:import [path/to/tokens.json]` to sync
+`brand.config.json` automatically (resolves aliases + normalizes typos), then
+`npm run brand:build`. See `DESIGN.md` §2.5.
 
 ### Radius
 

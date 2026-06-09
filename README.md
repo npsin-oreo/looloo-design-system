@@ -193,6 +193,8 @@ Requires a **Figma Dev Mode MCP** connection and view/Dev access to the file.
 | `npm run dev` | Start the dev server → <http://localhost:3000> |
 | `npm run build` | Production build |
 | `npm run lint` | Run ESLint |
+| `npm run brand:build` | Regenerate `app/brand.css` from `brand.config.json` (auto on dev/build) |
+| `npm run tokens:import [path]` | Sync `brand.config.json` from a Figma `tokens.json` export |
 | `npx shadcn@latest add <name>` | Add / update a component (`--overwrite` to refresh) |
 | `npx shadcn@latest info --json` | Inspect project context |
 

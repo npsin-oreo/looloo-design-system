@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "brand:build": "node scripts/build-brand.mjs"
+    "brand:build": "node scripts/build-brand.mjs",
+    "tokens:import": "node scripts/import-figma-tokens.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
