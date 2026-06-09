@@ -21,6 +21,13 @@ const geistMono = localFont({
   display: "swap",
 })
 
+// Anuphan — Kindmore Clinic brand sans (Thai-capable), bundled local variable font.
+const anuphan = localFont({
+  src: [{ path: "./fonts/Anuphan.ttf", style: "normal" }],
+  variable: "--font-anuphan",
+  display: "swap",
+})
+
 export const metadata: Metadata = {
   title: "Design → Dev Handoff",
   description:
@@ -35,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${googleSans.variable} ${geistMono.variable}`}
+      className={`${anuphan.variable} ${googleSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
       <body>
