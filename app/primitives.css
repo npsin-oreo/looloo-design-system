@@ -669,4 +669,26 @@
   --brand-secondary-800: #1d4f52;
   --brand-secondary-900: #1c4345;
   --brand-secondary-950: #0b2528;
+  --brand-cerulean-blue-50: #eef7ff;
+  --brand-cerulean-blue-100: #d9ecff;
+  --brand-cerulean-blue-200: #bbdeff;
+  --brand-cerulean-blue-300: #8ccaff;
+  --brand-cerulean-blue-400: #55acff;
+  --brand-cerulean-blue-500: #2e89ff;
+  --brand-cerulean-blue-600: #1768f9;
+  --brand-cerulean-blue-700: #1051e3;
+  --brand-cerulean-blue-800: #1443b9;
+  --brand-cerulean-blue-900: #173c91;
+  --brand-cerulean-blue-950: #132658;
+  --brand-coral-50: #fff3ed;
+  --brand-coral-100: #ffe5d4;
+  --brand-coral-200: #ffc6a8;
+  --brand-coral-300: #ff7a4d;
+  --brand-coral-400: #fe4311;
+  --brand-coral-500: #ef2907;
+  --brand-coral-600: #c61908;
+  --brand-coral-700: #c61908;
+  --brand-coral-800: #9d170f;
+  --brand-coral-900: #7e1610;
+  --brand-coral-950: #440706;
 }

@@ -16,7 +16,7 @@ export const TOKEN_COVERAGE: CoverageEntry[] = [
   },
   {
     "name": "brand-color",
-    "count": 22,
+    "count": 44,
     "kind": "color",
     "values": []
   },
