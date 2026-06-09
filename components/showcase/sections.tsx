@@ -114,14 +114,13 @@ const TEXT_STYLES: { name: string; size: number; lh: number; weight: number }[] 
   ]
 
 const RADII: { name: string; cls: string; px: string }[] = [
-  { name: "xs", cls: "rounded-xs", px: "2" },
-  { name: "sm", cls: "rounded-sm", px: "4" },
-  { name: "md", cls: "rounded-md", px: "6" },
-  { name: "lg", cls: "rounded-lg", px: "8" },
-  { name: "xl", cls: "rounded-xl", px: "12" },
-  { name: "2xl", cls: "rounded-2xl", px: "16" },
-  { name: "3xl", cls: "rounded-3xl", px: "24" },
-  { name: "4xl", cls: "rounded-4xl", px: "32" },
+  { name: "sm", cls: "rounded-sm", px: "6" },
+  { name: "md", cls: "rounded-md", px: "8" },
+  { name: "lg", cls: "rounded-lg", px: "10" },
+  { name: "xl", cls: "rounded-xl", px: "14" },
+  { name: "2xl", cls: "rounded-2xl", px: "18" },
+  { name: "3xl", cls: "rounded-3xl", px: "22" },
+  { name: "4xl", cls: "rounded-4xl", px: "26" },
 ]
 
 // Figma effect styles (Box Shadow/*), synced 1:1 from the kit.
@@ -380,7 +379,7 @@ export const FOUNDATIONS: Foundation[] = [
     id: "radius",
     label: "Radius",
     description:
-      "Tailwind v4 static radius scale. --radius (default) = rounded-lg = 8px.",
+      "calc() radius scale off --radius. --radius (default) = rounded-lg = 10px.",
     render: () => <RadiusContent />,
   },
   {

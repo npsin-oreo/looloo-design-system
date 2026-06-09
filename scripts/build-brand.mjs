@@ -13,13 +13,16 @@
 import { readFileSync, writeFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join } from "node:path"
+import { toOklch } from "./lib-oklch.mjs"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const config = JSON.parse(readFileSync(join(root, "brand.config.json"), "utf8"))
 const tokens = JSON.parse(readFileSync(join(root, "tokens.json"), "utf8"))
 
-// hex → primitive CSS-var name, so semantics can alias to the primitive layer
-// (app/primitives.css). First palette wins for shared hexes (tw > rdx > brand).
+// oklch → primitive CSS-var name, so semantics can alias to the primitive layer
+// (app/primitives.css, itself emitted in oklch). First palette wins for shared
+// colors (tw > rdx > brand). Keyed by the converted oklch string so brand.config
+// values (also oklch) match the same canonical form.
 function buildPrimMap() {
   const map = {}
   const add = (prefix, collKey) => {
@@ -29,14 +32,14 @@ function buildPrimMap() {
       if (!steps || typeof steps !== "object") continue
       const f = fam.toLowerCase().replace(/\s+/g, "-")
       if ("$value" in steps && steps.$type === "color") {
-        const hex = String(steps.$value).toLowerCase()
-        if (!(hex in map)) map[hex] = `${prefix}-${f}`
+        const ok = toOklch(steps.$value)
+        if (!(ok in map)) map[ok] = `${prefix}-${f}`
         continue
       }
       for (const [step, v] of Object.entries(steps)) {
         if (v && v.$value && v.$type === "color") {
-          const hex = String(v.$value).toLowerCase()
-          if (!(hex in map)) map[hex] = `${prefix}-${f}-${step}`
+          const ok = toOklch(v.$value)
+          if (!(ok in map)) map[ok] = `${prefix}-${f}-${step}`
         }
       }
     }
@@ -48,10 +51,15 @@ function buildPrimMap() {
 }
 const PRIM = buildPrimMap()
 
-/** Alias a color to its primitive var if it matches one, else keep the value. */
+/**
+ * Normalize a color to oklch, then alias it to its primitive var if one matches.
+ * Returns { value, raw }: `value` is what to emit (a `var(--…)` alias or the
+ * literal oklch), `raw` is the resolved oklch for an explanatory comment.
+ */
 function aliased(value) {
-  const prim = PRIM[String(value).toLowerCase()]
-  return prim ? `var(--${prim})` : value
+  const ok = toOklch(value)
+  const prim = PRIM[ok]
+  return prim ? { value: `var(--${prim})`, raw: ok } : { value: ok, raw: ok }
 }
 
 // Pairs where a missing `-foreground` is auto-derived from the base color.
@@ -67,27 +75,20 @@ const PAIRS = [
   "sidebar-accent",
 ]
 
-const DARK = "#0a0a0a"
-const LIGHT = "#fafafa"
+const DARK = "oklch(0.145 0 0)"
+const LIGHT = "oklch(0.985 0 0)"
 
-/** Relative luminance (0–1) of a #rgb / #rrggbb color, else null. */
-function luminance(hex) {
-  const m = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(hex?.trim() ?? "")
-  if (!m) return null
-  let h = m[1]
-  if (h.length === 3) h = h.split("").map((c) => c + c).join("")
-  const [r, g, b] = [0, 2, 4].map((i) => {
-    const c = parseInt(h.slice(i, i + 2), 16) / 255
-    return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4
-  })
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b
+/** OKLCH lightness (0–1) of any supported color, else null. */
+function lightness(value) {
+  const m = /^oklch\(\s*([\d.]+)/.exec(toOklch(value))
+  return m ? parseFloat(m[1]) : null
 }
 
-/** Pick a readable foreground for a base color. */
-function contrast(hex) {
-  const l = luminance(hex)
+/** Pick a readable foreground for a base color, by perceptual lightness. */
+function contrast(value) {
+  const l = lightness(value)
   if (l === null) return LIGHT
-  return l > 0.45 ? DARK : LIGHT
+  return l > 0.6 ? DARK : LIGHT
 }
 
 function emit(mode) {
@@ -98,9 +99,9 @@ function emit(mode) {
     if (tokens[base] && !tokens[fg]) tokens[fg] = contrast(tokens[base])
   }
   const lines = Object.entries(tokens).map(([k, v]) => {
-    const alias = aliased(v)
-    const note = alias !== v ? ` /* ${v} */` : ""
-    return `  --${k}: ${alias};${note}`
+    const { value, raw } = aliased(v)
+    const note = value !== raw ? ` /* ${raw} */` : ""
+    return `  --${k}: ${value};${note}`
   })
   return lines.join("\n")
 }

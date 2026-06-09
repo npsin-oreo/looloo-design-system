@@ -10,6 +10,7 @@
 import { readFileSync, writeFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join } from "node:path"
+import { toOklch } from "./lib-oklch.mjs"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const tokens = JSON.parse(readFileSync(join(root, "tokens.json"), "utf8"))
@@ -50,21 +51,22 @@ const palettesTs =
   "\n"
 writeFileSync(join(root, "components/showcase/palettes.ts"), palettesTs)
 
-/* ---------- primitive CSS layer (app/primitives.css) ---------- */
+/* ---------- primitive CSS layer (app/primitives.css), emitted in oklch ---------- */
 function paletteVars(prefix, palette) {
   const lines = []
   for (const [fam, steps] of Object.entries(palette)) {
     const f = fam.toLowerCase().replace(/\s+/g, "-")
     for (const [step, hex] of Object.entries(steps)) {
-      lines.push(`  --${prefix}-${f}${step ? `-${step}` : ""}: ${hex};`)
+      lines.push(`  --${prefix}-${f}${step ? `-${step}` : ""}: ${toOklch(hex)};`)
     }
   }
   return lines
 }
 const primitivesCss =
   "/* AUTO-GENERATED primitive color layer from tokens.json by\n" +
-  " * scripts/build-token-data.mjs. Do NOT edit. Semantic tokens in\n" +
-  " * app/brand.css alias into these (var(--tw-*), var(--brand-*), …). */\n" +
+  " * scripts/build-token-data.mjs. Do NOT edit. Values are OKLCH (neutral\n" +
+  " * ramp snapped to Tailwind v4 canonical). Semantic tokens in app/brand.css\n" +
+  " * alias into these (var(--tw-*), var(--brand-*), …). */\n" +
   ":root {\n" +
   [
     "  /* Tailwind palette */",
