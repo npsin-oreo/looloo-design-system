@@ -25,7 +25,7 @@
 
   /* Fonts — kit: sans = Google Sans (bundled via next/font in app/layout.tsx),
      mono = Geist Mono (install to apply). */
-  --font-sans: var(--font-anuphan), var(--font-google-sans), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-google-sans), "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), "Geist Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* Effect styles — synced 1:1 from the Figma kit (Box Shadow/*).
