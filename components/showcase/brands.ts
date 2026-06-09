@@ -12,10 +12,7 @@ export type PreviewBrand = { id: string; name: string; seed: string | null }
 
 export const PREVIEW_BRANDS: PreviewBrand[] = [
   { id: "default", name: "White Label", seed: null },
-  { id: "duck-king", name: "Duck King", seed: "#e50679" },
-  { id: "mobile-clinic", name: "Mobile Clinic", seed: "#1051e3" },
-  { id: "presscribe", name: "PresScribe", seed: "#1455ff" },
-  { id: "emerald", name: "Emerald", seed: "#059669" },
+  { id: "kindmore-clinic", name: "Kindmore Clinic", seed: "#1051e3" },
 ]
 
 /** Relative luminance (0–1) of a #rgb / #rrggbb color, else null. */
