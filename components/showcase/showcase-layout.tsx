@@ -24,9 +24,6 @@ import {
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 
-import { BrandProvider, useBrand } from "./brand-context"
-import { BrandSwitcher } from "./brand-switcher"
-import { brandVars, PREVIEW_BRANDS } from "./brands"
 import { ModeToggle } from "./mode-toggle"
 
 import {
@@ -55,14 +52,12 @@ function headerLabel(pathname: string) {
   return "Component library"
 }
 
-function ShowcaseInner({ children }: { children: React.ReactNode }) {
+export function ShowcaseLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  const { brandId } = useBrand()
-  const seed = PREVIEW_BRANDS.find((b) => b.id === brandId)?.seed ?? null
 
   return (
     <TooltipProvider>
-      <SidebarProvider style={brandVars(seed)}>
+      <SidebarProvider>
         <Sidebar>
           <SidebarHeader>
             <div className="flex flex-col gap-0.5 px-2 py-1">
@@ -143,7 +138,6 @@ function ShowcaseInner({ children }: { children: React.ReactNode }) {
             <Badge variant="secondary" className="ml-auto">
               {TOTAL} components
             </Badge>
-            <BrandSwitcher />
             <ModeToggle />
           </header>
 
@@ -152,13 +146,5 @@ function ShowcaseInner({ children }: { children: React.ReactNode }) {
       </SidebarProvider>
       <Toaster />
     </TooltipProvider>
-  )
-}
-
-export function ShowcaseLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <BrandProvider>
-      <ShowcaseInner>{children}</ShowcaseInner>
-    </BrandProvider>
   )
 }
