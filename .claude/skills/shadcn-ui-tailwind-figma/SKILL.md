@@ -273,11 +273,34 @@ Customization priority:
 
 ## 5. Theming and tokens
 
-Tokens live in the file at `tailwindCssFile` (usually `app/globals.css`). **Never create a new CSS file.**
+> **⚠️ White-label repo — read this first.** This project is a white-label base; each brand is a branch. Brand **color + radius values** live ONLY in **`brand.config.json`** (repo root), which generates `app/brand.css` via `npm run brand:build` (auto-runs on dev/build). `app/globals.css` holds only the **structural** `@theme inline` (scales, shadows, `--color-*` → `var()` mappings), shared across brands. See [`WHITELABEL.md`](../../../WHITELABEL.md).
+>
+> - To change a brand's colors/radius → **edit `brand.config.json`**, then run `npm run brand:build`. Set at least `light.primary` (and usually `dark.primary`); omitted `*-foreground` auto-derives by luminance.
+> - **NEVER** hand-edit `app/brand.css` (generated — overwritten on build) or put color values in `globals.css` `:root` / `.dark`.
+> - `brand.config.json` is validated by `brand.schema.json` (autocomplete + typo-catching).
+> - Don't commit brand colors to `main` — that's the neutral white-label default.
+
+The structural mapping layer lives in the file at `tailwindCssFile` (`app/globals.css`). **Never create a new CSS file.**
 
 ### Add a custom token
 
-Use the kit's sRGB hex format (not OKLCH) so new tokens match the existing convention, and add the matching variable to the Figma `shadcn/ui` collection (both modes) in the same change.
+Two parts: the **value** goes in `brand.config.json` (`light` + `dark`); the **Tailwind mapping** goes in `globals.css` `@theme inline`. Use sRGB hex (not OKLCH) to match convention, and add the matching Figma variable in the same change.
+
+```jsonc
+// 1a. brand.config.json — the value (per brand)
+{ "light": { "warning": "#f59e0b", "warning-foreground": "#451a03" },
+  "dark":  { "warning": "#b45309", "warning-foreground": "#fffbeb" } }
+```
+
+```css
+/* 1b. app/globals.css — the mapping (structural, shared) */
+@theme inline {
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+}
+```
+
+Then run `npm run brand:build`. (Legacy single-theme note, for reference: in a non-white-label repo the values would live directly in `globals.css` `:root` / `.dark`.)
 
 ```css
 /* 1. Define */
@@ -301,10 +324,12 @@ For Tailwind v3, register in `tailwind.config.js` with `var(--warning)`.
 
 ### Re-theme (do NOT preset-swap)
 
-Token values are synced **1:1 from the Figma kit** (exact sRGB). **Never run
-`npx shadcn@latest apply --preset`** — it overwrites the kit-synced values and
-makes generated code drift from Figma. To re-theme: re-export the Figma
-`shadcn/ui` collection and regenerate `globals.css`. See `DESIGN.md` §2.5.
+Default token values are synced **1:1 from the Figma kit** (exact sRGB). **Never run
+`npx shadcn@latest apply --preset`** — it overwrites the values and makes generated
+code drift from Figma. To re-theme a **brand**, edit `brand.config.json` and run
+`npm run brand:build` (see [`WHITELABEL.md`](../../../WHITELABEL.md)). To change the
+white-label **default**, re-export the Figma `shadcn/ui` collection and update
+`brand.config.json` on `main`. See `DESIGN.md` §2.5.
 
 ### Radius
 

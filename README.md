@@ -127,6 +127,8 @@ Only `brand.config.json` (and `app/brand.css`) differ from the base, so pulling 
 
 > Fonts are swapped per brand in `app/layout.tsx` + `app/fonts/` (see [Fonts](#-fonts)).
 
+**📖 Full guide:** [`WHITELABEL.md`](./WHITELABEL.md) — branch workflow, token reference, minimal/seed configs, sync, and a handoff checklist.
+
 ---
 
 ## 🤖 Figma → Code workflow
@@ -216,6 +218,7 @@ Class-based: add `.dark` to `<html>` and semantic tokens auto-switch — **never
 
 | File | For | Contents |
 | --- | --- | --- |
+| [`WHITELABEL.md`](./WHITELABEL.md) | Brand teams + agents | White-label / per-brand theming guide |
 | [`DESIGN.md`](./DESIGN.md) | Humans + agents | Full token reference + composition rules |
 | [`CLAUDE.md`](./CLAUDE.md) | Claude Code | Project rules & hard constraints |
 | [`AGENTS.md`](./AGENTS.md) | Cursor / Copilot | Universal agent config |

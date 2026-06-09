@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/npsin-oreo/Hand-off-test/brand.schema.json",
+  "title": "Brand config",
+  "description": "Per-brand theme for the white-label base. Edit this file, then run `npm run brand:build` (auto-runs on dev/build). See WHITELABEL.md.",
+  "type": "object",
+  "required": ["name", "light"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "name": {
+      "type": "string",
+      "description": "Brand name — shown in the showcase header and the generated brand.css."
+    },
+    "description": { "type": "string" },
+    "radius": {
+      "type": "string",
+      "description": "Default corner radius (--radius), e.g. \"0.5rem\".",
+      "default": "0.5rem"
+    },
+    "fonts": {
+      "type": "object",
+      "description": "Font metadata (documentation only — fonts are wired in app/layout.tsx + app/fonts/).",
+      "additionalProperties": false,
+      "properties": {
+        "sans": { "type": "string" },
+        "mono": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "light": {
+      "$ref": "#/$defs/tokenSet",
+      "description": "Light-mode tokens (:root). At minimum set `primary`."
+    },
+    "dark": {
+      "$ref": "#/$defs/tokenSet",
+      "description": "Dark-mode tokens (.dark)."
+    }
+  },
+  "$defs": {
+    "color": {
+      "type": "string",
+      "description": "A CSS color — hex (#rgb/#rrggbb), a functional notation like rgb()/hsl()/oklch(), or a named color.",
+      "pattern": "^(#[0-9a-fA-F]{3,8}|[a-zA-Z-]+\\([^)]*\\)|[a-zA-Z]+)$"
+    },
+    "tokenSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Semantic color tokens. Any omitted *-foreground is auto-derived by luminance.",
+      "properties": {
+        "background": { "$ref": "#/$defs/color" },
+        "foreground": { "$ref": "#/$defs/color" },
+        "card": { "$ref": "#/$defs/color" },
+        "card-foreground": { "$ref": "#/$defs/color" },
+        "popover": { "$ref": "#/$defs/color" },
+        "popover-foreground": { "$ref": "#/$defs/color" },
+        "primary": { "$ref": "#/$defs/color" },
+        "primary-foreground": { "$ref": "#/$defs/color" },
+        "secondary": { "$ref": "#/$defs/color" },
+        "secondary-foreground": { "$ref": "#/$defs/color" },
+        "muted": { "$ref": "#/$defs/color" },
+        "muted-foreground": { "$ref": "#/$defs/color" },
+        "accent": { "$ref": "#/$defs/color" },
+        "accent-foreground": { "$ref": "#/$defs/color" },
+        "destructive": { "$ref": "#/$defs/color" },
+        "border": { "$ref": "#/$defs/color" },
+        "input": { "$ref": "#/$defs/color" },
+        "ring": { "$ref": "#/$defs/color" },
+        "chart-1": { "$ref": "#/$defs/color" },
+        "chart-2": { "$ref": "#/$defs/color" },
+        "chart-3": { "$ref": "#/$defs/color" },
+        "chart-4": { "$ref": "#/$defs/color" },
+        "chart-5": { "$ref": "#/$defs/color" },
+        "sidebar": { "$ref": "#/$defs/color" },
+        "sidebar-foreground": { "$ref": "#/$defs/color" },
+        "sidebar-primary": { "$ref": "#/$defs/color" },
+        "sidebar-primary-foreground": { "$ref": "#/$defs/color" },
+        "sidebar-accent": { "$ref": "#/$defs/color" },
+        "sidebar-accent-foreground": { "$ref": "#/$defs/color" },
+        "sidebar-border": { "$ref": "#/$defs/color" },
+        "sidebar-ring": { "$ref": "#/$defs/color" },
+        "background-color": { "$ref": "#/$defs/color" },
+        "semantic-background": { "$ref": "#/$defs/color" },
+        "semantic-foreground": { "$ref": "#/$defs/color" },
+        "semantic-border": { "$ref": "#/$defs/color" }
+      }
+    }
+  }
+}
