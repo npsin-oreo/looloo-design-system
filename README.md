@@ -46,6 +46,27 @@ Open **<http://localhost:3000>** to explore the component showcase.
 
 > 💡 To render *exactly* like Figma, also install the kit fonts (Inter · Geist Mono) — see [Fonts](#-fonts).
 
+### Install as a component package
+
+For local handoff testing, install this repository from the consuming app:
+
+```bash
+npm install ../Hand-off-test
+```
+
+Import the shared stylesheet once in the consumer's root layout, then import
+components directly from the package:
+
+```tsx
+import "@looloo/design-system/styles.css"
+import { Button } from "@looloo/design-system/button"
+import { Card, CardContent } from "@looloo/design-system/card"
+```
+
+Next.js consumers must add `@looloo/design-system` to `transpilePackages` because
+the handoff package publishes typed component source rather than generated
+bundles.
+
 ---
 
 ## 🔭 Component showcase
