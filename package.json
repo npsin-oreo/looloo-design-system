@@ -21,8 +21,6 @@
     "**/*.css"
   ],
   "scripts": {
-    "prebuild": "npm run brand:build && npm run tokens:data",
-    "predev": "npm run brand:build && npm run tokens:data",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
