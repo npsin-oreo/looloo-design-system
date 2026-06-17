@@ -14,7 +14,7 @@ Design system สำหรับ React 19, Next.js 15 และ Tailwind CSS v4 
 ติดตั้งจาก GitHub repository ผ่าน SSH:
 
 ```bash
-npm install git+ssh://git@github.com/npsin-oreo/Hand-off-test.git
+npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git
 ```
 
 Dependency ที่ component และ stylesheet ต้องใช้ เช่น `tw-animate-css` จะถูกติดตั้งมากับ `@looloo/design-system` อัตโนมัติ ไม่ต้องติดตั้งแยก
@@ -29,13 +29,13 @@ ssh -T git@github.com
 
 ```bash
 # ติดตั้งจาก tag
-npm install git+ssh://git@github.com/npsin-oreo/Hand-off-test.git#v0.1.2
+npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.1.2
 
 # หรือติดตั้งจาก commit
-npm install git+ssh://git@github.com/npsin-oreo/Hand-off-test.git#<commit-sha>
+npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#<commit-sha>
 
 # ระหว่างพัฒนาสามารถติดตั้งจาก branch ได้
-npm install git+ssh://git@github.com/npsin-oreo/Hand-off-test.git#feat/convert-installable-package
+npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#feat/convert-installable-package
 ```
 
 เมื่อติดตั้งแล้ว dependency ใน `package.json` ของ consumer จะมีลักษณะดังนี้:
@@ -43,7 +43,7 @@ npm install git+ssh://git@github.com/npsin-oreo/Hand-off-test.git#feat/convert-i
 ```json
 {
   "dependencies": {
-    "@looloo/design-system": "git+ssh://git@github.com/npsin-oreo/Hand-off-test.git#v0.1.2"
+    "@looloo/design-system": "git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.1.2"
   }
 }
 ```
@@ -51,7 +51,7 @@ npm install git+ssh://git@github.com/npsin-oreo/Hand-off-test.git#feat/convert-i
 หาก repository เปิดเป็น public สามารถใช้ HTTPS ได้:
 
 ```bash
-npm install git+https://github.com/npsin-oreo/Hand-off-test.git#v0.1.2
+npm install git+https://github.com/npsin-oreo/looloo-design-system.git#v0.1.2
 ```
 
 ### 2. ตั้งค่า Next.js

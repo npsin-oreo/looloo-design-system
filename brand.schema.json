@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/npsin-oreo/Hand-off-test/brand.schema.json",
+  "$id": "https://github.com/npsin-oreo/looloo-design-system/brand.schema.json",
   "title": "Brand config",
   "description": "Per-brand theme for the white-label base. Edit this file, then run `npm run brand:build` (auto-runs on dev/build). See WHITELABEL.md.",
   "type": "object",

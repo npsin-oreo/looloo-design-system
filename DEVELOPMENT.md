@@ -7,7 +7,7 @@
 ## 1. เริ่มโปรเจกต์
 
 ```bash
-cd Hand-off-test
+cd looloo-design-system
 npm install
 npm run dev
 ```
@@ -124,7 +124,7 @@ npm pack --dry-run
 ตัวอย่าง:
 
 ```bash
-cd Hand-off-test
+cd looloo-design-system
 git status
 git add <release-files>
 git commit -m "release: v0.1.3"
@@ -133,7 +133,7 @@ git push origin HEAD
 git push origin v0.1.3
 
 cd ../demo-use
-npm install git+ssh://git@github.com/npsin-oreo/Hand-off-test.git#v0.1.3
+npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.1.3
 npm run build
 ```
 
