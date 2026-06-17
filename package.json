@@ -10,12 +10,14 @@
     "components/theme-provider.tsx",
     "components/ui",
     "hooks",
-    "lib"
+    "lib",
+    "token-contract.json"
   ],
   "exports": {
     "./styles.css": "./app/globals.css",
     "./theme-provider": "./components/theme-provider.tsx",
-    "./*": "./components/ui/*.tsx"
+    "./*": "./components/ui/*.tsx",
+    "./token-contract.json": "./token-contract.json"
   },
   "sideEffects": [
     "**/*.css"
@@ -27,7 +29,8 @@
     "lint": "next lint",
     "brand:build": "node scripts/build-brand.mjs",
     "tokens:data": "node scripts/build-token-data.mjs",
-    "tokens:import": "node scripts/import-figma-tokens.mjs"
+    "tokens:import": "node scripts/import-figma-tokens.mjs",
+    "tokens:contract": "node scripts/build-token-contract.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
