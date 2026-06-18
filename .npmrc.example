@@ -1,4 +1,4 @@
-# Auth for publishing/installing @looloo packages from GitHub Packages.
+# Auth for publishing/installing @npsin-oreo packages from GitHub Packages.
 # Copy to .npmrc (gitignored) and provide a token, OR use ${NODE_AUTH_TOKEN} in CI.
-@looloo:registry=https://npm.pkg.github.com
+@npsin-oreo:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}

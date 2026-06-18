@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 export default function Page() {
   return (
     <main className="flex min-h-svh flex-col items-center justify-center gap-4 p-8">
-      <h1 className="text-lg font-medium">@looloo/design-system</h1>
+      <h1 className="text-lg font-medium">@npsin-oreo/design-system</h1>
       <div className="flex gap-3">
         <Button>Primary</Button>
         <Button variant="outline">Outline</Button>

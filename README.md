@@ -1,6 +1,6 @@
-# @looloo/design-system
+# @npsin-oreo/design-system
 
-Design system สำหรับ React 19, Next.js 15 และ Tailwind CSS v4 ประกอบด้วย design tokens, semantic colors และชุด component ที่เรียกใช้ผ่านแพ็กเกจ `@looloo/design-system`
+Design system สำหรับ React 19, Next.js 15 และ Tailwind CSS v4 ประกอบด้วย design tokens, semantic colors และชุด component ที่เรียกใช้ผ่านแพ็กเกจ `@npsin-oreo/design-system`
 
 เอกสารสำหรับแต่ละกลุ่ม:
 
@@ -17,7 +17,7 @@ Design system สำหรับ React 19, Next.js 15 และ Tailwind CSS v4 
 npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git
 ```
 
-Dependency ที่ component และ stylesheet ต้องใช้ เช่น `tw-animate-css` จะถูกติดตั้งมากับ `@looloo/design-system` อัตโนมัติ ไม่ต้องติดตั้งแยก
+Dependency ที่ component และ stylesheet ต้องใช้ เช่น `tw-animate-css` จะถูกติดตั้งมากับ `@npsin-oreo/design-system` อัตโนมัติ ไม่ต้องติดตั้งแยก
 
 เครื่องที่ติดตั้งต้องมีสิทธิ์เข้าถึง repository และตั้งค่า SSH key กับ GitHub เรียบร้อยแล้ว ทดสอบการเชื่อมต่อได้ด้วย:
 
@@ -43,7 +43,7 @@ npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#feat/co
 ```json
 {
   "dependencies": {
-    "@looloo/design-system": "git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.1.2"
+    "@npsin-oreo/design-system": "git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.1.2"
   }
 }
 ```
@@ -62,7 +62,7 @@ npm install git+https://github.com/npsin-oreo/looloo-design-system.git#v0.1.2
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@looloo/design-system"],
+  transpilePackages: ["@npsin-oreo/design-system"],
 }
 
 export default nextConfig
@@ -74,7 +74,7 @@ Import stylesheet เพียงครั้งเดียวที่ root la
 
 ```tsx
 // app/layout.tsx
-import "@looloo/design-system/styles.css"
+import "@npsin-oreo/design-system/styles.css"
 
 export default function RootLayout({
   children,
@@ -94,14 +94,14 @@ export default function RootLayout({
 Import component จากชื่อไฟล์โดยตรง:
 
 ```tsx
-import { Button } from "@looloo/design-system/button"
+import { Button } from "@npsin-oreo/design-system/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@looloo/design-system/card"
+} from "@npsin-oreo/design-system/card"
 
 export default function Example() {
   return (
@@ -121,9 +121,9 @@ export default function Example() {
 ตัวอย่าง component อื่น:
 
 ```tsx
-import { Badge } from "@looloo/design-system/badge"
-import { Input } from "@looloo/design-system/input"
-import { Switch } from "@looloo/design-system/switch"
+import { Badge } from "@npsin-oreo/design-system/badge"
+import { Input } from "@npsin-oreo/design-system/input"
+import { Switch } from "@npsin-oreo/design-system/switch"
 
 export function Settings() {
   return (
@@ -193,7 +193,7 @@ Semantic colors รองรับ dark mode ผ่าน class `dark` ที่
 แพ็กเกจ export provider ที่สร้างจาก `next-themes` ไว้แล้ว:
 
 ```tsx
-import { ThemeProvider } from "@looloo/design-system/theme-provider"
+import { ThemeProvider } from "@npsin-oreo/design-system/theme-provider"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
