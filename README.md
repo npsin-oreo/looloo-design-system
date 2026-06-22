@@ -2,9 +2,11 @@
 
 Design system สำหรับ React 19, Next.js 15 และ Tailwind CSS v4 ประกอบด้วย design tokens, semantic colors และชุด component ที่เรียกใช้ผ่านแพ็กเกจ `@npsin-oreo/design-system`
 
+📖 **Storybook (เอกสาร component สด, 55 หน้า):** <https://npsin-oreo.github.io/looloo-design-system/>
+
 เอกสารสำหรับแต่ละกลุ่ม:
 
-- **ผู้ใช้งาน Design System:** อ่านเอกสารนี้ต่อเพื่อดูวิธีติดตั้ง ตั้งค่า ใช้สี และเรียก component
+- **ผู้ใช้งาน Design System:** อ่านเอกสารนี้ต่อเพื่อดูวิธีติดตั้ง ตั้งค่า ใช้สี เรียก component และ [ทำ theme](./THEMING.md)
 - **ผู้พัฒนา Design System:** อ่าน [`DEVELOPMENT.md`](./DEVELOPMENT.md)
 
 ## ผู้เรียกใช้ Design System (Consumer)
@@ -29,13 +31,13 @@ ssh -T git@github.com
 
 ```bash
 # ติดตั้งจาก tag
-npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.1.2
+npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.2.0
 
 # หรือติดตั้งจาก commit
 npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#<commit-sha>
 
 # ระหว่างพัฒนาสามารถติดตั้งจาก branch ได้
-npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#feat/convert-installable-package
+npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#<branch-name>
 ```
 
 เมื่อติดตั้งแล้ว dependency ใน `package.json` ของ consumer จะมีลักษณะดังนี้:
@@ -43,7 +45,7 @@ npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#feat/co
 ```json
 {
   "dependencies": {
-    "@npsin-oreo/design-system": "git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.1.2"
+    "@npsin-oreo/design-system": "git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.2.0"
   }
 }
 ```
@@ -51,7 +53,7 @@ npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#feat/co
 หาก repository เปิดเป็น public สามารถใช้ HTTPS ได้:
 
 ```bash
-npm install git+https://github.com/npsin-oreo/looloo-design-system.git#v0.1.2
+npm install git+https://github.com/npsin-oreo/looloo-design-system.git#v0.2.0
 ```
 
 ### 2. ตั้งค่า Next.js
@@ -207,6 +209,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   )
 }
 ```
+
+### 8. ทำ Theme ต่อ brand (ไม่ต้อง fork repo)
+
+ค่าเริ่มต้นเป็น neutral white-label คุณ override semantic token ต่อ brand ได้ 2 ทาง — รายชื่อ token ที่ theme ได้อยู่ใน [`token-contract.json`](./token-contract.json):
+
+```bash
+# เขียน brand.config.json (รับทั้ง flat {project_name,primary,…} และ nested {name,light:{…}})
+npx ds-brand-build            # → ./app/brand.css  (alias เข้า primitive ให้, derive *-foreground อัตโนมัติ)
+```
+
+```ts
+import "@npsin-oreo/design-system/styles.css"
+import "./app/brand.css"      // โหลดทับเพื่อให้ :root override ชนะ
+```
+
+หรือ override CSS var ตรง ๆ (`:root { --primary: …; }`) — รายละเอียด + ตัวอย่างทั้งหมดดู [`THEMING.md`](./THEMING.md)
 
 ## ตัวอย่าง Consumer
 
