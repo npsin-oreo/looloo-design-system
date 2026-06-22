@@ -1,0 +1,58 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as PaginationStories from "../manual/pagination.stories";
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+Navigates between pages of a long list or result set. Built on
+`components/ui/pagination.tsx` — a semantic `<nav>` of links composed from the
+design-system `Button`, so it inherits the Apple-language tokens.
+
+## Anatomy
+
+```
+‹ Prev   1   [2]   3   …   Next ›
+            │              └─ PaginationNext
+            └─ active page (Button outline, aria-current="page")
+```
+
+- **Pagination** — `<nav aria-label="pagination">`.
+- **PaginationLink** — a page number; `isActive` renders the Button `outline` variant.
+- **PaginationPrevious / PaginationNext** — directional controls.
+- **PaginationEllipsis** — collapses skipped page ranges.
+
+## API
+
+<ArgTypes of={PaginationStories.Playground} />
+
+## States & compact
+
+<Canvas of={PaginationStories.States} />
+<Canvas of={PaginationStories.Compact} />
+
+`inactive (ghost) · active (outline, aria-current) · ellipsis`.
+
+## Usage
+
+- **Do** use pagination for large result sets where users need to jump to a page.
+- **Do** keep the current page clearly marked and the prev/next reachable.
+- **Do** collapse long ranges with an ellipsis around the current page.
+- **Don't** mix pagination with infinite scroll for the same list — pick one.
+- **Don't** hardcode colors — links are Buttons (`--button-*`); active uses `--pagination-active-border`.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--pagination-active-border` → `--border` | Current page (Button outline) |
+| inactive links | `--button-ghost-bg-hover` / Button tokens |
+
+Pagination adds almost no tokens of its own — it composes Button.
+
+## Accessibility (WCAG 2.2 AA)
+
+- `<nav aria-label="pagination">` names the region; the current page is `aria-current="page"`.
+- Prev/Next carry `aria-label`s ("Go to previous/next page") even when the text is hidden on mobile.
+- Every control is a real link/button with a visible focus ring.
+- The ellipsis exposes an sr-only "More pages" and is otherwise decorative.

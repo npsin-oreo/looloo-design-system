@@ -1,0 +1,81 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as SelectStories from "../manual/select.stories";
+
+<Meta of={SelectStories} />
+
+# Select
+
+Picks a single value from a list, opened from a button trigger. Built on
+`components/ui/select.tsx` (Radix `Select`), styled through the Apple-language
+design tokens. A composition: a **trigger** (looks like a field) and a portaled
+**listbox** of options.
+
+## Anatomy
+
+```
+Trigger (closed)                Content (open)
+┌───────────────────┐          ┌───────────────────┐
+│ Value / placeholder ▾│       │  Fruits      (label) │
+└───────────────────┘          │  Apple               │
+        │                       │  Banana          ✓   │ ← selected
+        └─ chevron              │  Blueberry           │ ← --select-item-focus-bg
+                                └───────────────────┘
+```
+
+- **SelectTrigger** — the field-like button; sizes `sm · md · default · xl`.
+- **SelectValue** — shows the chosen label or the placeholder.
+- **SelectContent** — portaled listbox (`--select-content-bg`).
+- **SelectGroup / SelectLabel / SelectSeparator** — group and divide options.
+- **SelectItem** — an option; the selected one shows a check indicator.
+
+## API (trigger)
+
+<ArgTypes of={SelectStories.Playground} />
+
+## Trigger states
+
+<Canvas of={SelectStories.TriggerStates} />
+
+`default · focus · disabled · error`. Focus reproduces the focus-visible ring
+statically; disabled and error (`aria-invalid`) use real attributes.
+
+## Sizes
+
+<Canvas of={SelectStories.Sizes} />
+
+## Open — content & items
+
+<Canvas of={SelectStories.Open} />
+
+Group label, options, the selected check indicator, a separator, and a disabled
+item. The highlighted (keyboard-focused) option uses `--select-item-focus-bg`.
+
+## Usage
+
+- **Do** use Select for 5–15 known options. Fewer → RadioGroup; many/searchable → Combobox.
+- **Do** give the trigger an accessible name (a `Label`, or the placeholder as a hint).
+- **Do** keep option labels short and parallel in phrasing.
+- **Don't** put actions in a Select — it's for choosing a value, not running commands (use DropdownMenu).
+- **Don't** hardcode colors — trigger/content/items map to `--select-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--select-trigger-bg` → `--background` | Trigger surface |
+| `--select-trigger-border` → `--input` | Resting border |
+| `--select-focus-ring` → `--ring` | Focus ring (Apple blue) |
+| `--select-invalid-ring` → `--destructive` | Invalid border + ring |
+| `--select-placeholder` → `--muted-foreground` | Placeholder (5.07:1 AA) |
+| `--select-content-bg` → `--popover` | Listbox surface |
+| `--select-item-focus-bg` → `--accent` | Highlighted option |
+| `--select-radius` → `--radius-lg` | Trigger + content corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix manages `role="listbox"`/`option`, `aria-expanded`, active-descendant, and
+  full keyboard navigation (arrows, type-ahead, Home/End, Esc).
+- The trigger needs an accessible name — a `Label`, `aria-label`, or visible value.
+- Visible focus ring on the trigger; selected option marked with `aria-selected`
+  **and** a check icon (not color alone).
+- Content/item text contrast verified ≥ 4.5:1 in both themes.

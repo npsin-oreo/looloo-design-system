@@ -1,0 +1,59 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as AlertStories from "../manual/alert.stories";
+
+<Meta of={AlertStories} />
+
+# Alert
+
+An inline, persistent callout in the page flow — status, warnings, or guidance the user
+should keep seeing. Built on `components/ui/alert.tsx`, styled through the Apple-language
+tokens. For transient confirmations, use **Sonner** (toasts).
+
+## Anatomy
+
+```
+┌────────────────────────────┐
+│ ✓  Heads up!        [action]│  ← AlertTitle / AlertAction
+│    Description text          │  ← AlertDescription
+└────────────────────────────┘
+```
+
+- **Alert** — `variant` `default` or `destructive`; optional leading icon.
+- **AlertTitle / AlertDescription / AlertAction** — heading, body, trailing control.
+
+## API
+
+<ArgTypes of={AlertStories.Playground} />
+
+## Variants & compositions
+
+<Canvas of={AlertStories.Variants} />
+<Canvas of={AlertStories.Compositions} />
+
+`default · destructive`; title-only, with icon, and with a trailing action.
+
+## Usage
+
+- **Do** use an Alert for persistent, in-context status the user should keep seeing.
+- **Do** pair destructive/success states with an icon and clear text — not color alone.
+- **Do** add an action (Update / Retry) when there's a next step.
+- **Don't** use an Alert for ephemeral confirmations — use a toast (`Sonner`).
+- **Don't** hardcode colors — surfaces map to `--alert-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--alert-bg` → `--card` | Alert surface |
+| `--alert-fg` → `--card-foreground` | Title text |
+| `--alert-description` → `--muted-foreground` | Body text |
+| `--alert-destructive-fg` → `--destructive` | Destructive title/icon |
+| `--alert-border` → `--border` | Edge |
+| `--alert-radius` → `--radius-lg` | Corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Uses `role="alert"`, so assistive tech announces it when it appears.
+- Don't rely on color alone — pair status with an icon and explicit text.
+- Title/description contrast verified ≥ 4.5:1 in both themes.
+- Keep persistent info here (vs. a toast) so it doesn't disappear before it's read.

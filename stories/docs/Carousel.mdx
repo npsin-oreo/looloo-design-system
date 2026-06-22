@@ -1,0 +1,57 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as CarouselStories from "../manual/carousel.stories";
+
+<Meta of={CarouselStories} />
+
+# Carousel
+
+A swipeable, keyboard-navigable slideshow built on Embla. `components/ui/carousel.tsx`
+wires Embla to design-system Prev/Next `Button`s and exposes slots, styled through the
+Apple-language tokens. Motion and dragging come from Embla; the chrome is token-driven.
+
+## Anatomy
+
+```
+[‹]  ┌──────┐ ┌──────┐ ┌──────┐  [›]
+     │  1   │ │  2   │ │  3   │
+     └──────┘ └──────┘ └──────┘
+  │   CarouselItem (basis sets per-view)
+  └─ CarouselPrevious / CarouselNext (Buttons)
+```
+
+- **Carousel** — the Embla root; `orientation` `horizontal` (default) or `vertical`.
+- **CarouselContent / CarouselItem** — the track and slides; set item `basis-*` for multi-per-view.
+- **CarouselPrevious / CarouselNext** — icon Buttons; auto-disable at the ends.
+
+## API
+
+<ArgTypes of={CarouselStories.Playground} />
+
+## Orientations & per-view
+
+<Canvas of={CarouselStories.Orientations} />
+<Canvas of={CarouselStories.PerView} />
+
+## Usage
+
+- **Do** use a Carousel for browsable, equal-weight items (gallery, cards, testimonials).
+- **Do** keep Prev/Next visible; don't rely on swipe alone (desktop has no swipe).
+- **Do** set item `basis` to control how many slides show at once.
+- **Don't** hide critical content in later slides — many users never advance.
+- **Don't** hardcode colors — the arrows are Buttons; slides are your own content/Cards.
+
+## Token mapping
+
+| Part | Tokens |
+|---|---|
+| Prev / Next | `--button-outline-*`, `--button-focus-ring` |
+| Slides | your content (often `Card` → `--card-*`) |
+
+Carousel adds no tokens of its own — it composes Button and your slide content.
+
+## Accessibility (WCAG 2.2 AA)
+
+- Prev/Next are real Buttons with `aria-label`s and visible focus rings; they disable at the bounds.
+- The region is keyboard-navigable (arrow keys move slides).
+- Embla respects pointer and keyboard; pair with pause controls if you add autoplay.
+- Don't convey meaning by slide position alone — each slide stands on its own.

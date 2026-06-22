@@ -1,0 +1,59 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as AccordionStories from "../manual/accordion.stories";
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+A set of expandable sections with chevrons and dividers — one or many open at a time.
+Built on `components/ui/accordion.tsx` (Radix), animated and styled through the
+Apple-language tokens. For a single bare toggle region, use **Collapsible**.
+
+## Anatomy
+
+```
+┌──────────────────────────┐
+│ Product Information    ⌄  │  ← AccordionTrigger
+├──────────────────────────┤
+│ Shipping Details       ⌄  │  ← AccordionItem (divider --accordion-item-border)
+└──────────────────────────┘
+```
+
+- **Accordion** — `type="single"` (one open, optionally `collapsible`) or `"multiple"`.
+- **AccordionItem / Trigger / Content** — a section, its header button, and its body.
+
+## API
+
+<ArgTypes of={AccordionStories.Playground} />
+
+## Types & disabled
+
+<Canvas of={AccordionStories.Types} />
+<Canvas of={AccordionStories.DisabledItem} />
+
+`single` keeps one open; `multiple` lets several stay open. Disabled triggers are skipped.
+
+## Usage
+
+- **Do** use an Accordion for FAQ-style lists where sections are peers.
+- **Do** keep trigger labels descriptive — they're the only cue when collapsed.
+- **Do** use `collapsible` with `single` so users can close everything.
+- **Don't** hide critical content that users must act on by default.
+- **Don't** hardcode colors — triggers/dividers map to `--accordion-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--accordion-trigger-fg` → `--foreground` | Header label |
+| `--accordion-item-border` → `--border` | Divider between items |
+| `--accordion-icon` → `--foreground` | Chevron |
+| `--accordion-focus-ring` → `--ring` | Focus ring |
+| `--accordion-transition-duration` | 200ms expand/collapse |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix wires `aria-expanded`/`aria-controls` between triggers and panels; full keyboard support.
+- Disabled triggers expose `aria-disabled` and are skipped by the keyboard.
+- State is conveyed by `aria-expanded` **and** the chevron — not rotation/color alone.
+- Respect reduced motion for the height animation at the app level.

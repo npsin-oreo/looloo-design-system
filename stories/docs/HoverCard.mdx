@@ -1,0 +1,60 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as HoverCardStories from "../manual/hover-card.stories";
+
+<Meta of={HoverCardStories} />
+
+# Hover Card
+
+A floating panel that opens on hover/focus to preview supplementary context — a user,
+a link, an entity. Built on `components/ui/hover-card.tsx` (Radix), styled through the
+Apple-language tokens. Content is preview-only and never essential or interactive; for
+that, use a **Popover**.
+
+## Anatomy
+
+```
+@nextjs            ← HoverCardTrigger
+   │ (hover/focus)
+   ▼
+┌──────────────────────────┐
+│ @nextjs                   │  ← HoverCardContent (--hover-card-bg)
+│ The React Framework …     │
+└──────────────────────────┘
+```
+
+- **HoverCard** — hover/focus-triggered; `openDelay`/`closeDelay` tune timing.
+- **HoverCardTrigger / HoverCardContent** — the anchor and the preview panel.
+
+## API
+
+<ArgTypes of={HoverCardStories.Playground} />
+
+## Preview
+
+<Canvas of={HoverCardStories.Playground} />
+
+Opens on hover **and** keyboard focus, on the popover surface.
+
+## Usage
+
+- **Do** use a Hover Card to preview a link or entity — supplementary info only.
+- **Do** keep its content non-interactive (it can't be reliably reached on touch).
+- **Do** keep previews short and scannable.
+- **Don't** put actions or must-do content in a Hover Card; use a `Popover`.
+- **Don't** hardcode colors — surface maps to `--hover-card-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--hover-card-bg` → `--popover` | Panel surface |
+| `--hover-card-fg` → `--popover-foreground` | Panel text |
+| `--hover-card-border` | Hairline ring (`foreground/10`, mode-aware) |
+| `--hover-card-radius` → `--radius-lg` | Panel corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Opens on hover **and** keyboard focus, so it isn't mouse-only.
+- It's preview-only — never trap essential or interactive content in it (invisible to touch/AT).
+- The trigger keeps its own accessible name/content independent of the card.
+- Panel text contrast verified ≥ 4.5:1 in both themes.

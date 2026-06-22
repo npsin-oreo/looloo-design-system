@@ -1,0 +1,66 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as DropdownMenuStories from "../manual/dropdown-menu.stories";
+
+<Meta of={DropdownMenuStories} />
+
+# Dropdown Menu
+
+A menu of actions opened from a button. Built on `components/ui/dropdown-menu.tsx`
+(Radix), styled through the Apple-language tokens. Same primitive as **Context Menu**,
+but triggered by a click instead of a right-click.
+
+## Anatomy
+
+```
+[ Open menu ▾ ]
+┌────────────────────┐
+│ Label               │  ← DropdownMenuLabel
+│ Item          ⇧⌘P  │  ← DropdownMenuItem + Shortcut
+│ ──────────────      │  ← DropdownMenuSeparator
+│ ☑ Checkbox item     │  ← DropdownMenuCheckboxItem
+│ ◉ Radio item        │  ← DropdownMenuRadioItem
+│ Destructive         │  ← variant="destructive"
+└────────────────────┘
+```
+
+- **Trigger** — a button that opens the menu.
+- **Content** — the floating menu on `--dropdown-menu-content-bg`.
+- **Item / CheckboxItem / RadioItem / Sub** — commands, toggles, choices, nested menus.
+
+## API
+
+<ArgTypes of={DropdownMenuStories.Playground} />
+
+## Item types
+
+<Canvas of={DropdownMenuStories.ItemTypes} />
+
+Labels, shortcuts, checkboxes, a radio group, and a destructive item. The highlighted
+item uses `--dropdown-menu-item-focus-bg`.
+
+## Usage
+
+- **Do** use a Dropdown for actions attached to a visible button ("⋯", "Actions").
+- **Do** group with labels/separators; mark destructive items with the destructive variant.
+- **Do** keep labels short and verb-first ("Duplicate", "Delete").
+- **Don't** put a long form in a dropdown — use a `Popover` or `Dialog`.
+- **Don't** hardcode colors — surfaces/items map to `--dropdown-menu-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--dropdown-menu-content-bg` → `--popover` | Menu surface |
+| `--dropdown-menu-item-focus-bg` → `--accent` | Highlighted item |
+| `--dropdown-menu-separator` → `--border` | Divider |
+| `--dropdown-menu-shortcut` → `--muted-foreground` | Shortcut hint |
+| `--dropdown-menu-destructive` → `--destructive` | Destructive item |
+| `--dropdown-menu-content-radius` → `--radius-md` | Menu corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix supplies `role="menu"/"menuitem(checkbox/radio)"`, roving focus, type-ahead, and
+  full keyboard control (arrows, Enter, Esc).
+- Checkbox/radio state is exposed via `aria-checked` plus a visible mark — not color alone.
+- The focused item is shown by background **and** focus state.
+- Focus returns to the trigger on close.

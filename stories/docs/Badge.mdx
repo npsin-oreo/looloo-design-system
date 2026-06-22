@@ -1,0 +1,79 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as BadgeStories from "../manual/badge.stories";
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+A small count or status descriptor — labels, counts, tags, and inline status.
+Built on `components/ui/badge.tsx` (class-variance-authority), styled through the
+Apple-language design tokens. Renders a `<span>` by default, or any element via
+`asChild` (e.g. an anchor for a clickable tag).
+
+## Anatomy
+
+```
+┌──────────────────────────┐
+│  [icon?]  Label           │   ← <span data-slot="badge">
+└──────────────────────────┘
+       │       └─ children (text / count)
+       └─ leading icon (optional, auto-sized to size-3)
+```
+
+- **Root** — `<span>` (or any element via `asChild` + Radix `Slot`).
+- **Label** — `children`. Icons are auto-sized (`[&>svg]:size-3`).
+- **Shape** — fully rounded pill (`--badge-radius`), `h-5`, compact `px-2`.
+
+## API
+
+<ArgTypes of={BadgeStories.Playground} />
+
+## Variants
+
+<Canvas of={BadgeStories.Variants} />
+
+| Variant | Use it for |
+|---|---|
+| `default` | Primary status / emphasis — Apple action blue. |
+| `secondary` | Neutral status on a quiet surface. |
+| `destructive` | Errors, failures, overdue — soft red treatment. |
+| `outline` | Low-emphasis tags where a fill would be too loud. |
+| `ghost` | Chromeless label that only reacts on hover. |
+| `link` | Inline navigational tag styled as a link. |
+
+<Canvas of={BadgeStories.WithIcon} />
+
+## States
+
+<Canvas of={BadgeStories.States} />
+
+`default · focus · error`. Hover only applies to interactive (anchor) badges
+rendered via `asChild`; focus reproduces the focus-visible ring statically; error
+uses a real `aria-invalid`.
+
+## Usage
+
+- **Do** keep labels to one or two words — a badge is a glance, not a sentence.
+- **Do** use `asChild` with an `<a>` when the badge is a filter/tag link.
+- **Do** include text or an `aria-label` — never ship an icon-only badge silently.
+- **Don't** use a badge as a button; reach for `Button` (`size="xs"`) instead.
+- **Don't** hardcode colors — variants map to `--badge-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--badge-default-bg` → `--primary` | Default fill (Apple blue `#0071e3`) |
+| `--badge-default-fg` → `--primary-foreground` | Label on fill (white, 4.70:1 AA) |
+| `--badge-secondary-bg` → `--secondary` | Secondary fill |
+| `--badge-destructive-fg` → `--destructive` | Soft destructive text on `destructive/10` |
+| `--badge-outline-border` → `--border` | Outline edge |
+| `--badge-focus-ring` → `--ring` | Focus-visible ring |
+| `--badge-radius` | Pill (`2rem` → rounded-4xl) |
+
+## Accessibility (WCAG 2.2 AA)
+
+- A badge is decorative status text — give it real text or an `aria-label`.
+- For status that conveys meaning, don't rely on color alone (the label carries it).
+- Interactive badges (`asChild` anchor) keep a visible focus ring (`focus-visible:ring-[3px]`).
+- Label/fill contrast verified ≥ 4.5:1 in both light and dark.

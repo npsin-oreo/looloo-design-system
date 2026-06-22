@@ -1,0 +1,62 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as TextareaStories from "../manual/textarea.stories";
+
+<Meta of={TextareaStories} />
+
+# Textarea
+
+A multi-line text input for longer free-form content (messages, descriptions, notes).
+Built on `components/ui/textarea.tsx`, styled through the Apple-language tokens. Shares
+the field treatment with `Input`, and auto-grows with content (`field-sizing-content`).
+
+## Anatomy
+
+```
+┌─────────────────────────────┐
+│ Placeholder / value          │  ← <textarea data-slot="textarea">
+│                              │
+└─────────────────────────────┘
+   border --textarea-border · focus ring --textarea-border-focus
+```
+
+- **Root** — native `<textarea>`; height grows from the size's `min-h`.
+- **Sizes** — `sm · md (default) · xl` set min-height, padding, and text size.
+
+## API
+
+<ArgTypes of={TextareaStories.Playground} />
+
+## Sizes & states
+
+<Canvas of={TextareaStories.Sizes} />
+<Canvas of={TextareaStories.States} />
+
+`default · focus · filled · disabled · error`. Focus reproduces the focus ring
+statically; disabled/error use real attributes.
+
+## Usage
+
+- **Do** pair it with a `FieldLabel` (`htmlFor` ↔ `id`) — placeholders aren't labels.
+- **Do** pick the size from expected length; it still auto-grows as the user types.
+- **Do** put validation in a `FieldError` linked via `aria-describedby`.
+- **Don't** use a Textarea for single-line values — use `Input`.
+- **Don't** hardcode colors — surface/border map to `--textarea-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--textarea-bg` → `--background` | Field surface |
+| `--textarea-text` → `--foreground` | Entered text |
+| `--textarea-placeholder` → `--muted-foreground` | Placeholder (5.07:1 AA) |
+| `--textarea-border` → `--input` | Resting border |
+| `--textarea-border-focus` → `--ring` | Focus ring (Apple blue) |
+| `--textarea-border-error` → `--destructive` | Invalid border + ring |
+| `--textarea-radius` → `--radius-lg` | Corner radius |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Programmatic label via `FieldLabel htmlFor` / `id` (or `aria-label`).
+- Error: `aria-invalid` + `aria-describedby` → the message is announced with the field.
+- Visible focus ring; placeholder/text contrast ≥ 4.5:1 in both themes.
+- Disabled uses the real attribute (removed from tab order) at reduced, legible opacity.

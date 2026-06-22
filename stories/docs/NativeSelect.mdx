@@ -1,0 +1,63 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as NativeSelectStories from "../manual/native-select.stories";
+
+<Meta of={NativeSelectStories} />
+
+# Native Select
+
+A styled wrapper around the browser's native `<select>`. Built on
+`components/ui/native-select.tsx`, styled through the Apple-language tokens. Use it
+when you want the OS-native option list (great on mobile) but the design-system field
+look. For a fully custom/searchable list, use **Select** or **Combobox** instead.
+
+## Anatomy
+
+```
+┌─────────────────────┐
+│ Selected option   ▾ │  ← <select> + chevron overlay
+└─────────────────────┘
+   border --native-select-border · chevron --native-select-icon
+```
+
+- **Wrapper** — positions the chevron and carries disabled opacity.
+- **select** — the real control; the native popup renders the options (OS-styled).
+- **Sizes** — `sm` and `default`.
+
+## API
+
+<ArgTypes of={NativeSelectStories.Playground} />
+
+## States & sizes
+
+<Canvas of={NativeSelectStories.States} />
+<Canvas of={NativeSelectStories.Sizes} />
+
+`default · focus · disabled · error`. Focus reproduces the focus-visible ring
+statically; disabled/error use real attributes.
+
+## Usage
+
+- **Do** prefer Native Select on mobile and for simple, non-searchable option lists.
+- **Do** give it an accessible name (a `Label`, or `aria-label`).
+- **Do** keep the option set short; the native popup can't be styled per-item.
+- **Don't** reach for it when you need search, multi-column items, or custom rows — use Combobox/Select.
+- **Don't** hardcode colors — surface/border/chevron map to `--native-select-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--native-select-bg` → `--background` | Control surface |
+| `--native-select-text` → `--foreground` | Selected text |
+| `--native-select-border` → `--input` | Resting border |
+| `--native-select-icon` → `--muted-foreground` | Chevron |
+| `--native-select-focus-ring` → `--ring` | Focus ring (Apple blue) |
+| `--native-select-invalid-ring` → `--destructive` | Error ring |
+| `--native-select-radius` → `--radius-lg` | Corner radius |
+
+## Accessibility (WCAG 2.2 AA)
+
+- It's a real `<select>` — full native keyboard and screen-reader support for free.
+- Provide an accessible name via `Label htmlFor` / `id` or `aria-label`.
+- Visible focus ring; the chevron is `aria-hidden` (decorative).
+- Selected text contrast verified ≥ 4.5:1 in both themes.

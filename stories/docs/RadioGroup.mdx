@@ -1,0 +1,60 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as RadioStories from "../manual/radio-group.stories";
+
+<Meta of={RadioStories} />
+
+# Radio Group
+
+A set of options where exactly one can be selected. Built on
+`components/ui/radio-group.tsx` (Radix `RadioGroup`), styled through the Apple-language
+tokens. Shares its fill/ring treatment with **Checkbox**; use a Checkbox when options
+are independent.
+
+## Anatomy
+
+```
+( ) Default
+(•) Comfortable    ← one selected, centered dot
+( ) Compact
+```
+
+- **RadioGroup** — the container; holds the single selected value.
+- **RadioGroupItem** — a `size-4` circle; selected shows a centered dot.
+- **Label** — pair each item with a `Label` (`htmlFor` ↔ `id`).
+
+## API
+
+<ArgTypes of={RadioStories.Playground} />
+
+## Item states
+
+<Canvas of={RadioStories.ItemStates} />
+
+`unselected · selected · focus · disabled · error`.
+
+## Usage
+
+- **Do** use a Radio Group when 2–6 options are mutually exclusive and all should be visible.
+- **Do** label every item; the group should have a heading/legend.
+- **Do** preselect a sensible default when one exists.
+- **Don't** use radios for many options (use Select) or for independent toggles (use Checkbox).
+- **Don't** hardcode colors — fill/ring map to `--radio-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--radio-checked-bg` → `--primary` | Selected fill |
+| `--radio-checked-border` → `--primary` | Selected border |
+| `--radio-dot` → `--primary-foreground` | Selected dot |
+| `--radio-border` → `--input` | Resting border |
+| `--radio-focus-ring` → `--ring` | Focus ring |
+| `--radio-invalid-ring` → `--destructive` | Error ring |
+| `--radio-radius` | Full circle |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix supplies `role="radiogroup"`/`radio`, `aria-checked`, and arrow-key navigation.
+- Give the group an accessible name and each item a `Label`/`aria-label`.
+- Exactly one item is selected; selection is conveyed by the dot **and** color.
+- Visible focus ring on the active item — never removed.

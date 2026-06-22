@@ -1,0 +1,54 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as KbdStories from "../manual/kbd.stories";
+
+<Meta of={KbdStories} />
+
+# Kbd
+
+Renders a keyboard key or shortcut chord inline. Built on `components/ui/kbd.tsx`,
+styled through the Apple-language tokens. Semantic `<kbd>` with a quiet key-cap look.
+
+## Anatomy
+
+```
+⌘ + K  →  [⌘][K]
+            │   └─ Kbd (one key cap)
+            └─ KbdGroup (chord layout)
+```
+
+- **Kbd** — one key on the muted surface (`--kbd-bg` / `--kbd-fg`).
+- **KbdGroup** — lays out several keys as a combo.
+
+## API
+
+<ArgTypes of={KbdStories.Playground} />
+
+## Keys, combos & context
+
+<Canvas of={KbdStories.Keys} />
+<Canvas of={KbdStories.Combos} />
+<Canvas of={KbdStories.InContext} />
+
+## Usage
+
+- **Do** use Kbd to document shortcuts in menus, tooltips, and command palettes.
+- **Do** group chord keys with `KbdGroup` (`⌘ K`, `⌘ ⇧ P`).
+- **Do** use platform-appropriate glyphs (`⌘` on macOS, `Ctrl` elsewhere) when you can detect it.
+- **Don't** make a Kbd interactive — it's a label, not a button.
+- **Don't** hardcode colors — surface/text map to `--kbd-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--kbd-bg` → `--muted` | Key-cap surface |
+| `--kbd-fg` → `--muted-foreground` | Key text |
+| `--kbd-radius` → `--radius-sm` | Cap corner |
+
+Inside a tooltip, Kbd auto-inverts (`in-data-[slot=tooltip-content]`) to read on the dark surface.
+
+## Accessibility (WCAG 2.2 AA)
+
+- `<kbd>` is the correct semantic element — screen readers can convey it as keyboard input.
+- The key text itself carries the meaning (not color), at ≥ 4.5:1 contrast.
+- Kbd is `pointer-events-none` and non-focusable — it never traps interaction.

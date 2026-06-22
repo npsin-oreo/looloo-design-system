@@ -1,0 +1,57 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as BreadcrumbStories from "../manual/breadcrumb.stories";
+
+<Meta of={BreadcrumbStories} />
+
+# Breadcrumb
+
+Shows the path to the current page and lets the user jump back up the hierarchy.
+Built on `components/ui/breadcrumb.tsx` (semantic `<nav><ol>`), styled through the
+Apple-language tokens.
+
+## Anatomy
+
+```
+Home  ›  Components  ›  Breadcrumb
+ │            │              └─ BreadcrumbPage (current, aria-current)
+ │            └─ BreadcrumbLink
+ └─ BreadcrumbSeparator (›, aria-hidden)
+```
+
+- **Breadcrumb** — `<nav aria-label="breadcrumb">` wrapping an ordered list.
+- **BreadcrumbLink** — a navigable ancestor.
+- **BreadcrumbPage** — the current page (not a link; `aria-current="page"`).
+- **BreadcrumbSeparator / BreadcrumbEllipsis** — divider; collapse for deep trails.
+
+## API
+
+<ArgTypes of={BreadcrumbStories.Playground} />
+
+## Variations
+
+<Canvas of={BreadcrumbStories.Variations} />
+
+Full trail and a collapsed trail (`BreadcrumbEllipsis`) for deep hierarchies.
+
+## Usage
+
+- **Do** use breadcrumbs for deep, hierarchical sites so users can step back up.
+- **Do** make the last item the current page (`BreadcrumbPage`), not a link.
+- **Do** collapse long trails with an ellipsis rather than wrapping awkwardly.
+- **Don't** use a breadcrumb as primary navigation — it's a secondary wayfinder.
+- **Don't** hardcode colors — trail/links map to `--breadcrumb-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--breadcrumb-fg` → `--muted-foreground` | Trail + separators |
+| `--breadcrumb-link-hover` → `--foreground` | Link hover |
+| `--breadcrumb-current` → `--foreground` | Current page |
+
+## Accessibility (WCAG 2.2 AA)
+
+- The `<nav aria-label="breadcrumb">` + ordered list conveys the structure to AT.
+- The current page is marked `aria-current="page"` and is not a link.
+- Separators are `aria-hidden` (decorative); the ellipsis exposes an sr-only "More".
+- Link/text contrast verified ≥ 4.5:1 in both themes.

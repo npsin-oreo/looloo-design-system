@@ -1,0 +1,59 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as DrawerStories from "../manual/drawer.stories";
+
+<Meta of={DrawerStories} />
+
+# Drawer
+
+A touch-friendly panel that slides from a screen edge with a drag handle and
+drag-to-dismiss. Built on `components/ui/drawer.tsx` (Vaul), styled through the
+Apple-language tokens. The desktop counterpart is **Sheet**.
+
+## Anatomy
+
+```
+       ▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ← overlay (--drawer-overlay)
+       ┌──────────────┐
+       │     ──        │  ← drag handle (--drawer-handle)
+       │ Title / Desc │
+       └──────────────┘
+   direction: top · right · bottom · left
+```
+
+- **Drawer** — the root; `direction` sets the edge; adds momentum/drag dismiss.
+- **Header / Title / Description / Footer / Close** — the panel's parts.
+
+## API
+
+<ArgTypes of={DrawerStories.Playground} />
+
+## Open
+
+<Canvas of={DrawerStories.Open} />
+
+Slides from the chosen edge with a drag handle; focus is trapped while open.
+
+## Usage
+
+- **Do** use a Drawer on mobile/touch where an edge swipe and handle feel natural.
+- **Do** keep a clear title + primary action and a real close button.
+- **Do** prefer a `Sheet`/`Dialog` on desktop where there's no swipe gesture.
+- **Don't** rely on the drag gesture alone — keep Esc and a close button.
+- **Don't** hardcode colors — surface/overlay/handle map to `--drawer-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--drawer-overlay` | Backdrop — black at 50% |
+| `--drawer-bg` → `--background` | Panel surface |
+| `--drawer-fg` → `--foreground` | Panel text |
+| `--drawer-handle` → `--muted` | Drag handle bar |
+| `--drawer-radius` → `--radius-lg` | Rounded leading edge |
+
+## Accessibility (WCAG 2.2 AA)
+
+- It's a dialog: focus is trapped, Esc closes, and focus returns to the trigger.
+- Provide a `Title` (and ideally a `Description`) so the panel is announced.
+- Drag-dismiss is augmented by a real close button and Esc — never gesture-only.
+- The backdrop is inert while the drawer is open.

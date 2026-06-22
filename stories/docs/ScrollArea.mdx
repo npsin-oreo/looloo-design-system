@@ -1,0 +1,55 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as ScrollAreaStories from "../manual/scroll-area.stories";
+
+<Meta of={ScrollAreaStories} />
+
+# Scroll Area
+
+A scrollable region with a custom, consistent scrollbar — instead of the OS default.
+Built on `components/ui/scroll-area.tsx` (Radix `ScrollArea`), styled through the
+Apple-language tokens. Use it for constrained lists, panels, and wide rows.
+
+## Anatomy
+
+```
+┌──────────────┐▐
+│ Item 1        │▐  ← scrollbar thumb (--scroll-area-thumb)
+│ Item 2        │▐
+│ Item 3        │
+└──────────────┘
+```
+
+- **ScrollArea** — the viewport with a fixed size; content scrolls inside.
+- **Scrollbar / Thumb** — appear on overflow (vertical and/or horizontal).
+
+## API
+
+<ArgTypes of={ScrollAreaStories.Playground} />
+
+## Directions
+
+<Canvas of={ScrollAreaStories.Directions} />
+
+A custom scrollbar appears on overflow — vertically for long lists, horizontally for wide rows.
+
+## Usage
+
+- **Do** use it to cap the height of a list/panel while keeping a tidy scrollbar.
+- **Do** give the region a definite size (`h-*` / `style={{ height }}`) so it can scroll.
+- **Do** keep keyboard scrolling intact — don't trap focus inside.
+- **Don't** nest scroll areas where one would do; it confuses scroll direction.
+- **Don't** hardcode colors — the thumb maps to `--scroll-area-thumb` → `--border`.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--scroll-area-thumb` → `--border` | Scrollbar thumb |
+| `--scroll-area-scrollbar-size` | 10px track width |
+
+## Accessibility (WCAG 2.2 AA)
+
+- The viewport remains keyboard-scrollable (arrows, Page Up/Down) and reachable in tab order.
+- Don't hide overflow content behind a scrollbar that only appears on hover for keyboard users.
+- Content reflows/scrolls without loss at 200% zoom and on small viewports.
+- The custom scrollbar supplements native scrolling — it never replaces keyboard access.

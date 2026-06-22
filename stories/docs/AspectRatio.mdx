@@ -1,0 +1,49 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as AspectRatioStories from "../manual/aspect-ratio.stories";
+
+<Meta of={AspectRatioStories} />
+
+# Aspect Ratio
+
+Locks content to a fixed width:height proportion regardless of container width. Built
+on `components/ui/aspect-ratio.tsx` (Radix `AspectRatio`). Layout-only — it reserves
+the right box so images and embeds never cause layout shift as they load.
+
+## Anatomy
+
+```
+┌───────────────────────┐
+│                       │   ratio = 16 / 9
+│        16 / 9          │   (height derives from width)
+│                       │
+└───────────────────────┘
+```
+
+- **AspectRatio** — set `ratio` (e.g. `16 / 9`, `1`, `4 / 3`); the child fills the box.
+
+## API
+
+<ArgTypes of={AspectRatioStories.Playground} />
+
+## Ratios
+
+<Canvas of={AspectRatioStories.Ratios} />
+
+## Usage
+
+- **Do** wrap images, video, maps, and embeds so their space is reserved before load.
+- **Do** make the child fill the box (`object-cover` for images).
+- **Do** pick the ratio that matches the source media to avoid letterboxing.
+- **Don't** use it for text content whose height should grow naturally.
+- **Don't** hardcode dimensions where a ratio would adapt responsively.
+
+## Token mapping
+
+AspectRatio is purely structural and carries **no color or radius tokens** — style the
+child (background, `rounded-*`, `object-cover`) with the usual semantic tokens.
+
+## Accessibility (WCAG 2.2 AA)
+
+- It's a layout wrapper — give the **child** its real semantics (`<img alt>`, `<iframe title>`).
+- Reserving the box prevents layout shift (CLS), which helps everyone, especially on slow networks.
+- Don't place essential text in a fixed ratio where it might clip at small sizes.

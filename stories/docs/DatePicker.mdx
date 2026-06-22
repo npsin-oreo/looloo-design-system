@@ -1,0 +1,59 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as DatePickerStories from "../manual/date-picker.stories";
+
+<Meta of={DatePickerStories} />
+
+# Date Picker
+
+A space-saving date field — a `Button` trigger that shows the chosen date and opens a
+**Calendar** in a `Popover`. Not a single component but a composition; all parts are
+token-driven, so it inherits the Apple-language styling.
+
+## Anatomy
+
+```
+[ 📅 Pick a date ▾ ]          ← Button trigger (formatted date or placeholder)
+        │
+        ▼
+┌──────────────┐
+│  Calendar     │             ← in a Popover
+└──────────────┘
+```
+
+- **Trigger** — `Button variant="outline"` showing the formatted value or a placeholder.
+- **Popover + Calendar** — the floating month grid; `onSelect` updates the value.
+
+## API (trigger)
+
+<ArgTypes of={DatePickerStories.Playground} />
+
+## Picker
+
+<Canvas of={DatePickerStories.Playground} />
+
+The trigger shows the chosen date (or placeholder) and opens the Calendar in a Popover.
+
+## Usage
+
+- **Do** use a Date Picker to save space — collapse the calendar behind a field.
+- **Do** format the trigger date clearly and keep a placeholder until one is chosen.
+- **Do** consider a typed field alongside it for fast, known dates.
+- **Don't** use it when the month should always be visible — use an inline `Calendar`.
+- **Don't** hardcode colors — it composes Button, Popover, and Calendar tokens.
+
+## Token mapping
+
+| Part | Tokens |
+|---|---|
+| Trigger | `--button-outline-*`, `--button-focus-ring` |
+| Popover | `--popover-bg` / `--popover-border` |
+| Calendar | `--calendar-*` (selected, today, range, nav) |
+
+Date Picker adds no tokens of its own — it composes existing component tiers.
+
+## Accessibility (WCAG 2.2 AA)
+
+- The trigger states the current value (or a clear placeholder) as its accessible name.
+- The Popover traps focus and restores it to the trigger on close; Esc closes.
+- The Calendar inside is fully keyboard-navigable (arrows, Page Up/Down, Home/End).
+- Selected/today are conveyed by fill **and** ARIA state, not color alone.

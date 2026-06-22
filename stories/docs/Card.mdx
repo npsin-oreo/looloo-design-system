@@ -1,0 +1,78 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as CardStories from "../manual/card.stories";
+
+<Meta of={CardStories} />
+
+# Card
+
+A container that groups related content and actions on a single surface. Built on
+`components/ui/card.tsx`, styled through the Apple-language design tokens — a
+rounded panel with a hairline ring. A composition of header, content, and footer
+slots; all are optional.
+
+## Anatomy
+
+```
+┌─────────────────────────────────────┐
+│ CardHeader                           │
+│   CardTitle           CardAction →   │  ← action self-positions top-right
+│   CardDescription                    │
+├─────────────────────────────────────┤
+│ CardContent                          │
+│   …body…                             │
+├─────────────────────────────────────┤
+│ CardFooter            (--footer-bg)  │
+└─────────────────────────────────────┘
+```
+
+- **Card** — the surface (`--card-bg`, `--card-ring`, `--card-radius`); sizes `default · sm`.
+- **CardHeader** — grid that holds title, description, and an optional action.
+- **CardTitle / CardDescription** — heading + supporting line.
+- **CardAction** — top-right slot (button, menu, badge), positioned via grid.
+- **CardContent** — the body; horizontal padding matches the header.
+- **CardFooter** — actions bar on a tinted strip with a top border.
+
+## API (Playground)
+
+<ArgTypes of={CardStories.Playground} />
+
+## Anatomy — all slots
+
+<Canvas of={CardStories.Anatomy} />
+
+## Sizes
+
+<Canvas of={CardStories.Sizes} />
+
+## Content only
+
+<Canvas of={CardStories.ContentOnly} />
+
+## Usage
+
+- **Do** use a Card to group one coherent unit — a setting, a summary, a form.
+- **Do** keep one clear primary action in the footer; step the rest down in emphasis.
+- **Do** use `CardAction` for header-level controls (overflow menu, badge, toggle).
+- **Don't** nest Cards inside Cards — flatten or use a list (`Item`) instead.
+- **Don't** hardcode colors — surfaces map to `--card-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--card-bg` → `--card` | Panel surface |
+| `--card-fg` → `--card-foreground` | Body text |
+| `--card-title` → `--card-foreground` | Title |
+| `--card-description` → `--muted-foreground` | Description (AA) |
+| `--card-footer-bg` → `--muted` | Footer strip (rendered at 50%) |
+| `--card-ring` | Hairline edge — `foreground/10` (mode-aware) |
+| `--card-radius` → `--radius-xl` | Panel corner (~17px) |
+
+## Accessibility (WCAG 2.2 AA)
+
+- A Card is a presentational container — it adds no implicit semantics, so structure
+  content with real elements (headings, lists, buttons) inside it.
+- If a whole card is clickable, make the heading the link and extend its hit area;
+  don't attach a click handler to a bare `<div>`.
+- Title/description and body text contrast verified ≥ 4.5:1 in both themes.
+- The hairline ring is decorative; never use it as the only signal of grouping.

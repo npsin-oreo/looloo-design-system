@@ -1,0 +1,71 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as SidebarStories from "../manual/sidebar.stories";
+
+<Meta of={SidebarStories} />
+
+# Sidebar
+
+A composable, collapsible app navigation rail. Built on `components/ui/sidebar.tsx`
+(a `SidebarProvider` + many parts), styled through a **dedicated `--sidebar-*` token
+set** so the rail can read distinctly from the main canvas while staying in the
+Apple-language system.
+
+## Anatomy
+
+```
+┌───────────────┬──────────────────────┐
+│ SidebarHeader │  SidebarInset         │
+│ ┌───────────┐ │  (main content)       │
+│ │ Platform  │ │  [☰] SidebarTrigger   │
+│ │ • Home    │ │                       │
+│ │ • Inbox   │ │                       │
+│ │ • Settings│ │                       │
+│ └───────────┘ │                       │
+│ SidebarFooter │                       │
+└───────────────┴──────────────────────┘
+```
+
+- **SidebarProvider** — holds open/collapsed state; wrap the whole layout.
+- **Sidebar** — the rail; `side`, `variant` (`sidebar · floating · inset`), `collapsible` (`offcanvas · icon · none`).
+- **SidebarHeader / Content / Footer** — regions; **SidebarGroup** + **SidebarMenu(Item/Button)** build the nav.
+- **SidebarInset / SidebarTrigger** — the main area and the collapse toggle.
+
+## API
+
+<ArgTypes of={SidebarStories.Playground} />
+
+## Floating variant
+
+<Canvas of={SidebarStories.Floating} />
+
+`floating` detaches the rail into a rounded, ringed panel; the active item uses the
+sidebar accent.
+
+## Usage
+
+- **Do** wrap the app shell in `SidebarProvider` and pair `Sidebar` with `SidebarInset`.
+- **Do** group destinations with `SidebarGroup` + `SidebarGroupLabel`.
+- **Do** mark the active route with `isActive` on `SidebarMenuButton`.
+- **Don't** nest a second Sidebar — there's one rail per layout.
+- **Don't** hardcode colors — every surface maps to the `--sidebar-*` token family.
+
+## Token mapping
+
+The Sidebar has its own semantic family (set in `globals.css`):
+
+| Token | Role |
+|---|---|
+| `--sidebar` / `--sidebar-foreground` | Rail surface + text |
+| `--sidebar-primary` / `--sidebar-primary-foreground` | Active/primary item |
+| `--sidebar-accent` / `--sidebar-accent-foreground` | Hover/focus item |
+| `--sidebar-border` | Rail edge + dividers |
+| `--sidebar-ring` | Focus ring |
+
+These flip with light/dark like the rest of the system.
+
+## Accessibility (WCAG 2.2 AA)
+
+- `SidebarTrigger` is a labeled button that toggles `aria-expanded`; collapse is keyboard-operable.
+- Menu items are real links/buttons with visible focus rings; the active item is marked, not color-only.
+- On mobile the sidebar becomes an off-canvas sheet with a focus trap and Esc-to-close.
+- The rail's contrast against the canvas is verified for both themes.

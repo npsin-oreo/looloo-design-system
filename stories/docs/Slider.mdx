@@ -1,0 +1,63 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as SliderStories from "../manual/slider.stories";
+
+<Meta of={SliderStories} />
+
+# Slider
+
+Selects a value (or a range) from a continuous interval by dragging a thumb. Built on
+`components/ui/slider.tsx` (Radix `Slider`), styled through the Apple-language tokens.
+
+## Anatomy
+
+```
+ ●━━━━━━━━━●────────────
+ │         │         └─ Track (--slider-track)
+ │         └─ Range fill (--slider-range)
+ └─ Thumb (--slider-thumb-bg, border --slider-thumb-border)
+```
+
+- **Track** — the full rail (`--slider-track`).
+- **Range** — the filled portion (`--slider-range`).
+- **Thumb** — one per value; pass `defaultValue={[a, b]}` for a two-thumb range.
+
+## API
+
+<ArgTypes of={SliderStories.Playground} />
+
+## States
+
+<Canvas of={SliderStories.States} />
+
+Single value, two-thumb range, focus (static ring on the thumb), and disabled.
+
+<Canvas of={SliderStories.Steps} />
+<Canvas of={SliderStories.Vertical} />
+
+## Usage
+
+- **Do** use a Slider for approximate, continuous values (volume, brightness, price range).
+- **Do** pair it with a visible value or `Input` when the exact number matters.
+- **Do** give it an `aria-label` (or `aria-labelledby`) — sliders have no built-in label.
+- **Don't** use a Slider for precise or discrete data entry — prefer a number `Input`.
+- **Don't** hardcode colors — track/range/thumb map to `--slider-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--slider-track` → `--muted` | Unfilled rail |
+| `--slider-range` → `--primary` | Filled portion (Apple blue) |
+| `--slider-thumb-bg` → white | Knob fill (constant, both modes) |
+| `--slider-thumb-border` → `--ring` | Knob edge |
+| `--slider-focus-ring` → `--ring` | Hover/focus/active ring |
+| `--slider-track-radius` | Pill rail (`9999px`) |
+| `--slider-thumb-size` | 12px knob |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix supplies `role="slider"`, `aria-valuemin/max/now`, and keyboard control
+  (arrows, Home/End, Page Up/Down).
+- Provide an accessible name (`aria-label` / `aria-labelledby`).
+- Visible focus/hover ring on the thumb — never removed.
+- The thumb hit area is enlarged (`after:-inset-2`) for easier pointer/touch targeting.

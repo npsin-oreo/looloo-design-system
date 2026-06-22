@@ -1,0 +1,75 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as SwitchStories from "../manual/switch.stories";
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+A control that toggles a single setting on or off, applied immediately (no submit).
+Built on `components/ui/switch.tsx` (Radix `Switch`), styled through the
+Apple-language design tokens — a pill track with a sliding thumb.
+
+## Anatomy
+
+```
+  off                 on
+ ┌────────┐        ┌────────┐
+ │ ●      │   →    │      ● │   ← <button role="switch" data-slot="switch">
+ └────────┘        └────────┘
+   │   │                  └─ Thumb (--switch-thumb) translates on check
+   │   └─ Track off (--switch-track-off)
+   └─ Track on (--switch-track-on)
+```
+
+- **Root** — Radix `Switch.Root`, `role="switch"`, pill track (`--switch-radius`).
+- **Thumb** — `Switch.Thumb`, translates left↔right on checked change.
+- **Sizes** — `default` (32×18) and `sm` (24×14).
+
+## API
+
+<ArgTypes of={SwitchStories.Playground} />
+
+## States
+
+<Canvas of={SwitchStories.States} />
+
+`off · on · focus · disabled · error`. Off/on are the two checked positions;
+focus reproduces the focus-visible ring statically; disabled and error
+(`aria-invalid`) use real attributes.
+
+## Sizes
+
+<Canvas of={SwitchStories.Sizes} />
+
+## With a label
+
+<Canvas of={SwitchStories.WithLabel} />
+
+## Usage
+
+- **Do** use a Switch for an instant on/off setting; use a Checkbox when the choice
+  is part of a form the user submits.
+- **Do** pair it with a `Label` (`htmlFor` ↔ `id`) or an `aria-label`.
+- **Do** write the label as the thing being turned on ("Airplane mode"), not an action.
+- **Don't** require a separate "Save" — a Switch implies its change took effect.
+- **Don't** hardcode colors — track/thumb map to `--switch-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--switch-track-on` → `--primary` | Checked track (Apple blue) |
+| `--switch-track-off` → `--input` | Unchecked track |
+| `--switch-thumb` → `--background` | Sliding knob |
+| `--switch-focus-ring` → `--ring` | Focus-visible ring |
+| `--switch-invalid-ring` → `--destructive` | Invalid ring |
+| `--switch-radius` | Full pill (`9999px`) |
+| `--switch-transition-duration` | 150ms (track color + thumb translate) |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix gives `role="switch"` + `aria-checked` and full keyboard support (Space/Enter).
+- Always provide an accessible name — `Label htmlFor` or `aria-label`.
+- Visible focus ring (`focus-visible:ring-3 ring-ring/50`) — never removed.
+- State is conveyed by thumb position + track color together, not color alone.
+- Disabled uses the real attribute (removed from tab order) at reduced, legible opacity.

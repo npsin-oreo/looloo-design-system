@@ -1,0 +1,56 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import * as DialogStories from "../manual/dialog.stories";
+
+<Meta of={DialogStories} />
+
+# Dialog
+
+A modal overlay that interrupts the user for a focused task or confirmation.
+Built on Radix Dialog (`components/ui/dialog.tsx`) — focus trapping, scroll lock,
+`Esc` to close, and `aria-modal` semantics come from the primitive.
+
+## Anatomy
+
+```
+Dialog (root, open state)
+ ├─ DialogTrigger (asChild → Button)
+ └─ DialogPortal
+     ├─ DialogOverlay      → backdrop (--dialog-overlay, 50% + blur)
+     └─ DialogContent      → centered panel (rounded-xl)
+         ├─ DialogHeader
+         │   ├─ DialogTitle        ← labels the dialog (required)
+         │   └─ DialogDescription  ← describes it (required)
+         ├─ (body / form)
+         ├─ DialogFooter → actions
+         └─ DialogClose  → ✕ (sr-only "Close")
+```
+
+## Examples
+
+<Canvas of={DialogStories.WithForm} />
+<Canvas of={DialogStories.Destructive} />
+
+## Usage
+
+- **Do** always render a `DialogTitle` and `DialogDescription` — they back `aria-labelledby` / `aria-describedby`.
+- **Do** keep dialogs short and single-purpose; put the primary action last in the footer.
+- **Do** use the `destructive` button for irreversible confirmations and offer a clear Cancel.
+- **Don't** nest dialogs or stack modals.
+- **Don't** suppress the close affordance / `Esc` unless the flow truly requires it.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--dialog-overlay` | Backdrop — black 50% (+ `backdrop-blur` for the frosted Apple look) |
+| `--dialog-bg` → `--popover`/`--background` | Panel surface |
+| `--dialog-border` → `--border` | Panel hairline (`ring-foreground/10`) |
+| `--dialog-radius` → `--radius-xl` | Panel corner (~17px) |
+| `--dialog-title` / `--dialog-description` | Title / supporting text |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Focus is trapped within the panel while open and restored to the trigger on close (Radix).
+- `Esc` closes; the overlay click closes; the ✕ has an `sr-only` "Close" label.
+- `aria-modal` + labelled/described by the Title/Description.
+- Title/body contrast ≥ 4.5:1 in light and dark; visible focus ring on all controls.

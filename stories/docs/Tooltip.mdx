@@ -1,0 +1,57 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as TooltipStories from "../manual/tooltip.stories";
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+A small floating label that explains a control on hover or focus. Built on
+`components/ui/tooltip.tsx` (Radix `Tooltip`), styled through the Apple-language tokens
+with an **inverted** surface (dark on light) and a matching arrow.
+
+## Anatomy
+
+```
+   ┌──────────────┐
+   │ Add to library│  ← TooltipContent (--tooltip-bg / --tooltip-fg, inverted)
+   └──────▽───────┘
+       [ trigger ]      ← TooltipTrigger
+```
+
+- **TooltipProvider** — shares timing across tooltips (wrap once near the root).
+- **TooltipTrigger** — the control being described.
+- **TooltipContent** — the inverted label + arrow; `side` points it.
+
+## API
+
+<ArgTypes of={TooltipStories.Playground} />
+
+## Sides
+
+<Canvas of={TooltipStories.Sides} />
+
+The tooltip points to its trigger from any side, on the inverted `--tooltip-bg`.
+
+## Usage
+
+- **Do** use a tooltip to name icon-only buttons or clarify a terse label.
+- **Do** keep it to a few words — it's a hint, not documentation.
+- **Do** rely on the element's own accessible name too (a tooltip is supplementary).
+- **Don't** put essential or interactive content in a tooltip — it's hover/transient.
+- **Don't** hardcode colors — surface/arrow map to `--tooltip-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--tooltip-bg` → `--foreground` | Inverted surface (dark on light) |
+| `--tooltip-fg` → `--background` | Inverted text |
+| `--tooltip-arrow` → `--foreground` | Pointer arrow |
+| `--tooltip-radius` → `--radius-md` | Corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Opens on hover **and** keyboard focus; Esc dismisses — never hover-only.
+- It supplements, not replaces, the trigger's accessible name (`aria-label`/text).
+- Inverted text/surface contrast verified ≥ 4.5:1 in both themes.
+- Keep content non-interactive — pointer can't reliably travel into a tooltip.

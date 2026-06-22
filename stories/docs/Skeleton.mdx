@@ -1,0 +1,52 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as SkeletonStories from "../manual/skeleton.stories";
+
+<Meta of={SkeletonStories} />
+
+# Skeleton
+
+A pulsing placeholder that mimics the shape of content that's still loading. Built on
+`components/ui/skeleton.tsx`, styled through the Apple-language tokens. Because it
+reserves the real layout, it prevents layout shift. For indeterminate short waits, use
+a **Spinner**.
+
+## Anatomy
+
+```
+▓▓▓▓▓▓▓▓▓▓   (animate-pulse, bg --skeleton-bg)
+```
+
+- **Skeleton** — a `bg-muted` block; you set the shape with `h-* / w-* / rounded-*`.
+
+## API
+
+<ArgTypes of={SkeletonStories.Playground} />
+
+## Shapes & layout
+
+<Canvas of={SkeletonStories.Shapes} />
+<Canvas of={SkeletonStories.InLayout} />
+
+`rounded-full` for avatars, `h-*/w-*` for lines and blocks — mirror the real content.
+
+## Usage
+
+- **Do** use a Skeleton when you know the layout — it holds space and prevents shift.
+- **Do** match the skeleton's shape and size to the content it stands in for.
+- **Do** mark the loading region `aria-busy="true"` and swap in real content when ready.
+- **Don't** use a skeleton for unknown-shape or very short waits — a `Spinner` fits.
+- **Don't** hardcode colors — the fill maps to `--skeleton-bg` → `--muted`.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--skeleton-bg` → `--muted` | Pulsing placeholder fill |
+| `--skeleton-radius` → `--radius-md` | Default corner (override per shape) |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Skeletons are decorative; mark the region `aria-busy` while loading, not the blocks themselves.
+- Swap in real content (with real semantics) once loaded — don't leave skeletons announced.
+- Respect reduced motion for the pulse at the app level.
+- Never block the UI silently — a visible loading state must accompany long operations.

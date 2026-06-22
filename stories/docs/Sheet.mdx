@@ -1,0 +1,59 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as SheetStories from "../manual/sheet.stories";
+
+<Meta of={SheetStories} />
+
+# Sheet
+
+A panel that slides in from a screen edge over the page — the desktop side-panel for
+secondary tasks (filters, details, quick edit). Built on `components/ui/sheet.tsx`
+(Radix `Dialog`), styled through the Apple-language tokens. The touch-first variant is
+**Drawer**.
+
+## Anatomy
+
+```
+       ▒▒▒┌────────┐  ← overlay (--sheet-overlay) + panel
+          │ Title  │
+          │ Desc.  │
+          │        │
+          └────────┘
+   side: top · right · bottom · left
+```
+
+- **Sheet** — the root; `SheetContent` takes `side`.
+- **Header / Title / Description / Footer / Close** — the panel's parts.
+
+## API
+
+<ArgTypes of={SheetStories.Playground} />
+
+## Open
+
+<Canvas of={SheetStories.Open} />
+
+Slides from the chosen `side` over a 50% backdrop; focus is trapped while open.
+
+## Usage
+
+- **Do** use a Sheet for secondary tasks beside the main content on desktop.
+- **Do** keep a clear title + primary action; close returns focus to the trigger.
+- **Do** prefer a `Drawer` on touch where an edge swipe feels natural.
+- **Don't** stack sheets — one panel at a time.
+- **Don't** hardcode colors — surface/overlay map to `--sheet-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--sheet-overlay` | Backdrop — black at 50% |
+| `--sheet-bg` → `--background` | Panel surface |
+| `--sheet-fg` → `--foreground` | Panel text |
+| `--sheet-border` → `--border` | Edge against the page |
+
+## Accessibility (WCAG 2.2 AA)
+
+- It's a dialog: focus is trapped, Esc closes, and focus returns to the trigger.
+- Provide a `Title` (and ideally a `Description`) so the panel is announced.
+- The backdrop is inert; background content can't be reached while open.
+- Panel text contrast verified ≥ 4.5:1 in both themes.

@@ -1,0 +1,54 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as ProgressStories from "../manual/progress.stories";
+
+<Meta of={ProgressStories} />
+
+# Progress
+
+A horizontal bar showing how far a known-length task has advanced. Built on
+`components/ui/progress.tsx` (Radix `Progress`), styled through the Apple-language
+tokens. For unknown-duration waits, use a **Spinner** instead.
+
+## Anatomy
+
+```
+████████████░░░░░░░░░░░░   value = 50
+│           └─ Track (--progress-track)
+└─ Indicator (--progress-indicator) — width tweens to value
+```
+
+- **Track** — the full rail (`--progress-track`, `--progress-height`).
+- **Indicator** — the filled portion; its width animates to `value` (0–100).
+
+## API
+
+<ArgTypes of={ProgressStories.Playground} />
+
+## Values
+
+<Canvas of={ProgressStories.Values} />
+
+## Usage
+
+- **Do** use Progress when you can compute a percentage (upload, install, steps).
+- **Do** keep `value` in sync with the real task; reach 100 only when truly done.
+- **Do** add an `aria-label` (or visible label) describing what's progressing.
+- **Don't** use it for indeterminate waits — use a `Spinner`.
+- **Don't** hardcode colors — track/indicator map to `--progress-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--progress-track` → `--muted` | Unfilled rail |
+| `--progress-indicator` → `--primary` | Filled portion (Apple blue) |
+| `--progress-height` | 4px rail (h-1) |
+| `--progress-radius` | Pill ends |
+| `--progress-transition-duration` | 200ms width tween |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix sets `role="progressbar"` with `aria-valuemin/max/now`.
+- Provide an accessible name (`aria-label` / `aria-labelledby`).
+- Don't rely on the bar alone for critical status — pair with a percentage or message.
+- Indicator/track contrast is sufficient to perceive the boundary in both themes.

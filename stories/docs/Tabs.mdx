@@ -1,0 +1,64 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as TabsStories from "../manual/tabs.stories";
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+Switches between sibling panels in the same space — one panel visible at a time.
+Built on `components/ui/tabs.tsx` (Radix `Tabs`), styled through the Apple-language
+tokens. Two looks: a filled segmented control (`default`) and an underline (`line`).
+
+## Anatomy
+
+```
+┌─────────┬─────────┬─────────┐
+│ Account │ Password│  Team   │   ← TabsList / TabsTrigger (active = --tabs-trigger-active-bg)
+└─────────┴─────────┴─────────┘
+  Panel for the active tab        ← TabsContent
+```
+
+- **Tabs** — the root; `orientation` `horizontal` (default) or `vertical`.
+- **TabsList / TabsTrigger** — the tab strip; `variant` `default` (pill) or `line` (underline).
+- **TabsContent** — the panel; only the active one renders.
+
+## API
+
+<ArgTypes of={TabsStories.Playground} />
+
+## Variants, states & orientation
+
+<Canvas of={TabsStories.Variants} />
+<Canvas of={TabsStories.States} />
+<Canvas of={TabsStories.Vertical} />
+
+`active · inactive · disabled`. The active trigger lifts onto `--tabs-trigger-active-bg`
+(or shows the line indicator); focus uses the visible ring.
+
+## Usage
+
+- **Do** use Tabs for peer views of the same context (Account / Password / Team).
+- **Do** keep tab labels short and parallel; 2–6 tabs reads best.
+- **Do** use `line` in dense or content-heavy layouts; `default` for compact toggles.
+- **Don't** use Tabs for a sequence/flow — that's a stepper or wizard.
+- **Don't** hardcode colors — track/trigger map to `--tabs-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--tabs-list-bg` → `--muted` | Segmented track (default variant) |
+| `--tabs-trigger-fg` → `--muted-foreground` | Inactive label |
+| `--tabs-trigger-active-bg` → `--background` | Active tab pill |
+| `--tabs-trigger-active-fg` → `--foreground` | Active label |
+| `--tabs-line-indicator` → `--foreground` | Underline (line variant) |
+| `--tabs-focus-ring` → `--ring` | Focus ring |
+| `--tabs-list-radius` → `--radius-lg` | Track corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix supplies `role="tablist"/"tab"/"tabpanel"`, `aria-selected`, and arrow-key
+  navigation with automatic/manual activation.
+- The active tab is conveyed by `aria-selected` **and** the fill/underline, not color alone.
+- Visible focus ring on triggers — never removed.
+- Each panel is associated with its tab via `aria-controls`/`aria-labelledby` (Radix).

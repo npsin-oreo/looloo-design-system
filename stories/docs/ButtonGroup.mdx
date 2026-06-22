@@ -1,0 +1,59 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as ButtonGroupStories from "../manual/button-group.stories";
+
+<Meta of={ButtonGroupStories} />
+
+# Button Group
+
+Fuses related buttons (and select triggers, inputs) into one connected control —
+toolbars, segmented actions, split buttons. Built on `components/ui/button-group.tsx`,
+styled through the Apple-language tokens. Layout-only: it owns geometry, not color.
+
+## Anatomy
+
+```
+┌────────┬────────┬────────┐
+│ Years  │ Months │  Days  │   ← shared borders collapse, outer corners round
+└────────┴────────┴────────┘
+   ButtonGroupSeparator · ButtonGroupText (label cell)
+```
+
+- **ButtonGroup** — `role="group"`; `orientation` `horizontal` (default) or `vertical`.
+- **ButtonGroupSeparator** — a divider between segments.
+- **ButtonGroupText** — a non-interactive label cell on the muted surface.
+
+## API
+
+<ArgTypes of={ButtonGroupStories.Playground} />
+
+## Orientations & parts
+
+<Canvas of={ButtonGroupStories.Orientations} />
+<Canvas of={ButtonGroupStories.WithSeparator} />
+<Canvas of={ButtonGroupStories.WithText} />
+
+## Usage
+
+- **Do** group buttons that are variations on one task (time ranges, view modes).
+- **Do** keep a consistent `variant` across the group (usually `outline`).
+- **Do** give icon-only members an `aria-label`.
+- **Don't** mix unrelated actions into one group — separate them with spacing instead.
+- **Don't** hardcode colors — the members keep their own Button tokens; the group adds
+  `--button-group-separator` and `--button-group-text-bg`.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--button-group-separator` → `--input` | Divider between segments |
+| `--button-group-text-bg` → `--muted` | `ButtonGroupText` label cell |
+| `--button-group-radius` → `--radius-lg` | Outer corners (inner edges square) |
+
+Member buttons keep their own `--button-*` tokens (fill, focus ring, …).
+
+## Accessibility (WCAG 2.2 AA)
+
+- The container is `role="group"`; give it an `aria-label` when the grouping needs a name.
+- Each member stays an independent, focusable control with its own focus ring
+  (raised above neighbors via `z-10` so the ring is never clipped).
+- Icon-only members need an `aria-label`.

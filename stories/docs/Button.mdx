@@ -1,0 +1,80 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as ButtonStories from "../manual/button.stories";
+
+<Meta of={ButtonStories} />
+
+# Button
+
+Triggers an action or event. The highest-traffic control in the system — it
+anchors forms, dialogs, and toolbars. Built on `components/ui/button.tsx`
+(class-variance-authority), styled entirely through the Apple-language design
+tokens.
+
+## Anatomy
+
+```
+┌─────────────────────────────┐
+│  [icon?]  Label  [spinner?]  │   ← <button data-slot="button">
+└─────────────────────────────┘
+        │        │        └─ Spinner — shown only when `loading`
+        │        └─ children (label / icon)
+        └─ leading icon (optional, auto-sized via [&_svg])
+```
+
+- **Root** — native `<button>` (or any element via `asChild` + Radix `Slot`).
+- **Label** — `children`. Icons are auto-sized (`size-4`, smaller for compact sizes).
+- **Spinner** — injected before the label when `loading`.
+
+## API
+
+<ArgTypes of={ButtonStories.Playground} />
+
+## Variants & sizes
+
+<Canvas of={ButtonStories.Variants} />
+<Canvas of={ButtonStories.Sizes} />
+
+| Variant | Use it for |
+|---|---|
+| `default` | The primary action on a surface — Apple action blue. One per view. |
+| `secondary` | Secondary actions next to a primary. |
+| `outline` | Low-emphasis actions, toolbars, segmented groups. |
+| `ghost` | Tertiary / icon actions where chrome should stay quiet. |
+| `destructive` | Irreversible actions (delete, remove) — soft red treatment. |
+| `link` | Inline navigation styled as a link. |
+
+## States
+
+<Canvas of={ButtonStories.States} />
+
+`default · hover · focus · active · disabled · loading · error`. Hover/focus/active
+reproduce the component's own pseudo-class utilities; disabled/loading/error are
+driven by real attributes.
+
+<Canvas of={ButtonStories.Loading} />
+
+## Usage
+
+- **Do** keep one `default` (primary) button per view; everything else steps down in emphasis.
+- **Do** use `loading` for async submits — it shows a spinner, sets `aria-busy`, and blocks repeat clicks.
+- **Do** give icon-only buttons an `aria-label`.
+- **Don't** disable the primary action without telling the user why (prefer inline validation).
+- **Don't** hardcode colors — every surface maps to `--button-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--button-default-bg` → `--primary` | Default fill (Apple blue `#0071e3`) |
+| `--button-default-fg` → `--primary-foreground` | Label on fill (white, 4.70:1 AA) |
+| `--button-focus-ring` → `--ring` | Focus-visible ring |
+| `--button-radius` → `--radius-lg` | Corner radius (12px) |
+| `--button-transition-duration` | 150ms |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Native `<button>` → full keyboard support (Enter/Space) for free.
+- Visible focus ring (`focus-visible:ring-3 ring-ring/50`) — never removed.
+- `loading` sets `aria-busy` and disables interaction; the spinner is `aria-hidden`.
+- Label/fill contrast verified ≥ 4.5:1 in both light and dark.
+- Color is never the only signal (destructive uses a distinct label, not just hue).

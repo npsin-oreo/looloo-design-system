@@ -1,0 +1,59 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as ToggleStories from "../manual/toggle.stories";
+
+<Meta of={ToggleStories} />
+
+# Toggle
+
+A two-state button that is either on or off — usually an icon (bold, mute, pin). Built
+on `components/ui/toggle.tsx` (Radix `Toggle`), styled through the Apple-language
+tokens. For a set of toggles, use **Toggle Group**.
+
+## Anatomy
+
+```
+┌──┐
+│ B│   on → fills with --toggle-on-bg
+└──┘
+```
+
+- **Toggle** — `rounded-lg` button; pressed/hover fill `--toggle-on-bg`.
+- **Variants** — `default` (chromeless) and `outline` (bordered); sizes `sm · default · lg`.
+
+## API
+
+<ArgTypes of={ToggleStories.Playground} />
+
+## Variants, sizes & states
+
+<Canvas of={ToggleStories.Variants} />
+<Canvas of={ToggleStories.Sizes} />
+<Canvas of={ToggleStories.States} />
+
+`off · on · focus · disabled`. Off/on are the two pressed states; focus reproduces the
+focus-visible ring statically.
+
+## Usage
+
+- **Do** use a Toggle for a single sticky on/off control (formatting, mute, pin).
+- **Do** give icon-only toggles an `aria-label`.
+- **Do** keep the icon meaning constant whether on or off.
+- **Don't** use a Toggle to navigate or submit — that's a `Button`.
+- **Don't** hardcode colors — pressed/border map to `--toggle-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--toggle-on-bg` → `--muted` | Pressed / hover surface |
+| `--toggle-on-fg` → `--foreground` | Pressed icon/text |
+| `--toggle-outline-border` → `--input` | Outline variant edge |
+| `--toggle-focus-ring` → `--ring` | Focus-visible ring |
+| `--toggle-radius` → `--radius-lg` | Corner radius |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix exposes `aria-pressed` and full keyboard support (Space/Enter).
+- Icon-only toggles require an `aria-label`.
+- Pressed state is conveyed by fill **and** `aria-pressed`, not color alone.
+- Visible focus ring — never removed.

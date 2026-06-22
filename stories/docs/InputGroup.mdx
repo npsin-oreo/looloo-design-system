@@ -1,0 +1,66 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as InputGroupStories from "../manual/input-group.stories";
+
+<Meta of={InputGroupStories} />
+
+# Input Group
+
+An input (or textarea) joined with leading/trailing addons — icons, text affixes,
+or buttons — inside one bordered field. Built on `components/ui/input-group.tsx`,
+styled through the Apple-language tokens. The group owns the border, focus ring, and
+error state; the inner control is chromeless so the whole thing reads as one field.
+
+## Anatomy
+
+```
+┌──────────────────────────────────────┐
+│ 🔍  Search…                      [×]  │  ← <div role="group" data-slot="input-group">
+└──────────────────────────────────────┘
+  │     │                          └─ InputGroupAddon (inline-end) → button
+  │     └─ InputGroupInput (chromeless control)
+  └─ InputGroupAddon (inline-start) → icon / InputGroupText
+```
+
+- **InputGroup** — the bordered container; focus/error bubble up from the control via `has-[…]`.
+- **InputGroupInput / InputGroupTextarea** — borderless control that fills the row.
+- **InputGroupAddon** — `inline-start/end` (or `block-start/end`) slot for icons, text, buttons.
+- **InputGroupButton / InputGroupText** — compact button / static affix.
+
+## API
+
+<ArgTypes of={InputGroupStories.Playground} />
+
+## Addon placements & states
+
+<Canvas of={InputGroupStories.Addons} />
+<Canvas of={InputGroupStories.States} />
+
+`default · focus · disabled · error`. Focus/error originate on the inner control and
+the group reflects them; focus is shown statically here.
+
+## Usage
+
+- **Do** use addons for affixes that belong to the value — currency, units, `https://`, a search icon.
+- **Do** put a clear/submit action in a trailing `InputGroupButton`.
+- **Do** label the control (`aria-label` or a `Label`); addons are not labels.
+- **Don't** stack so many addons that the input itself gets cramped.
+- **Don't** hardcode colors — border/ring/addons map to `--input-group-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--input-group-bg` → `--background` | Field surface |
+| `--input-group-border` → `--input` | Resting border |
+| `--input-group-border-focus` → `--ring` | Focus ring (from inner control) |
+| `--input-group-border-error` → `--destructive` | Invalid border + ring |
+| `--input-group-addon` → `--muted-foreground` | Addon icon/text |
+| `--input-group-radius` → `--radius-lg` | Corner radius |
+
+## Accessibility (WCAG 2.2 AA)
+
+- The control keeps its own accessible name — addons are decorative/auxiliary.
+- Focus stays on the real control; the visible ring is shown on the group around it.
+- Error: set `aria-invalid` on the control; the destructive ring bubbles to the group.
+- Clicking an addon focuses the input (pointer affordance), but addon buttons remain
+  independently focusable with their own `aria-label`.
