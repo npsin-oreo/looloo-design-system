@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Cancel superseded runs on the same ref.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: TypeScript
+        run: npx tsc --noEmit
+
+  token-drift:
+    name: Token reproducibility
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # The committed generated files must match what their sources produce.
+      # brand.css <- brand.config.json; token-contract.json + primitives.css <- tokens.json.
+      - name: Generated token files are reproducible
+        run: |
+          npm run brand:build
+          npm run tokens:contract
+          npm run tokens:data
+          git diff --exit-code app/brand.css token-contract.json app/primitives.css \
+            || { echo "::error::token drift — run \`npm run brand:build && npm run tokens:contract && npm run tokens:data\` and commit the generated files"; exit 1; }
+
+  storybook-tests:
+    name: Storybook tests (render + a11y)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      # Render-smokes every story + runs play functions + axe a11y (error mode).
+      # build-storybook's brand:build runs implicitly via the vitest setup importing globals.css.
+      - name: test-storybook
+        run: npm run test-storybook
