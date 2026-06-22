@@ -1,0 +1,61 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as EmptyStories from "../manual/empty.stories";
+
+<Meta of={EmptyStories} />
+
+# Empty
+
+An empty-state placeholder — what a list, search, or inbox shows when there's nothing
+yet. Built on `components/ui/empty.tsx`, styled through the Apple-language tokens. A
+centered composition of media, title, description, and an optional action.
+
+## Anatomy
+
+```
+        ┌────┐
+        │ 📁 │     ← EmptyMedia (icon tile)
+        └────┘
+       No projects yet      ← EmptyTitle
+  Create one to get started ← EmptyDescription
+       [ Create project ]   ← EmptyContent (actions)
+```
+
+- **Empty** — centered container with dashed/border framing.
+- **EmptyHeader** — stacks media, title, and description.
+- **EmptyMedia** — `icon` (tinted tile) or `default` (bare glyph).
+- **EmptyContent** — the action(s) — usually one primary button.
+
+## API
+
+<ArgTypes of={EmptyStories.Playground} />
+
+## Media variants & actions
+
+<Canvas of={EmptyStories.MediaVariants} />
+<Canvas of={EmptyStories.WithActions} />
+
+## Usage
+
+- **Do** explain *why* it's empty and give a clear next step (the action).
+- **Do** keep copy short and encouraging — empty states are an onboarding moment.
+- **Do** use the same Empty for "no results" (with a reset action) and "nothing yet".
+- **Don't** show a bare blank area — always orient the user with title + action.
+- **Don't** hardcode colors — surfaces/text map to `--empty-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--empty-icon-bg` → `--muted` | Icon tile surface |
+| `--empty-icon-fg` → `--foreground` | Icon glyph |
+| `--empty-title` → `--foreground` | Title |
+| `--empty-description` → `--muted-foreground` | Description (AA) |
+| `--empty-border` → `--border` | Dashed container edge |
+| `--empty-radius` → `--radius-xl` | Container corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Use a real heading for the title so the empty state appears in the document outline.
+- The action is a real `Button`/link with a clear, specific label.
+- Decorative icons are `aria-hidden`; meaningful ones get a label.
+- Title/description contrast verified ≥ 4.5:1 in both themes.

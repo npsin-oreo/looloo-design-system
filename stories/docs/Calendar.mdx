@@ -1,0 +1,59 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as CalendarStories from "../manual/calendar.stories";
+
+<Meta of={CalendarStories} />
+
+# Calendar
+
+An inline month grid for picking dates. Built on `components/ui/calendar.tsx`
+(react-day-picker), styled through the Apple-language tokens. To collapse it behind a
+field, use the **Date Picker** composition.
+
+## Anatomy
+
+```
+┌──────────────────────────┐
+│  ‹   June 2026        ›   │  ← nav buttons (--calendar-nav-hover-bg)
+│  Su Mo Tu We Th Fr Sa     │
+│   …  [12] …               │  ← selected = --calendar-selected-bg
+└──────────────────────────┘
+```
+
+- **Calendar** — `mode` `single · range · multiple`; nav buttons, outside/disabled days.
+
+## API
+
+<ArgTypes of={CalendarStories.Playground} />
+
+## Selection modes
+
+<Canvas of={CalendarStories.Modes} />
+
+`single` picks one day, `range` fills a span (`--calendar-range-bg`), `multiple` picks several.
+
+## Usage
+
+- **Do** use an inline Calendar when the month view should always be visible.
+- **Do** pick the `mode` that matches the task (single / range / multiple).
+- **Do** disable invalid days rather than letting users pick then error.
+- **Don't** force calendar entry for simple known dates — a typed field can be faster.
+- **Don't** hardcode colors — days/nav map to `--calendar-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--calendar-selected-bg` → `--primary` | Selected day (Apple blue) |
+| `--calendar-selected-fg` → `--primary-foreground` | Selected day text |
+| `--calendar-today-bg` → `--accent` | Today marker |
+| `--calendar-range-bg` → `--accent` | In-range days |
+| `--calendar-outside-fg` → `--muted-foreground` | Outside/disabled days |
+| `--calendar-focus-ring` → `--ring` | Focused day ring |
+| `--calendar-day-radius` → `--radius-md` | Day cell corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- react-day-picker provides a labeled grid with full keyboard navigation (arrows, Page Up/Down, Home/End).
+- Selected/today are conveyed by fill **and** `aria-selected`/`aria-current`, not color alone.
+- Disabled days expose `aria-disabled` and are skipped.
+- Day/nav contrast verified ≥ 4.5:1 in both themes.

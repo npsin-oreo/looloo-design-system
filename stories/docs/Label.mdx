@@ -1,0 +1,54 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as LabelStories from "../manual/label.stories";
+
+<Meta of={LabelStories} />
+
+# Label
+
+A caption that names a form control and extends its hit area. Built on
+`components/ui/label.tsx` (Radix `Label`), styled through the Apple-language tokens.
+Pure typography — its only "state" is dimming alongside a disabled control.
+
+## Anatomy
+
+```
+Email
+└─ <label data-slot="label" for="…">  → wires to a control by id
+```
+
+- **Root** — Radix `Label.Root`; `text-sm font-medium`, no color of its own beyond `--label-text`.
+- **Coupling** — `htmlFor` ↔ control `id`; or wrap the control to associate implicitly.
+- **Disabled** — dims via `peer-disabled` / `group-data-[disabled]` from the control.
+
+## API
+
+<ArgTypes of={LabelStories.Playground} />
+
+## With controls & states
+
+<Canvas of={LabelStories.WithControls} />
+<Canvas of={LabelStories.States} />
+
+`default · required · disabled`. The disabled style is driven by the linked control,
+not the label itself.
+
+## Usage
+
+- **Do** give every input, checkbox, switch, and select a Label.
+- **Do** connect it with `htmlFor` ↔ `id` so clicking the text focuses/toggles the control.
+- **Do** mark required fields with a visible marker **and** the `required` attribute.
+- **Don't** use a placeholder as a label — it vanishes on input and fails a11y.
+- **Don't** hardcode colors — text maps to `--label-text` → `--foreground`.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--label-text` → `--foreground` | Label text (disabled is opacity-only) |
+
+## Accessibility (WCAG 2.2 AA)
+
+- A correctly associated label is the control's accessible name (read by screen readers).
+- The label becomes part of the control's click/tap target — larger, easier to hit.
+- Disabled appearance comes from the control's state, keeping label and control in sync.
+- Don't rely on a required asterisk's color alone — keep the `*` glyph and `required`.

@@ -1,0 +1,62 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as NavigationMenuStories from "../manual/navigation-menu.stories";
+
+<Meta of={NavigationMenuStories} />
+
+# Navigation Menu
+
+A site-level navigation bar where triggers open rich panels of links. Built on
+`components/ui/navigation-menu.tsx` (Radix `NavigationMenu`), styled through the
+Apple-language tokens. Panels render in a shared animated viewport, or inline under
+each trigger (`viewport={false}`).
+
+## Anatomy
+
+```
+┌ Getting started ▾ ─ Docs ┐
+│  ┌─────────────────────┐  │
+│  │ Introduction        │  │  ← NavigationMenuLink
+│  │ Installation        │  │
+│  └─────────────────────┘  │  ← NavigationMenuContent (--navigation-menu-content-bg)
+└───────────────────────────┘
+```
+
+- **NavigationMenu** — the root; `viewport` toggles the shared panel surface.
+- **NavigationMenuList / NavigationMenuItem** — the top-level bar.
+- **NavigationMenuTrigger** — opens a panel (hover/focus); chevron rotates when open.
+- **NavigationMenuContent / NavigationMenuLink** — the panel and its links.
+
+## API
+
+<ArgTypes of={NavigationMenuStories.Playground} />
+
+## Inline (no viewport)
+
+<Canvas of={NavigationMenuStories.Inline} />
+
+`viewport={false}` drops each panel beneath its own trigger on the popover surface.
+
+## Usage
+
+- **Do** use it for primary site navigation with grouped destinations.
+- **Do** keep panels shallow — links and short descriptions, not deep menus.
+- **Do** include plain links (no panel) for single destinations like "Docs".
+- **Don't** put app commands here — use a Menubar or Dropdown Menu.
+- **Don't** hardcode colors — triggers/panels map to `--navigation-menu-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--navigation-menu-trigger-bg` → `--muted` | Hover/open trigger |
+| `--navigation-menu-content-bg` → `--popover` | Panel surface (inline mode) |
+| `--navigation-menu-link-hover-bg` → `--accent` | Link hover |
+| `--navigation-menu-focus-ring` → `--ring` | Focus ring |
+| `--navigation-menu-content-radius` → `--radius-lg` | Panel corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix manages roles, focus, and keyboard navigation (arrows, Enter, Esc) for the bar and panels.
+- Triggers expose open/closed via `aria-expanded`; the chevron is `aria-hidden`.
+- Links keep a visible focus state; panels open on focus, not hover alone.
+- Don't rely on hover to reveal essential navigation — keyboard/touch must reach it too.

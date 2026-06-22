@@ -1,0 +1,63 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as ContextMenuStories from "../manual/context-menu.stories";
+
+<Meta of={ContextMenuStories} />
+
+# Context Menu
+
+A menu of actions opened by right-clicking (or the keyboard menu key) on an object.
+Built on `components/ui/context-menu.tsx` (Radix), styled through the Apple-language
+tokens. Same items and styling as **Dropdown Menu**; the trigger is a region, not a button.
+
+## Anatomy
+
+```
+┌──────────────────────────┐
+│   Right-click this region │  ← ContextMenuTrigger
+└──────────────────────────┘
+        ┌────────────────────┐
+        │ Back          ⌘[   │  ← ContextMenuItem + Shortcut
+        │ Forward       ⌘]   │
+        │ ──────────────     │  ← ContextMenuSeparator
+        │ ☑ Show Bookmarks   │  ← ContextMenuCheckboxItem
+        └────────────────────┘
+```
+
+- **ContextMenuTrigger** — the right-clickable region.
+- **ContextMenuContent / Item / CheckboxItem / Separator / Shortcut** — the menu.
+
+## API
+
+<ArgTypes of={ContextMenuStories.Playground} />
+
+## Menu
+
+<Canvas of={ContextMenuStories.Playground} />
+
+Right-click the trigger region in the canvas to open the menu (it opens on pointer/keyboard, not on mount).
+
+## Usage
+
+- **Do** use a Context Menu for power-user shortcuts on a specific object (a row, a canvas item).
+- **Do** mirror the most important actions somewhere visible too — context menus are discoverable only by trying.
+- **Do** group with separators and mark destructive items clearly.
+- **Don't** hide essential, first-run actions in a context menu only.
+- **Don't** hardcode colors — surfaces/items map to `--context-menu-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--context-menu-content-bg` → `--popover` | Menu surface |
+| `--context-menu-item-focus-bg` → `--accent` | Highlighted item |
+| `--context-menu-separator` → `--border` | Divider |
+| `--context-menu-shortcut` → `--muted-foreground` | Shortcut hint |
+| `--context-menu-content-radius` → `--radius-md` | Menu corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix supplies menu semantics, roving focus, type-ahead, and keyboard control; it also
+  opens via the keyboard context-menu key, so it isn't mouse-only.
+- Disabled items expose `aria-disabled` and are skipped by the keyboard.
+- The focused item is shown by background **and** focus state, not color alone.
+- Focus returns to the trigger region on close.

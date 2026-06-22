@@ -1,0 +1,64 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as TableStories from "../manual/table.stories";
+
+<Meta of={TableStories} />
+
+# Table
+
+A semantic data table for rows and columns of structured data. Built on
+`components/ui/table.tsx` (real `<table>` elements), styled through the Apple-language
+tokens. For sorting/filtering/pagination, compose it with state — see **Data Table**.
+
+## Anatomy
+
+```
+┌─────────┬────────┬─────────┐
+│ Invoice │ Status │  Amount │  ← TableHeader / TableHead (--table-header-fg)
+├─────────┼────────┼─────────┤
+│ INV001  │ Paid   │ $250.00 │  ← TableRow / TableCell (hover --table-row-hover)
+├─────────┴────────┴─────────┤
+│ Total            $1,750.00 │  ← TableFooter (--table-footer-bg)
+└────────────────────────────┘
+   TableCaption (below, --table-caption)
+```
+
+- **Table** — wrapped in a scroll container for overflow.
+- **TableHeader / TableHead** — column headings.
+- **TableBody / TableRow / TableCell** — the data; rows hover and can be `selected`.
+- **TableFooter** — totals/summary on a tinted strip. **TableCaption** — accessible name.
+
+## API
+
+<ArgTypes of={TableStories.Playground} />
+
+## Row states
+
+<Canvas of={TableStories.RowStates} />
+
+`resting · hover · selected` (`data-state="selected"`).
+
+## Usage
+
+- **Do** use real table semantics for tabular data — not a grid of `<div>`s.
+- **Do** add a `TableCaption` (or `aria-label`) describing the table.
+- **Do** right-align numeric columns for easy scanning.
+- **Don't** use a Table purely for layout — use grid/flex utilities instead.
+- **Don't** hardcode colors — header/rows/footer map to `--table-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--table-header-fg` → `--foreground` | Column heading text |
+| `--table-row-hover` → `--muted` | Row hover (50%) |
+| `--table-row-selected` → `--muted` | Selected row |
+| `--table-footer-bg` → `--muted` | Footer/total strip (50%) |
+| `--table-border` → `--border` | Row dividers |
+| `--table-caption` → `--muted-foreground` | Caption |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Native `<table>`/`<th>`/`<caption>` give screen readers real row/column semantics.
+- Use `scope`/header cells so data cells associate with their headers.
+- Selection state is exposed via `data-state` **and** a visible background — not color alone.
+- The container scrolls horizontally on small screens without breaking semantics.

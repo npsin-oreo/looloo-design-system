@@ -1,0 +1,63 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as AlertDialogStories from "../manual/alert-dialog.stories";
+
+<Meta of={AlertDialogStories} />
+
+# Alert Dialog
+
+A modal that interrupts the user to confirm a consequential action. Built on
+`components/ui/alert-dialog.tsx` (Radix `AlertDialog`), styled through the
+Apple-language tokens. Unlike a Dialog, it is **deliberately disruptive**: focus is
+trapped, the backdrop can't be dismissed by clicking away, and it expects an explicit
+choice.
+
+## Anatomy
+
+```
+        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  ← overlay (--alert-dialog-overlay)
+        ┌──────────────┐
+        │ Title        │  ← AlertDialogTitle
+        │ Description   │  ← AlertDialogDescription
+        │  [Cancel][OK]│  ← AlertDialogCancel / AlertDialogAction
+        └──────────────┘
+```
+
+- **AlertDialogTrigger** — opens the modal.
+- **AlertDialogContent** — the panel on `--alert-dialog-bg`.
+- **AlertDialogAction / AlertDialogCancel** — the explicit choices (Cancel is the safe default).
+
+## API
+
+<ArgTypes of={AlertDialogStories.Playground} />
+
+## Destructive confirm
+
+<Canvas of={AlertDialogStories.Destructive} />
+
+For irreversible actions, give the action button the destructive treatment and keep
+Cancel as the focused default.
+
+## Usage
+
+- **Do** use an Alert Dialog for irreversible/consequential actions (delete, discard).
+- **Do** name the action on the button ("Delete") instead of a generic "OK".
+- **Do** let Cancel take initial focus so an accidental Enter is safe.
+- **Don't** use it for routine forms or info — that's a `Dialog`.
+- **Don't** hardcode colors — surfaces/overlay map to `--alert-dialog-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--alert-dialog-overlay` | Backdrop — black at 50% |
+| `--alert-dialog-bg` → `--background` | Panel surface |
+| `--alert-dialog-title` → `--foreground` | Title |
+| `--alert-dialog-description` → `--muted-foreground` | Description (AA) |
+| `--alert-dialog-radius` → `--radius-xl` | Panel corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix sets `role="alertdialog"` with `aria-labelledby`/`aria-describedby` from the title/description.
+- Focus is trapped; Esc and the explicit buttons are the only exits (no click-away dismiss).
+- Cancel takes initial focus, protecting against accidental confirmation.
+- The action's intent is conveyed by its label, not color alone.

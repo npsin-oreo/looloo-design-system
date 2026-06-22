@@ -1,0 +1,67 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as MenubarStories from "../manual/menubar.stories";
+
+<Meta of={MenubarStories} />
+
+# Menubar
+
+A desktop-style application menu bar — top-level menus (File, Edit, View) that open
+dropdowns of commands. Built on `components/ui/menubar.tsx` (Radix `Menubar`), styled
+through the Apple-language tokens.
+
+## Anatomy
+
+```
+┌ File ─ Edit ─ View ┐
+│ ▽                  │
+│ ┌────────────────┐ │
+│ │ New Tab    ⌘T  │ │  ← MenubarItem + MenubarShortcut
+│ │ New Window ⌘N  │ │
+│ │ ───────────    │ │  ← MenubarSeparator
+│ │ Print      ⌘P  │ │
+│ └────────────────┘ │
+└────────────────────┘
+```
+
+- **Menubar** — the bar container; one menu open at a time.
+- **MenubarMenu / MenubarTrigger** — a top-level menu and its button.
+- **MenubarContent / MenubarItem** — the dropdown and its commands.
+- **MenubarShortcut / MenubarSeparator / MenubarCheckboxItem** — hint, divider, toggle.
+
+## API
+
+<ArgTypes of={MenubarStories.Playground} />
+
+## Open menu
+
+<Canvas of={MenubarStories.Open} />
+
+Items, shortcuts, a separator, and a disabled item. The open trigger and focused
+item use `--menubar-*`.
+
+## Usage
+
+- **Do** use a Menubar for app-like surfaces with many grouped commands.
+- **Do** group related commands and divide groups with separators.
+- **Do** show keyboard shortcuts with `MenubarShortcut`.
+- **Don't** use it for simple page navigation — use a Navigation Menu or links.
+- **Don't** hardcode colors — surfaces/items map to `--menubar-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--menubar-trigger-open-bg` → `--muted` | Hover/open trigger |
+| `--menubar-content-bg` → `--popover` | Dropdown surface |
+| `--menubar-item-focus-bg` → `--accent` | Highlighted item |
+| `--menubar-separator` → `--border` | Divider |
+| `--menubar-shortcut` → `--muted-foreground` | Shortcut hint |
+| `--menubar-content-radius` → `--radius-md` | Dropdown corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix supplies `role="menubar"/"menu"/"menuitem"`, roving focus, type-ahead, and
+  full keyboard control (arrows between menus/items, Enter to invoke, Esc to close).
+- Disabled items are exposed via `aria-disabled` and skipped by keyboard.
+- The focused item is shown by background **and** focus state, not color alone.
+- Shortcut hints are visual; the items remain operable by keyboard regardless.

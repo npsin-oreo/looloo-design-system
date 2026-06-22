@@ -1,0 +1,55 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as SeparatorStories from "../manual/separator.stories";
+
+<Meta of={SeparatorStories} />
+
+# Separator
+
+A thin rule that divides content — between sections, list rows, or inline items. Built
+on `components/ui/separator.tsx` (Radix `Separator`), styled through the Apple-language
+tokens. Horizontal or vertical; decorative by default.
+
+## Anatomy
+
+```
+Above
+────────────────────   ← horizontal (h-px, --separator-color)
+Below
+
+Blog │ Docs │ Source    ← vertical (w-px)
+```
+
+- **Separator** — `orientation` `horizontal` (default) or `vertical`.
+- **decorative** — `true` (default) hides it from AT; `false` exposes a semantic divider.
+
+## API
+
+<ArgTypes of={SeparatorStories.Playground} />
+
+## Orientations
+
+<Canvas of={SeparatorStories.Orientations} />
+
+Horizontal between stacked blocks; vertical between inline items.
+
+## Usage
+
+- **Do** use a Separator to group related content into clear sections.
+- **Do** set `decorative={false}` when the rule conveys a real structural boundary.
+- **Do** keep it subtle — it's a hairline, not a heavy border.
+- **Don't** overuse separators where whitespace would group content just as well.
+- **Don't** hardcode colors — the rule maps to `--separator-color` → `--border`.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--separator-color` → `--border` | The rule color |
+| `--separator-thickness` | 1px hairline |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Decorative separators (`decorative={true}`) are hidden from AT so they don't add noise.
+- Set `decorative={false}` to expose `role="separator"` when the division is meaningful.
+- The rule is never the only signal of grouping — pair with spacing and headings.
+- Contrast against the surface is sufficient to perceive in both themes.

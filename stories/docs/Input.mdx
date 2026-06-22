@@ -1,0 +1,60 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as InputStories from "../manual/input.stories";
+
+<Meta of={InputStories} />
+
+# Input
+
+A single-line text control. Built on `components/ui/input.tsx`, styled through the
+Apple-language tokens. It rarely ships bare — wrap it in a **Field** for a label,
+description, and error message.
+
+## Anatomy
+
+```
+┌─────────────────────────────┐
+│ Placeholder / value          │  ← <input data-slot="input">
+└─────────────────────────────┘
+   border --field-border · focus ring --field-border-focus
+```
+
+- **Input** — native `<input>`; sizes `sm · md (default) · xl` set height/padding/text.
+
+## API
+
+<ArgTypes of={InputStories.Playground} />
+
+## Sizes & states
+
+<Canvas of={InputStories.Sizes} />
+<Canvas of={InputStories.States} />
+
+`default · focus · filled · disabled · error`. Focus reproduces the ring statically;
+disabled/error use real attributes.
+
+## Usage
+
+- **Do** pair every Input with a `FieldLabel` (`htmlFor` ↔ `id`) — placeholders aren't labels.
+- **Do** set `aria-invalid` on error (drives the destructive ring) with a linked message.
+- **Do** pick the size to match the form's density.
+- **Don't** use an Input for multi-line text — use `Textarea`.
+- **Don't** hardcode colors — surface/border map to `--field-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--field-bg` → `--background` | Field surface |
+| `--field-text` → `--foreground` | Entered text |
+| `--field-placeholder` → `--muted-foreground` | Placeholder (5.07:1 AA) |
+| `--field-border` → `--input` | Resting border |
+| `--field-border-focus` → `--ring` | Focus ring (Apple blue) |
+| `--field-border-error` → `--destructive` | Invalid border + ring |
+| `--field-radius` → `--radius-lg` | Corner radius |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Associate a label via `FieldLabel htmlFor` / `id` (or `aria-label`).
+- Error: `aria-invalid` + `aria-describedby` → the message is announced with the field.
+- Visible focus ring; placeholder/text contrast ≥ 4.5:1 in both themes.
+- Disabled uses the real attribute (removed from tab order) at reduced, legible opacity.

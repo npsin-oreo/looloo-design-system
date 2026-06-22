@@ -1,0 +1,66 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as CommandStories from "../manual/command.stories";
+
+<Meta of={CommandStories} />
+
+# Command
+
+A fast, composable command palette / searchable list. Built on `components/ui/command.tsx`
+(cmdk), styled through the Apple-language tokens. Type to filter; arrow keys to move;
+Enter to run. Pair it with a `Dialog` for a ⌘K launcher, or with a `Popover` for a
+**Combobox**.
+
+## Anatomy
+
+```
+┌────────────────────────────┐
+│ 🔍 Type a command…          │  ← CommandInput (border --command-input-border)
+├────────────────────────────┤
+│ Suggestions                 │  ← CommandGroup heading (--command-group-heading)
+│   Calendar                  │  ← CommandItem (focus --command-item-focus-bg)
+│   Search Emoji              │
+│ No results found.           │  ← CommandEmpty (--command-empty)
+└────────────────────────────┘
+```
+
+- **Command** — the container on `--command-content-bg`.
+- **CommandInput** — the filter field.
+- **CommandList / CommandGroup / CommandItem** — results, grouped with headings.
+- **CommandEmpty / CommandShortcut / CommandSeparator** — no-results, hints, dividers.
+
+## API
+
+<ArgTypes of={CommandStories.Playground} />
+
+## Empty state
+
+<Canvas of={CommandStories.Empty} />
+
+When nothing matches, `CommandEmpty` shows the no-results message.
+
+## Usage
+
+- **Do** use Command for a searchable action launcher (⌘K) or a filterable picker.
+- **Do** group items with headings and surface shortcuts with `CommandShortcut`.
+- **Do** always provide a `CommandEmpty` so a dead-end search isn't silent.
+- **Don't** use it for 2–5 fixed options — a `Select`/`DropdownMenu` is simpler.
+- **Don't** hardcode colors — surfaces/items map to `--command-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--command-content-bg` → `--popover` | Palette surface |
+| `--command-input-border` → `--border` | Under the search field |
+| `--command-item-focus-bg` → `--accent` | Highlighted item |
+| `--command-group-heading` → `--muted-foreground` | Group heading |
+| `--command-shortcut` → `--muted-foreground` | Shortcut hint |
+| `--command-empty` → `--muted-foreground` | No-results text |
+| `--command-radius` → `--radius-lg` | Container corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- cmdk exposes combobox/listbox semantics with active-descendant and keyboard navigation.
+- The active item is shown by background **and** focus state, not color alone.
+- In a ⌘K dialog, focus moves to the input on open and returns to the trigger on close.
+- The empty state gives a clear, text alternative when filtering yields nothing.

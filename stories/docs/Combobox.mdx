@@ -1,0 +1,66 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as ComboboxStories from "../manual/combobox.stories";
+
+<Meta of={ComboboxStories} />
+
+# Combobox
+
+A searchable single-select — a button trigger that opens a filterable list. Not a
+single component but a **composition**: `Button` (trigger) + `Popover` (floating
+surface) + `Command` (search + list). Use it when a `Select` has too many options to
+scan. All three parts are already token-driven, so the Combobox inherits the
+Apple-language styling for free.
+
+## Anatomy
+
+```
+Trigger                         Popover + Command (open)
+┌──────────────────────┐        ┌──────────────────────┐
+│ Select framework…  ⇅ │   →    │ 🔍 Search…            │
+└──────────────────────┘        ├──────────────────────┤
+                                │ ✓ Next.js            │
+                                │   SvelteKit          │
+                                └──────────────────────┘
+```
+
+- **Trigger** — a `Button variant="outline" role="combobox"` showing the value/placeholder.
+- **PopoverContent** — the floating panel.
+- **Command / CommandInput / CommandItem** — type-ahead filtering and the option rows.
+
+## API (trigger)
+
+<ArgTypes of={ComboboxStories.Playground} />
+
+## Trigger states
+
+<Canvas of={ComboboxStories.TriggerStates} />
+
+`empty · selected · disabled`. The open popover and live search are in the Playground
+and Demo stories (they need interaction).
+
+## Usage
+
+- **Do** use a Combobox for long or searchable option sets (countries, repos, frameworks).
+- **Do** keep the trigger label as the current value, falling back to a placeholder.
+- **Do** mark the trigger `role="combobox"` with `aria-expanded` (the demo wiring does this).
+- **Don't** use it for 2–5 fixed options — a `Select` or `RadioGroup` is simpler.
+- **Don't** hardcode colors — every part maps to its own `--button-*`, popover, and
+  command/accent semantic tokens.
+
+## Token mapping
+
+| Part | Tokens |
+|---|---|
+| Trigger | `--button-outline-bg`, `--button-outline-border`, `--button-focus-ring` |
+| Popover surface | `--popover` / `--popover-foreground` |
+| Highlighted option | `--accent` / `--accent-foreground` |
+
+Combobox adds no tokens of its own — it composes existing component tiers.
+
+## Accessibility (WCAG 2.2 AA)
+
+- Trigger is `role="combobox"` with `aria-expanded`; the list is keyboard-navigable
+  (type to filter, arrows to move, Enter to select, Esc to close).
+- The selected option is marked with a check **and** `aria-selected` — not color alone.
+- Focus returns to the trigger on close; the trigger keeps a visible focus ring.
+- Provide an accessible name for the trigger (visible value or `aria-label`).

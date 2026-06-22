@@ -1,0 +1,62 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as AvatarStories from "../manual/avatar.stories";
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+A circular representation of a user or entity — a photo with a graceful initials
+fallback. Built on `components/ui/avatar.tsx` (Radix `Avatar`), styled through the
+Apple-language tokens. Includes a status badge and an overlapping group.
+
+## Anatomy
+
+```
+   ┌───┐
+   │IMG│●   ← AvatarBadge (status, ringed)
+   └───┘
+     │   └─ AvatarImage (object-cover, falls back on error)
+     └─ AvatarFallback (initials on --avatar-fallback-bg)
+```
+
+- **Avatar** — the circular root; sizes `sm · default · lg`.
+- **AvatarImage** — the photo; if it fails, the fallback shows automatically.
+- **AvatarFallback** — initials/icon on the muted surface.
+- **AvatarBadge / AvatarGroup / AvatarGroupCount** — status dot, overlap stack, overflow count.
+
+## API
+
+<ArgTypes of={AvatarStories.Playground} />
+
+## Sizes, fallback, badge & group
+
+<Canvas of={AvatarStories.Sizes} />
+<Canvas of={AvatarStories.Fallback} />
+<Canvas of={AvatarStories.WithBadge} />
+<Canvas of={AvatarStories.Group} />
+
+## Usage
+
+- **Do** always provide a fallback (initials) — images fail, and they load late.
+- **Do** give `AvatarImage` a meaningful `alt` (the person's name).
+- **Do** use `AvatarGroup` + `AvatarGroupCount` to show "and N more".
+- **Don't** put essential-only info in the badge color — pair it with a label/tooltip.
+- **Don't** hardcode colors — surfaces/rings map to `--avatar-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--avatar-fallback-bg` → `--muted` | Initials surface |
+| `--avatar-fallback-fg` → `--muted-foreground` | Initials text |
+| `--avatar-ring` → `--background` | Ring separating overlaps/badge |
+| `--avatar-border` → `--border` | Blended hairline around the image |
+| `--avatar-badge-bg` → `--primary` | Status badge fill |
+| `--avatar-radius` | Full circle |
+
+## Accessibility (WCAG 2.2 AA)
+
+- `AvatarImage` needs `alt`; decorative-only avatars can use `alt=""`.
+- Fallback initials are readable text at ≥ 4.5:1 contrast in both themes.
+- A status badge that conveys meaning (online/away) needs an `aria-label` or adjacent text.
+- The image error → fallback swap is automatic, so there's never a broken-image icon.

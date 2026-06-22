@@ -1,0 +1,61 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as PopoverStories from "../manual/popover.stories";
+
+<Meta of={PopoverStories} />
+
+# Popover
+
+A floating panel anchored to a trigger, opened on click, that can hold interactive
+content (controls, a small form). Built on `components/ui/popover.tsx` (Radix), styled
+through the Apple-language tokens. For hover-only previews, use **Hover Card**.
+
+## Anatomy
+
+```
+[ Trigger ]
+    │
+    ▼
+┌──────────────────┐
+│ Title             │  ← PopoverTitle
+│ …content/controls │  ← PopoverContent (--popover-bg, hairline --popover-border)
+└──────────────────┘
+```
+
+- **Popover** — click-triggered; `side`/`align` position it.
+- **PopoverContent / Header / Title / Description** — the panel and its parts; holds focusable controls.
+
+## API
+
+<ArgTypes of={PopoverStories.Playground} />
+
+## Rich content
+
+<Canvas of={PopoverStories.WithForm} />
+
+Unlike a Tooltip, a Popover receives focus and can hold a form or controls.
+
+## Usage
+
+- **Do** use a Popover for on-demand controls anchored to a button.
+- **Do** move focus into the panel and restore it to the trigger on close.
+- **Do** keep it dismissible (click-away, Esc).
+- **Don't** put must-do flow in a popover that's easy to dismiss — use a `Dialog`.
+- **Don't** hardcode colors — surface maps to `--popover-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--popover-bg` → `--popover` | Panel surface |
+| `--popover-fg` → `--popover-foreground` | Panel text |
+| `--popover-border` | Hairline ring (`foreground/10`, mode-aware) |
+| `--popover-title` → `--foreground` | Title |
+| `--popover-description` → `--muted-foreground` | Description |
+| `--popover-radius` → `--radius-lg` | Panel corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix moves focus into the panel and restores it to the trigger on close; Esc closes.
+- The trigger exposes open/closed via `aria-expanded`.
+- Don't trap essential content in hover-only UI — a Popover is click/focus-driven (good for touch).
+- Panel text contrast verified ≥ 4.5:1 in both themes.

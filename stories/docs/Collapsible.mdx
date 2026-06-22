@@ -1,0 +1,56 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as CollapsibleStories from "../manual/collapsible.stories";
+
+<Meta of={CollapsibleStories} />
+
+# Collapsible
+
+A single open/close region with no built-in chrome — you bring the trigger and content
+styling. Built on `components/ui/collapsible.tsx` (Radix), animated and styled through
+the Apple-language tokens. For a coordinated set of sections, use **Accordion**.
+
+## Anatomy
+
+```
+Header                [⌄]   ← CollapsibleTrigger (your own button)
+┌──────────────────────┐
+│ revealed content      │   ← CollapsibleContent
+└──────────────────────┘
+```
+
+- **Collapsible** — the root; holds open/closed state.
+- **CollapsibleTrigger / CollapsibleContent** — the toggle and the revealed region.
+
+## API
+
+<ArgTypes of={CollapsibleStories.Playground} />
+
+## States
+
+<Canvas of={CollapsibleStories.States} />
+
+`closed · open`. A Collapsible is one region; an Accordion coordinates a set.
+
+## Usage
+
+- **Do** use a Collapsible to hide secondary detail behind a single toggle.
+- **Do** keep the always-visible summary meaningful on its own.
+- **Do** give the trigger a clear label or `aria-label` (icon-only toggles).
+- **Don't** reach for a Collapsible when sections are peers — use an `Accordion`.
+- **Don't** hardcode colors — style the content with the usual semantic tokens.
+
+## Token mapping
+
+Collapsible is structural and adds **no color tokens** — style its trigger/content with
+semantic tokens. It shares the expand/collapse timing:
+
+| Token | Role |
+|---|---|
+| `--collapsible-transition-duration` | 200ms expand/collapse |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix wires `aria-expanded`/`aria-controls` between the trigger and the content.
+- Give icon-only triggers an `aria-label`; keep a visible focus ring.
+- State is exposed via `aria-expanded`, not by an icon's rotation alone.
+- Respect reduced motion for the height animation at the app level.

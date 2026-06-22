@@ -1,0 +1,62 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as ChartStories from "../manual/chart.stories";
+
+<Meta of={ChartStories} />
+
+# Chart
+
+Composable charts built on Recharts, themed through chart tokens.
+`components/ui/chart.tsx` provides `ChartContainer` (sets CSS vars from a config),
+`ChartTooltip`, and `ChartTooltipContent`; you bring the Recharts primitives. Series
+colors resolve to the `--chart-1…5` design tokens, so charts re-theme with the system.
+
+## Anatomy
+
+```
+ChartContainer (config → --color-<series> CSS vars)
+ └─ <BarChart>            (Recharts)
+     ├─ CartesianGrid
+     ├─ XAxis
+     ├─ ChartTooltip → ChartTooltipContent
+     └─ <Bar fill="var(--color-desktop)" />
+```
+
+- **ChartContainer** — wraps the chart, injects `--color-<key>` from `config`, sizes it.
+- **config** — maps each series to a `label` and a `color` (a `--chart-*` token).
+- **ChartTooltip / ChartTooltipContent** — themed tooltip on the popover surface.
+
+## API
+
+<ArgTypes of={ChartStories.Playground} />
+
+## Palette (multi-series)
+
+<Canvas of={ChartStories.Palette} />
+
+Series pull from `--chart-1…5`; reference them in the config as `var(--color-chart-N)`,
+then use `fill="var(--color-<series>)"` on the marks.
+
+## Usage
+
+- **Do** define every series in `config` with a label + a `--chart-*` color.
+- **Do** keep `accessibilityLayer` on (it adds keyboard + screen-reader support).
+- **Do** pick chart colors from the token palette so light/dark both work.
+- **Don't** hand-pick hex colors — they won't re-theme and may fail contrast.
+- **Don't** encode series by color alone — use labels, a legend, or direct labeling.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--chart-1` … `--chart-5` | Series colors (referenced via `var(--color-<series>)`) |
+| `--popover` / `--popover-foreground` | Tooltip surface (via ChartTooltipContent) |
+| `--border` | Grid lines / axis |
+
+Chart adds no component tokens of its own — it maps series to the existing chart palette.
+
+## Accessibility (WCAG 2.2 AA)
+
+- `accessibilityLayer` gives the chart keyboard navigation and an a11y description.
+- Don't rely on color to distinguish series — add a legend or direct labels.
+- Provide a text alternative/summary for complex charts (key takeaway in prose).
+- Tooltip text uses the popover tokens, verified ≥ 4.5:1 contrast in both themes.

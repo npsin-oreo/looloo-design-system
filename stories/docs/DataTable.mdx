@@ -1,0 +1,61 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as DataTableStories from "../manual/data-table.stories";
+
+<Meta of={DataTableStories} />
+
+# Data Table
+
+A sortable, interactive table — the **Table** primitive composed with sorting (and,
+in real apps, filtering/pagination/selection) state. `components/ui/table.tsx` provides
+the markup; you bring the state (local, or TanStack Table). Styled entirely through the
+`--table-*` tokens, so it re-themes with the system.
+
+## Anatomy
+
+```
+┌────────┬──────────────────┬──────────┐
+│ Status │ Email            │ Amount ⇅ │  ← sortable header (button toggles order)
+├────────┼──────────────────┼──────────┤
+│ [Paid] │ ken99@…          │ $316.00  │  ← rows render from sorted data
+└────────┴──────────────────┴──────────┘
+```
+
+- **Table parts** — `TableHeader/Row/Head/Body/Cell` (see **Table** for the base).
+- **Sort control** — a header button that flips the comparator and re-renders rows.
+- **State** — held locally (`useState`) here; swap in TanStack Table for large datasets.
+
+## API
+
+<ArgTypes of={DataTableStories.Playground} />
+
+## Sortable
+
+<Canvas of={DataTableStories.Playground} />
+
+Click the **Amount** header to toggle ascending/descending (interact in the canvas).
+
+## Usage
+
+- **Do** make sortable columns obvious with an affordance (the ⇅ icon) and a button header.
+- **Do** reach for TanStack Table once you need filtering, pagination, or selection at scale.
+- **Do** keep numeric columns right-aligned and formatted consistently.
+- **Don't** re-sort under the user without indicating the active column/direction.
+- **Don't** hardcode colors — it inherits the `--table-*` tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--table-header-fg` → `--foreground` | Column headings / sort buttons |
+| `--table-row-hover` → `--muted` | Row hover |
+| `--table-row-selected` → `--muted` | Selected row |
+| `--table-border` → `--border` | Row dividers |
+
+Data Table adds no tokens of its own — it composes Table.
+
+## Accessibility (WCAG 2.2 AA)
+
+- Sort controls are real `<button>`s inside `<th>`; expose the active sort with `aria-sort`.
+- Selection (when present) uses `data-state` plus a visible background — not color alone.
+- Keep real table semantics so screen readers announce rows/columns and headers.
+- Numeric alignment is visual only; header association still carries the meaning.

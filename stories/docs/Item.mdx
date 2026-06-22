@@ -1,0 +1,62 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as ItemStories from "../manual/item.stories";
+
+<Meta of={ItemStories} />
+
+# Item
+
+A flexible horizontal row for lists, settings, and selections — media, text, and
+actions on one line. Built on `components/ui/item.tsx`, styled through the
+Apple-language tokens. Use it where a Card would be too heavy and a bare `<li>` too plain.
+
+## Anatomy
+
+```
+┌──────────────────────────────────────────────┐
+│ [media]  Title                      [actions] │
+│          Description                          │
+└──────────────────────────────────────────────┘
+```
+
+- **Item** — the row; variants `default · outline · muted`, sizes `default · sm · xs`.
+- **ItemMedia** — leading icon/image (`variant="icon" | "image"`).
+- **ItemContent / ItemTitle / ItemDescription** — the text column.
+- **ItemActions** — trailing controls (buttons, switches).
+- **ItemGroup / ItemSeparator** — stack items into a `role="list"`.
+
+## API
+
+<ArgTypes of={ItemStories.Playground} />
+
+## Variants, sizes & group
+
+<Canvas of={ItemStories.Variants} />
+<Canvas of={ItemStories.Sizes} />
+<Canvas of={ItemStories.Group} />
+
+## Usage
+
+- **Do** use Items for settings rows, search results, or pickable lists.
+- **Do** use `ItemGroup` so assistive tech announces it as a list.
+- **Do** make the whole row a link with `asChild` when the row navigates.
+- **Don't** overload a row with many actions — keep one primary trailing control.
+- **Don't** hardcode colors — surfaces/borders map to `--item-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--item-border` → `--border` | Outline variant edge |
+| `--item-muted-bg` → `--muted` | Muted variant surface (50%) |
+| `--item-hover-bg` → `--muted` | Hover when interactive |
+| `--item-focus-ring` → `--ring` | Focus ring (interactive rows) |
+| `--item-title` → `--foreground` | Title |
+| `--item-description` → `--muted-foreground` | Description (AA) |
+| `--item-radius` → `--radius-lg` | Row corner |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Wrap stacks in `ItemGroup` (`role="list"`); each Item is a list entry.
+- Interactive rows (`asChild` link/button) keep a visible focus ring — never removed.
+- Don't nest interactive controls inside an already-clickable row (nested-interactive trap).
+- Title/description contrast verified ≥ 4.5:1 in both themes.

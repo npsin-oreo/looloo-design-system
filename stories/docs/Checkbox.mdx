@@ -1,0 +1,60 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as CheckboxStories from "../manual/checkbox.stories";
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+A control that toggles an independent option on or off. Built on
+`components/ui/checkbox.tsx` (Radix `Checkbox`), styled through the Apple-language
+tokens. Pairs with a `Label`; for one-of-many choices use **Radio Group** instead.
+
+## Anatomy
+
+```
+┌──┐
+│✓ │  Label              ← <button role="checkbox"> + check indicator
+└──┘
+  └─ checked fills with --checkbox-checked-bg
+```
+
+- **Checkbox** — `size-4` rounded square; checked fills + shows the check glyph.
+- **Label** — associate with `htmlFor` ↔ `id` so the text is part of the hit target.
+
+## API
+
+<ArgTypes of={CheckboxStories.Playground} />
+
+## States
+
+<Canvas of={CheckboxStories.States} />
+<Canvas of={CheckboxStories.WithLabel} />
+
+`unchecked · checked · focus · disabled · error`. Focus reproduces the focus-visible
+ring statically; disabled/error use real attributes.
+
+## Usage
+
+- **Do** use a Checkbox for independent options or a single opt-in (terms, newsletter).
+- **Do** give every box a `Label` or `aria-label`.
+- **Do** use the error state (`aria-invalid`) with accompanying text, not color alone.
+- **Don't** use a single checkbox where a Switch (instant setting) fits better.
+- **Don't** hardcode colors — fill/ring map to `--checkbox-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--checkbox-checked-bg` → `--primary` | Checked fill + border (Apple blue) |
+| `--checkbox-checked-fg` → `--primary-foreground` | Check glyph |
+| `--checkbox-border` → `--input` | Resting border |
+| `--checkbox-focus-ring` → `--ring` | Focus ring |
+| `--checkbox-invalid-ring` → `--destructive` | Error ring |
+| `--checkbox-radius` | Small rounded square (4px) |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix supplies `role="checkbox"` + `aria-checked` and Space-to-toggle.
+- Always provide an accessible name via `Label htmlFor` or `aria-label`.
+- Visible focus ring — never removed.
+- State is conveyed by the check **and** fill color, not color alone.

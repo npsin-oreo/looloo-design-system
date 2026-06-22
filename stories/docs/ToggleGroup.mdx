@@ -1,0 +1,57 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as ToggleGroupStories from "../manual/toggle-group.stories";
+
+<Meta of={ToggleGroupStories} />
+
+# Toggle Group
+
+A set of toggles acting as one control — single-select (a segmented control) or
+multi-select (a formatting toolbar). Built on `components/ui/toggle-group.tsx` (Radix),
+reusing the **Toggle** styling and the Apple-language tokens.
+
+## Anatomy
+
+```
+┌──┬──┬──┐
+│◧ │▣ │◨ │   type="single", spacing={0} → segmented; one pressed
+└──┴──┴──┘
+```
+
+- **ToggleGroup** — `type="single"` (radio-like) or `"multiple"`; `spacing={0}` fuses items.
+- **ToggleGroupItem** — a Toggle within the set; inherits the group `variant`/`size`.
+
+## API
+
+<ArgTypes of={ToggleGroupStories.Playground} />
+
+## Variants, sizes & single-select
+
+<Canvas of={ToggleGroupStories.Variants} />
+<Canvas of={ToggleGroupStories.Sizes} />
+<Canvas of={ToggleGroupStories.SingleSelect} />
+
+## Usage
+
+- **Do** use `single` for mutually-exclusive choices (text alignment, view mode).
+- **Do** use `multiple` for independent formatting marks (bold, italic, underline).
+- **Do** give every icon-only item an `aria-label`.
+- **Don't** mix unrelated actions into one group.
+- **Don't** hardcode colors — items reuse `--toggle-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--toggle-on-bg` → `--muted` | Pressed item surface |
+| `--toggle-on-fg` → `--foreground` | Pressed item icon |
+| `--toggle-outline-border` → `--input` | Outline variant edge |
+| `--toggle-focus-ring` → `--ring` | Focus ring |
+
+Toggle Group adds no tokens of its own — it composes Toggle.
+
+## Accessibility (WCAG 2.2 AA)
+
+- Radix supplies `role="group"` with roving focus and arrow-key navigation.
+- `single` keeps exactly one item pressed; `multiple` allows several.
+- Pressed state is conveyed by fill **and** `aria-pressed` — not color alone.
+- Icon-only items require an `aria-label`; focus rings stay visible.

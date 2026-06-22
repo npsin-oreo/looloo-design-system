@@ -1,0 +1,46 @@
+import * as React from "react";
+import type { Preview } from "@storybook/nextjs-vite";
+import { withThemeByClassName } from "@storybook/addon-themes";
+import { Geist_Mono } from "next/font/google";
+import "../app/globals.css";
+
+// Sans is the Apple system stack defined as --font-sans in globals.css (:root),
+// which Storybook imports above — so it's available without next/font (SF Pro
+// renders natively on Apple devices). Only mono needs loading here.
+const fontMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+
+const preview: Preview = {
+  parameters: {
+    // We center via the decorator below (CSS grid), so let Storybook give us
+    // the full canvas with no padding/centering of its own.
+    layout: "fullscreen",
+    controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } },
+    a11y: { test: "error" },
+    backgrounds: { disable: true },
+  },
+  decorators: [
+    // Toolbar light/dark switch — toggles `.dark` on <html>, matching next-themes.
+    withThemeByClassName({
+      themes: { light: "", dark: "dark" },
+      defaultTheme: "light",
+      parentSelector: "html",
+    }),
+    // Center the story in the canvas with GRID (not flex): `place-content-center`
+    // sizes the auto track to the child's max-content, so wide components (forms,
+    // cards) keep their natural width instead of being squished to one word/line.
+    // `min-h-svh` lets the themed background fill the whole canvas (incl. dark).
+    (Story) => (
+      // flex-col + items-center centers the story horizontally WITHOUT shrinking
+      // it: the container keeps a definite width (w-full), so demos that use
+      // `w-full max-w-*` resolve to their intended width instead of collapsing
+      // to min-content (the per-word-wrap bug). justify-center centers vertically.
+      <div
+        className={`${fontMono.variable} font-sans flex min-h-svh w-full flex-col items-center justify-center gap-4 bg-background p-10 text-foreground`}
+      >
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+export default preview;

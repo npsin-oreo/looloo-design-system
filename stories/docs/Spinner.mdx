@@ -1,0 +1,51 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as SpinnerStories from "../manual/spinner.stories";
+
+<Meta of={SpinnerStories} />
+
+# Spinner
+
+A small animated ring for indeterminate, short waits — a submit, a fetch. Built on
+`components/ui/spinner.tsx` (a Lucide loader), styled through the Apple-language tokens.
+It draws in `currentColor`, so it recolors with text. For known progress, use **Progress**.
+
+## Anatomy
+
+```
+◜◝   animate-spin, currentColor (--spinner-color)
+```
+
+- **Spinner** — `size-4` by default; size via `size-*` and color via `text-*`.
+
+## API
+
+<ArgTypes of={SpinnerStories.Playground} />
+
+## Sizes, colors & context
+
+<Canvas of={SpinnerStories.Sizes} />
+<Canvas of={SpinnerStories.Colors} />
+<Canvas of={SpinnerStories.InContext} />
+
+## Usage
+
+- **Do** use a Spinner for short, indeterminate waits where you can't show a percentage.
+- **Do** place it inside the control it's acting on (a button that's submitting).
+- **Do** set `text-*` to match the surrounding context (muted, primary, destructive).
+- **Don't** use it for long known-progress tasks — use `Progress`.
+- **Don't** hardcode colors — it inherits `currentColor` (`--spinner-color`).
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--spinner-color` → currentColor | Inherits text color |
+| `--spinner-size` | 16px default (size-4) |
+| `--spinner-spin-duration` | 1000ms rotation |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Ships with `role="status"` + `aria-label="Loading"`, so it's announced.
+- Keep one accessible loading message per operation; don't stack redundant announcements.
+- Respect reduced motion for the spin at the app level.
+- Pair with disabling the triggering control so the action can't be repeated mid-flight.

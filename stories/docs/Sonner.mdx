@@ -1,0 +1,57 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as SonnerStories from "../manual/sonner.stories";
+
+<Meta of={SonnerStories} />
+
+# Sonner
+
+Transient toast notifications that appear, then auto-dismiss. Built on
+`components/ui/sonner.tsx` (the Sonner library), styled through the Apple-language
+tokens. For persistent, in-flow status, use an **Alert**.
+
+## Anatomy
+
+```
+┌────────────────────────────┐
+│ ✓ Saved          [Undo]     │  ← toast(message, { description, action })
+│   Your changes are live.    │
+└────────────────────────────┘
+   rendered in a portal by <Toaster />
+```
+
+- **Toaster** — render once near the app root; hosts the toast portal.
+- **toast(...)** — imperative API: `toast`, `toast.success`, `toast.error`, with `description`/`action`.
+
+## API
+
+<ArgTypes of={SonnerStories.Playground} />
+
+## Toast types
+
+<Canvas of={SonnerStories.Types} />
+
+`default · success · error · with action`. Click to trigger (toasts render in the portal).
+
+## Usage
+
+- **Do** use Sonner for ephemeral confirmations ("Saved", "Copied") that shouldn't block.
+- **Do** add an action (Undo / Retry) when there's an immediate next step.
+- **Do** keep messages short — toasts are glanceable and time-limited.
+- **Don't** put critical, must-act information only in a toast — it disappears.
+- **Don't** hardcode colors — surfaces map to `--sonner-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--sonner-bg` → `--popover` | Toast surface |
+| `--sonner-fg` → `--popover-foreground` | Toast title |
+| `--sonner-description` → `--muted-foreground` | Toast body |
+| `--sonner-border` → `--border` | Toast edge |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Toasts are announced via a live region; keep them brief and non-essential.
+- Don't rely on color alone — pair success/error with an icon and clear text.
+- Toasts auto-dismiss; provide a persistent path (Alert, inline message) for anything important.
+- Give actions real, specific labels ("Undo", "Retry") — never icon-only without a name.

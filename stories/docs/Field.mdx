@@ -1,0 +1,60 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as FieldStories from "../manual/field.stories";
+
+<Meta of={FieldStories} />
+
+# Field
+
+The composition that wires a label, description, and error message to a control
+(usually an **Input**) accessibly. Built on `components/ui/field.tsx`, styled through
+the Apple-language tokens. A bare input should rarely ship without a Field around it.
+
+## Anatomy
+
+```
+Field
+ ├─ FieldLabel        → htmlFor ↔ control id
+ ├─ Input             → the control (aria-invalid on error)
+ ├─ FieldDescription  → helper text
+ └─ FieldError        → error message (aria-describedby ↔ control)
+```
+
+- **Field / FieldGroup** — wraps one control (or stacks several).
+- **FieldLabel / FieldDescription / FieldError** — label, helper text, and error message.
+
+## API
+
+<ArgTypes of={FieldStories.Playground} />
+
+## Composition & states
+
+<Canvas of={FieldStories.States} />
+
+Default (label + description), **error** (`FieldError` + `aria-invalid` input, described
+by the message), and disabled.
+
+## Usage
+
+- **Do** always pair a control with a `FieldLabel` (`htmlFor` ↔ `id`).
+- **Do** put validation in `FieldError` and link it with `aria-describedby`.
+- **Do** set `aria-invalid` on the control for the error state (drives the destructive ring).
+- **Don't** rely on red color alone to signal an error — always include text.
+- **Don't** hardcode colors — surfaces/borders map to `--field-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--field-label` → `--foreground` | Label text |
+| `--field-description` → `--muted-foreground` | Helper text |
+| `--field-error-text` → `--destructive` | Error message |
+| `--field-border-focus` → `--ring` | Focus ring on the control |
+| `--field-border-error` → `--destructive` | Invalid border + ring |
+
+## Accessibility (WCAG 2.2 AA)
+
+- Programmatic label association via `htmlFor`/`id`.
+- Error: `aria-invalid` + `aria-describedby` pointing at `FieldError`, so screen readers
+  announce the message with the field.
+- Visible focus ring; placeholder/text contrast ≥ 4.5:1 in both themes.
+- Disabled fields use `disabled` (removed from tab order) with a reduced-opacity, legible treatment.

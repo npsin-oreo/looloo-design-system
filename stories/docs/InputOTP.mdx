@@ -1,0 +1,63 @@
+import { Meta, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as InputOTPStories from "../manual/input-otp.stories";
+
+<Meta of={InputOTPStories} />
+
+# Input OTP
+
+A one-time-password / verification-code input — one box per character, with optional
+grouping. Built on `components/ui/input-otp.tsx` (the `input-otp` library) and styled
+through the Apple-language tokens. It's a single hidden input behind individually
+rendered slots, so paste, arrow keys, and mobile autofill all work.
+
+## Anatomy
+
+```
+┌──┐┌──┐┌──┐   ─   ┌──┐┌──┐┌──┐
+│ 1││ 2││ 3│   │   │  ││  ││  │   ← InputOTPSlot ×6
+└──┘└──┘└──┘   │   └──┘└──┘└──┘
+   InputOTPGroup  InputOTPSeparator  InputOTPGroup
+```
+
+- **InputOTP** — the controller (set `maxLength`); holds the real (hidden) input.
+- **InputOTPGroup** — visually fuses a run of slots; carries the error border.
+- **InputOTPSlot** — one character cell; the active one shows a blinking caret.
+- **InputOTPSeparator** — an optional divider between groups.
+
+## API
+
+<ArgTypes of={InputOTPStories.Playground} />
+
+## States
+
+<Canvas of={InputOTPStories.States} />
+
+`empty · filled · disabled · error`. The active slot shows a caret; `aria-invalid`
+bubbles to the group border via `has-aria-invalid`.
+
+## Usage
+
+- **Do** match `maxLength` to the real code length (commonly 4 or 6).
+- **Do** allow paste — the component spreads a pasted code across slots automatically.
+- **Do** give the input an accessible name (`aria-label`, e.g. "Verification code").
+- **Don't** split a code into separate `<input>`s by hand — it breaks paste & autofill.
+- **Don't** hardcode colors — slot surface/border/ring map to `--input-otp-*` / semantic tokens.
+
+## Token mapping
+
+| Token | Role |
+|---|---|
+| `--input-otp-slot-bg` → `--background` | Slot surface |
+| `--input-otp-slot-text` → `--foreground` | Entered character |
+| `--input-otp-slot-border` → `--input` | Slot border |
+| `--input-otp-active-ring` → `--ring` | Ring on the focused slot |
+| `--input-otp-invalid-border` → `--destructive` | Error border |
+| `--input-otp-caret` → `--foreground` | Blinking caret |
+| `--input-otp-slot-size` | 32px slot; group rounds the outer corners |
+
+## Accessibility (WCAG 2.2 AA)
+
+- One real input drives the slots — native keyboard, paste, and code autofill all work.
+- Provide an accessible name via `aria-label` or an associated `Label`.
+- The active slot is clearly indicated by the focus ring **and** caret, not color alone.
+- Error uses `aria-invalid` (destructive border) plus a text message — never color only.
