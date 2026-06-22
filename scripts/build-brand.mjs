@@ -16,7 +16,39 @@ import { dirname, join } from "node:path"
 import { toOklch } from "./lib-oklch.mjs"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
-const config = JSON.parse(readFileSync(join(root, "brand.config.json"), "utf8"))
+
+/**
+ * Accept BOTH brand.config.json shapes:
+ *   • nested (DS-fork)      — { name, light:{...}, dark:{...}, fonts:{sans} }
+ *   • flat   (consumer/DesignOps Step 2.6) — { project_name, primary, background,
+ *                              foreground, radius, font_sans, ... }
+ * Flat color keys are lifted into `light` so a SINGLE file themes both ways:
+ * forking this repo (brand:build) and CSS-var override in a package consumer.
+ * `light`/`dark`/`fonts` set explicitly always win over the lifted/aliased forms.
+ */
+function normalizeBrandConfig(raw) {
+  const RESERVED = new Set([
+    "$schema", "name", "project_name", "description",
+    "radius", "fonts", "font_sans", "font_mono", "light", "dark",
+  ])
+  const cfg = { ...raw }
+  if (!cfg.name && cfg.project_name) cfg.name = cfg.project_name
+  if (cfg.font_sans || cfg.font_mono) {
+    cfg.fonts = { ...(cfg.fonts ?? {}) }
+    if (cfg.font_sans && !cfg.fonts.sans) cfg.fonts.sans = cfg.font_sans
+    if (cfg.font_mono && !cfg.fonts.mono) cfg.fonts.mono = cfg.font_mono
+  }
+  const lifted = {}
+  for (const [k, v] of Object.entries(raw)) {
+    if (!RESERVED.has(k)) lifted[k] = v
+  }
+  if (Object.keys(lifted).length) cfg.light = { ...lifted, ...(cfg.light ?? {}) }
+  return cfg
+}
+
+const config = normalizeBrandConfig(
+  JSON.parse(readFileSync(join(root, "brand.config.json"), "utf8"))
+)
 const tokens = JSON.parse(readFileSync(join(root, "tokens.json"), "utf8"))
 
 // oklch → primitive CSS-var name, so semantics can alias to the primitive layer
