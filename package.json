@@ -11,13 +11,22 @@
     "components/ui",
     "hooks",
     "lib",
-    "token-contract.json"
+    "scripts/build-brand.mjs",
+    "scripts/lib-oklch.mjs",
+    "tokens.json",
+    "token-contract.json",
+    "brand.schema.json",
+    "THEMING.md"
   ],
+  "bin": {
+    "ds-brand-build": "scripts/build-brand.mjs"
+  },
   "exports": {
     "./styles.css": "./app/globals.css",
     "./theme-provider": "./components/theme-provider.tsx",
     "./*": "./components/ui/*.tsx",
-    "./token-contract.json": "./token-contract.json"
+    "./token-contract.json": "./token-contract.json",
+    "./brand.schema.json": "./brand.schema.json"
   },
   "sideEffects": [
     "**/*.css"

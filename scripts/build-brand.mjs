@@ -1,9 +1,17 @@
 #!/usr/bin/env node
 /**
- * build-brand.mjs — generate app/brand.css from brand.config.json.
+ * build-brand.mjs — generate brand.css from brand.config.json.
  *
  * The brand layer is the ONLY place a brand fork changes colors/radius.
- * Run: `npm run brand:build`
+ *
+ * Two ways to run:
+ *   • In this repo:  `npm run brand:build`            (CWD = repo root)
+ *   • In a consumer: `npx ds-brand-build [config] [out]`
+ *       reads ./brand.config.json, writes ./app/brand.css in the CONSUMER's CWD,
+ *       using the design system's bundled tokens.json for primitive aliasing.
+ *
+ *   config (argv[2]) default: <cwd>/brand.config.json
+ *   out    (argv[3]) default: <cwd>/app/brand.css
  *
  * Convenience: if a base color (e.g. `primary`) is set but its
  * `*-foreground` is omitted, a readable foreground is auto-derived by
@@ -12,10 +20,15 @@
  */
 import { readFileSync, writeFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
-import { dirname, join } from "node:path"
+import { dirname, join, resolve } from "node:path"
 import { toOklch } from "./lib-oklch.mjs"
 
+// Package root (where this script lives) — source of the bundled tokens.json.
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
+// CWD-relative config + output, so a consumer themes their own app without
+// forking. In this repo the CWD IS the package root, so paths are unchanged.
+const configPath = resolve(process.argv[2] || join(process.cwd(), "brand.config.json"))
+const outPath = resolve(process.argv[3] || join(process.cwd(), "app", "brand.css"))
 
 /**
  * Accept BOTH brand.config.json shapes:
@@ -46,10 +59,14 @@ function normalizeBrandConfig(raw) {
   return cfg
 }
 
-const config = normalizeBrandConfig(
-  JSON.parse(readFileSync(join(root, "brand.config.json"), "utf8"))
-)
-const tokens = JSON.parse(readFileSync(join(root, "tokens.json"), "utf8"))
+const config = normalizeBrandConfig(JSON.parse(readFileSync(configPath, "utf8")))
+// Bundled with the package. If absent, skip primitive aliasing (emit literal oklch).
+let tokens = {}
+try {
+  tokens = JSON.parse(readFileSync(join(root, "tokens.json"), "utf8"))
+} catch {
+  tokens = {}
+}
 
 // oklch → primitive CSS-var name, so semantics can alias to the primitive layer
 // (app/primitives.css, itself emitted in oklch). First palette wins for shared
@@ -159,7 +176,7 @@ ${emit("dark")}
 }
 `
 
-writeFileSync(join(root, "app", "brand.css"), css)
+writeFileSync(outPath, css)
 console.log(
-  `✓ app/brand.css generated for "${config.name}" (${Object.keys(config.light ?? {}).length} light tokens)`
+  `✓ ${outPath} generated for "${config.name}" (${Object.keys(config.light ?? {}).length} light tokens)`
 )
