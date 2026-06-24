@@ -63,6 +63,7 @@
         "accent": { "$ref": "#/$defs/color" },
         "accent-foreground": { "$ref": "#/$defs/color" },
         "destructive": { "$ref": "#/$defs/color" },
+        "destructive-foreground": { "$ref": "#/$defs/color" },
         "border": { "$ref": "#/$defs/color" },
         "input": { "$ref": "#/$defs/color" },
         "ring": { "$ref": "#/$defs/color" },

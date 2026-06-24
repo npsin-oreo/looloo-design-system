@@ -36,3 +36,9 @@ next-env.d.ts
 
 # local auth (never commit)
 .npmrc
+
+*storybook.log
+storybook-static
+
+# Storybook generated stories (from registry)
+stories/generated
