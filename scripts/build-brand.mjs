@@ -39,10 +39,15 @@ const outPath = resolve(process.argv[3] || join(process.cwd(), "app", "brand.css
  * forking this repo (brand:build) and CSS-var override in a package consumer.
  * `light`/`dark`/`fonts` set explicitly always win over the lifted/aliased forms.
  */
+// Non-colour axis keys — recognized at top level (flat) or under `axes` (grouped),
+// so they are NOT mistaken for colours and lifted into `light` (toOklch would throw).
+const AXIS_KEYS = ["ease", "duration", "leading", "tracking", "weight_heading", "container", "section"]
+
 function normalizeBrandConfig(raw) {
   const RESERVED = new Set([
     "$schema", "name", "project_name", "description",
     "radius", "fonts", "font_sans", "font_mono", "light", "dark",
+    "axes", ...AXIS_KEYS,
   ])
   const cfg = { ...raw }
   if (!cfg.name && cfg.project_name) cfg.name = cfg.project_name
@@ -51,6 +56,10 @@ function normalizeBrandConfig(raw) {
     if (cfg.font_sans && !cfg.fonts.sans) cfg.fonts.sans = cfg.font_sans
     if (cfg.font_mono && !cfg.fonts.mono) cfg.fonts.mono = cfg.font_mono
   }
+  // axes accept BOTH shapes: grouped { axes: {...} } and flat top-level keys.
+  const axes = { ...(raw.axes ?? {}) }
+  for (const k of AXIS_KEYS) if (raw[k] != null && axes[k] == null) axes[k] = raw[k]
+  if (Object.keys(axes).length) cfg.axes = axes
   const lifted = {}
   for (const [k, v] of Object.entries(raw)) {
     if (!RESERVED.has(k)) lifted[k] = v
@@ -155,6 +164,35 @@ function emit(mode) {
   return lines.join("\n")
 }
 
+// Axis tokens that re-point a Tailwind theme token (so existing utilities inherit them) → @theme.
+const AXIS_THEME = { leading: "--text-base--line-height", tracking: "--tracking-tight" }
+// Axis tokens with no Tailwind equivalent → plain :root CSS vars (applied via [data-slot]/utilities).
+const AXIS_ROOT = {
+  ease: "--ease-brand",
+  duration: "--duration-base",
+  weight_heading: "--weight-heading",
+  container: "--container-max",
+  section: "--space-section",
+}
+
+/** `@theme { … }` block re-pointing Tailwind ramp tokens; empty string when no such axes set. */
+function emitAxesTheme() {
+  const a = config.axes ?? {}
+  const lines = Object.entries(AXIS_THEME)
+    .filter(([k]) => a[k] != null)
+    .map(([k, varName]) => `  ${varName}: ${a[k]};`)
+  return lines.length ? `@theme {\n${lines.join("\n")}\n}\n\n` : ""
+}
+
+/** `:root` axis CSS vars (ease/duration/weight/container/section); "" when none set. */
+function emitAxesRoot() {
+  const a = config.axes ?? {}
+  const lines = Object.entries(AXIS_ROOT)
+    .filter(([k]) => a[k] != null)
+    .map(([k, varName]) => `  ${varName}: ${a[k]};`)
+  return lines.length ? lines.join("\n") + "\n" : ""
+}
+
 const css = `/* ----------------------------------------------------------------------------
  * brand.css — AUTO-GENERATED from brand.config.json by scripts/build-brand.mjs.
  * Do NOT edit by hand. Edit brand.config.json then run \`npm run brand:build\`.
@@ -166,9 +204,9 @@ const css = `/* ----------------------------------------------------------------
  * Brand: ${config.name}
  * -------------------------------------------------------------------------- */
 
-:root {
+${emitAxesTheme()}:root {
   --radius: ${config.radius ?? "0.5rem"};
-${emit("light")}
+${emitAxesRoot()}${emit("light")}
 }
 
 .dark {

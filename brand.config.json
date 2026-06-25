@@ -8,6 +8,15 @@
     "mono": "Geist Mono",
     "note": "Font files are wired in app/layout.tsx + app/fonts/ (swap there per brand)."
   },
+  "axes": {
+    "ease": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "duration": "200ms",
+    "leading": "1.5",
+    "tracking": "0em",
+    "weight_heading": "600",
+    "container": "1280px",
+    "section": "6rem"
+  },
   "light": {
     "background": "oklch(1 0 0)",
     "foreground": "oklch(0.145 0 0)",

@@ -50,6 +50,10 @@
     "dark": {
       "$ref": "#/$defs/tokenSet",
       "description": "Dark-mode tokens (.dark)."
+    },
+    "axes": {
+      "$ref": "#/$defs/axisSet",
+      "description": "Non-colour design axes (typography/motion/layout) — themeable scalars beyond colour + radius/font. All optional; an omitted axis inherits the white-label default."
     }
   },
   "$defs": {
@@ -98,6 +102,20 @@
         "semantic-background": { "$ref": "#/$defs/color" },
         "semantic-foreground": { "$ref": "#/$defs/color" },
         "semantic-border": { "$ref": "#/$defs/color" }
+      }
+    },
+    "axisSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Non-colour axis tokens. All optional; an omitted axis inherits the white-label default.",
+      "properties": {
+        "ease": { "type": "string", "description": "Brand easing curve → --ease-brand (apply via [data-slot] / ease-[var(--ease-brand)])." },
+        "duration": { "type": "string", "description": "Base transition duration → --duration-base." },
+        "leading": { "type": "string", "description": "Base line-height → @theme --text-base--line-height (utilities inherit)." },
+        "tracking": { "type": "string", "description": "Display letter-spacing → @theme --tracking-tight." },
+        "weight_heading": { "type": "string", "description": "Heading font-weight cap → --weight-heading." },
+        "container": { "type": "string", "description": "Max content width → --container-max." },
+        "section": { "type": "string", "description": "Section vertical rhythm → --space-section." }
       }
     }
   }

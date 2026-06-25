@@ -9,8 +9,18 @@
  * Brand: White Label
  * -------------------------------------------------------------------------- */
 
+@theme {
+  --text-base--line-height: 1.5;
+  --tracking-tight: 0em;
+}
+
 :root {
   --radius: 0.625rem;
+  --ease-brand: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-base: 200ms;
+  --weight-heading: 600;
+  --container-max: 1280px;
+  --space-section: 6rem;
   --background: var(--tw-white); /* oklch(1 0 0) */
   --foreground: var(--tw-neutral-950); /* oklch(0.145 0 0) */
   --card: var(--tw-white); /* oklch(1 0 0) */

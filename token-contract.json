@@ -47,5 +47,14 @@
     "radius",
     "font_sans",
     "font_mono"
+  ],
+  "axis_tokens": [
+    "ease",
+    "duration",
+    "leading",
+    "tracking",
+    "weight_heading",
+    "container",
+    "section"
   ]
 }
