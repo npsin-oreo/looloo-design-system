@@ -14,6 +14,8 @@ const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
 const colorTokens = Object.keys(brand.light); // light === dark keys (verified)
 // scalars the theme may override; fonts.* map to font_<name> (note is a comment, skip)
 const scalarTokens = ["radius", ...Object.keys(brand.fonts).filter((f) => f !== "note").map((f) => `font_${f}`)];
+// non-colour design axes (typography/motion/layout) — themeable scalars beyond colour + radius/font
+const axisTokens = Object.keys(brand.axes ?? {});
 
 const contract = {
   package: pkg.name,
@@ -22,7 +24,8 @@ const contract = {
   modes: Object.keys(brand).filter((k) => k === "light" || k === "dark"),
   color_tokens: colorTokens,
   scalar_tokens: scalarTokens,
+  axis_tokens: axisTokens,
 };
 
 writeFileSync(join(root, "token-contract.json"), JSON.stringify(contract, null, 2) + "\n");
-console.log(`token-contract.json: ${colorTokens.length} color + ${scalarTokens.length} scalar tokens`);
+console.log(`token-contract.json: ${colorTokens.length} color + ${scalarTokens.length} scalar + ${axisTokens.length} axis tokens`);
