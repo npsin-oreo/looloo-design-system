@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Palette, Search } from "lucide-react";
+import { Palette, Search } from "@/icons/icon-registry";
 
 import {
   Sidebar,

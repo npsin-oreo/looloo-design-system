@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight } from "lucide-react";
+import { Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight } from "@/icons/icon-registry";
 import { getEntry } from "@/components/docs/registry";
 
 type Args = {

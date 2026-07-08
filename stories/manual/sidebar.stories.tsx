@@ -3,7 +3,7 @@ import {
   SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarGroup, SidebarGroupLabel,
   SidebarGroupContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarInset, SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { Home, Inbox, Settings } from "lucide-react";
+import { Home, Inbox, Settings } from "@/icons/icon-registry";
 import { getEntry } from "@/components/docs/registry";
 
 type Args = {

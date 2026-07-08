@@ -1,0 +1,17 @@
+{
+  "$description": "WIRED — consumed by components/ui/icon (<Icon size=…> → size-(--icon-size-*)). md (1rem) matches the [&_svg]:size-4 baseline every component chrome already uses; xs/sm/lg match the size-3/3.5/5 steps in button variants.",
+  "icon": {
+    "size": {
+      "xs": { "$type": "dimension", "$value": "0.75rem", "$extensions": { "looloo.tailwind": "size-3" } },
+      "sm": { "$type": "dimension", "$value": "0.875rem", "$extensions": { "looloo.tailwind": "size-3.5" } },
+      "md": { "$type": "dimension", "$value": "1rem", "$description": "DEFAULT — the ubiquitous size-4 chrome baseline.", "$extensions": { "looloo.tailwind": "size-4" } },
+      "lg": { "$type": "dimension", "$value": "1.25rem", "$extensions": { "looloo.tailwind": "size-5" } }
+    },
+    "strokeWidth": {
+      "$type": "number",
+      "$value": 2,
+      "$description": "lucide default. Source of truth for icons/custom/ geometry too (legacy Figma export stroke-width/Mode 1 stroke-2).",
+      "$extensions": { "looloo.source": "stroke-width/Mode 1.stroke-2" }
+    }
+  }
+}

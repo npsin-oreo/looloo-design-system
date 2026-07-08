@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { BadgeCheck, Star } from "lucide-react";
+import { BadgeCheck, Star } from "@/icons/icon-registry";
 import { Badge } from "@/components/ui/badge";
 import { getEntry } from "@/components/docs/registry";
 

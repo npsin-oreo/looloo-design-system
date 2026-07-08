@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Bell, Bold, Italic, Search, Star, Underline } from "lucide-react";
+import { Bell, Bold, Italic, Search, Star, Underline } from "@/icons/icon-registry";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";

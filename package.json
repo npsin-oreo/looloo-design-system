@@ -49,6 +49,8 @@
     "tokens:audit": "node scripts/tokens/audit-contrast.mjs",
     "audit:styles": "node scripts/audit/hardcoded-styles.mjs",
     "audit:components": "node scripts/audit/component-token-coverage.mjs",
+    "audit:icons": "node scripts/audit/icon-usage.mjs",
+    "icons:contract": "node scripts/registry/build-icon-contract.mjs",
     "tokens:contract": "node scripts/build-token-contract.mjs",
     "prepublishOnly": "npm run tokens:contract && npm run tokens:data && npm run tokens:build",
     "storybook": "npm run tokens:build && storybook dev -p 6006",

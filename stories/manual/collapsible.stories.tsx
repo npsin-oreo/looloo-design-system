@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
-import { ChevronsUpDown } from "lucide-react";
+import { ChevronsUpDown } from "@/icons/icon-registry";
 import { getEntry } from "@/components/docs/registry";
 
 type Args = { defaultOpen: boolean };

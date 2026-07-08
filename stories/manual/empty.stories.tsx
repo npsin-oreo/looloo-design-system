@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent } from "@/components/ui/empty";
 import { Button } from "@/components/ui/button";
-import { FolderOpen, Search, Inbox } from "lucide-react";
+import { FolderOpen, Search, Inbox } from "@/icons/icon-registry";
 import { getEntry } from "@/components/docs/registry";
 
 type Args = { title: string; description: string; withAction: boolean };

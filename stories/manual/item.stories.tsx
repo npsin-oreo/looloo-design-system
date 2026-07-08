@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Item, ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions, ItemGroup, ItemSeparator } from "@/components/ui/item";
 import { Button } from "@/components/ui/button";
-import { CircleCheck, Bell } from "lucide-react";
+import { CircleCheck, Bell } from "@/icons/icon-registry";
 import { getEntry } from "@/components/docs/registry";
 
 type Args = {

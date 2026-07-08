@@ -27,7 +27,7 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
-} from "lucide-react";
+} from "@/icons/icon-registry";
 
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";

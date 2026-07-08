@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Toggle } from "@/components/ui/toggle";
-import { Bold } from "lucide-react";
+import { Bold } from "@/icons/icon-registry";
 import { getEntry } from "@/components/docs/registry";
 
 const meta: Meta<typeof Toggle> = {

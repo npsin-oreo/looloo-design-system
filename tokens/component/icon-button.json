@@ -1,0 +1,12 @@
+{
+  "$description": "IconButton wraps Button's icon-* sizes — these tokens document that mapping (square controls sized by the shared control scale). The rendering path is button.height via --button-height-* (already wired); no separate --icon-button-* vars are consumed.",
+  "icon-button": {
+    "size": {
+      "xs": { "$type": "dimension", "$value": "{size.control.xs}", "$extensions": { "looloo.tailwind": "size-6 (Button size icon-xs)" } },
+      "sm": { "$type": "dimension", "$value": "{size.control.sm}", "$extensions": { "looloo.tailwind": "size-7 (Button size icon-sm)" } },
+      "md": { "$type": "dimension", "$value": "{size.control.md}", "$description": "DEFAULT.", "$extensions": { "looloo.tailwind": "size-8 (Button size icon)" } },
+      "lg": { "$type": "dimension", "$value": "{size.control.lg}", "$extensions": { "looloo.tailwind": "size-9 (Button size icon-lg)" } },
+      "xl": { "$type": "dimension", "$value": "{size.control.xl}", "$extensions": { "looloo.tailwind": "size-10 (Button size icon-xl)" } }
+    }
+  }
+}
