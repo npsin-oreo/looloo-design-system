@@ -1,0 +1,7 @@
+{
+  "$description": "Captured from components/ui/slider/slider.tsx — WIRED. Added in Phase 4 to eliminate the raw bg-white on the thumb (the one palette-utility violation in the codebase). The thumb is white in BOTH modes by design (ring-bordered puck), so it references the white primitive — a semantic role would wrongly flip it in dark mode.",
+  "slider": {
+    "thumbSize": { "$type": "dimension", "$value": "0.75rem", "$extensions": { "looloo.tailwind": "size-3" } },
+    "thumbBackground": { "$type": "color", "$value": "{color.white}", "$extensions": { "looloo.tailwind": "bg-white (pre-Phase-4)" } }
+  }
+}

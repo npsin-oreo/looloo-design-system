@@ -6,7 +6,7 @@
   "counts": {
     "primitive": 420,
     "semantic": 67,
-    "component": 115,
+    "component": 119,
     "modes": [
       "comfortable",
       "compact",
@@ -359,13 +359,21 @@
       "source": "tokens/component/card.json",
       "alias": "font.size.sm"
     },
-    "card.gap": {
+    "card.gap.md": {
       "type": "dimension",
       "value": "1rem",
-      "cssVar": "--card-gap",
+      "cssVar": "--card-gap-md",
       "layer": "component",
       "source": "tokens/component/card.json",
       "alias": "space.4"
+    },
+    "card.gap.sm": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--card-gap-sm",
+      "layer": "component",
+      "source": "tokens/component/card.json",
+      "alias": "space.3"
     },
     "card.padding.md": {
       "type": "dimension",
@@ -2911,14 +2919,6 @@
       "alias": "space.4",
       "description": "Viewport clamp: max-w-[calc(100%-2rem)] = 1rem inset per side."
     },
-    "dialog.overlay": {
-      "type": "color",
-      "value": "oklch(0 0 0 / 30%)",
-      "cssVar": "--dialog-overlay",
-      "layer": "component",
-      "source": "tokens/component/dialog.json",
-      "alias": "surface.overlay"
-    },
     "dialog.padding": {
       "type": "dimension",
       "value": "1rem",
@@ -3792,15 +3792,16 @@
       "cssVar": "--select-content-padding",
       "layer": "component",
       "source": "tokens/component/select.json",
-      "alias": "space.1"
+      "alias": "space.1",
+      "description": "Viewport padding (p-1)."
     },
     "select.content.radius": {
       "type": "dimension",
-      "value": "0.5rem",
+      "value": "0.625rem",
       "cssVar": "--select-content-radius",
       "layer": "component",
       "source": "tokens/component/select.json",
-      "description": "rounded-md = calc(var(--radius) * 0.8)."
+      "description": "Corrected in Phase 4: source uses rounded-lg (the Phase-1 draft said rounded-md)."
     },
     "select.content.shadow": {
       "type": "shadow",
@@ -3833,13 +3834,30 @@
       "source": "tokens/component/select.json",
       "alias": "space.1-5"
     },
-    "select.trigger.height": {
+    "select.trigger.height.md": {
       "type": "dimension",
       "value": "2rem",
-      "cssVar": "--select-trigger-height",
+      "cssVar": "--select-trigger-height-md",
       "layer": "component",
       "source": "tokens/component/select.json",
-      "alias": "size.control.md"
+      "alias": "size.control.md",
+      "description": "DEFAULT size."
+    },
+    "select.trigger.height.sm": {
+      "type": "dimension",
+      "value": "1.75rem",
+      "cssVar": "--select-trigger-height-sm",
+      "layer": "component",
+      "source": "tokens/component/select.json",
+      "alias": "size.control.sm"
+    },
+    "select.trigger.height.xl": {
+      "type": "dimension",
+      "value": "2.5rem",
+      "cssVar": "--select-trigger-height-xl",
+      "layer": "component",
+      "source": "tokens/component/select.json",
+      "alias": "size.control.xl"
     },
     "select.trigger.radius": {
       "type": "dimension",
@@ -3901,7 +3919,7 @@
     },
     "sheet.overlay": {
       "type": "color",
-      "value": "oklch(0 0 0 / 30%)",
+      "value": "oklch(0 0 0 / 0.1)",
       "cssVar": "--sheet-overlay",
       "layer": "component",
       "source": "tokens/component/sheet.json",
@@ -3923,24 +3941,24 @@
       "source": "tokens/component/sheet.json",
       "alias": "shadow.lg"
     },
-    "sidebar.width": {
+    "sidebar.defaultWidth": {
       "type": "dimension",
       "value": "16rem",
-      "cssVar": "--sidebar-width",
+      "cssVar": "--sidebar-default-width",
       "layer": "component",
       "source": "tokens/component/sidebar.json"
     },
-    "sidebar.widthIcon": {
+    "sidebar.iconWidth": {
       "type": "dimension",
       "value": "3rem",
-      "cssVar": "--sidebar-width-icon",
+      "cssVar": "--sidebar-icon-width",
       "layer": "component",
       "source": "tokens/component/sidebar.json"
     },
-    "sidebar.widthMobile": {
+    "sidebar.mobileWidth": {
       "type": "dimension",
       "value": "18rem",
-      "cssVar": "--sidebar-width-mobile",
+      "cssVar": "--sidebar-mobile-width",
       "layer": "component",
       "source": "tokens/component/sidebar.json"
     },
@@ -3999,6 +4017,21 @@
       "layer": "primitive",
       "source": "tokens/primitive/sizing.json",
       "description": "h-6 — button size xs / icon-xs."
+    },
+    "slider.thumbBackground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--slider-thumb-background",
+      "layer": "component",
+      "source": "tokens/component/slider.json",
+      "alias": "color.white"
+    },
+    "slider.thumbSize": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--slider-thumb-size",
+      "layer": "component",
+      "source": "tokens/component/slider.json"
     },
     "space.0": {
       "type": "dimension",
@@ -4347,12 +4380,11 @@
     },
     "surface.overlay": {
       "type": "color",
-      "value": "oklch(0 0 0 / 30%)",
+      "value": "oklch(0 0 0 / 0.1)",
       "cssVar": "--surface-overlay",
       "layer": "semantic",
       "source": "tokens/semantic/surface.json",
-      "alias": "color.background-color",
-      "description": "Modal scrim behind dialog/sheet/drawer. Aliases the kit's `background-color` extra (oklch(0 0 0 / 30%))."
+      "description": "Modal scrim (alert-dialog/drawer/sheet) — matches what components actually render: black @ 10% paired with supports-backdrop-filter:backdrop-blur-xs. NOTE: the Figma kit's `background-color` extra (color.background-color) is 30% with no blur — design must reconcile the two (tracked with the theme sign-off task); dialog itself renders no scrim."
     },
     "surface.popover": {
       "type": "color",
