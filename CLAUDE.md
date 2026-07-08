@@ -23,9 +23,11 @@ npx shadcn@latest info --json
 
 ## Token source
 
-This is a **white-label base**; brands live on their own branch. Brand colors + radius live ONLY in [`brand.config.json`](./brand.config.json) → generated into `app/brand.css` by `npm run brand:build` (auto-runs on dev/build). **To change a brand's colors, edit `brand.config.json` — never hand-edit `app/brand.css` or the `:root`/`.dark` values.** `app/globals.css` holds only structural `@theme` (scales, shadows, var mappings) shared across brands.
+This is a **white-label base**; brands live on their own branch. Brand colors + radius live ONLY in [`brand.config.json`](./brand.config.json). **To change a brand's colors, edit `brand.config.json`, then run `npm run brand:build && npm run tokens:migrate && npm run tokens:build` — never hand-edit generated CSS or `:root`/`.dark` values.** `app/globals.css` holds only structural `@theme` (scales, shadows, var mappings) shared across brands.
 
-**Token layers:** `app/primitives.css` (AUTO-GENERATED from `tokens.json` by `npm run tokens:data`) defines the primitive palette (`--tw-*`, `--rdx-*`, `--brand-*`); semantic tokens in `app/brand.css` **alias** into them via `var(--…)`. Never hand-edit `primitives.css` — edit `tokens.json` and regenerate.
+**Token layers (v2 — LIVE):** the canonical DTCG layer under [`tokens/`](./tokens/README.md) (primitive → semantic → component → mode → theme) is compiled by `npm run tokens:build` into `dist/tokens/*.css`, which `app/globals.css` imports (dist/ is git-ignored; predev/prebuild hooks regenerate it). Primitive CSS vars are namespaced `--ll-*`; semantic vars keep shadcn names (`--background`). `tokens/README.md` has the generated-vs-hand-owned table — never hand-edit the generated subset; run `npm run tokens:validate` after any token edit; `npm run tokens:diff` is the parity gate CI enforces.
+
+**Legacy (published contract — keep green, don't consume):** `app/primitives.css` (from `tokens.json` via `npm run tokens:data`) and `app/brand.css` (from `brand.config.json` via `npm run brand:build`) stay committed and byte-checked in CI for `ds-brand-build` package consumers, but this repo's app no longer imports them; `dist/tokens/compat.css` re-emits `--tw-*`/`--rdx-*`/`--brand-*` for those consumers.
 
 The default brand values trace to [`tokens.json`](./tokens.json) (Figma DTCG export, `shadcn-ui/Mode 1`). Light mode only — `.dark` holds shadcn defaults. The **full** shadcn/ui library is in `components/ui/`. `react-day-picker` is pinned to v9 (the version `calendar.tsx` targets).
 

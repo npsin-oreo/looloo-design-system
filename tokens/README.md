@@ -1,10 +1,20 @@
 # tokens/ — canonical token layer (DS v2)
 
-Status: **Phase 1 — structure only.** Nothing in the app, Storybook, or the
-published package consumes these files yet. The legacy pipeline
-(`tokens.json` → `app/primitives.css`, `brand.config.json` → `app/brand.css`)
-remains 100% authoritative until Phase 2 generates and verifies
-`dist/tokens/*.css`.
+Status: **LIVE.** `app/globals.css` imports `dist/tokens/*.css`, generated
+from this layer by `npm run tokens:build` (predev/prebuild/storybook hooks run
+it automatically). The legacy files (`app/primitives.css`, `app/brand.css`)
+stay committed and CI-checked as the published `ds-brand-build` contract, and
+`npm run tokens:diff` (also in CI) enforces that this layer resolves
+var-for-var identically to them.
+
+After editing `brand.config.json` (brand forks), run:
+
+```bash
+npm run brand:build && npm run tokens:migrate && npm run tokens:build
+```
+
+(brand:build keeps the committed legacy artifact in sync for CI; migrate+build
+refresh the live layer.)
 
 ## Layers
 

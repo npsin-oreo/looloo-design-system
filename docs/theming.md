@@ -32,16 +32,22 @@ Today `tokens/theme/{looloo,healthcare,dashboard}.json` and
 `themes/{looloo,healthcare}/` are **proposed scaffolds** — placeholders
 pending design decisions; nothing consumes them.
 
-## Migration sequence (do not skip ahead)
+## Migration sequence
 
-1. Token pipeline emits `dist/` CSS and proves **var-for-var parity** with
-   `app/primitives.css` + `app/brand.css`.
-2. This repo's `app/globals.css` swaps its imports to `dist/tokens/*`.
-3. Brand branches convert `brand.config.json` → `themes/<brand>/` one at a
+1. ✅ Token pipeline emits `dist/` CSS and proves **var-for-var parity** with
+   `app/primitives.css` + `app/brand.css` (`tokens:diff`, enforced in CI).
+2. ✅ This repo's `app/globals.css` imports `dist/tokens/*` (primitive,
+   semantic, component, compat, modes/dark). The legacy files stay committed
+   as the published `ds-brand-build` contract but are no longer imported by
+   this repo's app.
+3. ⏳ Brand branches convert `brand.config.json` → `themes/<brand>/` one at a
    time (the config shape stays supported — `tokens:migrate` derives semantic
    tokens from it).
-4. Density/contrast modes (`compact`/`comfortable`/`high-contrast`) wire up
+4. ⏳ Density/contrast modes (`compact`/`comfortable`/`high-contrast`) wire up
    only after component tokens drive real CSS vars.
 
-Until step 2 completes, **edit brand.config.json, run `brand:build`, and treat
-everything under `themes/` as documentation of intent.**
+**Brand edit flow now:** edit `brand.config.json`, then
+`npm run brand:build && npm run tokens:migrate && npm run tokens:build`
+(first keeps the committed legacy artifact in sync for CI; the rest refresh
+the live layer). Package consumers are unaffected: `ds-brand-build` and
+`var(--tw-*)` keep working via `dist/tokens/compat.css`.

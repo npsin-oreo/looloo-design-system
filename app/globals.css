@@ -1,19 +1,30 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "./shadcn.css";
-@import "./primitives.css";
-@import "./brand.css";
+/* v2 CANONICAL TOKEN LAYER — generated from tokens/** by `npm run tokens:build`
+   (dist/ is git-ignored; predev/prebuild/storybook hooks regenerate it).
+   Parity with the legacy layer (app/primitives.css + app/brand.css) is
+   enforced by `npm run tokens:diff`; the legacy files stay committed and
+   CI-checked as the published ds-brand-build contract, but are no longer
+   imported here. */
+@import "../dist/tokens/primitive.css";
+@import "../dist/tokens/semantic.css";
+@import "../dist/tokens/component.css";
+@import "../dist/tokens/compat.css";
+@import "../dist/tokens/modes/dark.css";
 
 @source "../components";
 
 @custom-variant dark (&:is(.dark *));
 
 /*
-  Design tokens (colors + radius) live in the BRAND LAYER: app/brand.css,
-  generated from brand.config.json by `npm run brand:build`.
-  A per-brand fork edits brand.config.json only. The @theme inline block
-  below is structural (white-label) — scales, font + shadow tokens, and the
-  var() mappings — and is shared across all brands.
+  Design tokens (colors + radius) come from the canonical layer above:
+  brand.config.json → `npm run tokens:migrate` → tokens/** →
+  `npm run tokens:build` → dist/tokens/*.css.
+  A per-brand fork still edits brand.config.json only (then runs
+  tokens:migrate + tokens:build). The @theme inline block below is
+  structural (white-label) — scales, font + shadow tokens, and the var()
+  mappings — and is shared across all brands.
 */
 
 @theme inline {

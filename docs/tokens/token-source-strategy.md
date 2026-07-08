@@ -1,8 +1,9 @@
 # Token Source Strategy (DS v2)
 
-> Status: Phase 1. The canonical `tokens/` layer exists but is **not consumed at
-> runtime yet** — the legacy pipeline stays authoritative until the Phase 2 build
-> proves value-for-value parity.
+> Status: **LIVE.** `app/globals.css` imports the compiled canonical layer
+> (`dist/tokens/*.css`); `tokens:diff` proved and CI enforces var-for-var
+> parity with the legacy CSS, which stays committed as the published
+> `ds-brand-build` contract.
 
 ## Why `tokens.json` is now legacy/raw
 
