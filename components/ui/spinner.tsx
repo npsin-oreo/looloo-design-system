@@ -1,10 +1,4 @@
-import { cn } from "../../lib/utils"
-import { Loader2Icon } from "lucide-react"
-
-function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
-  return (
-    <Loader2Icon role="status" aria-label="Loading" className={cn("size-4 animate-spin", className)} {...props} />
-  )
-}
-
-export { Spinner }
+// compat re-export — canonical source: ./spinner/spinner.tsx
+// Keeps the published subpath "@npsin-oreo/design-system/spinner" and flat
+// "@/components/ui/spinner" imports resolving. Do not add code here.
+export * from "./spinner/spinner"

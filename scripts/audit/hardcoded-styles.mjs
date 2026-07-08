@@ -13,13 +13,27 @@
  *
  * Run: npm run audit:styles
  */
-import { readFileSync, readdirSync } from "node:fs"
+import { readFileSync, readdirSync, statSync } from "node:fs"
 import { fileURLToPath } from "node:url"
-import { dirname, join } from "node:path"
+import { dirname, join, relative } from "node:path"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..", "..")
 const dir = join(root, "components", "ui")
 const strict = process.argv.includes("--strict")
+
+/** All source .tsx under components/ui (recursive), skipping compat shims. */
+function sourceFiles(d) {
+  const out = []
+  for (const f of readdirSync(d).sort()) {
+    const p = join(d, f)
+    if (statSync(p).isDirectory()) out.push(...sourceFiles(p))
+    else if (f.endsWith(".tsx")) {
+      if (readFileSync(p, "utf8").startsWith("// compat re-export")) continue
+      out.push(p)
+    }
+  }
+  return out
+}
 
 const HIGH = [
   [/\b(?:bg|text|border|ring|fill|stroke)-white\b/, "raw `white` utility"],
@@ -33,10 +47,10 @@ let high = 0
 let files = 0
 const arbitrary = []
 
-for (const f of readdirSync(dir).sort()) {
-  if (!f.endsWith(".tsx")) continue
+for (const p of sourceFiles(dir)) {
+  const f = relative(dir, p)
   files++
-  const lines = readFileSync(join(dir, f), "utf8").split("\n")
+  const lines = readFileSync(p, "utf8").split("\n")
   let arb = 0
   lines.forEach((line, i) => {
     // skip attribute-selector plumbing like [&_[stroke='#ccc']] and color-mix vars

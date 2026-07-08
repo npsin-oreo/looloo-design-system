@@ -1,22 +1,4 @@
-"use client"
-
-import * as React from "react"
-import { Direction } from "radix-ui"
-
-function DirectionProvider({
-  dir,
-  direction,
-  children,
-}: React.ComponentProps<typeof Direction.DirectionProvider> & {
-  direction?: React.ComponentProps<typeof Direction.DirectionProvider>["dir"]
-}) {
-  return (
-    <Direction.DirectionProvider dir={direction ?? dir}>
-      {children}
-    </Direction.DirectionProvider>
-  )
-}
-
-const useDirection = Direction.useDirection
-
-export { DirectionProvider, useDirection }
+// compat re-export — canonical source: ./direction/direction.tsx
+// Keeps the published subpath "@npsin-oreo/design-system/direction" and flat
+// "@/components/ui/direction" imports resolving. Do not add code here.
+export * from "./direction/direction"

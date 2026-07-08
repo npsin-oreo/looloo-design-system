@@ -1,31 +1,29 @@
 # Component Guidelines (DS v2)
 
-## Current vs target layout
-
-**Today (public contract — do not break):** flat files. Every
-`components/ui/<name>.tsx` is a published npm subpath
-(`@npsin-oreo/design-system/<name>` via the `"./*"` exports wildcard), and
-Storybook globs `stories/**` (`.storybook/main.ts`).
-
-**Target (restructure phase):**
+## Layout (folder-per-component — LIVE since v0.4.0)
 
 ```txt
 components/ui/button/
-  button.tsx            # source
-  button.stories.tsx    # co-located stories
-  button.docs.mdx       # co-located docs
-  index.ts              # re-exports
-components/ui/button.tsx  # ← compatibility re-export kept until a major bump
+  button.tsx            # canonical source
+  index.ts              # export * from "./button"
+components/ui/button.tsx  # compat re-export shim — DO NOT add code here
 ```
 
-`button.tokens.json` per-folder is intentionally NOT planned: the v2 spec
-(§7) prefers `tokens/component/button.json` as the single source, which
-already exists — a second per-folder copy would drift.
-
-Why no component has moved yet: a move touches four contracts at once
-(npm subpath, `@/` imports, Storybook glob, shadcn CLI paths). That lands as
-its own batch with compatibility re-exports, an updated `exports` map, a
-version bump, and a full `test-storybook` run — not piecemeal.
+- **Both import spellings work and stay supported**:
+  `@/components/ui/button` (flat shim) and the published subpath
+  `@npsin-oreo/design-system/button` (the `"./*"` exports wildcard resolves
+  the shim; no exports-map change was needed — fully backward compatible).
+- Inside `components/ui/*/`, sibling imports go through the flat shims
+  (`from "../spinner"`), and lib/hooks are three levels up
+  (`from "../../../lib/utils"`).
+- Stories still live in `stories/` (co-location is optional later; the
+  Storybook glob is unchanged). Docs MDX likewise.
+- `button.tokens.json` per-folder is intentionally NOT used: the v2 spec (§7)
+  prefers `tokens/component/button.json` as the single source — a second
+  per-folder copy would drift.
+- **shadcn CLI caveat:** `npx shadcn add <new>` still writes a FLAT
+  `components/ui/<new>.tsx`. After adding, folderize it to match (move file,
+  add index.ts + shim) — the audit scripts treat flat non-shim files as debt.
 
 ## Rules for every component (enforced progressively)
 
