@@ -1,21 +1,22 @@
 import type { ThemeConfig } from "../theme-types"
 
 /**
- * LOOLOO product brand theme — PROPOSED SCAFFOLD.
+ * LOOLOO product brand theme — DESIGN SIGNED OFF 2026-07-08.
  *
- * Every override below is a PLACEHOLDER pointing at the brand ramps that
- * already exist in the Figma export (tokens/primitive/color.json →
- * color.brand.*). The actual brand direction is a design decision that has
- * not been made. Today the real brand mechanism is brand.config.json on a
- * brand branch.
+ * primary #60CFCB (= brand secondary.300 ramp) with dark foreground
+ * (10.64:1; white would fail at 1.86:1); accent #0B2846 deep navy with white
+ * foreground (14.93:1). Compiled to dist/themes/looloo.css; not applied at
+ * runtime until a product opts in via [data-theme="looloo"].
  */
 const looloo: ThemeConfig = {
   name: "looloo",
   extends: "neutral",
-  status: "proposed",
+  status: "active",
   overrides: {
-    "color.primary": "{color.brand.cerulean-blue.500}",
-    "color.accent": "{color.brand.coral.500}",
+    "color.primary": "{color.brand.secondary.300}",
+    "color.primary-foreground": "{color.neutral.950}",
+    "color.accent": "oklch(0.273 0.066 252.129)",
+    "color.accent-foreground": "{color.white}",
   },
 }
 

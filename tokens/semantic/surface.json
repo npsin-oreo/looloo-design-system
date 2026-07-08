@@ -29,7 +29,7 @@
     "overlay": {
       "$type": "color",
       "$value": "oklch(0 0 0 / 0.1)",
-      "$description": "Modal scrim (alert-dialog/drawer/sheet) — matches what components actually render: black @ 10% paired with supports-backdrop-filter:backdrop-blur-xs. NOTE: the Figma kit's `background-color` extra (color.background-color) is 30% with no blur — design must reconcile the two (tracked with the theme sign-off task); dialog itself renders no scrim."
+      "$description": "Modal scrim (alert-dialog/drawer/sheet): black @ 10% paired with supports-backdrop-filter:backdrop-blur-xs. DESIGN DECISION 2026-07-08: keep this (the rendered behavior); the Figma kit's 30% `background-color` extra (color.background-color) is superseded for scrim use — it remains only as a legacy kit value. Dialog itself renders no scrim."
     }
   }
 }

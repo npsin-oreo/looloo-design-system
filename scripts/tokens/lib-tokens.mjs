@@ -72,7 +72,12 @@ export function loadTokens() {
       for (const [name, body] of Object.entries(json[kind] ?? {})) {
         const entries = []
         walk(body, "", (token, path) => entries.push({ path, token }))
-        overlays[kind][name] = { file: `${kind}/${f}`, body, entries }
+        overlays[kind][name] = {
+          file: `${kind}/${f}`,
+          body,
+          entries,
+          proposed: /PROPOSED/i.test(String(json.$description ?? "")),
+        }
       }
     }
   }

@@ -285,7 +285,7 @@ writeJson(["semantic", "status.json"], {
     "Status colors. `destructive` is live (aliases the semantic layer). success/warning/info are PROPOSED v2 additions — not consumed by any component yet; wire up in Phase 4+.",
   status: {
     destructive: token("color", "{color.destructive}", "Alias of the live semantic token."),
-    success: proposed("color.green.600", "Proposed. Not consumed yet."),
+    success: proposed("color.green.700", "Design sign-off 2026-07-08: green-700 (green-600 on white was 3.30:1 < AA). Not consumed yet."),
     "success-foreground": proposed("color.white", "Proposed. Not consumed yet."),
     warning: proposed("color.amber.500", "Proposed. Not consumed yet."),
     "warning-foreground": proposed("color.neutral.950", "Proposed. Not consumed yet."),

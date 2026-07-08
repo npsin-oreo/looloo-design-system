@@ -444,6 +444,9 @@
       "alias": "color.neutral.900",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "looloo"
       ]
     },
     "color.amber.100": {
@@ -1609,11 +1612,10 @@
     },
     "color.muted-foreground": {
       "type": "color",
-      "value": "oklch(0.556 0 0)",
+      "value": "oklch(0.545 0 0)",
       "cssVar": "--muted-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.500",
       "modes": [
         "dark"
       ]
@@ -1894,6 +1896,9 @@
       "alias": "color.zinc.50",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "looloo"
       ]
     },
     "color.purple.100": {
@@ -2847,7 +2852,7 @@
     },
     "content.muted": {
       "type": "color",
-      "value": "oklch(0.556 0 0)",
+      "value": "oklch(0.545 0 0)",
       "cssVar": "--content-muted",
       "layer": "semantic",
       "source": "tokens/semantic/content.json",
@@ -4388,12 +4393,12 @@
     },
     "status.success": {
       "type": "color",
-      "value": "oklch(0.627 0.17 149.214)",
+      "value": "oklch(0.527 0.137 150.069)",
       "cssVar": "--status-success",
       "layer": "semantic",
       "source": "tokens/semantic/status.json",
-      "alias": "color.green.600",
-      "description": "Proposed. Not consumed yet.",
+      "alias": "color.green.700",
+      "description": "Design sign-off 2026-07-08: green-700 (green-600 on white was 3.30:1 < AA). Not consumed yet.",
       "status": "proposed"
     },
     "status.success-foreground": {
@@ -4462,7 +4467,7 @@
       "cssVar": "--surface-overlay",
       "layer": "semantic",
       "source": "tokens/semantic/surface.json",
-      "description": "Modal scrim (alert-dialog/drawer/sheet) — matches what components actually render: black @ 10% paired with supports-backdrop-filter:backdrop-blur-xs. NOTE: the Figma kit's `background-color` extra (color.background-color) is 30% with no blur — design must reconcile the two (tracked with the theme sign-off task); dialog itself renders no scrim."
+      "description": "Modal scrim (alert-dialog/drawer/sheet): black @ 10% paired with supports-backdrop-filter:backdrop-blur-xs. DESIGN DECISION 2026-07-08: keep this (the rendered behavior); the Figma kit's 30% `background-color` extra (color.background-color) is superseded for scrim use — it remains only as a legacy kit value. Dialog itself renders no scrim."
     },
     "surface.popover": {
       "type": "color",
