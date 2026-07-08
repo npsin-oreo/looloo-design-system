@@ -1,0 +1,14 @@
+{
+  "$description": "DRAFT — captured from components/ui/dialog.tsx. Not consumed at runtime yet (Phase 4).",
+  "dialog": {
+    "maxWidth": { "$type": "dimension", "$value": "24rem", "$extensions": { "looloo.tailwind": "max-w-sm" } },
+    "mobileInset": { "$type": "dimension", "$value": "{space.4}", "$description": "Viewport clamp: max-w-[calc(100%-2rem)] = 1rem inset per side.", "$extensions": { "looloo.tailwind": "max-w-[calc(100%-2rem)]" } },
+    "radius": { "$type": "dimension", "$value": "0.875rem", "$extensions": { "looloo.tailwind": "rounded-xl" } },
+    "padding": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "p-4" } },
+    "gap": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "gap-4" } },
+    "headerGap": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "gap-2" } },
+    "titleFontSize": { "$type": "dimension", "$value": "{font.size.base}", "$extensions": { "looloo.tailwind": "text-base" } },
+    "titleFontWeight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$extensions": { "looloo.tailwind": "font-medium" } },
+    "overlay": { "$type": "color", "$value": "{surface.overlay}" }
+  }
+}

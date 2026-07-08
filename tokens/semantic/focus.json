@@ -1,0 +1,28 @@
+{
+  "$description": "Focus-ring system captured 1:1 from current component classes (focus-visible:ring-3 focus-visible:ring-ring/50). Hand-owned. Not consumed at runtime yet.",
+  "focus": {
+    "ring": {
+      "color": {
+        "$type": "color",
+        "$value": "{color.ring}",
+        "$extensions": { "looloo.tailwind": "focus-visible:ring-ring" }
+      },
+      "width": {
+        "$type": "dimension",
+        "$value": "3px",
+        "$extensions": { "looloo.tailwind": "focus-visible:ring-3" }
+      },
+      "opacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$description": "Ring color is applied at 50% (ring-ring/50).",
+        "$extensions": { "looloo.tailwind": "ring-ring/50" }
+      }
+    },
+    "shadow": {
+      "$type": "shadow",
+      "$value": "{shadow.focus}",
+      "$description": "Figma kit 'Focus ring' effect style (--shadow-focus in globals.css)."
+    }
+  }
+}

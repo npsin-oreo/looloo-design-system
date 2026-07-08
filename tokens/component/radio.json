@@ -1,0 +1,9 @@
+{
+  "$description": "DRAFT — captured from components/ui/radio-group.tsx. Not consumed at runtime yet (Phase 4).",
+  "radio": {
+    "size": { "$type": "dimension", "$value": "1rem", "$extensions": { "looloo.tailwind": "size-4" } },
+    "indicatorSize": { "$type": "dimension", "$value": "0.5rem", "$extensions": { "looloo.tailwind": "size-2" } },
+    "radius": { "$type": "dimension", "$value": "{radius.full}", "$extensions": { "looloo.tailwind": "rounded-full" } },
+    "groupGap": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "gap-2" } }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$description": "PROPOSED SCAFFOLD (not consumed yet) — theme for high-error-cost products (medical flows, operational tools). Bias per v2 spec: high readability, comfortable density, clear status colors, strong focus states, calm surfaces. Values are placeholders pending design.",
+  "theme": {
+    "healthcare": {
+      "extends": "neutral",
+      "defaultDensity": {
+        "$type": "text",
+        "$value": "comfortable",
+        "$description": "Pairs with tokens/mode/comfortable.json once density modes are wired."
+      },
+      "focus": {
+        "ring": {
+          "width": { "$type": "dimension", "$value": "4px", "$extensions": { "looloo.status": "proposed" } }
+        }
+      }
+    }
+  }
+}

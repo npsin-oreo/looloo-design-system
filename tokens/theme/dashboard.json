@@ -1,0 +1,16 @@
+{
+  "$description": "PROPOSED SCAFFOLD (not consumed yet) — theme for dense admin/productivity screens. Bias per v2 spec: compact density, strong table support, muted surfaces, high information hierarchy. Values are placeholders pending design.",
+  "theme": {
+    "dashboard": {
+      "extends": "neutral",
+      "defaultDensity": {
+        "$type": "text",
+        "$value": "compact",
+        "$description": "Pairs with tokens/mode/compact.json once density modes are wired."
+      },
+      "surface": {
+        "background": { "$type": "color", "$value": "{color.neutral.50}", "$extensions": { "looloo.status": "proposed" } }
+      }
+    }
+  }
+}

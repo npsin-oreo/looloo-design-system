@@ -1,0 +1,10 @@
+{
+  "$description": "DRAFT — captured from components/ui/sheet.tsx. Not consumed at runtime yet (Phase 4).",
+  "sheet": {
+    "maxWidth": { "$type": "dimension", "$value": "24rem", "$extensions": { "looloo.tailwind": "max-w-sm" } },
+    "padding": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "p-4" } },
+    "gap": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "gap-4" } },
+    "shadow": { "$type": "shadow", "$value": "{shadow.lg}", "$extensions": { "looloo.tailwind": "shadow-lg" } },
+    "overlay": { "$type": "color", "$value": "{surface.overlay}" }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$description": "DRAFT — captured from components/ui/tabs.tsx. Not consumed at runtime yet (Phase 4).",
+  "tabs": {
+    "list": {
+      "height": { "$type": "dimension", "$value": "{size.control.md}", "$extensions": { "looloo.tailwind": "h-8" } },
+      "radius": { "$type": "dimension", "$value": "0.625rem", "$extensions": { "looloo.tailwind": "rounded-lg" } }
+    },
+    "trigger": {
+      "radius": { "$type": "dimension", "$value": "0.5rem", "$extensions": { "looloo.tailwind": "rounded-md" } },
+      "paddingX": { "$type": "dimension", "$value": "{space.1-5}", "$extensions": { "looloo.tailwind": "px-1.5" } },
+      "paddingY": { "$type": "dimension", "$value": "{space.0-5}", "$extensions": { "looloo.tailwind": "py-0.5" } },
+      "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } }
+    },
+    "indicatorThickness": { "$type": "dimension", "$value": "0.125rem", "$description": "Underline variant indicator.", "$extensions": { "looloo.tailwind": "h-0.5" } }
+  }
+}

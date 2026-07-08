@@ -1,0 +1,42 @@
+{
+  "$description": "Neutral (white-label) theme scalars from brand.config.json. Brand forks keep overriding brand.config.json until themes/ lands in Phase 3+.",
+  "theme": {
+    "neutral": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "0.625rem",
+        "$description": "Base --radius; runtime scale is calc-based in app/globals.css."
+      },
+      "font": {
+        "sans": {
+          "$type": "fontFamily",
+          "$value": "Google Sans"
+        },
+        "mono": {
+          "$type": "fontFamily",
+          "$value": "Geist Mono"
+        }
+      },
+      "motion": {
+        "duration": {
+          "$type": "duration",
+          "$value": "200ms"
+        },
+        "ease": {
+          "$type": "cubicBezier",
+          "$value": "cubic-bezier(0.4, 0, 0.2, 1)"
+        }
+      },
+      "layout": {
+        "container": {
+          "$type": "dimension",
+          "$value": "1280px"
+        },
+        "section": {
+          "$type": "dimension",
+          "$value": "6rem"
+        }
+      }
+    }
+  }
+}

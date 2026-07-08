@@ -1,0 +1,13 @@
+{
+  "$description": "DRAFT — captured from components/ui/badge.tsx. Not consumed at runtime yet (Phase 4).",
+  "badge": {
+    "height": { "$type": "dimension", "$value": "1.25rem", "$extensions": { "looloo.tailwind": "h-5" } },
+    "paddingX": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "px-2" } },
+    "paddingY": { "$type": "dimension", "$value": "{space.0-5}", "$extensions": { "looloo.tailwind": "py-0.5" } },
+    "gap": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "gap-1" } },
+    "radius": { "$type": "dimension", "$value": "1.625rem", "$description": "rounded-4xl = calc(var(--radius) * 2.6) — pill-like.", "$extensions": { "looloo.tailwind": "rounded-4xl" } },
+    "fontSize": { "$type": "dimension", "$value": "{font.size.xs}", "$extensions": { "looloo.tailwind": "text-xs" } },
+    "fontWeight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$extensions": { "looloo.tailwind": "font-medium" } },
+    "iconSize": { "$type": "dimension", "$value": "0.75rem", "$extensions": { "looloo.tailwind": "size-3" } }
+  }
+}

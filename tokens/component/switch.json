@@ -1,0 +1,10 @@
+{
+  "$description": "DRAFT — captured from components/ui/switch.tsx (thumb sizes per data-size variant; track dimensions are derived in source and not tokenized yet). Not consumed at runtime yet (Phase 4).",
+  "switch": {
+    "thumbSize": {
+      "sm": { "$type": "dimension", "$value": "0.75rem", "$extensions": { "looloo.tailwind": "size-3" } },
+      "md": { "$type": "dimension", "$value": "1rem", "$description": "DEFAULT size.", "$extensions": { "looloo.tailwind": "size-4" } }
+    },
+    "radius": { "$type": "dimension", "$value": "{radius.full}", "$extensions": { "looloo.tailwind": "rounded-full" } }
+  }
+}

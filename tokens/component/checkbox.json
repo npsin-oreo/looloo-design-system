@@ -1,0 +1,7 @@
+{
+  "$description": "DRAFT — captured from components/ui/checkbox.tsx. Not consumed at runtime yet (Phase 4).",
+  "checkbox": {
+    "size": { "$type": "dimension", "$value": "1rem", "$extensions": { "looloo.tailwind": "size-4" } },
+    "indicatorSize": { "$type": "dimension", "$value": "0.875rem", "$extensions": { "looloo.tailwind": "size-3.5" } }
+  }
+}

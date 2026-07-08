@@ -1,0 +1,58 @@
+{
+  "$description": "Status colors. `destructive` is live (aliases the semantic layer). success/warning/info are PROPOSED v2 additions — not consumed by any component yet; wire up in Phase 4+.",
+  "status": {
+    "destructive": {
+      "$type": "color",
+      "$value": "{color.destructive}",
+      "$description": "Alias of the live semantic token."
+    },
+    "success": {
+      "$type": "color",
+      "$value": "{color.green.600}",
+      "$description": "Proposed. Not consumed yet.",
+      "$extensions": {
+        "looloo.status": "proposed"
+      }
+    },
+    "success-foreground": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "$description": "Proposed. Not consumed yet.",
+      "$extensions": {
+        "looloo.status": "proposed"
+      }
+    },
+    "warning": {
+      "$type": "color",
+      "$value": "{color.amber.500}",
+      "$description": "Proposed. Not consumed yet.",
+      "$extensions": {
+        "looloo.status": "proposed"
+      }
+    },
+    "warning-foreground": {
+      "$type": "color",
+      "$value": "{color.neutral.950}",
+      "$description": "Proposed. Not consumed yet.",
+      "$extensions": {
+        "looloo.status": "proposed"
+      }
+    },
+    "info": {
+      "$type": "color",
+      "$value": "{color.blue.600}",
+      "$description": "Proposed. Not consumed yet.",
+      "$extensions": {
+        "looloo.status": "proposed"
+      }
+    },
+    "info-foreground": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "$description": "Proposed. Not consumed yet.",
+      "$extensions": {
+        "looloo.status": "proposed"
+      }
+    }
+  }
+}

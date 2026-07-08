@@ -1,0 +1,318 @@
+{
+  "$description": "Canonical typography primitives. Generated; do not hand-edit.",
+  "font": {
+    "family": {
+      "sans": {
+        "$type": "fontFamily",
+        "$value": "Google sans",
+        "$description": "Runtime stack lives in app/globals.css (--font-sans/--font-mono via next/font)."
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": "Geist Mono",
+        "$description": "Runtime stack lives in app/globals.css (--font-sans/--font-mono via next/font)."
+      }
+    },
+    "size": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "0.75rem",
+        "$extensions": {
+          "looloo.legacy": "{12}"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "0.875rem",
+        "$extensions": {
+          "looloo.legacy": "{14}"
+        }
+      },
+      "base": {
+        "$type": "dimension",
+        "$value": "1rem",
+        "$extensions": {
+          "looloo.legacy": "{16}"
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "1.125rem",
+        "$extensions": {
+          "looloo.legacy": "{18}"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "1.25rem",
+        "$extensions": {
+          "looloo.legacy": "{20}"
+        }
+      },
+      "2xl": {
+        "$type": "dimension",
+        "$value": "1.5rem",
+        "$extensions": {
+          "looloo.legacy": "{24}"
+        }
+      },
+      "3xl": {
+        "$type": "dimension",
+        "$value": "1.875rem",
+        "$extensions": {
+          "looloo.legacy": "{30}"
+        }
+      },
+      "4xl": {
+        "$type": "dimension",
+        "$value": "2.25rem",
+        "$extensions": {
+          "looloo.legacy": "{36}"
+        }
+      },
+      "5xl": {
+        "$type": "dimension",
+        "$value": "3rem",
+        "$extensions": {
+          "looloo.legacy": "{48}"
+        }
+      },
+      "6xl": {
+        "$type": "dimension",
+        "$value": "3.75rem",
+        "$extensions": {
+          "looloo.legacy": "{60}"
+        }
+      },
+      "7xl": {
+        "$type": "dimension",
+        "$value": "4.5rem",
+        "$extensions": {
+          "looloo.legacy": "{72}"
+        }
+      },
+      "8xl": {
+        "$type": "dimension",
+        "$value": "6rem",
+        "$extensions": {
+          "looloo.legacy": "{96}"
+        }
+      },
+      "9xl": {
+        "$type": "dimension",
+        "$value": "8rem",
+        "$extensions": {
+          "looloo.legacy": "{128}"
+        }
+      }
+    },
+    "weight": {
+      "thin": {
+        "$type": "fontWeight",
+        "$value": 100,
+        "$extensions": {
+          "looloo.legacy": "{100}"
+        }
+      },
+      "extralight": {
+        "$type": "fontWeight",
+        "$value": 200,
+        "$extensions": {
+          "looloo.legacy": "{200}"
+        }
+      },
+      "light": {
+        "$type": "fontWeight",
+        "$value": 300,
+        "$extensions": {
+          "looloo.legacy": "{300}"
+        }
+      },
+      "normal": {
+        "$type": "fontWeight",
+        "$value": 400,
+        "$extensions": {
+          "looloo.legacy": "{400}"
+        }
+      },
+      "medium": {
+        "$type": "fontWeight",
+        "$value": 500,
+        "$extensions": {
+          "looloo.legacy": "{500}"
+        }
+      },
+      "semibold": {
+        "$type": "fontWeight",
+        "$value": 600,
+        "$extensions": {
+          "looloo.legacy": "{600}"
+        }
+      },
+      "bold": {
+        "$type": "fontWeight",
+        "$value": 700,
+        "$extensions": {
+          "looloo.legacy": "{700}"
+        }
+      },
+      "extrabold": {
+        "$type": "fontWeight",
+        "$value": 800,
+        "$extensions": {
+          "looloo.legacy": "{800}"
+        }
+      },
+      "black": {
+        "$type": "fontWeight",
+        "$value": 900,
+        "$extensions": {
+          "looloo.legacy": "{900}"
+        }
+      }
+    },
+    "leading": {
+      "3": {
+        "$type": "dimension",
+        "$value": "0.75rem",
+        "$extensions": {
+          "looloo.legacy": "{12}"
+        }
+      },
+      "4": {
+        "$type": "dimension",
+        "$value": "1rem",
+        "$extensions": {
+          "looloo.legacy": "{16}"
+        }
+      },
+      "5": {
+        "$type": "dimension",
+        "$value": "1.25rem",
+        "$extensions": {
+          "looloo.legacy": "{20}"
+        }
+      },
+      "6": {
+        "$type": "dimension",
+        "$value": "1.5rem",
+        "$extensions": {
+          "looloo.legacy": "{24}"
+        }
+      },
+      "7": {
+        "$type": "dimension",
+        "$value": "1.75rem",
+        "$extensions": {
+          "looloo.legacy": "{28}"
+        }
+      },
+      "8": {
+        "$type": "dimension",
+        "$value": "2rem",
+        "$extensions": {
+          "looloo.legacy": "{32}"
+        }
+      },
+      "9": {
+        "$type": "dimension",
+        "$value": "2.25rem",
+        "$extensions": {
+          "looloo.legacy": "{36}"
+        }
+      },
+      "10": {
+        "$type": "dimension",
+        "$value": "2.5rem",
+        "$extensions": {
+          "looloo.legacy": "{40}"
+        }
+      },
+      "12": {
+        "$type": "dimension",
+        "$value": "3rem",
+        "$extensions": {
+          "looloo.legacy": "{48}"
+        }
+      },
+      "15": {
+        "$type": "dimension",
+        "$value": "3.75rem",
+        "$extensions": {
+          "looloo.legacy": "{60}"
+        }
+      },
+      "18": {
+        "$type": "dimension",
+        "$value": "4.5rem",
+        "$extensions": {
+          "looloo.legacy": "{72}"
+        }
+      },
+      "24": {
+        "$type": "dimension",
+        "$value": "6rem",
+        "$extensions": {
+          "looloo.legacy": "{96}"
+        }
+      },
+      "32": {
+        "$type": "dimension",
+        "$value": "8rem",
+        "$extensions": {
+          "looloo.legacy": "{128}"
+        }
+      }
+    },
+    "tracking": {
+      "normal": {
+        "$type": "dimension",
+        "$value": "0px",
+        "$description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime.",
+        "$extensions": {
+          "looloo.legacy": "{0}"
+        }
+      },
+      "wide": {
+        "$type": "dimension",
+        "$value": "0.4px",
+        "$description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime.",
+        "$extensions": {
+          "looloo.legacy": "{0,4}"
+        }
+      },
+      "wider": {
+        "$type": "dimension",
+        "$value": "0.8px",
+        "$description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime.",
+        "$extensions": {
+          "looloo.legacy": "{0,8}"
+        }
+      },
+      "widest": {
+        "$type": "dimension",
+        "$value": "1.6px",
+        "$description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime.",
+        "$extensions": {
+          "looloo.legacy": "{1,6}"
+        }
+      },
+      "tight": {
+        "$type": "dimension",
+        "$value": "-0.4px",
+        "$description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime.",
+        "$extensions": {
+          "looloo.legacy": "{-0,4}"
+        }
+      },
+      "tighter": {
+        "$type": "dimension",
+        "$value": "-0.8px",
+        "$description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime.",
+        "$extensions": {
+          "looloo.legacy": "{-0,8}"
+        }
+      }
+    }
+  }
+}
