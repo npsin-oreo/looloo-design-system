@@ -1,0 +1,10 @@
+{
+  "$description": "DRAFT — captured from components/ui/table.tsx. Not consumed at runtime yet (Phase 4). rowHeight is the density-mode hook (compact/comfortable).",
+  "table": {
+    "headerHeight": { "$type": "dimension", "$value": "{size.control.xl}", "$extensions": { "looloo.tailwind": "h-10" } },
+    "cellPadding": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "p-2" } },
+    "headerPaddingX": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "px-2" } },
+    "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } },
+    "headerFontWeight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$extensions": { "looloo.tailwind": "font-medium" } }
+  }
+}

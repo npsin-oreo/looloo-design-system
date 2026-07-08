@@ -1,0 +1,6 @@
+{
+  "$description": "Light is the BASE mode: tokens/semantic/*.json hold the light values directly, so this file carries no overrides. It exists so the mode enumeration (light/dark/compact/comfortable/high-contrast) is explicit for the Phase 2 build pipeline.",
+  "mode": {
+    "light": {}
+  }
+}

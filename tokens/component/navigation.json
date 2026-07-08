@@ -1,0 +1,17 @@
+{
+  "$description": "DRAFT — captured from components/ui/navigation-menu.tsx. Not consumed at runtime yet (Phase 4).",
+  "navigation": {
+    "trigger": {
+      "paddingX": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "px-2.5" } },
+      "paddingY": { "$type": "dimension", "$value": "{space.1-5}", "$extensions": { "looloo.tailwind": "py-1.5" } },
+      "radius": { "$type": "dimension", "$value": "0.625rem", "$extensions": { "looloo.tailwind": "rounded-lg" } },
+      "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } }
+    },
+    "content": {
+      "padding": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "p-2" } },
+      "radius": { "$type": "dimension", "$value": "0.625rem", "$extensions": { "looloo.tailwind": "rounded-lg" } },
+      "shadow": { "$type": "shadow", "$value": "{shadow.md}", "$extensions": { "looloo.tailwind": "shadow-md" } }
+    },
+    "iconSize": { "$type": "dimension", "$value": "1rem", "$extensions": { "looloo.tailwind": "size-4" } }
+  }
+}

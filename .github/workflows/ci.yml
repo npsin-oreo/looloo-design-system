@@ -43,6 +43,19 @@ jobs:
           npm run tokens:data
           git diff --exit-code app/brand.css token-contract.json app/primitives.css \
             || { echo "::error::token drift — run \`npm run brand:build && npm run tokens:contract && npm run tokens:data\` and commit the generated files"; exit 1; }
+      # v2 canonical layer: regenerated files must match what is committed,
+      # structure must validate, and dist output must resolve identically to
+      # the legacy CSS (the parity gate that guards the consumer swap).
+      - name: v2 tokens are reproducible, valid, and at parity with legacy CSS
+        run: |
+          npm run tokens:migrate
+          git diff --exit-code tokens/ \
+            || { echo "::error::tokens/ drift — run \`npm run tokens:migrate\` and commit"; exit 1; }
+          npm run tokens:validate
+          npm run tokens:build
+          git diff --exit-code .designops/token-contract.json \
+            || { echo "::error::v2 contract drift — run \`npm run tokens:build\` and commit .designops/token-contract.json"; exit 1; }
+          npm run tokens:diff
 
   storybook-tests:
     name: Storybook tests (render + a11y)

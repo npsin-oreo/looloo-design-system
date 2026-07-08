@@ -1,0 +1,45 @@
+{
+  "$description": "DRAFT — captured 1:1 from components/ui/button.tsx cva (radix-nova). Not consumed at runtime yet; Phase 4 wires buttonVariants to the generated CSS vars. Radius values are the resolved defaults of the calc() scale in app/globals.css at --radius: 0.625rem.",
+  "button": {
+    "height": {
+      "xs": { "$type": "dimension", "$value": "{size.control.xs}", "$extensions": { "looloo.tailwind": "h-6" } },
+      "sm": { "$type": "dimension", "$value": "{size.control.sm}", "$extensions": { "looloo.tailwind": "h-7" } },
+      "md": { "$type": "dimension", "$value": "{size.control.md}", "$description": "DEFAULT size.", "$extensions": { "looloo.tailwind": "h-8" } },
+      "lg": { "$type": "dimension", "$value": "{size.control.lg}", "$extensions": { "looloo.tailwind": "h-9" } },
+      "xl": { "$type": "dimension", "$value": "{size.control.xl}", "$extensions": { "looloo.tailwind": "h-10" } }
+    },
+    "paddingX": {
+      "xs": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "px-2" } },
+      "sm": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "px-2.5" } },
+      "md": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "px-2.5" } },
+      "lg": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "px-2.5" } },
+      "xl": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "px-4" } }
+    },
+    "gap": {
+      "xs": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "gap-1" } },
+      "sm": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "gap-1" } },
+      "md": { "$type": "dimension", "$value": "{space.1-5}", "$extensions": { "looloo.tailwind": "gap-1.5" } },
+      "lg": { "$type": "dimension", "$value": "{space.1-5}", "$extensions": { "looloo.tailwind": "gap-1.5" } },
+      "xl": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "gap-2" } }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "0.625rem",
+      "$description": "rounded-lg = var(--radius). xs/sm sizes clamp via rounded-[min(var(--radius-md),10|12px)].",
+      "$extensions": { "looloo.tailwind": "rounded-lg" }
+    },
+    "fontSize": {
+      "xs": { "$type": "dimension", "$value": "{font.size.xs}", "$extensions": { "looloo.tailwind": "text-xs" } },
+      "sm": { "$type": "dimension", "$value": "0.8rem", "$description": "Literal in source (text-[0.8rem]) — between xs and sm scale steps.", "$extensions": { "looloo.tailwind": "text-[0.8rem]" } },
+      "md": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } },
+      "xl": { "$type": "dimension", "$value": "{font.size.base}", "$extensions": { "looloo.tailwind": "text-base" } }
+    },
+    "fontWeight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$extensions": { "looloo.tailwind": "font-medium" } },
+    "iconSize": {
+      "xs": { "$type": "dimension", "$value": "0.75rem", "$extensions": { "looloo.tailwind": "size-3" } },
+      "sm": { "$type": "dimension", "$value": "0.875rem", "$extensions": { "looloo.tailwind": "size-3.5" } },
+      "md": { "$type": "dimension", "$value": "1rem", "$extensions": { "looloo.tailwind": "size-4" } },
+      "xl": { "$type": "dimension", "$value": "1.25rem", "$extensions": { "looloo.tailwind": "size-5" } }
+    }
+  }
+}

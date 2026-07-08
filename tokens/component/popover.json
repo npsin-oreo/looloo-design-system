@@ -1,0 +1,9 @@
+{
+  "$description": "DRAFT — captured from components/ui/popover.tsx. Not consumed at runtime yet (Phase 4).",
+  "popover": {
+    "radius": { "$type": "dimension", "$value": "0.625rem", "$extensions": { "looloo.tailwind": "rounded-lg" } },
+    "padding": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "p-2" } },
+    "shadow": { "$type": "shadow", "$value": "{shadow.md}", "$extensions": { "looloo.tailwind": "shadow-md" } },
+    "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } }
+  }
+}

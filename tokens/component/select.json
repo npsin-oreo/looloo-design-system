@@ -1,0 +1,17 @@
+{
+  "$description": "DRAFT — captured from components/ui/select.tsx. Not consumed at runtime yet (Phase 4).",
+  "select": {
+    "trigger": {
+      "height": { "$type": "dimension", "$value": "{size.control.md}", "$extensions": { "looloo.tailwind": "h-8" } },
+      "radius": { "$type": "dimension", "$value": "0.625rem", "$extensions": { "looloo.tailwind": "rounded-lg" } },
+      "gap": { "$type": "dimension", "$value": "{space.1-5}", "$extensions": { "looloo.tailwind": "gap-1.5" } },
+      "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } }
+    },
+    "content": {
+      "radius": { "$type": "dimension", "$value": "0.5rem", "$description": "rounded-md = calc(var(--radius) * 0.8).", "$extensions": { "looloo.tailwind": "rounded-md" } },
+      "padding": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "p-1" } },
+      "shadow": { "$type": "shadow", "$value": "{shadow.md}", "$extensions": { "looloo.tailwind": "shadow-md" } }
+    },
+    "iconSize": { "$type": "dimension", "$value": "1rem", "$extensions": { "looloo.tailwind": "size-4" } }
+  }
+}

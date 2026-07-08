@@ -1,0 +1,15 @@
+{
+  "$description": "PROPOSED SCAFFOLD (not consumed yet) — LOOLOO product brand theme. Values below alias the brand ramps that already exist in the Figma export (color.brand.* in tokens/primitive/color.json) but the actual brand direction is A DESIGN DECISION THAT HAS NOT BEEN MADE — treat every value as placeholder until design signs off. Today the real brand mechanism is brand.config.json on a brand branch.",
+  "theme": {
+    "looloo": {
+      "extends": "neutral",
+      "color": {
+        "primary": { "$type": "color", "$value": "{color.brand.cerulean-blue.500}", "$extensions": { "looloo.status": "proposed" } },
+        "accent": { "$type": "color", "$value": "{color.brand.coral.500}", "$extensions": { "looloo.status": "proposed" } }
+      },
+      "radius": {
+        "control": { "$type": "dimension", "$value": "0.625rem", "$extensions": { "looloo.status": "proposed" } }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$description": "Motion primitives, sourced from brand.config.json axes (--duration-base / --ease-brand in the current pipeline).",
+  "duration": {
+    "base": {
+      "$type": "duration",
+      "$value": "200ms"
+    }
+  },
+  "ease": {
+    "standard": {
+      "$type": "cubicBezier",
+      "$value": "cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  }
+}

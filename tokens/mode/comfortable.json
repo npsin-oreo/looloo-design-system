@@ -1,0 +1,19 @@
+{
+  "$description": "PROPOSED (not consumed yet) — density mode for forms, healthcare, patient-facing, high-error-cost screens. Steps every control size one notch UP from the measured baseline (md h-8 → h-9). Wire-up target: Phase 4+.",
+  "mode": {
+    "comfortable": {
+      "size": {
+        "control": {
+          "sm": { "$value": "2rem" },
+          "md": { "$value": "2.25rem" },
+          "lg": { "$value": "2.5rem" },
+          "xl": { "$value": "2.75rem" }
+        }
+      },
+      "table": {
+        "headerHeight": { "$value": "2.75rem" },
+        "cellPadding": { "$value": "0.625rem" }
+      }
+    }
+  }
+}

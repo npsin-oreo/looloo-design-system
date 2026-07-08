@@ -1,0 +1,6 @@
+{
+  "$description": "DRAFT — toast is delivered via sonner (components/ui/sonner.tsx); layout/offsets are library defaults and intentionally NOT tokenized yet. Only the values our wrapper sets are captured. Revisit in Phase 4 if we start overriding sonner styling.",
+  "toast": {
+    "iconSize": { "$type": "dimension", "$value": "1rem", "$extensions": { "looloo.tailwind": "size-4" } }
+  }
+}

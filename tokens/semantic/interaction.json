@@ -1,0 +1,29 @@
+{
+  "$description": "Interaction-state constants captured 1:1 from the current cva variants (components/ui/button.tsx et al.). Hand-owned. Hover fills currently use Tailwind alpha modifiers / color-mix in class strings — these tokens document those constants so Phase 4 can wire them.",
+  "interaction": {
+    "disabled-opacity": {
+      "$type": "number",
+      "$value": "{opacity.50}",
+      "$description": "disabled:opacity-50 — used by every interactive component.",
+      "$extensions": { "looloo.tailwind": "disabled:opacity-50" }
+    },
+    "hover-opacity": {
+      "$type": "number",
+      "$value": 0.8,
+      "$description": "Primary hover fill strength (hover:bg-primary/80).",
+      "$extensions": { "looloo.tailwind": "hover:bg-primary/80" }
+    },
+    "active-shift": {
+      "$type": "dimension",
+      "$value": "1px",
+      "$description": "Pressed-state vertical nudge (active:translate-y-px on button).",
+      "$extensions": { "looloo.tailwind": "active:translate-y-px" }
+    },
+    "secondary-hover-mix": {
+      "$type": "number",
+      "$value": 0.05,
+      "$description": "Secondary hover mixes 5% foreground into the fill (color-mix in button.tsx).",
+      "$extensions": { "looloo.tailwind": "hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]" }
+    }
+  }
+}

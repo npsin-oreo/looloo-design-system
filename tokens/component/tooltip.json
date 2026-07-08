@@ -1,0 +1,11 @@
+{
+  "$description": "DRAFT — captured from components/ui/tooltip.tsx. Not consumed at runtime yet (Phase 4).",
+  "tooltip": {
+    "paddingX": { "$type": "dimension", "$value": "{space.3}", "$extensions": { "looloo.tailwind": "px-3" } },
+    "paddingY": { "$type": "dimension", "$value": "{space.1-5}", "$extensions": { "looloo.tailwind": "py-1.5" } },
+    "radius": { "$type": "dimension", "$value": "0.5rem", "$extensions": { "looloo.tailwind": "rounded-md" } },
+    "fontSize": { "$type": "dimension", "$value": "{font.size.xs}", "$extensions": { "looloo.tailwind": "text-xs" } },
+    "maxWidth": { "$type": "dimension", "$value": "20rem", "$extensions": { "looloo.tailwind": "max-w-xs" } },
+    "arrowSize": { "$type": "dimension", "$value": "0.625rem", "$extensions": { "looloo.tailwind": "size-2.5" } }
+  }
+}

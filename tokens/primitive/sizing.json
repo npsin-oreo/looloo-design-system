@@ -1,0 +1,32 @@
+{
+  "$description": "Control sizing steps measured from the ACTUAL radix-nova cva variants in components/ui/button.tsx + input.tsx (default/md = h-8). Basis for Phase 4 component tokens and density modes.",
+  "size": {
+    "control": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "1.5rem",
+        "$description": "h-6 — button size xs / icon-xs."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "1.75rem",
+        "$description": "h-7 — button size sm, input size sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "2rem",
+        "$description": "h-8 — button/input DEFAULT, select trigger, tabs list."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "2.25rem",
+        "$description": "h-9 — button size lg."
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "2.5rem",
+        "$description": "h-10 — button/input size xl, table header row."
+      }
+    }
+  }
+}

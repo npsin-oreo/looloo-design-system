@@ -1,0 +1,29 @@
+{
+  "$description": "DRAFT — captured 1:1 from components/ui/input.tsx cva. Sizes present in source: sm / md (default) / xl. Not consumed at runtime yet (Phase 4).",
+  "input": {
+    "height": {
+      "sm": { "$type": "dimension", "$value": "{size.control.sm}", "$extensions": { "looloo.tailwind": "h-7" } },
+      "md": { "$type": "dimension", "$value": "{size.control.md}", "$description": "DEFAULT size.", "$extensions": { "looloo.tailwind": "h-8" } },
+      "xl": { "$type": "dimension", "$value": "{size.control.xl}", "$extensions": { "looloo.tailwind": "h-10" } }
+    },
+    "paddingX": {
+      "sm": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "px-2.5" } },
+      "md": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "px-2.5" } },
+      "xl": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "px-4" } }
+    },
+    "paddingY": {
+      "sm": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "py-1" } },
+      "md": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "py-1" } },
+      "xl": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "py-2" } }
+    },
+    "radius": { "$type": "dimension", "$value": "0.625rem", "$extensions": { "looloo.tailwind": "rounded-lg" } },
+    "fontSize": {
+      "md": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$description": "Responsive in source: text-base on mobile (iOS zoom guard), md:text-sm on desktop.",
+        "$extensions": { "looloo.tailwind": "text-base md:text-sm" }
+      }
+    }
+  }
+}

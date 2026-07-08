@@ -1,0 +1,26 @@
+{
+  "$description": "Effect styles synced 1:1 from the Figma kit (Box Shadow/*), mirrored from app/globals.css @theme. globals.css stays authoritative until Phase 2.",
+  "shadow": {
+    "xs": {
+      "$type": "shadow",
+      "$value": "0 1px 2px 0 rgb(0 0 0 / 0.1)"
+    },
+    "sm": {
+      "$type": "shadow",
+      "$value": "0 1px 3px 0 rgb(0 0 0 / 0.1)"
+    },
+    "md": {
+      "$type": "shadow",
+      "$value": "0 2px 4px -2px rgb(0 0 0 / 0.1), 0 4px 6px -1px rgb(0 0 0 / 0.1)"
+    },
+    "lg": {
+      "$type": "shadow",
+      "$value": "0 4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1)"
+    },
+    "focus": {
+      "$type": "shadow",
+      "$value": "0 0 0 3px rgb(161 161 161 / 0.5)",
+      "$description": "Mirrors the kit's Focus ring effect."
+    }
+  }
+}

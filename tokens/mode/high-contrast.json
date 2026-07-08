@@ -1,0 +1,16 @@
+{
+  "$description": "PROPOSED PLACEHOLDER (not consumed yet, lowest priority per the v2 spec) — accessibility mode. Only the least-controversial overrides are sketched; real values need a design + contrast-audit pass (tokens:audit, Phase 2/7) before wiring.",
+  "mode": {
+    "high-contrast": {
+      "focus": {
+        "ring": {
+          "width": { "$value": "4px" },
+          "opacity": { "$value": 1 }
+        }
+      },
+      "color": {
+        "border": { "$value": "{color.neutral.500}", "$description": "Stronger than the default neutral.200 border." }
+      }
+    }
+  }
+}
