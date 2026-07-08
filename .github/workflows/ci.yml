@@ -53,9 +53,31 @@ jobs:
             || { echo "::error::tokens/ drift — run \`npm run tokens:migrate\` and commit"; exit 1; }
           npm run tokens:validate
           npm run tokens:build
-          git diff --exit-code .designops/token-contract.json \
-            || { echo "::error::v2 contract drift — run \`npm run tokens:build\` and commit .designops/token-contract.json"; exit 1; }
+          npm run icons:contract
+          npm run contracts:build
+          git diff --exit-code .designops/ \
+            || { echo "::error::designops contract drift — run \`npm run tokens:build && npm run icons:contract && npm run contracts:build\` and commit .designops/"; exit 1; }
           npm run tokens:diff
+
+  quality-gates:
+    name: Quality gates (audits, strict)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Policy: .designops/audit-gates.md — a gate only becomes strict after
+      # it reaches zero. styles + icons hit 0 HIGH in the tokenization/icon
+      # phases; contrast gates on AA-large which every live pair passes.
+      - name: audits (strict)
+        run: |
+          npm run audit:styles -- --strict
+          npm run audit:icons -- --strict
+          npm run tokens:audit -- --strict
+          npm run audit:components
 
   storybook-tests:
     name: Storybook tests (render + a11y)

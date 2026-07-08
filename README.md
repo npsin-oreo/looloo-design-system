@@ -9,6 +9,20 @@ Design system สำหรับ React 19, Next.js 15 และ Tailwind CSS v4 
 - **ผู้ใช้งาน Design System:** อ่านเอกสารนี้ต่อเพื่อดูวิธีติดตั้ง ตั้งค่า ใช้สี เรียก component และ [ทำ theme](./THEMING.md)
 - **ผู้พัฒนา Design System:** อ่าน [`DEVELOPMENT.md`](./DEVELOPMENT.md)
 
+## สถาปัตยกรรม v2 (tokens · themes · icons · contracts)
+
+ตั้งแต่ v0.4.0 ระบบภายในเป็น Design System v2 (พฤติกรรมสำหรับ consumer เดิมทุกอย่างยังใช้ได้ — import paths, `ds-brand-build`, `var(--tw-*)` ครบ):
+
+| เรื่อง | ที่อยู่ | เอกสาร |
+|---|---|---|
+| **Tokens** — canonical DTCG layer (primitive → semantic → component → mode → theme) compile เป็น `dist/tokens/*.css` | [`tokens/`](./tokens/README.md) | [`docs/tokens/token-source-strategy.md`](./docs/tokens/token-source-strategy.md) |
+| **Components** — folder-per-component + compat shims; ตัวหลัก wire กับ `--<component>-*` vars แล้ว | `components/ui/<name>/` | [`docs/component-guidelines.md`](./docs/component-guidelines.md) |
+| **Themes / modes** — brand ผ่าน `brand.config.json` (ปัจจุบัน); scaffolds `themes/` + density modes รอ design | [`themes/`](./themes/README.md) | [`docs/theming.md`](./docs/theming.md) |
+| **Icons** — lucide ผ่าน registry เดียว + `<Icon>` / `<IconButton>` (ห้าม import `lucide-react` ตรง) | `icons/icon-registry.ts` | [`docs/icon-strategy.md`](./docs/icon-strategy.md) |
+| **Contracts & gates** — contract files generate อัตโนมัติ + audit ที่ block CI | [`.designops/`](./.designops/README.md) | [`.designops/audit-gates.md`](./.designops/audit-gates.md) |
+
+เช็คทุกอย่างในเครื่องด้วยคำสั่งเดียว: `npm run check`
+
 ## ผู้เรียกใช้ Design System (Consumer)
 
 ### 1. ติดตั้ง
