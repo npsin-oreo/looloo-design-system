@@ -39,3 +39,6 @@ next-env.d.ts
 
 # storybook
 /storybook-static
+
+# token build output (regenerate: npm run tokens:build)
+/dist

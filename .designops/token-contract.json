@@ -1,0 +1,4595 @@
+{
+  "package": "@npsin-oreo/design-system",
+  "version": "0.3.0",
+  "generated_from": "tokens/** (canonical v2 layer)",
+  "note": "v2 contract. The root token-contract.json remains the legacy/published brand-config contract until the consumer swap.",
+  "counts": {
+    "primitive": 420,
+    "semantic": 67,
+    "component": 115,
+    "modes": [
+      "comfortable",
+      "compact",
+      "dark",
+      "high-contrast",
+      "light"
+    ],
+    "themes": [
+      "dashboard",
+      "healthcare",
+      "looloo",
+      "neutral"
+    ]
+  },
+  "tokens": {
+    "badge.fontSize": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--badge-font-size",
+      "layer": "component",
+      "source": "tokens/component/badge.json",
+      "alias": "font.size.xs"
+    },
+    "badge.fontWeight": {
+      "type": "fontWeight",
+      "value": 500,
+      "cssVar": "--badge-font-weight",
+      "layer": "component",
+      "source": "tokens/component/badge.json",
+      "alias": "font.weight.medium"
+    },
+    "badge.gap": {
+      "type": "dimension",
+      "value": "0.25rem",
+      "cssVar": "--badge-gap",
+      "layer": "component",
+      "source": "tokens/component/badge.json",
+      "alias": "space.1"
+    },
+    "badge.height": {
+      "type": "dimension",
+      "value": "1.25rem",
+      "cssVar": "--badge-height",
+      "layer": "component",
+      "source": "tokens/component/badge.json"
+    },
+    "badge.iconSize": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--badge-icon-size",
+      "layer": "component",
+      "source": "tokens/component/badge.json"
+    },
+    "badge.paddingX": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--badge-padding-x",
+      "layer": "component",
+      "source": "tokens/component/badge.json",
+      "alias": "space.2"
+    },
+    "badge.paddingY": {
+      "type": "dimension",
+      "value": "0.125rem",
+      "cssVar": "--badge-padding-y",
+      "layer": "component",
+      "source": "tokens/component/badge.json",
+      "alias": "space.0-5"
+    },
+    "badge.radius": {
+      "type": "dimension",
+      "value": "1.625rem",
+      "cssVar": "--badge-radius",
+      "layer": "component",
+      "source": "tokens/component/badge.json",
+      "description": "rounded-4xl = calc(var(--radius) * 2.6) — pill-like."
+    },
+    "border.default": {
+      "type": "color",
+      "value": "oklch(0.922 0 0)",
+      "cssVar": "--border-default",
+      "layer": "semantic",
+      "source": "tokens/semantic/border.json",
+      "alias": "color.border",
+      "description": "Default border (globals.css applies border-border globally)."
+    },
+    "border.focus": {
+      "type": "color",
+      "value": "oklch(0.708 0 0)",
+      "cssVar": "--border-focus",
+      "layer": "semantic",
+      "source": "tokens/semantic/border.json",
+      "alias": "color.ring",
+      "description": "Focus-visible border color (focus-visible:border-ring)."
+    },
+    "border.input": {
+      "type": "color",
+      "value": "oklch(0.922 0 0)",
+      "cssVar": "--border-input",
+      "layer": "semantic",
+      "source": "tokens/semantic/border.json",
+      "alias": "color.input",
+      "description": "Form control borders (input, select trigger, textarea)."
+    },
+    "border.sidebar": {
+      "type": "color",
+      "value": "oklch(0.922 0 0)",
+      "cssVar": "--border-sidebar",
+      "layer": "semantic",
+      "source": "tokens/semantic/border.json",
+      "alias": "color.sidebar-border"
+    },
+    "border.width.0": {
+      "type": "dimension",
+      "value": "0px",
+      "cssVar": "--ll-border-width-0",
+      "layer": "primitive",
+      "source": "tokens/primitive/border.json"
+    },
+    "border.width.2": {
+      "type": "dimension",
+      "value": "2px",
+      "cssVar": "--ll-border-width-2",
+      "layer": "primitive",
+      "source": "tokens/primitive/border.json"
+    },
+    "border.width.4": {
+      "type": "dimension",
+      "value": "4px",
+      "cssVar": "--ll-border-width-4",
+      "layer": "primitive",
+      "source": "tokens/primitive/border.json"
+    },
+    "border.width.8": {
+      "type": "dimension",
+      "value": "8px",
+      "cssVar": "--ll-border-width-8",
+      "layer": "primitive",
+      "source": "tokens/primitive/border.json"
+    },
+    "border.width.default": {
+      "type": "dimension",
+      "value": "1px",
+      "cssVar": "--ll-border-width-default",
+      "layer": "primitive",
+      "source": "tokens/primitive/border.json"
+    },
+    "button.fontSize.md": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--button-font-size-md",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "font.size.sm"
+    },
+    "button.fontSize.sm": {
+      "type": "dimension",
+      "value": "0.8rem",
+      "cssVar": "--button-font-size-sm",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "description": "Literal in source (text-[0.8rem]) — between xs and sm scale steps."
+    },
+    "button.fontSize.xl": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--button-font-size-xl",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "font.size.base"
+    },
+    "button.fontSize.xs": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--button-font-size-xs",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "font.size.xs"
+    },
+    "button.fontWeight": {
+      "type": "fontWeight",
+      "value": 500,
+      "cssVar": "--button-font-weight",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "font.weight.medium"
+    },
+    "button.gap.lg": {
+      "type": "dimension",
+      "value": "0.375rem",
+      "cssVar": "--button-gap-lg",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "space.1-5"
+    },
+    "button.gap.md": {
+      "type": "dimension",
+      "value": "0.375rem",
+      "cssVar": "--button-gap-md",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "space.1-5"
+    },
+    "button.gap.sm": {
+      "type": "dimension",
+      "value": "0.25rem",
+      "cssVar": "--button-gap-sm",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "space.1"
+    },
+    "button.gap.xl": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--button-gap-xl",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "space.2"
+    },
+    "button.gap.xs": {
+      "type": "dimension",
+      "value": "0.25rem",
+      "cssVar": "--button-gap-xs",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "space.1"
+    },
+    "button.height.lg": {
+      "type": "dimension",
+      "value": "2.25rem",
+      "cssVar": "--button-height-lg",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "size.control.lg"
+    },
+    "button.height.md": {
+      "type": "dimension",
+      "value": "2rem",
+      "cssVar": "--button-height-md",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "size.control.md",
+      "description": "DEFAULT size."
+    },
+    "button.height.sm": {
+      "type": "dimension",
+      "value": "1.75rem",
+      "cssVar": "--button-height-sm",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "size.control.sm"
+    },
+    "button.height.xl": {
+      "type": "dimension",
+      "value": "2.5rem",
+      "cssVar": "--button-height-xl",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "size.control.xl"
+    },
+    "button.height.xs": {
+      "type": "dimension",
+      "value": "1.5rem",
+      "cssVar": "--button-height-xs",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "size.control.xs"
+    },
+    "button.iconSize.md": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--button-icon-size-md",
+      "layer": "component",
+      "source": "tokens/component/button.json"
+    },
+    "button.iconSize.sm": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--button-icon-size-sm",
+      "layer": "component",
+      "source": "tokens/component/button.json"
+    },
+    "button.iconSize.xl": {
+      "type": "dimension",
+      "value": "1.25rem",
+      "cssVar": "--button-icon-size-xl",
+      "layer": "component",
+      "source": "tokens/component/button.json"
+    },
+    "button.iconSize.xs": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--button-icon-size-xs",
+      "layer": "component",
+      "source": "tokens/component/button.json"
+    },
+    "button.paddingX.lg": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--button-padding-x-lg",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "space.2-5"
+    },
+    "button.paddingX.md": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--button-padding-x-md",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "space.2-5"
+    },
+    "button.paddingX.sm": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--button-padding-x-sm",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "space.2-5"
+    },
+    "button.paddingX.xl": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--button-padding-x-xl",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "space.4"
+    },
+    "button.paddingX.xs": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--button-padding-x-xs",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "alias": "space.2"
+    },
+    "button.radius": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--button-radius",
+      "layer": "component",
+      "source": "tokens/component/button.json",
+      "description": "rounded-lg = var(--radius). xs/sm sizes clamp via rounded-[min(var(--radius-md),10|12px)]."
+    },
+    "card.bodyFontSize": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--card-body-font-size",
+      "layer": "component",
+      "source": "tokens/component/card.json",
+      "alias": "font.size.sm"
+    },
+    "card.gap": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--card-gap",
+      "layer": "component",
+      "source": "tokens/component/card.json",
+      "alias": "space.4"
+    },
+    "card.padding.md": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--card-padding-md",
+      "layer": "component",
+      "source": "tokens/component/card.json",
+      "alias": "space.4"
+    },
+    "card.padding.sm": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--card-padding-sm",
+      "layer": "component",
+      "source": "tokens/component/card.json",
+      "alias": "space.3"
+    },
+    "card.radius": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--card-radius",
+      "layer": "component",
+      "source": "tokens/component/card.json",
+      "description": "rounded-xl = calc(var(--radius) * 1.4)."
+    },
+    "card.titleFontSize": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--card-title-font-size",
+      "layer": "component",
+      "source": "tokens/component/card.json",
+      "alias": "font.size.base"
+    },
+    "checkbox.indicatorSize": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--checkbox-indicator-size",
+      "layer": "component",
+      "source": "tokens/component/checkbox.json"
+    },
+    "checkbox.size": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--checkbox-size",
+      "layer": "component",
+      "source": "tokens/component/checkbox.json"
+    },
+    "color.accent": {
+      "type": "color",
+      "value": "oklch(0.97 0 0)",
+      "cssVar": "--accent",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.100",
+      "modes": [
+        "dark"
+      ],
+      "themes": [
+        "looloo"
+      ]
+    },
+    "color.accent-foreground": {
+      "type": "color",
+      "value": "oklch(0.205 0 0)",
+      "cssVar": "--accent-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.900",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.amber.100": {
+      "type": "color",
+      "value": "oklch(0.962 0.058 95.617)",
+      "cssVar": "--ll-color-amber-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.amber.200": {
+      "type": "color",
+      "value": "oklch(0.924 0.115 95.746)",
+      "cssVar": "--ll-color-amber-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.amber.300": {
+      "type": "color",
+      "value": "oklch(0.879 0.153 91.605)",
+      "cssVar": "--ll-color-amber-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.amber.400": {
+      "type": "color",
+      "value": "oklch(0.837 0.164 84.429)",
+      "cssVar": "--ll-color-amber-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.amber.50": {
+      "type": "color",
+      "value": "oklch(0.987 0.021 95.277)",
+      "cssVar": "--ll-color-amber-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.amber.500": {
+      "type": "color",
+      "value": "oklch(0.769 0.165 70.08)",
+      "cssVar": "--ll-color-amber-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.amber.600": {
+      "type": "color",
+      "value": "oklch(0.666 0.157 58.318)",
+      "cssVar": "--ll-color-amber-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.amber.700": {
+      "type": "color",
+      "value": "oklch(0.555 0.146 48.998)",
+      "cssVar": "--ll-color-amber-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.amber.800": {
+      "type": "color",
+      "value": "oklch(0.473 0.125 46.201)",
+      "cssVar": "--ll-color-amber-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.amber.900": {
+      "type": "color",
+      "value": "oklch(0.414 0.105 45.904)",
+      "cssVar": "--ll-color-amber-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.amber.950": {
+      "type": "color",
+      "value": "oklch(0.279 0.074 45.635)",
+      "cssVar": "--ll-color-amber-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.background": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--background",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.white",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.background-color": {
+      "type": "color",
+      "value": "oklch(0 0 0 / 30%)",
+      "cssVar": "--background-color",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.black": {
+      "type": "color",
+      "value": "oklch(0 0 0)",
+      "cssVar": "--ll-color-black",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.blue.100": {
+      "type": "color",
+      "value": "oklch(0.932 0.032 255.585)",
+      "cssVar": "--ll-color-blue-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.blue.200": {
+      "type": "color",
+      "value": "oklch(0.882 0.057 254.128)",
+      "cssVar": "--ll-color-blue-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.blue.300": {
+      "type": "color",
+      "value": "oklch(0.809 0.096 251.813)",
+      "cssVar": "--ll-color-blue-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.blue.400": {
+      "type": "color",
+      "value": "oklch(0.714 0.143 254.624)",
+      "cssVar": "--ll-color-blue-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.blue.50": {
+      "type": "color",
+      "value": "oklch(0.97 0.014 254.604)",
+      "cssVar": "--ll-color-blue-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.blue.500": {
+      "type": "color",
+      "value": "oklch(0.623 0.188 259.815)",
+      "cssVar": "--ll-color-blue-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.blue.600": {
+      "type": "color",
+      "value": "oklch(0.546 0.215 262.881)",
+      "cssVar": "--ll-color-blue-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.blue.700": {
+      "type": "color",
+      "value": "oklch(0.488 0.217 264.376)",
+      "cssVar": "--ll-color-blue-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.blue.800": {
+      "type": "color",
+      "value": "oklch(0.424 0.181 265.638)",
+      "cssVar": "--ll-color-blue-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.blue.900": {
+      "type": "color",
+      "value": "oklch(0.379 0.138 265.522)",
+      "cssVar": "--ll-color-blue-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.blue.950": {
+      "type": "color",
+      "value": "oklch(0.282 0.087 267.935)",
+      "cssVar": "--ll-color-blue-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.border": {
+      "type": "color",
+      "value": "oklch(0.922 0 0)",
+      "cssVar": "--border",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.200",
+      "modes": [
+        "dark",
+        "high-contrast"
+      ]
+    },
+    "color.brand.cerulean-blue.100": {
+      "type": "color",
+      "value": "oklch(0.935 0.033 248.179)",
+      "cssVar": "--ll-color-brand-cerulean-blue-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.cerulean-blue.200": {
+      "type": "color",
+      "value": "oklch(0.886 0.059 246.937)",
+      "cssVar": "--ll-color-brand-cerulean-blue-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.cerulean-blue.300": {
+      "type": "color",
+      "value": "oklch(0.817 0.098 245.205)",
+      "cssVar": "--ll-color-brand-cerulean-blue-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.cerulean-blue.400": {
+      "type": "color",
+      "value": "oklch(0.727 0.147 249.608)",
+      "cssVar": "--ll-color-brand-cerulean-blue-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.cerulean-blue.50": {
+      "type": "color",
+      "value": "oklch(0.972 0.014 244.714)",
+      "cssVar": "--ll-color-brand-cerulean-blue-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.cerulean-blue.500": {
+      "type": "color",
+      "value": "oklch(0.64 0.195 256.933)",
+      "cssVar": "--ll-color-brand-cerulean-blue-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.cerulean-blue.600": {
+      "type": "color",
+      "value": "oklch(0.565 0.229 261.366)",
+      "cssVar": "--ll-color-brand-cerulean-blue-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.cerulean-blue.700": {
+      "type": "color",
+      "value": "oklch(0.501 0.229 262.969)",
+      "cssVar": "--ll-color-brand-cerulean-blue-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.cerulean-blue.800": {
+      "type": "color",
+      "value": "oklch(0.437 0.192 263.659)",
+      "cssVar": "--ll-color-brand-cerulean-blue-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.cerulean-blue.900": {
+      "type": "color",
+      "value": "oklch(0.387 0.147 263.354)",
+      "cssVar": "--ll-color-brand-cerulean-blue-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.cerulean-blue.950": {
+      "type": "color",
+      "value": "oklch(0.286 0.094 265.218)",
+      "cssVar": "--ll-color-brand-cerulean-blue-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.coral.100": {
+      "type": "color",
+      "value": "oklch(0.939 0.037 55.362)",
+      "cssVar": "--ll-color-brand-coral-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.coral.200": {
+      "type": "color",
+      "value": "oklch(0.87 0.077 49.059)",
+      "cssVar": "--ll-color-brand-coral-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.coral.300": {
+      "type": "color",
+      "value": "oklch(0.727 0.173 38.958)",
+      "cssVar": "--ll-color-brand-coral-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.coral.400": {
+      "type": "color",
+      "value": "oklch(0.657 0.229 34.089)",
+      "cssVar": "--ll-color-brand-coral-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.coral.50": {
+      "type": "color",
+      "value": "oklch(0.972 0.015 48.563)",
+      "cssVar": "--ll-color-brand-coral-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.coral.500": {
+      "type": "color",
+      "value": "oklch(0.612 0.232 31.402)",
+      "cssVar": "--ll-color-brand-coral-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.coral.600": {
+      "type": "color",
+      "value": "oklch(0.527 0.205 30.201)",
+      "cssVar": "--ll-color-brand-coral-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.coral.700": {
+      "type": "color",
+      "value": "oklch(0.527 0.205 30.201)",
+      "cssVar": "--ll-color-brand-coral-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.coral.800": {
+      "type": "color",
+      "value": "oklch(0.448 0.169 29.317)",
+      "cssVar": "--ll-color-brand-coral-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.coral.900": {
+      "type": "color",
+      "value": "oklch(0.386 0.139 28.879)",
+      "cssVar": "--ll-color-brand-coral-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.coral.950": {
+      "type": "color",
+      "value": "oklch(0.252 0.091 27.611)",
+      "cssVar": "--ll-color-brand-coral-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.primary.100": {
+      "type": "color",
+      "value": "oklch(0.956 0.006 317.753)",
+      "cssVar": "--ll-color-brand-primary-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.primary.200": {
+      "type": "color",
+      "value": "oklch(0.932 0.007 312.299)",
+      "cssVar": "--ll-color-brand-primary-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.primary.300": {
+      "type": "color",
+      "value": "oklch(0.909 0.01 311.171)",
+      "cssVar": "--ll-color-brand-primary-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.primary.400": {
+      "type": "color",
+      "value": "oklch(0.887 0.011 303.094)",
+      "cssVar": "--ll-color-brand-primary-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.primary.50": {
+      "type": "color",
+      "value": "oklch(0.983 0.003 308.429)",
+      "cssVar": "--ll-color-brand-primary-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.primary.500": {
+      "type": "color",
+      "value": "oklch(0.854 0.014 299.761)",
+      "cssVar": "--ll-color-brand-primary-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.primary.600": {
+      "type": "color",
+      "value": "oklch(0.795 0.018 293.048)",
+      "cssVar": "--ll-color-brand-primary-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.primary.700": {
+      "type": "color",
+      "value": "oklch(0.646 0.019 292.918)",
+      "cssVar": "--ll-color-brand-primary-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.primary.800": {
+      "type": "color",
+      "value": "oklch(0.612 0.018 293.512)",
+      "cssVar": "--ll-color-brand-primary-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.primary.900": {
+      "type": "color",
+      "value": "oklch(0.505 0.016 294.999)",
+      "cssVar": "--ll-color-brand-primary-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.primary.950": {
+      "type": "color",
+      "value": "oklch(0.245 0.013 298.463)",
+      "cssVar": "--ll-color-brand-primary-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.secondary.100": {
+      "type": "color",
+      "value": "oklch(0.943 0.035 189.89)",
+      "cssVar": "--ll-color-brand-secondary-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.secondary.200": {
+      "type": "color",
+      "value": "oklch(0.886 0.066 190.059)",
+      "cssVar": "--ll-color-brand-secondary-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.secondary.300": {
+      "type": "color",
+      "value": "oklch(0.789 0.102 192.099)",
+      "cssVar": "--ll-color-brand-secondary-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.secondary.400": {
+      "type": "color",
+      "value": "oklch(0.727 0.103 194.319)",
+      "cssVar": "--ll-color-brand-secondary-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.secondary.50": {
+      "type": "color",
+      "value": "oklch(0.981 0.01 189.069)",
+      "cssVar": "--ll-color-brand-secondary-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.secondary.500": {
+      "type": "color",
+      "value": "oklch(0.639 0.097 195.875)",
+      "cssVar": "--ll-color-brand-secondary-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.secondary.600": {
+      "type": "color",
+      "value": "oklch(0.54 0.082 198.255)",
+      "cssVar": "--ll-color-brand-secondary-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.secondary.700": {
+      "type": "color",
+      "value": "oklch(0.459 0.066 199.308)",
+      "cssVar": "--ll-color-brand-secondary-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.secondary.800": {
+      "type": "color",
+      "value": "oklch(0.395 0.053 200.697)",
+      "cssVar": "--ll-color-brand-secondary-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.secondary.900": {
+      "type": "color",
+      "value": "oklch(0.356 0.044 199.866)",
+      "cssVar": "--ll-color-brand-secondary-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.brand.secondary.950": {
+      "type": "color",
+      "value": "oklch(0.246 0.032 205.567)",
+      "cssVar": "--ll-color-brand-secondary-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.card": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--card",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.white",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.card-foreground": {
+      "type": "color",
+      "value": "oklch(0.145 0 0)",
+      "cssVar": "--card-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.950",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.chart-1": {
+      "type": "color",
+      "value": "oklch(0.87 0 0)",
+      "cssVar": "--chart-1",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.300",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.chart-2": {
+      "type": "color",
+      "value": "oklch(0.556 0 0)",
+      "cssVar": "--chart-2",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.500",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.chart-3": {
+      "type": "color",
+      "value": "oklch(0.439 0 0)",
+      "cssVar": "--chart-3",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.600",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.chart-4": {
+      "type": "color",
+      "value": "oklch(0.371 0 0)",
+      "cssVar": "--chart-4",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.700",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.chart-5": {
+      "type": "color",
+      "value": "oklch(0.269 0 0)",
+      "cssVar": "--chart-5",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.800",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.cyan.100": {
+      "type": "color",
+      "value": "oklch(0.956 0.044 203.388)",
+      "cssVar": "--ll-color-cyan-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.cyan.200": {
+      "type": "color",
+      "value": "oklch(0.917 0.077 205.041)",
+      "cssVar": "--ll-color-cyan-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.cyan.300": {
+      "type": "color",
+      "value": "oklch(0.865 0.115 207.078)",
+      "cssVar": "--ll-color-cyan-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.cyan.400": {
+      "type": "color",
+      "value": "oklch(0.797 0.134 211.53)",
+      "cssVar": "--ll-color-cyan-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.cyan.50": {
+      "type": "color",
+      "value": "oklch(0.984 0.019 200.873)",
+      "cssVar": "--ll-color-cyan-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.cyan.500": {
+      "type": "color",
+      "value": "oklch(0.715 0.126 215.221)",
+      "cssVar": "--ll-color-cyan-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.cyan.600": {
+      "type": "color",
+      "value": "oklch(0.609 0.111 221.723)",
+      "cssVar": "--ll-color-cyan-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.cyan.700": {
+      "type": "color",
+      "value": "oklch(0.52 0.094 223.128)",
+      "cssVar": "--ll-color-cyan-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.cyan.800": {
+      "type": "color",
+      "value": "oklch(0.45 0.077 224.283)",
+      "cssVar": "--ll-color-cyan-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.cyan.900": {
+      "type": "color",
+      "value": "oklch(0.398 0.066 227.392)",
+      "cssVar": "--ll-color-cyan-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.cyan.950": {
+      "type": "color",
+      "value": "oklch(0.302 0.054 229.695)",
+      "cssVar": "--ll-color-cyan-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.destructive": {
+      "type": "color",
+      "value": "oklch(0.577 0.245 27.325)",
+      "cssVar": "--destructive",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.emerald.100": {
+      "type": "color",
+      "value": "oklch(0.95 0.051 163.051)",
+      "cssVar": "--ll-color-emerald-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.emerald.200": {
+      "type": "color",
+      "value": "oklch(0.905 0.089 164.15)",
+      "cssVar": "--ll-color-emerald-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.emerald.300": {
+      "type": "color",
+      "value": "oklch(0.845 0.13 164.978)",
+      "cssVar": "--ll-color-emerald-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.emerald.400": {
+      "type": "color",
+      "value": "oklch(0.773 0.153 163.223)",
+      "cssVar": "--ll-color-emerald-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.emerald.50": {
+      "type": "color",
+      "value": "oklch(0.979 0.021 166.113)",
+      "cssVar": "--ll-color-emerald-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.emerald.500": {
+      "type": "color",
+      "value": "oklch(0.696 0.149 162.48)",
+      "cssVar": "--ll-color-emerald-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.emerald.600": {
+      "type": "color",
+      "value": "oklch(0.596 0.127 163.225)",
+      "cssVar": "--ll-color-emerald-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.emerald.700": {
+      "type": "color",
+      "value": "oklch(0.508 0.105 165.612)",
+      "cssVar": "--ll-color-emerald-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.emerald.800": {
+      "type": "color",
+      "value": "oklch(0.432 0.086 166.913)",
+      "cssVar": "--ll-color-emerald-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.emerald.900": {
+      "type": "color",
+      "value": "oklch(0.378 0.073 168.94)",
+      "cssVar": "--ll-color-emerald-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.emerald.950": {
+      "type": "color",
+      "value": "oklch(0.262 0.049 172.552)",
+      "cssVar": "--ll-color-emerald-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.foreground": {
+      "type": "color",
+      "value": "oklch(0.145 0 0)",
+      "cssVar": "--foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.950",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.fuchsia.100": {
+      "type": "color",
+      "value": "oklch(0.952 0.036 318.852)",
+      "cssVar": "--ll-color-fuchsia-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.fuchsia.200": {
+      "type": "color",
+      "value": "oklch(0.903 0.073 319.62)",
+      "cssVar": "--ll-color-fuchsia-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.fuchsia.300": {
+      "type": "color",
+      "value": "oklch(0.833 0.132 321.434)",
+      "cssVar": "--ll-color-fuchsia-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.fuchsia.400": {
+      "type": "color",
+      "value": "oklch(0.748 0.207 322.16)",
+      "cssVar": "--ll-color-fuchsia-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.fuchsia.50": {
+      "type": "color",
+      "value": "oklch(0.977 0.017 320.058)",
+      "cssVar": "--ll-color-fuchsia-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.fuchsia.500": {
+      "type": "color",
+      "value": "oklch(0.667 0.259 322.15)",
+      "cssVar": "--ll-color-fuchsia-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.fuchsia.600": {
+      "type": "color",
+      "value": "oklch(0.591 0.257 322.896)",
+      "cssVar": "--ll-color-fuchsia-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.fuchsia.700": {
+      "type": "color",
+      "value": "oklch(0.518 0.226 323.949)",
+      "cssVar": "--ll-color-fuchsia-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.fuchsia.800": {
+      "type": "color",
+      "value": "oklch(0.452 0.192 324.591)",
+      "cssVar": "--ll-color-fuchsia-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.fuchsia.900": {
+      "type": "color",
+      "value": "oklch(0.401 0.16 325.612)",
+      "cssVar": "--ll-color-fuchsia-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.fuchsia.950": {
+      "type": "color",
+      "value": "oklch(0.293 0.131 325.661)",
+      "cssVar": "--ll-color-fuchsia-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.gray.100": {
+      "type": "color",
+      "value": "oklch(0.967 0.003 264.542)",
+      "cssVar": "--ll-color-gray-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.gray.200": {
+      "type": "color",
+      "value": "oklch(0.928 0.006 264.531)",
+      "cssVar": "--ll-color-gray-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.gray.300": {
+      "type": "color",
+      "value": "oklch(0.872 0.009 258.338)",
+      "cssVar": "--ll-color-gray-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.gray.400": {
+      "type": "color",
+      "value": "oklch(0.714 0.019 261.325)",
+      "cssVar": "--ll-color-gray-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.gray.50": {
+      "type": "color",
+      "value": "oklch(0.985 0.002 247.839)",
+      "cssVar": "--ll-color-gray-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.gray.500": {
+      "type": "color",
+      "value": "oklch(0.551 0.023 264.364)",
+      "cssVar": "--ll-color-gray-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.gray.600": {
+      "type": "color",
+      "value": "oklch(0.446 0.026 256.802)",
+      "cssVar": "--ll-color-gray-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.gray.700": {
+      "type": "color",
+      "value": "oklch(0.373 0.031 259.733)",
+      "cssVar": "--ll-color-gray-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.gray.800": {
+      "type": "color",
+      "value": "oklch(0.278 0.03 256.848)",
+      "cssVar": "--ll-color-gray-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.gray.900": {
+      "type": "color",
+      "value": "oklch(0.21 0.032 264.665)",
+      "cssVar": "--ll-color-gray-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.gray.950": {
+      "type": "color",
+      "value": "oklch(0.13 0.027 261.692)",
+      "cssVar": "--ll-color-gray-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.green.100": {
+      "type": "color",
+      "value": "oklch(0.962 0.043 156.743)",
+      "cssVar": "--ll-color-green-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.green.200": {
+      "type": "color",
+      "value": "oklch(0.925 0.081 155.995)",
+      "cssVar": "--ll-color-green-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.green.300": {
+      "type": "color",
+      "value": "oklch(0.871 0.136 154.449)",
+      "cssVar": "--ll-color-green-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.green.400": {
+      "type": "color",
+      "value": "oklch(0.8 0.182 151.711)",
+      "cssVar": "--ll-color-green-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.green.50": {
+      "type": "color",
+      "value": "oklch(0.982 0.018 155.826)",
+      "cssVar": "--ll-color-green-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.green.500": {
+      "type": "color",
+      "value": "oklch(0.723 0.192 149.579)",
+      "cssVar": "--ll-color-green-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.green.600": {
+      "type": "color",
+      "value": "oklch(0.627 0.17 149.214)",
+      "cssVar": "--ll-color-green-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.green.700": {
+      "type": "color",
+      "value": "oklch(0.527 0.137 150.069)",
+      "cssVar": "--ll-color-green-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.green.800": {
+      "type": "color",
+      "value": "oklch(0.448 0.108 151.328)",
+      "cssVar": "--ll-color-green-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.green.900": {
+      "type": "color",
+      "value": "oklch(0.393 0.09 152.535)",
+      "cssVar": "--ll-color-green-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.green.950": {
+      "type": "color",
+      "value": "oklch(0.266 0.063 152.934)",
+      "cssVar": "--ll-color-green-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.indigo.100": {
+      "type": "color",
+      "value": "oklch(0.93 0.033 272.788)",
+      "cssVar": "--ll-color-indigo-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.indigo.200": {
+      "type": "color",
+      "value": "oklch(0.87 0.062 274.039)",
+      "cssVar": "--ll-color-indigo-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.indigo.300": {
+      "type": "color",
+      "value": "oklch(0.785 0.104 274.713)",
+      "cssVar": "--ll-color-indigo-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.indigo.400": {
+      "type": "color",
+      "value": "oklch(0.68 0.158 276.935)",
+      "cssVar": "--ll-color-indigo-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.indigo.50": {
+      "type": "color",
+      "value": "oklch(0.962 0.018 272.314)",
+      "cssVar": "--ll-color-indigo-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.indigo.500": {
+      "type": "color",
+      "value": "oklch(0.585 0.204 277.117)",
+      "cssVar": "--ll-color-indigo-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.indigo.600": {
+      "type": "color",
+      "value": "oklch(0.511 0.23 276.966)",
+      "cssVar": "--ll-color-indigo-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.indigo.700": {
+      "type": "color",
+      "value": "oklch(0.457 0.215 277.023)",
+      "cssVar": "--ll-color-indigo-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.indigo.800": {
+      "type": "color",
+      "value": "oklch(0.398 0.177 277.366)",
+      "cssVar": "--ll-color-indigo-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.indigo.900": {
+      "type": "color",
+      "value": "oklch(0.359 0.135 278.697)",
+      "cssVar": "--ll-color-indigo-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.indigo.950": {
+      "type": "color",
+      "value": "oklch(0.257 0.086 281.288)",
+      "cssVar": "--ll-color-indigo-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.input": {
+      "type": "color",
+      "value": "oklch(0.922 0 0)",
+      "cssVar": "--input",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.200",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.lime.100": {
+      "type": "color",
+      "value": "oklch(0.967 0.066 122.328)",
+      "cssVar": "--ll-color-lime-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.lime.200": {
+      "type": "color",
+      "value": "oklch(0.938 0.122 124.321)",
+      "cssVar": "--ll-color-lime-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.lime.300": {
+      "type": "color",
+      "value": "oklch(0.897 0.179 126.665)",
+      "cssVar": "--ll-color-lime-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.lime.400": {
+      "type": "color",
+      "value": "oklch(0.849 0.207 128.85)",
+      "cssVar": "--ll-color-lime-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.lime.50": {
+      "type": "color",
+      "value": "oklch(0.986 0.031 120.757)",
+      "cssVar": "--ll-color-lime-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.lime.500": {
+      "type": "color",
+      "value": "oklch(0.768 0.204 130.85)",
+      "cssVar": "--ll-color-lime-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.lime.600": {
+      "type": "color",
+      "value": "oklch(0.648 0.175 131.684)",
+      "cssVar": "--ll-color-lime-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.lime.700": {
+      "type": "color",
+      "value": "oklch(0.532 0.141 131.589)",
+      "cssVar": "--ll-color-lime-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.lime.800": {
+      "type": "color",
+      "value": "oklch(0.453 0.113 130.933)",
+      "cssVar": "--ll-color-lime-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.lime.900": {
+      "type": "color",
+      "value": "oklch(0.405 0.096 131.063)",
+      "cssVar": "--ll-color-lime-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.lime.950": {
+      "type": "color",
+      "value": "oklch(0.274 0.069 132.109)",
+      "cssVar": "--ll-color-lime-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.muted": {
+      "type": "color",
+      "value": "oklch(0.97 0 0)",
+      "cssVar": "--muted",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.100",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.muted-foreground": {
+      "type": "color",
+      "value": "oklch(0.556 0 0)",
+      "cssVar": "--muted-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.500",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.neutral.100": {
+      "type": "color",
+      "value": "oklch(0.97 0 0)",
+      "cssVar": "--ll-color-neutral-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.neutral.200": {
+      "type": "color",
+      "value": "oklch(0.922 0 0)",
+      "cssVar": "--ll-color-neutral-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.neutral.300": {
+      "type": "color",
+      "value": "oklch(0.87 0 0)",
+      "cssVar": "--ll-color-neutral-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.neutral.400": {
+      "type": "color",
+      "value": "oklch(0.708 0 0)",
+      "cssVar": "--ll-color-neutral-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.neutral.50": {
+      "type": "color",
+      "value": "oklch(0.985 0 0)",
+      "cssVar": "--ll-color-neutral-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.neutral.500": {
+      "type": "color",
+      "value": "oklch(0.556 0 0)",
+      "cssVar": "--ll-color-neutral-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.neutral.600": {
+      "type": "color",
+      "value": "oklch(0.439 0 0)",
+      "cssVar": "--ll-color-neutral-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.neutral.700": {
+      "type": "color",
+      "value": "oklch(0.371 0 0)",
+      "cssVar": "--ll-color-neutral-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.neutral.800": {
+      "type": "color",
+      "value": "oklch(0.269 0 0)",
+      "cssVar": "--ll-color-neutral-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.neutral.900": {
+      "type": "color",
+      "value": "oklch(0.205 0 0)",
+      "cssVar": "--ll-color-neutral-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.neutral.950": {
+      "type": "color",
+      "value": "oklch(0.145 0 0)",
+      "cssVar": "--ll-color-neutral-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.orange.100": {
+      "type": "color",
+      "value": "oklch(0.954 0.037 75.164)",
+      "cssVar": "--ll-color-orange-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.orange.200": {
+      "type": "color",
+      "value": "oklch(0.901 0.073 70.697)",
+      "cssVar": "--ll-color-orange-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.orange.300": {
+      "type": "color",
+      "value": "oklch(0.837 0.117 66.29)",
+      "cssVar": "--ll-color-orange-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.orange.400": {
+      "type": "color",
+      "value": "oklch(0.758 0.159 55.934)",
+      "cssVar": "--ll-color-orange-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.orange.50": {
+      "type": "color",
+      "value": "oklch(0.98 0.016 73.684)",
+      "cssVar": "--ll-color-orange-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.orange.500": {
+      "type": "color",
+      "value": "oklch(0.705 0.187 47.604)",
+      "cssVar": "--ll-color-orange-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.orange.600": {
+      "type": "color",
+      "value": "oklch(0.646 0.194 41.116)",
+      "cssVar": "--ll-color-orange-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.orange.700": {
+      "type": "color",
+      "value": "oklch(0.553 0.174 38.402)",
+      "cssVar": "--ll-color-orange-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.orange.800": {
+      "type": "color",
+      "value": "oklch(0.47 0.143 37.304)",
+      "cssVar": "--ll-color-orange-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.orange.900": {
+      "type": "color",
+      "value": "oklch(0.408 0.116 38.172)",
+      "cssVar": "--ll-color-orange-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.orange.950": {
+      "type": "color",
+      "value": "oklch(0.266 0.076 36.259)",
+      "cssVar": "--ll-color-orange-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.pink.100": {
+      "type": "color",
+      "value": "oklch(0.948 0.028 342.258)",
+      "cssVar": "--ll-color-pink-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.pink.200": {
+      "type": "color",
+      "value": "oklch(0.899 0.059 343.231)",
+      "cssVar": "--ll-color-pink-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.pink.300": {
+      "type": "color",
+      "value": "oklch(0.823 0.11 346.018)",
+      "cssVar": "--ll-color-pink-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.pink.400": {
+      "type": "color",
+      "value": "oklch(0.725 0.175 349.761)",
+      "cssVar": "--ll-color-pink-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.pink.50": {
+      "type": "color",
+      "value": "oklch(0.971 0.014 343.198)",
+      "cssVar": "--ll-color-pink-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.pink.500": {
+      "type": "color",
+      "value": "oklch(0.656 0.212 354.308)",
+      "cssVar": "--ll-color-pink-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.pink.600": {
+      "type": "color",
+      "value": "oklch(0.592 0.218 0.584)",
+      "cssVar": "--ll-color-pink-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.pink.700": {
+      "type": "color",
+      "value": "oklch(0.525 0.199 3.958)",
+      "cssVar": "--ll-color-pink-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.pink.800": {
+      "type": "color",
+      "value": "oklch(0.459 0.17 3.815)",
+      "cssVar": "--ll-color-pink-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.pink.900": {
+      "type": "color",
+      "value": "oklch(0.408 0.144 2.432)",
+      "cssVar": "--ll-color-pink-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.pink.950": {
+      "type": "color",
+      "value": "oklch(0.284 0.105 3.907)",
+      "cssVar": "--ll-color-pink-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.popover": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--popover",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.white",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.popover-foreground": {
+      "type": "color",
+      "value": "oklch(0.145 0 0)",
+      "cssVar": "--popover-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.950",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.primary": {
+      "type": "color",
+      "value": "oklch(0.205 0 0)",
+      "cssVar": "--primary",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.900",
+      "modes": [
+        "dark"
+      ],
+      "themes": [
+        "looloo"
+      ]
+    },
+    "color.primary-foreground": {
+      "type": "color",
+      "value": "oklch(0.985 0 0)",
+      "cssVar": "--primary-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.zinc.50",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.purple.100": {
+      "type": "color",
+      "value": "oklch(0.946 0.033 307.174)",
+      "cssVar": "--ll-color-purple-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.purple.200": {
+      "type": "color",
+      "value": "oklch(0.902 0.06 306.703)",
+      "cssVar": "--ll-color-purple-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.purple.300": {
+      "type": "color",
+      "value": "oklch(0.827 0.108 306.383)",
+      "cssVar": "--ll-color-purple-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.purple.400": {
+      "type": "color",
+      "value": "oklch(0.722 0.177 305.504)",
+      "cssVar": "--ll-color-purple-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.purple.50": {
+      "type": "color",
+      "value": "oklch(0.977 0.014 308.299)",
+      "cssVar": "--ll-color-purple-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.purple.500": {
+      "type": "color",
+      "value": "oklch(0.627 0.233 303.9)",
+      "cssVar": "--ll-color-purple-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.purple.600": {
+      "type": "color",
+      "value": "oklch(0.558 0.252 302.321)",
+      "cssVar": "--ll-color-purple-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.purple.700": {
+      "type": "color",
+      "value": "oklch(0.496 0.237 301.924)",
+      "cssVar": "--ll-color-purple-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.purple.800": {
+      "type": "color",
+      "value": "oklch(0.438 0.198 303.724)",
+      "cssVar": "--ll-color-purple-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.purple.900": {
+      "type": "color",
+      "value": "oklch(0.381 0.166 304.987)",
+      "cssVar": "--ll-color-purple-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.purple.950": {
+      "type": "color",
+      "value": "oklch(0.291 0.143 302.717)",
+      "cssVar": "--ll-color-purple-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.red.100": {
+      "type": "color",
+      "value": "oklch(0.936 0.031 17.717)",
+      "cssVar": "--ll-color-red-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.red.200": {
+      "type": "color",
+      "value": "oklch(0.808 0.103 19.571)",
+      "cssVar": "--ll-color-red-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.red.300": {
+      "type": "color",
+      "value": "oklch(0.711 0.166 22.216)",
+      "cssVar": "--ll-color-red-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.red.400": {
+      "type": "color",
+      "value": "oklch(0.711 0.166 22.216)",
+      "cssVar": "--ll-color-red-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.red.50": {
+      "type": "color",
+      "value": "oklch(0.971 0.013 17.38)",
+      "cssVar": "--ll-color-red-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.red.500": {
+      "type": "color",
+      "value": "oklch(0.637 0.208 25.331)",
+      "cssVar": "--ll-color-red-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.red.600": {
+      "type": "color",
+      "value": "oklch(0.577 0.215 27.325)",
+      "cssVar": "--ll-color-red-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.red.700": {
+      "type": "color",
+      "value": "oklch(0.505 0.19 27.518)",
+      "cssVar": "--ll-color-red-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.red.800": {
+      "type": "color",
+      "value": "oklch(0.444 0.161 26.899)",
+      "cssVar": "--ll-color-red-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.red.900": {
+      "type": "color",
+      "value": "oklch(0.396 0.133 25.723)",
+      "cssVar": "--ll-color-red-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.red.950": {
+      "type": "color",
+      "value": "oklch(0.258 0.089 26.042)",
+      "cssVar": "--ll-color-red-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.ring": {
+      "type": "color",
+      "value": "oklch(0.708 0 0)",
+      "cssVar": "--ring",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.400",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.rose.100": {
+      "type": "color",
+      "value": "oklch(0.941 0.03 12.58)",
+      "cssVar": "--ll-color-rose-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.rose.200": {
+      "type": "color",
+      "value": "oklch(0.892 0.056 10.001)",
+      "cssVar": "--ll-color-rose-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.rose.300": {
+      "type": "color",
+      "value": "oklch(0.81 0.106 11.638)",
+      "cssVar": "--ll-color-rose-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.rose.400": {
+      "type": "color",
+      "value": "oklch(0.719 0.169 13.428)",
+      "cssVar": "--ll-color-rose-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.rose.50": {
+      "type": "color",
+      "value": "oklch(0.969 0.015 12.422)",
+      "cssVar": "--ll-color-rose-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.rose.500": {
+      "type": "color",
+      "value": "oklch(0.645 0.215 16.439)",
+      "cssVar": "--ll-color-rose-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.rose.600": {
+      "type": "color",
+      "value": "oklch(0.586 0.222 17.585)",
+      "cssVar": "--ll-color-rose-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.rose.700": {
+      "type": "color",
+      "value": "oklch(0.514 0.198 16.935)",
+      "cssVar": "--ll-color-rose-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.rose.800": {
+      "type": "color",
+      "value": "oklch(0.455 0.171 13.697)",
+      "cssVar": "--ll-color-rose-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.rose.900": {
+      "type": "color",
+      "value": "oklch(0.41 0.15 10.272)",
+      "cssVar": "--ll-color-rose-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.rose.950": {
+      "type": "color",
+      "value": "oklch(0.271 0.101 12.094)",
+      "cssVar": "--ll-color-rose-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.secondary": {
+      "type": "color",
+      "value": "oklch(0.97 0 0)",
+      "cssVar": "--secondary",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.100",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.secondary-foreground": {
+      "type": "color",
+      "value": "oklch(0.205 0 0)",
+      "cssVar": "--secondary-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.900",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.semantic-background": {
+      "type": "color",
+      "value": "oklch(0.551 0.023 264.364)",
+      "cssVar": "--semantic-background",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.gray.500",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.semantic-border": {
+      "type": "color",
+      "value": "oklch(0.446 0.026 256.802)",
+      "cssVar": "--semantic-border",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.gray.600",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.semantic-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--semantic-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.white",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.sidebar": {
+      "type": "color",
+      "value": "oklch(0.985 0 0)",
+      "cssVar": "--sidebar",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.zinc.50",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.sidebar-accent": {
+      "type": "color",
+      "value": "oklch(0.97 0 0)",
+      "cssVar": "--sidebar-accent",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.100",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.sidebar-accent-foreground": {
+      "type": "color",
+      "value": "oklch(0.205 0 0)",
+      "cssVar": "--sidebar-accent-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.900",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.sidebar-border": {
+      "type": "color",
+      "value": "oklch(0.922 0 0)",
+      "cssVar": "--sidebar-border",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.200",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.sidebar-foreground": {
+      "type": "color",
+      "value": "oklch(0.145 0 0)",
+      "cssVar": "--sidebar-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.950",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.sidebar-primary": {
+      "type": "color",
+      "value": "oklch(0.205 0 0)",
+      "cssVar": "--sidebar-primary",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.900",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.sidebar-primary-foreground": {
+      "type": "color",
+      "value": "oklch(0.985 0 0)",
+      "cssVar": "--sidebar-primary-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.zinc.50",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.sidebar-ring": {
+      "type": "color",
+      "value": "oklch(0.708 0 0)",
+      "cssVar": "--sidebar-ring",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.neutral.400",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.sky.100": {
+      "type": "color",
+      "value": "oklch(0.951 0.025 236.824)",
+      "cssVar": "--ll-color-sky-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.sky.200": {
+      "type": "color",
+      "value": "oklch(0.901 0.055 230.902)",
+      "cssVar": "--ll-color-sky-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.sky.300": {
+      "type": "color",
+      "value": "oklch(0.828 0.101 230.318)",
+      "cssVar": "--ll-color-sky-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.sky.400": {
+      "type": "color",
+      "value": "oklch(0.754 0.139 232.661)",
+      "cssVar": "--ll-color-sky-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.sky.50": {
+      "type": "color",
+      "value": "oklch(0.977 0.012 236.62)",
+      "cssVar": "--ll-color-sky-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.sky.500": {
+      "type": "color",
+      "value": "oklch(0.685 0.148 237.323)",
+      "cssVar": "--ll-color-sky-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.sky.600": {
+      "type": "color",
+      "value": "oklch(0.588 0.139 241.966)",
+      "cssVar": "--ll-color-sky-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.sky.700": {
+      "type": "color",
+      "value": "oklch(0.5 0.119 242.749)",
+      "cssVar": "--ll-color-sky-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.sky.800": {
+      "type": "color",
+      "value": "oklch(0.443 0.1 240.79)",
+      "cssVar": "--ll-color-sky-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.sky.900": {
+      "type": "color",
+      "value": "oklch(0.391 0.085 240.876)",
+      "cssVar": "--ll-color-sky-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.sky.950": {
+      "type": "color",
+      "value": "oklch(0.293 0.063 243.157)",
+      "cssVar": "--ll-color-sky-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.slate.100": {
+      "type": "color",
+      "value": "oklch(0.968 0.007 247.896)",
+      "cssVar": "--ll-color-slate-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.slate.200": {
+      "type": "color",
+      "value": "oklch(0.929 0.013 255.508)",
+      "cssVar": "--ll-color-slate-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.slate.300": {
+      "type": "color",
+      "value": "oklch(0.869 0.02 252.894)",
+      "cssVar": "--ll-color-slate-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.slate.400": {
+      "type": "color",
+      "value": "oklch(0.711 0.035 256.788)",
+      "cssVar": "--ll-color-slate-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.slate.50": {
+      "type": "color",
+      "value": "oklch(0.984 0.003 247.858)",
+      "cssVar": "--ll-color-slate-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.slate.500": {
+      "type": "color",
+      "value": "oklch(0.554 0.041 257.417)",
+      "cssVar": "--ll-color-slate-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.slate.600": {
+      "type": "color",
+      "value": "oklch(0.446 0.037 257.281)",
+      "cssVar": "--ll-color-slate-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.slate.700": {
+      "type": "color",
+      "value": "oklch(0.372 0.039 257.287)",
+      "cssVar": "--ll-color-slate-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.slate.800": {
+      "type": "color",
+      "value": "oklch(0.279 0.037 260.031)",
+      "cssVar": "--ll-color-slate-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.slate.900": {
+      "type": "color",
+      "value": "oklch(0.208 0.04 265.755)",
+      "cssVar": "--ll-color-slate-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.slate.950": {
+      "type": "color",
+      "value": "oklch(0.129 0.041 264.695)",
+      "cssVar": "--ll-color-slate-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.stone.100": {
+      "type": "color",
+      "value": "oklch(0.97 0.001 106.424)",
+      "cssVar": "--ll-color-stone-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.stone.200": {
+      "type": "color",
+      "value": "oklch(0.923 0.003 48.717)",
+      "cssVar": "--ll-color-stone-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.stone.300": {
+      "type": "color",
+      "value": "oklch(0.869 0.004 56.366)",
+      "cssVar": "--ll-color-stone-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.stone.400": {
+      "type": "color",
+      "value": "oklch(0.716 0.009 56.259)",
+      "cssVar": "--ll-color-stone-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.stone.50": {
+      "type": "color",
+      "value": "oklch(0.985 0.001 106.423)",
+      "cssVar": "--ll-color-stone-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.stone.500": {
+      "type": "color",
+      "value": "oklch(0.553 0.012 58.071)",
+      "cssVar": "--ll-color-stone-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.stone.600": {
+      "type": "color",
+      "value": "oklch(0.444 0.01 73.639)",
+      "cssVar": "--ll-color-stone-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.stone.700": {
+      "type": "color",
+      "value": "oklch(0.374 0.009 67.558)",
+      "cssVar": "--ll-color-stone-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.stone.800": {
+      "type": "color",
+      "value": "oklch(0.268 0.006 34.298)",
+      "cssVar": "--ll-color-stone-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.stone.900": {
+      "type": "color",
+      "value": "oklch(0.216 0.006 56.043)",
+      "cssVar": "--ll-color-stone-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.stone.950": {
+      "type": "color",
+      "value": "oklch(0.147 0.004 49.25)",
+      "cssVar": "--ll-color-stone-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.teal.100": {
+      "type": "color",
+      "value": "oklch(0.953 0.05 180.801)",
+      "cssVar": "--ll-color-teal-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.teal.200": {
+      "type": "color",
+      "value": "oklch(0.91 0.093 180.426)",
+      "cssVar": "--ll-color-teal-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.teal.300": {
+      "type": "color",
+      "value": "oklch(0.855 0.125 181.071)",
+      "cssVar": "--ll-color-teal-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.teal.400": {
+      "type": "color",
+      "value": "oklch(0.785 0.133 181.912)",
+      "cssVar": "--ll-color-teal-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.teal.50": {
+      "type": "color",
+      "value": "oklch(0.984 0.014 180.72)",
+      "cssVar": "--ll-color-teal-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.teal.500": {
+      "type": "color",
+      "value": "oklch(0.704 0.123 182.503)",
+      "cssVar": "--ll-color-teal-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.teal.600": {
+      "type": "color",
+      "value": "oklch(0.6 0.104 184.704)",
+      "cssVar": "--ll-color-teal-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.teal.700": {
+      "type": "color",
+      "value": "oklch(0.511 0.086 186.391)",
+      "cssVar": "--ll-color-teal-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.teal.800": {
+      "type": "color",
+      "value": "oklch(0.437 0.071 188.216)",
+      "cssVar": "--ll-color-teal-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.teal.900": {
+      "type": "color",
+      "value": "oklch(0.386 0.059 188.416)",
+      "cssVar": "--ll-color-teal-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.teal.950": {
+      "type": "color",
+      "value": "oklch(0.277 0.045 192.524)",
+      "cssVar": "--ll-color-teal-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.violet.100": {
+      "type": "color",
+      "value": "oklch(0.943 0.028 294.588)",
+      "cssVar": "--ll-color-violet-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.violet.200": {
+      "type": "color",
+      "value": "oklch(0.894 0.055 293.283)",
+      "cssVar": "--ll-color-violet-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.violet.300": {
+      "type": "color",
+      "value": "oklch(0.811 0.101 293.571)",
+      "cssVar": "--ll-color-violet-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.violet.400": {
+      "type": "color",
+      "value": "oklch(0.709 0.159 293.541)",
+      "cssVar": "--ll-color-violet-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.violet.50": {
+      "type": "color",
+      "value": "oklch(0.969 0.016 293.756)",
+      "cssVar": "--ll-color-violet-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.violet.500": {
+      "type": "color",
+      "value": "oklch(0.606 0.219 292.717)",
+      "cssVar": "--ll-color-violet-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.violet.600": {
+      "type": "color",
+      "value": "oklch(0.541 0.247 293.009)",
+      "cssVar": "--ll-color-violet-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.violet.700": {
+      "type": "color",
+      "value": "oklch(0.491 0.241 292.581)",
+      "cssVar": "--ll-color-violet-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.violet.800": {
+      "type": "color",
+      "value": "oklch(0.432 0.211 292.759)",
+      "cssVar": "--ll-color-violet-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.violet.900": {
+      "type": "color",
+      "value": "oklch(0.38 0.178 293.745)",
+      "cssVar": "--ll-color-violet-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.violet.950": {
+      "type": "color",
+      "value": "oklch(0.283 0.135 291.089)",
+      "cssVar": "--ll-color-violet-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.white": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--ll-color-white",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.yellow.100": {
+      "type": "color",
+      "value": "oklch(0.973 0.069 103.193)",
+      "cssVar": "--ll-color-yellow-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.yellow.200": {
+      "type": "color",
+      "value": "oklch(0.945 0.124 101.54)",
+      "cssVar": "--ll-color-yellow-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.yellow.300": {
+      "type": "color",
+      "value": "oklch(0.905 0.166 98.111)",
+      "cssVar": "--ll-color-yellow-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.yellow.400": {
+      "type": "color",
+      "value": "oklch(0.861 0.173 91.936)",
+      "cssVar": "--ll-color-yellow-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.yellow.50": {
+      "type": "color",
+      "value": "oklch(0.987 0.026 102.212)",
+      "cssVar": "--ll-color-yellow-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.yellow.500": {
+      "type": "color",
+      "value": "oklch(0.795 0.162 86.047)",
+      "cssVar": "--ll-color-yellow-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.yellow.600": {
+      "type": "color",
+      "value": "oklch(0.681 0.142 75.834)",
+      "cssVar": "--ll-color-yellow-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.yellow.700": {
+      "type": "color",
+      "value": "oklch(0.554 0.121 66.442)",
+      "cssVar": "--ll-color-yellow-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.yellow.800": {
+      "type": "color",
+      "value": "oklch(0.476 0.103 61.907)",
+      "cssVar": "--ll-color-yellow-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.yellow.900": {
+      "type": "color",
+      "value": "oklch(0.421 0.09 57.708)",
+      "cssVar": "--ll-color-yellow-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.yellow.950": {
+      "type": "color",
+      "value": "oklch(0.286 0.064 53.813)",
+      "cssVar": "--ll-color-yellow-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.zinc.100": {
+      "type": "color",
+      "value": "oklch(0.967 0.001 286.375)",
+      "cssVar": "--ll-color-zinc-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.zinc.200": {
+      "type": "color",
+      "value": "oklch(0.92 0.004 286.32)",
+      "cssVar": "--ll-color-zinc-200",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.zinc.300": {
+      "type": "color",
+      "value": "oklch(0.871 0.005 286.286)",
+      "cssVar": "--ll-color-zinc-300",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.zinc.400": {
+      "type": "color",
+      "value": "oklch(0.712 0.013 286.067)",
+      "cssVar": "--ll-color-zinc-400",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.zinc.50": {
+      "type": "color",
+      "value": "oklch(0.985 0 0)",
+      "cssVar": "--ll-color-zinc-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.zinc.500": {
+      "type": "color",
+      "value": "oklch(0.552 0.014 285.938)",
+      "cssVar": "--ll-color-zinc-500",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.zinc.600": {
+      "type": "color",
+      "value": "oklch(0.442 0.015 285.786)",
+      "cssVar": "--ll-color-zinc-600",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.zinc.700": {
+      "type": "color",
+      "value": "oklch(0.37 0.012 285.805)",
+      "cssVar": "--ll-color-zinc-700",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.zinc.800": {
+      "type": "color",
+      "value": "oklch(0.274 0.005 286.033)",
+      "cssVar": "--ll-color-zinc-800",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.zinc.900": {
+      "type": "color",
+      "value": "oklch(0.21 0.006 285.885)",
+      "cssVar": "--ll-color-zinc-900",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "color.zinc.950": {
+      "type": "color",
+      "value": "oklch(0.141 0.004 285.823)",
+      "cssVar": "--ll-color-zinc-950",
+      "layer": "primitive",
+      "source": "tokens/primitive/color.json"
+    },
+    "content.default": {
+      "type": "color",
+      "value": "oklch(0.145 0 0)",
+      "cssVar": "--content-default",
+      "layer": "semantic",
+      "source": "tokens/semantic/content.json",
+      "alias": "color.foreground",
+      "description": "Default readable text."
+    },
+    "content.destructive": {
+      "type": "color",
+      "value": "oklch(0.577 0.245 27.325)",
+      "cssVar": "--content-destructive",
+      "layer": "semantic",
+      "source": "tokens/semantic/content.json",
+      "alias": "color.destructive",
+      "description": "Error/destructive text and icons (components use text-destructive)."
+    },
+    "content.muted": {
+      "type": "color",
+      "value": "oklch(0.556 0 0)",
+      "cssVar": "--content-muted",
+      "layer": "semantic",
+      "source": "tokens/semantic/content.json",
+      "alias": "color.muted-foreground",
+      "description": "Secondary text: descriptions, placeholders, captions."
+    },
+    "content.on-card": {
+      "type": "color",
+      "value": "oklch(0.145 0 0)",
+      "cssVar": "--content-on-card",
+      "layer": "semantic",
+      "source": "tokens/semantic/content.json",
+      "alias": "color.card-foreground"
+    },
+    "content.on-popover": {
+      "type": "color",
+      "value": "oklch(0.145 0 0)",
+      "cssVar": "--content-on-popover",
+      "layer": "semantic",
+      "source": "tokens/semantic/content.json",
+      "alias": "color.popover-foreground"
+    },
+    "content.on-primary": {
+      "type": "color",
+      "value": "oklch(0.985 0 0)",
+      "cssVar": "--content-on-primary",
+      "layer": "semantic",
+      "source": "tokens/semantic/content.json",
+      "alias": "color.primary-foreground",
+      "description": "Text/icons on primary fills."
+    },
+    "content.on-sidebar": {
+      "type": "color",
+      "value": "oklch(0.145 0 0)",
+      "cssVar": "--content-on-sidebar",
+      "layer": "semantic",
+      "source": "tokens/semantic/content.json",
+      "alias": "color.sidebar-foreground"
+    },
+    "dialog.gap": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--dialog-gap",
+      "layer": "component",
+      "source": "tokens/component/dialog.json",
+      "alias": "space.4"
+    },
+    "dialog.headerGap": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--dialog-header-gap",
+      "layer": "component",
+      "source": "tokens/component/dialog.json",
+      "alias": "space.2"
+    },
+    "dialog.maxWidth": {
+      "type": "dimension",
+      "value": "24rem",
+      "cssVar": "--dialog-max-width",
+      "layer": "component",
+      "source": "tokens/component/dialog.json"
+    },
+    "dialog.mobileInset": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--dialog-mobile-inset",
+      "layer": "component",
+      "source": "tokens/component/dialog.json",
+      "alias": "space.4",
+      "description": "Viewport clamp: max-w-[calc(100%-2rem)] = 1rem inset per side."
+    },
+    "dialog.overlay": {
+      "type": "color",
+      "value": "oklch(0 0 0 / 30%)",
+      "cssVar": "--dialog-overlay",
+      "layer": "component",
+      "source": "tokens/component/dialog.json",
+      "alias": "surface.overlay"
+    },
+    "dialog.padding": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--dialog-padding",
+      "layer": "component",
+      "source": "tokens/component/dialog.json",
+      "alias": "space.4"
+    },
+    "dialog.radius": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--dialog-radius",
+      "layer": "component",
+      "source": "tokens/component/dialog.json"
+    },
+    "dialog.titleFontSize": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--dialog-title-font-size",
+      "layer": "component",
+      "source": "tokens/component/dialog.json",
+      "alias": "font.size.base"
+    },
+    "dialog.titleFontWeight": {
+      "type": "fontWeight",
+      "value": 500,
+      "cssVar": "--dialog-title-font-weight",
+      "layer": "component",
+      "source": "tokens/component/dialog.json",
+      "alias": "font.weight.medium"
+    },
+    "duration.base": {
+      "type": "duration",
+      "value": "200ms",
+      "cssVar": "--ll-duration-base",
+      "layer": "primitive",
+      "source": "tokens/primitive/motion.json"
+    },
+    "ease.standard": {
+      "type": "cubicBezier",
+      "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "cssVar": "--ll-ease-standard",
+      "layer": "primitive",
+      "source": "tokens/primitive/motion.json"
+    },
+    "focus.ring.color": {
+      "type": "color",
+      "value": "oklch(0.708 0 0)",
+      "cssVar": "--focus-ring-color",
+      "layer": "semantic",
+      "source": "tokens/semantic/focus.json",
+      "alias": "color.ring"
+    },
+    "focus.ring.opacity": {
+      "type": "number",
+      "value": 0.5,
+      "cssVar": "--focus-ring-opacity",
+      "layer": "semantic",
+      "source": "tokens/semantic/focus.json",
+      "alias": "opacity.50",
+      "description": "Ring color is applied at 50% (ring-ring/50).",
+      "modes": [
+        "high-contrast"
+      ]
+    },
+    "focus.ring.width": {
+      "type": "dimension",
+      "value": "3px",
+      "cssVar": "--focus-ring-width",
+      "layer": "semantic",
+      "source": "tokens/semantic/focus.json",
+      "modes": [
+        "high-contrast"
+      ],
+      "themes": [
+        "healthcare"
+      ]
+    },
+    "focus.shadow": {
+      "type": "shadow",
+      "value": "0 0 0 3px rgb(161 161 161 / 0.5)",
+      "cssVar": "--focus-shadow",
+      "layer": "semantic",
+      "source": "tokens/semantic/focus.json",
+      "alias": "shadow.focus",
+      "description": "Figma kit 'Focus ring' effect style (--shadow-focus in globals.css)."
+    },
+    "font.family.mono": {
+      "type": "fontFamily",
+      "value": "Geist Mono",
+      "cssVar": "--ll-font-family-mono",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json",
+      "description": "Runtime stack lives in app/globals.css (--font-sans/--font-mono via next/font)."
+    },
+    "font.family.sans": {
+      "type": "fontFamily",
+      "value": "Google sans",
+      "cssVar": "--ll-font-family-sans",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json",
+      "description": "Runtime stack lives in app/globals.css (--font-sans/--font-mono via next/font)."
+    },
+    "font.leading.10": {
+      "type": "dimension",
+      "value": "2.5rem",
+      "cssVar": "--ll-font-leading-10",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.12": {
+      "type": "dimension",
+      "value": "3rem",
+      "cssVar": "--ll-font-leading-12",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.15": {
+      "type": "dimension",
+      "value": "3.75rem",
+      "cssVar": "--ll-font-leading-15",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.18": {
+      "type": "dimension",
+      "value": "4.5rem",
+      "cssVar": "--ll-font-leading-18",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.24": {
+      "type": "dimension",
+      "value": "6rem",
+      "cssVar": "--ll-font-leading-24",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.3": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--ll-font-leading-3",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.32": {
+      "type": "dimension",
+      "value": "8rem",
+      "cssVar": "--ll-font-leading-32",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.4": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--ll-font-leading-4",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.5": {
+      "type": "dimension",
+      "value": "1.25rem",
+      "cssVar": "--ll-font-leading-5",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.6": {
+      "type": "dimension",
+      "value": "1.5rem",
+      "cssVar": "--ll-font-leading-6",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.7": {
+      "type": "dimension",
+      "value": "1.75rem",
+      "cssVar": "--ll-font-leading-7",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.8": {
+      "type": "dimension",
+      "value": "2rem",
+      "cssVar": "--ll-font-leading-8",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.leading.9": {
+      "type": "dimension",
+      "value": "2.25rem",
+      "cssVar": "--ll-font-leading-9",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.2xl": {
+      "type": "dimension",
+      "value": "1.5rem",
+      "cssVar": "--ll-font-size-2xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.3xl": {
+      "type": "dimension",
+      "value": "1.875rem",
+      "cssVar": "--ll-font-size-3xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.4xl": {
+      "type": "dimension",
+      "value": "2.25rem",
+      "cssVar": "--ll-font-size-4xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.5xl": {
+      "type": "dimension",
+      "value": "3rem",
+      "cssVar": "--ll-font-size-5xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.6xl": {
+      "type": "dimension",
+      "value": "3.75rem",
+      "cssVar": "--ll-font-size-6xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.7xl": {
+      "type": "dimension",
+      "value": "4.5rem",
+      "cssVar": "--ll-font-size-7xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.8xl": {
+      "type": "dimension",
+      "value": "6rem",
+      "cssVar": "--ll-font-size-8xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.9xl": {
+      "type": "dimension",
+      "value": "8rem",
+      "cssVar": "--ll-font-size-9xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.base": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--ll-font-size-base",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.lg": {
+      "type": "dimension",
+      "value": "1.125rem",
+      "cssVar": "--ll-font-size-lg",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.sm": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--ll-font-size-sm",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.xl": {
+      "type": "dimension",
+      "value": "1.25rem",
+      "cssVar": "--ll-font-size-xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.size.xs": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--ll-font-size-xs",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.tracking.normal": {
+      "type": "dimension",
+      "value": "0px",
+      "cssVar": "--ll-font-tracking-normal",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json",
+      "description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime."
+    },
+    "font.tracking.tight": {
+      "type": "dimension",
+      "value": "-0.4px",
+      "cssVar": "--ll-font-tracking-tight",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json",
+      "description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime."
+    },
+    "font.tracking.tighter": {
+      "type": "dimension",
+      "value": "-0.8px",
+      "cssVar": "--ll-font-tracking-tighter",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json",
+      "description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime."
+    },
+    "font.tracking.wide": {
+      "type": "dimension",
+      "value": "0.4px",
+      "cssVar": "--ll-font-tracking-wide",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json",
+      "description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime."
+    },
+    "font.tracking.wider": {
+      "type": "dimension",
+      "value": "0.8px",
+      "cssVar": "--ll-font-tracking-wider",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json",
+      "description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime."
+    },
+    "font.tracking.widest": {
+      "type": "dimension",
+      "value": "1.6px",
+      "cssVar": "--ll-font-tracking-widest",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json",
+      "description": "Figma letter-spacing in px; Tailwind's em-based tracking utilities remain authoritative at runtime."
+    },
+    "font.weight.black": {
+      "type": "fontWeight",
+      "value": 900,
+      "cssVar": "--ll-font-weight-black",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.weight.bold": {
+      "type": "fontWeight",
+      "value": 700,
+      "cssVar": "--ll-font-weight-bold",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.weight.extrabold": {
+      "type": "fontWeight",
+      "value": 800,
+      "cssVar": "--ll-font-weight-extrabold",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.weight.extralight": {
+      "type": "fontWeight",
+      "value": 200,
+      "cssVar": "--ll-font-weight-extralight",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.weight.light": {
+      "type": "fontWeight",
+      "value": 300,
+      "cssVar": "--ll-font-weight-light",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.weight.medium": {
+      "type": "fontWeight",
+      "value": 500,
+      "cssVar": "--ll-font-weight-medium",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.weight.normal": {
+      "type": "fontWeight",
+      "value": 400,
+      "cssVar": "--ll-font-weight-normal",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.weight.semibold": {
+      "type": "fontWeight",
+      "value": 600,
+      "cssVar": "--ll-font-weight-semibold",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "font.weight.thin": {
+      "type": "fontWeight",
+      "value": 100,
+      "cssVar": "--ll-font-weight-thin",
+      "layer": "primitive",
+      "source": "tokens/primitive/typography.json"
+    },
+    "input.fontSize.md": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--input-font-size-md",
+      "layer": "component",
+      "source": "tokens/component/input.json",
+      "alias": "font.size.sm",
+      "description": "Responsive in source: text-base on mobile (iOS zoom guard), md:text-sm on desktop."
+    },
+    "input.height.md": {
+      "type": "dimension",
+      "value": "2rem",
+      "cssVar": "--input-height-md",
+      "layer": "component",
+      "source": "tokens/component/input.json",
+      "alias": "size.control.md",
+      "description": "DEFAULT size."
+    },
+    "input.height.sm": {
+      "type": "dimension",
+      "value": "1.75rem",
+      "cssVar": "--input-height-sm",
+      "layer": "component",
+      "source": "tokens/component/input.json",
+      "alias": "size.control.sm"
+    },
+    "input.height.xl": {
+      "type": "dimension",
+      "value": "2.5rem",
+      "cssVar": "--input-height-xl",
+      "layer": "component",
+      "source": "tokens/component/input.json",
+      "alias": "size.control.xl"
+    },
+    "input.paddingX.md": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--input-padding-x-md",
+      "layer": "component",
+      "source": "tokens/component/input.json",
+      "alias": "space.2-5"
+    },
+    "input.paddingX.sm": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--input-padding-x-sm",
+      "layer": "component",
+      "source": "tokens/component/input.json",
+      "alias": "space.2-5"
+    },
+    "input.paddingX.xl": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--input-padding-x-xl",
+      "layer": "component",
+      "source": "tokens/component/input.json",
+      "alias": "space.4"
+    },
+    "input.paddingY.md": {
+      "type": "dimension",
+      "value": "0.25rem",
+      "cssVar": "--input-padding-y-md",
+      "layer": "component",
+      "source": "tokens/component/input.json",
+      "alias": "space.1"
+    },
+    "input.paddingY.sm": {
+      "type": "dimension",
+      "value": "0.25rem",
+      "cssVar": "--input-padding-y-sm",
+      "layer": "component",
+      "source": "tokens/component/input.json",
+      "alias": "space.1"
+    },
+    "input.paddingY.xl": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--input-padding-y-xl",
+      "layer": "component",
+      "source": "tokens/component/input.json",
+      "alias": "space.2"
+    },
+    "input.radius": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--input-radius",
+      "layer": "component",
+      "source": "tokens/component/input.json"
+    },
+    "interaction.active-shift": {
+      "type": "dimension",
+      "value": "1px",
+      "cssVar": "--interaction-active-shift",
+      "layer": "semantic",
+      "source": "tokens/semantic/interaction.json",
+      "description": "Pressed-state vertical nudge (active:translate-y-px on button)."
+    },
+    "interaction.disabled-opacity": {
+      "type": "number",
+      "value": 0.5,
+      "cssVar": "--interaction-disabled-opacity",
+      "layer": "semantic",
+      "source": "tokens/semantic/interaction.json",
+      "alias": "opacity.50",
+      "description": "disabled:opacity-50 — used by every interactive component."
+    },
+    "interaction.hover-opacity": {
+      "type": "number",
+      "value": 0.8,
+      "cssVar": "--interaction-hover-opacity",
+      "layer": "semantic",
+      "source": "tokens/semantic/interaction.json",
+      "description": "Primary hover fill strength (hover:bg-primary/80)."
+    },
+    "interaction.secondary-hover-mix": {
+      "type": "number",
+      "value": 0.05,
+      "cssVar": "--interaction-secondary-hover-mix",
+      "layer": "semantic",
+      "source": "tokens/semantic/interaction.json",
+      "description": "Secondary hover mixes 5% foreground into the fill (color-mix in button.tsx)."
+    },
+    "navigation.content.padding": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--navigation-content-padding",
+      "layer": "component",
+      "source": "tokens/component/navigation.json",
+      "alias": "space.2"
+    },
+    "navigation.content.radius": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--navigation-content-radius",
+      "layer": "component",
+      "source": "tokens/component/navigation.json"
+    },
+    "navigation.content.shadow": {
+      "type": "shadow",
+      "value": "0 2px 4px -2px rgb(0 0 0 / 0.1), 0 4px 6px -1px rgb(0 0 0 / 0.1)",
+      "cssVar": "--navigation-content-shadow",
+      "layer": "component",
+      "source": "tokens/component/navigation.json",
+      "alias": "shadow.md"
+    },
+    "navigation.iconSize": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--navigation-icon-size",
+      "layer": "component",
+      "source": "tokens/component/navigation.json"
+    },
+    "navigation.trigger.fontSize": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--navigation-trigger-font-size",
+      "layer": "component",
+      "source": "tokens/component/navigation.json",
+      "alias": "font.size.sm"
+    },
+    "navigation.trigger.paddingX": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--navigation-trigger-padding-x",
+      "layer": "component",
+      "source": "tokens/component/navigation.json",
+      "alias": "space.2-5"
+    },
+    "navigation.trigger.paddingY": {
+      "type": "dimension",
+      "value": "0.375rem",
+      "cssVar": "--navigation-trigger-padding-y",
+      "layer": "component",
+      "source": "tokens/component/navigation.json",
+      "alias": "space.1-5"
+    },
+    "navigation.trigger.radius": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--navigation-trigger-radius",
+      "layer": "component",
+      "source": "tokens/component/navigation.json"
+    },
+    "opacity.0": {
+      "type": "number",
+      "value": 0,
+      "cssVar": "--ll-opacity-0",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.10": {
+      "type": "number",
+      "value": 0.1,
+      "cssVar": "--ll-opacity-10",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.100": {
+      "type": "number",
+      "value": 1,
+      "cssVar": "--ll-opacity-100",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.15": {
+      "type": "number",
+      "value": 0.15,
+      "cssVar": "--ll-opacity-15",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.20": {
+      "type": "number",
+      "value": 0.2,
+      "cssVar": "--ll-opacity-20",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.25": {
+      "type": "number",
+      "value": 0.25,
+      "cssVar": "--ll-opacity-25",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.30": {
+      "type": "number",
+      "value": 0.3,
+      "cssVar": "--ll-opacity-30",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.35": {
+      "type": "number",
+      "value": 0.35,
+      "cssVar": "--ll-opacity-35",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.40": {
+      "type": "number",
+      "value": 0.4,
+      "cssVar": "--ll-opacity-40",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.45": {
+      "type": "number",
+      "value": 0.45,
+      "cssVar": "--ll-opacity-45",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.5": {
+      "type": "number",
+      "value": 0.05,
+      "cssVar": "--ll-opacity-5",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.50": {
+      "type": "number",
+      "value": 0.5,
+      "cssVar": "--ll-opacity-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.55": {
+      "type": "number",
+      "value": 0.55,
+      "cssVar": "--ll-opacity-55",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.60": {
+      "type": "number",
+      "value": 0.6,
+      "cssVar": "--ll-opacity-60",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.65": {
+      "type": "number",
+      "value": 0.65,
+      "cssVar": "--ll-opacity-65",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.70": {
+      "type": "number",
+      "value": 0.7,
+      "cssVar": "--ll-opacity-70",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.75": {
+      "type": "number",
+      "value": 0.75,
+      "cssVar": "--ll-opacity-75",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.80": {
+      "type": "number",
+      "value": 0.8,
+      "cssVar": "--ll-opacity-80",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.85": {
+      "type": "number",
+      "value": 0.85,
+      "cssVar": "--ll-opacity-85",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.90": {
+      "type": "number",
+      "value": 0.9,
+      "cssVar": "--ll-opacity-90",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "opacity.95": {
+      "type": "number",
+      "value": 0.95,
+      "cssVar": "--ll-opacity-95",
+      "layer": "primitive",
+      "source": "tokens/primitive/opacity.json"
+    },
+    "popover.fontSize": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--popover-font-size",
+      "layer": "component",
+      "source": "tokens/component/popover.json",
+      "alias": "font.size.sm"
+    },
+    "popover.padding": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--popover-padding",
+      "layer": "component",
+      "source": "tokens/component/popover.json",
+      "alias": "space.2"
+    },
+    "popover.radius": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--popover-radius",
+      "layer": "component",
+      "source": "tokens/component/popover.json"
+    },
+    "popover.shadow": {
+      "type": "shadow",
+      "value": "0 2px 4px -2px rgb(0 0 0 / 0.1), 0 4px 6px -1px rgb(0 0 0 / 0.1)",
+      "cssVar": "--popover-shadow",
+      "layer": "component",
+      "source": "tokens/component/popover.json",
+      "alias": "shadow.md"
+    },
+    "radio.groupGap": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--radio-group-gap",
+      "layer": "component",
+      "source": "tokens/component/radio.json",
+      "alias": "space.2"
+    },
+    "radio.indicatorSize": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--radio-indicator-size",
+      "layer": "component",
+      "source": "tokens/component/radio.json"
+    },
+    "radio.radius": {
+      "type": "dimension",
+      "value": "9999px",
+      "cssVar": "--radio-radius",
+      "layer": "component",
+      "source": "tokens/component/radio.json",
+      "alias": "radius.full"
+    },
+    "radio.size": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--radio-size",
+      "layer": "component",
+      "source": "tokens/component/radio.json"
+    },
+    "radius.2xl": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--ll-radius-2xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/radius.json",
+      "description": "Static Figma-kit step. NOTE: the runtime radius scale is currently calc(var(--radius) * n) in app/globals.css; that stays authoritative until Phase 2."
+    },
+    "radius.3xl": {
+      "type": "dimension",
+      "value": "1.5rem",
+      "cssVar": "--ll-radius-3xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/radius.json",
+      "description": "Static Figma-kit step. NOTE: the runtime radius scale is currently calc(var(--radius) * n) in app/globals.css; that stays authoritative until Phase 2."
+    },
+    "radius.4xl": {
+      "type": "dimension",
+      "value": "2rem",
+      "cssVar": "--ll-radius-4xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/radius.json",
+      "description": "Static Figma-kit step. NOTE: the runtime radius scale is currently calc(var(--radius) * n) in app/globals.css; that stays authoritative until Phase 2."
+    },
+    "radius.full": {
+      "type": "dimension",
+      "value": "9999px",
+      "cssVar": "--ll-radius-full",
+      "layer": "primitive",
+      "source": "tokens/primitive/radius.json",
+      "description": "Static Figma-kit step. NOTE: the runtime radius scale is currently calc(var(--radius) * n) in app/globals.css; that stays authoritative until Phase 2."
+    },
+    "radius.lg": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--ll-radius-lg",
+      "layer": "primitive",
+      "source": "tokens/primitive/radius.json",
+      "description": "Static Figma-kit step. NOTE: the runtime radius scale is currently calc(var(--radius) * n) in app/globals.css; that stays authoritative until Phase 2."
+    },
+    "radius.md": {
+      "type": "dimension",
+      "value": "0.375rem",
+      "cssVar": "--ll-radius-md",
+      "layer": "primitive",
+      "source": "tokens/primitive/radius.json",
+      "description": "Static Figma-kit step. NOTE: the runtime radius scale is currently calc(var(--radius) * n) in app/globals.css; that stays authoritative until Phase 2."
+    },
+    "radius.none": {
+      "type": "dimension",
+      "value": "0",
+      "cssVar": "--ll-radius-none",
+      "layer": "primitive",
+      "source": "tokens/primitive/radius.json",
+      "description": "Static Figma-kit step. NOTE: the runtime radius scale is currently calc(var(--radius) * n) in app/globals.css; that stays authoritative until Phase 2."
+    },
+    "radius.sm": {
+      "type": "dimension",
+      "value": "0.25rem",
+      "cssVar": "--ll-radius-sm",
+      "layer": "primitive",
+      "source": "tokens/primitive/radius.json",
+      "description": "Static Figma-kit step. NOTE: the runtime radius scale is currently calc(var(--radius) * n) in app/globals.css; that stays authoritative until Phase 2."
+    },
+    "radius.xl": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--ll-radius-xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/radius.json",
+      "description": "Static Figma-kit step. NOTE: the runtime radius scale is currently calc(var(--radius) * n) in app/globals.css; that stays authoritative until Phase 2."
+    },
+    "radius.xs": {
+      "type": "dimension",
+      "value": "0.125rem",
+      "cssVar": "--ll-radius-xs",
+      "layer": "primitive",
+      "source": "tokens/primitive/radius.json",
+      "description": "Static Figma-kit step. NOTE: the runtime radius scale is currently calc(var(--radius) * n) in app/globals.css; that stays authoritative until Phase 2."
+    },
+    "select.content.padding": {
+      "type": "dimension",
+      "value": "0.25rem",
+      "cssVar": "--select-content-padding",
+      "layer": "component",
+      "source": "tokens/component/select.json",
+      "alias": "space.1"
+    },
+    "select.content.radius": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--select-content-radius",
+      "layer": "component",
+      "source": "tokens/component/select.json",
+      "description": "rounded-md = calc(var(--radius) * 0.8)."
+    },
+    "select.content.shadow": {
+      "type": "shadow",
+      "value": "0 2px 4px -2px rgb(0 0 0 / 0.1), 0 4px 6px -1px rgb(0 0 0 / 0.1)",
+      "cssVar": "--select-content-shadow",
+      "layer": "component",
+      "source": "tokens/component/select.json",
+      "alias": "shadow.md"
+    },
+    "select.iconSize": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--select-icon-size",
+      "layer": "component",
+      "source": "tokens/component/select.json"
+    },
+    "select.trigger.fontSize": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--select-trigger-font-size",
+      "layer": "component",
+      "source": "tokens/component/select.json",
+      "alias": "font.size.sm"
+    },
+    "select.trigger.gap": {
+      "type": "dimension",
+      "value": "0.375rem",
+      "cssVar": "--select-trigger-gap",
+      "layer": "component",
+      "source": "tokens/component/select.json",
+      "alias": "space.1-5"
+    },
+    "select.trigger.height": {
+      "type": "dimension",
+      "value": "2rem",
+      "cssVar": "--select-trigger-height",
+      "layer": "component",
+      "source": "tokens/component/select.json",
+      "alias": "size.control.md"
+    },
+    "select.trigger.radius": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--select-trigger-radius",
+      "layer": "component",
+      "source": "tokens/component/select.json"
+    },
+    "shadow.focus": {
+      "type": "shadow",
+      "value": "0 0 0 3px rgb(161 161 161 / 0.5)",
+      "cssVar": "--ll-shadow-focus",
+      "layer": "primitive",
+      "source": "tokens/primitive/shadow.json",
+      "description": "Mirrors the kit's Focus ring effect."
+    },
+    "shadow.lg": {
+      "type": "shadow",
+      "value": "0 4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1)",
+      "cssVar": "--ll-shadow-lg",
+      "layer": "primitive",
+      "source": "tokens/primitive/shadow.json"
+    },
+    "shadow.md": {
+      "type": "shadow",
+      "value": "0 2px 4px -2px rgb(0 0 0 / 0.1), 0 4px 6px -1px rgb(0 0 0 / 0.1)",
+      "cssVar": "--ll-shadow-md",
+      "layer": "primitive",
+      "source": "tokens/primitive/shadow.json"
+    },
+    "shadow.sm": {
+      "type": "shadow",
+      "value": "0 1px 3px 0 rgb(0 0 0 / 0.1)",
+      "cssVar": "--ll-shadow-sm",
+      "layer": "primitive",
+      "source": "tokens/primitive/shadow.json"
+    },
+    "shadow.xs": {
+      "type": "shadow",
+      "value": "0 1px 2px 0 rgb(0 0 0 / 0.1)",
+      "cssVar": "--ll-shadow-xs",
+      "layer": "primitive",
+      "source": "tokens/primitive/shadow.json"
+    },
+    "sheet.gap": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--sheet-gap",
+      "layer": "component",
+      "source": "tokens/component/sheet.json",
+      "alias": "space.4"
+    },
+    "sheet.maxWidth": {
+      "type": "dimension",
+      "value": "24rem",
+      "cssVar": "--sheet-max-width",
+      "layer": "component",
+      "source": "tokens/component/sheet.json"
+    },
+    "sheet.overlay": {
+      "type": "color",
+      "value": "oklch(0 0 0 / 30%)",
+      "cssVar": "--sheet-overlay",
+      "layer": "component",
+      "source": "tokens/component/sheet.json",
+      "alias": "surface.overlay"
+    },
+    "sheet.padding": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--sheet-padding",
+      "layer": "component",
+      "source": "tokens/component/sheet.json",
+      "alias": "space.4"
+    },
+    "sheet.shadow": {
+      "type": "shadow",
+      "value": "0 4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1)",
+      "cssVar": "--sheet-shadow",
+      "layer": "component",
+      "source": "tokens/component/sheet.json",
+      "alias": "shadow.lg"
+    },
+    "sidebar.width": {
+      "type": "dimension",
+      "value": "16rem",
+      "cssVar": "--sidebar-width",
+      "layer": "component",
+      "source": "tokens/component/sidebar.json"
+    },
+    "sidebar.widthIcon": {
+      "type": "dimension",
+      "value": "3rem",
+      "cssVar": "--sidebar-width-icon",
+      "layer": "component",
+      "source": "tokens/component/sidebar.json"
+    },
+    "sidebar.widthMobile": {
+      "type": "dimension",
+      "value": "18rem",
+      "cssVar": "--sidebar-width-mobile",
+      "layer": "component",
+      "source": "tokens/component/sidebar.json"
+    },
+    "size.control.lg": {
+      "type": "dimension",
+      "value": "2.25rem",
+      "cssVar": "--ll-size-control-lg",
+      "layer": "primitive",
+      "source": "tokens/primitive/sizing.json",
+      "description": "h-9 — button size lg.",
+      "modes": [
+        "comfortable",
+        "compact"
+      ]
+    },
+    "size.control.md": {
+      "type": "dimension",
+      "value": "2rem",
+      "cssVar": "--ll-size-control-md",
+      "layer": "primitive",
+      "source": "tokens/primitive/sizing.json",
+      "description": "h-8 — button/input DEFAULT, select trigger, tabs list.",
+      "modes": [
+        "comfortable",
+        "compact"
+      ]
+    },
+    "size.control.sm": {
+      "type": "dimension",
+      "value": "1.75rem",
+      "cssVar": "--ll-size-control-sm",
+      "layer": "primitive",
+      "source": "tokens/primitive/sizing.json",
+      "description": "h-7 — button size sm, input size sm.",
+      "modes": [
+        "comfortable",
+        "compact"
+      ]
+    },
+    "size.control.xl": {
+      "type": "dimension",
+      "value": "2.5rem",
+      "cssVar": "--ll-size-control-xl",
+      "layer": "primitive",
+      "source": "tokens/primitive/sizing.json",
+      "description": "h-10 — button/input size xl, table header row.",
+      "modes": [
+        "comfortable",
+        "compact"
+      ]
+    },
+    "size.control.xs": {
+      "type": "dimension",
+      "value": "1.5rem",
+      "cssVar": "--ll-size-control-xs",
+      "layer": "primitive",
+      "source": "tokens/primitive/sizing.json",
+      "description": "h-6 — button size xs / icon-xs."
+    },
+    "space.0": {
+      "type": "dimension",
+      "value": "0",
+      "cssVar": "--ll-space-0",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.0-5": {
+      "type": "dimension",
+      "value": "0.125rem",
+      "cssVar": "--ll-space-0-5",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.1": {
+      "type": "dimension",
+      "value": "0.25rem",
+      "cssVar": "--ll-space-1",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.1-5": {
+      "type": "dimension",
+      "value": "0.375rem",
+      "cssVar": "--ll-space-1-5",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.10": {
+      "type": "dimension",
+      "value": "2.5rem",
+      "cssVar": "--ll-space-10",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.11": {
+      "type": "dimension",
+      "value": "2.75rem",
+      "cssVar": "--ll-space-11",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.12": {
+      "type": "dimension",
+      "value": "3rem",
+      "cssVar": "--ll-space-12",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.14": {
+      "type": "dimension",
+      "value": "3.5rem",
+      "cssVar": "--ll-space-14",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.16": {
+      "type": "dimension",
+      "value": "4rem",
+      "cssVar": "--ll-space-16",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.2": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--ll-space-2",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.2-5": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--ll-space-2-5",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.20": {
+      "type": "dimension",
+      "value": "5rem",
+      "cssVar": "--ll-space-20",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.24": {
+      "type": "dimension",
+      "value": "6rem",
+      "cssVar": "--ll-space-24",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.28": {
+      "type": "dimension",
+      "value": "7rem",
+      "cssVar": "--ll-space-28",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.3": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--ll-space-3",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.3-5": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--ll-space-3-5",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.32": {
+      "type": "dimension",
+      "value": "8rem",
+      "cssVar": "--ll-space-32",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.36": {
+      "type": "dimension",
+      "value": "9rem",
+      "cssVar": "--ll-space-36",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.4": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--ll-space-4",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.40": {
+      "type": "dimension",
+      "value": "10rem",
+      "cssVar": "--ll-space-40",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.44": {
+      "type": "dimension",
+      "value": "11rem",
+      "cssVar": "--ll-space-44",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.48": {
+      "type": "dimension",
+      "value": "12rem",
+      "cssVar": "--ll-space-48",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.5": {
+      "type": "dimension",
+      "value": "1.25rem",
+      "cssVar": "--ll-space-5",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.52": {
+      "type": "dimension",
+      "value": "13rem",
+      "cssVar": "--ll-space-52",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.56": {
+      "type": "dimension",
+      "value": "14rem",
+      "cssVar": "--ll-space-56",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.6": {
+      "type": "dimension",
+      "value": "1.5rem",
+      "cssVar": "--ll-space-6",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.60": {
+      "type": "dimension",
+      "value": "15rem",
+      "cssVar": "--ll-space-60",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.64": {
+      "type": "dimension",
+      "value": "16rem",
+      "cssVar": "--ll-space-64",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.7": {
+      "type": "dimension",
+      "value": "1.75rem",
+      "cssVar": "--ll-space-7",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.72": {
+      "type": "dimension",
+      "value": "18rem",
+      "cssVar": "--ll-space-72",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.8": {
+      "type": "dimension",
+      "value": "2rem",
+      "cssVar": "--ll-space-8",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.80": {
+      "type": "dimension",
+      "value": "20rem",
+      "cssVar": "--ll-space-80",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.9": {
+      "type": "dimension",
+      "value": "2.25rem",
+      "cssVar": "--ll-space-9",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.96": {
+      "type": "dimension",
+      "value": "24rem",
+      "cssVar": "--ll-space-96",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json"
+    },
+    "space.px": {
+      "type": "dimension",
+      "value": "1px",
+      "cssVar": "--ll-space-px",
+      "layer": "primitive",
+      "source": "tokens/primitive/spacing.json",
+      "description": "Hairline step (Tailwind space-px)."
+    },
+    "status.destructive": {
+      "type": "color",
+      "value": "oklch(0.577 0.245 27.325)",
+      "cssVar": "--status-destructive",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.destructive",
+      "description": "Alias of the live semantic token."
+    },
+    "status.info": {
+      "type": "color",
+      "value": "oklch(0.546 0.215 262.881)",
+      "cssVar": "--status-info",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.blue.600",
+      "description": "Proposed. Not consumed yet.",
+      "status": "proposed"
+    },
+    "status.info-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--status-info-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.white",
+      "description": "Proposed. Not consumed yet.",
+      "status": "proposed"
+    },
+    "status.success": {
+      "type": "color",
+      "value": "oklch(0.627 0.17 149.214)",
+      "cssVar": "--status-success",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.green.600",
+      "description": "Proposed. Not consumed yet.",
+      "status": "proposed"
+    },
+    "status.success-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--status-success-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.white",
+      "description": "Proposed. Not consumed yet.",
+      "status": "proposed"
+    },
+    "status.warning": {
+      "type": "color",
+      "value": "oklch(0.769 0.165 70.08)",
+      "cssVar": "--status-warning",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.amber.500",
+      "description": "Proposed. Not consumed yet.",
+      "status": "proposed"
+    },
+    "status.warning-foreground": {
+      "type": "color",
+      "value": "oklch(0.145 0 0)",
+      "cssVar": "--status-warning-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.neutral.950",
+      "description": "Proposed. Not consumed yet.",
+      "status": "proposed"
+    },
+    "surface.background": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--surface-background",
+      "layer": "semantic",
+      "source": "tokens/semantic/surface.json",
+      "alias": "color.background",
+      "description": "Default app background.",
+      "themes": [
+        "dashboard"
+      ]
+    },
+    "surface.card": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--surface-card",
+      "layer": "semantic",
+      "source": "tokens/semantic/surface.json",
+      "alias": "color.card",
+      "description": "Card and elevated container surface."
+    },
+    "surface.muted": {
+      "type": "color",
+      "value": "oklch(0.97 0 0)",
+      "cssVar": "--surface-muted",
+      "layer": "semantic",
+      "source": "tokens/semantic/surface.json",
+      "alias": "color.muted",
+      "description": "Subdued fills: hover states, secondary areas, skeleton base."
+    },
+    "surface.overlay": {
+      "type": "color",
+      "value": "oklch(0 0 0 / 30%)",
+      "cssVar": "--surface-overlay",
+      "layer": "semantic",
+      "source": "tokens/semantic/surface.json",
+      "alias": "color.background-color",
+      "description": "Modal scrim behind dialog/sheet/drawer. Aliases the kit's `background-color` extra (oklch(0 0 0 / 30%))."
+    },
+    "surface.popover": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--surface-popover",
+      "layer": "semantic",
+      "source": "tokens/semantic/surface.json",
+      "alias": "color.popover",
+      "description": "Floating surfaces: popover, dropdown, select content, tooltip panel."
+    },
+    "surface.sidebar": {
+      "type": "color",
+      "value": "oklch(0.985 0 0)",
+      "cssVar": "--surface-sidebar",
+      "layer": "semantic",
+      "source": "tokens/semantic/surface.json",
+      "alias": "color.sidebar",
+      "description": "App sidebar surface."
+    },
+    "switch.radius": {
+      "type": "dimension",
+      "value": "9999px",
+      "cssVar": "--switch-radius",
+      "layer": "component",
+      "source": "tokens/component/switch.json",
+      "alias": "radius.full"
+    },
+    "switch.thumbSize.md": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--switch-thumb-size-md",
+      "layer": "component",
+      "source": "tokens/component/switch.json",
+      "description": "DEFAULT size."
+    },
+    "switch.thumbSize.sm": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--switch-thumb-size-sm",
+      "layer": "component",
+      "source": "tokens/component/switch.json"
+    },
+    "table.cellPadding": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--table-cell-padding",
+      "layer": "component",
+      "source": "tokens/component/table.json",
+      "alias": "space.2",
+      "modes": [
+        "comfortable",
+        "compact"
+      ]
+    },
+    "table.fontSize": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--table-font-size",
+      "layer": "component",
+      "source": "tokens/component/table.json",
+      "alias": "font.size.sm"
+    },
+    "table.headerFontWeight": {
+      "type": "fontWeight",
+      "value": 500,
+      "cssVar": "--table-header-font-weight",
+      "layer": "component",
+      "source": "tokens/component/table.json",
+      "alias": "font.weight.medium"
+    },
+    "table.headerHeight": {
+      "type": "dimension",
+      "value": "2.5rem",
+      "cssVar": "--table-header-height",
+      "layer": "component",
+      "source": "tokens/component/table.json",
+      "alias": "size.control.xl",
+      "modes": [
+        "comfortable",
+        "compact"
+      ]
+    },
+    "table.headerPaddingX": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--table-header-padding-x",
+      "layer": "component",
+      "source": "tokens/component/table.json",
+      "alias": "space.2"
+    },
+    "tabs.indicatorThickness": {
+      "type": "dimension",
+      "value": "0.125rem",
+      "cssVar": "--tabs-indicator-thickness",
+      "layer": "component",
+      "source": "tokens/component/tabs.json",
+      "description": "Underline variant indicator."
+    },
+    "tabs.list.height": {
+      "type": "dimension",
+      "value": "2rem",
+      "cssVar": "--tabs-list-height",
+      "layer": "component",
+      "source": "tokens/component/tabs.json",
+      "alias": "size.control.md"
+    },
+    "tabs.list.radius": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--tabs-list-radius",
+      "layer": "component",
+      "source": "tokens/component/tabs.json"
+    },
+    "tabs.trigger.fontSize": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--tabs-trigger-font-size",
+      "layer": "component",
+      "source": "tokens/component/tabs.json",
+      "alias": "font.size.sm"
+    },
+    "tabs.trigger.paddingX": {
+      "type": "dimension",
+      "value": "0.375rem",
+      "cssVar": "--tabs-trigger-padding-x",
+      "layer": "component",
+      "source": "tokens/component/tabs.json",
+      "alias": "space.1-5"
+    },
+    "tabs.trigger.paddingY": {
+      "type": "dimension",
+      "value": "0.125rem",
+      "cssVar": "--tabs-trigger-padding-y",
+      "layer": "component",
+      "source": "tokens/component/tabs.json",
+      "alias": "space.0-5"
+    },
+    "tabs.trigger.radius": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--tabs-trigger-radius",
+      "layer": "component",
+      "source": "tokens/component/tabs.json"
+    },
+    "toast.iconSize": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--toast-icon-size",
+      "layer": "component",
+      "source": "tokens/component/toast.json"
+    },
+    "tooltip.arrowSize": {
+      "type": "dimension",
+      "value": "0.625rem",
+      "cssVar": "--tooltip-arrow-size",
+      "layer": "component",
+      "source": "tokens/component/tooltip.json"
+    },
+    "tooltip.fontSize": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--tooltip-font-size",
+      "layer": "component",
+      "source": "tokens/component/tooltip.json",
+      "alias": "font.size.xs"
+    },
+    "tooltip.maxWidth": {
+      "type": "dimension",
+      "value": "20rem",
+      "cssVar": "--tooltip-max-width",
+      "layer": "component",
+      "source": "tokens/component/tooltip.json"
+    },
+    "tooltip.paddingX": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--tooltip-padding-x",
+      "layer": "component",
+      "source": "tokens/component/tooltip.json",
+      "alias": "space.3"
+    },
+    "tooltip.paddingY": {
+      "type": "dimension",
+      "value": "0.375rem",
+      "cssVar": "--tooltip-padding-y",
+      "layer": "component",
+      "source": "tokens/component/tooltip.json",
+      "alias": "space.1-5"
+    },
+    "tooltip.radius": {
+      "type": "dimension",
+      "value": "0.5rem",
+      "cssVar": "--tooltip-radius",
+      "layer": "component",
+      "source": "tokens/component/tooltip.json"
+    },
+    "z-index.0": {
+      "type": "number",
+      "value": 0,
+      "cssVar": "--ll-z-index-0",
+      "layer": "primitive",
+      "source": "tokens/primitive/z-index.json"
+    },
+    "z-index.10": {
+      "type": "number",
+      "value": 10,
+      "cssVar": "--ll-z-index-10",
+      "layer": "primitive",
+      "source": "tokens/primitive/z-index.json"
+    },
+    "z-index.20": {
+      "type": "number",
+      "value": 20,
+      "cssVar": "--ll-z-index-20",
+      "layer": "primitive",
+      "source": "tokens/primitive/z-index.json"
+    },
+    "z-index.30": {
+      "type": "number",
+      "value": 30,
+      "cssVar": "--ll-z-index-30",
+      "layer": "primitive",
+      "source": "tokens/primitive/z-index.json"
+    },
+    "z-index.40": {
+      "type": "number",
+      "value": 40,
+      "cssVar": "--ll-z-index-40",
+      "layer": "primitive",
+      "source": "tokens/primitive/z-index.json"
+    },
+    "z-index.50": {
+      "type": "number",
+      "value": 50,
+      "cssVar": "--ll-z-index-50",
+      "layer": "primitive",
+      "source": "tokens/primitive/z-index.json"
+    }
+  }
+}

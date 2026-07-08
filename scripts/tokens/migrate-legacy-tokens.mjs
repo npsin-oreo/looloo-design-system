@@ -313,6 +313,11 @@ writeJson(["theme", "neutral.json"], {
         container: token("dimension", axes.container ?? "1280px"),
         section: token("dimension", axes.section ?? "6rem"),
       },
+      typography: {
+        leading: token("number", axes.leading ?? "1.5", "Body line-height (brand.css re-points --text-base--line-height)."),
+        tracking: token("dimension", axes.tracking ?? "0em", "Letter-spacing (brand.css re-points --tracking-tight)."),
+        weightHeading: token("fontWeight", axes.weight_heading ?? "600", "Heading weight (--weight-heading)."),
+      },
     },
   },
 })
