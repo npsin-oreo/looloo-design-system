@@ -28,12 +28,13 @@
     },
     "looloo": {
       "source": "tokens/theme/looloo.json",
-      "status": "proposed",
+      "status": "active",
       "extends": "neutral",
       "overrides": [
         "color.accent",
+        "color.accent-foreground",
         "color.primary",
-        "radius.control"
+        "color.primary-foreground"
       ],
       "selector": "[data-theme=\"looloo\"]",
       "css": "dist/themes/looloo.css"

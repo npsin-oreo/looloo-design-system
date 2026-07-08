@@ -1,14 +1,31 @@
 {
-  "$description": "PROPOSED SCAFFOLD (not consumed yet) — LOOLOO product brand theme. Values below alias the brand ramps that already exist in the Figma export (color.brand.* in tokens/primitive/color.json) but the actual brand direction is A DESIGN DECISION THAT HAS NOT BEEN MADE — treat every value as placeholder until design signs off. Today the real brand mechanism is brand.config.json on a brand branch.",
+  "$description": "LOOLOO product brand theme — DESIGN SIGNED OFF 2026-07-08 (primary #60CFCB = brand secondary.300 ramp; accent #0B2846 navy, no ramp step — stored as literal OKLCH). Foreground overrides are REQUIRED: the teal primary needs dark text (10.64:1 vs 1.86:1 with white). Not yet consumed at runtime — compiled to dist/themes/looloo.css; a product opts in via [data-theme=\"looloo\"] once theme switching ships.",
   "theme": {
     "looloo": {
       "extends": "neutral",
       "color": {
-        "primary": { "$type": "color", "$value": "{color.brand.cerulean-blue.500}", "$extensions": { "looloo.status": "proposed" } },
-        "accent": { "$type": "color", "$value": "{color.brand.coral.500}", "$extensions": { "looloo.status": "proposed" } }
-      },
-      "radius": {
-        "control": { "$type": "dimension", "$value": "0.625rem", "$extensions": { "looloo.status": "proposed" } }
+        "primary": {
+          "$type": "color",
+          "$value": "{color.brand.secondary.300}",
+          "$description": "Signed off: #60CFCB.",
+          "$extensions": { "looloo.legacy": "#60cfcb" }
+        },
+        "primary-foreground": {
+          "$type": "color",
+          "$value": "{color.neutral.950}",
+          "$description": "Dark text on the teal primary — 10.64:1 (white would be 1.86:1)."
+        },
+        "accent": {
+          "$type": "color",
+          "$value": "oklch(0.273 0.066 252.129)",
+          "$description": "Signed off: #0B2846 (deep navy; no matching ramp step — literal).",
+          "$extensions": { "looloo.legacy": "#0b2846" }
+        },
+        "accent-foreground": {
+          "$type": "color",
+          "$value": "{color.white}",
+          "$description": "White on navy — 14.93:1."
+        }
       }
     }
   }

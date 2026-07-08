@@ -80,9 +80,9 @@
     },
     "muted-foreground": {
       "$type": "color",
-      "$value": "{color.neutral.500}",
+      "$value": "oklch(0.545 0 0)",
       "$extensions": {
-        "looloo.resolved": "oklch(0.556 0 0)"
+        "looloo.legacy": "oklch(0.545 0 0)"
       }
     },
     "accent": {

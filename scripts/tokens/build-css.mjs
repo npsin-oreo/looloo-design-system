@@ -178,7 +178,9 @@ for (const [name, overlay] of Object.entries(overlays.theme)) {
   writeFileSync(
     file,
     GENERATED_HEADER("build-css.mjs") +
-      "/* PROPOSED theme scaffold — values pending design sign-off; nothing sets this selector yet. */\n" +
+      (overlay.proposed
+        ? "/* PROPOSED theme scaffold — values pending design sign-off; nothing sets this selector yet. */\n"
+        : "/* Design-approved values. Applied when a product opts in via this selector. */\n") +
       (skipped.length ? `/* skipped (no canonical target yet): ${skipped.join(", ")} */\n` : "") +
       `[data-theme="${name}"] {\n${lines.join("\n")}\n}\n`
   )
