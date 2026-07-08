@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Alert, AlertTitle, AlertDescription, AlertAction } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { CircleCheck, TriangleAlert, Info } from "lucide-react";
+import { CircleCheck, TriangleAlert, Info } from "@/icons/icon-registry";
 import { getEntry } from "@/components/docs/registry";
 
 const meta: Meta<typeof Alert> = {

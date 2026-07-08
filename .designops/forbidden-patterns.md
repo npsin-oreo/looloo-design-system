@@ -44,9 +44,14 @@ enforcement lands with a later phase.
 
 ## Icons
 
-- ⏳ Do not import from `lucide-react` directly in NEW components — the icon
-  registry + `Icon`/`IconButton` land in the icon phase; until then, follow
-  `docs/icon-strategy.md`. (39 existing direct imports are known debt, migrated
-  by codemod in that phase.)
+- 📋 Do not import from `lucide-react` directly — import from
+  `@/icons/icon-registry` (or use `<Icon>`/`<IconButton>`). Enforced by
+  `npm run audit:icons` (0 HIGH). Sole allowlisted exception:
+  `components/docs/references/icon-library.tsx` (docs gallery).
+- 📋 Do not use inline `<svg>` / unregistered custom SVGs — customs live in
+  `icons/custom/` and must be registered in `icon-registry.ts`.
 - Do not add another icon library. `lucide-react` is the single icon source.
-- Do not create icon-only buttons without an accessible label (`aria-label`).
+- Do not create icon-only buttons without an accessible label —
+  `<IconButton>` makes `aria-label` a required prop; raw
+  `<Button size="icon…">` needs `aria-label` or `sr-only` text
+  (audit:icons WARNs on the former heuristic).

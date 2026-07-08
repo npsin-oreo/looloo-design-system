@@ -1,0 +1,246 @@
+{
+  "source_of_truth": "icons/icon-registry.ts",
+  "default_library": "lucide-react",
+  "rules": [
+    "product code imports Icon/IconButton or registry re-exports — never lucide-react directly",
+    "custom SVGs live in icons/custom/ and must be registered",
+    "icon-only buttons require aria-label (IconButton enforces this)"
+  ],
+  "icons": {
+    "align-center": {
+      "source": "lucide-react",
+      "component": "AlignCenter",
+      "status": "stable"
+    },
+    "align-left": {
+      "source": "lucide-react",
+      "component": "AlignLeft",
+      "status": "stable"
+    },
+    "align-right": {
+      "source": "lucide-react",
+      "component": "AlignRight",
+      "status": "stable"
+    },
+    "archive": {
+      "source": "lucide-react",
+      "component": "Archive",
+      "status": "stable"
+    },
+    "arrow-up-down": {
+      "source": "lucide-react",
+      "component": "ArrowUpDown",
+      "status": "stable"
+    },
+    "badge-check": {
+      "source": "lucide-react",
+      "component": "BadgeCheck",
+      "status": "stable"
+    },
+    "bell": {
+      "source": "lucide-react",
+      "component": "Bell",
+      "status": "stable"
+    },
+    "bold": {
+      "source": "lucide-react",
+      "component": "Bold",
+      "status": "stable"
+    },
+    "book-open": {
+      "source": "lucide-react",
+      "component": "BookOpen",
+      "status": "stable"
+    },
+    "bot": {
+      "source": "lucide-react",
+      "component": "Bot",
+      "status": "stable"
+    },
+    "calendar": {
+      "source": "lucide-react",
+      "component": "Calendar",
+      "status": "stable"
+    },
+    "camera": {
+      "source": "lucide-react",
+      "component": "Camera",
+      "status": "stable"
+    },
+    "check": {
+      "source": "lucide-react",
+      "component": "Check",
+      "status": "stable"
+    },
+    "chevron-down": {
+      "source": "lucide-react",
+      "component": "ChevronDown",
+      "status": "stable"
+    },
+    "chevron-left": {
+      "source": "lucide-react",
+      "component": "ChevronLeft",
+      "status": "stable"
+    },
+    "chevron-right": {
+      "source": "lucide-react",
+      "component": "ChevronRight",
+      "status": "stable"
+    },
+    "chevron-up": {
+      "source": "lucide-react",
+      "component": "ChevronUp",
+      "status": "stable"
+    },
+    "chevrons-up-down": {
+      "source": "lucide-react",
+      "component": "ChevronsUpDown",
+      "status": "stable"
+    },
+    "circle-check": {
+      "source": "lucide-react",
+      "component": "CircleCheck",
+      "status": "stable"
+    },
+    "clock": {
+      "source": "lucide-react",
+      "component": "Clock",
+      "status": "stable"
+    },
+    "close": {
+      "source": "lucide-react",
+      "component": "X",
+      "status": "stable"
+    },
+    "copy": {
+      "source": "lucide-react",
+      "component": "Copy",
+      "status": "stable"
+    },
+    "folder-open": {
+      "source": "lucide-react",
+      "component": "FolderOpen",
+      "status": "stable"
+    },
+    "frame": {
+      "source": "lucide-react",
+      "component": "Frame",
+      "status": "stable"
+    },
+    "gallery-vertical-end": {
+      "source": "lucide-react",
+      "component": "GalleryVerticalEnd",
+      "status": "stable"
+    },
+    "grip-vertical": {
+      "source": "lucide-react",
+      "component": "GripVertical",
+      "status": "stable"
+    },
+    "home": {
+      "source": "lucide-react",
+      "component": "Home",
+      "status": "stable"
+    },
+    "inbox": {
+      "source": "lucide-react",
+      "component": "Inbox",
+      "status": "stable"
+    },
+    "info": {
+      "source": "lucide-react",
+      "component": "Info",
+      "status": "stable"
+    },
+    "italic": {
+      "source": "lucide-react",
+      "component": "Italic",
+      "status": "stable"
+    },
+    "loader": {
+      "source": "lucide-react",
+      "component": "Loader2",
+      "status": "stable"
+    },
+    "mail": {
+      "source": "lucide-react",
+      "component": "Mail",
+      "status": "stable"
+    },
+    "map": {
+      "source": "lucide-react",
+      "component": "Map",
+      "status": "stable"
+    },
+    "minus": {
+      "source": "lucide-react",
+      "component": "Minus",
+      "status": "stable"
+    },
+    "more-horizontal": {
+      "source": "lucide-react",
+      "component": "MoreHorizontal",
+      "status": "stable"
+    },
+    "octagon-x": {
+      "source": "lucide-react",
+      "component": "OctagonX",
+      "status": "stable"
+    },
+    "palette": {
+      "source": "lucide-react",
+      "component": "Palette",
+      "status": "stable"
+    },
+    "panel-left": {
+      "source": "lucide-react",
+      "component": "PanelLeft",
+      "status": "stable"
+    },
+    "pie-chart": {
+      "source": "lucide-react",
+      "component": "PieChart",
+      "status": "stable"
+    },
+    "search": {
+      "source": "lucide-react",
+      "component": "Search",
+      "status": "stable"
+    },
+    "settings": {
+      "source": "lucide-react",
+      "component": "Settings",
+      "status": "stable"
+    },
+    "settings-2": {
+      "source": "lucide-react",
+      "component": "Settings2",
+      "status": "stable"
+    },
+    "square-terminal": {
+      "source": "lucide-react",
+      "component": "SquareTerminal",
+      "status": "stable"
+    },
+    "star": {
+      "source": "lucide-react",
+      "component": "Star",
+      "status": "stable"
+    },
+    "terminal": {
+      "source": "lucide-react",
+      "component": "Terminal",
+      "status": "stable"
+    },
+    "triangle-alert": {
+      "source": "lucide-react",
+      "component": "TriangleAlert",
+      "status": "stable"
+    },
+    "underline": {
+      "source": "lucide-react",
+      "component": "Underline",
+      "status": "stable"
+    }
+  }
+}

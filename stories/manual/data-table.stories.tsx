@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import * as React from "react";
-import { ArrowUpDown } from "lucide-react";
+import { ArrowUpDown } from "@/icons/icon-registry";
 import {
   type ColumnDef,
   type SortingState,

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from "@/components/ui/button-group";
 import { Button } from "@/components/ui/button";
-import { Archive, ChevronLeft, ChevronRight, Clock } from "lucide-react";
+import { Archive, ChevronLeft, ChevronRight, Clock } from "@/icons/icon-registry";
 import { getEntry } from "@/components/docs/registry";
 
 type Args = { orientation: "horizontal" | "vertical" };

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupButton, InputGroupText } from "@/components/ui/input-group";
 import { getEntry } from "@/components/docs/registry";
-import { Search, Mail, X } from "lucide-react";
+import { Search, Mail, X } from "@/icons/icon-registry";
 
 type Args = { placeholder: string; addon: "leading" | "trailing" | "both"; disabled: boolean };
 

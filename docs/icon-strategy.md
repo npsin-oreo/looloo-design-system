@@ -1,7 +1,12 @@
 # Icon Strategy (DS v2)
 
-> Audited 2026-07-08 (inspection only — no icon usage was refactored).
-> Status: **strategy approved, implementation deferred to the icon phase.**
+> Audited 2026-07-08. Status: **IMPLEMENTED** — `icons/icon-registry.ts` (47
+> curated icons) + `<Icon>` + `<IconButton>` exist; all 38 former direct
+> lucide imports go through the registry (sole exception: the docs icon
+> gallery); `npm run audit:icons` reports 0 HIGH and
+> `.designops/icon-contract.json` is generated from the registry
+> (`npm run icons:contract`). Part 1 below is preserved as the pre-migration
+> audit record.
 
 ## Part 1 — Audit answers
 

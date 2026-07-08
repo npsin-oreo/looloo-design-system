@@ -6,7 +6,7 @@
   "counts": {
     "primitive": 420,
     "semantic": 67,
-    "component": 119,
+    "component": 129,
     "modes": [
       "comfortable",
       "compact",
@@ -3314,6 +3314,84 @@
       "cssVar": "--ll-font-weight-thin",
       "layer": "primitive",
       "source": "tokens/primitive/typography.json"
+    },
+    "icon-button.size.lg": {
+      "type": "dimension",
+      "value": "2.25rem",
+      "cssVar": "--icon-button-size-lg",
+      "layer": "component",
+      "source": "tokens/component/icon-button.json",
+      "alias": "size.control.lg"
+    },
+    "icon-button.size.md": {
+      "type": "dimension",
+      "value": "2rem",
+      "cssVar": "--icon-button-size-md",
+      "layer": "component",
+      "source": "tokens/component/icon-button.json",
+      "alias": "size.control.md",
+      "description": "DEFAULT."
+    },
+    "icon-button.size.sm": {
+      "type": "dimension",
+      "value": "1.75rem",
+      "cssVar": "--icon-button-size-sm",
+      "layer": "component",
+      "source": "tokens/component/icon-button.json",
+      "alias": "size.control.sm"
+    },
+    "icon-button.size.xl": {
+      "type": "dimension",
+      "value": "2.5rem",
+      "cssVar": "--icon-button-size-xl",
+      "layer": "component",
+      "source": "tokens/component/icon-button.json",
+      "alias": "size.control.xl"
+    },
+    "icon-button.size.xs": {
+      "type": "dimension",
+      "value": "1.5rem",
+      "cssVar": "--icon-button-size-xs",
+      "layer": "component",
+      "source": "tokens/component/icon-button.json",
+      "alias": "size.control.xs"
+    },
+    "icon.size.lg": {
+      "type": "dimension",
+      "value": "1.25rem",
+      "cssVar": "--icon-size-lg",
+      "layer": "component",
+      "source": "tokens/component/icon.json"
+    },
+    "icon.size.md": {
+      "type": "dimension",
+      "value": "1rem",
+      "cssVar": "--icon-size-md",
+      "layer": "component",
+      "source": "tokens/component/icon.json",
+      "description": "DEFAULT — the ubiquitous size-4 chrome baseline."
+    },
+    "icon.size.sm": {
+      "type": "dimension",
+      "value": "0.875rem",
+      "cssVar": "--icon-size-sm",
+      "layer": "component",
+      "source": "tokens/component/icon.json"
+    },
+    "icon.size.xs": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--icon-size-xs",
+      "layer": "component",
+      "source": "tokens/component/icon.json"
+    },
+    "icon.strokeWidth": {
+      "type": "number",
+      "value": 2,
+      "cssVar": "--icon-stroke-width",
+      "layer": "component",
+      "source": "tokens/component/icon.json",
+      "description": "lucide default. Source of truth for icons/custom/ geometry too (legacy Figma export stroke-width/Mode 1 stroke-2)."
     },
     "input.fontSize.md": {
       "type": "dimension",
