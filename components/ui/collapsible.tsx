@@ -1,33 +1,4 @@
-"use client"
-
-import { Collapsible as CollapsiblePrimitive } from "radix-ui"
-
-function Collapsible({
-  ...props
-}: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {
-  return <CollapsiblePrimitive.Root data-slot="collapsible" {...props} />
-}
-
-function CollapsibleTrigger({
-  ...props
-}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger>) {
-  return (
-    <CollapsiblePrimitive.CollapsibleTrigger
-      data-slot="collapsible-trigger"
-      {...props}
-    />
-  )
-}
-
-function CollapsibleContent({
-  ...props
-}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent>) {
-  return (
-    <CollapsiblePrimitive.CollapsibleContent
-      data-slot="collapsible-content"
-      {...props}
-    />
-  )
-}
-
-export { Collapsible, CollapsibleTrigger, CollapsibleContent }
+// compat re-export — canonical source: ./collapsible/collapsible.tsx
+// Keeps the published subpath "@npsin-oreo/design-system/collapsible" and flat
+// "@/components/ui/collapsible" imports resolving. Do not add code here.
+export * from "./collapsible/collapsible"

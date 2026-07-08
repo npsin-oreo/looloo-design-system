@@ -24,9 +24,11 @@ const TOKEN_NAME = {
 // components that intentionally have no token file (pure layout/utility)
 const EXEMPT = new Set(["aspect-ratio", "collapsible", "direction", "form"])
 
-const components = readdirSync(join(root, "components", "ui"))
-  .filter((f) => f.endsWith(".tsx"))
-  .map((f) => f.replace(/\.tsx$/, ""))
+// Folder-per-component layout: each subdirectory of components/ui IS a
+// component (flat *.tsx at this level are compat re-export shims).
+const components = readdirSync(join(root, "components", "ui"), { withFileTypes: true })
+  .filter((d) => d.isDirectory())
+  .map((d) => d.name)
   .sort()
 
 const rows = []
