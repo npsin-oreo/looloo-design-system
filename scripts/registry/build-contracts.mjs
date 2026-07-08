@@ -84,6 +84,12 @@ function tokenPaths(node, prefix = "") {
   return out
 }
 
+// Docs lookup must be case-EXACT and OS-independent: macOS's case-insensitive
+// filesystem let existsSync("InputOtp.mdx") find InputOTP.mdx while Linux CI
+// did not — resolve the real filename from a directory listing instead.
+const docsDir = join(root, "stories", "docs")
+const docsByLower = new Map(readdirSync(docsDir).map((f) => [f.toLowerCase(), f]))
+
 const components = {}
 const uiDir = join(root, "components", "ui")
 for (const d of readdirSync(uiDir, { withFileTypes: true }).filter((d) => d.isDirectory()).sort((a, b) => a.name.localeCompare(b.name))) {
@@ -110,9 +116,8 @@ for (const d of readdirSync(uiDir, { withFileTypes: true }).filter((d) => d.isDi
     entry.tokenFile = `tokens/component/${tokenFile}`
   }
   entry.storybook = hasStories ? `stories/manual/${name}.stories.tsx` : null
-  entry.docs = existsSync(join(root, "stories", "docs", `${pascal(name)}.mdx`))
-    ? `stories/docs/${pascal(name)}.mdx`
-    : null
+  const docsFile = docsByLower.get(`${pascal(name)}.mdx`.toLowerCase())
+  entry.docs = docsFile ? `stories/docs/${docsFile}` : null
   entry.a11y = hasStories
     ? "axe-checked in CI (test-storybook renders every story with a11y error mode)"
     : "no stories — not axe-checked"

@@ -417,7 +417,7 @@
       "internalPath": "@/components/ui/input-otp",
       "source": "components/ui/input-otp/input-otp.tsx",
       "storybook": "stories/manual/input-otp.stories.tsx",
-      "docs": "stories/docs/InputOtp.mdx",
+      "docs": "stories/docs/InputOTP.mdx",
       "a11y": "axe-checked in CI (test-storybook renders every story with a11y error mode)"
     },
     "item": {
