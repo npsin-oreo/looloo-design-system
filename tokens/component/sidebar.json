@@ -1,8 +1,8 @@
 {
-  "$description": "DRAFT — captured from the constants in components/ui/sidebar.tsx (SIDEBAR_WIDTH*). NOTE: sidebar already sets these as runtime CSS vars (--sidebar-width, --sidebar-width-icon) — the de-facto component-token precedent in this repo. Phase 4 re-points those inline values here.",
+  "$description": "Captured from components/ui/sidebar/sidebar.tsx — WIRED: the SIDEBAR_WIDTH* constants now read these vars. Token names deliberately differ from the RUNTIME vars the component sets inline (--sidebar-width, --sidebar-width-icon) so the inline style can alias them without self-reference.",
   "sidebar": {
-    "width": { "$type": "dimension", "$value": "16rem", "$extensions": { "looloo.source": "SIDEBAR_WIDTH" } },
-    "widthMobile": { "$type": "dimension", "$value": "18rem", "$extensions": { "looloo.source": "SIDEBAR_WIDTH_MOBILE" } },
-    "widthIcon": { "$type": "dimension", "$value": "3rem", "$extensions": { "looloo.source": "SIDEBAR_WIDTH_ICON" } }
+    "defaultWidth": { "$type": "dimension", "$value": "16rem", "$extensions": { "looloo.source": "SIDEBAR_WIDTH" } },
+    "mobileWidth": { "$type": "dimension", "$value": "18rem", "$extensions": { "looloo.source": "SIDEBAR_WIDTH_MOBILE" } },
+    "iconWidth": { "$type": "dimension", "$value": "3rem", "$extensions": { "looloo.source": "SIDEBAR_WIDTH_ICON" } }
   }
 }

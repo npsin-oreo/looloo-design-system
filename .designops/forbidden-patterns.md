@@ -8,7 +8,9 @@ enforcement lands with a later phase.
 
 - 📋 Do not use `bg-white`, `text-black`, `border-gray-*` (or any raw neutral
   palette utility) in core components when semantic tokens exist.
-  *Known debt: `components/ui/slider.tsx:52` uses `bg-white` — fix in the
+  *Status: `npm run audit:styles` reports **0 HIGH** — the last violations
+  (slider `bg-white` → `--slider-thumb-background`; alert-dialog/drawer/sheet
+  `bg-black/10` scrims → `--surface-overlay`) were fixed in the
   component-tokenization phase.*
 - 📋 Do not hardcode literal colors (`#hex`, `rgb()`, `oklch()`) in component
   source. (CSS-var plumbing like `var(--radix-*)` is fine.)

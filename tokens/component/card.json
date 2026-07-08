@@ -6,7 +6,10 @@
       "md": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "p-4 / px-4 py-4" } },
       "sm": { "$type": "dimension", "$value": "{space.3}", "$extensions": { "looloo.tailwind": "p-3 / px-3 py-3" } }
     },
-    "gap": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "gap-4" } },
+    "gap": {
+      "md": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "gap-4" } },
+      "sm": { "$type": "dimension", "$value": "{space.3}", "$extensions": { "looloo.tailwind": "gap-3 (data-[size=sm])" } }
+    },
     "titleFontSize": { "$type": "dimension", "$value": "{font.size.base}", "$extensions": { "looloo.tailwind": "text-base" } },
     "bodyFontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } }
   }
