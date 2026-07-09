@@ -1,22 +1,13 @@
 "use client";
 
 import * as React from "react";
-import { format } from "date-fns";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
-import {
-  type ColumnDef,
-  type SortingState,
-  flexRender,
-  getCoreRowModel,
-  getSortedRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
+import { type ColumnDef } from "@tanstack/react-table";
 import { toast } from "sonner";
 import {
   ArrowUpDown,
   BookOpen,
   Bot,
-  Calendar as CalendarIcon,
   Check,
   ChevronRight,
   ChevronsUpDown,
@@ -32,7 +23,8 @@ import {
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
+import { DataTable } from "@/components/ui/data-table";
+import { DatePicker } from "@/components/ui/date-picker";
 import {
   type ChartConfig,
   ChartContainer,
@@ -75,14 +67,6 @@ import {
   SidebarMenuSubItem,
   SidebarProvider,
 } from "@/components/ui/sidebar";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 
 /* ───────────────────────── Chart ───────────────────────── */
 const chartData = [
@@ -346,23 +330,7 @@ export function ComboboxDemo() {
 
 /* ───────────────────────── Date Picker (Popover + Calendar) ───────────────────────── */
 export function DatePickerDemo() {
-  const [date, setDate] = React.useState<Date | undefined>();
-  return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          className={cn("w-[240px] justify-start text-left font-normal", !date && "text-muted-foreground")}
-        >
-          <CalendarIcon className="mr-2 size-4" />
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-auto p-0">
-        <Calendar mode="single" selected={date} onSelect={setDate} autoFocus />
-      </PopoverContent>
-    </Popover>
-  );
+  return <DatePicker />;
 }
 
 /* ───────────────────────── Data Table (Table + TanStack Table) ───────────────────────── */
@@ -404,41 +372,12 @@ const paymentColumns: ColumnDef<Payment>[] = [
 ];
 
 export function DataTableDemo() {
-  const [sorting, setSorting] = React.useState<SortingState>([{ id: "amount", desc: true }]);
-  const table = useReactTable({
-    data: payments,
-    columns: paymentColumns,
-    state: { sorting },
-    onSortingChange: setSorting,
-    getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-  });
   return (
-    <div className="w-full max-w-lg rounded-md border">
-      <Table>
-        <TableHeader>
-          {table.getHeaderGroups().map((hg) => (
-            <TableRow key={hg.id}>
-              {hg.headers.map((h) => (
-                <TableHead key={h.id} className={h.column.id === "amount" ? "text-right" : undefined}>
-                  {h.isPlaceholder ? null : flexRender(h.column.columnDef.header, h.getContext())}
-                </TableHead>
-              ))}
-            </TableRow>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows.map((row) => (
-            <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
-              {row.getVisibleCells().map((cell) => (
-                <TableCell key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </TableCell>
-              ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
+    <DataTable
+      columns={paymentColumns}
+      data={payments}
+      defaultSorting={[{ id: "amount", desc: true }]}
+      className="max-w-lg"
+    />
   );
 }

@@ -1,16 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import * as React from "react";
 import { ArrowUpDown } from "@/icons/icon-registry";
-import {
-  type ColumnDef,
-  type SortingState,
-  flexRender,
-  getCoreRowModel,
-  getSortedRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
+import { type ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { DataTable } from "@/components/ui/data-table";
 import { getEntry } from "@/components/docs/registry";
 
 type Args = { rowCount: number; defaultDesc: boolean };
@@ -49,42 +42,15 @@ const columns: ColumnDef<Payment>[] = [
   },
 ];
 
-function DataTable({ rowCount, defaultDesc }: Args) {
-  const [sorting, setSorting] = React.useState<SortingState>([{ id: "amount", desc: defaultDesc }]);
+function DataTableStory({ rowCount, defaultDesc }: Args) {
   const data = React.useMemo(() => payments.slice(0, rowCount), [rowCount]);
-  const table = useReactTable({
-    data,
-    columns,
-    state: { sorting },
-    onSortingChange: setSorting,
-    getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-  });
   return (
-    <div className="w-full max-w-lg rounded-md border">
-      <Table>
-        <TableHeader>
-          {table.getHeaderGroups().map((hg) => (
-            <TableRow key={hg.id}>
-              {hg.headers.map((h) => (
-                <TableHead key={h.id} className={h.column.id === "amount" ? "text-right" : undefined}>
-                  {h.isPlaceholder ? null : flexRender(h.column.columnDef.header, h.getContext())}
-                </TableHead>
-              ))}
-            </TableRow>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows.map((row) => (
-            <TableRow key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <TableCell key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</TableCell>
-              ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
+    <DataTable
+      columns={columns}
+      data={data}
+      defaultSorting={[{ id: "amount", desc: defaultDesc }]}
+      className="max-w-lg"
+    />
   );
 }
 
@@ -96,7 +62,7 @@ const meta: Meta<Args> = {
     rowCount: { control: { type: "range", min: 1, max: 6, step: 1 }, description: "Number of rows" },
     defaultDesc: { control: "boolean", description: "Sort amount descending (click the header to toggle)" },
   },
-  render: (args) => <DataTable {...args} />,
+  render: (args) => <DataTableStory {...args} />,
 };
 export default meta;
 type Story = StoryObj<Args>;
@@ -108,7 +74,7 @@ export const Sortable: Story = {
   parameters: {
     docs: { description: { story: "Powered by `@tanstack/react-table` — click the **Amount** header to toggle ascending/descending. The header button drives `column.toggleSorting`; rows come from `getSortedRowModel`." } },
   },
-  render: () => <DataTable rowCount={6} defaultDesc />,
+  render: () => <DataTableStory rowCount={6} defaultDesc />,
 };
 
 export const Demo: Story = { name: "Demo", render: () => <>{getEntry("data-table")!.demo}</> };
