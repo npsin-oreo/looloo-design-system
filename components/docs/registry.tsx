@@ -84,6 +84,13 @@ import { Blockquote, BlockquoteCite } from "@/components/ui/blockquote";
 import { Toolbar, ToolbarButton, ToolbarSeparator, ToolbarToggleGroup, ToolbarToggleItem } from "@/components/ui/toolbar";
 import { Timestamp } from "@/components/ui/timestamp";
 import { Thumbnail } from "@/components/ui/thumbnail";
+import {
+  ChatMessageList,
+  ChatMessage,
+  ChatMessageBubble,
+  ChatMessageMetadata,
+  ChatSystemMessage,
+} from "@/components/ui/chat";
 
 import {
   ChartDemo,
@@ -107,6 +114,7 @@ export type DocCategory =
   | "Navigation"
   | "Overlay"
   | "Data"
+  | "AI & Chat"
   | "Feedback"
   | "Utility"
   | "Foundations"
@@ -128,6 +136,7 @@ export const CATEGORY_ORDER: DocCategory[] = [
   "Navigation",
   "Overlay",
   "Data",
+  "AI & Chat",
   "Feedback",
   "Utility",
   "Foundations",
@@ -691,6 +700,26 @@ export const registry: DocEntry[] = [
       <ToolbarButton>Share</ToolbarButton>
     </Toolbar>,
     `<Toolbar>\n  <ToolbarToggleGroup type="multiple">\n    <ToolbarToggleItem value="bold">B</ToolbarToggleItem>\n  </ToolbarToggleGroup>\n  <ToolbarSeparator />\n  <ToolbarButton>Share</ToolbarButton>\n</Toolbar>`),
+
+  // ───────────────────────── AI & Chat ─────────────────────────
+  c("chat", "Chat", "AI & Chat", "Message-thread primitives — a role-aware list, sender-aligned bubbles, metadata, and system notices for assistant and chat UIs.",
+    <ChatMessageList className="h-80 w-full max-w-md rounded-lg border p-4" density="balanced">
+      <ChatSystemMessage variant="divider">Today</ChatSystemMessage>
+      <ChatMessage sender="assistant" avatar={<Avatar className="size-8"><AvatarFallback>AI</AvatarFallback></Avatar>}>
+        <ChatMessageBubble name="Assistant">Hi! How can I help you today?</ChatMessageBubble>
+      </ChatMessage>
+      <ChatMessage sender="user">
+        <ChatMessageBubble metadata={<ChatMessageMetadata timestamp={<Timestamp value={Date.now() - 2 * 60 * 1000} />} status="read" />}>
+          Summarize this thread for me.
+        </ChatMessageBubble>
+      </ChatMessage>
+      <ChatMessage sender="assistant" avatar={<Avatar className="size-8"><AvatarFallback>AI</AvatarFallback></Avatar>}>
+        <ChatMessageBubble metadata={<ChatMessageMetadata footer="GPT-style demo" />}>
+          Sure — here's a three-point recap of the conversation so far.
+        </ChatMessageBubble>
+      </ChatMessage>
+    </ChatMessageList>,
+    `<ChatMessageList density="balanced" isStreaming={streaming}>\n  <ChatSystemMessage variant="divider">Today</ChatSystemMessage>\n  <ChatMessage sender="assistant" avatar={<Avatar>…</Avatar>}>\n    <ChatMessageBubble name="Assistant">Hi! How can I help?</ChatMessageBubble>\n  </ChatMessage>\n  <ChatMessage sender="user">\n    <ChatMessageBubble metadata={<ChatMessageMetadata timestamp={<Timestamp value={sentAt} />} status="read" />}>\n      Summarize this thread.\n    </ChatMessageBubble>\n  </ChatMessage>\n</ChatMessageList>`),
 
   // ───────────────────────── Foundations ─────────────────────────
   { slug: "icons", title: "Icons", category: "Foundations", reference: true, code: "",
