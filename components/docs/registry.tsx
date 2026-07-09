@@ -95,6 +95,8 @@ import {
 } from "@/components/ui/chat";
 import { CodeBlock } from "@/components/ui/code-block";
 import { Markdown } from "@/components/ui/markdown";
+import { Token } from "@/components/ui/token";
+import { ChatToolCalls } from "@/components/ui/chat-tool-calls";
 
 import {
   ChartDemo,
@@ -737,6 +739,29 @@ export const registry: DocEntry[] = [
       {"## Markdown\n\nRenders **bold**, _italic_, `inline code`, and [links](https://example.com).\n\n- first item\n- second item\n\n~~~ts\nconst answer: number = 42\n~~~\n\n> A blockquote for emphasis.\n\n| Feature | Backed by |\n| --- | --- |\n| Tables | remark-gfm |\n| Code | Shiki |"}
     </Markdown>,
     `<Markdown>{assistantReply}</Markdown>`),
+
+  c("chat-tool-calls", "Chat Tool Calls", "AI & Chat", "Displays an LLM's tool/function-call invocations — a single call inline, or many collapsed into an expandable summary with per-call status, target, and stats.",
+    <ChatToolCalls
+      className="w-full max-w-md"
+      calls={[
+        { name: "read_file", target: "Button.tsx", status: "complete", duration: "120ms" },
+        { name: "edit_file", target: "Button.tsx", status: "complete", additions: 12, deletions: 3, node: "xds" },
+        { name: "run_tests", target: "npm test", status: "running" },
+        { name: "search", target: "anchor positioning", status: "error", errorMessage: "Rate limited — retry in 30s" },
+      ]}
+    />,
+    `<ChatToolCalls\n  calls={[\n    { name: "read_file", target: "Button.tsx", status: "complete", duration: "120ms" },\n    { name: "edit_file", target: "Button.tsx", additions: 12, deletions: 3 },\n    { name: "run_tests", target: "npm test", status: "running" },\n  ]}\n/>`),
+
+  // ───────────────────────── Display ─────────────────────────
+  c("token", "Token", "Display", "A compact chip for entities, mentions, or filters — with optional icon, remove button, click, or link.",
+    <div className="flex flex-wrap items-center gap-2">
+      <Token label="Default" />
+      <Token label="Primary" variant="primary" />
+      <Token label="Removable" onRemove={() => {}} />
+      <Token label="Small" size="sm" variant="secondary" />
+      <Token label="Large" size="lg" />
+    </div>,
+    `<Token label="react" onRemove={() => remove("react")} />\n<Token label="View" href="/x" variant="primary" />`),
 
   // ───────────────────────── Foundations ─────────────────────────
   { slug: "icons", title: "Icons", category: "Foundations", reference: true, code: "",
