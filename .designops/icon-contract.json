@@ -27,6 +27,11 @@
       "component": "Archive",
       "status": "stable"
     },
+    "arrow-up": {
+      "source": "lucide-react",
+      "component": "ArrowUp",
+      "status": "stable"
+    },
     "arrow-up-down": {
       "source": "lucide-react",
       "component": "ArrowUpDown",
@@ -172,6 +177,11 @@
       "component": "Map",
       "status": "stable"
     },
+    "mic": {
+      "source": "lucide-react",
+      "component": "Mic",
+      "status": "stable"
+    },
     "minus": {
       "source": "lucide-react",
       "component": "Minus",
@@ -215,6 +225,11 @@
     "settings-2": {
       "source": "lucide-react",
       "component": "Settings2",
+      "status": "stable"
+    },
+    "square": {
+      "source": "lucide-react",
+      "component": "Square",
       "status": "stable"
     },
     "square-terminal": {

@@ -3,7 +3,15 @@
 import * as React from "react"
 
 import { cn } from "../../../lib/utils"
-import { Check, CircleCheck, Clock, TriangleAlert } from "../../../icons/icon-registry"
+import {
+  ArrowUp,
+  Check,
+  CircleCheck,
+  Clock,
+  Mic,
+  Square,
+  TriangleAlert,
+} from "../../../icons/icon-registry"
 import { Separator } from "../separator"
 
 type ChatSender = "user" | "assistant" | "system"
@@ -272,12 +280,357 @@ function ChatSystemMessage({
   )
 }
 
+/* ───────────────────────── ChatComposer ───────────────────────── */
+
+type ChatComposerContextValue = {
+  value: string
+  setValue: (v: string) => void
+  submit: () => void
+  onStop?: () => void
+  isStopShown: boolean
+  canSend: boolean
+  disabled: boolean
+  placeholder: string
+  inputRef: React.RefObject<HTMLTextAreaElement | null>
+}
+
+const ComposerContext = React.createContext<ChatComposerContextValue | null>(null)
+
+function useChatComposer() {
+  const ctx = React.useContext(ComposerContext)
+  if (!ctx) throw new Error("Chat composer parts must be used within <ChatComposer>.")
+  return ctx
+}
+
+type ChatComposerProps = Omit<
+  React.ComponentProps<"form">,
+  "onSubmit" | "onChange" | "defaultValue"
+> & {
+  /** Controlled input value. Pair with `onValueChange`. */
+  value?: string
+  /** Initial value for the uncontrolled variant. */
+  defaultValue?: string
+  onValueChange?: (value: string) => void
+  /** Fired on submit with the current value. Uncontrolled input clears after. */
+  onSubmit?: (value: string) => void
+  /** Fired when the stop button is pressed during generation. */
+  onStop?: () => void
+  /** Show the stop button instead of send (assistant is generating). */
+  isStopShown?: boolean
+  placeholder?: string
+  disabled?: boolean
+  /** Slot above the input row. */
+  header?: React.ReactNode
+  /** Slot below the input row. */
+  footer?: React.ReactNode
+  /** Controls placed left of the send button (e.g. ChatDictationButton). */
+  sendActions?: React.ReactNode
+}
+
+function ChatComposer({
+  value,
+  defaultValue = "",
+  onValueChange,
+  onSubmit,
+  onStop,
+  isStopShown = false,
+  placeholder = "Type a message...",
+  disabled = false,
+  header,
+  footer,
+  sendActions,
+  children,
+  className,
+  ...props
+}: ChatComposerProps) {
+  const inputRef = React.useRef<HTMLTextAreaElement | null>(null)
+  const [internalValue, setInternalValue] = React.useState(defaultValue)
+  const isControlled = value !== undefined
+  const current = isControlled ? value : internalValue
+
+  const setValue = React.useCallback(
+    (next: string) => {
+      if (!isControlled) setInternalValue(next)
+      onValueChange?.(next)
+    },
+    [isControlled, onValueChange]
+  )
+
+  const submit = React.useCallback(() => {
+    const trimmed = current.trim()
+    if (disabled || isStopShown || !trimmed) return
+    onSubmit?.(current)
+    if (!isControlled) setInternalValue("")
+  }, [current, disabled, isStopShown, onSubmit, isControlled])
+
+  const ctx = React.useMemo<ChatComposerContextValue>(
+    () => ({
+      value: current,
+      setValue,
+      submit,
+      onStop,
+      isStopShown,
+      canSend: !disabled && current.trim().length > 0,
+      disabled,
+      placeholder,
+      inputRef,
+    }),
+    [current, setValue, submit, onStop, isStopShown, disabled, placeholder]
+  )
+
+  return (
+    <ComposerContext.Provider value={ctx}>
+      <form
+        data-slot="chat-composer"
+        onSubmit={(e) => {
+          e.preventDefault()
+          submit()
+        }}
+        className={cn(
+          "flex flex-col gap-2 rounded-2xl border bg-background p-2 shadow-xs focus-within:ring-1 focus-within:ring-ring",
+          disabled && "opacity-60",
+          className
+        )}
+        {...props}
+      >
+        {header}
+        <div className="flex items-end gap-2">
+          <div className="flex-1">{children ?? <ChatComposerInput />}</div>
+          <div className="flex items-center gap-1">
+            {sendActions}
+            <ChatSendButton />
+          </div>
+        </div>
+        {footer}
+      </form>
+    </ComposerContext.Provider>
+  )
+}
+
+/* ───────────────────────── ChatComposerInput ───────────────────────── */
+
+type ChatComposerInputProps = Omit<
+  React.ComponentProps<"textarea">,
+  "value" | "onChange" | "disabled"
+> & {
+  /** Visible rows before the input scrolls. @default 8 */
+  maxRows?: number
+}
+
+function ChatComposerInput({
+  maxRows = 8,
+  className,
+  onKeyDown,
+  ...props
+}: ChatComposerInputProps) {
+  const ctx = useChatComposer()
+  const ref = ctx.inputRef
+
+  React.useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    el.style.height = "auto"
+    const lineHeight = parseFloat(getComputedStyle(el).lineHeight) || 20
+    const max = lineHeight * maxRows
+    el.style.height = `${Math.min(el.scrollHeight, max)}px`
+    el.style.overflowY = el.scrollHeight > max ? "auto" : "hidden"
+  }, [ctx.value, maxRows, ref])
+
+  return (
+    <textarea
+      ref={ref}
+      data-slot="chat-composer-input"
+      rows={1}
+      value={ctx.value}
+      disabled={ctx.disabled}
+      placeholder={ctx.placeholder}
+      onChange={(e) => ctx.setValue(e.target.value)}
+      onKeyDown={(e) => {
+        onKeyDown?.(e)
+        if (e.defaultPrevented) return
+        if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
+          e.preventDefault()
+          ctx.submit()
+        }
+      }}
+      className={cn(
+        "w-full resize-none bg-transparent px-1 py-1.5 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+/* ───────────────────────── ChatSendButton ───────────────────────── */
+
+type ChatSendButtonProps = Omit<React.ComponentProps<"button">, "onClick"> & {
+  isStopShown?: boolean
+  onSend?: () => void
+  onStop?: () => void
+  size?: "sm" | "md"
+}
+
+function ChatSendButton({
+  isStopShown,
+  disabled,
+  onSend,
+  onStop,
+  size = "md",
+  className,
+  ...props
+}: ChatSendButtonProps) {
+  const ctx = useChatComposer()
+  const stop = isStopShown ?? ctx.isStopShown
+  const isDisabled = disabled ?? (stop ? false : !ctx.canSend)
+  const Icon = stop ? Square : ArrowUp
+  return (
+    <button
+      type="button"
+      data-slot="chat-send-button"
+      aria-label={stop ? "Stop generating" : "Send message"}
+      disabled={isDisabled}
+      onClick={() => {
+        if (stop) (onStop ?? ctx.onStop)?.()
+        else (onSend ?? ctx.submit)()
+      }}
+      className={cn(
+        "inline-flex shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+        size === "sm" ? "size-7" : "size-8",
+        className
+      )}
+      {...props}
+    >
+      <Icon className={stop ? "size-3 fill-current" : "size-4"} />
+    </button>
+  )
+}
+
+/* ───────────────────────── useSpeechRecognition + ChatDictationButton ───────────────────────── */
+
+type UseSpeechRecognitionReturn = {
+  isSupported: boolean
+  isListening: boolean
+  transcript: string
+  start: () => void
+  stop: () => void
+  toggle: () => void
+}
+
+function useSpeechRecognition(options?: {
+  lang?: string
+  onResult?: (text: string, isFinal: boolean) => void
+}): UseSpeechRecognitionReturn {
+  const { lang, onResult } = options ?? {}
+  const onResultRef = React.useRef(onResult)
+  onResultRef.current = onResult
+
+  const Ctor =
+    typeof window !== "undefined"
+      ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ((window as any).SpeechRecognition ?? (window as any).webkitSpeechRecognition)
+      : undefined
+  const isSupported = Boolean(Ctor)
+
+  const [isListening, setIsListening] = React.useState(false)
+  const [transcript, setTranscript] = React.useState("")
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recognitionRef = React.useRef<any>(null)
+
+  const stop = React.useCallback(() => {
+    recognitionRef.current?.stop()
+    setIsListening(false)
+  }, [])
+
+  const start = React.useCallback(() => {
+    if (!isSupported || isListening) return
+    const recognition = new Ctor()
+    recognition.lang = lang ?? (typeof navigator !== "undefined" ? navigator.language : "en-US")
+    recognition.interimResults = true
+    recognition.continuous = true
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    recognition.onresult = (event: any) => {
+      let text = ""
+      let isFinal = false
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        text += event.results[i][0].transcript
+        if (event.results[i].isFinal) isFinal = true
+      }
+      setTranscript(text)
+      onResultRef.current?.(text, isFinal)
+    }
+    recognition.onend = () => setIsListening(false)
+    recognition.onerror = () => setIsListening(false)
+    recognitionRef.current = recognition
+    recognition.start()
+    setIsListening(true)
+  }, [Ctor, isSupported, isListening, lang])
+
+  const toggle = React.useCallback(() => {
+    if (isListening) stop()
+    else start()
+  }, [isListening, start, stop])
+
+  React.useEffect(() => () => recognitionRef.current?.stop(), [])
+
+  return { isSupported, isListening, transcript, start, stop, toggle }
+}
+
+type ChatDictationButtonProps = Omit<React.ComponentProps<"button">, "onClick"> & {
+  size?: "sm" | "md"
+  /** Hide entirely when the browser lacks SpeechRecognition. @default true */
+  isHiddenWhenUnsupported?: boolean
+  label?: string
+}
+
+function ChatDictationButton({
+  size = "md",
+  isHiddenWhenUnsupported = true,
+  label = "Dictate message",
+  className,
+  ...props
+}: ChatDictationButtonProps) {
+  const composer = React.useContext(ComposerContext)
+  const dictation = useSpeechRecognition({
+    onResult: (text, isFinal) => {
+      if (isFinal && composer) composer.setValue((composer.value ? `${composer.value} ` : "") + text)
+    },
+  })
+
+  if (!dictation.isSupported && isHiddenWhenUnsupported) return null
+
+  return (
+    <button
+      type="button"
+      data-slot="chat-dictation-button"
+      aria-label={label}
+      aria-pressed={dictation.isListening}
+      data-listening={dictation.isListening || undefined}
+      disabled={!dictation.isSupported}
+      onClick={dictation.toggle}
+      className={cn(
+        "inline-flex shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[listening]:bg-primary data-[listening]:text-primary-foreground",
+        size === "sm" ? "size-7" : "size-8",
+        className
+      )}
+      {...props}
+    >
+      <Mic className="size-4" />
+    </button>
+  )
+}
+
 export {
   ChatMessageList,
   ChatMessage,
   ChatMessageBubble,
   ChatMessageMetadata,
   ChatSystemMessage,
+  ChatComposer,
+  ChatComposerInput,
+  ChatSendButton,
+  ChatDictationButton,
+  useSpeechRecognition,
   type ChatSender,
   type ChatDensity,
   type ChatStatus,
@@ -286,4 +639,9 @@ export {
   type ChatMessageBubbleProps,
   type ChatMessageMetadataProps,
   type ChatSystemMessageProps,
+  type ChatComposerProps,
+  type ChatComposerInputProps,
+  type ChatSendButtonProps,
+  type ChatDictationButtonProps,
+  type UseSpeechRecognitionReturn,
 }
