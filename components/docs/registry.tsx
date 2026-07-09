@@ -93,6 +93,8 @@ import {
   ChatComposer,
   ChatDictationButton,
 } from "@/components/ui/chat";
+import { CodeBlock } from "@/components/ui/code-block";
+import { Markdown } from "@/components/ui/markdown";
 
 import {
   ChartDemo,
@@ -725,6 +727,16 @@ export const registry: DocEntry[] = [
       <ChatComposer sendActions={<ChatDictationButton />} onSubmit={() => {}} />
     </div>,
     `<ChatMessageList density="balanced" isStreaming={streaming}>\n  <ChatMessage sender="assistant" avatar={<Avatar>…</Avatar>}>\n    <ChatMessageBubble name="Assistant">Hi! How can I help?</ChatMessageBubble>\n  </ChatMessage>\n</ChatMessageList>\n\n<ChatComposer\n  value={draft}\n  onValueChange={setDraft}\n  onSubmit={send}\n  isStopShown={streaming}\n  onStop={stop}\n  sendActions={<ChatDictationButton />}\n/>`),
+
+  c("code-block", "Code Block", "AI & Chat", "Syntax-highlighted code with a language label and a copy button. Powered by Shiki with dual light/dark themes wired to the app theme.",
+    <CodeBlock className="w-full max-w-md" lang="tsx" code={"function greet(name: string) {\n  return \"Hello, \" + name\n}"} />,
+    `<CodeBlock lang="tsx" code={source} />`),
+
+  c("markdown", "Markdown", "AI & Chat", "Renders GitHub-flavored Markdown (react-markdown + remark-gfm) with design-system elements — links, lists, tables, blockquotes, and Shiki code blocks. Safe to stream.",
+    <Markdown className="w-full max-w-md">
+      {"## Markdown\n\nRenders **bold**, _italic_, `inline code`, and [links](https://example.com).\n\n- first item\n- second item\n\n~~~ts\nconst answer: number = 42\n~~~\n\n> A blockquote for emphasis.\n\n| Feature | Backed by |\n| --- | --- |\n| Tables | remark-gfm |\n| Code | Shiki |"}
+    </Markdown>,
+    `<Markdown>{assistantReply}</Markdown>`),
 
   // ───────────────────────── Foundations ─────────────────────────
   { slug: "icons", title: "Icons", category: "Foundations", reference: true, code: "",
