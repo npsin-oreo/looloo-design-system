@@ -102,3 +102,20 @@
     @apply bg-background text-foreground font-sans;
   }
 }
+
+/* Shiki dual-theme toggle for <CodeBlock> (defaultColor: false emits both
+   theme values as CSS vars; class-based `.dark` picks the dark set). */
+.shiki {
+  background-color: var(--shiki-light-bg);
+}
+.dark .shiki {
+  background-color: var(--shiki-dark-bg);
+}
+.shiki,
+.shiki span {
+  color: var(--shiki-light);
+}
+.dark .shiki,
+.dark .shiki span {
+  color: var(--shiki-dark);
+}
