@@ -97,6 +97,7 @@ import { CodeBlock } from "@/components/ui/code-block";
 import { Markdown } from "@/components/ui/markdown";
 import { Token } from "@/components/ui/token";
 import { ChatToolCalls } from "@/components/ui/chat-tool-calls";
+import { Citation } from "@/components/ui/citation";
 
 import {
   ChartDemo,
@@ -751,6 +752,21 @@ export const registry: DocEntry[] = [
       ]}
     />,
     `<ChatToolCalls\n  calls={[\n    { name: "read_file", target: "Button.tsx", status: "complete", duration: "120ms" },\n    { name: "edit_file", target: "Button.tsx", additions: 12, deletions: 3 },\n    { name: "run_tests", target: "npm test", status: "running" },\n  ]}\n/>`),
+
+  c("citation", "Citation", "AI & Chat", "Inline references that attribute AI-generated content to external sources — a labelled pill or a compact numbered marker, linked when a URL is given.",
+    <div className="flex w-full max-w-md flex-col gap-3 text-sm">
+      <p className="leading-relaxed">
+        Anchor positioning ships in modern browsers
+        <Citation variant="number" number={1} source={{ title: "MDN — CSS anchor positioning", url: "https://developer.mozilla.org" }} />
+        and is progressively enhanced
+        <Citation variant="number" number={2} source={{ title: "web.dev" }} />.
+      </p>
+      <div className="flex flex-wrap gap-2">
+        <Citation number={1} source={{ title: "MDN Web Docs", url: "https://developer.mozilla.org" }} />
+        <Citation number={2} source={{ title: "web.dev — Anchor positioning" }} />
+      </div>
+    </div>,
+    `<Citation number={1} source={{ title: "MDN Web Docs", url: "https://developer.mozilla.org" }} />\n<Citation variant="number" number={2} source={{ url: "https://web.dev" }} />`),
 
   // ───────────────────────── Display ─────────────────────────
   c("token", "Token", "Display", "A compact chip for entities, mentions, or filters — with optional icon, remove button, click, or link.",
