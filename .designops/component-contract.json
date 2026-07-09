@@ -253,6 +253,24 @@
       "docs": "stories/docs/ContextMenu.mdx",
       "a11y": "axe-checked in CI (test-storybook renders every story with a11y error mode)"
     },
+    "data-table": {
+      "status": "stable",
+      "importPath": "@npsin-oreo/design-system/data-table",
+      "internalPath": "@/components/ui/data-table",
+      "source": "components/ui/data-table/data-table.tsx",
+      "storybook": "stories/manual/data-table.stories.tsx",
+      "docs": "stories/docs/DataTable.mdx",
+      "a11y": "axe-checked in CI (test-storybook renders every story with a11y error mode)"
+    },
+    "date-picker": {
+      "status": "stable",
+      "importPath": "@npsin-oreo/design-system/date-picker",
+      "internalPath": "@/components/ui/date-picker",
+      "source": "components/ui/date-picker/date-picker.tsx",
+      "storybook": "stories/manual/date-picker.stories.tsx",
+      "docs": "stories/docs/DatePicker.mdx",
+      "a11y": "axe-checked in CI (test-storybook renders every story with a11y error mode)"
+    },
     "dialog": {
       "status": "stable",
       "importPath": "@npsin-oreo/design-system/dialog",
