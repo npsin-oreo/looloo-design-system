@@ -1,6 +1,6 @@
 {
   "package": "@npsin-oreo/design-system",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "generated_from": "tokens/** (canonical v2 layer)",
   "note": "v2 contract. The root token-contract.json remains the legacy/published brand-config contract until the consumer swap.",
   "counts": {

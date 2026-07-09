@@ -80,6 +80,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Toggle } from "@/components/ui/toggle";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Blockquote, BlockquoteCite } from "@/components/ui/blockquote";
+import { Toolbar, ToolbarButton, ToolbarSeparator, ToolbarToggleGroup, ToolbarToggleItem } from "@/components/ui/toolbar";
+import { Timestamp } from "@/components/ui/timestamp";
+import { Thumbnail } from "@/components/ui/thumbnail";
 
 import {
   ChartDemo,
@@ -653,6 +657,40 @@ export const registry: DocEntry[] = [
       <div className="space-y-2">{Array.from({ length: 20 }).map((_, i) => (<div key={i} className="text-sm">Item {i + 1}</div>))}</div>
     </ScrollArea>,
     `<ScrollArea className="h-40 rounded-md border p-4">\n  {items.map(...)}\n</ScrollArea>`),
+
+  c("blockquote", "Blockquote", "Display", "A quotation set off from the surrounding text, with an optional citation.",
+    <Blockquote className="max-w-md">
+      <p>“The details are not the details. They make the design.”</p>
+      <BlockquoteCite>— Charles Eames</BlockquoteCite>
+    </Blockquote>,
+    `<Blockquote>\n  <p>“The details are not the details. They make the design.”</p>\n  <BlockquoteCite>— Charles Eames</BlockquoteCite>\n</Blockquote>`),
+
+  c("thumbnail", "Thumbnail", "Display", "A fixed-ratio media tile with a graceful fallback when the image is missing.",
+    <div className="flex items-center gap-4">
+      <Thumbnail className="w-24" fallback="16 / 9" ratio={16 / 9} />
+      <Thumbnail className="size-20" fallback="1 / 1" />
+    </div>,
+    `<Thumbnail src="/cover.jpg" alt="Cover" ratio={16 / 9} className="w-24" />\n<Thumbnail fallback="No image" className="size-20" />`),
+
+  c("timestamp", "Timestamp", "Display", "Renders a moment as relative (“2 hours ago”) or absolute time in a semantic <time> element.",
+    <div className="flex flex-col gap-1 text-sm">
+      <Timestamp value={Date.now() - 2 * 60 * 60 * 1000} />
+      <Timestamp value={Date.now() - 2 * 60 * 60 * 1000} format="datetime" />
+    </div>,
+    `<Timestamp value={createdAt} />                {/* 2 hours ago */}\n<Timestamp value={createdAt} format="datetime" /> {/* Mar 21, 2025, 2:51 PM */}`),
+
+  // ───────────────────────── Navigation ─────────────────────────
+  c("toolbar", "Toolbar", "Navigation", "A container for grouping a set of controls, with roving-tabindex keyboard navigation.",
+    <Toolbar>
+      <ToolbarToggleGroup type="multiple" aria-label="Text formatting">
+        <ToolbarToggleItem value="bold" aria-label="Bold" className="font-bold">B</ToolbarToggleItem>
+        <ToolbarToggleItem value="italic" aria-label="Italic" className="italic">I</ToolbarToggleItem>
+        <ToolbarToggleItem value="underline" aria-label="Underline" className="underline">U</ToolbarToggleItem>
+      </ToolbarToggleGroup>
+      <ToolbarSeparator />
+      <ToolbarButton>Share</ToolbarButton>
+    </Toolbar>,
+    `<Toolbar>\n  <ToolbarToggleGroup type="multiple">\n    <ToolbarToggleItem value="bold">B</ToolbarToggleItem>\n  </ToolbarToggleGroup>\n  <ToolbarSeparator />\n  <ToolbarButton>Share</ToolbarButton>\n</Toolbar>`),
 
   // ───────────────────────── Foundations ─────────────────────────
   { slug: "icons", title: "Icons", category: "Foundations", reference: true, code: "",
