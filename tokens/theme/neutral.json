@@ -4,13 +4,13 @@
     "neutral": {
       "radius": {
         "$type": "dimension",
-        "$value": "0.625rem",
+        "$value": "0.75rem",
         "$description": "Base --radius; runtime scale is calc-based in app/globals.css."
       },
       "font": {
         "sans": {
           "$type": "fontFamily",
-          "$value": "Google Sans"
+          "$value": "Noto Sans Thai"
         },
         "mono": {
           "$type": "fontFamily",

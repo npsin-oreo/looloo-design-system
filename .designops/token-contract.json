@@ -5,7 +5,7 @@
   "note": "v2 contract. The root token-contract.json remains the legacy/published brand-config contract until the consumer swap.",
   "counts": {
     "primitive": 444,
-    "semantic": 61,
+    "semantic": 63,
     "component": 1175,
     "modes": [
       "comfortable",
@@ -48,7 +48,7 @@
     },
     "accordion.item.borderColor": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--accordion-item-border-color",
       "layer": "component",
       "source": "tokens/component/accordion.json",
@@ -105,7 +105,7 @@
     },
     "accordion.trigger.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--accordion-trigger-foreground",
       "layer": "component",
       "source": "tokens/component/accordion.json",
@@ -161,7 +161,7 @@
     },
     "alert.color.default-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--alert-color-default-foreground",
       "layer": "component",
       "source": "tokens/component/alert.json",
@@ -187,7 +187,7 @@
     },
     "alert.color.destructive-foreground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--alert-color-destructive-foreground",
       "layer": "component",
       "source": "tokens/component/alert.json",
@@ -279,7 +279,7 @@
     },
     "alert.descriptionForeground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--alert-description-foreground",
       "layer": "component",
       "source": "tokens/component/alert.json",
@@ -287,7 +287,7 @@
     },
     "alert.destructiveForeground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--alert-destructive-foreground",
       "layer": "component",
       "source": "tokens/component/alert.json",
@@ -303,7 +303,7 @@
     },
     "alert.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--alert-foreground",
       "layer": "component",
       "source": "tokens/component/alert.json",
@@ -386,7 +386,7 @@
     },
     "alertDialog.color.media-destructive-foreground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--alert-dialog-color-media-destructive-foreground",
       "layer": "component",
       "source": "tokens/component/alert-dialog.json",
@@ -428,7 +428,7 @@
     },
     "alertDialog.content.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--alert-dialog-content-foreground",
       "layer": "component",
       "source": "tokens/component/alert-dialog.json",
@@ -520,7 +520,7 @@
     },
     "alertDialog.media.background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--alert-dialog-media-background",
       "layer": "component",
       "source": "tokens/component/alert-dialog.json",
@@ -585,7 +585,7 @@
     },
     "avatar.badge.background": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--avatar-badge-background",
       "layer": "component",
       "source": "tokens/component/avatar.json",
@@ -593,7 +593,7 @@
     },
     "avatar.badge.foreground": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(1 0 0)",
       "cssVar": "--avatar-badge-foreground",
       "layer": "component",
       "source": "tokens/component/avatar.json",
@@ -642,7 +642,7 @@
     },
     "avatar.fallback.background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--avatar-fallback-background",
       "layer": "component",
       "source": "tokens/component/avatar.json",
@@ -667,7 +667,7 @@
     },
     "avatar.fallback.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--avatar-fallback-foreground",
       "layer": "component",
       "source": "tokens/component/avatar.json",
@@ -759,7 +759,7 @@
     },
     "badge.color.default-background": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--badge-color-default-background",
       "layer": "component",
       "source": "tokens/component/badge.json",
@@ -767,7 +767,7 @@
     },
     "badge.color.default-foreground": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(1 0 0)",
       "cssVar": "--badge-color-default-foreground",
       "layer": "component",
       "source": "tokens/component/badge.json",
@@ -775,7 +775,7 @@
     },
     "badge.color.default-hover-surface": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.459 0.066 199.308)",
       "cssVar": "--badge-color-default-hover-surface",
       "layer": "component",
       "source": "tokens/component/badge.json",
@@ -784,7 +784,7 @@
     },
     "badge.color.destructive-background": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--badge-color-destructive-background",
       "layer": "component",
       "source": "tokens/component/badge.json",
@@ -800,7 +800,7 @@
     },
     "badge.color.destructive-foreground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--badge-color-destructive-foreground",
       "layer": "component",
       "source": "tokens/component/badge.json",
@@ -857,7 +857,7 @@
     },
     "badge.color.muted-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--badge-color-muted-background",
       "layer": "component",
       "source": "tokens/component/badge.json",
@@ -865,7 +865,7 @@
     },
     "badge.color.muted-foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--badge-color-muted-foreground",
       "layer": "component",
       "source": "tokens/component/badge.json",
@@ -873,7 +873,7 @@
     },
     "badge.color.outline-border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--badge-color-outline-border",
       "layer": "component",
       "source": "tokens/component/badge.json",
@@ -881,7 +881,7 @@
     },
     "badge.color.outline-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--badge-color-outline-foreground",
       "layer": "component",
       "source": "tokens/component/badge.json",
@@ -889,7 +889,7 @@
     },
     "badge.color.secondary-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--badge-color-secondary-background",
       "layer": "component",
       "source": "tokens/component/badge.json",
@@ -897,7 +897,7 @@
     },
     "badge.color.secondary-foreground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--badge-color-secondary-foreground",
       "layer": "component",
       "source": "tokens/component/badge.json",
@@ -1045,7 +1045,7 @@
     },
     "blockquote.borderColor": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--blockquote-border-color",
       "layer": "component",
       "source": "tokens/component/blockquote.json",
@@ -1069,7 +1069,7 @@
     },
     "blockquote.cite.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--blockquote-cite-foreground",
       "layer": "component",
       "source": "tokens/component/blockquote.json",
@@ -1077,7 +1077,7 @@
     },
     "blockquote.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--blockquote-foreground",
       "layer": "component",
       "source": "tokens/component/blockquote.json",
@@ -1128,7 +1128,7 @@
     },
     "breadcrumb.activeForeground": {
       "type": "color",
-      "value": "oklch(0.795 0.018 293.048)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--breadcrumb-active-foreground",
       "layer": "component",
       "source": "tokens/component/breadcrumb.json",
@@ -1162,7 +1162,7 @@
     },
     "breadcrumb.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--breadcrumb-foreground",
       "layer": "component",
       "source": "tokens/component/breadcrumb.json",
@@ -1180,7 +1180,7 @@
     },
     "breadcrumb.hoverForeground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--breadcrumb-hover-foreground",
       "layer": "component",
       "source": "tokens/component/breadcrumb.json",
@@ -1215,7 +1215,7 @@
     },
     "button.color.default-background": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--button-color-default-background",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1223,7 +1223,7 @@
     },
     "button.color.default-foreground": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(1 0 0)",
       "cssVar": "--button-color-default-foreground",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1231,7 +1231,7 @@
     },
     "button.color.default-hover-surface": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.459 0.066 199.308)",
       "cssVar": "--button-color-default-hover-surface",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1240,7 +1240,7 @@
     },
     "button.color.destructive-background": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--button-color-destructive-background",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1257,7 +1257,7 @@
     },
     "button.color.destructive-foreground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--button-color-destructive-foreground",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1290,7 +1290,7 @@
     },
     "button.color.focus-ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--button-color-focus-ring",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1306,7 +1306,7 @@
     },
     "button.color.ghost-hover-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--button-color-ghost-hover-background",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1314,7 +1314,7 @@
     },
     "button.color.ghost-hover-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--button-color-ghost-hover-foreground",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1322,7 +1322,7 @@
     },
     "button.color.link-foreground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--button-color-link-foreground",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1338,7 +1338,7 @@
     },
     "button.color.outline-border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--button-color-outline-border",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1346,7 +1346,7 @@
     },
     "button.color.outline-hover-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--button-color-outline-hover-background",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1354,7 +1354,7 @@
     },
     "button.color.outline-hover-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--button-color-outline-hover-foreground",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1362,7 +1362,7 @@
     },
     "button.color.secondary-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--button-color-secondary-background",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1370,7 +1370,7 @@
     },
     "button.color.secondary-foreground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--button-color-secondary-foreground",
       "layer": "component",
       "source": "tokens/component/button.json",
@@ -1660,7 +1660,7 @@
     },
     "buttonGroup.separator.color": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--button-group-separator-color",
       "layer": "component",
       "source": "tokens/component/button-group.json",
@@ -1677,7 +1677,7 @@
     },
     "buttonGroup.text.background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--button-group-text-background",
       "layer": "component",
       "source": "tokens/component/button-group.json",
@@ -1850,7 +1850,7 @@
     },
     "calendar.day.rangeMiddleBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--calendar-day-range-middle-background",
       "layer": "component",
       "source": "tokens/component/calendar.json",
@@ -1858,7 +1858,7 @@
     },
     "calendar.day.rangeMiddleForeground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--calendar-day-range-middle-foreground",
       "layer": "component",
       "source": "tokens/component/calendar.json",
@@ -1866,7 +1866,7 @@
     },
     "calendar.day.selectedBackground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--calendar-day-selected-background",
       "layer": "component",
       "source": "tokens/component/calendar.json",
@@ -1875,7 +1875,7 @@
     },
     "calendar.day.selectedForeground": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(1 0 0)",
       "cssVar": "--calendar-day-selected-foreground",
       "layer": "component",
       "source": "tokens/component/calendar.json",
@@ -1951,7 +1951,7 @@
     },
     "calendar.weekday.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--calendar-weekday-foreground",
       "layer": "component",
       "source": "tokens/component/calendar.json",
@@ -1975,7 +1975,7 @@
     },
     "card.color.footer-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--card-color-footer-background",
       "layer": "component",
       "source": "tokens/component/card.json",
@@ -1992,7 +1992,7 @@
     },
     "card.color.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--card-color-foreground",
       "layer": "component",
       "source": "tokens/component/card.json",
@@ -2000,7 +2000,7 @@
     },
     "card.color.muted-foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--card-color-muted-foreground",
       "layer": "component",
       "source": "tokens/component/card.json",
@@ -2009,7 +2009,7 @@
     },
     "card.color.ring": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--card-color-ring",
       "layer": "component",
       "source": "tokens/component/card.json",
@@ -2100,7 +2100,7 @@
     },
     "chart.axisForeground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--chart-axis-foreground",
       "layer": "component",
       "source": "tokens/component/chart.json",
@@ -2108,7 +2108,7 @@
     },
     "chart.cursorFill": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--chart-cursor-fill",
       "layer": "component",
       "source": "tokens/component/chart.json",
@@ -2125,7 +2125,7 @@
     },
     "chart.gridColor": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--chart-grid-color",
       "layer": "component",
       "source": "tokens/component/chart.json",
@@ -2143,7 +2143,7 @@
     },
     "chart.heatmap.color.empty": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--chart-heatmap-color-empty",
       "layer": "component",
       "source": "tokens/component/chart.json",
@@ -2152,7 +2152,7 @@
     },
     "chart.heatmap.color.level1": {
       "type": "color",
-      "value": "oklch(0.932 0.007 312.299)",
+      "value": "oklch(0.886 0.066 190.059)",
       "cssVar": "--chart-heatmap-color-level1",
       "layer": "component",
       "source": "tokens/component/chart.json",
@@ -2161,7 +2161,7 @@
     },
     "chart.heatmap.color.level2": {
       "type": "color",
-      "value": "oklch(0.909 0.01 311.171)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--chart-heatmap-color-level2",
       "layer": "component",
       "source": "tokens/component/chart.json",
@@ -2169,7 +2169,7 @@
     },
     "chart.heatmap.color.level3": {
       "type": "color",
-      "value": "oklch(0.854 0.014 299.761)",
+      "value": "oklch(0.639 0.097 195.875)",
       "cssVar": "--chart-heatmap-color-level3",
       "layer": "component",
       "source": "tokens/component/chart.json",
@@ -2177,7 +2177,7 @@
     },
     "chart.heatmap.color.level4": {
       "type": "color",
-      "value": "oklch(0.795 0.018 293.048)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--chart-heatmap-color-level4",
       "layer": "component",
       "source": "tokens/component/chart.json",
@@ -2185,7 +2185,7 @@
     },
     "chart.heatmap.color.level5": {
       "type": "color",
-      "value": "oklch(0.612 0.018 293.512)",
+      "value": "oklch(0.395 0.053 200.697)",
       "cssVar": "--chart-heatmap-color-level5",
       "layer": "component",
       "source": "tokens/component/chart.json",
@@ -2236,7 +2236,7 @@
     },
     "chart.legend.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--chart-legend-foreground",
       "layer": "component",
       "source": "tokens/component/chart.json",
@@ -2414,7 +2414,7 @@
     },
     "chat.bubble.assistantBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--chat-bubble-assistant-background",
       "layer": "component",
       "source": "tokens/component/chat.json",
@@ -2422,7 +2422,7 @@
     },
     "chat.bubble.assistantForeground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--chat-bubble-assistant-foreground",
       "layer": "component",
       "source": "tokens/component/chat.json",
@@ -2479,7 +2479,7 @@
     },
     "chat.bubble.userBackground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--chat-bubble-user-background",
       "layer": "component",
       "source": "tokens/component/chat.json",
@@ -2487,7 +2487,7 @@
     },
     "chat.bubble.userForeground": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(1 0 0)",
       "cssVar": "--chat-bubble-user-foreground",
       "layer": "component",
       "source": "tokens/component/chat.json",
@@ -2625,7 +2625,7 @@
     },
     "chat.message.metaForeground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--chat-message-meta-foreground",
       "layer": "component",
       "source": "tokens/component/chat.json",
@@ -2761,7 +2761,7 @@
     },
     "chatToolCalls.status.errorForeground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--chat-tool-calls-status-error-foreground",
       "layer": "component",
       "source": "tokens/component/chat-tool-calls.json",
@@ -2841,7 +2841,7 @@
     },
     "checkbox.color.border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--checkbox-color-border",
       "layer": "component",
       "source": "tokens/component/checkbox.json",
@@ -2849,7 +2849,7 @@
     },
     "checkbox.color.checked-background": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--checkbox-color-checked-background",
       "layer": "component",
       "source": "tokens/component/checkbox.json",
@@ -2857,7 +2857,7 @@
     },
     "checkbox.color.checked-border": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--checkbox-color-checked-border",
       "layer": "component",
       "source": "tokens/component/checkbox.json",
@@ -2865,7 +2865,7 @@
     },
     "checkbox.color.focus-border": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--checkbox-color-focus-border",
       "layer": "component",
       "source": "tokens/component/checkbox.json",
@@ -2873,7 +2873,7 @@
     },
     "checkbox.color.focus-ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--checkbox-color-focus-ring",
       "layer": "component",
       "source": "tokens/component/checkbox.json",
@@ -2898,7 +2898,7 @@
     },
     "checkbox.color.invalid-background": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--checkbox-color-invalid-background",
       "layer": "component",
       "source": "tokens/component/checkbox.json",
@@ -2907,7 +2907,7 @@
     },
     "checkbox.color.invalid-border": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--checkbox-color-invalid-border",
       "layer": "component",
       "source": "tokens/component/checkbox.json",
@@ -2963,7 +2963,7 @@
     },
     "citation.chip.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--citation-chip-foreground",
       "layer": "component",
       "source": "tokens/component/citation.json",
@@ -2979,7 +2979,7 @@
     },
     "citation.chip.hoverBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--citation-chip-hover-background",
       "layer": "component",
       "source": "tokens/component/citation.json",
@@ -2987,7 +2987,7 @@
     },
     "citation.chip.hoverForeground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--citation-chip-hover-foreground",
       "layer": "component",
       "source": "tokens/component/citation.json",
@@ -3035,7 +3035,7 @@
     },
     "citation.marker.background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--citation-marker-background",
       "layer": "component",
       "source": "tokens/component/citation.json",
@@ -3059,7 +3059,7 @@
     },
     "citation.marker.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--citation-marker-foreground",
       "layer": "component",
       "source": "tokens/component/citation.json",
@@ -3179,7 +3179,7 @@
     },
     "codeBlock.header.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--code-block-header-foreground",
       "layer": "component",
       "source": "tokens/component/code-block.json",
@@ -3219,11 +3219,11 @@
     },
     "color.accent": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--accent",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.100",
+      "alias": "color.gray.100",
       "description": "Interactive hover, focus, and active surfaces.",
       "modes": [
         "dark"
@@ -3234,11 +3234,11 @@
     },
     "color.accent-foreground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--accent-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.900",
+      "alias": "color.gray.900",
       "description": "Interactive hover, focus, and active surfaces.",
       "modes": [
         "dark"
@@ -3433,15 +3433,39 @@
     },
     "color.border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--border",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.200",
+      "alias": "color.gray.200",
       "description": "Default borders and separators.",
       "modes": [
         "dark",
         "high-contrast"
+      ]
+    },
+    "color.brand-accent": {
+      "type": "color",
+      "value": "oklch(0.273 0.066 252.129)",
+      "cssVar": "--brand-accent",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.brand.secondary.950",
+      "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.brand-accent-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--brand-accent-foreground",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.white",
+      "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
+      "modes": [
+        "dark"
       ]
     },
     "color.brand.cerulean-blue.100": {
@@ -3600,154 +3624,154 @@
     },
     "color.brand.primary.100": {
       "type": "color",
-      "value": "oklch(0.956 0.006 317.753)",
+      "value": "oklch(0.943 0.035 189.89)",
       "cssVar": "--ll-color-brand-primary-100",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.primary.200": {
       "type": "color",
-      "value": "oklch(0.932 0.007 312.299)",
+      "value": "oklch(0.886 0.066 190.059)",
       "cssVar": "--ll-color-brand-primary-200",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.primary.300": {
       "type": "color",
-      "value": "oklch(0.909 0.01 311.171)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--ll-color-brand-primary-300",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.primary.400": {
       "type": "color",
-      "value": "oklch(0.887 0.011 303.094)",
+      "value": "oklch(0.727 0.103 194.319)",
       "cssVar": "--ll-color-brand-primary-400",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.primary.50": {
       "type": "color",
-      "value": "oklch(0.983 0.003 308.429)",
+      "value": "oklch(0.981 0.01 189.069)",
       "cssVar": "--ll-color-brand-primary-50",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.primary.500": {
       "type": "color",
-      "value": "oklch(0.854 0.014 299.761)",
+      "value": "oklch(0.639 0.097 195.875)",
       "cssVar": "--ll-color-brand-primary-500",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.primary.600": {
       "type": "color",
-      "value": "oklch(0.795 0.018 293.048)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--ll-color-brand-primary-600",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.primary.700": {
       "type": "color",
-      "value": "oklch(0.646 0.019 292.918)",
+      "value": "oklch(0.459 0.066 199.308)",
       "cssVar": "--ll-color-brand-primary-700",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.primary.800": {
       "type": "color",
-      "value": "oklch(0.612 0.018 293.512)",
+      "value": "oklch(0.395 0.053 200.697)",
       "cssVar": "--ll-color-brand-primary-800",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.primary.900": {
       "type": "color",
-      "value": "oklch(0.505 0.016 294.999)",
+      "value": "oklch(0.356 0.044 199.866)",
       "cssVar": "--ll-color-brand-primary-900",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.primary.950": {
       "type": "color",
-      "value": "oklch(0.245 0.013 298.463)",
+      "value": "oklch(0.246 0.032 205.567)",
       "cssVar": "--ll-color-brand-primary-950",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.secondary.100": {
       "type": "color",
-      "value": "oklch(0.943 0.035 189.89)",
+      "value": "oklch(0.957 0.008 253.854)",
       "cssVar": "--ll-color-brand-secondary-100",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.secondary.200": {
       "type": "color",
-      "value": "oklch(0.886 0.066 190.059)",
+      "value": "oklch(0.932 0.013 255.508)",
       "cssVar": "--ll-color-brand-secondary-200",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.secondary.300": {
       "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
+      "value": "oklch(0.91 0.016 253.908)",
       "cssVar": "--ll-color-brand-secondary-300",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.secondary.400": {
       "type": "color",
-      "value": "oklch(0.727 0.103 194.319)",
+      "value": "oklch(0.887 0.02 252.891)",
       "cssVar": "--ll-color-brand-secondary-400",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.secondary.50": {
       "type": "color",
-      "value": "oklch(0.981 0.01 189.069)",
+      "value": "oklch(0.983 0.004 236.496)",
       "cssVar": "--ll-color-brand-secondary-50",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.secondary.500": {
       "type": "color",
-      "value": "oklch(0.639 0.097 195.875)",
+      "value": "oklch(0.855 0.026 249.982)",
       "cssVar": "--ll-color-brand-secondary-500",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.secondary.600": {
       "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
+      "value": "oklch(0.795 0.032 252.733)",
       "cssVar": "--ll-color-brand-secondary-600",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.secondary.700": {
       "type": "color",
-      "value": "oklch(0.459 0.066 199.308)",
+      "value": "oklch(0.646 0.042 252.066)",
       "cssVar": "--ll-color-brand-secondary-700",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.secondary.800": {
       "type": "color",
-      "value": "oklch(0.395 0.053 200.697)",
+      "value": "oklch(0.611 0.048 251.73)",
       "cssVar": "--ll-color-brand-secondary-800",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.secondary.900": {
       "type": "color",
-      "value": "oklch(0.356 0.044 199.866)",
+      "value": "oklch(0.505 0.058 251.592)",
       "cssVar": "--ll-color-brand-secondary-900",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
     "color.brand.secondary.950": {
       "type": "color",
-      "value": "oklch(0.246 0.032 205.567)",
+      "value": "oklch(0.273 0.066 252.129)",
       "cssVar": "--ll-color-brand-secondary-950",
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
@@ -3766,11 +3790,11 @@
     },
     "color.card-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--card-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.950",
+      "alias": "color.gray.950",
       "description": "Elevated surfaces and the content inside them.",
       "modes": [
         "dark"
@@ -3778,11 +3802,11 @@
     },
     "color.chart-1": {
       "type": "color",
-      "value": "oklch(0.87 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--chart-1",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.300",
+      "alias": "color.brand.primary.600",
       "description": "The default chart palette.",
       "modes": [
         "dark"
@@ -3790,11 +3814,11 @@
     },
     "color.chart-2": {
       "type": "color",
-      "value": "oklch(0.556 0 0)",
+      "value": "oklch(0.727 0.103 194.319)",
       "cssVar": "--chart-2",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.500",
+      "alias": "color.brand.primary.400",
       "description": "The default chart palette.",
       "modes": [
         "dark"
@@ -3802,11 +3826,11 @@
     },
     "color.chart-3": {
       "type": "color",
-      "value": "oklch(0.439 0 0)",
+      "value": "oklch(0.273 0.066 252.129)",
       "cssVar": "--chart-3",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.600",
+      "alias": "color.brand.secondary.950",
       "description": "The default chart palette.",
       "modes": [
         "dark"
@@ -3814,11 +3838,11 @@
     },
     "color.chart-4": {
       "type": "color",
-      "value": "oklch(0.371 0 0)",
+      "value": "oklch(0.395 0.053 200.697)",
       "cssVar": "--chart-4",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.700",
+      "alias": "color.brand.primary.800",
       "description": "The default chart palette.",
       "modes": [
         "dark"
@@ -3826,11 +3850,11 @@
     },
     "color.chart-5": {
       "type": "color",
-      "value": "oklch(0.269 0 0)",
+      "value": "oklch(0.646 0.042 252.066)",
       "cssVar": "--chart-5",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.800",
+      "alias": "color.brand.secondary.700",
       "description": "The default chart palette.",
       "modes": [
         "dark"
@@ -3915,10 +3939,11 @@
     },
     "color.destructive": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--destructive",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
+      "alias": "color.red.600",
       "description": "Destructive actions and error emphasis.",
       "modes": [
         "dark"
@@ -4003,11 +4028,11 @@
     },
     "color.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.950",
+      "alias": "color.gray.950",
       "description": "The default app background and text color.",
       "modes": [
         "dark"
@@ -4323,11 +4348,11 @@
     },
     "color.input": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--input",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.200",
+      "alias": "color.gray.200",
       "description": "Form control borders and input surface treatment.",
       "modes": [
         "dark"
@@ -4412,11 +4437,11 @@
     },
     "color.muted": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--muted",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.100",
+      "alias": "color.gray.100",
       "description": "Subtle surfaces and lower-emphasis content.",
       "modes": [
         "dark"
@@ -4424,10 +4449,11 @@
     },
     "color.muted-foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--muted-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
+      "alias": "color.gray.500",
       "description": "Subtle surfaces and lower-emphasis content.",
       "modes": [
         "dark"
@@ -4678,11 +4704,11 @@
     },
     "color.popover-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--popover-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.950",
+      "alias": "color.gray.950",
       "description": "Floating surfaces and the content inside them.",
       "modes": [
         "dark"
@@ -4690,11 +4716,11 @@
     },
     "color.primary": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--primary",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.900",
+      "alias": "color.brand.primary.600",
       "description": "High-emphasis actions and brand surfaces.",
       "modes": [
         "dark"
@@ -4705,11 +4731,11 @@
     },
     "color.primary-foreground": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(1 0 0)",
       "cssVar": "--primary-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.zinc.50",
+      "alias": "color.white",
       "description": "High-emphasis actions and brand surfaces.",
       "modes": [
         "dark"
@@ -4720,11 +4746,11 @@
     },
     "color.primary-hover": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.459 0.066 199.308)",
       "cssVar": "--primary-hover",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.950",
+      "alias": "color.brand.primary.700",
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
@@ -4886,11 +4912,11 @@
     },
     "color.ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--ring",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.400",
+      "alias": "color.brand.primary.300",
       "description": "Focus rings and outlines.",
       "modes": [
         "dark"
@@ -4975,11 +5001,11 @@
     },
     "color.secondary": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--secondary",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.100",
+      "alias": "color.gray.100",
       "description": "Lower-emphasis filled actions and supporting surfaces.",
       "modes": [
         "dark"
@@ -4987,11 +5013,11 @@
     },
     "color.secondary-foreground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--secondary-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.900",
+      "alias": "color.gray.900",
       "description": "Lower-emphasis filled actions and supporting surfaces.",
       "modes": [
         "dark"
@@ -5035,11 +5061,11 @@
     },
     "color.sidebar": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(0.985 0.002 247.839)",
       "cssVar": "--sidebar",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.zinc.50",
+      "alias": "color.gray.50",
       "description": "The base sidebar surface and default sidebar text.",
       "modes": [
         "dark"
@@ -5047,11 +5073,11 @@
     },
     "color.sidebar-accent": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--sidebar-accent",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.100",
+      "alias": "color.gray.100",
       "description": "Hover and selected states inside the sidebar.",
       "modes": [
         "dark"
@@ -5059,11 +5085,11 @@
     },
     "color.sidebar-accent-foreground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--sidebar-accent-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.900",
+      "alias": "color.gray.900",
       "description": "Hover and selected states inside the sidebar.",
       "modes": [
         "dark"
@@ -5071,11 +5097,11 @@
     },
     "color.sidebar-border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--sidebar-border",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.200",
+      "alias": "color.gray.200",
       "description": "Sidebar-specific borders and separators.",
       "modes": [
         "dark"
@@ -5083,11 +5109,11 @@
     },
     "color.sidebar-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--sidebar-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.950",
+      "alias": "color.gray.950",
       "description": "The base sidebar surface and default sidebar text.",
       "modes": [
         "dark"
@@ -5095,11 +5121,11 @@
     },
     "color.sidebar-primary": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--sidebar-primary",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.900",
+      "alias": "color.brand.primary.600",
       "description": "High-emphasis actions inside the sidebar.",
       "modes": [
         "dark"
@@ -5107,11 +5133,11 @@
     },
     "color.sidebar-primary-foreground": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(1 0 0)",
       "cssVar": "--sidebar-primary-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.zinc.50",
+      "alias": "color.white",
       "description": "High-emphasis actions inside the sidebar.",
       "modes": [
         "dark"
@@ -5119,11 +5145,11 @@
     },
     "color.sidebar-ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.714 0.019 261.325)",
       "cssVar": "--sidebar-ring",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.neutral.400",
+      "alias": "color.gray.400",
       "description": "Sidebar-specific focus rings.",
       "modes": [
         "dark"
@@ -5677,7 +5703,7 @@
     },
     "combobox.chip.background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--combobox-chip-background",
       "layer": "component",
       "source": "tokens/component/combobox.json",
@@ -5802,7 +5828,7 @@
     },
     "combobox.content.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--combobox-content-foreground",
       "layer": "component",
       "source": "tokens/component/combobox.json",
@@ -5850,7 +5876,7 @@
     },
     "combobox.empty.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--combobox-empty-foreground",
       "layer": "component",
       "source": "tokens/component/combobox.json",
@@ -5890,7 +5916,7 @@
     },
     "combobox.item.highlightedBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--combobox-item-highlighted-background",
       "layer": "component",
       "source": "tokens/component/combobox.json",
@@ -5898,7 +5924,7 @@
     },
     "combobox.item.highlightedForeground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--combobox-item-highlighted-foreground",
       "layer": "component",
       "source": "tokens/component/combobox.json",
@@ -5955,7 +5981,7 @@
     },
     "combobox.label.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--combobox-label-foreground",
       "layer": "component",
       "source": "tokens/component/combobox.json",
@@ -6136,7 +6162,7 @@
     },
     "command.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--command-foreground",
       "layer": "component",
       "source": "tokens/component/command.json",
@@ -6160,7 +6186,7 @@
     },
     "command.group.headingForeground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--command-group-heading-foreground",
       "layer": "component",
       "source": "tokens/component/command.json",
@@ -6305,7 +6331,7 @@
     },
     "command.item.selectedBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--command-item-selected-background",
       "layer": "component",
       "source": "tokens/component/command.json",
@@ -6314,7 +6340,7 @@
     },
     "command.item.selectedForeground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--command-item-selected-foreground",
       "layer": "component",
       "source": "tokens/component/command.json",
@@ -6380,7 +6406,7 @@
     },
     "contextMenu.content.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--context-menu-content-foreground",
       "layer": "component",
       "source": "tokens/component/context-menu.json",
@@ -6436,7 +6462,7 @@
     },
     "contextMenu.item.destructiveForeground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--context-menu-item-destructive-foreground",
       "layer": "component",
       "source": "tokens/component/context-menu.json",
@@ -6453,7 +6479,7 @@
     },
     "contextMenu.item.focusBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--context-menu-item-focus-background",
       "layer": "component",
       "source": "tokens/component/context-menu.json",
@@ -6461,7 +6487,7 @@
     },
     "contextMenu.item.focusForeground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--context-menu-item-focus-foreground",
       "layer": "component",
       "source": "tokens/component/context-menu.json",
@@ -6615,7 +6641,7 @@
     },
     "contextMenu.shortcut.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--context-menu-shortcut-foreground",
       "layer": "component",
       "source": "tokens/component/context-menu.json",
@@ -6665,7 +6691,7 @@
     },
     "datePicker.emptyForeground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--date-picker-empty-foreground",
       "layer": "component",
       "source": "tokens/component/date-picker.json",
@@ -6699,7 +6725,7 @@
     },
     "dialog.color.description-foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--dialog-color-description-foreground",
       "layer": "component",
       "source": "tokens/component/dialog.json",
@@ -6707,7 +6733,7 @@
     },
     "dialog.color.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--dialog-color-foreground",
       "layer": "component",
       "source": "tokens/component/dialog.json",
@@ -6723,7 +6749,7 @@
     },
     "dialog.color.ring": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--dialog-color-ring",
       "layer": "component",
       "source": "tokens/component/dialog.json",
@@ -6828,7 +6854,7 @@
     },
     "drawer.content.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--drawer-content-foreground",
       "layer": "component",
       "source": "tokens/component/drawer.json",
@@ -6879,7 +6905,7 @@
     },
     "drawer.handle.color": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--drawer-handle-color",
       "layer": "component",
       "source": "tokens/component/drawer.json",
@@ -6951,7 +6977,7 @@
     },
     "dropdownMenu.content.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--dropdown-menu-content-foreground",
       "layer": "component",
       "source": "tokens/component/dropdown-menu.json",
@@ -7000,7 +7026,7 @@
     },
     "dropdownMenu.item.destructiveForeground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--dropdown-menu-item-destructive-foreground",
       "layer": "component",
       "source": "tokens/component/dropdown-menu.json",
@@ -7016,7 +7042,7 @@
     },
     "dropdownMenu.item.focusBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--dropdown-menu-item-focus-background",
       "layer": "component",
       "source": "tokens/component/dropdown-menu.json",
@@ -7024,7 +7050,7 @@
     },
     "dropdownMenu.item.focusForeground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--dropdown-menu-item-focus-foreground",
       "layer": "component",
       "source": "tokens/component/dropdown-menu.json",
@@ -7163,7 +7189,7 @@
     },
     "dropdownMenu.shortcut.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--dropdown-menu-shortcut-foreground",
       "layer": "component",
       "source": "tokens/component/dropdown-menu.json",
@@ -7219,7 +7245,7 @@
     },
     "empty.color.media-destructive-foreground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--empty-color-media-destructive-foreground",
       "layer": "component",
       "source": "tokens/component/empty.json",
@@ -7236,7 +7262,7 @@
     },
     "empty.color.media-neutral-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--empty-color-media-neutral-foreground",
       "layer": "component",
       "source": "tokens/component/empty.json",
@@ -7245,7 +7271,7 @@
     },
     "empty.color.media-neutral-surface": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--empty-color-media-neutral-surface",
       "layer": "component",
       "source": "tokens/component/empty.json",
@@ -7304,7 +7330,7 @@
     },
     "empty.description.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--empty-description-foreground",
       "layer": "component",
       "source": "tokens/component/empty.json",
@@ -7353,7 +7379,7 @@
     },
     "empty.media.background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--empty-media-background",
       "layer": "component",
       "source": "tokens/component/empty.json",
@@ -7361,7 +7387,7 @@
     },
     "empty.media.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--empty-media-foreground",
       "layer": "component",
       "source": "tokens/component/empty.json",
@@ -7433,7 +7459,7 @@
     },
     "file-upload.color.dropzone-active-border": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--file-upload-color-dropzone-active-border",
       "layer": "component",
       "source": "tokens/component/file-upload.json",
@@ -7450,7 +7476,7 @@
     },
     "file-upload.color.dropzone-border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--file-upload-color-dropzone-border",
       "layer": "component",
       "source": "tokens/component/file-upload.json",
@@ -7458,7 +7484,7 @@
     },
     "file-upload.color.media-error-foreground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--file-upload-color-media-error-foreground",
       "layer": "component",
       "source": "tokens/component/file-upload.json",
@@ -7473,7 +7499,7 @@
     },
     "file-upload.color.media-idle-surface": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--file-upload-color-media-idle-surface",
       "layer": "component",
       "source": "tokens/component/file-upload.json",
@@ -7496,7 +7522,7 @@
     },
     "file-upload.color.remove-foreground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--file-upload-color-remove-foreground",
       "layer": "component",
       "source": "tokens/component/file-upload.json",
@@ -7743,7 +7769,7 @@
     },
     "font.family.sans": {
       "type": "fontFamily",
-      "value": "Google sans",
+      "value": "Noto Sans Thai",
       "cssVar": "--ll-font-family-sans",
       "layer": "primitive",
       "source": "tokens/primitive/typography.json",
@@ -8060,7 +8086,7 @@
     },
     "hoverCard.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--hover-card-foreground",
       "layer": "component",
       "source": "tokens/component/hover-card.json",
@@ -8249,7 +8275,7 @@
     },
     "input.color.background": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--input-color-background",
       "layer": "component",
       "source": "tokens/component/input.json",
@@ -8266,7 +8292,7 @@
     },
     "input.color.border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--input-color-border",
       "layer": "component",
       "source": "tokens/component/input.json",
@@ -8274,7 +8300,7 @@
     },
     "input.color.clear-button": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--input-color-clear-button",
       "layer": "component",
       "source": "tokens/component/input.json",
@@ -8291,7 +8317,7 @@
     },
     "input.color.focus-border": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--input-color-focus-border",
       "layer": "component",
       "source": "tokens/component/input.json",
@@ -8299,7 +8325,7 @@
     },
     "input.color.focus-ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--input-color-focus-ring",
       "layer": "component",
       "source": "tokens/component/input.json",
@@ -8315,7 +8341,7 @@
     },
     "input.color.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--input-color-foreground",
       "layer": "component",
       "source": "tokens/component/input.json",
@@ -8323,7 +8349,7 @@
     },
     "input.color.invalid-border": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--input-color-invalid-border",
       "layer": "component",
       "source": "tokens/component/input.json",
@@ -8331,7 +8357,7 @@
     },
     "input.color.invalid-ring": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--input-color-invalid-ring",
       "layer": "component",
       "source": "tokens/component/input.json",
@@ -8347,7 +8373,7 @@
     },
     "input.color.placeholder": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--input-color-placeholder",
       "layer": "component",
       "source": "tokens/component/input.json",
@@ -8486,7 +8512,7 @@
     },
     "inputGroup.addon.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--input-group-addon-foreground",
       "layer": "component",
       "source": "tokens/component/input-group.json",
@@ -8632,7 +8658,7 @@
     },
     "inputOtp.caret.color": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--input-otp-caret-color",
       "layer": "component",
       "source": "tokens/component/input-otp.json",
@@ -8788,7 +8814,7 @@
     },
     "item.hoverBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--item-hover-background",
       "layer": "component",
       "source": "tokens/component/item.json",
@@ -8796,7 +8822,7 @@
     },
     "item.media.background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--item-media-background",
       "layer": "component",
       "source": "tokens/component/item.json",
@@ -8844,7 +8870,7 @@
     },
     "kbd.background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--kbd-background",
       "layer": "component",
       "source": "tokens/component/kbd.json",
@@ -8868,7 +8894,7 @@
     },
     "kbd.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--kbd-foreground",
       "layer": "component",
       "source": "tokens/component/kbd.json",
@@ -8935,7 +8961,7 @@
     },
     "label.color.optional": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--label-color-optional",
       "layer": "component",
       "source": "tokens/component/label.json",
@@ -8944,7 +8970,7 @@
     },
     "label.color.required": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--label-color-required",
       "layer": "component",
       "source": "tokens/component/label.json",
@@ -9121,7 +9147,7 @@
     },
     "markdown.inlineCode.background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--markdown-inline-code-background",
       "layer": "component",
       "source": "tokens/component/markdown.json",
@@ -9185,7 +9211,7 @@
     },
     "markdown.link.foreground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--markdown-link-foreground",
       "layer": "component",
       "source": "tokens/component/markdown.json",
@@ -9282,7 +9308,7 @@
     },
     "menubar.content.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--menubar-content-foreground",
       "layer": "component",
       "source": "tokens/component/menubar.json",
@@ -9338,7 +9364,7 @@
     },
     "menubar.item.destructiveForeground": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--menubar-item-destructive-foreground",
       "layer": "component",
       "source": "tokens/component/menubar.json",
@@ -9355,7 +9381,7 @@
     },
     "menubar.item.focusBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--menubar-item-focus-background",
       "layer": "component",
       "source": "tokens/component/menubar.json",
@@ -9363,7 +9389,7 @@
     },
     "menubar.item.focusForeground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--menubar-item-focus-foreground",
       "layer": "component",
       "source": "tokens/component/menubar.json",
@@ -9534,7 +9560,7 @@
     },
     "menubar.trigger.hoverBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--menubar-trigger-hover-background",
       "layer": "component",
       "source": "tokens/component/menubar.json",
@@ -9543,7 +9569,7 @@
     },
     "menubar.trigger.openBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--menubar-trigger-open-background",
       "layer": "component",
       "source": "tokens/component/menubar.json",
@@ -9625,7 +9651,7 @@
     },
     "nativeSelect.icon.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--native-select-icon-foreground",
       "layer": "component",
       "source": "tokens/component/native-select.json",
@@ -9706,7 +9732,7 @@
     },
     "navigation.color.content-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--navigation-color-content-foreground",
       "layer": "component",
       "source": "tokens/component/navigation.json",
@@ -9714,7 +9740,7 @@
     },
     "navigation.color.content-ring": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--navigation-color-content-ring",
       "layer": "component",
       "source": "tokens/component/navigation.json",
@@ -9730,7 +9756,7 @@
     },
     "navigation.color.focus-ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--navigation-color-focus-ring",
       "layer": "component",
       "source": "tokens/component/navigation.json",
@@ -9746,7 +9772,7 @@
     },
     "navigation.color.indicator-color": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--navigation-color-indicator-color",
       "layer": "component",
       "source": "tokens/component/navigation.json",
@@ -9754,7 +9780,7 @@
     },
     "navigation.color.link-hover-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--navigation-color-link-hover-background",
       "layer": "component",
       "source": "tokens/component/navigation.json",
@@ -9763,7 +9789,7 @@
     },
     "navigation.color.trigger-hover-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--navigation-color-trigger-hover-background",
       "layer": "component",
       "source": "tokens/component/navigation.json",
@@ -9771,7 +9797,7 @@
     },
     "navigation.color.trigger-open-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--navigation-color-trigger-open-background",
       "layer": "component",
       "source": "tokens/component/navigation.json",
@@ -10149,7 +10175,7 @@
     },
     "popover.color.close": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--popover-color-close",
       "layer": "component",
       "source": "tokens/component/popover.json",
@@ -10158,7 +10184,7 @@
     },
     "popover.color.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--popover-color-foreground",
       "layer": "component",
       "source": "tokens/component/popover.json",
@@ -10166,7 +10192,7 @@
     },
     "popover.color.muted-foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--popover-color-muted-foreground",
       "layer": "component",
       "source": "tokens/component/popover.json",
@@ -10174,7 +10200,7 @@
     },
     "popover.color.ring": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--popover-color-ring",
       "layer": "component",
       "source": "tokens/component/popover.json",
@@ -10248,7 +10274,7 @@
     },
     "progress.indicator": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--progress-indicator",
       "layer": "component",
       "source": "tokens/component/progress.json",
@@ -10264,7 +10290,7 @@
     },
     "progress.track": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--progress-track",
       "layer": "component",
       "source": "tokens/component/progress.json",
@@ -10272,7 +10298,7 @@
     },
     "radio.color.border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--radio-color-border",
       "layer": "component",
       "source": "tokens/component/radio.json",
@@ -10280,7 +10306,7 @@
     },
     "radio.color.checked-background": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--radio-color-checked-background",
       "layer": "component",
       "source": "tokens/component/radio.json",
@@ -10288,7 +10314,7 @@
     },
     "radio.color.checked-border": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--radio-color-checked-border",
       "layer": "component",
       "source": "tokens/component/radio.json",
@@ -10296,7 +10322,7 @@
     },
     "radio.color.focus-border": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--radio-color-focus-border",
       "layer": "component",
       "source": "tokens/component/radio.json",
@@ -10304,7 +10330,7 @@
     },
     "radio.color.focus-ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--radio-color-focus-ring",
       "layer": "component",
       "source": "tokens/component/radio.json",
@@ -10329,7 +10355,7 @@
     },
     "radio.color.invalid-background": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--radio-color-invalid-background",
       "layer": "component",
       "source": "tokens/component/radio.json",
@@ -10338,7 +10364,7 @@
     },
     "radio.color.invalid-border": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--radio-color-invalid-border",
       "layer": "component",
       "source": "tokens/component/radio.json",
@@ -10446,7 +10472,7 @@
       "cssVar": "--ll-radius-ui-2xl",
       "layer": "primitive",
       "source": "tokens/primitive/radius.json",
-      "description": "rounded-2xl = 22px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
+      "description": "rounded-2xl = 24px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
     },
     "radius.ui.3xl": {
       "type": "dimension",
@@ -10454,7 +10480,7 @@
       "cssVar": "--ll-radius-ui-3xl",
       "layer": "primitive",
       "source": "tokens/primitive/radius.json",
-      "description": "rounded-3xl = 30px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
+      "description": "rounded-3xl = 32px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
     },
     "radius.ui.4xl": {
       "type": "dimension",
@@ -10462,7 +10488,7 @@
       "cssVar": "--ll-radius-ui-4xl",
       "layer": "primitive",
       "source": "tokens/primitive/radius.json",
-      "description": "rounded-4xl = 38px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
+      "description": "rounded-4xl = 40px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
     },
     "radius.ui.lg": {
       "type": "dimension",
@@ -10470,7 +10496,7 @@
       "cssVar": "--ll-radius-ui-lg",
       "layer": "primitive",
       "source": "tokens/primitive/radius.json",
-      "description": "rounded-lg = 10px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
+      "description": "rounded-lg = 12px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
     },
     "radius.ui.md": {
       "type": "dimension",
@@ -10478,7 +10504,7 @@
       "cssVar": "--ll-radius-ui-md",
       "layer": "primitive",
       "source": "tokens/primitive/radius.json",
-      "description": "rounded-md = 6px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
+      "description": "rounded-md = 8px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
     },
     "radius.ui.sm": {
       "type": "dimension",
@@ -10486,7 +10512,7 @@
       "cssVar": "--ll-radius-ui-sm",
       "layer": "primitive",
       "source": "tokens/primitive/radius.json",
-      "description": "rounded-sm = 2px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
+      "description": "rounded-sm = 4px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
     },
     "radius.ui.xl": {
       "type": "dimension",
@@ -10494,7 +10520,7 @@
       "cssVar": "--ll-radius-ui-xl",
       "layer": "primitive",
       "source": "tokens/primitive/radius.json",
-      "description": "rounded-xl = 14px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
+      "description": "rounded-xl = 16px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9)."
     },
     "radius.xl": {
       "type": "dimension",
@@ -10514,7 +10540,7 @@
     },
     "resizable.handle.color": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--resizable-handle-color",
       "layer": "component",
       "source": "tokens/component/resizable.json",
@@ -10582,7 +10608,7 @@
     },
     "scroll-area.thumb.color": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--scroll-area-thumb-color",
       "layer": "component",
       "source": "tokens/component/scroll-area.json",
@@ -10607,7 +10633,7 @@
     },
     "select.color.content-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--select-color-content-foreground",
       "layer": "component",
       "source": "tokens/component/select.json",
@@ -10615,7 +10641,7 @@
     },
     "select.color.content-ring": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--select-color-content-ring",
       "layer": "component",
       "source": "tokens/component/select.json",
@@ -10631,7 +10657,7 @@
     },
     "select.color.focus-border": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--select-color-focus-border",
       "layer": "component",
       "source": "tokens/component/select.json",
@@ -10639,7 +10665,7 @@
     },
     "select.color.focus-ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--select-color-focus-ring",
       "layer": "component",
       "source": "tokens/component/select.json",
@@ -10655,7 +10681,7 @@
     },
     "select.color.invalid-border": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--select-color-invalid-border",
       "layer": "component",
       "source": "tokens/component/select.json",
@@ -10663,7 +10689,7 @@
     },
     "select.color.item-focus-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--select-color-item-focus-background",
       "layer": "component",
       "source": "tokens/component/select.json",
@@ -10671,7 +10697,7 @@
     },
     "select.color.item-focus-foreground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--select-color-item-focus-foreground",
       "layer": "component",
       "source": "tokens/component/select.json",
@@ -10679,7 +10705,7 @@
     },
     "select.color.separator-color": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--select-color-separator-color",
       "layer": "component",
       "source": "tokens/component/select.json",
@@ -10687,7 +10713,7 @@
     },
     "select.color.trigger-background": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--select-color-trigger-background",
       "layer": "component",
       "source": "tokens/component/select.json",
@@ -10696,7 +10722,7 @@
     },
     "select.color.trigger-border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--select-color-trigger-border",
       "layer": "component",
       "source": "tokens/component/select.json",
@@ -10704,7 +10730,7 @@
     },
     "select.color.trigger-placeholder": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--select-color-trigger-placeholder",
       "layer": "component",
       "source": "tokens/component/select.json",
@@ -10846,7 +10872,7 @@
     },
     "separator.color": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--separator-color",
       "layer": "component",
       "source": "tokens/component/separator.json",
@@ -10906,7 +10932,7 @@
     },
     "sheet.color.border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--sheet-color-border",
       "layer": "component",
       "source": "tokens/component/sheet.json",
@@ -10915,7 +10941,7 @@
     },
     "sheet.color.description-foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--sheet-color-description-foreground",
       "layer": "component",
       "source": "tokens/component/sheet.json",
@@ -10923,7 +10949,7 @@
     },
     "sheet.color.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--sheet-color-foreground",
       "layer": "component",
       "source": "tokens/component/sheet.json",
@@ -10970,7 +10996,7 @@
     },
     "sidebar.color.background": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(0.985 0.002 247.839)",
       "cssVar": "--sidebar-color-background",
       "layer": "component",
       "source": "tokens/component/sidebar.json",
@@ -10978,7 +11004,7 @@
     },
     "sidebar.color.border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--sidebar-color-border",
       "layer": "component",
       "source": "tokens/component/sidebar.json",
@@ -10986,7 +11012,7 @@
     },
     "sidebar.color.focus-ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.714 0.019 261.325)",
       "cssVar": "--sidebar-color-focus-ring",
       "layer": "component",
       "source": "tokens/component/sidebar.json",
@@ -10994,7 +11020,7 @@
     },
     "sidebar.color.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--sidebar-color-foreground",
       "layer": "component",
       "source": "tokens/component/sidebar.json",
@@ -11002,7 +11028,7 @@
     },
     "sidebar.color.group-label-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--sidebar-color-group-label-foreground",
       "layer": "component",
       "source": "tokens/component/sidebar.json",
@@ -11019,7 +11045,7 @@
     },
     "sidebar.color.item-active-background": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--sidebar-color-item-active-background",
       "layer": "component",
       "source": "tokens/component/sidebar.json",
@@ -11028,7 +11054,7 @@
     },
     "sidebar.color.item-active-foreground": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(1 0 0)",
       "cssVar": "--sidebar-color-item-active-foreground",
       "layer": "component",
       "source": "tokens/component/sidebar.json",
@@ -11037,7 +11063,7 @@
     },
     "sidebar.color.item-hover-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--sidebar-color-item-hover-background",
       "layer": "component",
       "source": "tokens/component/sidebar.json",
@@ -11046,7 +11072,7 @@
     },
     "sidebar.color.item-hover-foreground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--sidebar-color-item-hover-foreground",
       "layer": "component",
       "source": "tokens/component/sidebar.json",
@@ -11054,7 +11080,7 @@
     },
     "sidebar.color.rail-color": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--sidebar-color-rail-color",
       "layer": "component",
       "source": "tokens/component/sidebar.json",
@@ -11569,7 +11595,7 @@
     },
     "skeleton.background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--skeleton-background",
       "layer": "component",
       "source": "tokens/component/skeleton.json",
@@ -11585,7 +11611,7 @@
     },
     "slider.color.focus-ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--slider-color-focus-ring",
       "layer": "component",
       "source": "tokens/component/slider.json",
@@ -11601,7 +11627,7 @@
     },
     "slider.color.range": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--slider-color-range",
       "layer": "component",
       "source": "tokens/component/slider.json",
@@ -11610,7 +11636,7 @@
     },
     "slider.color.thumb-border": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--slider-color-thumb-border",
       "layer": "component",
       "source": "tokens/component/slider.json",
@@ -11618,7 +11644,7 @@
     },
     "slider.color.track": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--slider-color-track",
       "layer": "component",
       "source": "tokens/component/slider.json",
@@ -11896,7 +11922,7 @@
     },
     "spinner.color.on-brand": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(1 0 0)",
       "cssVar": "--spinner-color-on-brand",
       "layer": "component",
       "source": "tokens/component/spinner.json",
@@ -11905,7 +11931,7 @@
     },
     "spinner.color.primary": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--spinner-color-primary",
       "layer": "component",
       "source": "tokens/component/spinner.json",
@@ -11931,7 +11957,7 @@
     },
     "status.destructive": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--status-destructive",
       "layer": "semantic",
       "source": "tokens/semantic/status.json",
@@ -12017,7 +12043,7 @@
     },
     "switch.color.focus-border": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--switch-color-focus-border",
       "layer": "component",
       "source": "tokens/component/switch.json",
@@ -12025,7 +12051,7 @@
     },
     "switch.color.focus-ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--switch-color-focus-ring",
       "layer": "component",
       "source": "tokens/component/switch.json",
@@ -12041,7 +12067,7 @@
     },
     "switch.color.invalid-border": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--switch-color-invalid-border",
       "layer": "component",
       "source": "tokens/component/switch.json",
@@ -12067,7 +12093,7 @@
     },
     "switch.color.thumb-dark-checked-background": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(1 0 0)",
       "cssVar": "--switch-color-thumb-dark-checked-background",
       "layer": "component",
       "source": "tokens/component/switch.json",
@@ -12076,7 +12102,7 @@
     },
     "switch.color.thumb-dark-unchecked-background": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--switch-color-thumb-dark-unchecked-background",
       "layer": "component",
       "source": "tokens/component/switch.json",
@@ -12085,7 +12111,7 @@
     },
     "switch.color.track-background": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--switch-color-track-background",
       "layer": "component",
       "source": "tokens/component/switch.json",
@@ -12094,7 +12120,7 @@
     },
     "switch.color.track-checked-background": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--switch-color-track-checked-background",
       "layer": "component",
       "source": "tokens/component/switch.json",
@@ -12200,7 +12226,7 @@
     },
     "table.color.border-color": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--table-color-border-color",
       "layer": "component",
       "source": "tokens/component/table.json",
@@ -12208,7 +12234,7 @@
     },
     "table.color.caption-foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--table-color-caption-foreground",
       "layer": "component",
       "source": "tokens/component/table.json",
@@ -12233,7 +12259,7 @@
     },
     "table.color.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--table-color-foreground",
       "layer": "component",
       "source": "tokens/component/table.json",
@@ -12241,7 +12267,7 @@
     },
     "table.color.header-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--table-color-header-background",
       "layer": "component",
       "source": "tokens/component/table.json",
@@ -12249,7 +12275,7 @@
     },
     "table.color.header-foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--table-color-header-foreground",
       "layer": "component",
       "source": "tokens/component/table.json",
@@ -12257,7 +12283,7 @@
     },
     "table.color.row-hover-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--table-color-row-hover-background",
       "layer": "component",
       "source": "tokens/component/table.json",
@@ -12345,7 +12371,7 @@
     },
     "tabs.color.focus-border": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--tabs-color-focus-border",
       "layer": "component",
       "source": "tokens/component/tabs.json",
@@ -12353,7 +12379,7 @@
     },
     "tabs.color.focus-ring": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--tabs-color-focus-ring",
       "layer": "component",
       "source": "tokens/component/tabs.json",
@@ -12369,7 +12395,7 @@
     },
     "tabs.color.indicator-color": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--tabs-color-indicator-color",
       "layer": "component",
       "source": "tokens/component/tabs.json",
@@ -12378,7 +12404,7 @@
     },
     "tabs.color.list-background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--tabs-color-list-background",
       "layer": "component",
       "source": "tokens/component/tabs.json",
@@ -12394,7 +12420,7 @@
     },
     "tabs.color.trigger-active-foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--tabs-color-trigger-active-foreground",
       "layer": "component",
       "source": "tokens/component/tabs.json",
@@ -12402,7 +12428,7 @@
     },
     "tabs.color.trigger-foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--tabs-color-trigger-foreground",
       "layer": "component",
       "source": "tokens/component/tabs.json",
@@ -12519,7 +12545,7 @@
     },
     "textarea.color.border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--textarea-color-border",
       "layer": "component",
       "source": "tokens/component/textarea.json",
@@ -12528,7 +12554,7 @@
     },
     "textarea.color.clear-button": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--textarea-color-clear-button",
       "layer": "component",
       "source": "tokens/component/textarea.json",
@@ -12537,7 +12563,7 @@
     },
     "textarea.color.focus-border": {
       "type": "color",
-      "value": "oklch(0.708 0 0)",
+      "value": "oklch(0.789 0.102 192.099)",
       "cssVar": "--textarea-color-focus-border",
       "layer": "component",
       "source": "tokens/component/textarea.json",
@@ -12546,7 +12572,7 @@
     },
     "textarea.color.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--textarea-color-foreground",
       "layer": "component",
       "source": "tokens/component/textarea.json",
@@ -12555,7 +12581,7 @@
     },
     "textarea.color.invalid-border": {
       "type": "color",
-      "value": "oklch(0.577 0.245 27.325)",
+      "value": "oklch(0.577 0.215 27.325)",
       "cssVar": "--textarea-color-invalid-border",
       "layer": "component",
       "source": "tokens/component/textarea.json",
@@ -12564,7 +12590,7 @@
     },
     "textarea.color.placeholder": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--textarea-color-placeholder",
       "layer": "component",
       "source": "tokens/component/textarea.json",
@@ -12573,7 +12599,7 @@
     },
     "textarea.color.resize-grip": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--textarea-color-resize-grip",
       "layer": "component",
       "source": "tokens/component/textarea.json",
@@ -12722,7 +12748,7 @@
     },
     "thumbnail.background": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--thumbnail-background",
       "layer": "component",
       "source": "tokens/component/thumbnail.json",
@@ -12739,7 +12765,7 @@
     },
     "thumbnail.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--thumbnail-foreground",
       "layer": "component",
       "source": "tokens/component/thumbnail.json",
@@ -12763,7 +12789,7 @@
     },
     "timestamp.foreground": {
       "type": "color",
-      "value": "oklch(0.545 0 0)",
+      "value": "oklch(0.551 0.023 264.364)",
       "cssVar": "--timestamp-foreground",
       "layer": "component",
       "source": "tokens/component/timestamp.json",
@@ -12779,7 +12805,7 @@
     },
     "toast.color.border": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--toast-color-border",
       "layer": "component",
       "source": "tokens/component/toast.json",
@@ -12787,7 +12813,7 @@
     },
     "toast.color.foreground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--toast-color-foreground",
       "layer": "component",
       "source": "tokens/component/toast.json",
@@ -12803,7 +12829,7 @@
     },
     "toggle.activeBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--toggle-active-background",
       "layer": "component",
       "source": "tokens/component/toggle.json",
@@ -12986,7 +13012,7 @@
     },
     "token.defaultBackground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.54 0.082 198.255)",
       "cssVar": "--token-default-background",
       "layer": "component",
       "source": "tokens/component/token.json",
@@ -12994,7 +13020,7 @@
     },
     "token.defaultForeground": {
       "type": "color",
-      "value": "oklch(0.985 0 0)",
+      "value": "oklch(1 0 0)",
       "cssVar": "--token-default-foreground",
       "layer": "component",
       "source": "tokens/component/token.json",
@@ -13131,7 +13157,7 @@
     },
     "token.mutedBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--token-muted-background",
       "layer": "component",
       "source": "tokens/component/token.json",
@@ -13139,7 +13165,7 @@
     },
     "token.mutedForeground": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--token-muted-foreground",
       "layer": "component",
       "source": "tokens/component/token.json",
@@ -13213,7 +13239,7 @@
     },
     "token.secondaryBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--token-secondary-background",
       "layer": "component",
       "source": "tokens/component/token.json",
@@ -13221,7 +13247,7 @@
     },
     "token.secondaryForeground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--token-secondary-foreground",
       "layer": "component",
       "source": "tokens/component/token.json",
@@ -13294,7 +13320,7 @@
     },
     "toolbar.button.hoverBackground": {
       "type": "color",
-      "value": "oklch(0.97 0 0)",
+      "value": "oklch(0.967 0.003 264.542)",
       "cssVar": "--toolbar-button-hover-background",
       "layer": "component",
       "source": "tokens/component/toolbar.json",
@@ -13302,7 +13328,7 @@
     },
     "toolbar.button.hoverForeground": {
       "type": "color",
-      "value": "oklch(0.205 0 0)",
+      "value": "oklch(0.21 0.032 264.665)",
       "cssVar": "--toolbar-button-hover-foreground",
       "layer": "component",
       "source": "tokens/component/toolbar.json",
@@ -13358,7 +13384,7 @@
     },
     "toolbar.separator.color": {
       "type": "color",
-      "value": "oklch(0.922 0 0)",
+      "value": "oklch(0.928 0.006 264.531)",
       "cssVar": "--toolbar-separator-color",
       "layer": "component",
       "source": "tokens/component/toolbar.json",
@@ -13405,7 +13431,7 @@
     },
     "tooltip.color.arrow-fill": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--tooltip-color-arrow-fill",
       "layer": "component",
       "source": "tokens/component/tooltip.json",
@@ -13413,7 +13439,7 @@
     },
     "tooltip.color.background": {
       "type": "color",
-      "value": "oklch(0.145 0 0)",
+      "value": "oklch(0.13 0.027 261.692)",
       "cssVar": "--tooltip-color-background",
       "layer": "component",
       "source": "tokens/component/tooltip.json",

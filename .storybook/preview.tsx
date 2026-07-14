@@ -1,12 +1,16 @@
 import * as React from "react";
 import type { Preview } from "@storybook/nextjs-vite";
 import { withThemeByClassName } from "@storybook/addon-themes";
-import { Geist_Mono } from "next/font/google";
+import { Geist_Mono, Noto_Sans_Thai } from "next/font/google";
 import "../app/globals.css";
 
-// Sans is the Apple system stack defined as --font-sans in globals.css (:root),
-// which Storybook imports above — so it's available without next/font (SF Pro
-// renders natively on Apple devices). Only mono needs loading here.
+// Same two families app/layout.tsx loads — globals.css resolves --font-sans /
+// --font-mono from these variables, so both must be present on the canvas.
+const fontSans = Noto_Sans_Thai({
+  variable: "--font-noto-sans-thai",
+  subsets: ["thai", "latin"],
+  weight: ["400", "500", "600", "700"],
+});
 const fontMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 const preview: Preview = {
@@ -35,7 +39,7 @@ const preview: Preview = {
       // `w-full max-w-*` resolve to their intended width instead of collapsing
       // to min-content (the per-word-wrap bug). justify-center centers vertically.
       <div
-        className={`${fontMono.variable} font-sans flex min-h-svh w-full flex-col items-center justify-center gap-4 bg-background p-10 text-foreground`}
+        className={`${fontSans.variable} ${fontMono.variable} font-sans flex min-h-svh w-full flex-col items-center justify-center gap-4 bg-background p-10 text-foreground`}
       >
         <Story />
       </div>

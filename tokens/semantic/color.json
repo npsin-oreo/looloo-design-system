@@ -11,10 +11,10 @@
     },
     "foreground": {
       "$type": "color",
-      "$value": "{color.neutral.950}",
+      "$value": "{color.gray.950}",
       "$description": "The default app background and text color.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.145 0 0)"
+        "looloo.resolved": "oklch(0.13 0.027 261.692)"
       }
     },
     "card": {
@@ -27,10 +27,10 @@
     },
     "card-foreground": {
       "$type": "color",
-      "$value": "{color.neutral.950}",
+      "$value": "{color.gray.950}",
       "$description": "Elevated surfaces and the content inside them.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.145 0 0)"
+        "looloo.resolved": "oklch(0.13 0.027 261.692)"
       }
     },
     "popover": {
@@ -43,210 +43,210 @@
     },
     "popover-foreground": {
       "$type": "color",
-      "$value": "{color.neutral.950}",
+      "$value": "{color.gray.950}",
       "$description": "Floating surfaces and the content inside them.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.145 0 0)"
+        "looloo.resolved": "oklch(0.13 0.027 261.692)"
       }
     },
     "primary": {
       "$type": "color",
-      "$value": "{color.neutral.900}",
+      "$value": "{color.brand.primary.600}",
       "$description": "High-emphasis actions and brand surfaces.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.205 0 0)"
+        "looloo.resolved": "oklch(0.54 0.082 198.255)"
       }
     },
     "primary-foreground": {
       "$type": "color",
-      "$value": "{color.zinc.50}",
+      "$value": "{color.white}",
       "$description": "High-emphasis actions and brand surfaces.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.985 0 0)"
+        "looloo.resolved": "oklch(1 0 0)"
       }
     },
     "secondary": {
       "$type": "color",
-      "$value": "{color.neutral.100}",
+      "$value": "{color.gray.100}",
       "$description": "Lower-emphasis filled actions and supporting surfaces.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.97 0 0)"
+        "looloo.resolved": "oklch(0.967 0.003 264.542)"
       }
     },
     "secondary-foreground": {
       "$type": "color",
-      "$value": "{color.neutral.900}",
+      "$value": "{color.gray.900}",
       "$description": "Lower-emphasis filled actions and supporting surfaces.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.205 0 0)"
+        "looloo.resolved": "oklch(0.21 0.032 264.665)"
       }
     },
     "muted": {
       "$type": "color",
-      "$value": "{color.neutral.100}",
+      "$value": "{color.gray.100}",
       "$description": "Subtle surfaces and lower-emphasis content.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.97 0 0)"
+        "looloo.resolved": "oklch(0.967 0.003 264.542)"
       }
     },
     "muted-foreground": {
       "$type": "color",
-      "$value": "oklch(0.545 0 0)",
+      "$value": "{color.gray.500}",
       "$description": "Subtle surfaces and lower-emphasis content.",
       "$extensions": {
-        "looloo.legacy": "oklch(0.545 0 0)"
+        "looloo.resolved": "oklch(0.551 0.023 264.364)"
       }
     },
     "accent": {
       "$type": "color",
-      "$value": "{color.neutral.100}",
+      "$value": "{color.gray.100}",
       "$description": "Interactive hover, focus, and active surfaces.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.97 0 0)"
+        "looloo.resolved": "oklch(0.967 0.003 264.542)"
       }
     },
     "accent-foreground": {
       "$type": "color",
-      "$value": "{color.neutral.900}",
+      "$value": "{color.gray.900}",
       "$description": "Interactive hover, focus, and active surfaces.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.205 0 0)"
+        "looloo.resolved": "oklch(0.21 0.032 264.665)"
       }
     },
     "destructive": {
       "$type": "color",
-      "$value": "oklch(0.577 0.245 27.325)",
+      "$value": "{color.red.600}",
       "$description": "Destructive actions and error emphasis.",
       "$extensions": {
-        "looloo.legacy": "oklch(0.577 0.245 27.325)"
+        "looloo.resolved": "oklch(0.577 0.215 27.325)"
       }
     },
     "border": {
       "$type": "color",
-      "$value": "{color.neutral.200}",
+      "$value": "{color.gray.200}",
       "$description": "Default borders and separators.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.922 0 0)"
+        "looloo.resolved": "oklch(0.928 0.006 264.531)"
       }
     },
     "input": {
       "$type": "color",
-      "$value": "{color.neutral.200}",
+      "$value": "{color.gray.200}",
       "$description": "Form control borders and input surface treatment.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.922 0 0)"
+        "looloo.resolved": "oklch(0.928 0.006 264.531)"
       }
     },
     "ring": {
       "$type": "color",
-      "$value": "{color.neutral.400}",
+      "$value": "{color.brand.primary.300}",
       "$description": "Focus rings and outlines.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.708 0 0)"
+        "looloo.resolved": "oklch(0.789 0.102 192.099)"
       }
     },
     "chart-1": {
       "$type": "color",
-      "$value": "{color.neutral.300}",
+      "$value": "{color.brand.primary.600}",
       "$description": "The default chart palette.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.87 0 0)"
+        "looloo.resolved": "oklch(0.54 0.082 198.255)"
       }
     },
     "chart-2": {
       "$type": "color",
-      "$value": "{color.neutral.500}",
+      "$value": "{color.brand.primary.400}",
       "$description": "The default chart palette.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.556 0 0)"
+        "looloo.resolved": "oklch(0.727 0.103 194.319)"
       }
     },
     "chart-3": {
       "$type": "color",
-      "$value": "{color.neutral.600}",
+      "$value": "{color.brand.secondary.950}",
       "$description": "The default chart palette.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.439 0 0)"
+        "looloo.resolved": "oklch(0.273 0.066 252.129)"
       }
     },
     "chart-4": {
       "$type": "color",
-      "$value": "{color.neutral.700}",
+      "$value": "{color.brand.primary.800}",
       "$description": "The default chart palette.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.371 0 0)"
+        "looloo.resolved": "oklch(0.395 0.053 200.697)"
       }
     },
     "chart-5": {
       "$type": "color",
-      "$value": "{color.neutral.800}",
+      "$value": "{color.brand.secondary.700}",
       "$description": "The default chart palette.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.269 0 0)"
+        "looloo.resolved": "oklch(0.646 0.042 252.066)"
       }
     },
     "sidebar": {
       "$type": "color",
-      "$value": "{color.zinc.50}",
+      "$value": "{color.gray.50}",
       "$description": "The base sidebar surface and default sidebar text.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.985 0 0)"
+        "looloo.resolved": "oklch(0.985 0.002 247.839)"
       }
     },
     "sidebar-foreground": {
       "$type": "color",
-      "$value": "{color.neutral.950}",
+      "$value": "{color.gray.950}",
       "$description": "The base sidebar surface and default sidebar text.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.145 0 0)"
+        "looloo.resolved": "oklch(0.13 0.027 261.692)"
       }
     },
     "sidebar-primary": {
       "$type": "color",
-      "$value": "{color.neutral.900}",
+      "$value": "{color.brand.primary.600}",
       "$description": "High-emphasis actions inside the sidebar.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.205 0 0)"
+        "looloo.resolved": "oklch(0.54 0.082 198.255)"
       }
     },
     "sidebar-primary-foreground": {
       "$type": "color",
-      "$value": "{color.zinc.50}",
+      "$value": "{color.white}",
       "$description": "High-emphasis actions inside the sidebar.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.985 0 0)"
+        "looloo.resolved": "oklch(1 0 0)"
       }
     },
     "sidebar-accent": {
       "$type": "color",
-      "$value": "{color.neutral.100}",
+      "$value": "{color.gray.100}",
       "$description": "Hover and selected states inside the sidebar.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.97 0 0)"
+        "looloo.resolved": "oklch(0.967 0.003 264.542)"
       }
     },
     "sidebar-accent-foreground": {
       "$type": "color",
-      "$value": "{color.neutral.900}",
+      "$value": "{color.gray.900}",
       "$description": "Hover and selected states inside the sidebar.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.205 0 0)"
+        "looloo.resolved": "oklch(0.21 0.032 264.665)"
       }
     },
     "sidebar-border": {
       "$type": "color",
-      "$value": "{color.neutral.200}",
+      "$value": "{color.gray.200}",
       "$description": "Sidebar-specific borders and separators.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.922 0 0)"
+        "looloo.resolved": "oklch(0.928 0.006 264.531)"
       }
     },
     "sidebar-ring": {
       "$type": "color",
-      "$value": "{color.neutral.400}",
+      "$value": "{color.gray.400}",
       "$description": "Sidebar-specific focus rings.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.708 0 0)"
+        "looloo.resolved": "oklch(0.714 0.019 261.325)"
       }
     },
     "background-color": {
@@ -281,12 +281,28 @@
         "looloo.resolved": "oklch(0.446 0.026 256.802)"
       }
     },
-    "primary-hover": {
+    "brand-accent": {
       "$type": "color",
-      "$value": "{color.neutral.950}",
+      "$value": "{color.brand.secondary.950}",
       "$description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "$extensions": {
-        "looloo.resolved": "oklch(0.145 0 0)"
+        "looloo.resolved": "oklch(0.273 0.066 252.129)"
+      }
+    },
+    "brand-accent-foreground": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "$description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
+      "$extensions": {
+        "looloo.resolved": "oklch(1 0 0)"
+      }
+    },
+    "primary-hover": {
+      "$type": "color",
+      "$value": "{color.brand.primary.700}",
+      "$description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
+      "$extensions": {
+        "looloo.resolved": "oklch(0.459 0.066 199.308)"
       }
     }
   }
