@@ -1,0 +1,14 @@
+{
+  "$description": "Captured 1:1 from components/ui/blockquote/blockquote.tsx. A left rule + indent; the cite line is muted and explicitly not italic.",
+  "blockquote": {
+    "borderWidth": { "$type": "dimension", "$value": "{border.width.2}", "$extensions": { "looloo.tailwind": "border-l-2" } },
+    "borderColor": { "$type": "color", "$value": "{color.border}", "$extensions": { "looloo.tailwind": "border-border" } },
+    "paddingLeft": { "$type": "dimension", "$value": "{space.6}", "$extensions": { "looloo.tailwind": "pl-6" } },
+    "blockGap": { "$type": "dimension", "$value": "{space.2}", "$description": "Between stacked children inside the quote.", "$extensions": { "looloo.tailwind": "[&>*+*]:mt-2" } },
+    "foreground": { "$type": "color", "$value": "{color.foreground}", "$extensions": { "looloo.tailwind": "text-foreground" } },
+    "cite": {
+      "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } },
+      "foreground": { "$type": "color", "$value": "{color.muted-foreground}", "$extensions": { "looloo.tailwind": "text-muted-foreground" } }
+    }
+  }
+}

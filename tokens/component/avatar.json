@@ -1,0 +1,175 @@
+{
+  "$description": "Captured 1:1 from components/ui/avatar/avatar.tsx (Avatar, AvatarFallback, AvatarBadge, AvatarGroup, AvatarGroupCount). Sizes sm/default/lg — default is size-8.",
+  "avatar": {
+    "size": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.control.xs}",
+        "$extensions": {
+          "looloo.tailwind": "size-6"
+        }
+      },
+      "default": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$description": "DEFAULT size.",
+        "$extensions": {
+          "looloo.tailwind": "size-8"
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{size.40}",
+        "$extensions": {
+          "looloo.tailwind": "size-10"
+        },
+        "$description": "Avatar lg is a box, not a touch target — pinned to 40px when size.control.xl moved to 44."
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.full}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-full"
+      }
+    },
+    "ringWidth": {
+      "$type": "dimension",
+      "$value": "{border.width.default}",
+      "$description": "after: pseudo-ring on the avatar itself.",
+      "$extensions": {
+        "looloo.tailwind": "after:border"
+      }
+    },
+    "fallback": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$description": "text-xs at size sm.",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "fontSizeSm": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "group-data-[size=sm]:text-xs"
+        }
+      }
+    },
+    "badge": {
+      "size": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{space.2}",
+          "$extensions": {
+            "looloo.tailwind": "size-2"
+          }
+        },
+        "default": {
+          "$type": "dimension",
+          "$value": "{space.2-5}",
+          "$extensions": {
+            "looloo.tailwind": "size-2.5"
+          }
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{space.3}",
+          "$extensions": {
+            "looloo.tailwind": "size-3"
+          }
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$description": "Hidden at size sm.",
+        "$extensions": {
+          "looloo.tailwind": "[&>svg]:size-2"
+        }
+      },
+      "ringWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.2}",
+        "$extensions": {
+          "looloo.tailwind": "ring-2"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.primary}",
+        "$extensions": {
+          "looloo.tailwind": "bg-primary"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.primary-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-primary-foreground"
+        }
+      }
+    },
+    "group": {
+      "overlap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$description": "Applied as a NEGATIVE margin (-space-x-2) so avatars overlap by 8px.",
+        "$extensions": {
+          "looloo.tailwind": "-space-x-2"
+        }
+      },
+      "ringWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.2}",
+        "$extensions": {
+          "looloo.tailwind": "*:ring-2"
+        }
+      },
+      "count": {
+        "iconSize": {
+          "sm": {
+            "$type": "dimension",
+            "$value": "{size.12}",
+            "$extensions": {
+              "looloo.tailwind": "[&>svg]:size-3",
+              "looloo.legacy": "0.75rem"
+            }
+          },
+          "default": {
+            "$type": "dimension",
+            "$value": "{size.16}",
+            "$extensions": {
+              "looloo.tailwind": "[&>svg]:size-4",
+              "looloo.legacy": "1rem"
+            }
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{size.20}",
+            "$extensions": {
+              "looloo.tailwind": "[&>svg]:size-5",
+              "looloo.legacy": "1.25rem"
+            }
+          }
+        }
+      }
+    }
+  }
+}

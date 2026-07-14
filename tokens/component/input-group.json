@@ -1,0 +1,181 @@
+{
+  "$description": "Captured 1:1 from components/ui/input-group/input-group.tsx. The shell owns the border/radius/focus ring; the inner control is stripped bare (rounded-none border-0 ring-0). Nested buttons and kbd use radius offsets calc'd off --radius so they nest visually inside the shell.",
+  "inputGroup": {
+    "height": {
+      "$type": "dimension",
+      "$value": "{size.control.md}",
+      "$description": "Collapses to h-auto when the group holds a textarea or a block-aligned addon.",
+      "$extensions": {
+        "looloo.tailwind": "h-8"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.lg}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-lg"
+      }
+    },
+    "borderWidth": {
+      "$type": "dimension",
+      "$value": "{border.width.default}",
+      "$extensions": {
+        "looloo.tailwind": "border"
+      }
+    },
+    "focusRingWidth": {
+      "$type": "dimension",
+      "$value": "{focus.ring.width}",
+      "$extensions": {
+        "looloo.tailwind": "has-[[data-slot=input-group-control]:focus-visible]:ring-3"
+      }
+    },
+    "disabledOpacity": {
+      "$type": "number",
+      "$value": "{opacity.50}",
+      "$extensions": {
+        "looloo.tailwind": "has-disabled:opacity-50"
+      }
+    },
+    "addon": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        }
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "py-1.5"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "[&>svg]:size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      },
+      "blockPaddingX": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$description": "Block-start/-end addons run the full width.",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "blockPaddingY": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "pt-2 / pb-2"
+        }
+      },
+      "inlineControlPadding": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$description": "The control tightens toward an inline addon (pl-1.5 / pr-1.5).",
+        "$extensions": {
+          "looloo.tailwind": "has-[>[data-align=inline-end]]:[&>input]:pr-1.5"
+        }
+      },
+      "blockControlPadding": {
+        "$type": "dimension",
+        "$value": "{space.3}",
+        "$extensions": {
+          "looloo.tailwind": "has-[>[data-align=block-end]]:[&>input]:pt-3"
+        }
+      }
+    },
+    "button": {
+      "sizeXs": {
+        "$type": "dimension",
+        "$value": "{size.control.xs}",
+        "$extensions": {
+          "looloo.tailwind": "size-6"
+        }
+      },
+      "sizeSm": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$extensions": {
+          "looloo.tailwind": "size-8"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-1.5"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "0.4375rem",
+        "$description": "rounded-[calc(var(--radius)-3px)] = 7px at the kit default — a nested-radius offset, not a scale step.",
+        "$extensions": {
+          "looloo.tailwind": "rounded-[calc(var(--radius)-3px)]"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.14}",
+        "$extensions": {
+          "looloo.tailwind": "[&>svg]:size-3.5",
+          "looloo.legacy": "0.875rem"
+        }
+      }
+    },
+    "kbd": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "0.3125rem",
+        "$description": "rounded-[calc(var(--radius)-5px)] = 5px at the kit default — nested-radius offset.",
+        "$extensions": {
+          "looloo.tailwind": "[&>kbd]:rounded-[calc(var(--radius)-5px)]"
+        }
+      }
+    },
+    "textarea": {
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "py-2"
+        }
+      }
+    }
+  }
+}

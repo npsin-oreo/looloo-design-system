@@ -1,0 +1,75 @@
+{
+  "$description": "Captured 1:1 from components/ui/label/label.tsx. Single-slot component — no variants.",
+  "label": {
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$extensions": {
+        "looloo.tailwind": "gap-2"
+      }
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.sm}",
+      "$extensions": {
+        "looloo.tailwind": "text-sm"
+      }
+    },
+    "fontWeight": {
+      "$type": "fontWeight",
+      "$value": "{font.weight.medium}",
+      "$extensions": {
+        "looloo.tailwind": "font-medium"
+      }
+    },
+    "lineHeight": {
+      "$type": "number",
+      "$value": 1,
+      "$description": "leading-none — unitless, no leading token matches.",
+      "$extensions": {
+        "looloo.tailwind": "leading-none"
+      }
+    },
+    "disabledOpacity": {
+      "$type": "number",
+      "$value": "{opacity.50}",
+      "$extensions": {
+        "looloo.tailwind": "peer-disabled:opacity-50"
+      }
+    },
+    "optionalFontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.xs}",
+      "$description": "The optional marker reads smaller and lighter than the label itself.",
+      "$extensions": {
+        "looloo.tailwind": "text-(length:--label-optional-font-size)"
+      }
+    },
+    "color": {
+      "required": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$description": "The required asterisk. Red because it rides the same 'you must deal with this' channel as an error — it is a signal, not decoration.",
+        "$extensions": {
+          "looloo.tailwind": "text-(--label-color-required)"
+        }
+      },
+      "optional": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$description": "The optional marker recedes — it is metadata about the field, not the label itself.",
+        "$extensions": {
+          "looloo.tailwind": "text-(--label-color-optional)"
+        }
+      }
+    },
+    "requirementGap": {
+      "$type": "dimension",
+      "$value": "{space.1}",
+      "$description": "Gap between the label text and its required/optional marker — 4px, HALF of label.gap (8px). The marker is part of the label, not a separate item beside it; label.gap still spaces real siblings (a slotted icon).",
+      "$extensions": {
+        "looloo.tailwind": "gap-(--label-requirement-gap)"
+      }
+    }
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "$description": "Captured 1:1 from components/ui/menubar/menubar.tsx. The bar itself is a control-height container; menus reuse the dropdown-menu item geometry. Menubar labels are text-sm (dropdown/context use text-xs).",
+  "menubar": {
+    "bar": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$extensions": {
+          "looloo.tailwind": "h-8"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.0-5}",
+        "$extensions": {
+          "looloo.tailwind": "gap-0.5"
+        }
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$description": "4px. FIX 2026-07-14: upstream ships p-[3px] — a literal that lands on no step of the space scale (2 · 4 · 6 · 8). Same fix as the Tabs list: both the code and this token moved to 4px so the value is expressible as a token at all.",
+        "$extensions": {
+          "looloo.tailwind": "p-1"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.lg}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-lg"
+        }
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "border"
+        }
+      }
+    },
+    "trigger": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.sm}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-sm"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-1.5"
+        }
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.0-5}",
+        "$description": "2px. FIX 2026-07-14: was py-[2px] — an arbitrary value for a number that was ALREADY on the scale (space.0-5). Nothing changes visually; it just stops being a literal.",
+        "$extensions": {
+          "looloo.tailwind": "py-0.5"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      },
+      "openBackground": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "aria-expanded:bg-muted"
+        }
+      },
+      "hoverBackground": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$description": "A menu name on hover. The SAME fill as open (aria-expanded:bg-muted) — hovering a menubar name already previews what clicking does.",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-muted"
+        }
+      }
+    },
+    "content": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.lg}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-lg"
+        }
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "p-1"
+        }
+      },
+      "minWidth": {
+        "$type": "dimension",
+        "$value": "{space.36}",
+        "$extensions": {
+          "looloo.tailwind": "min-w-36"
+        }
+      },
+      "ringWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "ring-1"
+        }
+      },
+      "shadow": {
+        "$type": "shadow",
+        "$value": "{shadow.md}",
+        "$extensions": {
+          "looloo.tailwind": "shadow-md"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.popover}",
+        "$extensions": {
+          "looloo.tailwind": "bg-popover"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.popover-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-popover-foreground"
+        }
+      }
+    },
+    "subContent": {
+      "minWidth": {
+        "$type": "dimension",
+        "$value": "{space.32}",
+        "$extensions": {
+          "looloo.tailwind": "min-w-32"
+        }
+      },
+      "shadow": {
+        "$type": "shadow",
+        "$value": "{shadow.lg}",
+        "$extensions": {
+          "looloo.tailwind": "shadow-lg"
+        }
+      }
+    },
+    "item": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "calc(var(--menubar-content-radius) - var(--menubar-content-padding))",
+        "$description": "CONCENTRIC: --menubar-content-radius (10) − --menubar-content-padding (4) = 6px. A nested corner must be the outer radius MINUS the padding, or the gap at the corner stops matching the gap along the edge and the inner box looks pinched. Derived, not picked off the scale.",
+        "$extensions": {
+          "looloo.tailwind": "rounded-(--menubar-item-radius)",
+          "looloo.previous": "{radius.ui.md}"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-1.5"
+        }
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "py-1"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1.5"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "[&_svg]:size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "insetPaddingLeft": {
+        "$type": "dimension",
+        "$value": "{space.7}",
+        "$description": "Checkbox/radio items sit at pl-7 with the indicator absolutely placed at left-1.5.",
+        "$extensions": {
+          "looloo.tailwind": "pl-7"
+        }
+      },
+      "indicatorInset": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "left-1.5"
+        }
+      },
+      "indicatorSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "disabledOpacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "data-disabled:opacity-50"
+        }
+      },
+      "focusBackground": {
+        "$type": "color",
+        "$value": "{color.accent}",
+        "$extensions": {
+          "looloo.tailwind": "focus:bg-accent"
+        }
+      },
+      "focusForeground": {
+        "$type": "color",
+        "$value": "{color.accent-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "focus:text-accent-foreground"
+        }
+      },
+      "destructiveForeground": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$description": "A row you cannot undo — red text at rest, not a red row.",
+        "$extensions": {
+          "looloo.tailwind": "data-[variant=destructive]:text-destructive"
+        }
+      },
+      "destructiveFocusSurface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
+        "$description": "Destructive row on focus — a 10% red wash. Alpha-baked; recompute if destructive moves.",
+        "$extensions": {
+          "looloo.tailwind": "data-[variant=destructive]:focus:bg-destructive/10"
+        }
+      }
+    },
+    "label": {
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-1.5"
+        }
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "py-1"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$description": "text-sm here — dropdown-menu/context-menu labels are text-xs.",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      }
+    },
+    "separator": {
+      "marginY": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "my-1"
+        }
+      },
+      "bleedX": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$description": "Applied as a NEGATIVE margin (-mx-1).",
+        "$extensions": {
+          "looloo.tailwind": "-mx-1"
+        }
+      },
+      "thickness": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "h-px"
+        }
+      }
+    }
+  }
+}

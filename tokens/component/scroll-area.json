@@ -1,0 +1,39 @@
+{
+  "$description": "Captured 1:1 from components/ui/scroll-area/scroll-area.tsx.",
+  "scroll-area": {
+    "scrollbar": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$description": "8px. Thin enough to stay out of the way, thick enough to grab — the OS scrollbar it replaces is the thing being fixed, not imitated.",
+        "$extensions": {
+          "looloo.tailwind": "w-2 / h-2"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.full}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-full"
+        }
+      }
+    },
+    "thumb": {
+      "color": {
+        "$type": "color",
+        "$value": "{color.border}",
+        "$description": "The thumb is the only visible part at rest. It is border-grey, not brand: a scrollbar is furniture, and a teal scrollbar would compete with the content it is helping you read.",
+        "$extensions": {
+          "looloo.tailwind": "bg-border"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.full}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-full"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "$description": "Captured 1:1 from components/ui/item/item.tsx. A generic row: media + content + actions. Nothing here has its own colour — an Item takes the surface it is dropped on.",
+  "item": {
+    "padding": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$extensions": {
+        "looloo.tailwind": "p-2"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.4}",
+      "$description": "Between media, content and actions. Wide (16px) on purpose: the three regions are different KINDS of thing, and a tight gap makes them read as one run-on line.",
+      "$extensions": {
+        "looloo.tailwind": "gap-4"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.lg}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-lg"
+      }
+    },
+    "media": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.40}",
+        "$extensions": {
+          "looloo.tailwind": "size-10"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.sm}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-sm"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "size-4"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted"
+        }
+      }
+    },
+    "content": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$description": "Title → description.",
+        "$extensions": {
+          "looloo.tailwind": "gap-1"
+        }
+      },
+      "titleFontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      },
+      "titleFontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "descriptionFontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      }
+    },
+    "actions": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        }
+      }
+    },
+    "hoverBackground": {
+      "$type": "color",
+      "$value": "{color.muted}",
+      "$extensions": {
+        "looloo.tailwind": "hover:bg-muted"
+      }
+    }
+  }
+}

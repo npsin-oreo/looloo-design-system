@@ -2,9 +2,145 @@
   "$description": "DRAFT — captured from components/ui/switch.tsx (thumb sizes per data-size variant; track dimensions are derived in source and not tokenized yet). Not consumed at runtime yet (Phase 4).",
   "switch": {
     "thumbSize": {
-      "sm": { "$type": "dimension", "$value": "0.75rem", "$extensions": { "looloo.tailwind": "size-3" } },
-      "md": { "$type": "dimension", "$value": "1rem", "$description": "DEFAULT size.", "$extensions": { "looloo.tailwind": "size-4" } }
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.12}",
+        "$extensions": {
+          "looloo.tailwind": "size-3",
+          "looloo.legacy": "0.75rem"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$description": "DEFAULT size.",
+        "$extensions": {
+          "looloo.tailwind": "size-4",
+          "looloo.legacy": "1rem"
+        }
+      }
     },
-    "radius": { "$type": "dimension", "$value": "{radius.full}", "$extensions": { "looloo.tailwind": "rounded-full" } }
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.full}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-full"
+      }
+    },
+    "color": {
+      "track-background": {
+        "$type": "color",
+        "$value": "{color.input}",
+        "$description": "Unchecked track.",
+        "$extensions": {
+          "looloo.tailwind": "bg-input"
+        }
+      },
+      "track-checked-background": {
+        "$type": "color",
+        "$value": "{color.primary}",
+        "$extensions": {
+          "looloo.tailwind": "data-[state=checked]:bg-primary"
+        }
+      },
+      "thumb-background": {
+        "$type": "color",
+        "$value": "{color.background}",
+        "$description": "The thumb is ALWAYS background (white) in light mode — checked or not. Only dark mode swaps it (see thumb-dark-*).",
+        "$extensions": {
+          "looloo.tailwind": "bg-background"
+        }
+      },
+      "thumb-checked-background": {
+        "$type": "color",
+        "$value": "{color.background}",
+        "$description": "Same as unchecked in light mode. CORRECTION 2026-07-13: this used to say {color.primary-foreground}, which is the DARK-mode rule (dark:data-checked:bg-primary-foreground) — with a light teal primary that made the thumb near-black. The source was right; the token was wrong.",
+        "$extensions": {
+          "looloo.tailwind": "bg-background"
+        }
+      },
+      "focus-border": {
+        "$type": "color",
+        "$value": "{color.ring}",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:border-ring"
+        }
+      },
+      "focus-ring": {
+        "$type": "color",
+        "$value": "{color.ring}",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:ring-ring/50"
+        }
+      },
+      "focus-ring-opacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "ring-ring/50"
+        }
+      },
+      "invalid-border": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$extensions": {
+          "looloo.tailwind": "aria-invalid:border-destructive"
+        }
+      },
+      "thumb-dark-unchecked-background": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$description": "Dark mode only.",
+        "$extensions": {
+          "looloo.tailwind": "dark:data-unchecked:bg-foreground"
+        }
+      },
+      "thumb-dark-checked-background": {
+        "$type": "color",
+        "$value": "{color.primary-foreground}",
+        "$description": "Dark mode only.",
+        "$extensions": {
+          "looloo.tailwind": "dark:data-checked:bg-primary-foreground"
+        }
+      }
+    },
+    "track": {
+      "width": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.24}",
+          "$description": "24px.",
+          "$extensions": {
+            "looloo.tailwind": "w-(--switch-track-width-sm)"
+          }
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{size.32}",
+          "$description": "32px. DEFAULT.",
+          "$extensions": {
+            "looloo.tailwind": "w-(--switch-track-width-md)"
+          }
+        }
+      },
+      "height": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.14}",
+          "$description": "Thumb 12 + a 1px gap each side.",
+          "$extensions": {
+            "looloo.tailwind": "h-(--switch-track-height-sm)"
+          }
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{size.18}",
+          "$description": "Thumb 16 + a 1px gap each side. FIX 2026-07-13: was h-[18.4px] — an arbitrary value with no derivation behind it. The thumb is 16 and the sm track keeps a 1px gap on each side (12 + 1 + 1 = 14), so md is 16 + 1 + 1 = 18. A fractional px cannot land on the size scale, renders soft on non-retina, and makes the two sizes follow different rules for no reason.",
+          "$extensions": {
+            "looloo.tailwind": "h-(--switch-track-height-md)"
+          }
+        }
+      }
+    }
   }
 }

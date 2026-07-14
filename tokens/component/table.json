@@ -1,10 +1,165 @@
 {
   "$description": "DRAFT — captured from components/ui/table.tsx. Not consumed at runtime yet (Phase 4). rowHeight is the density-mode hook (compact/comfortable).",
   "table": {
-    "headerHeight": { "$type": "dimension", "$value": "{size.control.xl}", "$extensions": { "looloo.tailwind": "h-10" } },
-    "cellPadding": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "p-2" } },
-    "headerPaddingX": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "px-2" } },
-    "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } },
-    "headerFontWeight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$extensions": { "looloo.tailwind": "font-medium" } }
+    "headerHeight": {
+      "$type": "dimension",
+      "$value": "{size.40}",
+      "$extensions": {
+        "looloo.tailwind": "h-10"
+      },
+      "$description": "Table header is a row, not a touch target — pinned to 40px when size.control.xl moved to 44."
+    },
+    "cellPadding": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$extensions": {
+        "looloo.tailwind": "p-2"
+      }
+    },
+    "headerPaddingX": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$extensions": {
+        "looloo.tailwind": "px-2"
+      }
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.sm}",
+      "$extensions": {
+        "looloo.tailwind": "text-sm"
+      }
+    },
+    "headerFontWeight": {
+      "$type": "fontWeight",
+      "$value": "{font.weight.medium}",
+      "$description": "The header is the only row in the table that is not data — weight is what says so.",
+      "$extensions": {
+        "looloo.tailwind": "font-medium"
+      }
+    },
+    "color": {
+      "header-background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted"
+        }
+      },
+      "header-foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      },
+      "row-hover-background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-muted/50"
+        }
+      },
+      "row-hover-opacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-muted/50"
+        }
+      },
+      "border-color": {
+        "$type": "color",
+        "$value": "{color.border}",
+        "$extensions": {
+          "looloo.tailwind": "border-b"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-foreground"
+        }
+      },
+      "caption-foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      },
+      "row-selected-background": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--primary) 10%, transparent)",
+        "$description": "A selected row is a 10% BRAND wash — not muted grey. Selection is a decision the user made; hover is just where the mouse happens to be, so the two must not share a colour. 10% is enough to see across a long table and light enough to keep the text at full contrast.",
+        "$extensions": {
+          "looloo.tailwind": "data-[state=selected]:bg-(--table-color-row-selected-background)"
+        }
+      },
+      "row-hover-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--muted) 50%, transparent)",
+        "$description": "Hover — half-strength muted. Alpha-baked in Figma; recompute if --muted moves.",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-muted/50"
+        }
+      },
+      "footer-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--muted) 50%, transparent)",
+        "$description": "The totals row. Same 50% wash as hover so it reads as part of the table, not as a second header.",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted/50"
+        }
+      },
+      "cell-control-background": {
+        "$type": "color",
+        "$value": "{color.background}",
+        "$description": "Inputs and selects are bg-transparent by default, which is right on a page but WRONG in a table: the moment a row is hovered or selected, the field takes on the row wash and stops reading as a field — the border is left floating on a tinted block. Inside a cell they get an opaque background so the control stays a control no matter what the row is doing.",
+        "$extensions": {
+          "looloo.tailwind": "*:data-[slot=input]:bg-(--table-color-cell-control-background)"
+        }
+      }
+    },
+    "rowBorderWidth": {
+      "$type": "dimension",
+      "$value": "{border.width.default}",
+      "$description": "Every row carries its own bottom border — the LAST one drops it, so the table does not end in a line that looks like a broken row.",
+      "$extensions": {
+        "looloo.tailwind": "border-b · [&_tr:last-child]:border-0"
+      }
+    },
+    "caption": {
+      "marginTop": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "mt-4"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      }
+    },
+    "sortIconSize": {
+      "$type": "dimension",
+      "$value": "{size.16}",
+      "$description": "The sort affordance. Present only on columns that CAN be sorted — a sort icon on every column teaches people it means nothing.",
+      "$extensions": {
+        "looloo.tailwind": "size-4"
+      }
+    },
+    "cellMinHeight": {
+      "$type": "dimension",
+      "$value": "{size.48}",
+      "$description": "Every cell is at least 48px tall, whatever it holds. Without this the row height follows its tallest cell — a text cell is 32, a cell with an input is 44, one with a two-line value is 52 — and the rows come out ragged, so the eye has to re-find every column on the way down. 48 also clears the touch floor for the controls that live in cells.",
+      "$extensions": {
+        "looloo.tailwind": "min-h-(--table-cell-min-height)"
+      }
+    }
   }
 }

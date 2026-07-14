@@ -2,16 +2,70 @@
   "$description": "WIRED — consumed by components/ui/icon (<Icon size=…> → size-(--icon-size-*)). md (1rem) matches the [&_svg]:size-4 baseline every component chrome already uses; xs/sm/lg match the size-3/3.5/5 steps in button variants.",
   "icon": {
     "size": {
-      "xs": { "$type": "dimension", "$value": "0.75rem", "$extensions": { "looloo.tailwind": "size-3" } },
-      "sm": { "$type": "dimension", "$value": "0.875rem", "$extensions": { "looloo.tailwind": "size-3.5" } },
-      "md": { "$type": "dimension", "$value": "1rem", "$description": "DEFAULT — the ubiquitous size-4 chrome baseline.", "$extensions": { "looloo.tailwind": "size-4" } },
-      "lg": { "$type": "dimension", "$value": "1.25rem", "$extensions": { "looloo.tailwind": "size-5" } }
+      "xs": {
+        "$type": "dimension",
+        "$value": "{size.12}",
+        "$extensions": {
+          "looloo.tailwind": "size-3",
+          "looloo.legacy": "0.75rem"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.14}",
+        "$extensions": {
+          "looloo.tailwind": "size-3.5",
+          "looloo.legacy": "0.875rem"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$description": "DEFAULT — the ubiquitous size-4 chrome baseline.",
+        "$extensions": {
+          "looloo.tailwind": "size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{size.20}",
+        "$extensions": {
+          "looloo.tailwind": "size-5",
+          "looloo.legacy": "1.25rem"
+        }
+      }
     },
     "strokeWidth": {
-      "$type": "number",
-      "$value": 2,
-      "$description": "lucide default. Source of truth for icons/custom/ geometry too (legacy Figma export stroke-width/Mode 1 stroke-2).",
-      "$extensions": { "looloo.source": "stroke-width/Mode 1.stroke-2" }
+      "$description": "ONE stroke width for every icon size (1px). Figma cannot vary this per size: an instance-swap brings the glyph in with its MASTER stroke, so any per-size override dies the moment someone swaps the glyph. Binding the master to a single 1px value is the only way the kit can GUARANTEE the weight. The browser still scales strokes with the viewBox, which is why CSS never reads these.",
+      "xs": {
+        "$type": "dimension",
+        "$value": "1px",
+        "$description": "12px icon → 1px."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "1px",
+        "$description": "14px icon → 1px."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "1px",
+        "$description": "16px icon → 1px. This is the value BOUND on every glyph master in Figma."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "1px",
+        "$description": "20px icon → 1px. Was 2px; that override could not survive a glyph swap, so it was dropped in favour of a weight the system can actually enforce."
+      },
+      "base": {
+        "$type": "dimension",
+        "$value": "2",
+        "$description": "lucide default (stroke-width in a 24 viewBox). Source of truth for icons/custom/ geometry.",
+        "$extensions": {
+          "looloo.legacy": "stroke-width/Mode 1 stroke-2"
+        }
+      }
     }
   }
 }

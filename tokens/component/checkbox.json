@@ -1,7 +1,96 @@
 {
   "$description": "DRAFT — captured from components/ui/checkbox.tsx. Not consumed at runtime yet (Phase 4).",
   "checkbox": {
-    "size": { "$type": "dimension", "$value": "1rem", "$extensions": { "looloo.tailwind": "size-4" } },
-    "indicatorSize": { "$type": "dimension", "$value": "0.875rem", "$extensions": { "looloo.tailwind": "size-3.5" } }
+    "size": {
+      "$type": "dimension",
+      "$value": "{size.16}",
+      "$extensions": {
+        "looloo.tailwind": "size-4",
+        "looloo.legacy": "1rem"
+      }
+    },
+    "indicatorSize": {
+      "$type": "dimension",
+      "$value": "{size.14}",
+      "$extensions": {
+        "looloo.tailwind": "size-3.5",
+        "looloo.legacy": "0.875rem"
+      }
+    },
+    "color": {
+      "border": {
+        "$type": "color",
+        "$value": "{color.input}",
+        "$extensions": {
+          "looloo.tailwind": "border-input"
+        }
+      },
+      "checked-background": {
+        "$type": "color",
+        "$value": "{color.primary}",
+        "$extensions": {
+          "looloo.tailwind": "data-[state=checked]:bg-primary"
+        }
+      },
+      "checked-border": {
+        "$type": "color",
+        "$value": "{color.primary}",
+        "$extensions": {
+          "looloo.tailwind": "data-[state=checked]:border-primary"
+        }
+      },
+      "indicator-foreground": {
+        "$type": "color",
+        "$value": "{color.white}",
+        "$description": "The tick is WHITE, always. DESIGN DECISION 2026-07-13: it used to be {color.primary-foreground}, which flips to near-black whenever the brand primary is light (our teal) — a black tick on a teal box. The indicator must stay white regardless of brand.",
+        "$extensions": {
+          "looloo.tailwind": "text-(--checkbox-color-indicator-foreground)"
+        }
+      },
+      "focus-border": {
+        "$type": "color",
+        "$value": "{color.ring}",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:border-ring"
+        }
+      },
+      "focus-ring": {
+        "$type": "color",
+        "$value": "{color.ring}",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:ring-ring/50"
+        }
+      },
+      "focus-ring-opacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "ring-ring/50"
+        }
+      },
+      "invalid-border": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$extensions": {
+          "looloo.tailwind": "aria-invalid:border-destructive"
+        }
+      },
+      "invalid-background": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$description": "DESIGN DECISION 2026-07-13: when a CHECKED control is invalid, the box is filled with destructive — not primary. A teal (checked) box wearing a red (error) ring sends two conflicting signals at once; error wins, and the tick stays white so the checked state is still legible.",
+        "$extensions": {
+          "looloo.tailwind": "aria-invalid:data-[state=checked]:bg-(--checkbox-color-invalid-background)"
+        }
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "0.25rem",
+      "$description": "Literal in source — 4px, below radius.ui.sm (6px).",
+      "$extensions": {
+        "looloo.tailwind": "rounded-[4px]"
+      }
+    }
   }
 }

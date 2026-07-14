@@ -1,0 +1,32 @@
+{
+  "$description": "Control heights. These are a DECISION, not a raw value — 'a default control is 32px tall' is a design call, so it sits in the semantic layer and aliases the primitive box scale (which, per the v2 spec, may not alias anything itself). Measured from the actual radix-nova cva variants in components/ui/button.tsx + input.tsx (default/md = h-8). Density modes (mode/compact, mode/comfortable) override these paths, which is why every control in the library sizes off size.control.* rather than size.* directly.",
+  "size": {
+    "control": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "{size.24}",
+        "$description": "h-6 — button size xs / icon-xs, avatar sm."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.28}",
+        "$description": "h-7 — button size sm, input size sm, toggle sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{size.32}",
+        "$description": "h-8 — button/input DEFAULT, select trigger, tabs list, avatar default."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{size.36}",
+        "$description": "h-9 — button size lg, combobox trigger min-height."
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{size.44}",
+        "$description": "44px — the mobile touch-target floor (iOS HIG 44pt / Material 48dp). DESIGN DECISION 2026-07-13: xl is the size you reach for on touch, so it is no longer the measured h-10 (40px) — it is 44. Consumers that are var-driven (button, input, select trigger, icon-button) pick this up with no code change. Boxes that merely BORROWED this step and are not touch targets (avatar lg, alert-dialog media, table header row) were re-pointed to {size.40} so they did not silently grow."
+      }
+    }
+  }
+}

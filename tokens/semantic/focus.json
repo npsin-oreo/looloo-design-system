@@ -1,16 +1,23 @@
 {
-  "$description": "Focus-ring system captured 1:1 from current component classes (focus-visible:ring-3 focus-visible:ring-ring/50). Hand-owned. Not consumed at runtime yet.",
+  "$description": "The focus ring. Geometry captured 1:1 from the component classes (focus-visible:ring-3 focus-visible:ring-ring/50). DESIGN DECISION 2026-07-13: the ring is the BRAND color — color.ring now resolves to the primary teal (brand.config ring = brand.secondary.300), so focus reads as 'the product is talking to you', not as a grey system artifact. focus.ring.paint is the single token the Figma 'Focus ring' effect style binds its color to. Hand-owned.",
   "focus": {
     "ring": {
-      "color": {
+      "paint": {
         "$type": "color",
-        "$value": "{color.ring}",
-        "$extensions": { "looloo.tailwind": "focus-visible:ring-ring" }
+        "$value": "color-mix(in oklch, var(--ring) 50%, transparent)",
+        "$description": "The ring's actual paint: color.ring at 50% (ring-ring/50). Kept as a live color-mix so it follows --ring through a brand swap — a variable alias cannot carry the 50% alpha, which is why this token exists instead of pointing straight at {color.ring}.",
+        "$extensions": { "looloo.tailwind": "ring-ring/50" }
       },
       "width": {
         "$type": "dimension",
         "$value": "3px",
         "$extensions": { "looloo.tailwind": "focus-visible:ring-3" }
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": "4px",
+        "$description": "Softens the ring's outer edge. Tailwind's ring-* utility cannot blur, so on 2026-07-13 every focus ring in components/ui was swapped from focus-visible:ring-3 + ring-ring/50 to focus-visible:shadow-(--focus-shadow) — one token, one look, and it now matches the Figma 'Focus ring' effect exactly.",
+        "$extensions": { "looloo.tailwind": "focus-visible:shadow-(--focus-shadow)" }
       },
       "opacity": {
         "$type": "number",
@@ -19,10 +26,23 @@
         "$extensions": { "looloo.tailwind": "ring-ring/50" }
       }
     },
+    "invalid": {
+      "paint": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--destructive) 20%, transparent)",
+        "$description": "The invalid ring's paint: color.destructive at 20% (aria-invalid:ring-destructive/20). Invalid is destructive — it is the shadcn 'error emphasis' role, not a status/* colour.",
+        "$extensions": { "looloo.tailwind": "aria-invalid:ring-destructive/20" }
+      },
+      "shadow": {
+        "$type": "shadow",
+        "$value": "0 0 4px 3px color-mix(in oklch, var(--destructive) 20%, transparent)",
+        "$description": "The invalid ring — same geometry as focus.shadow (3px spread + 4px blur), destructive instead of ring. DESIGN DECISION 2026-07-13: invalid used to be a hard-edged 3px ring while focus was blurred; one system, one ring shape. NOTE: the old dark-mode bump to 40% was dropped — one value in both modes."
+      }
+    },
     "shadow": {
       "$type": "shadow",
-      "$value": "{shadow.focus}",
-      "$description": "Figma kit 'Focus ring' effect style (--shadow-focus in globals.css)."
+      "$value": "0 0 4px 3px color-mix(in oklch, var(--ring) 50%, transparent)",
+      "$description": "The Figma 'Focus ring' effect style, expressed as CSS: 3px spread + 4px blur, brand primary at 50%. Follows --ring — it is no longer the kit's frozen grey rgb(161 161 161 / 0.5)."
     }
   }
 }

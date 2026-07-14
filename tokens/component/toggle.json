@@ -1,0 +1,146 @@
+{
+  "$description": "Captured 1:1 from the cva in components/ui/toggle/toggle.tsx. Sizes sm/default/lg (default = h-8). Variants default/outline differ only by border + background.",
+  "toggle": {
+    "height": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.control.sm}",
+        "$extensions": {
+          "looloo.tailwind": "h-7"
+        }
+      },
+      "default": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$description": "DEFAULT size.",
+        "$extensions": {
+          "looloo.tailwind": "h-8"
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{size.control.lg}",
+        "$extensions": {
+          "looloo.tailwind": "h-9"
+        }
+      }
+    },
+    "minWidth": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.control.sm}",
+        "$extensions": {
+          "looloo.tailwind": "min-w-7"
+        }
+      },
+      "default": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$extensions": {
+          "looloo.tailwind": "min-w-8"
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{size.control.lg}",
+        "$extensions": {
+          "looloo.tailwind": "min-w-9"
+        }
+      }
+    },
+    "paddingX": {
+      "$type": "dimension",
+      "$value": "{space.2-5}",
+      "$description": "Same at every size; tightened to space.2 / space.1-5 when an inline icon is present.",
+      "$extensions": {
+        "looloo.tailwind": "px-2.5"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.1}",
+      "$extensions": {
+        "looloo.tailwind": "gap-1"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.lg}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-lg"
+      }
+    },
+    "fontSize": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$description": "12px. FIX 2026-07-14: was text-[0.8rem] (12.8px) — an arbitrary value that exists on no type scale and renders on a half-pixel. 12 is the xs step we already have.",
+        "$extensions": {
+          "looloo.tailwind": "text-xs"
+        }
+      },
+      "default": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      }
+    },
+    "fontWeight": {
+      "$type": "fontWeight",
+      "$value": "{font.weight.medium}",
+      "$extensions": {
+        "looloo.tailwind": "font-medium"
+      }
+    },
+    "iconSize": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.14}",
+        "$extensions": {
+          "looloo.tailwind": "[&_svg]:size-3.5",
+          "looloo.legacy": "0.875rem"
+        }
+      },
+      "default": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "[&_svg]:size-4",
+          "looloo.legacy": "1rem"
+        }
+      }
+    },
+    "borderWidth": {
+      "$type": "dimension",
+      "$value": "{border.width.default}",
+      "$description": "Variant outline only.",
+      "$extensions": {
+        "looloo.tailwind": "border"
+      }
+    },
+    "focusRingWidth": {
+      "$type": "dimension",
+      "$value": "{focus.ring.width}",
+      "$extensions": {
+        "looloo.tailwind": "focus-visible:ring-[3px]"
+      }
+    },
+    "disabledOpacity": {
+      "$type": "number",
+      "$value": "{opacity.50}",
+      "$extensions": {
+        "looloo.tailwind": "disabled:opacity-50"
+      }
+    },
+    "activeBackground": {
+      "$type": "color",
+      "$value": "{color.muted}",
+      "$description": "data-[state=on] / aria-pressed and hover.",
+      "$extensions": {
+        "looloo.tailwind": "data-[state=on]:bg-muted"
+      }
+    }
+  }
+}

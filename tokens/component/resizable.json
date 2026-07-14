@@ -1,0 +1,52 @@
+{
+  "$description": "Captured 1:1 from components/ui/resizable/resizable.tsx.",
+  "resizable": {
+    "handle": {
+      "thickness": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$description": "The handle IS a 1px rule — the hit area around it is much bigger than the line you can see, which is why it works at all.",
+        "$extensions": {
+          "looloo.tailwind": "w-px / h-px"
+        }
+      },
+      "hitArea": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$description": "The invisible grab zone. A 1px line you must hit exactly is a line nobody can drag.",
+        "$extensions": {
+          "looloo.tailwind": "after:w-1 / after:h-1"
+        }
+      },
+      "gripWidth": {
+        "$type": "dimension",
+        "$value": "{space.3}",
+        "$description": "The optional grip dots.",
+        "$extensions": {
+          "looloo.tailwind": "w-3"
+        }
+      },
+      "gripHeight": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "h-4"
+        }
+      },
+      "gripRadius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.sm}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-sm"
+        }
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{color.border}",
+        "$extensions": {
+          "looloo.tailwind": "bg-border"
+        }
+      }
+    }
+  }
+}

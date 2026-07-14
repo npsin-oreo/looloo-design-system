@@ -1,13 +1,262 @@
 {
   "$description": "DRAFT — captured from components/ui/badge.tsx. Not consumed at runtime yet (Phase 4).",
   "badge": {
-    "height": { "$type": "dimension", "$value": "1.25rem", "$extensions": { "looloo.tailwind": "h-5" } },
-    "paddingX": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "px-2" } },
-    "paddingY": { "$type": "dimension", "$value": "{space.0-5}", "$extensions": { "looloo.tailwind": "py-0.5" } },
-    "gap": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "gap-1" } },
-    "radius": { "$type": "dimension", "$value": "1.625rem", "$description": "rounded-4xl = calc(var(--radius) * 2.6) — pill-like.", "$extensions": { "looloo.tailwind": "rounded-4xl" } },
-    "fontSize": { "$type": "dimension", "$value": "{font.size.xs}", "$extensions": { "looloo.tailwind": "text-xs" } },
-    "fontWeight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$extensions": { "looloo.tailwind": "font-medium" } },
-    "iconSize": { "$type": "dimension", "$value": "0.75rem", "$extensions": { "looloo.tailwind": "size-3" } }
+    "height": {
+      "$type": "dimension",
+      "$value": "{size.20}",
+      "$extensions": {
+        "looloo.tailwind": "h-5",
+        "looloo.legacy": "1.25rem"
+      }
+    },
+    "paddingX": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$extensions": {
+        "looloo.tailwind": "px-2"
+      }
+    },
+    "paddingY": {
+      "$type": "dimension",
+      "$value": "{space.0-5}",
+      "$extensions": {
+        "looloo.tailwind": "py-0.5"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.1}",
+      "$extensions": {
+        "looloo.tailwind": "gap-1"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.4xl}",
+      "$description": "rounded-4xl = calc(var(--radius) * 2.6) — pill-like.",
+      "$extensions": {
+        "looloo.tailwind": "rounded-4xl",
+        "looloo.legacy": "1.625rem"
+      }
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.xs}",
+      "$extensions": {
+        "looloo.tailwind": "text-xs"
+      }
+    },
+    "fontWeight": {
+      "$type": "fontWeight",
+      "$value": "{font.weight.medium}",
+      "$extensions": {
+        "looloo.tailwind": "font-medium"
+      }
+    },
+    "iconSize": {
+      "$type": "dimension",
+      "$value": "{size.12}",
+      "$extensions": {
+        "looloo.tailwind": "size-3",
+        "looloo.legacy": "0.75rem"
+      }
+    },
+    "color": {
+      "default-background": {
+        "$type": "color",
+        "$value": "{color.primary}",
+        "$extensions": {
+          "looloo.tailwind": "bg-primary"
+        }
+      },
+      "default-foreground": {
+        "$type": "color",
+        "$value": "{color.primary-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-primary-foreground"
+        }
+      },
+      "secondary-background": {
+        "$type": "color",
+        "$value": "{color.secondary}",
+        "$extensions": {
+          "looloo.tailwind": "bg-secondary"
+        }
+      },
+      "secondary-foreground": {
+        "$type": "color",
+        "$value": "{color.secondary-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-secondary-foreground"
+        }
+      },
+      "secondary-hover-opacity": {
+        "$type": "number",
+        "$value": "{interaction.hover-opacity}",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-secondary/80"
+        }
+      },
+      "muted-background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted"
+        }
+      },
+      "muted-foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      },
+      "outline-border": {
+        "$type": "color",
+        "$value": "{color.border}",
+        "$extensions": {
+          "looloo.tailwind": "border-border"
+        }
+      },
+      "outline-foreground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-foreground"
+        }
+      },
+      "destructive-background": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$extensions": {
+          "looloo.tailwind": "bg-destructive/10"
+        }
+      },
+      "destructive-background-opacity": {
+        "$type": "number",
+        "$value": "{opacity.10}",
+        "$extensions": {
+          "looloo.tailwind": "bg-destructive/10"
+        }
+      },
+      "destructive-hover-opacity": {
+        "$type": "number",
+        "$value": "{opacity.20}",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-destructive/20"
+        }
+      },
+      "destructive-foreground": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$extensions": {
+          "looloo.tailwind": "text-destructive"
+        }
+      },
+      "default-hover-surface": {
+        "$type": "color",
+        "$value": "{color.primary-hover}",
+        "$description": "Hover DARKENS to the 700 shade. It used to fade the fill to 80% (color-mix toward the page), which was fine when primary was near-black but drops white text on the teal brand to 3.38:1 — below AA. Alpha cannot be used on a mid-tone action colour.",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-(--primary-hover)"
+        }
+      },
+      "secondary-hover-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--secondary) 80%, transparent)",
+        "$description": "Hover fill as a real color.",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-secondary/80"
+        }
+      },
+      "destructive-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
+        "$description": "10% tint, not a solid red fill.",
+        "$extensions": {
+          "looloo.tailwind": "bg-destructive/10"
+        }
+      },
+      "destructive-hover-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--destructive) 20%, transparent)",
+        "$description": "Hover deepens the tint to 20%.",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-destructive/20"
+        }
+      },
+      "success-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--status-success) 10%, transparent)",
+        "$description": "Success badge = 10% tint + coloured text, same shape as destructive.",
+        "$extensions": {
+          "looloo.tailwind": "bg-(--badge-color-success-surface)"
+        }
+      },
+      "success-hover-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--status-success) 20%, transparent)",
+        "$description": "Hover deepens the tint to 20%.",
+        "$extensions": {
+          "looloo.tailwind": "[a]:hover:bg-(--badge-color-success-hover-surface)"
+        }
+      },
+      "success-foreground": {
+        "$type": "color",
+        "$value": "{status.success}",
+        "$description": "green.700 — 4.5:1+ as text.",
+        "$extensions": {
+          "looloo.tailwind": "text-(--badge-color-success-foreground)"
+        }
+      },
+      "warning-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--status-warning) 10%, transparent)",
+        "$description": "10% amber tint.",
+        "$extensions": {
+          "looloo.tailwind": "bg-(--badge-color-warning-surface)"
+        }
+      },
+      "warning-hover-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--status-warning) 20%, transparent)",
+        "$description": "Hover deepens the tint to 20%.",
+        "$extensions": {
+          "looloo.tailwind": "[a]:hover:bg-(--badge-color-warning-hover-surface)"
+        }
+      },
+      "warning-foreground": {
+        "$type": "color",
+        "$value": "{status.warning-text}",
+        "$description": "amber.700, NOT status.warning (amber.500) — the fill colour is only 2.1:1 as text.",
+        "$extensions": {
+          "looloo.tailwind": "text-(--badge-color-warning-foreground)"
+        }
+      },
+      "info-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--status-info) 10%, transparent)",
+        "$description": "10% blue tint.",
+        "$extensions": {
+          "looloo.tailwind": "bg-(--badge-color-info-surface)"
+        }
+      },
+      "info-hover-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--status-info) 20%, transparent)",
+        "$description": "Hover deepens the tint to 20%.",
+        "$extensions": {
+          "looloo.tailwind": "[a]:hover:bg-(--badge-color-info-hover-surface)"
+        }
+      },
+      "info-foreground": {
+        "$type": "color",
+        "$value": "{status.info}",
+        "$description": "blue.600 — 4.6:1 as text.",
+        "$extensions": {
+          "looloo.tailwind": "text-(--badge-color-info-foreground)"
+        }
+      }
+    }
   }
 }

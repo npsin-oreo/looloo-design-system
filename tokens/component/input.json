@@ -2,27 +2,212 @@
   "$description": "DRAFT — captured 1:1 from components/ui/input.tsx cva. Sizes present in source: sm / md (default) / xl. Not consumed at runtime yet (Phase 4).",
   "input": {
     "height": {
-      "sm": { "$type": "dimension", "$value": "{size.control.sm}", "$extensions": { "looloo.tailwind": "h-7" } },
-      "md": { "$type": "dimension", "$value": "{size.control.md}", "$description": "DEFAULT size.", "$extensions": { "looloo.tailwind": "h-8" } },
-      "xl": { "$type": "dimension", "$value": "{size.control.xl}", "$extensions": { "looloo.tailwind": "h-10" } }
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.control.sm}",
+        "$extensions": {
+          "looloo.tailwind": "h-7"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$description": "DEFAULT size.",
+        "$extensions": {
+          "looloo.tailwind": "h-8"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{size.control.xl}",
+        "$extensions": {
+          "looloo.tailwind": "h-10"
+        }
+      }
     },
     "paddingX": {
-      "sm": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "px-2.5" } },
-      "md": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "px-2.5" } },
-      "xl": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "px-4" } }
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "px-4"
+        }
+      }
     },
     "paddingY": {
-      "sm": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "py-1" } },
-      "md": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "py-1" } },
-      "xl": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "py-2" } }
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "py-1"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "py-1"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "py-2"
+        }
+      }
     },
-    "radius": { "$type": "dimension", "$value": "0.625rem", "$extensions": { "looloo.tailwind": "rounded-lg" } },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.lg}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-lg",
+        "looloo.legacy": "0.625rem"
+      }
+    },
     "fontSize": {
       "md": {
         "$type": "dimension",
         "$value": "{font.size.sm}",
         "$description": "Responsive in source: text-base on mobile (iOS zoom guard), md:text-sm on desktop.",
-        "$extensions": { "looloo.tailwind": "text-base md:text-sm" }
+        "$extensions": {
+          "looloo.tailwind": "text-base md:text-sm"
+        }
+      }
+    },
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.input}",
+        "$description": "Transparent in light mode; the input fill only shows in dark (30%).",
+        "$extensions": {
+          "looloo.tailwind": "dark:bg-input/30"
+        }
+      },
+      "background-opacity-dark": {
+        "$type": "number",
+        "$value": "{opacity.30}",
+        "$extensions": {
+          "looloo.tailwind": "dark:bg-input/30"
+        }
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.input}",
+        "$extensions": {
+          "looloo.tailwind": "border-input"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-foreground"
+        }
+      },
+      "placeholder": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "placeholder:text-muted-foreground"
+        }
+      },
+      "focus-border": {
+        "$type": "color",
+        "$value": "{color.ring}",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:border-ring"
+        }
+      },
+      "focus-ring": {
+        "$type": "color",
+        "$value": "{color.ring}",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:ring-ring/50"
+        }
+      },
+      "focus-ring-opacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "ring-ring/50"
+        }
+      },
+      "invalid-border": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$extensions": {
+          "looloo.tailwind": "aria-invalid:border-destructive"
+        }
+      },
+      "invalid-ring": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$extensions": {
+          "looloo.tailwind": "aria-invalid:ring-destructive/20"
+        }
+      },
+      "invalid-ring-opacity": {
+        "$type": "number",
+        "$value": "{opacity.20}",
+        "$extensions": {
+          "looloo.tailwind": "ring-destructive/20"
+        }
+      },
+      "disabled-background-opacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "disabled:bg-input/50"
+        }
+      },
+      "clear-button": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$description": "The X glyph; goes to foreground on hover.",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      }
+    },
+    "clearButton": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$description": "Clear (X) button — shown only when the field holds a value and `clearable` is set.",
+        "$extensions": {
+          "looloo.tailwind": "size-(--input-clear-button-size)"
+        }
+      },
+      "inset": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$description": "Distance from the right edge; the field also reserves this much trailing padding so text never runs under the button.",
+        "$extensions": {
+          "looloo.tailwind": "right-(--input-clear-button-inset)"
+        }
+      },
+      "reservedPadding": {
+        "$type": "dimension",
+        "$value": "{space.8}",
+        "$description": "Trailing padding while the clear button is present (icon 16 + insets).",
+        "$extensions": {
+          "looloo.tailwind": "pe-(--input-clear-button-reserved-padding)"
+        }
       }
     }
   }

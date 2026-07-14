@@ -1,0 +1,173 @@
+{
+  "$description": "Captured 1:1 from components/ui/chat-tool-calls/chat-tool-calls.tsx. A collapsible card per tool call; the status line is mono and colored by outcome (status.success / color.destructive).",
+  "chatToolCalls": {
+    "card": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.lg}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-lg"
+        }
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "border"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.card}",
+        "$extensions": {
+          "looloo.tailwind": "bg-card"
+        }
+      }
+    },
+    "trigger": {
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.3}",
+        "$extensions": {
+          "looloo.tailwind": "px-3"
+        }
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "py-2"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "focusRingWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.2}",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:ring-2"
+        }
+      }
+    },
+    "body": {
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.3}",
+        "$extensions": {
+          "looloo.tailwind": "px-3"
+        }
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "py-2"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      }
+    },
+    "result": {
+      "marginTop": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "mt-2"
+        }
+      },
+      "paddingTop": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "pt-2"
+        }
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "border-t"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "text-xs"
+        }
+      }
+    },
+    "status": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "text-xs"
+        }
+      },
+      "fontFamily": {
+        "$type": "fontFamily",
+        "$value": "{font.family.mono}",
+        "$extensions": {
+          "looloo.tailwind": "font-mono"
+        }
+      },
+      "successForeground": {
+        "$type": "color",
+        "$value": "{status.success}",
+        "$extensions": {
+          "looloo.tailwind": "text-[var(--status-success)]"
+        }
+      },
+      "errorForeground": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$extensions": {
+          "looloo.tailwind": "text-destructive"
+        }
+      }
+    },
+    "copyButton": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.sm}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-sm"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.14}",
+        "$extensions": {
+          "looloo.tailwind": "size-3.5",
+          "looloo.legacy": "0.875rem"
+        }
+      }
+    }
+  }
+}

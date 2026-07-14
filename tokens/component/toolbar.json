@@ -1,0 +1,160 @@
+{
+  "$description": "Captured 1:1 from components/ui/toolbar/toolbar.tsx. Buttons are control-height; the separator is a vertical rule shorter than the bar.",
+  "toolbar": {
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.md}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-md"
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{space.1}",
+      "$extensions": {
+        "looloo.tailwind": "p-1"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.1}",
+      "$extensions": {
+        "looloo.tailwind": "gap-1"
+      }
+    },
+    "borderWidth": {
+      "$type": "dimension",
+      "$value": "{border.width.default}",
+      "$extensions": {
+        "looloo.tailwind": "border"
+      }
+    },
+    "shadow": {
+      "$type": "shadow",
+      "$value": "{shadow.xs}",
+      "$extensions": {
+        "looloo.tailwind": "shadow-xs"
+      }
+    },
+    "background": {
+      "$type": "color",
+      "$value": "{color.background}",
+      "$extensions": {
+        "looloo.tailwind": "bg-background"
+      }
+    },
+    "button": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$extensions": {
+          "looloo.tailwind": "h-8"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "calc(var(--toolbar-radius) - var(--toolbar-padding))",
+        "$description": "CONCENTRIC: --toolbar-radius − --toolbar-padding = 4px. A nested corner must be the outer radius MINUS the padding, or the gap at the corner is not the gap along the edge — the inner box looks either pinched or rattling around inside its container. Was picked off the radius scale by eye; now it is derived.",
+        "$extensions": {
+          "looloo.tailwind": "rounded-(--toolbar-item-radius)",
+          "looloo.previous": "{radius.ui.sm}"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "[&_svg]:size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "focusRingWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.2}",
+        "$description": "focus-visible:ring-2 — 2px, not the 3px focus.ring.width the form controls use.",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:ring-2"
+        }
+      },
+      "disabledOpacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "disabled:opacity-50"
+        }
+      },
+      "hoverBackground": {
+        "$type": "color",
+        "$value": "{color.accent}",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-accent"
+        }
+      },
+      "hoverForeground": {
+        "$type": "color",
+        "$value": "{color.accent-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "hover:text-accent-foreground"
+        }
+      }
+    },
+    "separator": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.control.xs}",
+        "$extensions": {
+          "looloo.tailwind": "h-6"
+        }
+      },
+      "thickness": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "w-px"
+        }
+      },
+      "marginX": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "mx-1"
+        }
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{color.border}",
+        "$extensions": {
+          "looloo.tailwind": "bg-border"
+        }
+      }
+    }
+  }
+}

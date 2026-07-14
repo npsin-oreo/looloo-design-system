@@ -1,10 +1,68 @@
 {
   "$description": "DRAFT — captured from components/ui/sheet.tsx. Not consumed at runtime yet (Phase 4).",
   "sheet": {
-    "maxWidth": { "$type": "dimension", "$value": "24rem", "$extensions": { "looloo.tailwind": "max-w-sm" } },
-    "padding": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "p-4" } },
-    "gap": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "gap-4" } },
-    "shadow": { "$type": "shadow", "$value": "{shadow.lg}", "$extensions": { "looloo.tailwind": "shadow-lg" } },
-    "overlay": { "$type": "color", "$value": "{surface.overlay}" }
+    "maxWidth": {
+      "$type": "dimension",
+      "$value": "24rem",
+      "$extensions": {
+        "looloo.tailwind": "max-w-sm"
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{space.4}",
+      "$extensions": {
+        "looloo.tailwind": "p-4"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.4}",
+      "$extensions": {
+        "looloo.tailwind": "gap-4"
+      }
+    },
+    "shadow": {
+      "$type": "shadow",
+      "$value": "{shadow.lg}",
+      "$extensions": {
+        "looloo.tailwind": "shadow-lg"
+      }
+    },
+    "overlay": {
+      "$type": "color",
+      "$value": "{surface.overlay}"
+    },
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.popover}",
+        "$extensions": {
+          "looloo.tailwind": "bg-popover"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.popover-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-popover-foreground"
+        }
+      },
+      "description-foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border}",
+        "$description": "Only the edge the sheet is docked to.",
+        "$extensions": {
+          "looloo.tailwind": "border-l / border-r / border-t / border-b"
+        }
+      }
+    }
   }
 }

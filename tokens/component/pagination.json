@@ -1,0 +1,37 @@
+{
+  "$description": "Captured 1:1 from components/ui/pagination/pagination.tsx. Page links are Buttons (variant outline when active, ghost otherwise) — their height/padding/radius come from button.*; only the list, the prev/next nudge and the ellipsis are pagination's own.",
+  "pagination": {
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.0-5}",
+      "$extensions": {
+        "looloo.tailwind": "gap-0.5"
+      }
+    },
+    "prevNextInlinePadding": {
+      "$type": "dimension",
+      "$value": "{space.1-5}",
+      "$description": "Previous/Next tighten the icon-side padding (pl-1.5! / pr-1.5!) against the button default.",
+      "$extensions": {
+        "looloo.tailwind": "pl-1.5! / pr-1.5!"
+      }
+    },
+    "ellipsis": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$extensions": {
+          "looloo.tailwind": "size-8"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "[&_svg]:size-4",
+          "looloo.legacy": "1rem"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "$description": "Captured 1:1 from components/ui/thumbnail/thumbnail.tsx. Size comes from the caller (an aspectRatio prop drives the box) — the component only owns its frame.",
+  "thumbnail": {
+    "radius": { "$type": "dimension", "$value": "{radius.ui.md}", "$extensions": { "looloo.tailwind": "rounded-md" } },
+    "borderWidth": { "$type": "dimension", "$value": "{border.width.default}", "$extensions": { "looloo.tailwind": "border" } },
+    "background": { "$type": "color", "$value": "{color.muted}", "$description": "Shown behind the image and while the fallback is up.", "$extensions": { "looloo.tailwind": "bg-muted" } },
+    "foreground": { "$type": "color", "$value": "{color.muted-foreground}", "$extensions": { "looloo.tailwind": "text-muted-foreground" } }
+  }
+}

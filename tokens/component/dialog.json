@@ -1,13 +1,108 @@
 {
   "$description": "DRAFT — captured from components/ui/dialog.tsx. Not consumed at runtime yet (Phase 4).",
   "dialog": {
-    "maxWidth": { "$type": "dimension", "$value": "24rem", "$extensions": { "looloo.tailwind": "max-w-sm" } },
-    "mobileInset": { "$type": "dimension", "$value": "{space.4}", "$description": "Viewport clamp: max-w-[calc(100%-2rem)] = 1rem inset per side.", "$extensions": { "looloo.tailwind": "max-w-[calc(100%-2rem)]" } },
-    "radius": { "$type": "dimension", "$value": "0.875rem", "$extensions": { "looloo.tailwind": "rounded-xl" } },
-    "padding": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "p-4" } },
-    "gap": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "gap-4" } },
-    "headerGap": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "gap-2" } },
-    "titleFontSize": { "$type": "dimension", "$value": "{font.size.base}", "$extensions": { "looloo.tailwind": "text-base" } },
-    "titleFontWeight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$extensions": { "looloo.tailwind": "font-medium" } }
+    "maxWidth": {
+      "$type": "dimension",
+      "$value": "24rem",
+      "$extensions": {
+        "looloo.tailwind": "max-w-sm"
+      }
+    },
+    "mobileInset": {
+      "$type": "dimension",
+      "$value": "{space.4}",
+      "$description": "Viewport clamp: max-w-[calc(100%-2rem)] = 1rem inset per side.",
+      "$extensions": {
+        "looloo.tailwind": "max-w-[calc(100%-2rem)]"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.xl}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-xl",
+        "looloo.legacy": "0.875rem"
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{space.4}",
+      "$extensions": {
+        "looloo.tailwind": "p-4"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.4}",
+      "$extensions": {
+        "looloo.tailwind": "gap-4"
+      }
+    },
+    "headerGap": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$extensions": {
+        "looloo.tailwind": "gap-2"
+      }
+    },
+    "titleFontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.base}",
+      "$extensions": {
+        "looloo.tailwind": "text-base"
+      }
+    },
+    "titleFontWeight": {
+      "$type": "fontWeight",
+      "$value": "{font.weight.medium}",
+      "$extensions": {
+        "looloo.tailwind": "font-medium"
+      }
+    },
+    "color": {
+      "overlay": {
+        "$type": "color",
+        "$value": "{surface.overlay}",
+        "$extensions": {
+          "looloo.tailwind": "bg-(--surface-overlay)"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.popover}",
+        "$extensions": {
+          "looloo.tailwind": "bg-popover"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.popover-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-popover-foreground"
+        }
+      },
+      "description-foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      },
+      "ring": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "ring-foreground/10"
+        }
+      },
+      "ring-opacity": {
+        "$type": "number",
+        "$value": "{opacity.10}",
+        "$extensions": {
+          "looloo.tailwind": "ring-foreground/10"
+        }
+      }
+    },
+    "$comment": "REMOVED 2026-07-13: the footer had a bg-muted/50 band with a top rule and a bleed past the content padding. That band's only job is to separate actions from CONTENT THAT SCROLLS — most dialogs are short, so it was drawing a divider that divided nothing and made one box read as two stacked cards. shadcn's own footer carries no surface; this kit had added it. The footer is now just the actions."
   }
 }

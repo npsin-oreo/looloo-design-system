@@ -1,0 +1,76 @@
+{
+  "$description": "Captured 1:1 from components/ui/input-otp/input-otp.tsx. Slots are joined: each carries border-y + border-r, the first adds border-l, and only the outer slots round.",
+  "inputOtp": {
+    "slot": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$extensions": {
+          "looloo.tailwind": "size-8"
+        }
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "border-y border-r"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.lg}",
+        "$description": "Outer corners only — first:rounded-l-lg / last:rounded-r-lg.",
+        "$extensions": {
+          "looloo.tailwind": "first:rounded-l-lg last:rounded-r-lg"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "activeRingWidth": {
+        "$type": "dimension",
+        "$value": "{focus.ring.width}",
+        "$extensions": {
+          "looloo.tailwind": "data-[active=true]:ring-3"
+        }
+      }
+    },
+    "caret": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "h-4"
+        }
+      },
+      "width": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "w-px"
+        }
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "bg-foreground"
+        }
+      }
+    },
+    "separator": {
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "[&_svg]:size-4",
+          "looloo.legacy": "1rem"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "$description": "Captured 1:1 from components/ui/chart/chart.tsx (recharts). Series colors come from the existing semantic chart ramp (color.chart-1…5) — the chart layer adds no new colors, only the tooltip/legend chrome. The tooltip uses shadow-xl, which is NOT in the shadow.* scale.",
+  "chart": {
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.xs}",
+      "$extensions": {
+        "looloo.tailwind": "text-xs"
+      }
+    },
+    "gridColor": {
+      "$type": "color",
+      "$value": "{color.border}",
+      "$description": "Cartesian/polar grid and reference lines (rendered at 50% for the cartesian grid).",
+      "$extensions": {
+        "looloo.tailwind": "stroke-border"
+      }
+    },
+    "axisForeground": {
+      "$type": "color",
+      "$value": "{color.muted-foreground}",
+      "$extensions": {
+        "looloo.tailwind": "fill-muted-foreground"
+      }
+    },
+    "cursorFill": {
+      "$type": "color",
+      "$value": "{color.muted}",
+      "$description": "The hover band behind the tooltip, and the radial-bar background sector.",
+      "$extensions": {
+        "looloo.tailwind": "fill-muted"
+      }
+    },
+    "tooltip": {
+      "minWidth": {
+        "$type": "dimension",
+        "$value": "{space.32}",
+        "$extensions": {
+          "looloo.tailwind": "min-w-32"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.lg}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-lg"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "py-1.5"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1.5"
+        }
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$description": "border-border/50 — the border color runs at 50%.",
+        "$extensions": {
+          "looloo.tailwind": "border-border/50"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "text-xs"
+        }
+      },
+      "shadow": {
+        "$type": "shadow",
+        "$value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+        "$description": "shadow-xl — Tailwind's default; deeper than shadow.lg, the largest step our scale carries.",
+        "$extensions": {
+          "looloo.tailwind": "shadow-xl"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.background}",
+        "$extensions": {
+          "looloo.tailwind": "bg-background"
+        }
+      },
+      "valueFontFamily": {
+        "$type": "fontFamily",
+        "$value": "{font.family.mono}",
+        "$description": "Values are mono + tabular-nums so digits do not jitter on hover.",
+        "$extensions": {
+          "looloo.tailwind": "font-mono tabular-nums"
+        }
+      },
+      "valueFontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      }
+    },
+    "indicator": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "h-2 w-2"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "0.125rem",
+        "$description": "rounded-[2px] — literal in source, matches radius.xs but is written as an arbitrary value.",
+        "$extensions": {
+          "looloo.tailwind": "rounded-[2px]"
+        }
+      },
+      "dashedBorderWidth": {
+        "$type": "dimension",
+        "$value": "0.09375rem",
+        "$description": "border-[1.5px] dashed — the 'dashed' legend indicator.",
+        "$extensions": {
+          "looloo.tailwind": "border-[1.5px]"
+        }
+      }
+    },
+    "legend": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "gap-4"
+        }
+      },
+      "itemGap": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1.5"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.12}",
+        "$extensions": {
+          "looloo.tailwind": "[&>svg]:h-3 [&>svg]:w-3",
+          "looloo.legacy": "0.75rem"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      }
+    },
+    "heatmap": {
+      "cellSize": {
+        "$type": "dimension",
+        "$value": "{size.12}",
+        "$description": "12px. Small enough that a year fits on one row of a dashboard, big enough to hover. Below ~10px the cell stops being a target and becomes a texture.",
+        "$extensions": {
+          "looloo.tailwind": "size-3"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$description": "4px. The gap is what makes the grid readable as DAYS — remove it and the year turns into a heat smear with no unit.",
+        "$extensions": {
+          "looloo.tailwind": "gap-1"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.sm}",
+        "$description": "A soft square. A circle would read as a dot plot; a hard square reads as a pixel.",
+        "$extensions": {
+          "looloo.tailwind": "rounded-sm"
+        }
+      },
+      "color": {
+        "empty": {
+          "$type": "color",
+          "$value": "{color.muted}",
+          "$description": "NO data — not zero. The two are different claims, and a heatmap that paints them the same lies about the days a system was simply not recording.",
+          "$extensions": {
+            "looloo.tailwind": "bg-(--chart-heatmap-color-empty)"
+          }
+        },
+        "level1": {
+          "$type": "color",
+          "$value": "{color.brand.primary.200}",
+          "$description": "Level 1 of 5 — the lightest step that is still unmistakably the brand rather than a grey.",
+          "$extensions": {
+            "looloo.tailwind": "bg-(--chart-heatmap-color-level-1)"
+          }
+        },
+        "level2": {
+          "$type": "color",
+          "$value": "{color.brand.primary.300}",
+          "$extensions": {
+            "looloo.tailwind": "bg-(--chart-heatmap-color-level-2)"
+          }
+        },
+        "level3": {
+          "$type": "color",
+          "$value": "{color.brand.primary.500}",
+          "$extensions": {
+            "looloo.tailwind": "bg-(--chart-heatmap-color-level-3)"
+          }
+        },
+        "level4": {
+          "$type": "color",
+          "$value": "{color.brand.primary.600}",
+          "$extensions": {
+            "looloo.tailwind": "bg-(--chart-heatmap-color-level-4)"
+          }
+        },
+        "level5": {
+          "$type": "color",
+          "$value": "{color.brand.primary.800}",
+          "$description": "Level 5 of 5. FIVE steps, not more: the eye cannot rank more than about five shades of one hue reliably, and every extra step is a colour nobody can decode without the legend.",
+          "$extensions": {
+            "looloo.tailwind": "bg-(--chart-heatmap-color-level-5)"
+          }
+        }
+      }
+    }
+  }
+}

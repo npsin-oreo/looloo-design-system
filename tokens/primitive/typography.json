@@ -4,7 +4,7 @@
     "family": {
       "sans": {
         "$type": "fontFamily",
-        "$value": "Google sans",
+        "$value": "Noto Sans Thai",
         "$description": "Runtime stack lives in app/globals.css (--font-sans/--font-mono via next/font)."
       },
       "mono": {

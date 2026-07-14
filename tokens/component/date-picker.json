@@ -1,0 +1,8 @@
+{
+  "$description": "Captured 1:1 from components/ui/date-picker/date-picker.tsx. It is a Button trigger + Popover + Calendar — the only token of its own is the trigger width; everything else comes from button.*, popover.* and calendar.*.",
+  "datePicker": {
+    "triggerWidth": { "$type": "dimension", "$value": "15rem", "$description": "w-[240px] — literal in source, no space token at 240px.", "$extensions": { "looloo.tailwind": "w-[240px]" } },
+    "triggerFontWeight": { "$type": "fontWeight", "$value": "{font.weight.normal}", "$description": "Overrides the button's font-medium — a date field should not read as a label.", "$extensions": { "looloo.tailwind": "font-normal" } },
+    "emptyForeground": { "$type": "color", "$value": "{color.muted-foreground}", "$description": "Placeholder state when no date is picked.", "$extensions": { "looloo.tailwind": "data-[empty=true]:text-muted-foreground" } }
+  }
+}

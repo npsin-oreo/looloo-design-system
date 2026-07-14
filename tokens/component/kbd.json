@@ -1,0 +1,90 @@
+{
+  "$description": "Captured 1:1 from components/ui/kbd/kbd.tsx (Kbd, KbdGroup). h-5/min-w-5 is below the size.control scale — kept as a literal.",
+  "kbd": {
+    "height": {
+      "$type": "dimension",
+      "$value": "{size.20}",
+      "$description": "h-5 = 20px — smaller than size.control.xs (24px).",
+      "$extensions": {
+        "looloo.tailwind": "h-5",
+        "looloo.legacy": "1.25rem"
+      }
+    },
+    "minWidth": {
+      "$type": "dimension",
+      "$value": "{size.20}",
+      "$extensions": {
+        "looloo.tailwind": "min-w-5",
+        "looloo.legacy": "1.25rem"
+      }
+    },
+    "paddingX": {
+      "$type": "dimension",
+      "$value": "{space.1}",
+      "$extensions": {
+        "looloo.tailwind": "px-1"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.1}",
+      "$description": "Also the gap between keys in a KbdGroup.",
+      "$extensions": {
+        "looloo.tailwind": "gap-1"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.sm}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-sm"
+      }
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.xs}",
+      "$extensions": {
+        "looloo.tailwind": "text-xs"
+      }
+    },
+    "fontWeight": {
+      "$type": "fontWeight",
+      "$value": "{font.weight.medium}",
+      "$extensions": {
+        "looloo.tailwind": "font-medium"
+      }
+    },
+    "iconSize": {
+      "$type": "dimension",
+      "$value": "{size.12}",
+      "$extensions": {
+        "looloo.tailwind": "[&_svg]:size-3",
+        "looloo.legacy": "0.75rem"
+      }
+    },
+    "background": {
+      "$type": "color",
+      "$value": "{color.muted}",
+      "$extensions": {
+        "looloo.tailwind": "bg-muted"
+      }
+    },
+    "foreground": {
+      "$type": "color",
+      "$value": "{color.muted-foreground}",
+      "$extensions": {
+        "looloo.tailwind": "text-muted-foreground"
+      }
+    },
+    "group": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$description": "Between caps in a KbdGroup. Each key gets its OWN cap — ⌘ and K are two caps, not one cap reading \"⌘K\". A keyboard has one physical key per cap, and the chip is a picture of the key.",
+        "$extensions": {
+          "looloo.tailwind": "gap-1"
+        }
+      }
+    }
+  }
+}
