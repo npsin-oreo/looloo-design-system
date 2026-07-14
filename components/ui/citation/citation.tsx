@@ -56,7 +56,7 @@ function Citation({ source, number, variant = "label", className, ...props }: Ci
       aria-label={ariaLabel}
       className={cn(
         "inline-flex max-w-64 items-center gap-1.5 rounded-md border bg-muted/50 px-2 py-0.5 align-middle text-xs font-medium text-foreground no-underline transition-colors [&_svg]:size-3.5 [&_svg]:shrink-0",
-        href && "hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none",
+        href && "hover:bg-muted focus-visible:shadow-(--focus-shadow) focus-visible:outline-none",
         className
       )}
       {...linkProps}

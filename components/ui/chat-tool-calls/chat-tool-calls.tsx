@@ -120,7 +120,7 @@ function ToolCallRow({ call }: { call: ChatToolCallItem }) {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-label={open ? "Hide detail" : "Show detail"}
-              className="rounded-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
+              className="rounded-sm text-muted-foreground outline-none hover:text-foreground focus-visible:shadow-(--focus-shadow)"
             >
               <ChevronDown className={cn("size-4 transition-transform", open && "rotate-180")} />
             </button>
@@ -168,7 +168,7 @@ function ChatToolCalls({
           type="button"
           onClick={toggle}
           aria-expanded={open}
-          className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm outline-none hover:bg-muted/50 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm outline-none hover:bg-muted/50 focus-visible:shadow-(--focus-shadow) focus-visible:outline-none"
         >
           <ChevronDown className={cn("size-4 shrink-0 text-muted-foreground transition-transform", open && "rotate-180")} />
           <span className="font-medium">{label ?? `${calls.length} tool calls`}</span>
