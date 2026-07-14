@@ -85,7 +85,7 @@
       "sm": {
         "$type": "dimension",
         "$value": "calc(var(--radius) - 8px)",
-        "$description": "rounded-sm = 4px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
+        "$description": "rounded-sm = 2px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
         "$extensions": {
           "looloo.offset": -8
         }
@@ -93,7 +93,7 @@
       "md": {
         "$type": "dimension",
         "$value": "calc(var(--radius) - 4px)",
-        "$description": "rounded-md = 8px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
+        "$description": "rounded-md = 6px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
         "$extensions": {
           "looloo.offset": -4
         }
@@ -101,7 +101,7 @@
       "lg": {
         "$type": "dimension",
         "$value": "var(--radius)",
-        "$description": "rounded-lg = 12px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
+        "$description": "rounded-lg = 10px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
         "$extensions": {
           "looloo.offset": 0
         }
@@ -109,7 +109,7 @@
       "xl": {
         "$type": "dimension",
         "$value": "calc(var(--radius) + 4px)",
-        "$description": "rounded-xl = 16px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
+        "$description": "rounded-xl = 14px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
         "$extensions": {
           "looloo.offset": 4
         }
@@ -117,7 +117,7 @@
       "2xl": {
         "$type": "dimension",
         "$value": "calc(var(--radius) + 12px)",
-        "$description": "rounded-2xl = 24px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
+        "$description": "rounded-2xl = 22px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
         "$extensions": {
           "looloo.offset": 12
         }
@@ -125,7 +125,7 @@
       "3xl": {
         "$type": "dimension",
         "$value": "calc(var(--radius) + 20px)",
-        "$description": "rounded-3xl = 32px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
+        "$description": "rounded-3xl = 30px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
         "$extensions": {
           "looloo.offset": 20
         }
@@ -133,7 +133,7 @@
       "4xl": {
         "$type": "dimension",
         "$value": "calc(var(--radius) + 28px)",
-        "$description": "rounded-4xl = 40px at the current --radius (0.75rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
+        "$description": "rounded-4xl = 38px at the current --radius (0.625rem). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).",
         "$extensions": {
           "looloo.offset": 28
         }

@@ -6,6 +6,7 @@
         "background": {
           "$type": "color",
           "$value": "{color.neutral.950}",
+          "$description": "The default app background and text color.",
           "$extensions": {
             "looloo.resolved": "oklch(0.145 0 0)"
           }
@@ -13,6 +14,7 @@
         "foreground": {
           "$type": "color",
           "$value": "{color.zinc.50}",
+          "$description": "The default app background and text color.",
           "$extensions": {
             "looloo.resolved": "oklch(0.985 0 0)"
           }
@@ -20,6 +22,7 @@
         "card": {
           "$type": "color",
           "$value": "{color.neutral.900}",
+          "$description": "Elevated surfaces and the content inside them.",
           "$extensions": {
             "looloo.resolved": "oklch(0.205 0 0)"
           }
@@ -27,6 +30,7 @@
         "card-foreground": {
           "$type": "color",
           "$value": "{color.zinc.50}",
+          "$description": "Elevated surfaces and the content inside them.",
           "$extensions": {
             "looloo.resolved": "oklch(0.985 0 0)"
           }
@@ -34,6 +38,7 @@
         "popover": {
           "$type": "color",
           "$value": "{color.neutral.900}",
+          "$description": "Floating surfaces and the content inside them.",
           "$extensions": {
             "looloo.resolved": "oklch(0.205 0 0)"
           }
@@ -41,6 +46,7 @@
         "popover-foreground": {
           "$type": "color",
           "$value": "{color.zinc.50}",
+          "$description": "Floating surfaces and the content inside them.",
           "$extensions": {
             "looloo.resolved": "oklch(0.985 0 0)"
           }
@@ -48,6 +54,7 @@
         "primary": {
           "$type": "color",
           "$value": "{color.neutral.200}",
+          "$description": "High-emphasis actions and brand surfaces.",
           "$extensions": {
             "looloo.resolved": "oklch(0.922 0 0)"
           }
@@ -55,6 +62,7 @@
         "primary-foreground": {
           "$type": "color",
           "$value": "{color.neutral.900}",
+          "$description": "High-emphasis actions and brand surfaces.",
           "$extensions": {
             "looloo.resolved": "oklch(0.205 0 0)"
           }
@@ -62,6 +70,7 @@
         "secondary": {
           "$type": "color",
           "$value": "{color.neutral.800}",
+          "$description": "Lower-emphasis filled actions and supporting surfaces.",
           "$extensions": {
             "looloo.resolved": "oklch(0.269 0 0)"
           }
@@ -69,6 +78,7 @@
         "secondary-foreground": {
           "$type": "color",
           "$value": "{color.zinc.50}",
+          "$description": "Lower-emphasis filled actions and supporting surfaces.",
           "$extensions": {
             "looloo.resolved": "oklch(0.985 0 0)"
           }
@@ -76,6 +86,7 @@
         "muted": {
           "$type": "color",
           "$value": "{color.neutral.800}",
+          "$description": "Subtle surfaces and lower-emphasis content.",
           "$extensions": {
             "looloo.resolved": "oklch(0.269 0 0)"
           }
@@ -83,6 +94,7 @@
         "muted-foreground": {
           "$type": "color",
           "$value": "{color.neutral.400}",
+          "$description": "Subtle surfaces and lower-emphasis content.",
           "$extensions": {
             "looloo.resolved": "oklch(0.708 0 0)"
           }
@@ -90,6 +102,7 @@
         "accent": {
           "$type": "color",
           "$value": "{color.neutral.800}",
+          "$description": "Interactive hover, focus, and active surfaces.",
           "$extensions": {
             "looloo.resolved": "oklch(0.269 0 0)"
           }
@@ -97,6 +110,7 @@
         "accent-foreground": {
           "$type": "color",
           "$value": "{color.zinc.50}",
+          "$description": "Interactive hover, focus, and active surfaces.",
           "$extensions": {
             "looloo.resolved": "oklch(0.985 0 0)"
           }
@@ -104,6 +118,7 @@
         "destructive": {
           "$type": "color",
           "$value": "oklch(0.704 0.191 22.216)",
+          "$description": "Destructive actions and error emphasis.",
           "$extensions": {
             "looloo.legacy": "oklch(0.704 0.191 22.216)"
           }
@@ -111,6 +126,7 @@
         "border": {
           "$type": "color",
           "$value": "oklch(1 0 0 / 10%)",
+          "$description": "Default borders and separators.",
           "$extensions": {
             "looloo.legacy": "oklch(1 0 0 / 10%)"
           }
@@ -118,6 +134,7 @@
         "input": {
           "$type": "color",
           "$value": "oklch(1 0 0 / 15%)",
+          "$description": "Form control borders and input surface treatment.",
           "$extensions": {
             "looloo.legacy": "oklch(1 0 0 / 15%)"
           }
@@ -125,6 +142,7 @@
         "ring": {
           "$type": "color",
           "$value": "{color.neutral.500}",
+          "$description": "Focus rings and outlines.",
           "$extensions": {
             "looloo.resolved": "oklch(0.556 0 0)"
           }
@@ -132,6 +150,7 @@
         "chart-1": {
           "$type": "color",
           "$value": "{color.neutral.300}",
+          "$description": "The default chart palette.",
           "$extensions": {
             "looloo.resolved": "oklch(0.87 0 0)"
           }
@@ -139,6 +158,7 @@
         "chart-2": {
           "$type": "color",
           "$value": "{color.neutral.500}",
+          "$description": "The default chart palette.",
           "$extensions": {
             "looloo.resolved": "oklch(0.556 0 0)"
           }
@@ -146,6 +166,7 @@
         "chart-3": {
           "$type": "color",
           "$value": "{color.neutral.600}",
+          "$description": "The default chart palette.",
           "$extensions": {
             "looloo.resolved": "oklch(0.439 0 0)"
           }
@@ -153,6 +174,7 @@
         "chart-4": {
           "$type": "color",
           "$value": "{color.neutral.700}",
+          "$description": "The default chart palette.",
           "$extensions": {
             "looloo.resolved": "oklch(0.371 0 0)"
           }
@@ -160,6 +182,7 @@
         "chart-5": {
           "$type": "color",
           "$value": "{color.neutral.800}",
+          "$description": "The default chart palette.",
           "$extensions": {
             "looloo.resolved": "oklch(0.269 0 0)"
           }
@@ -167,6 +190,7 @@
         "sidebar": {
           "$type": "color",
           "$value": "{color.neutral.900}",
+          "$description": "The base sidebar surface and default sidebar text.",
           "$extensions": {
             "looloo.resolved": "oklch(0.205 0 0)"
           }
@@ -174,6 +198,7 @@
         "sidebar-foreground": {
           "$type": "color",
           "$value": "{color.zinc.50}",
+          "$description": "The base sidebar surface and default sidebar text.",
           "$extensions": {
             "looloo.resolved": "oklch(0.985 0 0)"
           }
@@ -181,6 +206,7 @@
         "sidebar-primary": {
           "$type": "color",
           "$value": "oklch(0.488 0.243 264.376)",
+          "$description": "High-emphasis actions inside the sidebar.",
           "$extensions": {
             "looloo.legacy": "oklch(0.488 0.243 264.376)"
           }
@@ -188,6 +214,7 @@
         "sidebar-primary-foreground": {
           "$type": "color",
           "$value": "{color.zinc.50}",
+          "$description": "High-emphasis actions inside the sidebar.",
           "$extensions": {
             "looloo.resolved": "oklch(0.985 0 0)"
           }
@@ -195,6 +222,7 @@
         "sidebar-accent": {
           "$type": "color",
           "$value": "{color.neutral.800}",
+          "$description": "Hover and selected states inside the sidebar.",
           "$extensions": {
             "looloo.resolved": "oklch(0.269 0 0)"
           }
@@ -202,6 +230,7 @@
         "sidebar-accent-foreground": {
           "$type": "color",
           "$value": "{color.zinc.50}",
+          "$description": "Hover and selected states inside the sidebar.",
           "$extensions": {
             "looloo.resolved": "oklch(0.985 0 0)"
           }
@@ -209,6 +238,7 @@
         "sidebar-border": {
           "$type": "color",
           "$value": "oklch(1 0 0 / 10%)",
+          "$description": "Sidebar-specific borders and separators.",
           "$extensions": {
             "looloo.legacy": "oklch(1 0 0 / 10%)"
           }
@@ -216,6 +246,7 @@
         "sidebar-ring": {
           "$type": "color",
           "$value": "{color.neutral.500}",
+          "$description": "Sidebar-specific focus rings.",
           "$extensions": {
             "looloo.resolved": "oklch(0.556 0 0)"
           }
@@ -223,6 +254,7 @@
         "background-color": {
           "$type": "color",
           "$value": "oklch(0 0 0 / 30%)",
+          "$description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
           "$extensions": {
             "looloo.legacy": "oklch(0 0 0 / 30%)"
           }
@@ -230,6 +262,7 @@
         "semantic-background": {
           "$type": "color",
           "$value": "{color.gray.700}",
+          "$description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
           "$extensions": {
             "looloo.resolved": "oklch(0.373 0.031 259.733)"
           }
@@ -237,6 +270,7 @@
         "semantic-foreground": {
           "$type": "color",
           "$value": "{color.white}",
+          "$description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
           "$extensions": {
             "looloo.resolved": "oklch(1 0 0)"
           }
@@ -244,8 +278,17 @@
         "semantic-border": {
           "$type": "color",
           "$value": "{color.gray.600}",
+          "$description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
           "$extensions": {
             "looloo.resolved": "oklch(0.446 0.026 256.802)"
+          }
+        },
+        "primary-hover": {
+          "$type": "color",
+          "$value": "{color.neutral.300}",
+          "$description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
+          "$extensions": {
+            "looloo.resolved": "oklch(0.87 0 0)"
           }
         }
       }

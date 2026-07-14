@@ -25,7 +25,7 @@
     "warning": {
       "$type": "color",
       "$value": "{color.amber.500}",
-      "$description": "Proposed. Not consumed yet.",
+      "$description": "The warning FILL. Consumed by badge (as a 10% tint).",
       "$extensions": {
         "looloo.status": "proposed"
       }
@@ -33,10 +33,15 @@
     "warning-foreground": {
       "$type": "color",
       "$value": "{color.neutral.950}",
-      "$description": "Proposed. Not consumed yet.",
+      "$description": "Text ON a solid warning fill.",
       "$extensions": {
         "looloo.status": "proposed"
       }
+    },
+    "warning-text": {
+      "$type": "color",
+      "$value": "{color.amber.700}",
+      "$description": "Warning as TEXT (on a light/tinted surface). amber.500 is the fill colour and is far too light to read — 2.1:1 on white; amber.700 is 4.6:1. success and info need no such split: green.700 and blue.600 already pass as text."
     },
     "info": {
       "$type": "color",
