@@ -31,11 +31,29 @@ const emptyMediaVariants = cva(
     variants: {
       variant: {
         default: "bg-transparent",
-        icon: "flex size-8 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground [&_svg:not([class*='size-'])]:size-4",
+        icon: "flex size-8 shrink-0 items-center justify-center rounded-lg [&_svg:not([class*='size-'])]:size-4",
+      },
+      /**
+       * WHY it is empty — which is not the same question as what it looks like:
+       * - neutral     → nothing here yet, or nothing matched (offer a way to fill it)
+       * - success     → the user finished (do NOT offer a way to fill it)
+       * - destructive → it failed to load (offer a retry, never a create)
+       * - warning     → they are not allowed to see it (offer neither)
+       */
+      tone: {
+        neutral:
+          "data-[variant=icon]:bg-(--empty-color-media-neutral-surface) data-[variant=icon]:text-(--empty-color-media-neutral-foreground)",
+        success:
+          "data-[variant=icon]:bg-(--empty-color-media-success-surface) data-[variant=icon]:text-(--empty-color-media-success-foreground)",
+        destructive:
+          "data-[variant=icon]:bg-(--empty-color-media-destructive-surface) data-[variant=icon]:text-(--empty-color-media-destructive-foreground)",
+        warning:
+          "data-[variant=icon]:bg-(--empty-color-media-warning-surface) data-[variant=icon]:text-(--empty-color-media-warning-foreground)",
       },
     },
     defaultVariants: {
       variant: "default",
+      tone: "neutral",
     },
   }
 )
@@ -43,13 +61,15 @@ const emptyMediaVariants = cva(
 function EmptyMedia({
   className,
   variant = "default",
+  tone = "neutral",
   ...props
 }: React.ComponentProps<"div"> & VariantProps<typeof emptyMediaVariants>) {
   return (
     <div
       data-slot="empty-icon"
       data-variant={variant}
-      className={cn(emptyMediaVariants({ variant, className }))}
+      data-tone={tone}
+      className={cn(emptyMediaVariants({ variant, tone, className }))}
       {...props}
     />
   )
