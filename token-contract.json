@@ -41,7 +41,8 @@
     "background-color",
     "semantic-background",
     "semantic-foreground",
-    "semantic-border"
+    "semantic-border",
+    "primary-hover"
   ],
   "scalar_tokens": [
     "radius",
