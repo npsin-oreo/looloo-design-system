@@ -1039,9 +1039,9 @@
         "file-upload.row.titleFontSize"
       ],
       "tokenFile": "tokens/component/file-upload.json",
-      "storybook": null,
+      "storybook": "stories/manual/file-upload.stories.tsx",
       "docs": null,
-      "a11y": "no stories — not axe-checked"
+      "a11y": "axe-checked in CI (test-storybook renders every story with a11y error mode)"
     },
     "form": {
       "status": "stable",

@@ -51,6 +51,29 @@ export const Colors: Story = {
   ),
 };
 
+export const Tones: Story = {
+  name: "Tones (token-driven)",
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "The `tone` prop binds to a token instead of inheriting text colour: `primary` for a brand spinner on a neutral surface, `on-brand` for a spinner sitting on a filled primary button. `inherit` (default) still follows `currentColor` — see the Colors story.",
+      },
+    },
+  },
+  render: () => (
+    <div className="flex flex-wrap items-center gap-5">
+      <Cell label='tone="inherit"'><Spinner className="size-6" /></Cell>
+      <Cell label='tone="primary"'><Spinner tone="primary" className="size-6" /></Cell>
+      <Cell label='tone="on-brand"'>
+        <span className="bg-primary flex size-10 items-center justify-center rounded-md">
+          <Spinner tone="on-brand" className="size-6" />
+        </span>
+      </Cell>
+    </div>
+  ),
+};
+
 export const InContext: Story = {
   name: "In context",
   render: () => (

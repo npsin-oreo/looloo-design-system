@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent } from "@/components/ui/empty";
 import { Button } from "@/components/ui/button";
-import { FolderOpen, Search, Inbox } from "@/icons/icon-registry";
+import { FolderOpen, Search, Inbox, CircleCheck, OctagonX, TriangleAlert } from "@/icons/icon-registry";
 import { getEntry } from "@/components/docs/registry";
 
 type Args = { title: string; description: string; withAction: boolean };
@@ -56,6 +56,50 @@ export const MediaVariants: Story = {
           <EmptyMedia><Inbox className="size-8 text-muted-foreground" /></EmptyMedia>
           <EmptyTitle>Inbox zero</EmptyTitle>
           <EmptyDescription>You are all caught up.</EmptyDescription>
+        </EmptyHeader>
+      </Empty>
+    </div>
+  ),
+};
+
+export const Tones: Story = {
+  name: "Tones (why it is empty)",
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "`tone` on `EmptyMedia` answers WHY it is empty, which is not the same as what it looks like: neutral (nothing yet — offer a way to fill it), success (the user finished — do NOT), destructive (it failed to load — offer a retry, never a create), warning (they are not allowed — offer neither).",
+      },
+    },
+  },
+  render: () => (
+    <div className="grid grid-cols-2 gap-4">
+      <Empty className="rounded-lg border">
+        <EmptyHeader>
+          <EmptyMedia variant="icon" tone="neutral"><Search /></EmptyMedia>
+          <EmptyTitle>No results</EmptyTitle>
+          <EmptyDescription>neutral — nothing matched. Offer a way to fill it.</EmptyDescription>
+        </EmptyHeader>
+      </Empty>
+      <Empty className="rounded-lg border">
+        <EmptyHeader>
+          <EmptyMedia variant="icon" tone="success"><CircleCheck /></EmptyMedia>
+          <EmptyTitle>Inbox zero</EmptyTitle>
+          <EmptyDescription>success — the user finished. Do not offer a create.</EmptyDescription>
+        </EmptyHeader>
+      </Empty>
+      <Empty className="rounded-lg border">
+        <EmptyHeader>
+          <EmptyMedia variant="icon" tone="destructive"><OctagonX /></EmptyMedia>
+          <EmptyTitle>Couldn’t load</EmptyTitle>
+          <EmptyDescription>destructive — it failed. Offer a retry, never a create.</EmptyDescription>
+        </EmptyHeader>
+      </Empty>
+      <Empty className="rounded-lg border">
+        <EmptyHeader>
+          <EmptyMedia variant="icon" tone="warning"><TriangleAlert /></EmptyMedia>
+          <EmptyTitle>No access</EmptyTitle>
+          <EmptyDescription>warning — not allowed to see it. Offer neither.</EmptyDescription>
         </EmptyHeader>
       </Empty>
     </div>
