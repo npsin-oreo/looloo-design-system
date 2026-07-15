@@ -1,0 +1,97 @@
+{
+  "$description": "Captured 1:1 from components/ui/button-group/button-group.tsx. Children are joined: the inner corners collapse to rounded-none and the shared border is dropped (border-l-0 / border-t-0) so neighbours share one rule. Buttons keep their own button.* geometry.",
+  "buttonGroup": {
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$description": "Only between NESTED groups — buttons inside one group sit flush.",
+      "$extensions": {
+        "looloo.tailwind": "has-[>[data-slot=button-group]]:gap-2"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.lg}",
+      "$description": "The group's outer corners; inner ones collapse to 0.",
+      "$extensions": {
+        "looloo.tailwind": "rounded-l-lg / rounded-r-lg"
+      }
+    },
+    "separator": {
+      "color": {
+        "$type": "color",
+        "$value": "{color.input}",
+        "$extensions": {
+          "looloo.tailwind": "bg-input"
+        }
+      },
+      "inset": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$description": "mx-px / my-px — a hairline inset so the rule does not touch the outer border.",
+        "$extensions": {
+          "looloo.tailwind": "data-horizontal:mx-px"
+        }
+      }
+    },
+    "text": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.lg}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-lg"
+        }
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "border"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "[&_svg]:size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted"
+        }
+      }
+    }
+  }
+}

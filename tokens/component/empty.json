@@ -1,0 +1,218 @@
+{
+  "$description": "Captured 1:1 from components/ui/empty/empty.tsx. A dashed-border placeholder panel — note the border is dashed and the container has no background of its own.",
+  "empty": {
+    "padding": {
+      "$type": "dimension",
+      "$value": "{space.6}",
+      "$extensions": {
+        "looloo.tailwind": "p-6"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.4}",
+      "$extensions": {
+        "looloo.tailwind": "gap-4"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.xl}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-xl"
+      }
+    },
+    "borderWidth": {
+      "$type": "dimension",
+      "$value": "{border.width.default}",
+      "$description": "border-dashed — dashed, not solid.",
+      "$extensions": {
+        "looloo.tailwind": "border-dashed"
+      }
+    },
+    "maxWidth": {
+      "$type": "dimension",
+      "$value": "{space.96}",
+      "$description": "max-w-sm = 384px, on both the header and the content blocks.",
+      "$extensions": {
+        "looloo.tailwind": "max-w-sm"
+      }
+    },
+    "header": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "gap-2.5"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      }
+    },
+    "media": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$extensions": {
+          "looloo.tailwind": "size-8"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.lg}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-lg"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "[&_svg]:size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-foreground"
+        }
+      }
+    },
+    "title": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": "{font.tracking.tight}",
+        "$extensions": {
+          "looloo.tailwind": "tracking-tight"
+        }
+      }
+    },
+    "description": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm/relaxed"
+        }
+      },
+      "lineHeight": {
+        "$type": "number",
+        "$value": 1.625,
+        "$description": "text-sm/relaxed — leading-relaxed, no leading token matches.",
+        "$extensions": {
+          "looloo.tailwind": "text-sm/relaxed"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      }
+    },
+    "content": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        }
+      }
+    },
+    "color": {
+      "media-neutral-surface": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$description": "Nothing has gone wrong — there is simply nothing here yet, or nothing matched. Neutral.",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted"
+        }
+      },
+      "media-neutral-foreground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$description": "Neutral icon.",
+        "$extensions": {
+          "looloo.tailwind": "text-foreground"
+        }
+      },
+      "media-success-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--status-success) 10%, transparent)",
+        "$description": "Empty because the user FINISHED — inbox zero, no tasks left. The only empty state that is good news, and the only one that should not offer a way to fill it.",
+        "$extensions": {
+          "looloo.tailwind": "bg-(--empty-color-media-success-surface)"
+        }
+      },
+      "media-success-foreground": {
+        "$type": "color",
+        "$value": "{status.success}",
+        "$description": "Green icon.",
+        "$extensions": {
+          "looloo.tailwind": "text-(--empty-color-media-success-foreground)"
+        }
+      },
+      "media-destructive-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
+        "$description": "Empty because something BROKE. This is not an empty state at heart — it is an error wearing one, and it must offer a retry rather than a create.",
+        "$extensions": {
+          "looloo.tailwind": "bg-(--empty-color-media-destructive-surface)"
+        }
+      },
+      "media-destructive-foreground": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$description": "Red icon.",
+        "$extensions": {
+          "looloo.tailwind": "text-destructive"
+        }
+      },
+      "media-warning-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--status-warning) 10%, transparent)",
+        "$description": "Empty because the user is not ALLOWED to see it. Nothing is broken and nothing is missing — offering a 'create' button here is a lie.",
+        "$extensions": {
+          "looloo.tailwind": "bg-(--empty-color-media-warning-surface)"
+        }
+      },
+      "media-warning-foreground": {
+        "$type": "color",
+        "$value": "{status.warning-text}",
+        "$description": "amber.700 — the readable step, not the amber.500 fill.",
+        "$extensions": {
+          "looloo.tailwind": "text-(--empty-color-media-warning-foreground)"
+        }
+      }
+    }
+  }
+}

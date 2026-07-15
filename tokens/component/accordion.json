@@ -1,0 +1,104 @@
+{
+  "$description": "Captured 1:1 from components/ui/accordion/accordion.tsx. Items are separated by a bottom rule, not a card — no radius, no background.",
+  "accordion": {
+    "item": {
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "border-b"
+        }
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.border}",
+        "$extensions": {
+          "looloo.tailwind": "border-border"
+        }
+      }
+    },
+    "trigger": {
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "py-4"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "data-[slot=accordion-trigger-icon]:size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "focusRingWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.2}",
+        "$description": "focus-visible:ring-2 with a 2px offset — not the 3px form-control ring.",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:ring-2"
+        }
+      },
+      "focusRingOffset": {
+        "$type": "dimension",
+        "$value": "{border.width.2}",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:ring-offset-2"
+        }
+      },
+      "disabledOpacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "disabled:opacity-50"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-foreground"
+        }
+      }
+    },
+    "content": {
+      "paddingBottom": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "pb-4"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "paragraphGap": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "[&_p:not(:last-child)]:mb-4"
+        }
+      }
+    }
+  }
+}

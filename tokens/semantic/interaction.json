@@ -5,25 +5,33 @@
       "$type": "number",
       "$value": "{opacity.50}",
       "$description": "disabled:opacity-50 — used by every interactive component.",
-      "$extensions": { "looloo.tailwind": "disabled:opacity-50" }
+      "$extensions": {
+        "looloo.tailwind": "disabled:opacity-50"
+      }
     },
     "hover-opacity": {
       "$type": "number",
       "$value": 0.8,
-      "$description": "Primary hover fill strength (hover:bg-primary/80).",
-      "$extensions": { "looloo.tailwind": "hover:bg-primary/80" }
+      "$description": "Fill strength for hover on NON-brand surfaces only (secondary, destructive tints). It is NOT used on primary any more: fading a mid-tone fill toward the page lightens it, and white text on the faded teal falls to 3.38:1. Primary hover uses --primary-hover (a darker shade) instead.",
+      "$extensions": {
+        "looloo.tailwind": "hover:bg-primary/80"
+      }
     },
     "active-shift": {
       "$type": "dimension",
       "$value": "1px",
       "$description": "Pressed-state vertical nudge (active:translate-y-px on button).",
-      "$extensions": { "looloo.tailwind": "active:translate-y-px" }
+      "$extensions": {
+        "looloo.tailwind": "active:translate-y-px"
+      }
     },
     "secondary-hover-mix": {
       "$type": "number",
       "$value": 0.05,
       "$description": "Secondary hover mixes 5% foreground into the fill (color-mix in button.tsx).",
-      "$extensions": { "looloo.tailwind": "hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]" }
+      "$extensions": {
+        "looloo.tailwind": "hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]"
+      }
     }
   }
 }

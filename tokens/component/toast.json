@@ -1,6 +1,36 @@
 {
   "$description": "DRAFT — toast is delivered via sonner (components/ui/sonner.tsx); layout/offsets are library defaults and intentionally NOT tokenized yet. Only the values our wrapper sets are captured. Revisit in Phase 4 if we start overriding sonner styling.",
   "toast": {
-    "iconSize": { "$type": "dimension", "$value": "1rem", "$extensions": { "looloo.tailwind": "size-4" } }
+    "iconSize": {
+      "$type": "dimension",
+      "$value": "{size.16}",
+      "$extensions": {
+        "looloo.tailwind": "size-4",
+        "looloo.legacy": "1rem"
+      }
+    },
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.popover}",
+        "$extensions": {
+          "looloo.tailwind": "--normal-bg: var(--popover)"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.popover-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "--normal-text: var(--popover-foreground)"
+        }
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border}",
+        "$extensions": {
+          "looloo.tailwind": "--normal-border: var(--border)"
+        }
+      }
+    }
   }
 }

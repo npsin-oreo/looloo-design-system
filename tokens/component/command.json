@@ -1,0 +1,254 @@
+{
+  "$description": "Captured 1:1 from components/ui/command/command.tsx (cmdk). Note the item radius is rounded-sm standalone but is overridden to rounded-lg inside a dialog.",
+  "command": {
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.xl}",
+      "$description": "rounded-xl! — also the radius of CommandDialog's content.",
+      "$extensions": {
+        "looloo.tailwind": "rounded-xl!"
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{space.1}",
+      "$extensions": {
+        "looloo.tailwind": "p-1"
+      }
+    },
+    "background": {
+      "$type": "color",
+      "$value": "{color.popover}",
+      "$extensions": {
+        "looloo.tailwind": "bg-popover"
+      }
+    },
+    "foreground": {
+      "$type": "color",
+      "$value": "{color.popover-foreground}",
+      "$extensions": {
+        "looloo.tailwind": "text-popover-foreground"
+      }
+    },
+    "input": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$extensions": {
+          "looloo.tailwind": "h-8!"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "calc(var(--command-radius) - var(--command-padding))",
+        "$description": "CONCENTRIC: --command-radius (18) − --command-padding (4) = 14px. The search field sits flush against the panel padding, so its corner must be derived like any other nested box — it was rounded-lg (a fixed step) and stopped matching the moment the panel radius moved.",
+        "$extensions": {
+          "looloo.tailwind": "rounded-(--command-input-radius)",
+          "looloo.previous": "{radius.ui.lg}"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "iconOpacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "opacity-50"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--input) 30%, transparent)",
+        "$description": "The search field sits INSIDE the panel, so it is only a 30% wash of the normal input fill. A full input box here would read as a second surface stacked on the popover.",
+        "$extensions": {
+          "looloo.tailwind": "bg-input/30"
+        }
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--input) 30%, transparent)",
+        "$description": "Same 30% wash as the fill. Alpha-baked in Figma — recompute if --input moves.",
+        "$extensions": {
+          "looloo.tailwind": "border-input/30"
+        }
+      }
+    },
+    "list": {
+      "maxHeight": {
+        "$type": "dimension",
+        "$value": "{space.72}",
+        "$extensions": {
+          "looloo.tailwind": "max-h-72"
+        }
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "p-1"
+        }
+      }
+    },
+    "item": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "calc(var(--command-radius) - var(--command-padding))",
+        "$description": "CONCENTRIC: --command-radius − --command-padding = 10px. A nested corner must be the outer radius MINUS the padding, or the gap at the corner is not the gap along the edge — the inner box looks either pinched or rattling around inside its container. Was picked off the radius scale by eye; now it is derived.",
+        "$extensions": {
+          "looloo.tailwind": "rounded-(--command-item-radius)",
+          "looloo.previous": "{radius.ui.sm}"
+        }
+      },
+      "radiusInDialog": {
+        "$type": "dimension",
+        "$value": "{radius.ui.lg}",
+        "$description": "Items get a larger radius when the command lives inside a dialog.",
+        "$extensions": {
+          "looloo.tailwind": "in-data-[slot=dialog-content]:rounded-lg!"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "px-2"
+        }
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "py-1.5"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "[&_svg]:size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "disabledOpacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "data-[disabled=true]:opacity-50"
+        }
+      },
+      "selectedBackground": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$description": "cmdk selects with muted, not accent like the radix menus.",
+        "$extensions": {
+          "looloo.tailwind": "data-selected:bg-muted"
+        }
+      },
+      "selectedForeground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "data-selected:text-foreground"
+        }
+      }
+    },
+    "group": {
+      "padding": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "p-1"
+        }
+      },
+      "headingPaddingX": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "[cmdk-group-heading]:px-2"
+        }
+      },
+      "headingPaddingY": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "[cmdk-group-heading]:py-1.5"
+        }
+      },
+      "headingFontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "[cmdk-group-heading]:text-xs"
+        }
+      },
+      "headingFontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "[cmdk-group-heading]:font-medium"
+        }
+      },
+      "headingForeground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "[cmdk-group-heading]:text-muted-foreground"
+        }
+      }
+    },
+    "empty": {
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.6}",
+        "$description": "The 'no results' block. Generous vertical space on purpose: an empty list should read as an answer, not as a panel that failed to load.",
+        "$extensions": {
+          "looloo.tailwind": "py-6"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      }
+    },
+    "separator": {
+      "thickness": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "h-px"
+        }
+      },
+      "bleedX": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$description": "Bleeds past the list padding (-mx-1) so the rule spans the full panel width.",
+        "$extensions": {
+          "looloo.tailwind": "-mx-1"
+        }
+      }
+    }
+  }
+}

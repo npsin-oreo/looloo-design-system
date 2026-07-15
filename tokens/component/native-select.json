@@ -1,0 +1,120 @@
+{
+  "$description": "Captured 1:1 from components/ui/native-select/native-select.tsx. A real <select> with the native chrome removed (appearance-none) and our own chevron absolutely placed on the right.",
+  "nativeSelect": {
+    "height": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.control.sm}",
+        "$extensions": {
+          "looloo.tailwind": "data-[size=sm]:h-7"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$description": "DEFAULT size.",
+        "$extensions": {
+          "looloo.tailwind": "h-8"
+        }
+      }
+    },
+    "paddingLeft": {
+      "$type": "dimension",
+      "$value": "{space.2-5}",
+      "$extensions": {
+        "looloo.tailwind": "pl-2.5"
+      }
+    },
+    "paddingRight": {
+      "$type": "dimension",
+      "$value": "{space.8}",
+      "$description": "Room for the chevron.",
+      "$extensions": {
+        "looloo.tailwind": "pr-8"
+      }
+    },
+    "paddingY": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.0-5}",
+        "$extensions": {
+          "looloo.tailwind": "data-[size=sm]:py-0.5"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "py-1"
+        }
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.lg}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-lg"
+      }
+    },
+    "radiusSm": {
+      "$type": "dimension",
+      "$value": "min(var(--ll-radius-ui-md), 10px)",
+      "$description": "The small size CAPS its corner at 10px: rounded-[min(var(--radius-md),10px)]. A brand that sets a big --radius would otherwise turn a 28px-tall select into a pill. The token said 0.5rem, which was simply wrong — it tracked neither the scale nor the clamp.",
+      "$extensions": {
+        "looloo.tailwind": "rounded-(--native-select-radius-sm)"
+      }
+    },
+    "borderWidth": {
+      "$type": "dimension",
+      "$value": "{border.width.default}",
+      "$extensions": {
+        "looloo.tailwind": "border"
+      }
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.sm}",
+      "$extensions": {
+        "looloo.tailwind": "text-sm"
+      }
+    },
+    "focusRingWidth": {
+      "$type": "dimension",
+      "$value": "{focus.ring.width}",
+      "$extensions": {
+        "looloo.tailwind": "focus-visible:ring-3"
+      }
+    },
+    "disabledOpacity": {
+      "$type": "number",
+      "$value": "{opacity.50}",
+      "$extensions": {
+        "looloo.tailwind": "has-[select:disabled]:opacity-50"
+      }
+    },
+    "icon": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "inset": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "right-2.5"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      }
+    }
+  }
+}

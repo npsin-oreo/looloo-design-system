@@ -1,0 +1,138 @@
+{
+  "$description": "Captured 1:1 from components/ui/citation/citation.tsx. Two surfaces: an inline superscript marker (a numbered circle) and an expanded source chip.",
+  "citation": {
+    "marker": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.full}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-full"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "0.625rem",
+        "$description": "text-[0.625rem] = 10px — below font.size.xs (12px), literal in source.",
+        "$extensions": {
+          "looloo.tailwind": "text-[0.625rem]"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      }
+    },
+    "chip": {
+      "maxWidth": {
+        "$type": "dimension",
+        "$value": "{space.64}",
+        "$extensions": {
+          "looloo.tailwind": "max-w-64"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.md}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-md"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "px-2"
+        }
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.0-5}",
+        "$extensions": {
+          "looloo.tailwind": "py-0.5"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1.5"
+        }
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "border"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "text-xs"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.14}",
+        "$extensions": {
+          "looloo.tailwind": "[&_svg]:size-3.5",
+          "looloo.legacy": "0.875rem"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-foreground"
+        }
+      },
+      "hoverBackground": {
+        "$type": "color",
+        "$value": "{color.accent}",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-accent"
+        }
+      },
+      "hoverForeground": {
+        "$type": "color",
+        "$value": "{color.accent-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "hover:text-accent-foreground"
+        }
+      }
+    }
+  }
+}

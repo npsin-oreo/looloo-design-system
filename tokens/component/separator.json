@@ -1,0 +1,7 @@
+{
+  "$description": "Captured 1:1 from components/ui/separator/separator.tsx. h-px horizontal / w-px vertical, bg-border.",
+  "separator": {
+    "thickness": { "$type": "dimension", "$value": "{border.width.default}", "$extensions": { "looloo.tailwind": "h-px / w-px" } },
+    "color": { "$type": "color", "$value": "{color.border}", "$extensions": { "looloo.tailwind": "bg-border" } }
+  }
+}

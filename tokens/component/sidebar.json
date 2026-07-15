@@ -1,8 +1,351 @@
 {
   "$description": "Captured from components/ui/sidebar/sidebar.tsx — WIRED: the SIDEBAR_WIDTH* constants now read these vars. Token names deliberately differ from the RUNTIME vars the component sets inline (--sidebar-width, --sidebar-width-icon) so the inline style can alias them without self-reference.",
   "sidebar": {
-    "defaultWidth": { "$type": "dimension", "$value": "16rem", "$extensions": { "looloo.source": "SIDEBAR_WIDTH" } },
-    "mobileWidth": { "$type": "dimension", "$value": "18rem", "$extensions": { "looloo.source": "SIDEBAR_WIDTH_MOBILE" } },
-    "iconWidth": { "$type": "dimension", "$value": "3rem", "$extensions": { "looloo.source": "SIDEBAR_WIDTH_ICON" } }
+    "defaultWidth": {
+      "$type": "dimension",
+      "$value": "16rem",
+      "$description": "256px expanded. Wide enough for a label plus an icon plus a badge without truncating — the moment labels truncate, a sidebar stops being scannable and becomes a guessing game.",
+      "$extensions": {
+        "looloo.tailwind": "--sidebar-width"
+      }
+    },
+    "mobileWidth": {
+      "$type": "dimension",
+      "$value": "18rem",
+      "$extensions": {
+        "looloo.source": "SIDEBAR_WIDTH_MOBILE"
+      }
+    },
+    "iconWidth": {
+      "$type": "dimension",
+      "$value": "3rem",
+      "$description": "48px collapsed. The rail keeps ONLY the icons; nothing shrinks — the labels are removed. A sidebar that scales its text down to fit is unreadable at both sizes.",
+      "$extensions": {
+        "looloo.tailwind": "--sidebar-width-icon"
+      }
+    },
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.sidebar}",
+        "$extensions": {
+          "looloo.tailwind": "bg-sidebar"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.sidebar-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-sidebar-foreground"
+        }
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.sidebar-border}",
+        "$extensions": {
+          "looloo.tailwind": "border-sidebar-border"
+        }
+      },
+      "item-active-background": {
+        "$type": "color",
+        "$value": "{color.sidebar-primary}",
+        "$description": "The page you are ON. Brand teal — not the muted accent, which is what HOVER uses: if active and hover look the same, the sidebar cannot tell you where you are, only where your mouse is.",
+        "$extensions": {
+          "looloo.tailwind": "data-active:bg-sidebar-primary"
+        }
+      },
+      "item-active-foreground": {
+        "$type": "color",
+        "$value": "{color.sidebar-primary-foreground}",
+        "$description": "White on the teal active row (4.87:1).",
+        "$extensions": {
+          "looloo.tailwind": "data-active:text-sidebar-primary-foreground"
+        }
+      },
+      "group-label-foreground": {
+        "$type": "color",
+        "$value": "{color.sidebar-foreground}",
+        "$description": "Group labels run at 70%.",
+        "$extensions": {
+          "looloo.tailwind": "text-sidebar-foreground/70"
+        }
+      },
+      "group-label-opacity": {
+        "$type": "number",
+        "$value": "{opacity.70}",
+        "$extensions": {
+          "looloo.tailwind": "text-sidebar-foreground/70"
+        }
+      },
+      "rail-color": {
+        "$type": "color",
+        "$value": "{color.sidebar-border}",
+        "$extensions": {
+          "looloo.tailwind": "bg-sidebar-border"
+        }
+      },
+      "focus-ring": {
+        "$type": "color",
+        "$value": "{color.sidebar-ring}",
+        "$extensions": {
+          "looloo.tailwind": "ring-sidebar-ring"
+        }
+      },
+      "item-hover-background": {
+        "$type": "color",
+        "$value": "{color.sidebar-accent}",
+        "$description": "Hover stays the muted wash. It says 'you could go here', while active says 'you are here'.",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-sidebar-accent"
+        }
+      },
+      "item-hover-foreground": {
+        "$type": "color",
+        "$value": "{color.sidebar-accent-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "hover:text-sidebar-accent-foreground"
+        }
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$description": "Padding of header, footer and each group.",
+      "$extensions": {
+        "looloo.tailwind": "p-2"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$description": "Between blocks inside header/footer.",
+      "$extensions": {
+        "looloo.tailwind": "gap-2"
+      }
+    },
+    "menuButton": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$description": "A menu row: 32px at the default size.",
+        "$extensions": {
+          "looloo.tailwind": "p-2 + text-sm"
+        }
+      },
+      "heightLg": {
+        "$type": "dimension",
+        "$value": "{size.48}",
+        "$description": "The lg row (48px) — used by the header entry that carries an avatar or a workspace switcher.",
+        "$extensions": {
+          "looloo.tailwind": "h-12"
+        }
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "p-2"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$description": "Icon → label.",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.md}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-md"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "size-4"
+        }
+      }
+    },
+    "groupLabel": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$extensions": {
+          "looloo.tailwind": "h-8"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "px-2"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.md}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-md"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "text-xs"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      }
+    },
+    "menuBadge": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.20}",
+        "$extensions": {
+          "looloo.tailwind": "h-5"
+        }
+      },
+      "minWidth": {
+        "$type": "dimension",
+        "$value": "{size.20}",
+        "$description": "A square floor so a single digit does not render as a sliver.",
+        "$extensions": {
+          "looloo.tailwind": "min-w-5"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "px-1"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.md}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-md"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "text-xs"
+        }
+      },
+      "inset": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$description": "Pinned to the right edge of the row.",
+        "$extensions": {
+          "looloo.tailwind": "right-1"
+        }
+      }
+    },
+    "separator": {
+      "thickness": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "h-px"
+        }
+      }
+    },
+    "menuSub": {
+      "marginX": {
+        "$type": "dimension",
+        "$value": "{space.3-5}",
+        "$description": "The submenu is indented 14px — enough that the rail line lands under the parent's ICON, so the tree reads as 'these belong to that'.",
+        "$extensions": {
+          "looloo.tailwind": "mx-3.5"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.0-5}",
+        "$extensions": {
+          "looloo.tailwind": "py-0.5"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$description": "Sub-rows sit tighter than top-level rows: they are a detail of the parent, not peers of it.",
+        "$extensions": {
+          "looloo.tailwind": "gap-1"
+        }
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$description": "A 1px rail down the left. It is the only thing tying the children to the parent once you have scrolled the parent off screen.",
+        "$extensions": {
+          "looloo.tailwind": "border-l"
+        }
+      }
+    },
+    "menuSubButton": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.28}",
+        "$description": "28px — shorter than the 32px parent row. The size difference IS the hierarchy.",
+        "$extensions": {
+          "looloo.tailwind": "h-7"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "px-2"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.md}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-md"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "data-[size=md]:text-sm"
+        }
+      },
+      "fontSizeSm": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "data-[size=sm]:text-xs"
+        }
+      }
+    }
   }
 }

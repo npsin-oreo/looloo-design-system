@@ -1,0 +1,44 @@
+{
+  "$description": "Captured 1:1 from components/ui/markdown/markdown.tsx. Prose rhythm: every block sets its own top/bottom margin (first:mt-0 resets the leading one). Headings run h1 2xl → h4 base, all semibold.",
+  "markdown": {
+    "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } },
+    "lineHeight": { "$type": "number", "$value": 1.625, "$description": "leading-relaxed — no leading token matches.", "$extensions": { "looloo.tailwind": "leading-relaxed" } },
+    "heading": {
+      "fontWeight": { "$type": "fontWeight", "$value": "{font.weight.semibold}", "$extensions": { "looloo.tailwind": "font-semibold" } },
+      "h1FontSize": { "$type": "dimension", "$value": "{font.size.2xl}", "$extensions": { "looloo.tailwind": "text-2xl" } },
+      "h2FontSize": { "$type": "dimension", "$value": "{font.size.xl}", "$extensions": { "looloo.tailwind": "text-xl" } },
+      "h3FontSize": { "$type": "dimension", "$value": "{font.size.lg}", "$extensions": { "looloo.tailwind": "text-lg" } },
+      "h4FontSize": { "$type": "dimension", "$value": "{font.size.base}", "$extensions": { "looloo.tailwind": "text-base" } },
+      "marginTopLarge": { "$type": "dimension", "$value": "{space.6}", "$description": "h1/h2 — mt-6.", "$extensions": { "looloo.tailwind": "mt-6" } },
+      "marginTopMedium": { "$type": "dimension", "$value": "{space.5}", "$description": "h3 — mt-5.", "$extensions": { "looloo.tailwind": "mt-5" } },
+      "marginTopSmall": { "$type": "dimension", "$value": "{space.4}", "$description": "h4 — mt-4.", "$extensions": { "looloo.tailwind": "mt-4" } },
+      "marginBottomLarge": { "$type": "dimension", "$value": "{space.3}", "$description": "h1/h2 — mb-3.", "$extensions": { "looloo.tailwind": "mb-3" } },
+      "marginBottomSmall": { "$type": "dimension", "$value": "{space.2}", "$description": "h3/h4 — mb-2.", "$extensions": { "looloo.tailwind": "mb-2" } }
+    },
+    "block": {
+      "marginY": { "$type": "dimension", "$value": "{space.3}", "$description": "Paragraphs and lists — my-3.", "$extensions": { "looloo.tailwind": "my-3" } },
+      "preMarginY": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "my-4" } }
+    },
+    "list": {
+      "indent": { "$type": "dimension", "$value": "{space.6}", "$extensions": { "looloo.tailwind": "ml-6" } },
+      "itemGap": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "[&>li]:mt-1" } }
+    },
+    "inlineCode": {
+      "paddingX": { "$type": "dimension", "$value": "{space.1-5}", "$extensions": { "looloo.tailwind": "px-1.5" } },
+      "paddingY": { "$type": "dimension", "$value": "{space.0-5}", "$extensions": { "looloo.tailwind": "py-0.5" } },
+      "radius": { "$type": "dimension", "$value": "0.25rem", "$description": "Bare `rounded` — Tailwind's 0.25rem default, NOT a step of the radius.ui scale.", "$extensions": { "looloo.tailwind": "rounded" } },
+      "fontSize": { "$type": "dimension", "$value": "0.85em", "$description": "text-[0.85em] — relative to the surrounding text, so it tracks whatever size the prose is set at.", "$extensions": { "looloo.tailwind": "text-[0.85em]" } },
+      "fontFamily": { "$type": "fontFamily", "$value": "{font.family.mono}", "$extensions": { "looloo.tailwind": "font-mono" } },
+      "background": { "$type": "color", "$value": "{color.muted}", "$extensions": { "looloo.tailwind": "bg-muted" } }
+    },
+    "pre": {
+      "radius": { "$type": "dimension", "$value": "{radius.ui.md}", "$extensions": { "looloo.tailwind": "rounded-md" } },
+      "borderWidth": { "$type": "dimension", "$value": "{border.width.default}", "$extensions": { "looloo.tailwind": "border" } }
+    },
+    "link": {
+      "fontWeight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$extensions": { "looloo.tailwind": "font-medium" } },
+      "underlineOffset": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "underline-offset-4" } },
+      "foreground": { "$type": "color", "$value": "{color.primary}", "$extensions": { "looloo.tailwind": "text-primary" } }
+    }
+  }
+}

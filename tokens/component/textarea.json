@@ -1,0 +1,229 @@
+{
+  "$description": "Captured 1:1 from the cva in components/ui/textarea/textarea.tsx. Sizes sm/md/xl (md = DEFAULT). Height is a min-height — the field grows with content (field-sizing-content).",
+  "textarea": {
+    "minHeight": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.12}",
+        "$extensions": {
+          "looloo.tailwind": "min-h-12"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.16}",
+        "$description": "DEFAULT size.",
+        "$extensions": {
+          "looloo.tailwind": "min-h-16"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{space.24}",
+        "$extensions": {
+          "looloo.tailwind": "min-h-24"
+        }
+      }
+    },
+    "paddingX": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "px-4"
+        }
+      }
+    },
+    "paddingY": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "py-1.5"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "py-2"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{space.3}",
+        "$extensions": {
+          "looloo.tailwind": "py-3"
+        }
+      }
+    },
+    "fontSize": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$description": "text-base on mobile, text-sm from md up — the desktop value is canonical.",
+        "$extensions": {
+          "looloo.tailwind": "text-base md:text-sm"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{font.size.base}",
+        "$extensions": {
+          "looloo.tailwind": "text-base"
+        }
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.lg}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-lg"
+      }
+    },
+    "borderWidth": {
+      "$type": "dimension",
+      "$value": "{border.width.default}",
+      "$extensions": {
+        "looloo.tailwind": "border"
+      }
+    },
+    "focusRingWidth": {
+      "$type": "dimension",
+      "$value": "{focus.ring.width}",
+      "$extensions": {
+        "looloo.tailwind": "focus-visible:ring-3"
+      }
+    },
+    "disabledOpacity": {
+      "$type": "number",
+      "$value": "{opacity.50}",
+      "$extensions": {
+        "looloo.tailwind": "disabled:opacity-50"
+      }
+    },
+    "color": {
+      "border": {
+        "$type": "color",
+        "$value": "{color.input}",
+        "$description": "Resting border.",
+        "$extensions": {
+          "looloo.tailwind": "border-input"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$description": "The value the user typed — the COMPLETE state. Never the placeholder colour.",
+        "$extensions": {
+          "looloo.tailwind": "text-foreground"
+        }
+      },
+      "placeholder": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$description": "Empty field only.",
+        "$extensions": {
+          "looloo.tailwind": "placeholder:text-muted-foreground"
+        }
+      },
+      "focus-border": {
+        "$type": "color",
+        "$value": "{color.ring}",
+        "$description": "Focus.",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:border-ring"
+        }
+      },
+      "invalid-border": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$description": "Invalid.",
+        "$extensions": {
+          "looloo.tailwind": "aria-invalid:border-destructive"
+        }
+      },
+      "resize-grip": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$description": "The grip lines.",
+        "$extensions": {
+          "looloo.tailwind": "— (native UA)"
+        }
+      },
+      "clear-button": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$description": "The X glyph.",
+        "$extensions": {
+          "looloo.tailwind": "—"
+        }
+      }
+    },
+    "resizeGrip": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.12}",
+        "$description": "The native resize grip the browser paints in the bottom-right corner. textarea has NO resize-none, so it IS resizable — this is real, not decoration. (The textarea inside input-group DOES set resize-none and shows no grip.)",
+        "$extensions": {
+          "looloo.tailwind": "— (native UA)"
+        }
+      },
+      "inset": {
+        "$type": "dimension",
+        "$value": "{space.0-5}",
+        "$description": "How far the grip sits from the corner.",
+        "$extensions": {
+          "looloo.tailwind": "— (native UA)"
+        }
+      }
+    },
+    "clearButton": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$description": "Clear (X) button — an Icon instance, glyph = close. NOT in textarea.tsx yet; the design calls for it and the code should follow (see Input).",
+        "$extensions": {
+          "looloo.tailwind": "—"
+        }
+      },
+      "inset": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$description": "Distance from the top-right corner.",
+        "$extensions": {
+          "looloo.tailwind": "—"
+        }
+      },
+      "reservedPadding": {
+        "$type": "dimension",
+        "$value": "{space.8}",
+        "$description": "Trailing padding while the clear button is present.",
+        "$extensions": {
+          "looloo.tailwind": "pe-(--textarea-clear-button-reserved-padding)"
+        }
+      }
+    }
+  }
+}

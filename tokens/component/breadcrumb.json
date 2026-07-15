@@ -1,0 +1,87 @@
+{
+  "$description": "Captured 1:1 from components/ui/breadcrumb/breadcrumb.tsx. The separator chevron is size-3.5 — deliberately smaller than the 16px icon default.",
+  "breadcrumb": {
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.1-5}",
+      "$description": "Gap between crumbs in the list.",
+      "$extensions": {
+        "looloo.tailwind": "gap-1.5"
+      }
+    },
+    "itemGap": {
+      "$type": "dimension",
+      "$value": "{space.1}",
+      "$description": "Gap inside one crumb (icon + label).",
+      "$extensions": {
+        "looloo.tailwind": "gap-1"
+      }
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.sm}",
+      "$extensions": {
+        "looloo.tailwind": "text-sm"
+      }
+    },
+    "pageFontWeight": {
+      "$type": "fontWeight",
+      "$value": "{font.weight.normal}",
+      "$description": "The current page is not bolded — it is distinguished by color only.",
+      "$extensions": {
+        "looloo.tailwind": "font-normal"
+      }
+    },
+    "separatorIconSize": {
+      "$type": "dimension",
+      "$value": "{size.14}",
+      "$extensions": {
+        "looloo.tailwind": "[&>svg]:size-3.5",
+        "looloo.legacy": "0.875rem"
+      }
+    },
+    "ellipsis": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.20}",
+        "$description": "size-5 = 20px — below the size.control scale.",
+        "$extensions": {
+          "looloo.tailwind": "size-5",
+          "looloo.legacy": "1.25rem"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "[&>svg]:size-4",
+          "looloo.legacy": "1rem"
+        }
+      }
+    },
+    "foreground": {
+      "$type": "color",
+      "$value": "{color.muted-foreground}",
+      "$extensions": {
+        "looloo.tailwind": "text-muted-foreground"
+      },
+      "$description": "A crumb you can click, at rest. Quiet on purpose — the breadcrumb is a wayfinder, not content."
+    },
+    "activeForeground": {
+      "$type": "color",
+      "$value": "{color.brand.primary.600}",
+      "$description": "THE CURRENT PAGE. Brand teal, shade 600 (#217D80) — NOT the 300 tint (#60CFCB), which only reaches 1.86:1 on white and is unreadable as 14px text. 600 is the lightest shade of the ramp that clears WCAG AA (4.87:1).",
+      "$extensions": {
+        "looloo.tailwind": "text-(--breadcrumb-active-foreground)"
+      }
+    },
+    "hoverForeground": {
+      "$type": "color",
+      "$value": "{color.foreground}",
+      "$description": "Link on hover — darkens to full foreground so the row reads as clickable.",
+      "$extensions": {
+        "looloo.tailwind": "hover:text-(--breadcrumb-hover-foreground)"
+      }
+    }
+  }
+}

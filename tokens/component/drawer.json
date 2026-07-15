@@ -1,0 +1,30 @@
+{
+  "$description": "Captured 1:1 from components/ui/drawer/drawer.tsx (vaul). The radius applies only to the two corners facing away from the screen edge the drawer is docked to; the border only to the docked edge.",
+  "drawer": {
+    "overlay": { "$type": "color", "$value": "{surface.overlay}", "$extensions": { "looloo.tailwind": "bg-(--surface-overlay)" } },
+    "content": {
+      "radius": { "$type": "dimension", "$value": "{radius.ui.xl}", "$description": "rounded-t-xl / -b-xl / -l-xl / -r-xl depending on direction — the two inner corners only.", "$extensions": { "looloo.tailwind": "rounded-t-xl" } },
+      "borderWidth": { "$type": "dimension", "$value": "{border.width.default}", "$description": "On the docked edge only (border-t / -b / -l / -r).", "$extensions": { "looloo.tailwind": "border-t" } },
+      "maxWidth": { "$type": "dimension", "$value": "{space.96}", "$description": "Left/right drawers: sm:max-w-sm = 384px (they start at w-3/4).", "$extensions": { "looloo.tailwind": "sm:max-w-sm" } },
+      "peek": { "$type": "dimension", "$value": "{space.24}", "$description": "mt-24 / mb-24 — the gap kept between a top/bottom drawer and the far edge.", "$extensions": { "looloo.tailwind": "mt-24" } },
+      "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } },
+      "background": { "$type": "color", "$value": "{color.popover}", "$extensions": { "looloo.tailwind": "bg-popover" } },
+      "foreground": { "$type": "color", "$value": "{color.popover-foreground}", "$extensions": { "looloo.tailwind": "text-popover-foreground" } }
+    },
+    "header": {
+      "padding": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "p-4" } },
+      "gap": { "$type": "dimension", "$value": "{space.0-5}", "$extensions": { "looloo.tailwind": "gap-0.5" } }
+    },
+    "footer": {
+      "padding": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "p-4" } },
+      "gap": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "gap-2" } }
+    },
+    "handle": {
+      "height": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "h-1" } },
+      "width": { "$type": "dimension", "$value": "6.25rem", "$description": "w-[100px] — literal in source.", "$extensions": { "looloo.tailwind": "w-[100px]" } },
+      "marginTop": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "mt-4" } },
+      "radius": { "$type": "dimension", "$value": "{radius.full}", "$extensions": { "looloo.tailwind": "rounded-full" } },
+      "color": { "$type": "color", "$value": "{color.muted}", "$extensions": { "looloo.tailwind": "bg-muted" } }
+    }
+  }
+}

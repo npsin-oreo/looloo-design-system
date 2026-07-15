@@ -1,0 +1,208 @@
+{
+  "$description": "Captured 1:1 from components/ui/calendar/calendar.tsx (react-day-picker v9). The grid is driven by two local CSS vars declared on the root: --cell-size (--spacing(7) = 28px) and --cell-radius (var(--radius-md) = 8px). Everything else — day, weekday, range ends — is sized off those.",
+  "calendar": {
+    "cellSize": {
+      "$type": "dimension",
+      "$value": "{size.32}",
+      "$description": "32px. Upstream ships 28 (--spacing(7)). 32 buys a real hit target on a day cell and gives the caption 248px to work in — the caption needs 217 (month select 85 + year select 64 + two 28px nav buttons + gaps), so it fits with slack instead of on the edge. 36 was overkill: it solved a problem caused by hard-coded select widths, not by the cell.",
+      "$extensions": {
+        "looloo.tailwind": "[--cell-size:--spacing(8)]"
+      }
+    },
+    "cellRadius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.md}",
+      "$description": "[--cell-radius:var(--radius-md)] = 8px. Range ends round only on their outer side.",
+      "$extensions": {
+        "looloo.tailwind": "[--cell-radius:var(--radius-md)]"
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$description": "Transparent inside a card or popover.",
+      "$extensions": {
+        "looloo.tailwind": "p-2"
+      }
+    },
+    "monthGap": {
+      "$type": "dimension",
+      "$value": "{space.4}",
+      "$description": "Between months (and between caption and grid).",
+      "$extensions": {
+        "looloo.tailwind": "gap-4"
+      }
+    },
+    "nav": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1"
+        }
+      },
+      "buttonSize": {
+        "$type": "dimension",
+        "$value": "{size.control.sm}",
+        "$description": "28px — deliberately SMALLER than a day cell: paging is a secondary move next to picking, and the selects are the fast path.",
+        "$extensions": {
+          "looloo.tailwind": "size-(--calendar-nav-button-size)"
+        }
+      },
+      "disabledOpacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "aria-disabled:opacity-50"
+        }
+      }
+    },
+    "caption": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{space.7}",
+        "$extensions": {
+          "looloo.tailwind": "h-(--cell-size)"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1.5"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.14}",
+        "$extensions": {
+          "looloo.tailwind": "[&>svg]:size-3.5",
+          "looloo.legacy": "0.875rem"
+        }
+      }
+    },
+    "weekday": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$description": "12px. FIX 2026-07-14: was text-[0.8rem] (12.8px) — the same off-scale literal Toggle carried. It lands on a half pixel and exists on no type scale.",
+        "$extensions": {
+          "looloo.tailwind": "text-xs"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.normal}",
+        "$extensions": {
+          "looloo.tailwind": "font-normal"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      }
+    },
+    "week": {
+      "marginTop": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "mt-2"
+        }
+      }
+    },
+    "day": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$description": "Between the date and its below-label (e.g. a dot or price).",
+        "$extensions": {
+          "looloo.tailwind": "gap-1"
+        }
+      },
+      "labelFontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "[&>span]:text-xs"
+        }
+      },
+      "labelOpacity": {
+        "$type": "number",
+        "$value": "{opacity.70}",
+        "$extensions": {
+          "looloo.tailwind": "[&>span]:opacity-70"
+        }
+      },
+      "outsideOpacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$description": "Days from the adjacent month.",
+        "$extensions": {
+          "looloo.tailwind": "opacity-50"
+        }
+      },
+      "focusRingWidth": {
+        "$type": "dimension",
+        "$value": "{focus.ring.width}",
+        "$extensions": {
+          "looloo.tailwind": "group-data-[focused=true]/day:ring-[3px]"
+        }
+      },
+      "selectedBackground": {
+        "$type": "color",
+        "$value": "{color.primary}",
+        "$description": "Single selection and both range ends.",
+        "$extensions": {
+          "looloo.tailwind": "data-[selected-single=true]:bg-primary"
+        }
+      },
+      "selectedForeground": {
+        "$type": "color",
+        "$value": "{color.primary-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "data-[selected-single=true]:text-primary-foreground"
+        }
+      },
+      "rangeMiddleBackground": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "data-[range-middle=true]:bg-muted"
+        }
+      },
+      "rangeMiddleForeground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "data-[range-middle=true]:text-foreground"
+        }
+      },
+      "rangeBleed": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$description": "after:w-4 — the muted band the range ends paint past the cell so the row reads continuous.",
+        "$extensions": {
+          "looloo.tailwind": "after:w-4"
+        }
+      }
+    }
+  }
+}

@@ -56,7 +56,7 @@ function Token({
   const labelNode = href ? (
     <a
       href={href}
-      className="truncate rounded-sm outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring"
+      className="truncate rounded-sm outline-none hover:underline focus-visible:shadow-(--focus-shadow)"
     >
       {label}
     </a>
@@ -65,7 +65,7 @@ function Token({
       type="button"
       disabled={disabled}
       onClick={onClick}
-      className="truncate rounded-sm outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none"
+      className="truncate rounded-sm outline-none hover:underline focus-visible:shadow-(--focus-shadow) disabled:pointer-events-none"
     >
       {label}
     </button>
@@ -94,7 +94,7 @@ function Token({
           disabled={disabled}
           onClick={onRemove}
           aria-label={`Remove ${label}`}
-          className="-mr-0.5 ml-0.5 inline-flex shrink-0 items-center justify-center rounded-full opacity-70 outline-none transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none"
+          className="-mr-0.5 ml-0.5 inline-flex shrink-0 items-center justify-center rounded-full opacity-70 outline-none transition-opacity hover:opacity-100 focus-visible:shadow-(--focus-shadow) disabled:pointer-events-none"
         >
           <X />
         </button>

@@ -1,16 +1,122 @@
 {
   "$description": "DRAFT — captured from components/ui/card.tsx (default + size sm). Not consumed at runtime yet (Phase 4).",
   "card": {
-    "radius": { "$type": "dimension", "$value": "0.875rem", "$description": "rounded-xl = calc(var(--radius) * 1.4).", "$extensions": { "looloo.tailwind": "rounded-xl" } },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.xl}",
+      "$description": "rounded-xl = calc(var(--radius) * 1.4).",
+      "$extensions": {
+        "looloo.tailwind": "rounded-xl",
+        "looloo.legacy": "0.875rem"
+      }
+    },
     "padding": {
-      "md": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "p-4 / px-4 py-4" } },
-      "sm": { "$type": "dimension", "$value": "{space.3}", "$extensions": { "looloo.tailwind": "p-3 / px-3 py-3" } }
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "p-4 / px-4 py-4"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.3}",
+        "$extensions": {
+          "looloo.tailwind": "p-3 / px-3 py-3"
+        }
+      }
     },
     "gap": {
-      "md": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "gap-4" } },
-      "sm": { "$type": "dimension", "$value": "{space.3}", "$extensions": { "looloo.tailwind": "gap-3 (data-[size=sm])" } }
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "gap-4"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.3}",
+        "$extensions": {
+          "looloo.tailwind": "gap-3 (data-[size=sm])"
+        }
+      }
     },
-    "titleFontSize": { "$type": "dimension", "$value": "{font.size.base}", "$extensions": { "looloo.tailwind": "text-base" } },
-    "bodyFontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } }
+    "titleFontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.base}",
+      "$extensions": {
+        "looloo.tailwind": "text-base"
+      }
+    },
+    "bodyFontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.sm}",
+      "$extensions": {
+        "looloo.tailwind": "text-sm"
+      }
+    },
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.card}",
+        "$extensions": {
+          "looloo.tailwind": "bg-card"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.card-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-card-foreground"
+        }
+      },
+      "muted-foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$description": "Card description.",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      },
+      "footer-background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$description": "Rendered at 50%.",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted/50"
+        }
+      },
+      "footer-background-opacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted/50"
+        }
+      },
+      "ring": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$description": "Hairline ring at 10% — the card's edge, in place of a border.",
+        "$extensions": {
+          "looloo.tailwind": "ring-foreground/10"
+        }
+      },
+      "ring-opacity": {
+        "$type": "number",
+        "$value": "{opacity.10}",
+        "$extensions": {
+          "looloo.tailwind": "ring-foreground/10"
+        }
+      },
+      "ring-paint": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--foreground) 10%, transparent)",
+        "$description": "The card edge as a real color — a 10% ring, not a border.",
+        "$extensions": {
+          "looloo.tailwind": "ring-foreground/10"
+        }
+      }
+    }
   }
 }

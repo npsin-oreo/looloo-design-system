@@ -1,0 +1,214 @@
+{
+  "$description": "Captured 1:1 from components/ui/alert-dialog/alert-dialog.tsx. Sizes default/sm; sm stays at max-w-xs while default widens to max-w-sm from the sm breakpoint. The footer bleeds past the content padding and sits on a muted band.",
+  "alertDialog": {
+    "overlay": {
+      "$type": "color",
+      "$value": "{surface.overlay}",
+      "$extensions": {
+        "looloo.tailwind": "bg-(--surface-overlay)"
+      }
+    },
+    "content": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.xl}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-xl"
+        }
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "p-4"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "gap-4"
+        }
+      },
+      "ringWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "ring-1"
+        }
+      },
+      "maxWidth": {
+        "$type": "dimension",
+        "$value": "{space.80}",
+        "$description": "max-w-xs = 320px. Both sizes start here.",
+        "$extensions": {
+          "looloo.tailwind": "max-w-xs"
+        }
+      },
+      "maxWidthDesktop": {
+        "$type": "dimension",
+        "$value": "{space.96}",
+        "$description": "Size default widens to max-w-sm (384px) from the sm breakpoint; size sm stays at 320.",
+        "$extensions": {
+          "looloo.tailwind": "data-[size=default]:sm:max-w-sm"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.popover}",
+        "$extensions": {
+          "looloo.tailwind": "bg-popover"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.popover-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-popover-foreground"
+        }
+      }
+    },
+    "header": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1.5"
+        }
+      },
+      "mediaGap": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "has-data-[slot=alert-dialog-media]:gap-x-4"
+        }
+      }
+    },
+    "title": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.base}",
+        "$extensions": {
+          "looloo.tailwind": "text-base"
+        }
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}",
+        "$extensions": {
+          "looloo.tailwind": "font-medium"
+        }
+      }
+    },
+    "media": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.40}",
+        "$extensions": {
+          "looloo.tailwind": "size-10"
+        },
+        "$description": "Media box, not a touch target — pinned to 40px when size.control.xl moved to 44."
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.md}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-md"
+        }
+      },
+      "marginBottom": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "mb-2"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.24}",
+        "$extensions": {
+          "looloo.tailwind": "*:[svg]:size-6",
+          "looloo.legacy": "1.5rem"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "bg-muted"
+        }
+      }
+    },
+    "footer": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        },
+        "$description": "Between the footer buttons. REMOVED 2026-07-13: the footer had a bg-muted/50 band with a top rule and a bleed past the content padding. That band's only job is to separate actions from CONTENT THAT SCROLLS — most dialogs are short, so it was drawing a divider that divided nothing and made one box read as two stacked cards. shadcn's own footer carries no surface; this kit had added it. The footer is now just the actions."
+      }
+    },
+    "color": {
+      "media-confirm-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--status-success) 10%, transparent)",
+        "$description": "Confirm: a 10% green tint. The three tones now read as one family — green (safe) / amber (undoable) / red (permanent) — instead of one neutral box sitting next to two coloured ones.",
+        "$extensions": {
+          "looloo.tailwind": "bg-(--alert-dialog-color-media-confirm-surface)"
+        }
+      },
+      "media-confirm-foreground": {
+        "$type": "color",
+        "$value": "{status.success}",
+        "$description": "green.700 — 5.02:1 on the tint, passes AA as an icon/text colour with no separate text token needed (unlike warning, whose amber.500 fill is unreadable).",
+        "$extensions": {
+          "looloo.tailwind": "text-(--alert-dialog-color-media-confirm-foreground)"
+        }
+      },
+      "media-warning-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--status-warning) 10%, transparent)",
+        "$description": "Warning: a 10% amber tint. Something will go wrong, but it can be undone.",
+        "$extensions": {
+          "looloo.tailwind": "bg-(--alert-dialog-color-media-warning-surface)"
+        }
+      },
+      "media-warning-foreground": {
+        "$type": "color",
+        "$value": "{status.warning-text}",
+        "$description": "amber.700 — NOT status.warning (amber.500), which only reaches 2.1:1 on a light tint.",
+        "$extensions": {
+          "looloo.tailwind": "text-(--alert-dialog-color-media-warning-foreground)"
+        }
+      },
+      "media-destructive-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
+        "$description": "Destructive: a 10% red tint. This cannot be undone.",
+        "$extensions": {
+          "looloo.tailwind": "bg-(--alert-dialog-color-media-destructive-surface)"
+        }
+      },
+      "media-destructive-foreground": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$description": "Red icon.",
+        "$extensions": {
+          "looloo.tailwind": "text-destructive"
+        }
+      }
+    },
+    "$comment": "REMOVED 2026-07-13: the footer had a bg-muted/50 band with a top rule and a bleed past the content padding. That band's only job is to separate actions from CONTENT THAT SCROLLS — most dialogs are short, so it was drawing a divider that divided nothing and made one box read as two stacked cards. shadcn's own footer carries no surface; this kit had added it. The footer is now just the actions.",
+    "description": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "{size.40}",
+        "$description": "Two lines of Body/sm (2 × the 20px line box) are RESERVED, even when the copy is one line. Without it the dialog changes height between tones and between locales — Thai runs longer than English — so the buttons jump under the cursor the moment the copy changes. Reserve the space; do not let the layout breathe.",
+        "$extensions": {
+          "looloo.tailwind": "min-h-(--alert-dialog-description-min-height)"
+        }
+      }
+    }
+  }
+}

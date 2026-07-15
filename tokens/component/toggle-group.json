@@ -1,0 +1,9 @@
+{
+  "$description": "Captured 1:1 from components/ui/toggle-group/toggle-group.tsx. Items inherit every dimension from toggle.* — only the group shell has its own tokens. spacing=0 makes the items a joined segmented control (item radius collapses to the group's outer corners).",
+  "toggleGroup": {
+    "gap": { "$type": "dimension", "$value": "{space.2}", "$description": "Default `spacing` prop = 2 → gap-[--spacing(2)] = 8px. spacing={0} joins the items.", "$extensions": { "looloo.tailwind": "gap-[--spacing(var(--gap))]" } },
+    "radius": { "$type": "dimension", "$value": "{radius.ui.lg}", "$extensions": { "looloo.tailwind": "rounded-lg" } },
+    "radiusSm": { "$type": "dimension", "$value": "0.5rem", "$description": "Size sm clamps: rounded-[min(var(--radius-md),10px)] → 8px at the kit default.", "$extensions": { "looloo.tailwind": "data-[size=sm]:rounded-[min(var(--radius-md),10px)]" } },
+    "joinedPaddingX": { "$type": "dimension", "$value": "{space.2}", "$description": "spacing=0 items tighten from px-2.5 to px-2.", "$extensions": { "looloo.tailwind": "group-data-[spacing=0]/toggle-group:px-2" } }
+  }
+}

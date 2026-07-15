@@ -1,0 +1,9 @@
+{
+  "$description": "Captured 1:1 from components/ui/carousel/carousel.tsx (embla). Prev/Next are Buttons (size icon) parked OUTSIDE the viewport — the offset is a negative inset, so the carousel needs that much clearance around it.",
+  "carousel": {
+    "nav": {
+      "offset": { "$type": "dimension", "$value": "{space.12}", "$description": "Applied as a NEGATIVE inset (-left-12 / -right-12 / -top-12) — the buttons sit 48px outside the viewport edge.", "$extensions": { "looloo.tailwind": "-left-12" } },
+      "radius": { "$type": "dimension", "$value": "{radius.full}", "$extensions": { "looloo.tailwind": "rounded-full" } }
+    }
+  }
+}

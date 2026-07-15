@@ -387,7 +387,7 @@ function ChatComposer({
           submit()
         }}
         className={cn(
-          "flex flex-col gap-2 rounded-2xl border bg-background p-2 shadow-xs focus-within:ring-1 focus-within:ring-ring",
+          "flex flex-col gap-2 rounded-2xl border bg-background p-2 shadow-xs focus-within:shadow-(--focus-shadow)",
           disabled && "opacity-60",
           className
         )}
@@ -495,7 +495,7 @@ function ChatSendButton({
         else (onSend ?? ctx.submit)()
       }}
       className={cn(
-        "inline-flex shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+        "inline-flex shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-colors hover:bg-(--primary-hover) focus-visible:shadow-(--focus-shadow) focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
         size === "sm" ? "size-7" : "size-8",
         className
       )}
@@ -609,7 +609,7 @@ function ChatDictationButton({
       disabled={!dictation.isSupported}
       onClick={dictation.toggle}
       className={cn(
-        "inline-flex shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[listening]:bg-primary data-[listening]:text-primary-foreground",
+        "inline-flex shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:shadow-(--focus-shadow) focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[listening]:bg-primary data-[listening]:text-primary-foreground",
         size === "sm" ? "size-7" : "size-8",
         className
       )}

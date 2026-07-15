@@ -2,44 +2,402 @@
   "$description": "DRAFT — captured 1:1 from components/ui/button.tsx cva (radix-nova). Not consumed at runtime yet; Phase 4 wires buttonVariants to the generated CSS vars. Radius values are the resolved defaults of the calc() scale in app/globals.css at --radius: 0.625rem.",
   "button": {
     "height": {
-      "xs": { "$type": "dimension", "$value": "{size.control.xs}", "$extensions": { "looloo.tailwind": "h-6" } },
-      "sm": { "$type": "dimension", "$value": "{size.control.sm}", "$extensions": { "looloo.tailwind": "h-7" } },
-      "md": { "$type": "dimension", "$value": "{size.control.md}", "$description": "DEFAULT size.", "$extensions": { "looloo.tailwind": "h-8" } },
-      "lg": { "$type": "dimension", "$value": "{size.control.lg}", "$extensions": { "looloo.tailwind": "h-9" } },
-      "xl": { "$type": "dimension", "$value": "{size.control.xl}", "$extensions": { "looloo.tailwind": "h-10" } }
+      "xs": {
+        "$type": "dimension",
+        "$value": "{size.control.xs}",
+        "$extensions": {
+          "looloo.tailwind": "h-6"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.control.sm}",
+        "$extensions": {
+          "looloo.tailwind": "h-7"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{size.control.md}",
+        "$description": "DEFAULT size.",
+        "$extensions": {
+          "looloo.tailwind": "h-8"
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{size.control.lg}",
+        "$extensions": {
+          "looloo.tailwind": "h-9"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{size.control.xl}",
+        "$extensions": {
+          "looloo.tailwind": "h-10"
+        }
+      }
     },
     "paddingX": {
-      "xs": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "px-2" } },
-      "sm": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "px-2.5" } },
-      "md": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "px-2.5" } },
-      "lg": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "px-2.5" } },
-      "xl": { "$type": "dimension", "$value": "{space.4}", "$extensions": { "looloo.tailwind": "px-4" } }
+      "xs": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "px-2"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{space.2-5}",
+        "$extensions": {
+          "looloo.tailwind": "px-2.5"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{space.4}",
+        "$extensions": {
+          "looloo.tailwind": "px-4"
+        }
+      }
     },
     "gap": {
-      "xs": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "gap-1" } },
-      "sm": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "gap-1" } },
-      "md": { "$type": "dimension", "$value": "{space.1-5}", "$extensions": { "looloo.tailwind": "gap-1.5" } },
-      "lg": { "$type": "dimension", "$value": "{space.1-5}", "$extensions": { "looloo.tailwind": "gap-1.5" } },
-      "xl": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "gap-2" } }
+      "xs": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.1}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1.5"
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{space.1-5}",
+        "$extensions": {
+          "looloo.tailwind": "gap-1.5"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        }
+      }
     },
     "radius": {
       "$type": "dimension",
-      "$value": "0.625rem",
+      "$value": "{radius.ui.lg}",
       "$description": "rounded-lg = var(--radius). xs/sm sizes clamp via rounded-[min(var(--radius-md),10|12px)].",
-      "$extensions": { "looloo.tailwind": "rounded-lg" }
+      "$extensions": {
+        "looloo.tailwind": "rounded-lg",
+        "looloo.legacy": "0.625rem"
+      }
     },
     "fontSize": {
-      "xs": { "$type": "dimension", "$value": "{font.size.xs}", "$extensions": { "looloo.tailwind": "text-xs" } },
-      "sm": { "$type": "dimension", "$value": "0.8rem", "$description": "Literal in source (text-[0.8rem]) — between xs and sm scale steps.", "$extensions": { "looloo.tailwind": "text-[0.8rem]" } },
-      "md": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } },
-      "xl": { "$type": "dimension", "$value": "{font.size.base}", "$extensions": { "looloo.tailwind": "text-base" } }
+      "xs": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "text-xs"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "0.8rem",
+        "$description": "Literal in source (text-[0.8rem]) — between xs and sm scale steps.",
+        "$extensions": {
+          "looloo.tailwind": "text-[0.8rem]"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{font.size.base}",
+        "$extensions": {
+          "looloo.tailwind": "text-base"
+        }
+      }
     },
-    "fontWeight": { "$type": "fontWeight", "$value": "{font.weight.medium}", "$extensions": { "looloo.tailwind": "font-medium" } },
+    "fontWeight": {
+      "$type": "fontWeight",
+      "$value": "{font.weight.medium}",
+      "$extensions": {
+        "looloo.tailwind": "font-medium"
+      }
+    },
     "iconSize": {
-      "xs": { "$type": "dimension", "$value": "0.75rem", "$extensions": { "looloo.tailwind": "size-3" } },
-      "sm": { "$type": "dimension", "$value": "0.875rem", "$extensions": { "looloo.tailwind": "size-3.5" } },
-      "md": { "$type": "dimension", "$value": "1rem", "$extensions": { "looloo.tailwind": "size-4" } },
-      "xl": { "$type": "dimension", "$value": "1.25rem", "$extensions": { "looloo.tailwind": "size-5" } }
+      "xs": {
+        "$type": "dimension",
+        "$value": "{size.12}",
+        "$extensions": {
+          "looloo.tailwind": "size-3",
+          "looloo.legacy": "0.75rem"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.14}",
+        "$extensions": {
+          "looloo.tailwind": "size-3.5",
+          "looloo.legacy": "0.875rem"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{size.16}",
+        "$extensions": {
+          "looloo.tailwind": "size-4",
+          "looloo.legacy": "1rem"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{size.20}",
+        "$extensions": {
+          "looloo.tailwind": "size-5",
+          "looloo.legacy": "1.25rem"
+        }
+      }
+    },
+    "color": {
+      "default-background": {
+        "$type": "color",
+        "$value": "{color.primary}",
+        "$extensions": {
+          "looloo.tailwind": "bg-primary"
+        }
+      },
+      "default-foreground": {
+        "$type": "color",
+        "$value": "{color.primary-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-primary-foreground"
+        }
+      },
+      "secondary-background": {
+        "$type": "color",
+        "$value": "{color.secondary}",
+        "$extensions": {
+          "looloo.tailwind": "bg-secondary"
+        }
+      },
+      "secondary-foreground": {
+        "$type": "color",
+        "$value": "{color.secondary-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-secondary-foreground"
+        }
+      },
+      "secondary-hover-mix": {
+        "$type": "number",
+        "$value": "{interaction.secondary-hover-mix}",
+        "$description": "Hover mixes 5% foreground into the secondary fill.",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]"
+        }
+      },
+      "outline-background": {
+        "$type": "color",
+        "$value": "{color.background}",
+        "$extensions": {
+          "looloo.tailwind": "bg-background"
+        }
+      },
+      "outline-border": {
+        "$type": "color",
+        "$value": "{color.border}",
+        "$extensions": {
+          "looloo.tailwind": "border-border"
+        }
+      },
+      "outline-hover-background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-muted"
+        }
+      },
+      "outline-hover-foreground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "hover:text-foreground"
+        }
+      },
+      "ghost-hover-background": {
+        "$type": "color",
+        "$value": "{color.muted}",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-muted"
+        }
+      },
+      "ghost-hover-foreground": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "hover:text-foreground"
+        }
+      },
+      "destructive-background": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$description": "Rendered at 10% — see destructive-background-opacity.",
+        "$extensions": {
+          "looloo.tailwind": "bg-destructive/10"
+        }
+      },
+      "destructive-background-opacity": {
+        "$type": "number",
+        "$value": "{opacity.10}",
+        "$extensions": {
+          "looloo.tailwind": "bg-destructive/10"
+        }
+      },
+      "destructive-hover-opacity": {
+        "$type": "number",
+        "$value": "{opacity.20}",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-destructive/20"
+        }
+      },
+      "destructive-foreground": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$description": "The destructive button is a tinted surface with destructive TEXT — not a solid red fill.",
+        "$extensions": {
+          "looloo.tailwind": "text-destructive"
+        }
+      },
+      "link-foreground": {
+        "$type": "color",
+        "$value": "{color.primary}",
+        "$extensions": {
+          "looloo.tailwind": "text-primary"
+        }
+      },
+      "focus-ring": {
+        "$type": "color",
+        "$value": "{color.ring}",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:ring-ring/50"
+        }
+      },
+      "focus-ring-opacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "ring-ring/50"
+        }
+      },
+      "default-hover-surface": {
+        "$type": "color",
+        "$value": "{color.primary-hover}",
+        "$description": "Hover DARKENS to the 700 shade. It used to fade the fill to 80% (color-mix toward the page), which was fine when primary was near-black but drops white text on the teal brand to 3.38:1 — below AA. Alpha cannot be used on a mid-tone action colour.",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-(--primary-hover)"
+        }
+      },
+      "secondary-hover-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--secondary), var(--foreground) 5%)",
+        "$description": "Secondary hover: 5% foreground mixed into the secondary fill.",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]"
+        }
+      },
+      "destructive-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
+        "$description": "The destructive button is a 10% tint, not a solid red fill.",
+        "$extensions": {
+          "looloo.tailwind": "bg-destructive/10"
+        }
+      },
+      "destructive-hover-surface": {
+        "$type": "color",
+        "$value": "color-mix(in oklch, var(--destructive) 20%, transparent)",
+        "$description": "Destructive hover deepens the tint to 20%.",
+        "$extensions": {
+          "looloo.tailwind": "hover:bg-destructive/20"
+        }
+      }
+    },
+    "minWidth": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "{size.48}",
+        "$description": "Minimum width at size xs — 48px.",
+        "$extensions": {
+          "looloo.tailwind": "min-w-(--button-min-width-xs)"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.56}",
+        "$description": "Minimum width at size sm — 56px.",
+        "$extensions": {
+          "looloo.tailwind": "min-w-(--button-min-width-sm)"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{size.64}",
+        "$description": "A one-word button (\"OK\", \"ตกลง\") is a tiny, hard-to-hit target and reads as an afterthought. The floor is 64px — roughly two Thai words at this size — so buttons in a row also line up instead of jittering to their label width. NOTE: the icon-* sizes do NOT get this; an icon button is a square.",
+        "$extensions": {
+          "looloo.tailwind": "min-w-(--button-min-width-md)"
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{size.72}",
+        "$description": "Minimum width at size lg — 72px.",
+        "$extensions": {
+          "looloo.tailwind": "min-w-(--button-min-width-lg)"
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{size.80}",
+        "$description": "Minimum width at size xl — 80px.",
+        "$extensions": {
+          "looloo.tailwind": "min-w-(--button-min-width-xl)"
+        }
+      }
     }
   }
 }

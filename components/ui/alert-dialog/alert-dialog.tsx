@@ -91,7 +91,7 @@ function AlertDialogFooter({
     <div
       data-slot="alert-dialog-footer"
       className={cn(
-        "-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2 sm:flex-row sm:justify-end",
+        "flex flex-col-reverse gap-2 group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2 sm:flex-row sm:justify-end",
         className
       )}
       {...props}
@@ -99,15 +99,34 @@ function AlertDialogFooter({
   )
 }
 
+const alertDialogTones = {
+  confirm:
+    "bg-(--alert-dialog-color-media-confirm-surface) text-(--alert-dialog-color-media-confirm-foreground)",
+  warning:
+    "bg-(--alert-dialog-color-media-warning-surface) text-(--alert-dialog-color-media-warning-foreground)",
+  destructive:
+    "bg-(--alert-dialog-color-media-destructive-surface) text-(--alert-dialog-color-media-destructive-foreground)",
+} as const
+
+/**
+ * The tone answers "how bad is it if I get this wrong?":
+ * - confirm     → nothing is at stake beyond the decision (neutral box)
+ * - warning     → something will go wrong, but it can be undone (amber tint)
+ * - destructive → it cannot be undone (red tint) — pair with a destructive action
+ */
+type AlertDialogTone = keyof typeof alertDialogTones
+
 function AlertDialogMedia({
   className,
+  tone = "confirm",
   ...props
-}: React.ComponentProps<"div">) {
+}: React.ComponentProps<"div"> & { tone?: AlertDialogTone }) {
   return (
     <div
       data-slot="alert-dialog-media"
       className={cn(
-        "mb-2 inline-flex size-10 items-center justify-center rounded-md bg-muted sm:group-data-[size=default]/alert-dialog-content:row-span-2 *:[svg:not([class*='size-'])]:size-6",
+        alertDialogTones[tone],
+        "mb-2 inline-flex size-10 items-center justify-center rounded-md sm:group-data-[size=default]/alert-dialog-content:row-span-2 *:[svg:not([class*='size-'])]:size-6",
         className
       )}
       {...props}
@@ -139,7 +158,7 @@ function AlertDialogDescription({
     <AlertDialogPrimitive.Description
       data-slot="alert-dialog-description"
       className={cn(
-        "text-sm text-balance text-muted-foreground md:text-pretty *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground",
+        "min-h-(--alert-dialog-description-min-height) text-sm text-balance text-muted-foreground md:text-pretty *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground",
         className
       )}
       {...props}
@@ -184,6 +203,7 @@ function AlertDialogCancel({
 }
 
 export {
+  type AlertDialogTone,
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,

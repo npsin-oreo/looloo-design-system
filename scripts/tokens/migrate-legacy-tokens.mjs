@@ -138,11 +138,34 @@ for (const [k, v] of Object.entries(legacy["border-radius/Mode 1"] ?? {})) {
   const px = refPx(v.$value)
   const value = name === "full" ? "9999px" : px != null ? pxToRem(px) : v.$value
   radius[name] = token("dimension", value,
-    "Static Figma-kit step. NOTE: the runtime radius scale is currently calc(var(--radius) * n) in app/globals.css; that stays authoritative until Phase 2.",
+    "Static Figma-kit step — NOT what components render. Kept for parity with the kit export; use radius.ui.* for component work.",
     { "looloo.legacy": v.$value })
 }
+
+// radius.ui.* — the scale components actually render with. It is derived from
+// the brand's --radius (theme.<brand>.radius), so a brand fork rescales every
+// corner by changing one number. Emitted as calc() so the derivation stays live
+// at runtime, exactly as app/globals.css did before this scale moved here.
+// Multipliers chosen so every step lands on a WHOLE pixel at the brand radius (12px):
+// 6 · 9 · 12 · 18 · 24 · 30 · 36. The previous set (0.6/0.8/1.4/1.8/2.2/2.6) was tuned for a
+// 10px base and would render 7.2 / 9.6 / 16.8 — fractional corners that blur on non-retina.
+// OFFSETS from the brand radius, not multipliers. A ratio (0.75 × 12) gives 9 — a whole number,
+// but off the 4px grid every other dimension in the system lands on. Offsets keep every step on the
+// grid for ANY brand radius that is itself a multiple of 4: at --radius 12 this is 4 · 8 · 12 · 16 · 24 · 32 · 40.
+const UI_OFFSETS = { sm: -8, md: -4, lg: 0, xl: 4, "2xl": 12, "3xl": 20, "4xl": 28 }
+const brandRadiusPx = parseFloat(brand.radius ?? "0.625rem") * 16
+radius.ui = {}
+for (const [name, offset] of Object.entries(UI_OFFSETS)) {
+  radius.ui[name] = token(
+    "dimension",
+    offset === 0 ? "var(--radius)" : `calc(var(--radius) ${offset < 0 ? "-" : "+"} ${Math.abs(offset)}px)`,
+    `rounded-${name} = ${brandRadiusPx + offset}px at the current --radius (${brand.radius ?? "0.75rem"}). Offsets, not ratios: a ratio lands off the 4px grid (0.75 × 12 = 9).`,
+    { "looloo.offset": offset }
+  )
+}
 writeJson(["primitive", "radius.json"], {
-  $description: "Canonical radius steps from the Figma kit. Generated; do not hand-edit.",
+  $description:
+    "Canonical radius. radius.* = static Figma-kit steps (kit parity). radius.ui.* = the calc() scale the components render with, derived from --radius. Generated; do not hand-edit.",
   radius,
 })
 
@@ -232,18 +255,31 @@ writeJson(["primitive", "motion.json"], {
 })
 
 /* ---------- 9. primitive/sizing.json ---------- */
+// size.<px> — the open-ended box scale. Starts at 8 (the smallest thing we ever
+// draw: an avatar badge dot) and climbs. Every fixed square/box in the component
+// layer — icons, indicators, thumbs, dots, rails — aliases a step here instead
+// of carrying a literal. 2px steps through the icon range where the difference
+// is visible, then 4px, then 8px+ once boxes are large enough that finer steps
+// are noise.
+const SIZE_STEPS = [8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 32, 36, 40, 44, 48, 56, 64, 72, 80, 96, 128]
+const SIZE_NOTES = {
+  8: "Smallest box in the system — avatar badge (size sm).",
+  12: "Icon xs.",
+  14: "Icon sm — breadcrumb chevron, copy buttons.",
+  16: "Icon md — the default icon size across the library.",
+  20: "Icon lg. Also kbd / token (size sm) height.",
+  22: "Combobox chip height.",
+  24: "Icon xl — alert-dialog media icon.",
+  32: "Avatar / icon-button default box.",
+  40: "Alert-dialog media box.",
+  48: "Sidebar icon rail width.",
+}
 writeJson(["primitive", "sizing.json"], {
   $description:
-    "Control sizing steps measured from the ACTUAL radix-nova cva variants in components/ui/button.tsx + input.tsx (default/md = h-8). Basis for Phase 4 component tokens and density modes.",
-  size: {
-    control: {
-      xs: token("dimension", "1.5rem", "h-6 — button size xs / icon-xs."),
-      sm: token("dimension", "1.75rem", "h-7 — button size sm, input size sm."),
-      md: token("dimension", "2rem", "h-8 — button/input DEFAULT, select trigger, tabs list."),
-      lg: token("dimension", "2.25rem", "h-9 — button size lg."),
-      xl: token("dimension", "2.5rem", "h-10 — button/input size xl, table header row."),
-    },
-  },
+    "Box sizing — the open-ended square/box scale (starts at 8, climbs). Every fixed box in the component layer aliases a step here. Control HEIGHTS are not raw values but a decision, so they live one layer up: semantic/sizing.json (size.control.*) aliases back into this scale.",
+  size: Object.fromEntries(
+    SIZE_STEPS.map((px) => [String(px), token("dimension", pxToRem(px), SIZE_NOTES[px])])
+  ),
 })
 
 /* ---------- 10. primitive/z-index.json ---------- */
@@ -256,22 +292,61 @@ writeJson(["primitive", "z-index.json"], {
 
 /* ---------- 11. semantic/color.json + mode/dark.json (from brand.config.json) ---------- */
 // Alias a brand.config value to its canonical primitive path when the OKLCH matches.
-function semanticValue(v) {
+// "What it controls" — verbatim from https://ui.shadcn.com/docs/theming. These are
+// the ROLE of each token; they are the reason we do not carry a parallel
+// surface/content/border naming layer.
+const SHADCN_ROLE = {
+  background: "The default app background and text color.",
+  foreground: "The default app background and text color.",
+  card: "Elevated surfaces and the content inside them.",
+  "card-foreground": "Elevated surfaces and the content inside them.",
+  popover: "Floating surfaces and the content inside them.",
+  "popover-foreground": "Floating surfaces and the content inside them.",
+  primary: "High-emphasis actions and brand surfaces.",
+  "primary-foreground": "High-emphasis actions and brand surfaces.",
+  secondary: "Lower-emphasis filled actions and supporting surfaces.",
+  "secondary-foreground": "Lower-emphasis filled actions and supporting surfaces.",
+  muted: "Subtle surfaces and lower-emphasis content.",
+  "muted-foreground": "Subtle surfaces and lower-emphasis content.",
+  accent: "Interactive hover, focus, and active surfaces.",
+  "accent-foreground": "Interactive hover, focus, and active surfaces.",
+  destructive: "Destructive actions and error emphasis.",
+  border: "Default borders and separators.",
+  input: "Form control borders and input surface treatment.",
+  ring: "Focus rings and outlines.",
+  "chart-1": "The default chart palette.",
+  "chart-2": "The default chart palette.",
+  "chart-3": "The default chart palette.",
+  "chart-4": "The default chart palette.",
+  "chart-5": "The default chart palette.",
+  sidebar: "The base sidebar surface and default sidebar text.",
+  "sidebar-foreground": "The base sidebar surface and default sidebar text.",
+  "sidebar-primary": "High-emphasis actions inside the sidebar.",
+  "sidebar-primary-foreground": "High-emphasis actions inside the sidebar.",
+  "sidebar-accent": "Hover and selected states inside the sidebar.",
+  "sidebar-accent-foreground": "Hover and selected states inside the sidebar.",
+  "sidebar-border": "Sidebar-specific borders and separators.",
+  "sidebar-ring": "Sidebar-specific focus rings.",
+}
+const role = (k) =>
+  SHADCN_ROLE[k] ?? "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role."
+
+function semanticValue(v, k) {
   const ok = toOklch(v)
   const path = primByOklch[ok]
   return path
-    ? token("color", `{${path}}`, undefined, { "looloo.resolved": ok })
-    : token("color", ok, undefined, { "looloo.legacy": String(v) })
+    ? token("color", `{${path}}`, role(k), { "looloo.resolved": ok })
+    : token("color", ok, role(k), { "looloo.legacy": String(v) })
 }
 const semanticColor = {}
-for (const [k, v] of Object.entries(brand.light ?? {})) semanticColor[k] = semanticValue(v)
+for (const [k, v] of Object.entries(brand.light ?? {})) semanticColor[k] = semanticValue(v, k)
 writeJson(["semantic", "color.json"], {
   $description:
-    "Semantic color layer (light) generated from tokens/raw/legacy.brand.config.json. Keys stay flat kebab-case to map 1:1 onto the existing CSS custom properties (--primary, --primary-foreground, …). brand.config.json remains the brand-override input; regenerate after brand changes.",
+    "Semantic color layer (light) generated from tokens/raw/legacy.brand.config.json. Keys are the shadcn contract — they map 1:1 onto the shipped CSS custom properties (--primary, --primary-foreground, …) and every $description is the token's ROLE, quoted verbatim from https://ui.shadcn.com/docs/theming ('What it controls'). This is the ONE color vocabulary: components pick from here, not from a parallel surface/content/border naming. brand.config.json remains the brand-override input; regenerate after brand changes.",
   color: semanticColor,
 })
 const darkColor = {}
-for (const [k, v] of Object.entries(brand.dark ?? {})) darkColor[k] = semanticValue(v)
+for (const [k, v] of Object.entries(brand.dark ?? {})) darkColor[k] = semanticValue(v, k)
 writeJson(["mode", "dark.json"], {
   $description: "Dark-mode semantic overrides, generated from brand.config.json `dark`.",
   mode: { dark: { color: darkColor } },
@@ -287,8 +362,10 @@ writeJson(["semantic", "status.json"], {
     destructive: token("color", "{color.destructive}", "Alias of the live semantic token."),
     success: proposed("color.green.700", "Design sign-off 2026-07-08: green-700 (green-600 on white was 3.30:1 < AA). Not consumed yet."),
     "success-foreground": proposed("color.white", "Proposed. Not consumed yet."),
-    warning: proposed("color.amber.500", "Proposed. Not consumed yet."),
-    "warning-foreground": proposed("color.neutral.950", "Proposed. Not consumed yet."),
+    warning: proposed("color.amber.500", "The warning FILL. Consumed by badge (as a 10% tint)."),
+    "warning-foreground": proposed("color.neutral.950", "Text ON a solid warning fill."),
+    "warning-text": token("color", "{color.amber.700}",
+      "Warning as TEXT (on a light/tinted surface). amber.500 is the fill colour and is far too light to read — 2.1:1 on white; amber.700 is 4.6:1. success and info need no such split: green.700 and blue.600 already pass as text."),
     info: proposed("color.blue.600", "Proposed. Not consumed yet."),
     "info-foreground": proposed("color.white", "Proposed. Not consumed yet."),
   },

@@ -6,7 +6,7 @@ import { Toolbar as ToolbarPrimitive } from "radix-ui"
 import { cn } from "../../../lib/utils"
 
 const itemStyles =
-  "inline-flex h-8 items-center justify-center gap-2 rounded-sm px-2.5 text-sm font-medium text-foreground outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0"
+  "inline-flex h-8 items-center justify-center gap-2 rounded-(--toolbar-button-radius) px-2.5 text-sm font-medium text-foreground outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:shadow-(--focus-shadow) disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0"
 
 function Toolbar({
   className,

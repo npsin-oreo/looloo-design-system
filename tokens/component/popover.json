@@ -1,9 +1,115 @@
 {
   "$description": "DRAFT — captured from components/ui/popover.tsx. Not consumed at runtime yet (Phase 4).",
   "popover": {
-    "radius": { "$type": "dimension", "$value": "0.625rem", "$extensions": { "looloo.tailwind": "rounded-lg" } },
-    "padding": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "p-2" } },
-    "shadow": { "$type": "shadow", "$value": "{shadow.md}", "$extensions": { "looloo.tailwind": "shadow-md" } },
-    "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } }
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.lg}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-lg",
+        "looloo.legacy": "0.625rem"
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$extensions": {
+        "looloo.tailwind": "p-2"
+      }
+    },
+    "shadow": {
+      "$type": "shadow",
+      "$value": "{shadow.md}",
+      "$extensions": {
+        "looloo.tailwind": "shadow-md"
+      }
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.sm}",
+      "$extensions": {
+        "looloo.tailwind": "text-sm"
+      }
+    },
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.popover}",
+        "$extensions": {
+          "looloo.tailwind": "bg-popover"
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.popover-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-popover-foreground"
+        }
+      },
+      "muted-foreground": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$extensions": {
+          "looloo.tailwind": "text-muted-foreground"
+        }
+      },
+      "ring": {
+        "$type": "color",
+        "$value": "{color.foreground}",
+        "$extensions": {
+          "looloo.tailwind": "ring-foreground/10"
+        }
+      },
+      "ring-opacity": {
+        "$type": "number",
+        "$value": "{opacity.10}",
+        "$extensions": {
+          "looloo.tailwind": "ring-foreground/10"
+        }
+      },
+      "close": {
+        "$type": "color",
+        "$value": "{color.muted-foreground}",
+        "$description": "The X — quiet until hovered.",
+        "$extensions": {
+          "looloo.tailwind": "text-(--popover-color-close)"
+        }
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.3}",
+      "$description": "Between the popover's stacked blocks (header · content · footer).",
+      "$extensions": {
+        "looloo.tailwind": "gap-(--popover-gap)"
+      }
+    },
+    "close": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.control.xs}",
+        "$description": "The close button is an icon-button at size xs (24px) — small enough not to compete with the content, big enough to hit.",
+        "$extensions": {
+          "looloo.tailwind": "size-(--popover-close-size)"
+        }
+      },
+      "inset": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$description": "Distance from the top-right corner.",
+        "$extensions": {
+          "looloo.tailwind": "top-(--popover-close-inset) right-(--popover-close-inset)"
+        }
+      }
+    },
+    "footer": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$description": "Between the footer actions.",
+        "$extensions": {
+          "looloo.tailwind": "gap-(--popover-footer-gap)"
+        }
+      }
+    }
   }
 }

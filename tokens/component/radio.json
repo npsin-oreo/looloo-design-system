@@ -1,9 +1,102 @@
 {
   "$description": "DRAFT — captured from components/ui/radio-group.tsx. Not consumed at runtime yet (Phase 4).",
   "radio": {
-    "size": { "$type": "dimension", "$value": "1rem", "$extensions": { "looloo.tailwind": "size-4" } },
-    "indicatorSize": { "$type": "dimension", "$value": "0.5rem", "$extensions": { "looloo.tailwind": "size-2" } },
-    "radius": { "$type": "dimension", "$value": "{radius.full}", "$extensions": { "looloo.tailwind": "rounded-full" } },
-    "groupGap": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "gap-2" } }
+    "size": {
+      "$type": "dimension",
+      "$value": "{size.16}",
+      "$extensions": {
+        "looloo.tailwind": "size-4",
+        "looloo.legacy": "1rem"
+      }
+    },
+    "indicatorSize": {
+      "$type": "dimension",
+      "$value": "{size.8}",
+      "$extensions": {
+        "looloo.tailwind": "size-2",
+        "looloo.legacy": "0.5rem"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.full}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-full"
+      }
+    },
+    "groupGap": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$extensions": {
+        "looloo.tailwind": "gap-2"
+      }
+    },
+    "color": {
+      "border": {
+        "$type": "color",
+        "$value": "{color.input}",
+        "$extensions": {
+          "looloo.tailwind": "border-input"
+        }
+      },
+      "checked-background": {
+        "$type": "color",
+        "$value": "{color.primary}",
+        "$extensions": {
+          "looloo.tailwind": "data-[state=checked]:bg-primary"
+        }
+      },
+      "checked-border": {
+        "$type": "color",
+        "$value": "{color.primary}",
+        "$extensions": {
+          "looloo.tailwind": "data-[state=checked]:border-primary"
+        }
+      },
+      "indicator-color": {
+        "$type": "color",
+        "$value": "{color.white}",
+        "$description": "The dot is WHITE, always. DESIGN DECISION 2026-07-13: same fix as the checkbox tick — primary-foreground flips to near-black on a light brand primary.",
+        "$extensions": {
+          "looloo.tailwind": "text-(--radio-color-indicator-color)"
+        }
+      },
+      "focus-border": {
+        "$type": "color",
+        "$value": "{color.ring}",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:border-ring"
+        }
+      },
+      "focus-ring": {
+        "$type": "color",
+        "$value": "{color.ring}",
+        "$extensions": {
+          "looloo.tailwind": "focus-visible:ring-ring/50"
+        }
+      },
+      "focus-ring-opacity": {
+        "$type": "number",
+        "$value": "{opacity.50}",
+        "$extensions": {
+          "looloo.tailwind": "ring-ring/50"
+        }
+      },
+      "invalid-border": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$extensions": {
+          "looloo.tailwind": "aria-invalid:border-destructive"
+        }
+      },
+      "invalid-background": {
+        "$type": "color",
+        "$value": "{color.destructive}",
+        "$description": "DESIGN DECISION 2026-07-13: when a CHECKED control is invalid, the box is filled with destructive — not primary. A teal (checked) box wearing a red (error) ring sends two conflicting signals at once; error wins, and the tick stays white so the checked state is still legible.",
+        "$extensions": {
+          "looloo.tailwind": "aria-invalid:data-[state=checked]:bg-(--radio-color-invalid-background)"
+        }
+      }
+    }
   }
 }
