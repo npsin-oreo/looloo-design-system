@@ -1,130 +1,182 @@
+<div align="center">
+
 # @npsin-oreo/design-system
 
-Design system สำหรับ React 19, Next.js 15 และ Tailwind CSS v4 ประกอบด้วย design tokens, semantic colors และชุด component ที่เรียกใช้ผ่านแพ็กเกจ `@npsin-oreo/design-system`
+**Design system แบบ white-label สำหรับ React 19 · Next.js 15 · Tailwind CSS v4**
+สีและ radius มาจากไฟล์เดียว · component ดึงสีจาก semantic token เท่านั้น · แต่ละ brand อยู่บน branch ของตัวเอง
 
-📖 **Storybook (เอกสาร component สด, 55 หน้า):** <https://npsin-oreo.github.io/looloo-design-system/>
+[![version](https://img.shields.io/badge/version-0.12.0-2563eb)](./package.json)
+[![Storybook](https://img.shields.io/badge/Storybook-live-ff4785)](https://npsin-oreo.github.io/looloo-design-system/)
+[![Next.js 15](https://img.shields.io/badge/Next.js-15-000000)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/React-19-149eca)](https://react.dev/)
+[![Tailwind v4](https://img.shields.io/badge/Tailwind-v4-38bdf8)](https://tailwindcss.com/)
 
-เอกสารสำหรับแต่ละกลุ่ม:
+📖 **[Storybook — เอกสาร component สด (70+ ตัว)](https://npsin-oreo.github.io/looloo-design-system/)**
 
-- **ผู้ใช้งาน Design System:** อ่านเอกสารนี้ต่อเพื่อดูวิธีติดตั้ง ตั้งค่า ใช้สี เรียก component และ [ทำ theme](./THEMING.md)
-- **ผู้พัฒนา Design System:** อ่าน [`DEVELOPMENT.md`](./DEVELOPMENT.md)
+</div>
 
-## สถาปัตยกรรม v2 (tokens · themes · icons · contracts)
+---
 
-ตั้งแต่ v0.4.0 ระบบภายในเป็น Design System v2 (พฤติกรรมสำหรับ consumer เดิมทุกอย่างยังใช้ได้ — import paths, `ds-brand-build`, `var(--tw-*)` ครบ):
+## สารบัญ
 
-| เรื่อง | ที่อยู่ | เอกสาร |
+- [repo นี้ทำงานยังไง](#repo-นี้ทำงานยังไง) — ภาพเดียวจบ
+- [แนวคิดหลัก 5 ข้อ](#แนวคิดหลัก-5-ข้อ)
+- [Token pipeline](#token-pipeline) — สีเดินทางจากไฟล์เดียวไปถึง component ยังไง
+- [แผนผังโปรเจกต์](#แผนผังโปรเจกต์)
+- [คำสั่งที่ใช้บ่อย](#คำสั่งที่ใช้บ่อย)
+- [ใช้งานเป็น Consumer](#ใช้งานเป็น-consumer) — quick start
+- [ทำ theme ต่อ brand](#ทำ-theme-ต่อ-brand)
+- [Quality gates & CI](#quality-gates--ci)
+- [เอกสารเพิ่มเติม](#เอกสารเพิ่มเติม)
+
+---
+
+## repo นี้ทำงานยังไง
+
+หัวใจมีประโยคเดียว: **แก้สีที่ไฟล์ต้นทางไฟล์เดียว → รันสคริปต์ → CSS ทั้งชุด regenerate เอง** ไม่มีใครไปแก้สีใน component หรือใน `:root` ด้วยมือ
+
+```mermaid
+flowchart LR
+    A["brand.config.json<br/><i>สี + radius ของ brand</i>"] --> B
+    T["tokens.json<br/><i>Figma DTCG export</i>"] --> B
+    B["tokens/<br/><i>DTCG layer</i><br/>primitive → semantic →<br/>component → mode → theme"]
+    B -->|"npm run tokens:build"| C["dist/tokens/*.css<br/><i>generated · git-ignored</i>"]
+    C -->|"@import"| D["app/globals.css"]
+    D --> E["components/ui/*<br/>Storybook · แอปของคุณ"]
+
+    style A fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
+    style T fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
+    style B fill:#ede9fe,stroke:#7c3aed,color:#3b2764
+    style C fill:#f1f5f9,stroke:#64748b,color:#1e293b
+    style D fill:#f1f5f9,stroke:#64748b,color:#1e293b
+    style E fill:#dcfce7,stroke:#16a34a,color:#14532d
+```
+
+**base เป็น neutral white-label** — repo หลัก (branch `main`) ไม่มีสี brand ของใครโดยเฉพาะ แต่ละ brand จริงไปอยู่บน branch ของตัวเอง (เช่น `brand/virtual-agent`) โดยแก้แค่ไฟล์ต้นทาง 2 ไฟล์แล้ว regenerate ทับ — structure, component, และ gate ทั้งหมด inherit มาจาก `main`
+
+---
+
+## แนวคิดหลัก 5 ข้อ
+
+| # | หลักการ | หมายความว่า |
 |---|---|---|
-| **Tokens** — canonical DTCG layer (primitive → semantic → component → mode → theme) compile เป็น `dist/tokens/*.css` | [`tokens/`](./tokens/README.md) | [`docs/tokens/token-source-strategy.md`](./docs/tokens/token-source-strategy.md) |
-| **Components** — folder-per-component + compat shims; ตัวหลัก wire กับ `--<component>-*` vars แล้ว | `components/ui/<name>/` | [`docs/component-guidelines.md`](./docs/component-guidelines.md) |
-| **Themes / modes** — brand ผ่าน `brand.config.json` (ปัจจุบัน); scaffolds `themes/` + density modes รอ design | [`themes/`](./themes/README.md) | [`docs/theming.md`](./docs/theming.md) |
-| **Icons** — lucide ผ่าน registry เดียว + `<Icon>` / `<IconButton>` (ห้าม import `lucide-react` ตรง) | `icons/icon-registry.ts` | [`docs/icon-strategy.md`](./docs/icon-strategy.md) |
-| **Contracts & gates** — contract files generate อัตโนมัติ + audit ที่ block CI | [`.designops/`](./.designops/README.md) | [`.designops/audit-gates.md`](./.designops/audit-gates.md) |
+| 1 | **White-label base** | `main` เป็นฐานกลาง ไม่มีสี brand · brand = branch |
+| 2 | **ต้นทางเดียว** | สี/radius อยู่ใน `brand.config.json` เท่านั้น — ห้ามแก้ CSS ที่ generate |
+| 3 | **Semantic token only** | component ใช้ `bg-primary`, `text-muted-foreground` — ห้าม `bg-white` / `bg-[#123]` |
+| 4 | **Folder-per-component** | ทุก component อยู่ใน `components/ui/<name>/` มี token file ของตัวเอง |
+| 5 | **Contracts & gates** | ไฟล์ contract generate อัตโนมัติ + audit ที่ block CI ถ้า drift หรือ contrast ไม่ผ่าน |
 
-เช็คทุกอย่างในเครื่องด้วยคำสั่งเดียว: `npm run check`
+---
 
-## ผู้เรียกใช้ Design System (Consumer)
+## Token pipeline
+
+Token เป็นชั้น ไล่จาก "ค่าดิบ" ไปหา "ความหมาย" ตามมาตรฐาน [DTCG](https://tr.designtokens.org/) — ชั้นล่างไม่รู้จัก brand ชั้นบนสุดคือสิ่งที่ component เห็น
+
+| ชั้น | ที่อยู่ | หน้าที่ |
+|---|---|---|
+| **primitive** | `tokens/primitive/` | ค่าดิบ — สี ramp, ระยะ, radius (`--ll-*`) |
+| **semantic** | `tokens/semantic/` | ความหมาย — `--background`, `--primary`, `--border` (ชื่อ shadcn) |
+| **component** | `tokens/component/` | ต่อ component — 65 ไฟล์ เช่น `--alert-color-*`, `--sidebar-*` |
+| **mode** | `tokens/mode/` | dark mode override |
+| **theme** | `tokens/theme/` | ชุด theme สำเร็จ |
+
+สคริปต์ที่ประกอบทุกอย่างเข้าด้วยกัน (predev/prebuild hook รันให้อัตโนมัติ):
+
+```bash
+npm run brand:build      # brand.config.json → app/brand.css (legacy contract)
+npm run tokens:migrate   # brand.config + tokens.json → tokens/{primitive,semantic,mode,theme}
+npm run tokens:build     # tokens/ → dist/tokens/*.css (+ .ts + contract)
+npm run tokens:validate  # โครงสร้าง token ถูกต้อง · ทุก ref resolve
+npm run tokens:diff      # dist ตรงกับ legacy CSS (parity gate ที่ CI บังคับ)
+npm run tokens:audit     # contrast ทุกคู่ผ่าน WCAG AA
+```
+
+> 📌 `dist/tokens/` ถูก git-ignore — regenerate จาก source เสมอ อย่าแก้ด้วยมือ
+> รายละเอียดว่าไฟล์ไหน generate ไฟล์ไหนแก้มือได้ อยู่ใน [`tokens/README.md`](./tokens/README.md)
+
+---
+
+## แผนผังโปรเจกต์
+
+```
+looloo-design-system/
+├── brand.config.json         ← 🎨 สี + radius ของ brand (ต้นทางเดียว)
+├── tokens.json               ← Figma DTCG export (brand ramp เริ่มต้น)
+│
+├── tokens/                   ← canonical DTCG layer (primitive→semantic→component→mode→theme)
+├── scripts/                  ← สคริปต์ build / validate / audit / migrate
+├── dist/tokens/              ← CSS ที่ generate (git-ignored)
+│
+├── app/
+│   ├── globals.css           ← @import dist/tokens/*.css + @theme structural
+│   ├── brand.css             ← legacy brand contract (สำหรับ consumer เดิม)
+│   └── primitives.css        ← legacy primitive contract
+│
+├── components/ui/<name>/     ← 70+ component · folder-per-component
+├── icons/icon-registry.ts    ← ทางเข้า lucide ทางเดียว (<Icon> / <IconButton>)
+├── stories/                  ← Storybook (render + a11y ใน CI)
+│
+├── .designops/               ← contract ที่ generate + audit gates
+└── .storybook/               ← Storybook config
+```
+
+---
+
+## คำสั่งที่ใช้บ่อย
+
+| คำสั่ง | ทำอะไร |
+|---|---|
+| `npm run dev` | รัน Next.js dev server |
+| `npm run storybook` | รัน Storybook ที่ port 6006 |
+| `npm run check` | ✅ gate ครบชุดในเครื่อง — typecheck + token validate/build/diff + audit (styles/icons/contrast) แบบ `--strict` |
+| `npm run tokens:build` | regenerate `dist/tokens/*.css` จาก `tokens/` |
+| `npm run brand:build` | regenerate brand CSS จาก `brand.config.json` |
+| `npm run build` | build production ของแอป |
+
+**เปลี่ยนสี brand:** แก้ `brand.config.json` → `npm run brand:build && npm run tokens:migrate && npm run tokens:build` (อย่าแก้ CSS ที่ generate เอง)
+
+---
+
+## ใช้งานเป็น Consumer
 
 ### 1. ติดตั้ง
 
-ติดตั้งจาก GitHub repository ผ่าน SSH:
-
 ```bash
-npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git
+npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.12.0
 ```
 
-Dependency ที่ component และ stylesheet ต้องใช้ เช่น `tw-animate-css` จะถูกติดตั้งมากับ `@npsin-oreo/design-system` อัตโนมัติ ไม่ต้องติดตั้งแยก
-
-เครื่องที่ติดตั้งต้องมีสิทธิ์เข้าถึง repository และตั้งค่า SSH key กับ GitHub เรียบร้อยแล้ว ทดสอบการเชื่อมต่อได้ด้วย:
-
-```bash
-ssh -T git@github.com
-```
-
-สำหรับ production แนะนำให้ระบุ tag หรือ commit เพื่อให้ทุกเครื่องติดตั้ง source ชุดเดียวกัน:
-
-```bash
-# ติดตั้งจาก tag
-npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.2.0
-
-# หรือติดตั้งจาก commit
-npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#<commit-sha>
-
-# ระหว่างพัฒนาสามารถติดตั้งจาก branch ได้
-npm install git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#<branch-name>
-```
-
-เมื่อติดตั้งแล้ว dependency ใน `package.json` ของ consumer จะมีลักษณะดังนี้:
-
-```json
-{
-  "dependencies": {
-    "@npsin-oreo/design-system": "git+ssh://git@github.com/npsin-oreo/looloo-design-system.git#v0.2.0"
-  }
-}
-```
-
-หาก repository เปิดเป็น public สามารถใช้ HTTPS ได้:
-
-```bash
-npm install git+https://github.com/npsin-oreo/looloo-design-system.git#v0.2.0
-```
+> แนะนำ pin ด้วย tag (`#v0.12.0`) หรือ commit sha เพื่อให้ทุกเครื่องได้ source ชุดเดียวกัน · ต้องตั้ง SSH key กับ GitHub แล้ว (ทดสอบ: `ssh -T git@github.com`)
 
 ### 2. ตั้งค่า Next.js
 
-แพ็กเกจส่งออก component เป็น TypeScript source จึงต้องเพิ่ม `transpilePackages` ใน `next.config.ts`:
+แพ็กเกจส่ง component เป็น TypeScript source — เพิ่ม `transpilePackages`:
 
 ```ts
-import type { NextConfig } from "next"
-
-const nextConfig: NextConfig = {
-  transpilePackages: ["@npsin-oreo/design-system"],
-}
-
+// next.config.ts
+const nextConfig = { transpilePackages: ["@npsin-oreo/design-system"] }
 export default nextConfig
 ```
 
-### 3. โหลด Style
-
-Import stylesheet เพียงครั้งเดียวที่ root layout:
+### 3. โหลด style ครั้งเดียวที่ root
 
 ```tsx
 // app/layout.tsx
 import "@npsin-oreo/design-system/styles.css"
-
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="th">
-      <body>{children}</body>
-    </html>
-  )
-}
 ```
 
-ไฟล์นี้รวม Tailwind CSS, animation utilities, primitive tokens, brand tokens และ base styles ที่ component ต้องใช้แล้ว
+ไฟล์นี้รวม Tailwind, animation utilities, primitive + brand tokens และ base styles ครบแล้ว
 
-### 4. เรียกใช้ Component
-
-Import component จากชื่อไฟล์โดยตรง:
+### 4. เรียก component
 
 ```tsx
 import { Button } from "@npsin-oreo/design-system/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@npsin-oreo/design-system/card"
+import { Card, CardHeader, CardTitle, CardContent } from "@npsin-oreo/design-system/card"
 
-export default function Example() {
+export function Example() {
   return (
     <Card className="max-w-md">
       <CardHeader>
         <CardTitle>สร้างโปรเจกต์ใหม่</CardTitle>
-        <CardDescription>กรอกรายละเอียดเพื่อเริ่มต้นใช้งาน</CardDescription>
       </CardHeader>
       <CardContent>
         <Button>เริ่มต้น</Button>
@@ -134,114 +186,68 @@ export default function Example() {
 }
 ```
 
-ตัวอย่าง component อื่น:
+### 5. ใช้สีแบบ semantic เสมอ
 
-```tsx
-import { Badge } from "@npsin-oreo/design-system/badge"
-import { Input } from "@npsin-oreo/design-system/input"
-import { Switch } from "@npsin-oreo/design-system/switch"
+เพื่อให้สีเปลี่ยนตาม brand และ dark mode อัตโนมัติ — **ห้าม** `bg-white` / `text-black` / `bg-[#123456]` ใน component ทั่วไป
 
-export function Settings() {
-  return (
-    <div className="space-y-4">
-      <Badge>Active</Badge>
-      <Input placeholder="ชื่อโปรเจกต์" />
-      <Switch aria-label="เปิดการแจ้งเตือน" />
-    </div>
-  )
-}
-```
-
-รายชื่อ component ทั้งหมดอยู่ใน [`components/ui`](./components/ui)
-
-### 5. ใช้สี
-
-ให้ใช้ semantic color utilities เสมอ เพื่อให้สีเปลี่ยนตาม brand และ dark mode ได้อัตโนมัติ:
-
-```tsx
-export function ColorExample() {
-  return (
-    <section className="border-border bg-background text-foreground">
-      <h2 className="text-primary">หัวข้อหลัก</h2>
-      <p className="text-muted-foreground">ข้อความรอง</p>
-
-      <div className="bg-card text-card-foreground">Card content</div>
-
-      <button className="bg-primary text-primary-foreground hover:bg-primary/90">
-        ยืนยัน
-      </button>
-
-      <p className="text-destructive">เกิดข้อผิดพลาด</p>
-    </section>
-  )
-}
-```
-
-สีที่ใช้บ่อย:
-
-| หน้าที่ | Background | Text / Foreground |
-| --- | --- | --- |
+| หน้าที่ | Background | Text |
+|---|---|---|
 | หน้าหลัก | `bg-background` | `text-foreground` |
 | Card | `bg-card` | `text-card-foreground` |
 | Action หลัก | `bg-primary` | `text-primary-foreground` |
 | Action รอง | `bg-secondary` | `text-secondary-foreground` |
 | ข้อมูลรอง | `bg-muted` | `text-muted-foreground` |
 | Hover / selected | `bg-accent` | `text-accent-foreground` |
-| Error / danger | `bg-destructive` | `text-destructive` |
-| เส้นขอบ | `border-border` | - |
-| Input | `border-input` | - |
-| Focus ring | `ring-ring` | - |
+| Error | `bg-destructive` | `text-destructive` |
+| เส้นขอบ · Focus | `border-border` | `ring-ring` |
 
-หลีกเลี่ยงการกำหนดสีตรง เช่น `bg-white`, `text-black`, `bg-[#123456]` ใน component ทั่วไป เพราะจะไม่เปลี่ยนตาม theme
+Dark mode: ใส่ class `dark` ที่ `<html>` แล้วสีหลัก flip เอง ไม่ต้องเขียน `dark:` ซ้ำ · จะใช้ `ThemeProvider` (จาก `next-themes`) ที่แพ็กเกจ export ไว้ก็ได้
 
-### 6. Dark Mode
+---
 
-Semantic colors รองรับ dark mode ผ่าน class `dark` ที่ `<html>`:
+## ทำ theme ต่อ brand
 
-```tsx
-<html lang="th" className="dark">
-```
-
-เมื่อใช้ `bg-background`, `text-foreground`, `bg-card` และ token อื่น ๆ ไม่ต้องเขียน `dark:` ซ้ำสำหรับสีหลัก
-
-### 7. ใช้ Theme Provider
-
-แพ็กเกจ export provider ที่สร้างจาก `next-themes` ไว้แล้ว:
-
-```tsx
-import { ThemeProvider } from "@npsin-oreo/design-system/theme-provider"
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="th" suppressHydrationWarning>
-      <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
-  )
-}
-```
-
-### 8. ทำ Theme ต่อ brand (ไม่ต้อง fork repo)
-
-ค่าเริ่มต้นเป็น neutral white-label คุณ override semantic token ต่อ brand ได้ 2 ทาง — รายชื่อ token ที่ theme ได้อยู่ใน [`token-contract.json`](./token-contract.json):
+ค่าเริ่มต้นเป็น neutral white-label — override สี brand ได้โดย **ไม่ต้อง fork**:
 
 ```bash
-# เขียน brand.config.json (รับทั้ง flat {project_name,primary,…} และ nested {name,light:{…}})
-npx ds-brand-build            # → ./app/brand.css  (alias เข้า primitive ให้, derive *-foreground อัตโนมัติ)
+# เขียน brand.config.json (รับทั้ง flat และ nested) แล้ว build
+npx ds-brand-build          # → ./app/brand.css (alias เข้า primitive + derive *-foreground ให้)
 ```
 
 ```ts
 import "@npsin-oreo/design-system/styles.css"
-import "./app/brand.css"      // โหลดทับเพื่อให้ :root override ชนะ
+import "./app/brand.css"     // โหลดทับให้ :root override ชนะ
 ```
 
-หรือ override CSS var ตรง ๆ (`:root { --primary: …; }`) — รายละเอียด + ตัวอย่างทั้งหมดดู [`THEMING.md`](./THEMING.md)
+รายชื่อ token ที่ theme ได้อยู่ใน [`token-contract.json`](./token-contract.json) · วิธี + ตัวอย่างเต็มดู [`THEMING.md`](./THEMING.md)
 
-## ตัวอย่าง Consumer
+---
 
-ดูตัวอย่างการตั้งค่าและการประกอบหน้าเต็มได้ที่ [`../demo-use`](../demo-use)
+## Quality gates & CI
 
-สำหรับการเพิ่ม component, แก้ design tokens หรือ release version ใหม่ อ่าน [`DEVELOPMENT.md`](./DEVELOPMENT.md)
+ทุก PR ต้องผ่าน gate เหล่านี้ (รันในเครื่องได้ด้วย `npm run check`):
+
+| Gate | ตรวจอะไร |
+|---|---|
+| **Typecheck** | `tsc --noEmit` |
+| **Token reproducibility** | ไฟล์ generate ตรงกับ source (ถ้า drift = แดง) |
+| **Token diff (parity)** | `dist/tokens` ให้ค่าเท่า legacy CSS |
+| **Contrast audit** | ทุกคู่สีผ่าน WCAG AA |
+| **Storybook tests** | ทุก story render ได้ + axe a11y ผ่าน |
+
+Storybook deploy ขึ้น GitHub Pages อัตโนมัติทุกครั้งที่ push เข้า `main` · package publish ขึ้น GitHub Packages เมื่อ push tag `v*`
+
+---
+
+## เอกสารเพิ่มเติม
+
+| เอกสาร | เนื้อหา |
+|---|---|
+| [`DESIGN.md`](./DESIGN.md) | สเปก design system |
+| [`DEVELOPMENT.md`](./DEVELOPMENT.md) | เพิ่ม component · แก้ token · release |
+| [`THEMING.md`](./THEMING.md) | ทำ theme ต่อ brand แบบละเอียด |
+| [`tokens/README.md`](./tokens/README.md) | ตารางไฟล์ generate vs แก้มือ |
+| [`docs/tokens/token-source-strategy.md`](./docs/tokens/token-source-strategy.md) | ที่มาของ token layer |
+| [`docs/component-guidelines.md`](./docs/component-guidelines.md) | แนวทางเขียน component |
+| [`docs/icon-strategy.md`](./docs/icon-strategy.md) | ระบบ icon (registry เดียว) |
+| [`.designops/README.md`](./.designops/README.md) · [`.designops/audit-gates.md`](./.designops/audit-gates.md) | contract + gate |
