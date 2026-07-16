@@ -12,7 +12,6 @@ import {
   ChevronRight,
   ChevronsUpDown,
   Frame,
-  GalleryVerticalEnd,
   Map,
   MoreHorizontal,
   PieChart,
@@ -44,6 +43,7 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
+import { Logo } from "@/components/ui/logo";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -172,21 +172,8 @@ export function SidebarDemo() {
       <SidebarProvider className="min-h-full items-stretch">
         <Sidebar collapsible="none" className="h-full">
           {/* Header — team switcher */}
-          <SidebarHeader>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton size="lg">
-                  <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                    <GalleryVerticalEnd className="size-4" />
-                  </div>
-                  <div className="grid flex-1 text-left text-sm leading-tight">
-                    <span className="truncate font-medium">Acme Inc</span>
-                    <span className="truncate text-xs">Enterprise</span>
-                  </div>
-                  <ChevronsUpDown className="ml-auto size-4" />
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
+          <SidebarHeader className="p-3">
+            <Logo type="lockup" className="h-8 w-auto" />
           </SidebarHeader>
 
           <SidebarContent>
