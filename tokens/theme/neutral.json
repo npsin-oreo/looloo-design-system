@@ -1,5 +1,5 @@
 {
-  "$description": "Neutral (white-label) theme scalars from brand.config.json. Brand forks keep overriding brand.config.json until themes/ lands in Phase 3+.",
+  "$description": "Theme-tier overlay for \"neutral\" — the brand's tunable scalars (radius base, fonts, motion, layout, type axes). Generated from brand.config.json by scripts/tokens/build-theme.mjs (Phase 4). Semantic/primitive tiers stay brand-agnostic; this overlay carries the brand values.",
   "theme": {
     "neutral": {
       "radius": {
