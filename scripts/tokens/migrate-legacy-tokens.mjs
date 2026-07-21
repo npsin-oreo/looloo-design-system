@@ -71,6 +71,7 @@ const token = (type, value, description, extensions) => {
 const HAND_AUTHORED = new Set([
   "primitive/spacing.json", "primitive/opacity.json", "primitive/border.json",
   "primitive/shadow.json", "primitive/sizing.json", "primitive/z-index.json",
+  "primitive/radius.json", // Phase 4 slice 2: hand-authored kit steps + calc(var(--radius)) ui scale
   "theme/neutral.json", // Phase 4: owned by scripts/tokens/build-theme.mjs (brand.config → theme overlay)
 ])
 const writeJson = (path, obj) => {
