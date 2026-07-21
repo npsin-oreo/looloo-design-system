@@ -1,6 +1,6 @@
 {
   "package": "@npsin-oreo/design-system",
-  "version": "0.12.0",
+  "version": "1.0.0",
   "generated_from": "brand.config.json",
   "modes": [
     "light",
