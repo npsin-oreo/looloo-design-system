@@ -123,9 +123,12 @@ added by this refactor, so this is guidance, not an action item.
 3. `npm run tokens:build` → regenerates `dist/tokens/*.css`, the TS map, and the contract.
 4. `npm run tokens:validate` + `npm run check` green.
 
-**Phase 2 — compat window (≥ 1 minor):** emit `dist/tokens/compat.css` re-declaring the old
-`--*-color-*` names as thin aliases to the new semantic values (`deprecated: true`, excluded
-from the primary contract).
+**Phase 2 — compat window (≥ 1 minor): ✅ DONE (commit add3cca).** `dist/tokens/compat.css` now
+re-declares all 356 old `--*-color-*` names as thin aliases to the new semantic/surface/primitive
+values, emitted by `build-css.mjs` from `tokens/raw/deprecated-component-colors.json` (excluded
+from the machine contract). Verified in-browser: old names resolve identical to their targets.
+Dropped at the next major. *(Should ship in the SAME release as the removal so consumers don't
+break — see note on PR sequencing.)*
 
 **Phase 3 — Figma mirror** (after code green): script/plugin repoints every component instance
 binding old component-color var → semantic var, audits zero remaining bindings, marks old vars
