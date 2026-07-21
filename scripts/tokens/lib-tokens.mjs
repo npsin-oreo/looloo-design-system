@@ -81,6 +81,15 @@ export function loadTokens() {
       }
     }
   }
+  // Phase 4: the theme tier is an alias TARGET for semantic roles ({theme.<brand>.color.*}).
+  // Register it so cssValue can resolve + chain-skip it. It is NOT emitted as CSS vars —
+  // build-css only emits byLayer("primitive"|"semantic"|"component"), so no --theme-* leaks.
+  for (const [name, ov] of Object.entries(overlays.theme)) {
+    for (const { path, token } of ov.entries) {
+      const full = `theme.${name}.${path}`
+      registry.set(full, { path: full, layer: "theme", file: ov.file, cssVar: cssVarName("theme", full), token })
+    }
+  }
   return { registry, overlays }
 }
 
