@@ -99,8 +99,18 @@ export function resolveValue(registry, value, seen = new Set()) {
 export function cssValue(registry, value) {
   const target = aliasOf(value)
   if (target) {
-    const entry = registry.get(target)
+    let entry = registry.get(target)
     if (!entry) throw new Error(`unresolved alias {${target}}`)
+    // Theme-tier chain-skip (Phase 4): a `theme.*` token never emits its own var — it is
+    // resolved THROUGH to the primitive it points at, so semantic roles that reference
+    // {theme.color.*} still emit var(--ll-color-*) (byte-identical, no --theme-* var leaks).
+    while (entry.layer === "theme") {
+      const next = aliasOf(entry.token.$value)
+      if (!next) return cssValue(registry, entry.token.$value) // theme leaf is a literal
+      const nextEntry = registry.get(next)
+      if (!nextEntry) throw new Error(`unresolved alias {${next}} (via theme ${entry.path})`)
+      entry = nextEntry
+    }
     return `var(${entry.cssVar})`
   }
   if (typeof value === "number") return String(value)

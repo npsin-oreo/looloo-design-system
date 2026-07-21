@@ -8,11 +8,12 @@ import { fileURLToPath } from "node:url"
 import { dirname, join } from "node:path"
 const root = join(dirname(fileURLToPath(import.meta.url)), "..", "..")
 let bad = 0
-for (const f of ["primitive", "semantic", "component"]) {
-  const cur = readFileSync(join(root, "dist/tokens", `${f}.css`), "utf8")
-  const gold = readFileSync(join(root, ".designops/css-snapshot", `${f}.css`), "utf8")
-  if (cur !== gold) { console.error(`✗ ${f}.css differs from golden snapshot`); bad++ }
-  else console.log(`✓ ${f}.css byte-identical`)
+const files = [["primitive","primitive"],["semantic","semantic"],["component","component"],["modes/dark","modes-dark"]]
+for (const [rel, gold] of files) {
+  const cur = readFileSync(join(root, "dist/tokens", `${rel}.css`), "utf8")
+  const goldTxt = readFileSync(join(root, ".designops/css-snapshot", `${gold}.css`), "utf8")
+  if (cur !== goldTxt) { console.error(`✗ ${rel}.css differs from golden snapshot`); bad++ }
+  else console.log(`✓ ${rel}.css byte-identical`)
 }
 if (bad) { console.error("::error::CSS output drift — if intended, refresh .designops/css-snapshot/"); process.exit(1) }
 console.log("css-snapshot — published CSS byte-identical")

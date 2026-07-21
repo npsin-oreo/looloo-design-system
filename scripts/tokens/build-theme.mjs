@@ -15,6 +15,7 @@
 import { readFileSync, writeFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join } from "node:path"
+import { toOklch } from "../lib-oklch.mjs"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..", "..")
 const nameArg = process.argv.indexOf("--name")
@@ -27,6 +28,33 @@ const token = (type, value, description) => {
   const t = { $type: type, $value: value }
   if (description) t.$description = description
   return t
+}
+
+// oklch → primitive path, read from the hand-authored palette (same order/first-wins as migrate,
+// so theme.color.* aliases the SAME primitive path the semantic tier used to alias directly).
+const primByOklch = {}
+{
+  const tree = JSON.parse(readFileSync(join(root, "tokens", "primitive", "color.json"), "utf8")).color
+  const walk = (node, path) => {
+    if (node && typeof node === "object" && node.$type === "color" && "$value" in node) {
+      const ok = toOklch(node.$value)
+      if (!(ok in primByOklch)) primByOklch[ok] = path
+      return
+    }
+    if (node && typeof node === "object")
+      for (const [k, v] of Object.entries(node)) if (!k.startsWith("$")) walk(v, `${path}.${k}`)
+  }
+  for (const [k, v] of Object.entries(tree)) if (!k.startsWith("$")) walk(v, `color.${k}`)
+}
+// brand.config colour role → theme.color.<role>, aliased to a primitive when the OKLCH matches.
+const colorFrom = (roles) => {
+  const out = {}
+  for (const [k, v] of Object.entries(roles ?? {})) {
+    const ok = toOklch(v)
+    const path = primByOklch[ok]
+    out[k] = path ? token("color", `{${path}}`) : token("color", ok)
+  }
+  return out
 }
 
 const overlay = {
@@ -48,6 +76,10 @@ const overlay = {
     tracking: token("dimension", axes.tracking ?? "0em", "Letter-spacing (brand.css re-points --tracking-tight)."),
     weightHeading: token("fontWeight", axes.weight_heading ?? "600", "Heading weight (--weight-heading)."),
   },
+  // The brand's colour roles (shadcn contract). Semantic tokens reference {theme.color.*};
+  // build-css chain-skips the theme tier so --primary still emits var(--ll-color-*).
+  color: colorFrom(brand.light),
+  colorDark: colorFrom(brand.dark),
 }
 
 writeFileSync(

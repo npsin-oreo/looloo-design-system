@@ -2102,7 +2102,8 @@
         "dark"
       ],
       "themes": [
-        "looloo"
+        "looloo",
+        "neutral"
       ]
     },
     "color.accent-foreground": {
@@ -2117,7 +2118,8 @@
         "dark"
       ],
       "themes": [
-        "looloo"
+        "looloo",
+        "neutral"
       ]
     },
     "color.amber.100": {
@@ -2207,6 +2209,9 @@
       "description": "The default app background and text color.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.background-color": {
@@ -2218,6 +2223,9 @@
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.black": {
@@ -2315,6 +2323,9 @@
       "modes": [
         "dark",
         "high-contrast"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.brand-accent": {
@@ -2327,6 +2338,9 @@
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.brand-accent-foreground": {
@@ -2339,6 +2353,9 @@
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.brand.cerulean-blue.100": {
@@ -2659,6 +2676,9 @@
       "description": "Elevated surfaces and the content inside them.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.card-foreground": {
@@ -2671,6 +2691,9 @@
       "description": "Elevated surfaces and the content inside them.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.chart-1": {
@@ -2683,6 +2706,9 @@
       "description": "The default chart palette.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.chart-2": {
@@ -2695,6 +2721,9 @@
       "description": "The default chart palette.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.chart-3": {
@@ -2707,6 +2736,9 @@
       "description": "The default chart palette.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.chart-4": {
@@ -2719,6 +2751,9 @@
       "description": "The default chart palette.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.chart-5": {
@@ -2731,6 +2766,9 @@
       "description": "The default chart palette.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.cyan.100": {
@@ -2820,6 +2858,9 @@
       "description": "Destructive actions and error emphasis.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.destructive-border": {
@@ -2945,6 +2986,9 @@
       "description": "The default app background and text color.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.fuchsia.100": {
@@ -3265,6 +3309,9 @@
       "description": "Form control borders and input surface treatment.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.input-surface": {
@@ -3366,6 +3413,9 @@
       "description": "Subtle surfaces and lower-emphasis content.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.muted-foreground": {
@@ -3378,6 +3428,9 @@
       "description": "Subtle surfaces and lower-emphasis content.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.muted-surface": {
@@ -3633,6 +3686,9 @@
       "description": "Floating surfaces and the content inside them.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.popover-foreground": {
@@ -3645,6 +3701,9 @@
       "description": "Floating surfaces and the content inside them.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.primary": {
@@ -3659,7 +3718,8 @@
         "dark"
       ],
       "themes": [
-        "looloo"
+        "looloo",
+        "neutral"
       ]
     },
     "color.primary-foreground": {
@@ -3674,7 +3734,8 @@
         "dark"
       ],
       "themes": [
-        "looloo"
+        "looloo",
+        "neutral"
       ]
     },
     "color.primary-hover": {
@@ -3687,6 +3748,9 @@
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.primary-surface": {
@@ -3865,6 +3929,9 @@
       "description": "Focus rings and outlines.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.ring-subtle": {
@@ -3966,6 +4033,9 @@
       "description": "Lower-emphasis filled actions and supporting surfaces.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.secondary-foreground": {
@@ -3978,6 +4048,9 @@
       "description": "Lower-emphasis filled actions and supporting surfaces.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.secondary-hover": {
@@ -4014,6 +4087,9 @@
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.semantic-border": {
@@ -4026,6 +4102,9 @@
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.semantic-foreground": {
@@ -4038,6 +4117,9 @@
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar": {
@@ -4050,6 +4132,9 @@
       "description": "The base sidebar surface and default sidebar text.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-accent": {
@@ -4062,6 +4147,9 @@
       "description": "Hover and selected states inside the sidebar.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-accent-foreground": {
@@ -4074,6 +4162,9 @@
       "description": "Hover and selected states inside the sidebar.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-border": {
@@ -4086,6 +4177,9 @@
       "description": "Sidebar-specific borders and separators.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-foreground": {
@@ -4098,6 +4192,9 @@
       "description": "The base sidebar surface and default sidebar text.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-primary": {
@@ -4110,6 +4207,9 @@
       "description": "High-emphasis actions inside the sidebar.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-primary-foreground": {
@@ -4122,6 +4222,9 @@
       "description": "High-emphasis actions inside the sidebar.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-ring": {
@@ -4134,6 +4237,9 @@
       "description": "Sidebar-specific focus rings.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sky.100": {
