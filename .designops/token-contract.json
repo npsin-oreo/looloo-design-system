@@ -2829,7 +2829,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
       "alias": "color.red.200",
-      "description": "Destructive border. Was 25% tint. Dark: red.800.",
+      "description": "Destructive border on a destructive surface. Dark: red.800.",
       "modes": [
         "dark"
       ]
@@ -2841,7 +2841,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
       "alias": "color.red.50",
-      "description": "Destructive SURFACE (solid tint). Was color-mix(destructive 10%). Dark: red.950.",
+      "description": "Destructive surface (solid tint). Dark: red.950.",
       "modes": [
         "dark"
       ]
@@ -2853,7 +2853,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
       "alias": "color.red.100",
-      "description": "Destructive surface, hover. Was 20% tint. Dark: red.900.",
+      "description": "Destructive surface, hover. Dark: red.900.",
       "modes": [
         "dark"
       ]
@@ -3274,7 +3274,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
       "alias": "color.gray.100",
-      "description": "Subtle input/command background (solid). Was color-mix(input 30%). Dark: gray.800.",
+      "description": "Subtle input/command background (solid). Dark: gray.800.",
       "modes": [
         "dark"
       ]
@@ -3387,7 +3387,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
       "alias": "color.gray.50",
-      "description": "Muted row/hover surface (solid). Was color-mix(muted 50%). Dark: gray.900.",
+      "description": "Muted row/hover surface (solid). Dark: gray.900.",
       "modes": [
         "dark"
       ]
@@ -3696,7 +3696,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
       "alias": "color.brand.primary.50",
-      "description": "Primary SURFACE (solid tint): selected table row, file-upload dropzone-active. Was color-mix(primary 10% / 8%). Dark: brand-primary.950.",
+      "description": "Primary surface (solid tint): selected row, file-upload dropzone-active. Dark: brand-primary.950.",
       "modes": [
         "dark"
       ]
@@ -3874,7 +3874,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
       "alias": "color.gray.200",
-      "description": "Subtle ring/outline paint (solid). Was color-mix(foreground 10%). Dark: gray.700.",
+      "description": "Subtle ring/outline paint (solid). Dark: gray.700.",
       "modes": [
         "dark"
       ]
@@ -3987,7 +3987,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
       "alias": "color.gray.200",
-      "description": "Secondary control hover fill (solid). Was color-mix(secondary, foreground 5%). Dark: gray.700.",
+      "description": "Secondary control hover fill (solid). Dark: gray.700.",
       "modes": [
         "dark"
       ]
@@ -3999,7 +3999,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
       "alias": "color.gray.100",
-      "description": "Secondary badge hover surface (solid). Was color-mix(secondary 80%). Dark: gray.800.",
+      "description": "Secondary badge hover surface (solid). Dark: gray.800.",
       "modes": [
         "dark"
       ]
@@ -9630,7 +9630,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/status.json",
       "alias": "color.blue.200",
-      "description": "Info border. Was 25% tint. Dark: blue.800.",
+      "description": "Info border. Dark: blue.800.",
       "modes": [
         "dark"
       ]
@@ -9652,7 +9652,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/status.json",
       "alias": "color.blue.50",
-      "description": "Info SURFACE (solid tint). Was color-mix(status-info 10%). Dark: blue.950.",
+      "description": "Info surface (solid tint). Dark: blue.950.",
       "modes": [
         "dark"
       ]
@@ -9664,7 +9664,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/status.json",
       "alias": "color.blue.100",
-      "description": "Info surface, hover. Was 20% tint. Dark: blue.900.",
+      "description": "Info surface, hover. Dark: blue.900.",
       "modes": [
         "dark"
       ]
@@ -9686,7 +9686,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/status.json",
       "alias": "color.green.200",
-      "description": "Success border/divider on a success surface. Was 25% tint. Dark: green.800.",
+      "description": "Success border. Dark: green.800.",
       "modes": [
         "dark"
       ]
@@ -9708,7 +9708,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/status.json",
       "alias": "color.green.50",
-      "description": "Success SURFACE (solid tint). Was color-mix(status-success 10%). Dark: green.950.",
+      "description": "Success surface (solid tint). Dark: green.950.",
       "modes": [
         "dark"
       ]
@@ -9720,7 +9720,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/status.json",
       "alias": "color.green.100",
-      "description": "Success surface, hover. Was 20% tint. Dark: green.900.",
+      "description": "Success surface, hover. Dark: green.900.",
       "modes": [
         "dark"
       ]
@@ -9742,7 +9742,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/status.json",
       "alias": "color.amber.200",
-      "description": "Warning border. Was 25% tint. Dark: amber.800.",
+      "description": "Warning border. Dark: amber.800.",
       "modes": [
         "dark"
       ]
@@ -9764,7 +9764,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/status.json",
       "alias": "color.amber.50",
-      "description": "Warning SURFACE (solid tint). Was color-mix(status-warning 10%). Dark: amber.950.",
+      "description": "Warning surface (solid tint). Dark: amber.950.",
       "modes": [
         "dark"
       ]
@@ -9776,7 +9776,7 @@
       "layer": "semantic",
       "source": "tokens/semantic/status.json",
       "alias": "color.amber.100",
-      "description": "Warning surface, hover. Was 20% tint. Dark: amber.900.",
+      "description": "Warning surface, hover. Dark: amber.900.",
       "modes": [
         "dark"
       ]

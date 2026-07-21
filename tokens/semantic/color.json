@@ -308,47 +308,47 @@
     "destructive-surface": {
       "$type": "color",
       "$value": "{color.red.50}",
-      "$description": "Destructive SURFACE (solid tint). Was color-mix(destructive 10%). Dark: red.950."
+      "$description": "Destructive surface (solid tint). Dark: red.950."
     },
     "destructive-surface-hover": {
       "$type": "color",
       "$value": "{color.red.100}",
-      "$description": "Destructive surface, hover. Was 20% tint. Dark: red.900."
+      "$description": "Destructive surface, hover. Dark: red.900."
     },
     "destructive-border": {
       "$type": "color",
       "$value": "{color.red.200}",
-      "$description": "Destructive border. Was 25% tint. Dark: red.800."
+      "$description": "Destructive border on a destructive surface. Dark: red.800."
     },
     "primary-surface": {
       "$type": "color",
       "$value": "{color.brand.primary.50}",
-      "$description": "Primary SURFACE (solid tint): selected table row, file-upload dropzone-active. Was color-mix(primary 10% / 8%). Dark: brand-primary.950."
+      "$description": "Primary surface (solid tint): selected row, file-upload dropzone-active. Dark: brand-primary.950."
     },
     "secondary-hover": {
       "$type": "color",
       "$value": "{color.gray.200}",
-      "$description": "Secondary control hover fill (solid). Was color-mix(secondary, foreground 5%). Dark: gray.700."
+      "$description": "Secondary control hover fill (solid). Dark: gray.700."
     },
     "secondary-surface-hover": {
       "$type": "color",
       "$value": "{color.gray.100}",
-      "$description": "Secondary badge hover surface (solid). Was color-mix(secondary 80%). Dark: gray.800."
+      "$description": "Secondary badge hover surface (solid). Dark: gray.800."
     },
     "muted-surface": {
       "$type": "color",
       "$value": "{color.gray.50}",
-      "$description": "Muted row/hover surface (solid). Was color-mix(muted 50%). Dark: gray.900."
+      "$description": "Muted row/hover surface (solid). Dark: gray.900."
     },
     "input-surface": {
       "$type": "color",
       "$value": "{color.gray.100}",
-      "$description": "Subtle input/command background (solid). Was color-mix(input 30%). Dark: gray.800."
+      "$description": "Subtle input/command background (solid). Dark: gray.800."
     },
     "ring-subtle": {
       "$type": "color",
       "$value": "{color.gray.200}",
-      "$description": "Subtle ring/outline paint (solid). Was color-mix(foreground 10%). Dark: gray.700."
+      "$description": "Subtle ring/outline paint (solid). Dark: gray.700."
     }
   }
 }

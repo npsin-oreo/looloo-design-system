@@ -340,6 +340,19 @@ function semanticValue(v, k) {
 }
 const semanticColor = {}
 for (const [k, v] of Object.entries(brand.light ?? {})) semanticColor[k] = semanticValue(v, k)
+// Solid-shade surface tokens (PR #33 — component color tier collapsed into semantic).
+// Same-hue solid shades (not color-mix tints); dark shades live in mode/dark.json.
+Object.assign(semanticColor, {
+  "destructive-surface": token("color", "{color.red.50}", "Destructive surface (solid tint). Dark: red.950."),
+  "destructive-surface-hover": token("color", "{color.red.100}", "Destructive surface, hover. Dark: red.900."),
+  "destructive-border": token("color", "{color.red.200}", "Destructive border on a destructive surface. Dark: red.800."),
+  "primary-surface": token("color", "{color.brand.primary.50}", "Primary surface (solid tint): selected row, file-upload dropzone-active. Dark: brand-primary.950."),
+  "secondary-hover": token("color", "{color.gray.200}", "Secondary control hover fill (solid). Dark: gray.700."),
+  "secondary-surface-hover": token("color", "{color.gray.100}", "Secondary badge hover surface (solid). Dark: gray.800."),
+  "muted-surface": token("color", "{color.gray.50}", "Muted row/hover surface (solid). Dark: gray.900."),
+  "input-surface": token("color", "{color.gray.100}", "Subtle input/command background (solid). Dark: gray.800."),
+  "ring-subtle": token("color", "{color.gray.200}", "Subtle ring/outline paint (solid). Dark: gray.700."),
+})
 writeJson(["semantic", "color.json"], {
   $description:
     "Semantic color layer (light) generated from tokens/raw/legacy.brand.config.json. Keys are the shadcn contract — they map 1:1 onto the shipped CSS custom properties (--primary, --primary-foreground, …) and every $description is the token's ROLE, quoted verbatim from https://ui.shadcn.com/docs/theming ('What it controls'). This is the ONE color vocabulary: components pick from here, not from a parallel surface/content/border naming. brand.config.json remains the brand-override input; regenerate after brand changes.",
@@ -347,9 +360,32 @@ writeJson(["semantic", "color.json"], {
 })
 const darkColor = {}
 for (const [k, v] of Object.entries(brand.dark ?? {})) darkColor[k] = semanticValue(v, k)
+// Dark overrides for the solid-shade surfaces (PR #33): light shade -> dark shade.
+Object.assign(darkColor, {
+  "destructive-surface": token("color", "{color.red.950}", "Dark override for --destructive-surface."),
+  "destructive-surface-hover": token("color", "{color.red.900}", "Dark override for --destructive-surface-hover."),
+  "destructive-border": token("color", "{color.red.800}", "Dark override for --destructive-border."),
+  "primary-surface": token("color", "{color.brand.primary.950}", "Dark override for --primary-surface."),
+  "secondary-hover": token("color", "{color.gray.700}", "Dark override for --secondary-hover."),
+  "secondary-surface-hover": token("color", "{color.gray.800}", "Dark override for --secondary-surface-hover."),
+  "muted-surface": token("color", "{color.gray.900}", "Dark override for --muted-surface."),
+  "input-surface": token("color", "{color.gray.800}", "Dark override for --input-surface."),
+  "ring-subtle": token("color", "{color.gray.700}", "Dark override for --ring-subtle."),
+})
+const darkStatus = {
+  "success-surface": token("color", "{color.green.950}", "Dark override for --status-success-surface."),
+  "success-surface-hover": token("color", "{color.green.900}", "Dark override for --status-success-surface-hover."),
+  "success-border": token("color", "{color.green.800}", "Dark override for --status-success-border."),
+  "warning-surface": token("color", "{color.amber.950}", "Dark override for --status-warning-surface."),
+  "warning-surface-hover": token("color", "{color.amber.900}", "Dark override for --status-warning-surface-hover."),
+  "warning-border": token("color", "{color.amber.800}", "Dark override for --status-warning-border."),
+  "info-surface": token("color", "{color.blue.950}", "Dark override for --status-info-surface."),
+  "info-surface-hover": token("color", "{color.blue.900}", "Dark override for --status-info-surface-hover."),
+  "info-border": token("color", "{color.blue.800}", "Dark override for --status-info-border."),
+}
 writeJson(["mode", "dark.json"], {
   $description: "Dark-mode semantic overrides, generated from brand.config.json `dark`.",
-  mode: { dark: { color: darkColor } },
+  mode: { dark: { color: darkColor, status: darkStatus } },
 })
 
 /* ---------- 12. semantic/status.json ---------- */
@@ -368,6 +404,16 @@ writeJson(["semantic", "status.json"], {
       "Warning as TEXT (on a light/tinted surface). amber.500 is the fill colour and is far too light to read — 2.1:1 on white; amber.700 is 4.6:1. success and info need no such split: green.700 and blue.600 already pass as text."),
     info: proposed("color.blue.600", "Proposed. Not consumed yet."),
     "info-foreground": proposed("color.white", "Proposed. Not consumed yet."),
+    // Solid-shade status surfaces (PR #33). Dark shades in mode/dark.json (mode.dark.status).
+    "success-surface": token("color", "{color.green.50}", "Success surface (solid tint). Dark: green.950."),
+    "success-surface-hover": token("color", "{color.green.100}", "Success surface, hover. Dark: green.900."),
+    "success-border": token("color", "{color.green.200}", "Success border. Dark: green.800."),
+    "warning-surface": token("color", "{color.amber.50}", "Warning surface (solid tint). Dark: amber.950."),
+    "warning-surface-hover": token("color", "{color.amber.100}", "Warning surface, hover. Dark: amber.900."),
+    "warning-border": token("color", "{color.amber.200}", "Warning border. Dark: amber.800."),
+    "info-surface": token("color", "{color.blue.50}", "Info surface (solid tint). Dark: blue.950."),
+    "info-surface-hover": token("color", "{color.blue.100}", "Info surface, hover. Dark: blue.900."),
+    "info-border": token("color", "{color.blue.200}", "Info border. Dark: blue.800."),
   },
 })
 
