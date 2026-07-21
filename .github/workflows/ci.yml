@@ -49,14 +49,16 @@ jobs:
       - name: v2 tokens are reproducible, valid, and at parity with legacy CSS
         run: |
           npm run tokens:migrate
+          npm run tokens:theme
           git diff --exit-code tokens/ \
-            || { echo "::error::tokens/ drift — run \`npm run tokens:migrate\` and commit"; exit 1; }
+            || { echo "::error::tokens/ drift — run \`npm run tokens:migrate && npm run tokens:theme\` and commit"; exit 1; }
           npm run tokens:validate
           npm run tokens:build
           npm run icons:contract
           npm run contracts:build
           git diff --exit-code .designops/ \
             || { echo "::error::designops contract drift — run \`npm run tokens:build && npm run icons:contract && npm run contracts:build\` and commit .designops/"; exit 1; }
+          npm run tokens:css-check
           npm run tokens:diff
 
   quality-gates:

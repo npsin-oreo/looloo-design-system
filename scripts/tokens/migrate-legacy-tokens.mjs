@@ -71,6 +71,7 @@ const token = (type, value, description, extensions) => {
 const HAND_AUTHORED = new Set([
   "primitive/spacing.json", "primitive/opacity.json", "primitive/border.json",
   "primitive/shadow.json", "primitive/sizing.json", "primitive/z-index.json",
+  "theme/neutral.json", // Phase 4: owned by scripts/tokens/build-theme.mjs (brand.config → theme overlay)
 ])
 const writeJson = (path, obj) => {
   if (HAND_AUTHORED.has(path.join("/"))) return // hand-authored — migrate does not regenerate
