@@ -1,5 +1,5 @@
 {
-  "$description": "Canonical primitive palette (OKLCH). Generated from tokens/raw/legacy.tokens.json by scripts/tokens/migrate-legacy-tokens.mjs — do not hand-edit. Tailwind families are canonical; the Radix palette was not promoted (no consumers) and remains in raw only.",
+  "$description": "Canonical primitive palette (OKLCH) — HAND-AUTHORED source of truth (Phase 3). No longer generated from legacy tokens.json; scripts/tokens/migrate-legacy-tokens.mjs only READS this to alias semantic tokens. Import new palettes via a one-off Figma import, then hand-tune here. Tailwind families are canonical; Radix palette lives in raw only.",
   "color": {
     "slate": {
       "50": {
