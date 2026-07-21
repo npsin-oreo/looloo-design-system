@@ -34,9 +34,9 @@ import { X } from "@heroicons/react"
 2. Colors go through semantic tokens (`tokens/semantic/*`); reach primitives
    only via an alias chain, never directly from component code.
 3. `tokens/raw/*` is off-limits unless the task IS token migration.
-4. The generated subset of `tokens/` (table in `tokens/README.md`) is never
-   edited by hand — change the source (`brand.config.json` / `tokens.json`)
-   and run `npm run tokens:migrate`.
+4. The generated subset of `tokens/` (only `tokens/theme/<brand>.json`; table in
+   `tokens/README.md`) is never edited by hand — change the source
+   (`brand.config.json` / `brands/<name>.config.json`) and run `npm run tokens:theme`.
 5. New aspirational tokens carry `$extensions["looloo.status"] = "proposed"`.
 6. After any token edit: `npm run tokens:validate` must pass.
 

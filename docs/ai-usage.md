@@ -16,10 +16,10 @@ How AI agents (Claude Code, Cursor, Copilot) should work in this repo.
 | Task | Start at |
 |---|---|
 | Build/modify UI | `@/components/ui/*` + semantic Tailwind tokens; skill `.claude/skills/shadcn-ui-tailwind-figma/` triggers for Figma work |
-| Change brand colors/radius | `brand.config.json` → `npm run brand:build` (never `app/brand.css`) |
+| Change brand colors/radius | `brand.config.json` (neutral) or `brands/<name>.config.json` → `npm run tokens:theme && npm run tokens:build` (never edit `dist/tokens/*.css`) |
 | Add/adjust a component decision (height, padding…) | `tokens/component/<name>.json` (hand-owned) |
-| New semantic role | `tokens/semantic/*.json` (hand-owned subset) |
-| New Figma export | `npm run tokens:import` → `tokens:data` → `tokens:migrate` |
+| New semantic role | `tokens/semantic/*.json` (hand-owned) |
+| New Figma export | `npm run tokens:import` (into `tokens/`; the primitive/semantic tiers are hand-authored) |
 | Anything under `tokens/raw/` | migration tasks only |
 
 ## Verification an agent must run before claiming done

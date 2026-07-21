@@ -16,8 +16,8 @@ enforcement lands with a later phase.
   source. (CSS-var plumbing like `var(--radix-*)` is fine.)
 - ⏳ Do not hardcode height/padding/radius/font-size where a component token
   exists in `tokens/component/<name>.json`.
-- 🔒 Do not edit generated CSS manually (`app/primitives.css`, `app/brand.css`)
-  — the CI token-drift job fails on any divergence from the sources.
+- 🔒 Do not edit generated CSS manually (`dist/tokens/*.css`) — the CI
+  reproducibility + `tokens:css-check` jobs fail on any divergence from `tokens/`.
 
 ## Tokens
 
@@ -25,9 +25,9 @@ enforcement lands with a later phase.
   reference only.
 - Do not put source names (`tw`, `rdx`, `shadcn`) in canonical token paths;
   origins belong in `$extensions`.
-- 🔒 Do not hand-edit the generated subset of `tokens/` (see the
-  generated/hand-owned table in `tokens/README.md`) — `npm run tokens:migrate`
-  overwrites it.
+- 🔒 Do not hand-edit the generated subset of `tokens/` — only
+  `tokens/theme/<brand>.json` is generated (`npm run tokens:theme` overwrites it);
+  see the generated/hand-owned table in `tokens/README.md`.
 - 🔒 New/changed aliases must pass `npm run tokens:validate`.
 - Do not delete a token without a `$deprecated` note naming its replacement.
 

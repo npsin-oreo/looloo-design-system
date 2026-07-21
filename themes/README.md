@@ -1,8 +1,9 @@
 # themes/ (DS v2 scaffold)
 
 Product/brand personality layers. **Status: structure only — nothing imports
-these yet.** The live brand mechanism remains `brand.config.json` (+
-`npm run brand:build` → `app/brand.css`), including per-brand git branches.
+these yet.** The live brand mechanism is the theme overlay: `brand.config.json`
+(neutral) / `brands/<name>.config.json` → `npm run tokens:theme` →
+`tokens/theme/<brand>.json` → `build-css` (a brand is a config overlay, not a git branch).
 
 | Theme | Status | Bias |
 |---|---|---|

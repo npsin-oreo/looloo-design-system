@@ -8,10 +8,9 @@ quality gates wired in `.github/workflows/ci.yml`.
 | Gate | Command | Why it can block |
 |---|---|---|
 | Typecheck | `npx tsc --noEmit` | baseline |
-| Legacy token drift | `brand:build` + `tokens:contract` + `tokens:data` → `git diff` | published `ds-brand-build` contract must stay byte-reproducible |
-| v2 token drift | `tokens:migrate` → `git diff tokens/` | generated subset of `tokens/` must match its sources |
+| Theme-overlay drift | `tokens:theme` → `git diff tokens/` | the generated `tokens/theme/<brand>.json` must match its brand config(s); all other tiers are hand-authored |
 | Token structure | `tokens:validate` | aliases/layers/overrides must resolve |
-| **Parity** | `tokens:diff` | dist output must resolve identically to the legacy CSS — the contract that made the consumer swap safe |
+| **Byte-identity** | `tokens:css-check` | `dist/tokens/*` must match the golden snapshot in `.designops/css-snapshot/` (replaced the legacy `tokens:diff` parity gate, removed in v2.0.0) |
 | Contract drift | `tokens:build` + `icons:contract` + `contracts:build` → `git diff .designops/` | contracts are generated; hand-edits and stale copies are bugs |
 | Hardcoded styles | `audit:styles --strict` | reached 0 HIGH in the tokenization phase — gate keeps it there |
 | Icon usage | `audit:icons --strict` | reached 0 HIGH in the icon phase — gate keeps it there (WARNs don't block) |
