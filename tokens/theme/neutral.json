@@ -1,5 +1,5 @@
 {
-  "$description": "Theme-tier overlay for \"neutral\" — the brand's tunable scalars (radius base, fonts, motion, layout, type axes). Generated from brand.config.json by scripts/tokens/build-theme.mjs (Phase 4). Semantic/primitive tiers stay brand-agnostic; this overlay carries the brand values.",
+  "$description": "Theme-tier overlay for \"neutral\" — the brand's tunable scalars + shadcn colour roles. Generated from brand.config.json by scripts/tokens/build-theme.mjs (Phase 4).",
   "theme": {
     "neutral": {
       "radius": {
