@@ -22,6 +22,7 @@ const strict = process.argv.includes("--strict")
 const ALLOWLIST = new Set([
   "icons/icon-registry.ts",
   "components/docs/references/icon-library.tsx", // docs gallery renders ALL lucide icons
+  "components/ui/logo/logo.tsx", // the logo is a brand VECTOR (inline <svg>), not a registry icon
 ])
 
 function walk(d) {
