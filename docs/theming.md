@@ -1,53 +1,36 @@
-# Theming (DS v2 bridge)
+# Theming (DS v2)
 
-Two systems exist during the migration — know which one is live:
+The v1→v2 migration is complete (see `docs/rfc/retire-legacy-token-pipeline.md`).
+The legacy `brand.config.json → app/brand.css` pipeline and the `ds-brand-build`
+bin were removed in **v2.0.0**. There is now one mechanism, split by audience.
 
-## Live today: brand.config.json
-
-The shipped mechanism (documented in root [`THEMING.md`](../THEMING.md), which
-is published inside the npm package — that file stays authoritative for
-consumers):
+## Internal (this repo): the token layer
 
 ```txt
-brand.config.json ──npm run brand:build──▶ app/brand.css (:root + .dark)
-        ▲                                        ▲
-   brand git branch                    consumers: npx ds-brand-build
+brand.config.json (neutral)             hand-authored
+brands/<name>.config.json (overlay)  ──npm run tokens:theme──▶ tokens/theme/<brand>.json
+        │
+tokens/{primitive,semantic,component,mode}  hand-authored
+tokens/theme/<brand>.json                   (generated above)
+        └──npm run tokens:build──▶ dist/tokens/*.css  (+ brands/<brand>/ with --theme)
+                                        └──@import──▶ app/globals.css
 ```
 
-- Brand forks change **only** `brand.config.json` (colors, radius, fonts,
-  axes) — never `app/brand.css` or component source.
-- Missing `*-foreground` values are auto-derived by luminance.
-- `token-contract.json` (root) lists every key a brand may set.
+- A brand is a **config overlay, not a git branch**. Semantic tokens stay
+  brand-agnostic (they reference the theme tier); only the theme overlay carries
+  brand values.
+- Edit flow: change `brand.config.json` (neutral) or `brands/<name>.config.json`,
+  then `npm run tokens:theme && npm run tokens:build`.
+- `npm run tokens:validate` (structure) + `npm run tokens:css-check` (byte-identity
+  of the published CSS) gate every change in CI.
+- See [`tokens/README.md`](../tokens/README.md) for the generated-vs-hand-owned table.
 
-## v2 target: tokens/ + themes/
+## Consumers of the npm package
 
-```txt
-tokens/{primitive,semantic,component}  base values
-tokens/mode/{light,dark,compact,comfortable,high-contrast}  context overrides
-tokens/theme/*.json + themes/<name>/theme.config.ts  brand personality
-        └──token pipeline──▶ dist/tokens/*.css + dist/themes/<name>.css
-```
+Import `@npsin-oreo/design-system/styles.css`, then override the semantic CSS
+variables in your own `:root` / `.dark` — no build step. The themeable key list is
+in `brand.schema.json` + `dist/tokens/semantic.css`. Full guide: root
+[`THEMING.md`](../THEMING.md) (published inside the package).
 
-Today `tokens/theme/{looloo,healthcare,dashboard}.json` and
-`themes/{looloo,healthcare}/` are **proposed scaffolds** — placeholders
-pending design decisions; nothing consumes them.
-
-## Migration sequence
-
-1. ✅ Token pipeline emits `dist/` CSS and proves **var-for-var parity** with
-   `app/primitives.css` + `app/brand.css` (`tokens:diff`, enforced in CI).
-2. ✅ This repo's `app/globals.css` imports `dist/tokens/*` (primitive,
-   semantic, component, compat, modes/dark). The legacy files stay committed
-   as the published `ds-brand-build` contract but are no longer imported by
-   this repo's app.
-3. ⏳ Brand branches convert `brand.config.json` → `themes/<brand>/` one at a
-   time (the config shape stays supported — `tokens:migrate` derives semantic
-   tokens from it).
-4. ⏳ Density/contrast modes (`compact`/`comfortable`/`high-contrast`) wire up
-   only after component tokens drive real CSS vars.
-
-**Brand edit flow now:** edit `brand.config.json`, then
-`npm run brand:build && npm run tokens:migrate && npm run tokens:build`
-(first keeps the committed legacy artifact in sync for CI; the rest refresh
-the live layer). Package consumers are unaffected: `ds-brand-build` and
-`var(--tw-*)` keep working via `dist/tokens/compat.css`.
+`dist/tokens/compat.css` still re-emits the frozen `--tw-*` / `--brand-*` / `--rdx-*`
+aliases for any older consumer output that referenced them.

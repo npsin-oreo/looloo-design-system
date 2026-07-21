@@ -1,16 +1,16 @@
 # Token Source Strategy (DS v2)
 
-> Status: **LIVE.** `app/globals.css` imports the compiled canonical layer
-> (`dist/tokens/*.css`); `tokens:diff` proved and CI enforces var-for-var
-> parity with the legacy CSS, which stays committed as the published
-> `ds-brand-build` contract.
+> Status: **LIVE (migration complete).** `app/globals.css` imports the compiled
+> canonical layer (`dist/tokens/*.css`); CI enforces byte-identity against the
+> golden snapshot via `tokens:css-check`. The legacy `app/*.css` pipeline and the
+> `ds-brand-build` bin were removed in **v2.0.0** — `tokens/**` is the single source.
 
-## Why `tokens.json` is now legacy/raw
+## Why the old `tokens.json` export was retired
 
-The root `tokens.json` is a 426 KB Figma DTCG export organized by **source**, not
+The root `tokens.json` was a 426 KB Figma DTCG export organized by **source**, not
 by responsibility: `tw-colors/Mode 1`, `rdx-colors/light mode`, `brand-color/Mode 1`,
-`shadcn-ui/Mode 1`, `$themes`, `$metadata`. That shape has served the current
-pipeline, but it fails as a long-term source of truth because:
+`shadcn-ui/Mode 1`, `$themes`, `$metadata`. It served the v1 pipeline but failed as
+a long-term source of truth because:
 
 1. **No layer boundaries.** Nothing distinguishes primitive from semantic from
    component decisions, so humans and AI agents pick low-level tokens directly.
@@ -19,12 +19,11 @@ pipeline, but it fails as a long-term source of truth because:
 3. **Dead and misspelled data.** e.g. the `shadcn-ui/Mode 1` collection
    (`backgrund`, `Card-foregrund`) is consumed by nothing.
 4. **No component layer.** Button height, table density, dialog width — the
-   decisions products actually override — have no home in the export format.
+   decisions products actually override — had no home in the export format.
 
-So: `tokens.json` (and its byte-copy `tokens/raw/legacy.tokens.json`) is kept as
-**migration reference, Figma backup, and legacy-pipeline input** — nothing more.
-It is *not deleted* because the published package's `ds-brand-build` bin and the
-CI drift job still read it.
+So the root `tokens.json` was **deleted in v2.0.0**. Its byte-copy
+`tokens/raw/legacy.tokens.json` is kept as a frozen Figma reference, still read by
+`build-css` only to emit the `--tw-*` / `--brand-*` / `--rdx-*` compat aliases.
 
 ## Why `tokens/{primitive,semantic,component,mode,theme}` is canonical
 
@@ -51,8 +50,8 @@ Tailwind, Radix, shadcn/ui, and Astryx are **references, not dependencies**:
    re-color a shipped product. Our values change only via a reviewed commit.
 2. **Ownership.** Brand and product decisions live in this repo; an external
    palette can't encode LOOLOO decisions.
-3. **Determinism.** The CI drift job and the future `tokens:validate` /
-   `token-contract.json` only work if values are fully repo-local.
+3. **Determinism.** The CI reproducibility job, `tokens:validate`, and
+   `tokens:css-check` only work if values are fully repo-local.
 4. **Offline/AI-safety.** Agents (Cursor, Claude) reason over files in the repo;
    values hidden inside `node_modules` invite hardcoded guesses.
 
@@ -65,8 +64,8 @@ runtime.
 
 | Change | Where | Then |
 |---|---|---|
-| Brand colors / radius / fonts (today) | `brand.config.json` (root; brand branches) | `npm run brand:build` + `npm run tokens:migrate` to keep the canonical mirror in sync |
-| New Figma export | `npm run tokens:import` → root `tokens.json` | `npm run tokens:data` + `npm run tokens:migrate` |
+| Brand colors / radius / fonts | `brand.config.json` (neutral) or `brands/<name>.config.json` (overlay) | `npm run tokens:theme && npm run tokens:build` |
+| New Figma export | `npm run tokens:import` (into `tokens/`) | reconcile by hand — the primitive/semantic tiers are hand-authored |
 | Semantic roles (surface/content/border/status/interaction/focus) | hand-edit `tokens/semantic/*.json` | Phase 2+: `tokens:validate` + `tokens:build` |
 | Component decisions | hand-edit `tokens/component/<name>.json` | must stay in sync with the component source until Phase 4 wires CSS vars |
 | Density / contrast modes | hand-edit `tokens/mode/*.json` | not consumed until Phase 4+ |
@@ -74,9 +73,9 @@ runtime.
 
 Rules that hold at every step:
 
-- Never hand-edit generated files (`app/primitives.css`, `app/brand.css`,
-  `tokens/raw/*`, the generated parts of `tokens/primitive|semantic/color.json` —
-  see the generated/hand-owned table in [`tokens/README.md`](../../tokens/README.md)).
+- Never hand-edit generated files (`dist/tokens/*.css`, `tokens/theme/<brand>.json`,
+  `tokens/raw/*` — see the generated/hand-owned table in
+  [`tokens/README.md`](../../tokens/README.md)).
 - Never put `tw`/`rdx`/`shadcn` in a canonical token path; sources belong in
   `$extensions`.
 - New tokens that nothing consumes yet must carry

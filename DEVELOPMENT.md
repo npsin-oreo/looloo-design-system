@@ -19,10 +19,10 @@ npm run dev
 ```text
 components/ui/       component ที่ถูก export ให้ consumer
 lib/utils.ts         utility `cn()` สำหรับรวม className
-app/globals.css      entry stylesheet และ mapping ของ semantic tokens
-app/primitives.css   primitive color tokens
-app/brand.css        brand tokens ที่ generate แล้ว ห้ามแก้ตรง
-brand.config.json    source สำหรับแก้สีและ radius ของ brand
+app/globals.css      entry stylesheet — @import dist/tokens/*.css + mapping ของ semantic tokens
+tokens/              hand-authored DTCG source layer (primitive→semantic→component→mode→theme)
+dist/tokens/*.css    CSS ที่ generate จาก tokens/ (git-ignored) ห้ามแก้ตรง
+brand.config.json    neutral base config (+ brands/<name>.config.json overlay) สำหรับแก้สี/radius
 ```
 
 ไฟล์ `components/ui/<name>.tsx` จะถูก export อัตโนมัติเป็น `@npsin-oreo/design-system/<name>` ผ่าน wildcard export ใน `package.json`
@@ -87,13 +87,13 @@ npx shadcn@latest add <component-name> --overwrite
 
 ## 5. แก้สีของ Brand
 
-แก้ที่ `brand.config.json` แล้ว generate `app/brand.css`:
+แก้ที่ `brand.config.json` (neutral) หรือ `brands/<name>.config.json` (brand overlay) แล้ว generate:
 
 ```bash
-npm run brand:build
+npm run tokens:theme && npm run tokens:build
 ```
 
-ห้ามแก้ `app/brand.css` โดยตรง เพราะไฟล์จะถูกเขียนทับเมื่อรัน `dev` หรือ `build`
+ห้ามแก้ `dist/tokens/*.css` โดยตรง เพราะไฟล์จะถูกเขียนทับเมื่อรัน `dev` หรือ `build` · ฝั่ง consumer ของ package: override CSS variable ตาม [`THEMING.md`](./THEMING.md)
 
 รายละเอียด token และ white-label workflow:
 
@@ -109,7 +109,7 @@ npm pack --dry-run
 
 ตรวจว่า package artifact มีอย่างน้อย:
 
-- `app/globals.css`, `app/brand.css`, `app/primitives.css`, `app/shadcn.css`
+- `app/globals.css`, `app/shadcn.css`, `dist/tokens/*.css`
 - `components/ui/*.tsx`
 - `components/theme-provider.tsx`
 - `hooks/` และ `lib/`
@@ -147,8 +147,8 @@ npm run build
 | --- | --- |
 | `npm run dev` | เปิด component showcase |
 | `npm run build` | production build และตรวจ integration |
-| `npm run brand:build` | generate `app/brand.css` จาก `brand.config.json` |
-| `npm run tokens:data` | generate token data สำหรับ showcase |
+| `npm run tokens:theme` | generate `tokens/theme/<brand>.json` จาก brand config(s) |
+| `npm run tokens:build` | compile `tokens/` → `dist/tokens/*.css` |
 | `npm run tokens:import [path]` | import Figma token export |
 | `npm pack --dry-run` | ตรวจรายการไฟล์ที่จะอยู่ใน package |
 | `npm pack` | สร้าง `.tgz` เพื่อทดสอบ package artifact ก่อน release |

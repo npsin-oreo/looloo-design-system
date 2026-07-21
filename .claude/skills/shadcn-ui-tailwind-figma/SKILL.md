@@ -273,12 +273,12 @@ Customization priority:
 
 ## 5. Theming and tokens
 
-> **⚠️ White-label repo — read this first.** This project is a white-label base; each brand is a branch. Brand **color + radius values** live ONLY in **`brand.config.json`** (repo root), which generates `app/brand.css` via `npm run brand:build` (auto-runs on dev/build). `app/globals.css` holds only the **structural** `@theme inline` (scales, shadows, `--color-*` → `var()` mappings), shared across brands. See [`WHITELABEL.md`](../../../WHITELABEL.md).
+> **⚠️ White-label repo — read this first.** This project is a white-label base; a brand is a config **overlay**, not a git branch. Brand **color + radius values** live ONLY in **`brand.config.json`** (neutral base) / **`brands/<name>.config.json`** (a brand overlay), which feed `tokens/theme/<brand>.json` via `npm run tokens:theme`, compiled to `dist/tokens/*.css` by `npm run tokens:build` (auto-runs on dev/build). `app/globals.css` holds only the **structural** `@theme inline` (scales, shadows, `--color-*` → `var()` mappings), shared across brands. See [`WHITELABEL.md`](../../../WHITELABEL.md).
 >
-> - To change a brand's colors/radius → **edit `brand.config.json`**, then run `npm run brand:build`. Set at least `light.primary` (and usually `dark.primary`); omitted `*-foreground` auto-derives by luminance.
-> - **NEVER** hand-edit `app/brand.css` (generated — overwritten on build) or put color values in `globals.css` `:root` / `.dark`.
+> - To change a brand's colors/radius → **edit `brand.config.json`** (or `brands/<name>.config.json`), then run `npm run tokens:theme && npm run tokens:build`. Set at least `light.primary` (and usually `dark.primary`); omitted `*-foreground` auto-derives by luminance.
+> - **NEVER** hand-edit `dist/tokens/*.css` (generated — overwritten on build) or put color values in `globals.css` `:root` / `.dark`.
 > - `brand.config.json` is validated by `brand.schema.json` (autocomplete + typo-catching).
-> - Don't commit brand colors to `main` — that's the neutral white-label default.
+> - Keep `main` neutral — brand values go in `brands/<name>.config.json`, not the neutral base.
 
 The structural mapping layer lives in the file at `tailwindCssFile` (`app/globals.css`). **Never create a new CSS file.**
 
@@ -300,7 +300,7 @@ Two parts: the **value** goes in `brand.config.json` (`light` + `dark`); the **T
 }
 ```
 
-Then run `npm run brand:build`. (Legacy single-theme note, for reference: in a non-white-label repo the values would live directly in `globals.css` `:root` / `.dark`.)
+Then run `npm run tokens:theme && npm run tokens:build`. (Legacy single-theme note, for reference: in a non-white-label repo the values would live directly in `globals.css` `:root` / `.dark`.)
 
 ```css
 /* 1. Define */
@@ -326,11 +326,12 @@ For Tailwind v3, register in `tailwind.config.js` with `var(--warning)`.
 
 Default token values are synced **1:1 from the Figma kit** (exact sRGB). **Never run
 `npx shadcn@latest apply --preset`** — it overwrites the values and makes generated
-code drift from Figma. To re-theme a **brand**, edit `brand.config.json` and run
-`npm run brand:build` (see [`WHITELABEL.md`](../../../WHITELABEL.md)). From a Figma
-DTCG export, run `npm run tokens:import [path/to/tokens.json]` to sync
-`brand.config.json` automatically (resolves aliases + normalizes typos), then
-`npm run brand:build`. See `DESIGN.md` §2.5.
+code drift from Figma. To re-theme a **brand**, edit `brand.config.json` (or
+`brands/<name>.config.json`) and run `npm run tokens:theme && npm run tokens:build`
+(see [`WHITELABEL.md`](../../../WHITELABEL.md)). From a Figma DTCG export, run
+`npm run tokens:import [path/to/tokens.json]` to sync the brand config
+automatically (resolves aliases + normalizes typos), then
+`npm run tokens:theme && npm run tokens:build`. See `DESIGN.md` §2.5.
 
 ### Radius
 
