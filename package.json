@@ -10,6 +10,7 @@
     "dist",
     "components/theme-provider.tsx",
     "components/ui",
+    "brands",
     "hooks",
     "lib",
     "scripts/build-brand.mjs",
@@ -27,7 +28,8 @@
     "./theme-provider": "./components/theme-provider.tsx",
     "./*": "./components/ui/*.tsx",
     "./token-contract.json": "./token-contract.json",
-    "./brand.schema.json": "./brand.schema.json"
+    "./brand.schema.json": "./brand.schema.json",
+    "./brands/virtual-agent/logo-artwork": "./brands/virtual-agent/logo-artwork.tsx"
   },
   "sideEffects": [
     "**/*.css"

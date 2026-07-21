@@ -105,18 +105,27 @@ export function resolveValue(registry, value, seen = new Set()) {
 }
 
 /** Emit a token's $value as CSS: alias → var(--…), string with spaces → quoted. */
-export function cssValue(registry, value) {
+export function cssValue(registry, value, activeTheme = "neutral") {
+  // Theme SELECTION (Phase 4b): semantic roles reference {theme.neutral.*}; when building for a
+  // brand, resolve those against theme.<activeTheme>.* instead (falls back to neutral if absent).
+  const sub = (t) => {
+    if (activeTheme !== "neutral" && t.startsWith("theme.neutral.")) {
+      const alt = `theme.${activeTheme}.${t.slice("theme.neutral.".length)}`
+      if (registry.get(alt)) return alt
+    }
+    return t
+  }
   const target = aliasOf(value)
   if (target) {
-    let entry = registry.get(target)
+    let entry = registry.get(sub(target))
     if (!entry) throw new Error(`unresolved alias {${target}}`)
     // Theme-tier chain-skip (Phase 4): a `theme.*` token never emits its own var — it is
     // resolved THROUGH to the primitive it points at, so semantic roles that reference
     // {theme.color.*} still emit var(--ll-color-*) (byte-identical, no --theme-* var leaks).
     while (entry.layer === "theme") {
       const next = aliasOf(entry.token.$value)
-      if (!next) return cssValue(registry, entry.token.$value) // theme leaf is a literal
-      const nextEntry = registry.get(next)
+      if (!next) return cssValue(registry, entry.token.$value, activeTheme) // theme leaf is a literal
+      const nextEntry = registry.get(sub(next))
       if (!nextEntry) throw new Error(`unresolved alias {${next}} (via theme ${entry.path})`)
       entry = nextEntry
     }

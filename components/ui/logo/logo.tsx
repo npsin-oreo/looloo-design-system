@@ -2,7 +2,7 @@ import type { CSSProperties } from "react"
 
 import { cn } from "@/lib/utils"
 
-import { logoArtwork, type LogoType } from "./logo-artwork"
+import { defaultLogoArtwork, type LogoArtwork, type LogoArtworkSet, type LogoType } from "./logo-artwork"
 
 export type LogoTone = "brand" | "mono" | "inverse"
 
@@ -34,25 +34,36 @@ export type LogoProps = Omit<React.ComponentPropsWithoutRef<"svg">, "type"> & {
   tone?: LogoTone
   /** Accessible name. Pass `""` to render decoratively (`aria-hidden`). */
   label?: string
+  /**
+   * Brand geometry slot. Defaults to the neutral white-label placeholder.
+   * A brand supplies its own vector object (e.g. `virtualAgentLogoArtwork`
+   * from `@npsin-oreo/design-system/brands/virtual-agent/logo-artwork`) —
+   * colour still flows through the `--ll-color-brand-*` tokens the theme
+   * overlay recolours, so only the shape is brand-specific.
+   */
+  artwork?: LogoArtworkSet
 }
 
 /**
- * The Virtual Agent logo, as a component — not artwork you copy. The vector
- * scales with the frame: size it with a height utility (`className="h-10"`)
- * and the width follows the aspect ratio. Never scale the vector inside it.
+ * The logo, as a component — not artwork you copy. The vector scales with the
+ * frame: size it with a height utility (`className="h-10"`) and the width
+ * follows the aspect ratio. Never scale the vector inside it.
  *
- * The geometry is brand-specific and lives in ./logo-artwork.tsx — the file a
- * brand branch swaps. This component stays brand-agnostic.
+ * This component is brand-agnostic. The default geometry is the neutral
+ * placeholder in ./logo-artwork.tsx; a brand injects its own via `artwork`
+ * (same overlay topology as the token theme). Colour is bound to brand
+ * primitives per tone, so a rebrand of the tokens flows through automatically.
  */
 export function Logo({
   type = "mark",
   tone = "brand",
-  label = "Virtual Agent",
+  label = "Logo",
+  artwork = defaultLogoArtwork,
   className,
   style,
   ...props
 }: LogoProps) {
-  const art = logoArtwork[type]
+  const art = artwork[type]
   const isInverse = tone === "inverse"
   const decorative = label === ""
 
@@ -71,4 +82,4 @@ export function Logo({
   )
 }
 
-export { type LogoType }
+export { defaultLogoArtwork, type LogoArtwork, type LogoArtworkSet, type LogoType }
