@@ -3,6 +3,37 @@
 All notable changes to `@npsin-oreo/design-system`. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/); this package follows semver.
 
+## 2.0.0
+
+Removes the legacy token pipeline that 1.0.0 deprecated. The canonical, hand-authored
+`tokens/**` layer compiled by `scripts/tokens/*` is now the *only* pipeline. The 1.0.0
+release stays pinnable on the registry as the deprecation window for anyone still on the
+old path.
+
+### Removed (breaking)
+- **`ds-brand-build` bin** + the `brand:build` npm script (`scripts/build-brand.mjs`). Brands
+  are theme overlays now: `brands/<name>.config.json` → `npm run tokens:theme` →
+  `tokens/theme/<name>.json`, compiled by `build-css --theme=<name>`.
+- **`tokens:data`** (`scripts/build-token-data.mjs`) and **`tokens:contract`**
+  (`scripts/build-token-contract.mjs`) — the generators for the shipped `app/primitives.css`
+  and root `token-contract.json`. The token source is hand-authored `tokens/primitive/**`;
+  the machine contract is the generated `.designops/token-contract.json`.
+- **Shipped legacy artifacts**: `app/primitives.css`, `app/brand.css`, root `tokens.json`,
+  and root `token-contract.json` are no longer published. Consumers use
+  `@npsin-oreo/design-system/styles.css` (which imports `dist/tokens/*`).
+- **Component-tier colour aliases** (the 356 `--<component>-*` colour names in `compat.css`,
+  deprecated in 1.0.0). Use the semantic token they pointed at.
+- **`tokens:diff`** (`scripts/tokens/diff.mjs`) — the legacy-vs-dist parity gate, obsolete now
+  that the legacy CSS is gone. Byte-identity is guarded by `tokens:css-check`.
+
+### Kept
+- The `--tw-*` / `--brand-*` / `--rdx-*` frozen aliases in `compat.css` (source:
+  `tokens/raw/legacy.tokens.json`) — never part of the 2.0.0 removal.
+- `brand.config.json` (the neutral white-label config) — it is the `tokens:theme` input.
+
+### Unchanged
+- Published CSS custom-property names remain byte-identical (`tokens:css-check` green).
+
 ## 1.0.0
 
 First major. Completes the token-pipeline RFC
