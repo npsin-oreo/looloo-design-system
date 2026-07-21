@@ -42,7 +42,7 @@ jobs:
             exit 1
           fi
 
-      # prepublishOnly (tokens:contract + tokens:data) runs automatically.
+      # prepublishOnly (tokens:build) runs automatically.
       # setup-node wrote the .npmrc; NODE_AUTH_TOKEN is the token it references.
       - name: Publish
         run: npm publish

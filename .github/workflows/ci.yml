@@ -34,19 +34,11 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      # The committed generated files must match what their sources produce.
-      # brand.css <- brand.config.json; token-contract.json + primitives.css <- tokens.json.
-      - name: Generated token files are reproducible
-        run: |
-          npm run brand:build
-          npm run tokens:contract
-          npm run tokens:data
-          git diff --exit-code app/brand.css token-contract.json app/primitives.css \
-            || { echo "::error::token drift — run \`npm run brand:build && npm run tokens:contract && npm run tokens:data\` and commit the generated files"; exit 1; }
-      # v2 canonical layer: regenerated files must match what is committed,
-      # structure must validate, and dist output must resolve identically to
-      # the legacy CSS (the parity gate that guards the consumer swap).
-      - name: v2 tokens are reproducible, valid, and at parity with legacy CSS
+      # Canonical layer: the theme overlays regenerate cleanly, all other tiers are
+      # hand-authored, the structure validates, and dist output is byte-identical to
+      # the committed golden snapshot (the legacy parity gate was retired with the
+      # legacy CSS in v2.0.0).
+      - name: Tokens are reproducible, valid, and byte-identical
         run: |
           npm run tokens:theme
           git diff --exit-code tokens/ \
@@ -58,7 +50,6 @@ jobs:
           git diff --exit-code .designops/ \
             || { echo "::error::designops contract drift — run \`npm run tokens:build && npm run icons:contract && npm run contracts:build\` and commit .designops/"; exit 1; }
           npm run tokens:css-check
-          npm run tokens:diff
 
   quality-gates:
     name: Quality gates (audits, strict)
@@ -93,6 +84,6 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
       # Render-smokes every story + runs play functions + axe a11y (error mode).
-      # build-storybook's brand:build runs implicitly via the vitest setup importing globals.css.
+      # test-storybook runs tokens:build first (globals.css imports dist/tokens/*).
       - name: test-storybook
         run: npm run test-storybook

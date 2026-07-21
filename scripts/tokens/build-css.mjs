@@ -15,9 +15,9 @@
  *   dist/tokens/modes/*.css     .dark / [data-density=…] / [data-contrast=high]
  *   dist/themes/*.css           [data-theme=…] (PROPOSED scaffolds)
  *
- * dist/ is git-ignored build output. The legacy pipeline
- * (app/primitives.css + app/brand.css) stays authoritative until
- * `npm run tokens:diff` proves parity AND the consumer swap phase lands.
+ * dist/ is git-ignored build output and is the single source of the published CSS
+ * (app/globals.css @imports it; the legacy app/primitives.css + app/brand.css layer
+ * was removed in v2.0.0). Byte-identity is guarded by tokens:css-check.
  *
  * Run: npm run tokens:build
  */
@@ -50,7 +50,7 @@ writeFileSync(
 )
 
 /* ---------- semantic.css (+ base-theme axes from theme/neutral) ---------- */
-// theme.neutral scalars → the axis var names app/brand.css ships today.
+// theme.neutral scalars → the axis var names the semantic layer exposes.
 const AXIS_ROOT = {
   radius: "--radius",
   "motion.duration": "--duration-base",
@@ -114,33 +114,20 @@ function compatLines(collKey, legacyPrefix, canonicalPrefix) {
   }
   return lines
 }
-/* deprecated component-tier color names — thin aliases for one deprecation window
- * (the component color tier was collapsed into semantic; dropped at the next major) */
-const deprecatedColors = JSON.parse(
-  readFileSync(join(repoRoot, "tokens", "raw", "deprecated-component-colors.json"), "utf8")
-).aliases
-const deprecatedColorLines = Object.entries(deprecatedColors).map(
-  ([oldVar, target]) => `  ${oldVar}: ${target === "currentColor" ? "currentColor" : `var(${target})`};`
-)
 writeFileSync(
   join(outTokens, "compat.css"),
   GENERATED_HEADER("build-css.mjs") +
-    "/* Legacy primitive names — REQUIRED by published consumers whose\n" +
-    " * ds-brand-build output references var(--tw-*) / var(--rdx-*) / var(--brand-*).\n" +
-    " * tw/brand alias the canonical --ll-* layer; rdx is frozen at its legacy\n" +
-    " * values (Radix palette was not promoted to canonical — zero repo consumers). */\n" +
+    "/* Frozen historical primitive names (--tw-* / --rdx-* / --brand-*) — no active\n" +
+    " * producer (the ds-brand-build path was removed in v2.0.0). Kept as thin aliases:\n" +
+    " * tw/brand alias the canonical --ll-* layer; rdx is frozen at its legacy values\n" +
+    " * (Radix palette was never promoted to canonical). Source: tokens/raw/legacy.tokens.json. */\n" +
     ":root {\n" +
     [
       ...compatLines("tw-colors/Mode 1", "tw", ""),
       ...compatLines("rdx-colors/light mode", "rdx", "rdx-not-promoted."), // no canonical match → literals
       ...compatLines("brand-color/Mode 1", "brand", "brand."),
     ].join("\n") +
-    "\n}\n\n" +
-    "/* DEPRECATED component color names (removed 2026-07-21, PR #33) — thin aliases to\n" +
-    " * the semantic tier for ONE deprecation window. Do not use in new code; migrate to\n" +
-    " * the target token. Dropped at the next major bump. Source of truth:\n" +
-    " * tokens/raw/deprecated-component-colors.json. */\n" +
-    ":root {\n" + deprecatedColorLines.join("\n") + "\n}\n"
+    "\n}\n"
 )
 
 /* ---------- modes ---------- */

@@ -2,9 +2,9 @@
  * Shared types for themes/<name>/theme.config.ts (DS v2 scaffold).
  *
  * Status: structure-only. Nothing imports these configs at runtime yet — the
- * live brand mechanism is still brand.config.json (+ `npm run brand:build`).
- * The token build pipeline will compile these configs into
- * dist/themes/<name>.css in a later phase.
+ * live brand mechanism is the theme overlay: brand.config.json / brands/<name>.config.json
+ * → `npm run tokens:theme` → tokens/theme/<name>.json → build-css. The token build
+ * pipeline will compile these configs into dist/themes/<name>.css in a later phase.
  */
 export interface ThemeConfig {
   name: string
