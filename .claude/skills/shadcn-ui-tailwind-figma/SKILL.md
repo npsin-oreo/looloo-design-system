@@ -273,7 +273,7 @@ Customization priority:
 
 ## 5. Theming and tokens
 
-> **⚠️ White-label repo — read this first.** This project is a white-label base; a brand is a config **overlay**, not a git branch. Brand **color + radius values** live ONLY in **`brand.config.json`** (neutral base) / **`brands/<name>.config.json`** (a brand overlay), which feed `tokens/theme/<brand>.json` via `npm run tokens:theme`, compiled to `dist/tokens/*.css` by `npm run tokens:build` (auto-runs on dev/build). `app/globals.css` holds only the **structural** `@theme inline` (scales, shadows, `--color-*` → `var()` mappings), shared across brands. See [`WHITELABEL.md`](../../../WHITELABEL.md).
+> **⚠️ White-label repo — read this first.** This project is a white-label base; a brand is a config **overlay**, not a git branch. Brand **color + radius values** live ONLY in **`brand.config.json`** (neutral base) / **`brands/<name>.config.json`** (a brand overlay), which feed `tokens/theme/<brand>.json` via `npm run tokens:theme`, compiled to `dist/tokens/*.css` by `npm run tokens:build` (auto-runs on dev/build). `app/globals.css` holds only the **structural** `@theme inline` (scales, shadows, `--color-*` → `var()` mappings), shared across brands. See [`tokens/README.md`](../../../tokens/README.md).
 >
 > - To change a brand's colors/radius → **edit `brand.config.json`** (or `brands/<name>.config.json`), then run `npm run tokens:theme && npm run tokens:build`. Set at least `light.primary` (and usually `dark.primary`); omitted `*-foreground` auto-derives by luminance.
 > - **NEVER** hand-edit `dist/tokens/*.css` (generated — overwritten on build) or put color values in `globals.css` `:root` / `.dark`.
@@ -328,7 +328,7 @@ Default token values are synced **1:1 from the Figma kit** (exact sRGB). **Never
 `npx shadcn@latest apply --preset`** — it overwrites the values and makes generated
 code drift from Figma. To re-theme a **brand**, edit `brand.config.json` (or
 `brands/<name>.config.json`) and run `npm run tokens:theme && npm run tokens:build`
-(see [`WHITELABEL.md`](../../../WHITELABEL.md)). From a Figma DTCG export, run
+(see [`tokens/README.md`](../../../tokens/README.md)). From a Figma DTCG export, run
 `npm run tokens:import [path/to/tokens.json]` to sync the brand config
 automatically (resolves aliases + normalizes typos), then
 `npm run tokens:theme && npm run tokens:build`. See `DESIGN.md` §2.5.

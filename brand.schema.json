@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/npsin-oreo/looloo-design-system/brand.schema.json",
   "title": "Brand config",
-  "description": "Per-brand theme for the white-label base. Edit this file, then run `npm run brand:build` (auto-runs on dev/build). See WHITELABEL.md. Two accepted shapes: the nested DS-fork shape ({name, light:{...}}) and the flat consumer-theming shape the DesignOps pipeline emits ({project_name, primary, background, ...}); build-brand.mjs lifts flat color keys into `light`.",
+  "description": "Per-brand theme overlay for the white-label base. Edit brand.config.json (neutral) or brands/<name>.config.json, then run `npm run tokens:theme && npm run tokens:build` (auto-runs on dev/build). See THEMING.md. Two accepted shapes: the nested DS shape ({name, light:{...}, dark:{...}}) and the flat consumer-theming shape the DesignOps pipeline emits ({project_name, primary, background, ...}).",
   "type": "object",
   "anyOf": [
     { "required": ["name", "light"] },

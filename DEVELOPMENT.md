@@ -98,7 +98,7 @@ npm run tokens:theme && npm run tokens:build
 รายละเอียด token และ white-label workflow:
 
 - [`DESIGN.md`](./DESIGN.md)
-- [`WHITELABEL.md`](./WHITELABEL.md)
+- [`THEMING.md`](./THEMING.md) · [`tokens/README.md`](./tokens/README.md)
 
 ## 6. ตรวจสอบก่อนส่งแพ็กเกจ
 
