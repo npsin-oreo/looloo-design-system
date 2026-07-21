@@ -6,6 +6,12 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { warnDeprecated } from "./_deprecated.mjs";
+
+warnDeprecated({
+  script: "tokens:contract (scripts/build-token-contract.mjs) — generates the ROOT token-contract.json",
+  replacement: "the generated .designops/token-contract.json (scripts/tokens/build-contract.mjs)",
+});
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const brand = JSON.parse(readFileSync(join(root, "brand.config.json"), "utf8"));

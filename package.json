@@ -1,6 +1,6 @@
 {
   "name": "@npsin-oreo/design-system",
-  "version": "0.12.0",
+  "version": "1.0.0",
   "private": false,
   "files": [
     "app/brand.css",
@@ -15,10 +15,12 @@
     "lib",
     "scripts/build-brand.mjs",
     "scripts/lib-oklch.mjs",
+    "scripts/_deprecated.mjs",
     "tokens.json",
     "token-contract.json",
     "brand.schema.json",
-    "THEMING.md"
+    "THEMING.md",
+    "CHANGELOG.md"
   ],
   "bin": {
     "ds-brand-build": "scripts/build-brand.mjs"

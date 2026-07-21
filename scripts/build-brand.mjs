@@ -22,6 +22,13 @@ import { readFileSync, writeFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
 import { toOklch } from "./lib-oklch.mjs"
+import { warnDeprecated } from "./_deprecated.mjs"
+
+warnDeprecated({
+  script: "ds-brand-build (scripts/build-brand.mjs)",
+  replacement:
+    "the theme overlay: brands/<name>.config.json → `npm run tokens:theme` → build-css `--theme=<name>` (dist/tokens/brands/<name>/)",
+})
 
 // Package root (where this script lives) — source of the bundled tokens.json.
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")

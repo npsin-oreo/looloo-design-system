@@ -13,6 +13,12 @@ import { readFileSync, writeFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join } from "node:path"
 import { toOklch } from "./lib-oklch.mjs"
+import { warnDeprecated } from "./_deprecated.mjs"
+
+warnDeprecated({
+  script: "tokens:data (scripts/build-token-data.mjs) — generates app/primitives.css from tokens.json",
+  replacement: "hand-authored tokens/primitive/** → `npm run tokens:build` (dist/tokens/primitive.css)",
+})
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const tokens = JSON.parse(readFileSync(join(root, "tokens.json"), "utf8"))
