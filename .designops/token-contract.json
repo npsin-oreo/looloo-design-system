@@ -2096,13 +2096,14 @@
       "cssVar": "--accent",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.100",
+      "alias": "theme.neutral.color.accent",
       "description": "Interactive hover, focus, and active surfaces.",
       "modes": [
         "dark"
       ],
       "themes": [
-        "looloo"
+        "looloo",
+        "neutral"
       ]
     },
     "color.accent-foreground": {
@@ -2111,13 +2112,14 @@
       "cssVar": "--accent-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.900",
+      "alias": "theme.neutral.color.accent-foreground",
       "description": "Interactive hover, focus, and active surfaces.",
       "modes": [
         "dark"
       ],
       "themes": [
-        "looloo"
+        "looloo",
+        "neutral"
       ]
     },
     "color.amber.100": {
@@ -2203,10 +2205,13 @@
       "cssVar": "--background",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.white",
+      "alias": "theme.neutral.color.background",
       "description": "The default app background and text color.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.background-color": {
@@ -2215,9 +2220,13 @@
       "cssVar": "--background-color",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
+      "alias": "theme.neutral.color.background-color",
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.black": {
@@ -2310,11 +2319,14 @@
       "cssVar": "--border",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.200",
+      "alias": "theme.neutral.color.border",
       "description": "Default borders and separators.",
       "modes": [
         "dark",
         "high-contrast"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.brand-accent": {
@@ -2323,10 +2335,13 @@
       "cssVar": "--brand-accent",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.brand.secondary.950",
+      "alias": "theme.neutral.color.brand-accent",
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.brand-accent-foreground": {
@@ -2335,10 +2350,13 @@
       "cssVar": "--brand-accent-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.white",
+      "alias": "theme.neutral.color.brand-accent-foreground",
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.brand.cerulean-blue.100": {
@@ -2655,10 +2673,13 @@
       "cssVar": "--card",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.white",
+      "alias": "theme.neutral.color.card",
       "description": "Elevated surfaces and the content inside them.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.card-foreground": {
@@ -2667,10 +2688,13 @@
       "cssVar": "--card-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.950",
+      "alias": "theme.neutral.color.card-foreground",
       "description": "Elevated surfaces and the content inside them.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.chart-1": {
@@ -2679,10 +2703,13 @@
       "cssVar": "--chart-1",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.brand.primary.600",
+      "alias": "theme.neutral.color.chart-1",
       "description": "The default chart palette.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.chart-2": {
@@ -2691,10 +2718,13 @@
       "cssVar": "--chart-2",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.brand.primary.400",
+      "alias": "theme.neutral.color.chart-2",
       "description": "The default chart palette.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.chart-3": {
@@ -2703,10 +2733,13 @@
       "cssVar": "--chart-3",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.brand.secondary.950",
+      "alias": "theme.neutral.color.chart-3",
       "description": "The default chart palette.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.chart-4": {
@@ -2715,10 +2748,13 @@
       "cssVar": "--chart-4",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.brand.primary.800",
+      "alias": "theme.neutral.color.chart-4",
       "description": "The default chart palette.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.chart-5": {
@@ -2727,10 +2763,13 @@
       "cssVar": "--chart-5",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.brand.secondary.700",
+      "alias": "theme.neutral.color.chart-5",
       "description": "The default chart palette.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.cyan.100": {
@@ -2816,10 +2855,13 @@
       "cssVar": "--destructive",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.red.600",
+      "alias": "theme.neutral.color.destructive",
       "description": "Destructive actions and error emphasis.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.destructive-border": {
@@ -2941,10 +2983,13 @@
       "cssVar": "--foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.950",
+      "alias": "theme.neutral.color.foreground",
       "description": "The default app background and text color.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.fuchsia.100": {
@@ -3261,10 +3306,13 @@
       "cssVar": "--input",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.200",
+      "alias": "theme.neutral.color.input",
       "description": "Form control borders and input surface treatment.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.input-surface": {
@@ -3362,10 +3410,13 @@
       "cssVar": "--muted",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.100",
+      "alias": "theme.neutral.color.muted",
       "description": "Subtle surfaces and lower-emphasis content.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.muted-foreground": {
@@ -3374,10 +3425,13 @@
       "cssVar": "--muted-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.500",
+      "alias": "theme.neutral.color.muted-foreground",
       "description": "Subtle surfaces and lower-emphasis content.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.muted-surface": {
@@ -3629,10 +3683,13 @@
       "cssVar": "--popover",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.white",
+      "alias": "theme.neutral.color.popover",
       "description": "Floating surfaces and the content inside them.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.popover-foreground": {
@@ -3641,10 +3698,13 @@
       "cssVar": "--popover-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.950",
+      "alias": "theme.neutral.color.popover-foreground",
       "description": "Floating surfaces and the content inside them.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.primary": {
@@ -3653,13 +3713,14 @@
       "cssVar": "--primary",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.brand.primary.600",
+      "alias": "theme.neutral.color.primary",
       "description": "High-emphasis actions and brand surfaces.",
       "modes": [
         "dark"
       ],
       "themes": [
-        "looloo"
+        "looloo",
+        "neutral"
       ]
     },
     "color.primary-foreground": {
@@ -3668,13 +3729,14 @@
       "cssVar": "--primary-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.white",
+      "alias": "theme.neutral.color.primary-foreground",
       "description": "High-emphasis actions and brand surfaces.",
       "modes": [
         "dark"
       ],
       "themes": [
-        "looloo"
+        "looloo",
+        "neutral"
       ]
     },
     "color.primary-hover": {
@@ -3683,10 +3745,13 @@
       "cssVar": "--primary-hover",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.brand.primary.700",
+      "alias": "theme.neutral.color.primary-hover",
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.primary-surface": {
@@ -3861,10 +3926,13 @@
       "cssVar": "--ring",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.brand.primary.300",
+      "alias": "theme.neutral.color.ring",
       "description": "Focus rings and outlines.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.ring-subtle": {
@@ -3962,10 +4030,13 @@
       "cssVar": "--secondary",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.100",
+      "alias": "theme.neutral.color.secondary",
       "description": "Lower-emphasis filled actions and supporting surfaces.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.secondary-foreground": {
@@ -3974,10 +4045,13 @@
       "cssVar": "--secondary-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.900",
+      "alias": "theme.neutral.color.secondary-foreground",
       "description": "Lower-emphasis filled actions and supporting surfaces.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.secondary-hover": {
@@ -4010,10 +4084,13 @@
       "cssVar": "--semantic-background",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.500",
+      "alias": "theme.neutral.color.semantic-background",
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.semantic-border": {
@@ -4022,10 +4099,13 @@
       "cssVar": "--semantic-border",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.600",
+      "alias": "theme.neutral.color.semantic-border",
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.semantic-foreground": {
@@ -4034,10 +4114,13 @@
       "cssVar": "--semantic-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.white",
+      "alias": "theme.neutral.color.semantic-foreground",
       "description": "Kit extra — not part of the shadcn contract. Prefer a shadcn-named role.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar": {
@@ -4046,10 +4129,13 @@
       "cssVar": "--sidebar",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.50",
+      "alias": "theme.neutral.color.sidebar",
       "description": "The base sidebar surface and default sidebar text.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-accent": {
@@ -4058,10 +4144,13 @@
       "cssVar": "--sidebar-accent",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.100",
+      "alias": "theme.neutral.color.sidebar-accent",
       "description": "Hover and selected states inside the sidebar.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-accent-foreground": {
@@ -4070,10 +4159,13 @@
       "cssVar": "--sidebar-accent-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.900",
+      "alias": "theme.neutral.color.sidebar-accent-foreground",
       "description": "Hover and selected states inside the sidebar.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-border": {
@@ -4082,10 +4174,13 @@
       "cssVar": "--sidebar-border",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.200",
+      "alias": "theme.neutral.color.sidebar-border",
       "description": "Sidebar-specific borders and separators.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-foreground": {
@@ -4094,10 +4189,13 @@
       "cssVar": "--sidebar-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.950",
+      "alias": "theme.neutral.color.sidebar-foreground",
       "description": "The base sidebar surface and default sidebar text.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-primary": {
@@ -4106,10 +4204,13 @@
       "cssVar": "--sidebar-primary",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.brand.primary.600",
+      "alias": "theme.neutral.color.sidebar-primary",
       "description": "High-emphasis actions inside the sidebar.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-primary-foreground": {
@@ -4118,10 +4219,13 @@
       "cssVar": "--sidebar-primary-foreground",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.white",
+      "alias": "theme.neutral.color.sidebar-primary-foreground",
       "description": "High-emphasis actions inside the sidebar.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sidebar-ring": {
@@ -4130,10 +4234,13 @@
       "cssVar": "--sidebar-ring",
       "layer": "semantic",
       "source": "tokens/semantic/color.json",
-      "alias": "color.gray.400",
+      "alias": "theme.neutral.color.sidebar-ring",
       "description": "Sidebar-specific focus rings.",
       "modes": [
         "dark"
+      ],
+      "themes": [
+        "neutral"
       ]
     },
     "color.sky.100": {
@@ -10200,6 +10307,751 @@
       "source": "tokens/component/textarea.json",
       "alias": "size.12",
       "description": "The native resize grip the browser paints in the bottom-right corner. textarea has NO resize-none, so it IS resizable — this is real, not decoration. (The textarea inside input-group DOES set resize-none and shows no grip.)"
+    },
+    "theme.dashboard.defaultDensity": {
+      "type": "text",
+      "value": "compact",
+      "cssVar": "--theme-dashboard-default-density",
+      "layer": "theme",
+      "source": "tokens/theme/dashboard.json",
+      "description": "Pairs with tokens/mode/compact.json once density modes are wired."
+    },
+    "theme.dashboard.surface.background": {
+      "type": "color",
+      "value": "oklch(0.985 0 0)",
+      "cssVar": "--theme-dashboard-surface-background",
+      "layer": "theme",
+      "source": "tokens/theme/dashboard.json",
+      "alias": "color.neutral.50",
+      "status": "proposed"
+    },
+    "theme.healthcare.defaultDensity": {
+      "type": "text",
+      "value": "comfortable",
+      "cssVar": "--theme-healthcare-default-density",
+      "layer": "theme",
+      "source": "tokens/theme/healthcare.json",
+      "description": "Pairs with tokens/mode/comfortable.json once density modes are wired."
+    },
+    "theme.healthcare.focus.ring.width": {
+      "type": "dimension",
+      "value": "4px",
+      "cssVar": "--theme-healthcare-focus-ring-width",
+      "layer": "theme",
+      "source": "tokens/theme/healthcare.json",
+      "status": "proposed"
+    },
+    "theme.looloo.color.accent": {
+      "type": "color",
+      "value": "oklch(0.273 0.066 252.129)",
+      "cssVar": "--theme-looloo-color-accent",
+      "layer": "theme",
+      "source": "tokens/theme/looloo.json",
+      "description": "Signed off: #0B2846 (deep navy; no matching ramp step — literal)."
+    },
+    "theme.looloo.color.accent-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-looloo-color-accent-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/looloo.json",
+      "alias": "color.white",
+      "description": "White on navy — 14.93:1."
+    },
+    "theme.looloo.color.primary": {
+      "type": "color",
+      "value": "oklch(0.91 0.016 253.908)",
+      "cssVar": "--theme-looloo-color-primary",
+      "layer": "theme",
+      "source": "tokens/theme/looloo.json",
+      "alias": "color.brand.secondary.300",
+      "description": "Signed off: #60CFCB."
+    },
+    "theme.looloo.color.primary-foreground": {
+      "type": "color",
+      "value": "oklch(0.145 0 0)",
+      "cssVar": "--theme-looloo-color-primary-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/looloo.json",
+      "alias": "color.neutral.950",
+      "description": "Dark text on the teal primary — 10.64:1 (white would be 1.86:1)."
+    },
+    "theme.neutral.color.accent": {
+      "type": "color",
+      "value": "oklch(0.967 0.003 264.542)",
+      "cssVar": "--theme-neutral-color-accent",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.100"
+    },
+    "theme.neutral.color.accent-foreground": {
+      "type": "color",
+      "value": "oklch(0.21 0.032 264.665)",
+      "cssVar": "--theme-neutral-color-accent-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.900"
+    },
+    "theme.neutral.color.background": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-neutral-color-background",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.white"
+    },
+    "theme.neutral.color.background-color": {
+      "type": "color",
+      "value": "oklch(0 0 0 / 30%)",
+      "cssVar": "--theme-neutral-color-background-color",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json"
+    },
+    "theme.neutral.color.border": {
+      "type": "color",
+      "value": "oklch(0.928 0.006 264.531)",
+      "cssVar": "--theme-neutral-color-border",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.200"
+    },
+    "theme.neutral.color.brand-accent": {
+      "type": "color",
+      "value": "oklch(0.273 0.066 252.129)",
+      "cssVar": "--theme-neutral-color-brand-accent",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.secondary.950"
+    },
+    "theme.neutral.color.brand-accent-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-neutral-color-brand-accent-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.white"
+    },
+    "theme.neutral.color.card": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-neutral-color-card",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.white"
+    },
+    "theme.neutral.color.card-foreground": {
+      "type": "color",
+      "value": "oklch(0.13 0.027 261.692)",
+      "cssVar": "--theme-neutral-color-card-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.950"
+    },
+    "theme.neutral.color.chart-1": {
+      "type": "color",
+      "value": "oklch(0.54 0.082 198.255)",
+      "cssVar": "--theme-neutral-color-chart-1",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.600"
+    },
+    "theme.neutral.color.chart-2": {
+      "type": "color",
+      "value": "oklch(0.727 0.103 194.319)",
+      "cssVar": "--theme-neutral-color-chart-2",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.400"
+    },
+    "theme.neutral.color.chart-3": {
+      "type": "color",
+      "value": "oklch(0.273 0.066 252.129)",
+      "cssVar": "--theme-neutral-color-chart-3",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.secondary.950"
+    },
+    "theme.neutral.color.chart-4": {
+      "type": "color",
+      "value": "oklch(0.395 0.053 200.697)",
+      "cssVar": "--theme-neutral-color-chart-4",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.800"
+    },
+    "theme.neutral.color.chart-5": {
+      "type": "color",
+      "value": "oklch(0.646 0.042 252.066)",
+      "cssVar": "--theme-neutral-color-chart-5",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.secondary.700"
+    },
+    "theme.neutral.color.destructive": {
+      "type": "color",
+      "value": "oklch(0.577 0.215 27.325)",
+      "cssVar": "--theme-neutral-color-destructive",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.red.600"
+    },
+    "theme.neutral.color.foreground": {
+      "type": "color",
+      "value": "oklch(0.13 0.027 261.692)",
+      "cssVar": "--theme-neutral-color-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.950"
+    },
+    "theme.neutral.color.input": {
+      "type": "color",
+      "value": "oklch(0.928 0.006 264.531)",
+      "cssVar": "--theme-neutral-color-input",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.200"
+    },
+    "theme.neutral.color.muted": {
+      "type": "color",
+      "value": "oklch(0.967 0.003 264.542)",
+      "cssVar": "--theme-neutral-color-muted",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.100"
+    },
+    "theme.neutral.color.muted-foreground": {
+      "type": "color",
+      "value": "oklch(0.551 0.023 264.364)",
+      "cssVar": "--theme-neutral-color-muted-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.500"
+    },
+    "theme.neutral.color.popover": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-neutral-color-popover",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.white"
+    },
+    "theme.neutral.color.popover-foreground": {
+      "type": "color",
+      "value": "oklch(0.13 0.027 261.692)",
+      "cssVar": "--theme-neutral-color-popover-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.950"
+    },
+    "theme.neutral.color.primary": {
+      "type": "color",
+      "value": "oklch(0.54 0.082 198.255)",
+      "cssVar": "--theme-neutral-color-primary",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.600"
+    },
+    "theme.neutral.color.primary-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-neutral-color-primary-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.white"
+    },
+    "theme.neutral.color.primary-hover": {
+      "type": "color",
+      "value": "oklch(0.459 0.066 199.308)",
+      "cssVar": "--theme-neutral-color-primary-hover",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.700"
+    },
+    "theme.neutral.color.ring": {
+      "type": "color",
+      "value": "oklch(0.789 0.102 192.099)",
+      "cssVar": "--theme-neutral-color-ring",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.300"
+    },
+    "theme.neutral.color.secondary": {
+      "type": "color",
+      "value": "oklch(0.967 0.003 264.542)",
+      "cssVar": "--theme-neutral-color-secondary",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.100"
+    },
+    "theme.neutral.color.secondary-foreground": {
+      "type": "color",
+      "value": "oklch(0.21 0.032 264.665)",
+      "cssVar": "--theme-neutral-color-secondary-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.900"
+    },
+    "theme.neutral.color.semantic-background": {
+      "type": "color",
+      "value": "oklch(0.551 0.023 264.364)",
+      "cssVar": "--theme-neutral-color-semantic-background",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.500"
+    },
+    "theme.neutral.color.semantic-border": {
+      "type": "color",
+      "value": "oklch(0.446 0.026 256.802)",
+      "cssVar": "--theme-neutral-color-semantic-border",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.600"
+    },
+    "theme.neutral.color.semantic-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-neutral-color-semantic-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.white"
+    },
+    "theme.neutral.color.sidebar": {
+      "type": "color",
+      "value": "oklch(0.985 0.002 247.839)",
+      "cssVar": "--theme-neutral-color-sidebar",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.50"
+    },
+    "theme.neutral.color.sidebar-accent": {
+      "type": "color",
+      "value": "oklch(0.967 0.003 264.542)",
+      "cssVar": "--theme-neutral-color-sidebar-accent",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.100"
+    },
+    "theme.neutral.color.sidebar-accent-foreground": {
+      "type": "color",
+      "value": "oklch(0.21 0.032 264.665)",
+      "cssVar": "--theme-neutral-color-sidebar-accent-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.900"
+    },
+    "theme.neutral.color.sidebar-border": {
+      "type": "color",
+      "value": "oklch(0.928 0.006 264.531)",
+      "cssVar": "--theme-neutral-color-sidebar-border",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.200"
+    },
+    "theme.neutral.color.sidebar-foreground": {
+      "type": "color",
+      "value": "oklch(0.13 0.027 261.692)",
+      "cssVar": "--theme-neutral-color-sidebar-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.950"
+    },
+    "theme.neutral.color.sidebar-primary": {
+      "type": "color",
+      "value": "oklch(0.54 0.082 198.255)",
+      "cssVar": "--theme-neutral-color-sidebar-primary",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.600"
+    },
+    "theme.neutral.color.sidebar-primary-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-neutral-color-sidebar-primary-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.white"
+    },
+    "theme.neutral.color.sidebar-ring": {
+      "type": "color",
+      "value": "oklch(0.714 0.019 261.325)",
+      "cssVar": "--theme-neutral-color-sidebar-ring",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.400"
+    },
+    "theme.neutral.colorDark.accent": {
+      "type": "color",
+      "value": "oklch(0.278 0.03 256.848)",
+      "cssVar": "--theme-neutral-color-dark-accent",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.800"
+    },
+    "theme.neutral.colorDark.accent-foreground": {
+      "type": "color",
+      "value": "oklch(0.985 0.002 247.839)",
+      "cssVar": "--theme-neutral-color-dark-accent-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.50"
+    },
+    "theme.neutral.colorDark.background": {
+      "type": "color",
+      "value": "oklch(0.13 0.027 261.692)",
+      "cssVar": "--theme-neutral-color-dark-background",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.950"
+    },
+    "theme.neutral.colorDark.background-color": {
+      "type": "color",
+      "value": "oklch(0 0 0 / 30%)",
+      "cssVar": "--theme-neutral-color-dark-background-color",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json"
+    },
+    "theme.neutral.colorDark.border": {
+      "type": "color",
+      "value": "oklch(1 0 0 / 10%)",
+      "cssVar": "--theme-neutral-color-dark-border",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json"
+    },
+    "theme.neutral.colorDark.brand-accent": {
+      "type": "color",
+      "value": "oklch(0.273 0.066 252.129)",
+      "cssVar": "--theme-neutral-color-dark-brand-accent",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.secondary.950"
+    },
+    "theme.neutral.colorDark.brand-accent-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-neutral-color-dark-brand-accent-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.white"
+    },
+    "theme.neutral.colorDark.card": {
+      "type": "color",
+      "value": "oklch(0.21 0.032 264.665)",
+      "cssVar": "--theme-neutral-color-dark-card",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.900"
+    },
+    "theme.neutral.colorDark.card-foreground": {
+      "type": "color",
+      "value": "oklch(0.985 0.002 247.839)",
+      "cssVar": "--theme-neutral-color-dark-card-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.50"
+    },
+    "theme.neutral.colorDark.chart-1": {
+      "type": "color",
+      "value": "oklch(0.54 0.082 198.255)",
+      "cssVar": "--theme-neutral-color-dark-chart-1",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.600"
+    },
+    "theme.neutral.colorDark.chart-2": {
+      "type": "color",
+      "value": "oklch(0.727 0.103 194.319)",
+      "cssVar": "--theme-neutral-color-dark-chart-2",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.400"
+    },
+    "theme.neutral.colorDark.chart-3": {
+      "type": "color",
+      "value": "oklch(0.273 0.066 252.129)",
+      "cssVar": "--theme-neutral-color-dark-chart-3",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.secondary.950"
+    },
+    "theme.neutral.colorDark.chart-4": {
+      "type": "color",
+      "value": "oklch(0.395 0.053 200.697)",
+      "cssVar": "--theme-neutral-color-dark-chart-4",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.800"
+    },
+    "theme.neutral.colorDark.chart-5": {
+      "type": "color",
+      "value": "oklch(0.646 0.042 252.066)",
+      "cssVar": "--theme-neutral-color-dark-chart-5",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.secondary.700"
+    },
+    "theme.neutral.colorDark.destructive": {
+      "type": "color",
+      "value": "oklch(0.711 0.166 22.216)",
+      "cssVar": "--theme-neutral-color-dark-destructive",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.red.300"
+    },
+    "theme.neutral.colorDark.foreground": {
+      "type": "color",
+      "value": "oklch(0.985 0.002 247.839)",
+      "cssVar": "--theme-neutral-color-dark-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.50"
+    },
+    "theme.neutral.colorDark.input": {
+      "type": "color",
+      "value": "oklch(1 0 0 / 15%)",
+      "cssVar": "--theme-neutral-color-dark-input",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json"
+    },
+    "theme.neutral.colorDark.muted": {
+      "type": "color",
+      "value": "oklch(0.278 0.03 256.848)",
+      "cssVar": "--theme-neutral-color-dark-muted",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.800"
+    },
+    "theme.neutral.colorDark.muted-foreground": {
+      "type": "color",
+      "value": "oklch(0.714 0.019 261.325)",
+      "cssVar": "--theme-neutral-color-dark-muted-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.400"
+    },
+    "theme.neutral.colorDark.popover": {
+      "type": "color",
+      "value": "oklch(0.21 0.032 264.665)",
+      "cssVar": "--theme-neutral-color-dark-popover",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.900"
+    },
+    "theme.neutral.colorDark.popover-foreground": {
+      "type": "color",
+      "value": "oklch(0.985 0.002 247.839)",
+      "cssVar": "--theme-neutral-color-dark-popover-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.50"
+    },
+    "theme.neutral.colorDark.primary": {
+      "type": "color",
+      "value": "oklch(0.54 0.082 198.255)",
+      "cssVar": "--theme-neutral-color-dark-primary",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.600"
+    },
+    "theme.neutral.colorDark.primary-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-neutral-color-dark-primary-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.white"
+    },
+    "theme.neutral.colorDark.primary-hover": {
+      "type": "color",
+      "value": "oklch(0.459 0.066 199.308)",
+      "cssVar": "--theme-neutral-color-dark-primary-hover",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.700"
+    },
+    "theme.neutral.colorDark.ring": {
+      "type": "color",
+      "value": "oklch(0.789 0.102 192.099)",
+      "cssVar": "--theme-neutral-color-dark-ring",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.300"
+    },
+    "theme.neutral.colorDark.secondary": {
+      "type": "color",
+      "value": "oklch(0.278 0.03 256.848)",
+      "cssVar": "--theme-neutral-color-dark-secondary",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.800"
+    },
+    "theme.neutral.colorDark.secondary-foreground": {
+      "type": "color",
+      "value": "oklch(0.985 0.002 247.839)",
+      "cssVar": "--theme-neutral-color-dark-secondary-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.50"
+    },
+    "theme.neutral.colorDark.semantic-background": {
+      "type": "color",
+      "value": "oklch(0.373 0.031 259.733)",
+      "cssVar": "--theme-neutral-color-dark-semantic-background",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.700"
+    },
+    "theme.neutral.colorDark.semantic-border": {
+      "type": "color",
+      "value": "oklch(0.446 0.026 256.802)",
+      "cssVar": "--theme-neutral-color-dark-semantic-border",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.600"
+    },
+    "theme.neutral.colorDark.semantic-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-neutral-color-dark-semantic-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.white"
+    },
+    "theme.neutral.colorDark.sidebar": {
+      "type": "color",
+      "value": "oklch(0.21 0.032 264.665)",
+      "cssVar": "--theme-neutral-color-dark-sidebar",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.900"
+    },
+    "theme.neutral.colorDark.sidebar-accent": {
+      "type": "color",
+      "value": "oklch(0.278 0.03 256.848)",
+      "cssVar": "--theme-neutral-color-dark-sidebar-accent",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.800"
+    },
+    "theme.neutral.colorDark.sidebar-accent-foreground": {
+      "type": "color",
+      "value": "oklch(0.985 0.002 247.839)",
+      "cssVar": "--theme-neutral-color-dark-sidebar-accent-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.50"
+    },
+    "theme.neutral.colorDark.sidebar-border": {
+      "type": "color",
+      "value": "oklch(1 0 0 / 10%)",
+      "cssVar": "--theme-neutral-color-dark-sidebar-border",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json"
+    },
+    "theme.neutral.colorDark.sidebar-foreground": {
+      "type": "color",
+      "value": "oklch(0.985 0.002 247.839)",
+      "cssVar": "--theme-neutral-color-dark-sidebar-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.50"
+    },
+    "theme.neutral.colorDark.sidebar-primary": {
+      "type": "color",
+      "value": "oklch(0.54 0.082 198.255)",
+      "cssVar": "--theme-neutral-color-dark-sidebar-primary",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.brand.primary.600"
+    },
+    "theme.neutral.colorDark.sidebar-primary-foreground": {
+      "type": "color",
+      "value": "oklch(1 0 0)",
+      "cssVar": "--theme-neutral-color-dark-sidebar-primary-foreground",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.white"
+    },
+    "theme.neutral.colorDark.sidebar-ring": {
+      "type": "color",
+      "value": "oklch(0.551 0.023 264.364)",
+      "cssVar": "--theme-neutral-color-dark-sidebar-ring",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "alias": "color.gray.500"
+    },
+    "theme.neutral.font.mono": {
+      "type": "fontFamily",
+      "value": "Geist Mono",
+      "cssVar": "--theme-neutral-font-mono",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json"
+    },
+    "theme.neutral.font.sans": {
+      "type": "fontFamily",
+      "value": "Noto Sans Thai",
+      "cssVar": "--theme-neutral-font-sans",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json"
+    },
+    "theme.neutral.layout.container": {
+      "type": "dimension",
+      "value": "1280px",
+      "cssVar": "--theme-neutral-layout-container",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json"
+    },
+    "theme.neutral.layout.section": {
+      "type": "dimension",
+      "value": "6rem",
+      "cssVar": "--theme-neutral-layout-section",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json"
+    },
+    "theme.neutral.motion.duration": {
+      "type": "duration",
+      "value": "200ms",
+      "cssVar": "--theme-neutral-motion-duration",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json"
+    },
+    "theme.neutral.motion.ease": {
+      "type": "cubicBezier",
+      "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "cssVar": "--theme-neutral-motion-ease",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json"
+    },
+    "theme.neutral.radius": {
+      "type": "dimension",
+      "value": "0.75rem",
+      "cssVar": "--theme-neutral-radius",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "description": "Base --radius; runtime scale is calc-based in app/globals.css."
+    },
+    "theme.neutral.typography.leading": {
+      "type": "number",
+      "value": "1.5",
+      "cssVar": "--theme-neutral-typography-leading",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "description": "Body line-height (brand.css re-points --text-base--line-height)."
+    },
+    "theme.neutral.typography.tracking": {
+      "type": "dimension",
+      "value": "0em",
+      "cssVar": "--theme-neutral-typography-tracking",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "description": "Letter-spacing (brand.css re-points --tracking-tight)."
+    },
+    "theme.neutral.typography.weightHeading": {
+      "type": "fontWeight",
+      "value": "600",
+      "cssVar": "--theme-neutral-typography-weight-heading",
+      "layer": "theme",
+      "source": "tokens/theme/neutral.json",
+      "description": "Heading weight (--weight-heading)."
     },
     "thumbnail.borderWidth": {
       "type": "dimension",

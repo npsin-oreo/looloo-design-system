@@ -50,7 +50,7 @@ function merge(a, b) {
   return o
 }
 
-const tree = {} // base layers merged: primitive + semantic + component
+const tree = {} // resolution tree: primitive + semantic + component, plus the theme tier
 const baseFiles = BASE_DIRS.flatMap(loadDir)
 const overlayFiles = OVERLAY_DIRS.flatMap(loadDir)
 for (const [, json] of baseFiles)
@@ -58,6 +58,15 @@ for (const [, json] of baseFiles)
     if (k.startsWith("$")) continue
     tree[k] = merge(tree[k], v)
   }
+// Phase 4: the theme tier is a resolvable target — semantic roles reference {theme.<brand>.color.*}
+// (brand values live in the overlay). Merge theme overlays so those aliases resolve.
+for (const [name, json] of overlayFiles) {
+  if (!name.startsWith("theme/")) continue
+  for (const [k, v] of Object.entries(json)) {
+    if (k.startsWith("$")) continue
+    tree[k] = merge(tree[k], v)
+  }
+}
 
 const componentRoots = new Set(
   baseFiles
