@@ -8,13 +8,6 @@
         "$extensions": {
           "looloo.tailwind": "border-b"
         }
-      },
-      "borderColor": {
-        "$type": "color",
-        "$value": "{color.border}",
-        "$extensions": {
-          "looloo.tailwind": "border-border"
-        }
       }
     },
     "trigger": {
@@ -67,13 +60,6 @@
         "$value": "{opacity.50}",
         "$extensions": {
           "looloo.tailwind": "disabled:opacity-50"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-foreground"
         }
       }
     },

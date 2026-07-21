@@ -1,7 +1,12 @@
 {
   "$description": "Captured 1:1 from components/ui/timestamp/timestamp.tsx. Muted, tabular-nums so relative times do not jitter as they tick.",
   "timestamp": {
-    "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } },
-    "foreground": { "$type": "color", "$value": "{color.muted-foreground}", "$extensions": { "looloo.tailwind": "text-muted-foreground" } }
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.sm}",
+      "$extensions": {
+        "looloo.tailwind": "text-sm"
+      }
+    }
   }
 }

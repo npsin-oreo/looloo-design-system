@@ -1,5 +1,5 @@
 {
-  "$description": "Neutral (white-label) theme scalars from brand.config.json. Brand forks keep overriding brand.config.json until themes/ lands in Phase 3+.",
+  "$description": "Theme-tier overlay for \"neutral\" — the brand's tunable scalars (radius base, fonts, motion, layout, type axes). Generated from brand.config.json by scripts/tokens/build-theme.mjs (Phase 4). Semantic/primitive tiers stay brand-agnostic; this overlay carries the brand values.",
   "theme": {
     "neutral": {
       "radius": {
@@ -52,6 +52,314 @@
           "$type": "fontWeight",
           "$value": "600",
           "$description": "Heading weight (--weight-heading)."
+        }
+      },
+      "color": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.white}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.neutral.950}"
+        },
+        "card": {
+          "$type": "color",
+          "$value": "{color.white}"
+        },
+        "card-foreground": {
+          "$type": "color",
+          "$value": "{color.neutral.950}"
+        },
+        "popover": {
+          "$type": "color",
+          "$value": "{color.white}"
+        },
+        "popover-foreground": {
+          "$type": "color",
+          "$value": "{color.neutral.950}"
+        },
+        "primary": {
+          "$type": "color",
+          "$value": "{color.neutral.900}"
+        },
+        "primary-foreground": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
+        },
+        "secondary": {
+          "$type": "color",
+          "$value": "{color.neutral.100}"
+        },
+        "secondary-foreground": {
+          "$type": "color",
+          "$value": "{color.neutral.900}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.neutral.100}"
+        },
+        "muted-foreground": {
+          "$type": "color",
+          "$value": "oklch(0.545 0 0)"
+        },
+        "accent": {
+          "$type": "color",
+          "$value": "{color.neutral.100}"
+        },
+        "accent-foreground": {
+          "$type": "color",
+          "$value": "{color.neutral.900}"
+        },
+        "destructive": {
+          "$type": "color",
+          "$value": "oklch(0.577 0.245 27.325)"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.neutral.200}"
+        },
+        "input": {
+          "$type": "color",
+          "$value": "{color.neutral.200}"
+        },
+        "ring": {
+          "$type": "color",
+          "$value": "{color.neutral.400}"
+        },
+        "chart-1": {
+          "$type": "color",
+          "$value": "{color.neutral.300}"
+        },
+        "chart-2": {
+          "$type": "color",
+          "$value": "{color.neutral.500}"
+        },
+        "chart-3": {
+          "$type": "color",
+          "$value": "{color.neutral.600}"
+        },
+        "chart-4": {
+          "$type": "color",
+          "$value": "{color.neutral.700}"
+        },
+        "chart-5": {
+          "$type": "color",
+          "$value": "{color.neutral.800}"
+        },
+        "sidebar": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
+        },
+        "sidebar-foreground": {
+          "$type": "color",
+          "$value": "{color.neutral.950}"
+        },
+        "sidebar-primary": {
+          "$type": "color",
+          "$value": "{color.neutral.900}"
+        },
+        "sidebar-primary-foreground": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
+        },
+        "sidebar-accent": {
+          "$type": "color",
+          "$value": "{color.neutral.100}"
+        },
+        "sidebar-accent-foreground": {
+          "$type": "color",
+          "$value": "{color.neutral.900}"
+        },
+        "sidebar-border": {
+          "$type": "color",
+          "$value": "{color.neutral.200}"
+        },
+        "sidebar-ring": {
+          "$type": "color",
+          "$value": "{color.neutral.400}"
+        },
+        "background-color": {
+          "$type": "color",
+          "$value": "oklch(0 0 0 / 30%)"
+        },
+        "semantic-background": {
+          "$type": "color",
+          "$value": "{color.gray.500}"
+        },
+        "semantic-foreground": {
+          "$type": "color",
+          "$value": "{color.white}"
+        },
+        "semantic-border": {
+          "$type": "color",
+          "$value": "{color.gray.600}"
+        },
+        "primary-hover": {
+          "$type": "color",
+          "$value": "{color.neutral.950}"
+        },
+        "brand-accent": {
+          "$type": "color",
+          "$value": "{color.neutral.100}"
+        },
+        "brand-accent-foreground": {
+          "$type": "color",
+          "$value": "{color.neutral.900}"
+        }
+      },
+      "colorDark": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.neutral.950}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
+        },
+        "card": {
+          "$type": "color",
+          "$value": "{color.neutral.900}"
+        },
+        "card-foreground": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
+        },
+        "popover": {
+          "$type": "color",
+          "$value": "{color.neutral.900}"
+        },
+        "popover-foreground": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
+        },
+        "primary": {
+          "$type": "color",
+          "$value": "{color.neutral.200}"
+        },
+        "primary-foreground": {
+          "$type": "color",
+          "$value": "{color.neutral.900}"
+        },
+        "secondary": {
+          "$type": "color",
+          "$value": "{color.neutral.800}"
+        },
+        "secondary-foreground": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.neutral.800}"
+        },
+        "muted-foreground": {
+          "$type": "color",
+          "$value": "{color.neutral.400}"
+        },
+        "accent": {
+          "$type": "color",
+          "$value": "{color.neutral.800}"
+        },
+        "accent-foreground": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
+        },
+        "destructive": {
+          "$type": "color",
+          "$value": "oklch(0.704 0.191 22.216)"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "oklch(1 0 0 / 10%)"
+        },
+        "input": {
+          "$type": "color",
+          "$value": "oklch(1 0 0 / 15%)"
+        },
+        "ring": {
+          "$type": "color",
+          "$value": "{color.neutral.500}"
+        },
+        "chart-1": {
+          "$type": "color",
+          "$value": "{color.neutral.300}"
+        },
+        "chart-2": {
+          "$type": "color",
+          "$value": "{color.neutral.500}"
+        },
+        "chart-3": {
+          "$type": "color",
+          "$value": "{color.neutral.600}"
+        },
+        "chart-4": {
+          "$type": "color",
+          "$value": "{color.neutral.700}"
+        },
+        "chart-5": {
+          "$type": "color",
+          "$value": "{color.neutral.800}"
+        },
+        "sidebar": {
+          "$type": "color",
+          "$value": "{color.neutral.900}"
+        },
+        "sidebar-foreground": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
+        },
+        "sidebar-primary": {
+          "$type": "color",
+          "$value": "oklch(0.488 0.243 264.376)"
+        },
+        "sidebar-primary-foreground": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
+        },
+        "sidebar-accent": {
+          "$type": "color",
+          "$value": "{color.neutral.800}"
+        },
+        "sidebar-accent-foreground": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
+        },
+        "sidebar-border": {
+          "$type": "color",
+          "$value": "oklch(1 0 0 / 10%)"
+        },
+        "sidebar-ring": {
+          "$type": "color",
+          "$value": "{color.neutral.500}"
+        },
+        "background-color": {
+          "$type": "color",
+          "$value": "oklch(0 0 0 / 30%)"
+        },
+        "semantic-background": {
+          "$type": "color",
+          "$value": "{color.gray.700}"
+        },
+        "semantic-foreground": {
+          "$type": "color",
+          "$value": "{color.white}"
+        },
+        "semantic-border": {
+          "$type": "color",
+          "$value": "{color.gray.600}"
+        },
+        "primary-hover": {
+          "$type": "color",
+          "$value": "{color.neutral.300}"
+        },
+        "brand-accent": {
+          "$type": "color",
+          "$value": "{color.neutral.800}"
+        },
+        "brand-accent-foreground": {
+          "$type": "color",
+          "$value": "{color.zinc.50}"
         }
       }
     }

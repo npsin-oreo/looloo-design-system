@@ -15,13 +15,6 @@
         "$extensions": {
           "looloo.tailwind": "border"
         }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{color.card}",
-        "$extensions": {
-          "looloo.tailwind": "bg-card"
-        }
       }
     },
     "trigger": {
@@ -135,20 +128,6 @@
         "$value": "{font.family.mono}",
         "$extensions": {
           "looloo.tailwind": "font-mono"
-        }
-      },
-      "successForeground": {
-        "$type": "color",
-        "$value": "{status.success}",
-        "$extensions": {
-          "looloo.tailwind": "text-[var(--status-success)]"
-        }
-      },
-      "errorForeground": {
-        "$type": "color",
-        "$value": "{color.destructive}",
-        "$extensions": {
-          "looloo.tailwind": "text-destructive"
         }
       }
     },

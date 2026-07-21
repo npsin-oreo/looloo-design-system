@@ -106,6 +106,14 @@ function compatLines(collKey, legacyPrefix, canonicalPrefix) {
   }
   return lines
 }
+/* deprecated component-tier color names — thin aliases for one deprecation window
+ * (the component color tier was collapsed into semantic; dropped at the next major) */
+const deprecatedColors = JSON.parse(
+  readFileSync(join(repoRoot, "tokens", "raw", "deprecated-component-colors.json"), "utf8")
+).aliases
+const deprecatedColorLines = Object.entries(deprecatedColors).map(
+  ([oldVar, target]) => `  ${oldVar}: ${target === "currentColor" ? "currentColor" : `var(${target})`};`
+)
 writeFileSync(
   join(outTokens, "compat.css"),
   GENERATED_HEADER("build-css.mjs") +
@@ -119,7 +127,12 @@ writeFileSync(
       ...compatLines("rdx-colors/light mode", "rdx", "rdx-not-promoted."), // no canonical match → literals
       ...compatLines("brand-color/Mode 1", "brand", "brand."),
     ].join("\n") +
-    "\n}\n"
+    "\n}\n\n" +
+    "/* DEPRECATED component color names (removed 2026-07-21, PR #33) — thin aliases to\n" +
+    " * the semantic tier for ONE deprecation window. Do not use in new code; migrate to\n" +
+    " * the target token. Dropped at the next major bump. Source of truth:\n" +
+    " * tokens/raw/deprecated-component-colors.json. */\n" +
+    ":root {\n" + deprecatedColorLines.join("\n") + "\n}\n"
 )
 
 /* ---------- modes ---------- */

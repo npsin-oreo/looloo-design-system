@@ -36,13 +36,6 @@
         "looloo.tailwind": "shadow-xs"
       }
     },
-    "background": {
-      "$type": "color",
-      "$value": "{color.background}",
-      "$extensions": {
-        "looloo.tailwind": "bg-background"
-      }
-    },
     "button": {
       "height": {
         "$type": "dimension",
@@ -110,20 +103,6 @@
         "$extensions": {
           "looloo.tailwind": "disabled:opacity-50"
         }
-      },
-      "hoverBackground": {
-        "$type": "color",
-        "$value": "{color.accent}",
-        "$extensions": {
-          "looloo.tailwind": "hover:bg-accent"
-        }
-      },
-      "hoverForeground": {
-        "$type": "color",
-        "$value": "{color.accent-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "hover:text-accent-foreground"
-        }
       }
     },
     "separator": {
@@ -146,13 +125,6 @@
         "$value": "{space.1}",
         "$extensions": {
           "looloo.tailwind": "mx-1"
-        }
-      },
-      "color": {
-        "$type": "color",
-        "$value": "{color.border}",
-        "$extensions": {
-          "looloo.tailwind": "bg-border"
         }
       }
     }

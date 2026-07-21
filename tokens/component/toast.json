@@ -8,29 +8,6 @@
         "looloo.tailwind": "size-4",
         "looloo.legacy": "1rem"
       }
-    },
-    "color": {
-      "background": {
-        "$type": "color",
-        "$value": "{color.popover}",
-        "$extensions": {
-          "looloo.tailwind": "--normal-bg: var(--popover)"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.popover-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "--normal-text: var(--popover-foreground)"
-        }
-      },
-      "border": {
-        "$type": "color",
-        "$value": "{color.border}",
-        "$extensions": {
-          "looloo.tailwind": "--normal-border: var(--border)"
-        }
-      }
     }
   }
 }

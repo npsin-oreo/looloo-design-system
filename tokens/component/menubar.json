@@ -75,21 +75,6 @@
         "$extensions": {
           "looloo.tailwind": "font-medium"
         }
-      },
-      "openBackground": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$extensions": {
-          "looloo.tailwind": "aria-expanded:bg-muted"
-        }
-      },
-      "hoverBackground": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$description": "A menu name on hover. The SAME fill as open (aria-expanded:bg-muted) — hovering a menubar name already previews what clicking does.",
-        "$extensions": {
-          "looloo.tailwind": "hover:bg-muted"
-        }
       }
     },
     "content": {
@@ -126,20 +111,6 @@
         "$value": "{shadow.md}",
         "$extensions": {
           "looloo.tailwind": "shadow-md"
-        }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{color.popover}",
-        "$extensions": {
-          "looloo.tailwind": "bg-popover"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.popover-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-popover-foreground"
         }
       }
     },
@@ -233,36 +204,6 @@
         "$value": "{opacity.50}",
         "$extensions": {
           "looloo.tailwind": "data-disabled:opacity-50"
-        }
-      },
-      "focusBackground": {
-        "$type": "color",
-        "$value": "{color.accent}",
-        "$extensions": {
-          "looloo.tailwind": "focus:bg-accent"
-        }
-      },
-      "focusForeground": {
-        "$type": "color",
-        "$value": "{color.accent-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "focus:text-accent-foreground"
-        }
-      },
-      "destructiveForeground": {
-        "$type": "color",
-        "$value": "{color.destructive}",
-        "$description": "A row you cannot undo — red text at rest, not a red row.",
-        "$extensions": {
-          "looloo.tailwind": "data-[variant=destructive]:text-destructive"
-        }
-      },
-      "destructiveFocusSurface": {
-        "$type": "color",
-        "$value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
-        "$description": "Destructive row on focus — a 10% red wash. Alpha-baked; recompute if destructive moves.",
-        "$extensions": {
-          "looloo.tailwind": "data-[variant=destructive]:focus:bg-destructive/10"
         }
       }
     },

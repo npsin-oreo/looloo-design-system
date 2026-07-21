@@ -136,13 +136,6 @@
           "looloo.tailwind": "font-medium"
         }
       },
-      "background": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$extensions": {
-          "looloo.tailwind": "bg-muted"
-        }
-      },
       "disabledOpacity": {
         "$type": "number",
         "$value": "{opacity.50}",
@@ -186,20 +179,6 @@
         "$value": "{shadow.md}",
         "$extensions": {
           "looloo.tailwind": "shadow-md"
-        }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{color.popover}",
-        "$extensions": {
-          "looloo.tailwind": "bg-popover"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.popover-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-popover-foreground"
         }
       }
     },
@@ -272,20 +251,6 @@
         "$extensions": {
           "looloo.tailwind": "data-[disabled]:opacity-50"
         }
-      },
-      "highlightedBackground": {
-        "$type": "color",
-        "$value": "{color.accent}",
-        "$extensions": {
-          "looloo.tailwind": "data-highlighted:bg-accent"
-        }
-      },
-      "highlightedForeground": {
-        "$type": "color",
-        "$value": "{color.accent-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "data-highlighted:text-accent-foreground"
-        }
       }
     },
     "label": {
@@ -309,13 +274,6 @@
         "$extensions": {
           "looloo.tailwind": "text-xs"
         }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
       }
     },
     "empty": {
@@ -331,13 +289,6 @@
         "$value": "{font.size.sm}",
         "$extensions": {
           "looloo.tailwind": "text-sm"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
         }
       }
     },

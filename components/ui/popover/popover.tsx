@@ -93,7 +93,7 @@ function PopoverClose({
       data-slot="popover-close"
       aria-label="Close"
       className={cn(
-        "absolute top-(--popover-close-inset) right-(--popover-close-inset) inline-flex size-(--popover-close-size) items-center justify-center rounded-(--button-radius) text-(--popover-color-close) outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:shadow-(--focus-shadow) [&>svg]:size-4",
+        "absolute top-(--popover-close-inset) right-(--popover-close-inset) inline-flex size-(--popover-close-size) items-center justify-center rounded-(--button-radius) text-(--muted-foreground) outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:shadow-(--focus-shadow) [&>svg]:size-4",
         className
       )}
       {...props}

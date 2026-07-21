@@ -3,8 +3,19 @@ import {
   SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarGroup, SidebarGroupLabel,
   SidebarGroupContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarInset, SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { Logo } from "@/components/ui/logo";
 import { Home, Inbox, Settings } from "@/icons/icon-registry";
 import { getEntry } from "@/components/docs/registry";
+
+// Full lockup when expanded; collapses to the mark on the icon rail.
+function SidebarLogo() {
+  return (
+    <>
+      <Logo type="lockup" className="h-7 w-auto group-data-[collapsible=icon]:hidden" />
+      <Logo type="mark" className="hidden h-7 w-auto group-data-[collapsible=icon]:block" />
+    </>
+  );
+}
 
 type Args = {
   side: "left" | "right";
@@ -31,7 +42,7 @@ const meta: Meta<Args> = {
     <div className="h-96 w-[40rem] overflow-hidden rounded-lg border">
       <SidebarProvider className="min-h-full">
         <Sidebar side={side} variant={variant} collapsible={collapsible}>
-          <SidebarHeader className="px-4 py-3 text-sm font-semibold">Acme Inc</SidebarHeader>
+          <SidebarHeader className="px-4 py-3"><SidebarLogo /></SidebarHeader>
           <SidebarContent>
             <SidebarGroup>
               <SidebarGroupLabel>Platform</SidebarGroupLabel>
@@ -72,7 +83,7 @@ export const Floating: Story = {
     <div className="h-96 w-[40rem] overflow-hidden rounded-lg border bg-sidebar/30">
       <SidebarProvider className="min-h-full">
         <Sidebar variant="floating" collapsible="icon">
-          <SidebarHeader className="px-4 py-3 text-sm font-semibold">Acme Inc</SidebarHeader>
+          <SidebarHeader className="px-4 py-3"><SidebarLogo /></SidebarHeader>
           <SidebarContent>
             <SidebarGroup>
               <SidebarGroupLabel>Platform</SidebarGroupLabel>

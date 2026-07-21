@@ -62,20 +62,6 @@
         "looloo.legacy": "0.75rem"
       }
     },
-    "background": {
-      "$type": "color",
-      "$value": "{color.muted}",
-      "$extensions": {
-        "looloo.tailwind": "bg-muted"
-      }
-    },
-    "foreground": {
-      "$type": "color",
-      "$value": "{color.muted-foreground}",
-      "$extensions": {
-        "looloo.tailwind": "text-muted-foreground"
-      }
-    },
     "group": {
       "gap": {
         "$type": "dimension",

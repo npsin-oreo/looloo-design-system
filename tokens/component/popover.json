@@ -30,51 +30,6 @@
         "looloo.tailwind": "text-sm"
       }
     },
-    "color": {
-      "background": {
-        "$type": "color",
-        "$value": "{color.popover}",
-        "$extensions": {
-          "looloo.tailwind": "bg-popover"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.popover-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-popover-foreground"
-        }
-      },
-      "muted-foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
-      },
-      "ring": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$extensions": {
-          "looloo.tailwind": "ring-foreground/10"
-        }
-      },
-      "ring-opacity": {
-        "$type": "number",
-        "$value": "{opacity.10}",
-        "$extensions": {
-          "looloo.tailwind": "ring-foreground/10"
-        }
-      },
-      "close": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$description": "The X — quiet until hovered.",
-        "$extensions": {
-          "looloo.tailwind": "text-(--popover-color-close)"
-        }
-      }
-    },
     "gap": {
       "$type": "dimension",
       "$value": "{space.3}",

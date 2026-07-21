@@ -42,7 +42,9 @@
     "semantic-background",
     "semantic-foreground",
     "semantic-border",
-    "primary-hover"
+    "primary-hover",
+    "brand-accent",
+    "brand-accent-foreground"
   ],
   "scalar_tokens": [
     "radius",

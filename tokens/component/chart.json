@@ -8,29 +8,6 @@
         "looloo.tailwind": "text-xs"
       }
     },
-    "gridColor": {
-      "$type": "color",
-      "$value": "{color.border}",
-      "$description": "Cartesian/polar grid and reference lines (rendered at 50% for the cartesian grid).",
-      "$extensions": {
-        "looloo.tailwind": "stroke-border"
-      }
-    },
-    "axisForeground": {
-      "$type": "color",
-      "$value": "{color.muted-foreground}",
-      "$extensions": {
-        "looloo.tailwind": "fill-muted-foreground"
-      }
-    },
-    "cursorFill": {
-      "$type": "color",
-      "$value": "{color.muted}",
-      "$description": "The hover band behind the tooltip, and the radial-bar background sector.",
-      "$extensions": {
-        "looloo.tailwind": "fill-muted"
-      }
-    },
     "tooltip": {
       "minWidth": {
         "$type": "dimension",
@@ -88,13 +65,6 @@
         "$description": "shadow-xl — Tailwind's default; deeper than shadow.lg, the largest step our scale carries.",
         "$extensions": {
           "looloo.tailwind": "shadow-xl"
-        }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{color.background}",
-        "$extensions": {
-          "looloo.tailwind": "bg-background"
         }
       },
       "valueFontFamily": {
@@ -160,13 +130,6 @@
           "looloo.tailwind": "[&>svg]:h-3 [&>svg]:w-3",
           "looloo.legacy": "0.75rem"
         }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
       }
     },
     "heatmap": {
@@ -192,53 +155,6 @@
         "$description": "A soft square. A circle would read as a dot plot; a hard square reads as a pixel.",
         "$extensions": {
           "looloo.tailwind": "rounded-sm"
-        }
-      },
-      "color": {
-        "empty": {
-          "$type": "color",
-          "$value": "{color.muted}",
-          "$description": "NO data — not zero. The two are different claims, and a heatmap that paints them the same lies about the days a system was simply not recording.",
-          "$extensions": {
-            "looloo.tailwind": "bg-(--chart-heatmap-color-empty)"
-          }
-        },
-        "level1": {
-          "$type": "color",
-          "$value": "{color.brand.primary.200}",
-          "$description": "Level 1 of 5 — the lightest step that is still unmistakably the brand rather than a grey.",
-          "$extensions": {
-            "looloo.tailwind": "bg-(--chart-heatmap-color-level-1)"
-          }
-        },
-        "level2": {
-          "$type": "color",
-          "$value": "{color.brand.primary.300}",
-          "$extensions": {
-            "looloo.tailwind": "bg-(--chart-heatmap-color-level-2)"
-          }
-        },
-        "level3": {
-          "$type": "color",
-          "$value": "{color.brand.primary.500}",
-          "$extensions": {
-            "looloo.tailwind": "bg-(--chart-heatmap-color-level-3)"
-          }
-        },
-        "level4": {
-          "$type": "color",
-          "$value": "{color.brand.primary.600}",
-          "$extensions": {
-            "looloo.tailwind": "bg-(--chart-heatmap-color-level-4)"
-          }
-        },
-        "level5": {
-          "$type": "color",
-          "$value": "{color.brand.primary.800}",
-          "$description": "Level 5 of 5. FIVE steps, not more: the eye cannot rank more than about five shades of one hue reliably, and every extra step is a colour nobody can decode without the legend.",
-          "$extensions": {
-            "looloo.tailwind": "bg-(--chart-heatmap-color-level-5)"
-          }
         }
       }
     }

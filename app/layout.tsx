@@ -1,16 +1,16 @@
 import type { Metadata } from "next"
+import { Noto_Sans_Thai } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
 
 import { ThemeProvider } from "@/components/theme-provider"
 
-// Google Sans — the kit's `family/sans`, bundled as a local variable font.
-const googleSans = localFont({
-  src: [
-    { path: "./fonts/GoogleSans.ttf", style: "normal" },
-    { path: "./fonts/GoogleSans-Italic.ttf", style: "italic" },
-  ],
-  variable: "--font-google-sans",
+// Noto Sans Thai — the kit's `family/sans`. Weights match the text-style ramp
+// (Body 400 · Label 500 · Subheader/Header 600 · Display 700).
+const notoSansThai = Noto_Sans_Thai({
+  subsets: ["thai", "latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-noto-sans-thai",
   display: "swap",
 })
 
@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${googleSans.variable} ${geistMono.variable}`}
+      className={`${notoSansThai.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
       <body>
