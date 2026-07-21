@@ -132,10 +132,10 @@
       },
       "sm": {
         "$type": "dimension",
-        "$value": "0.8rem",
-        "$description": "Literal in source (text-[0.8rem]) — between xs and sm scale steps.",
+        "$value": "{font.size.xs}",
+        "$description": "12px. FIX 2026-07-21: was text-[0.8rem] (12.8px) — an off-scale half-pixel literal (same one Toggle/Calendar dropped 2026-07-14). Snapped to the xs step; distinct sm sizing comes from padding/height, not font.",
         "$extensions": {
-          "looloo.tailwind": "text-[0.8rem]"
+          "looloo.tailwind": "text-xs"
         }
       },
       "md": {

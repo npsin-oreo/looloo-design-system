@@ -103,7 +103,7 @@
   --button-gap-xl: var(--ll-space-2);
   --button-radius: var(--ll-radius-ui-lg);
   --button-font-size-xs: var(--ll-font-size-xs);
-  --button-font-size-sm: 0.8rem;
+  --button-font-size-sm: var(--ll-font-size-xs);
   --button-font-size-md: var(--ll-font-size-sm);
   --button-font-size-xl: var(--ll-font-size-base);
   --button-font-weight: var(--ll-font-weight-medium);
