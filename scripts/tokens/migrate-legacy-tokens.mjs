@@ -65,8 +65,17 @@ const token = (type, value, description, extensions) => {
   if (extensions) t.$extensions = extensions
   return t
 }
-const writeJson = (path, obj) =>
+// Hand-authored tiers migrate must NOT regenerate (Phase 3, RFC retire-legacy-token-pipeline).
+// color.json is already read-only (its writeJson was removed). These are brand-agnostic scales
+// with no downstream reader in migrate — they are now the source of truth in tokens/.
+const HAND_AUTHORED = new Set([
+  "primitive/spacing.json", "primitive/opacity.json", "primitive/border.json",
+  "primitive/shadow.json", "primitive/sizing.json", "primitive/z-index.json",
+])
+const writeJson = (path, obj) => {
+  if (HAND_AUTHORED.has(path.join("/"))) return // hand-authored — migrate does not regenerate
   writeFileSync(out(...path), JSON.stringify(obj, null, 2) + "\n")
+}
 
 /* ---------- 1. primitive/color.json — HAND-AUTHORED (Phase 3, RFC retire-legacy-token-pipeline) ---------- */
 // The palette is now the source of truth: tokens/primitive/color.json is authored by hand and is
