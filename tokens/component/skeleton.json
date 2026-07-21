@@ -1,7 +1,12 @@
 {
   "$description": "Captured 1:1 from components/ui/skeleton/skeleton.tsx. animate-pulse rounded-md bg-muted — size comes from the caller.",
   "skeleton": {
-    "radius": { "$type": "dimension", "$value": "{radius.ui.md}", "$extensions": { "looloo.tailwind": "rounded-md" } },
-    "background": { "$type": "color", "$value": "{color.muted}", "$extensions": { "looloo.tailwind": "bg-muted" } }
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.md}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-md"
+      }
+    }
   }
 }

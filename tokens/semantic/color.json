@@ -304,6 +304,51 @@
       "$extensions": {
         "looloo.resolved": "oklch(0.459 0.066 199.308)"
       }
+    },
+    "destructive-surface": {
+      "$type": "color",
+      "$value": "{color.red.50}",
+      "$description": "Destructive surface (solid tint). Dark: red.950."
+    },
+    "destructive-surface-hover": {
+      "$type": "color",
+      "$value": "{color.red.100}",
+      "$description": "Destructive surface, hover. Dark: red.900."
+    },
+    "destructive-border": {
+      "$type": "color",
+      "$value": "{color.red.200}",
+      "$description": "Destructive border on a destructive surface. Dark: red.800."
+    },
+    "primary-surface": {
+      "$type": "color",
+      "$value": "{color.brand.primary.50}",
+      "$description": "Primary surface (solid tint): selected row, file-upload dropzone-active. Dark: brand-primary.950."
+    },
+    "secondary-hover": {
+      "$type": "color",
+      "$value": "{color.gray.200}",
+      "$description": "Secondary control hover fill (solid). Dark: gray.700."
+    },
+    "secondary-surface-hover": {
+      "$type": "color",
+      "$value": "{color.gray.100}",
+      "$description": "Secondary badge hover surface (solid). Dark: gray.800."
+    },
+    "muted-surface": {
+      "$type": "color",
+      "$value": "{color.gray.50}",
+      "$description": "Muted row/hover surface (solid). Dark: gray.900."
+    },
+    "input-surface": {
+      "$type": "color",
+      "$value": "{color.gray.100}",
+      "$description": "Subtle input/command background (solid). Dark: gray.800."
+    },
+    "ring-subtle": {
+      "$type": "color",
+      "$value": "{color.gray.200}",
+      "$description": "Subtle ring/outline paint (solid). Dark: gray.700."
     }
   }
 }

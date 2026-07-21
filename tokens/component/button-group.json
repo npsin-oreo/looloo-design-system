@@ -18,13 +18,6 @@
       }
     },
     "separator": {
-      "color": {
-        "$type": "color",
-        "$value": "{color.input}",
-        "$extensions": {
-          "looloo.tailwind": "bg-input"
-        }
-      },
       "inset": {
         "$type": "dimension",
         "$value": "{border.width.default}",
@@ -83,13 +76,6 @@
         "$extensions": {
           "looloo.tailwind": "[&_svg]:size-4",
           "looloo.legacy": "1rem"
-        }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$extensions": {
-          "looloo.tailwind": "bg-muted"
         }
       }
     }

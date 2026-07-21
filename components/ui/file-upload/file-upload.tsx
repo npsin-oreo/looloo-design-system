@@ -23,8 +23,8 @@ function FileUploadDropzone({
       data-slot="file-upload-dropzone"
       data-drag={active}
       className={cn(
-        "flex flex-col items-center justify-center gap-(--file-upload-dropzone-gap) rounded-(--file-upload-dropzone-radius) border border-dashed border-(--file-upload-color-dropzone-border) px-(--file-upload-dropzone-padding-x) py-(--file-upload-dropzone-padding-y) text-center text-(length:--file-upload-dropzone-font-size)",
-        "data-[drag=true]:border-(--file-upload-color-dropzone-active-border) data-[drag=true]:bg-(--file-upload-color-dropzone-active-surface)",
+        "flex flex-col items-center justify-center gap-(--file-upload-dropzone-gap) rounded-(--file-upload-dropzone-radius) border border-dashed border-(--border) px-(--file-upload-dropzone-padding-x) py-(--file-upload-dropzone-padding-y) text-center text-(length:--file-upload-dropzone-font-size)",
+        "data-[drag=true]:border-(--primary) data-[drag=true]:bg-(--primary-surface)",
         className
       )}
       {...props}
@@ -49,11 +49,11 @@ const fileRowMediaVariants = cva(
       /** The TILE carries the state colour — never the whole row: a row of red for one
        *  failed upload buries the three that worked. */
       status: {
-        uploading: "bg-(--file-upload-color-media-idle-surface) text-muted-foreground",
+        uploading: "bg-(--muted) text-muted-foreground",
         success:
-          "bg-(--file-upload-color-media-success-surface) text-(--file-upload-color-media-success-foreground)",
+          "bg-(--status-success-surface) text-(--status-success)",
         error:
-          "bg-(--file-upload-color-media-error-surface) text-(--file-upload-color-media-error-foreground)",
+          "bg-(--destructive-surface) text-(--destructive)",
       },
     },
     defaultVariants: { status: "uploading" },
@@ -116,7 +116,7 @@ function FileUploadRow({
             variant="ghost"
             size="icon-sm"
             aria-label={`ลบ ${name}`}
-            className="text-(--file-upload-color-remove-foreground)"
+            className="text-(--destructive)"
             onClick={onRemove}
           >
             <X />

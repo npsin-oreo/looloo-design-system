@@ -16,20 +16,6 @@
         "looloo.tailwind": "p-1"
       }
     },
-    "background": {
-      "$type": "color",
-      "$value": "{color.popover}",
-      "$extensions": {
-        "looloo.tailwind": "bg-popover"
-      }
-    },
-    "foreground": {
-      "$type": "color",
-      "$value": "{color.popover-foreground}",
-      "$extensions": {
-        "looloo.tailwind": "text-popover-foreground"
-      }
-    },
     "input": {
       "height": {
         "$type": "dimension",
@@ -60,22 +46,6 @@
         "$value": "{opacity.50}",
         "$extensions": {
           "looloo.tailwind": "opacity-50"
-        }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "color-mix(in oklch, var(--input) 30%, transparent)",
-        "$description": "The search field sits INSIDE the panel, so it is only a 30% wash of the normal input fill. A full input box here would read as a second surface stacked on the popover.",
-        "$extensions": {
-          "looloo.tailwind": "bg-input/30"
-        }
-      },
-      "borderColor": {
-        "$type": "color",
-        "$value": "color-mix(in oklch, var(--input) 30%, transparent)",
-        "$description": "Same 30% wash as the fill. Alpha-baked in Figma — recompute if --input moves.",
-        "$extensions": {
-          "looloo.tailwind": "border-input/30"
         }
       }
     },
@@ -155,21 +125,6 @@
         "$extensions": {
           "looloo.tailwind": "data-[disabled=true]:opacity-50"
         }
-      },
-      "selectedBackground": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$description": "cmdk selects with muted, not accent like the radix menus.",
-        "$extensions": {
-          "looloo.tailwind": "data-selected:bg-muted"
-        }
-      },
-      "selectedForeground": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$extensions": {
-          "looloo.tailwind": "data-selected:text-foreground"
-        }
       }
     },
     "group": {
@@ -206,13 +161,6 @@
         "$value": "{font.weight.medium}",
         "$extensions": {
           "looloo.tailwind": "[cmdk-group-heading]:font-medium"
-        }
-      },
-      "headingForeground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "[cmdk-group-heading]:text-muted-foreground"
         }
       }
     },

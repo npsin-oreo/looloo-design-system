@@ -44,13 +44,6 @@
         "$extensions": {
           "looloo.tailwind": "size-4"
         }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$extensions": {
-          "looloo.tailwind": "bg-muted"
-        }
       }
     },
     "content": {
@@ -91,13 +84,6 @@
         "$extensions": {
           "looloo.tailwind": "gap-2"
         }
-      }
-    },
-    "hoverBackground": {
-      "$type": "color",
-      "$value": "{color.muted}",
-      "$extensions": {
-        "looloo.tailwind": "hover:bg-muted"
       }
     }
   }

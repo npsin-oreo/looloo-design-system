@@ -306,6 +306,98 @@
           "$extensions": {
             "looloo.resolved": "oklch(0.459 0.066 199.308)"
           }
+        },
+        "destructive-surface": {
+          "$type": "color",
+          "$value": "{color.red.950}",
+          "$description": "Dark override for --destructive-surface."
+        },
+        "destructive-surface-hover": {
+          "$type": "color",
+          "$value": "{color.red.900}",
+          "$description": "Dark override for --destructive-surface-hover."
+        },
+        "destructive-border": {
+          "$type": "color",
+          "$value": "{color.red.800}",
+          "$description": "Dark override for --destructive-border."
+        },
+        "primary-surface": {
+          "$type": "color",
+          "$value": "{color.brand.primary.950}",
+          "$description": "Dark override for --primary-surface."
+        },
+        "secondary-hover": {
+          "$type": "color",
+          "$value": "{color.gray.700}",
+          "$description": "Dark override for --secondary-hover."
+        },
+        "secondary-surface-hover": {
+          "$type": "color",
+          "$value": "{color.gray.800}",
+          "$description": "Dark override for --secondary-surface-hover."
+        },
+        "muted-surface": {
+          "$type": "color",
+          "$value": "{color.gray.900}",
+          "$description": "Dark override for --muted-surface."
+        },
+        "input-surface": {
+          "$type": "color",
+          "$value": "{color.gray.800}",
+          "$description": "Dark override for --input-surface."
+        },
+        "ring-subtle": {
+          "$type": "color",
+          "$value": "{color.gray.700}",
+          "$description": "Dark override for --ring-subtle."
+        }
+      },
+      "status": {
+        "success-surface": {
+          "$type": "color",
+          "$value": "{color.green.950}",
+          "$description": "Dark override for --status-success-surface."
+        },
+        "success-surface-hover": {
+          "$type": "color",
+          "$value": "{color.green.900}",
+          "$description": "Dark override for --status-success-surface-hover."
+        },
+        "success-border": {
+          "$type": "color",
+          "$value": "{color.green.800}",
+          "$description": "Dark override for --status-success-border."
+        },
+        "warning-surface": {
+          "$type": "color",
+          "$value": "{color.amber.950}",
+          "$description": "Dark override for --status-warning-surface."
+        },
+        "warning-surface-hover": {
+          "$type": "color",
+          "$value": "{color.amber.900}",
+          "$description": "Dark override for --status-warning-surface-hover."
+        },
+        "warning-border": {
+          "$type": "color",
+          "$value": "{color.amber.800}",
+          "$description": "Dark override for --status-warning-border."
+        },
+        "info-surface": {
+          "$type": "color",
+          "$value": "{color.blue.950}",
+          "$description": "Dark override for --status-info-surface."
+        },
+        "info-surface-hover": {
+          "$type": "color",
+          "$value": "{color.blue.900}",
+          "$description": "Dark override for --status-info-surface-hover."
+        },
+        "info-border": {
+          "$type": "color",
+          "$value": "{color.blue.800}",
+          "$description": "Dark override for --status-info-border."
         }
       }
     }

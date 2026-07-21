@@ -28,41 +28,6 @@
       "$extensions": {
         "looloo.tailwind": "shadow-lg"
       }
-    },
-    "overlay": {
-      "$type": "color",
-      "$value": "{surface.overlay}"
-    },
-    "color": {
-      "background": {
-        "$type": "color",
-        "$value": "{color.popover}",
-        "$extensions": {
-          "looloo.tailwind": "bg-popover"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.popover-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-popover-foreground"
-        }
-      },
-      "description-foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
-      },
-      "border": {
-        "$type": "color",
-        "$value": "{color.border}",
-        "$description": "Only the edge the sheet is docked to.",
-        "$extensions": {
-          "looloo.tailwind": "border-l / border-r / border-t / border-b"
-        }
-      }
     }
   }
 }

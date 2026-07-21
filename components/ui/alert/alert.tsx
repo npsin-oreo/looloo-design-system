@@ -10,12 +10,12 @@ const alertVariants = cva(
       variant: {
         default: "bg-card text-card-foreground",
         success:
-          "border-(--alert-color-success-border) bg-(--alert-color-success-surface) text-(--alert-color-success-foreground) *:[svg]:text-current",
+          "border-(--status-success-border) bg-(--status-success-surface) text-(--status-success) *:[svg]:text-current",
         warning:
-          "border-(--alert-color-warning-border) bg-(--alert-color-warning-surface) text-(--alert-color-warning-foreground) *:[svg]:text-current",
-        info: "border-(--alert-color-info-border) bg-(--alert-color-info-surface) text-(--alert-color-info-foreground) *:[svg]:text-current",
+          "border-(--status-warning-border) bg-(--status-warning-surface) text-(--status-warning-text) *:[svg]:text-current",
+        info: "border-(--status-info-border) bg-(--status-info-surface) text-(--status-info) *:[svg]:text-current",
         destructive:
-          "border-(--alert-color-destructive-border) bg-(--alert-color-destructive-surface) text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current",
+          "border-(--destructive-border) bg-(--destructive-surface) text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current",
       },
     },
     defaultVariants: {

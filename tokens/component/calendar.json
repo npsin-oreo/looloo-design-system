@@ -110,13 +110,6 @@
         "$extensions": {
           "looloo.tailwind": "font-normal"
         }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
       }
     },
     "week": {
@@ -164,35 +157,6 @@
         "$value": "{focus.ring.width}",
         "$extensions": {
           "looloo.tailwind": "group-data-[focused=true]/day:ring-[3px]"
-        }
-      },
-      "selectedBackground": {
-        "$type": "color",
-        "$value": "{color.primary}",
-        "$description": "Single selection and both range ends.",
-        "$extensions": {
-          "looloo.tailwind": "data-[selected-single=true]:bg-primary"
-        }
-      },
-      "selectedForeground": {
-        "$type": "color",
-        "$value": "{color.primary-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "data-[selected-single=true]:text-primary-foreground"
-        }
-      },
-      "rangeMiddleBackground": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$extensions": {
-          "looloo.tailwind": "data-[range-middle=true]:bg-muted"
-        }
-      },
-      "rangeMiddleForeground": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$extensions": {
-          "looloo.tailwind": "data-[range-middle=true]:text-foreground"
         }
       },
       "rangeBleed": {

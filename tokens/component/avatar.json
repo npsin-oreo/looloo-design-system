@@ -42,20 +42,6 @@
       }
     },
     "fallback": {
-      "background": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$extensions": {
-          "looloo.tailwind": "bg-muted"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
-      },
       "fontSize": {
         "$type": "dimension",
         "$value": "{font.size.sm}",
@@ -109,20 +95,6 @@
         "$value": "{border.width.2}",
         "$extensions": {
           "looloo.tailwind": "ring-2"
-        }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{color.primary}",
-        "$extensions": {
-          "looloo.tailwind": "bg-primary"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.primary-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-primary-foreground"
         }
       }
     },
