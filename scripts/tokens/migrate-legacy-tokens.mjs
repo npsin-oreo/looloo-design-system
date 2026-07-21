@@ -68,40 +68,25 @@ const token = (type, value, description, extensions) => {
 const writeJson = (path, obj) =>
   writeFileSync(out(...path), JSON.stringify(obj, null, 2) + "\n")
 
-/* ---------- 1. primitive/color.json ---------- */
-// oklch string → canonical token path, used later to alias semantic tokens.
+/* ---------- 1. primitive/color.json — HAND-AUTHORED (Phase 3, RFC retire-legacy-token-pipeline) ---------- */
+// The palette is now the source of truth: tokens/primitive/color.json is authored by hand and is
+// NOT regenerated from legacy tokens.json. migrate only READS it to build the oklch→path map used
+// to alias semantic brand values to primitive paths. (Figma → palette is now a one-off import tool,
+// not a pipeline stage.)
 const primByOklch = {}
-function palette(collKey, pathPrefix, sourceLabel, target) {
-  for (const [fam, steps] of Object.entries(legacy[collKey] ?? {})) {
-    if (!steps || typeof steps !== "object") continue
-    const f = fam.toLowerCase().replace(/\s+/g, "-")
-    const put = (node, step) => {
-      if (!(node && typeof node === "object" && node.$type === "color")) return
+{
+  const paletteTree = JSON.parse(readFileSync(out("primitive", "color.json"), "utf8")).color
+  const walk = (node, path) => {
+    if (node && typeof node === "object" && node.$type === "color" && "$value" in node) {
       const ok = toOklch(node.$value)
-      const path = `color.${pathPrefix}${f}${step ? `.${step}` : ""}`
-      if (!(ok in primByOklch)) primByOklch[ok] = path
-      const dest = step
-        ? ((target[f] ??= {}), target[f])
-        : target
-      dest[step || f] = token("color", ok, undefined, {
-        "looloo.source": `${sourceLabel}.${fam}${step ? `.${step}` : ""}`,
-        "looloo.legacy": node.$value,
-      })
+      if (!(ok in primByOklch)) primByOklch[ok] = path // first-wins (tw families before color.brand.*)
+      return
     }
-    if ("$value" in steps) put(steps, "") // single color (white/black)
-    else for (const [step, node] of Object.entries(steps)) put(node, step)
+    if (node && typeof node === "object")
+      for (const [k, v] of Object.entries(node)) if (!k.startsWith("$")) walk(v, `${path}.${k}`)
   }
+  for (const [k, v] of Object.entries(paletteTree)) if (!k.startsWith("$")) walk(v, `color.${k}`)
 }
-const color = {}
-palette("tw-colors/Mode 1", "", "tw-colors/Mode 1", color)
-const brandColor = {}
-palette("brand-color/Mode 1", "brand.", "brand-color/Mode 1", brandColor)
-if (Object.keys(brandColor).length) color.brand = brandColor
-writeJson(["primitive", "color.json"], {
-  $description:
-    "Canonical primitive palette (OKLCH). Generated from tokens/raw/legacy.tokens.json by scripts/tokens/migrate-legacy-tokens.mjs — do not hand-edit. Tailwind families are canonical; the Radix palette was not promoted (no consumers) and remains in raw only.",
-  color,
-})
 
 /* ---------- 2. primitive/spacing.json ---------- */
 // Tailwind 4px-grid steps; values are step*0.25rem, verified against the
@@ -446,6 +431,6 @@ writeJson(["theme", "neutral.json"], {
 })
 
 console.log("tokens/ canonical layer regenerated from legacy sources:")
-console.log(`  primitive color families: ${Object.keys(color).length} (+ brand: ${Object.keys(brandColor).length})`)
+console.log(`  primitive palette:        ${Object.keys(primByOklch).length} oklch entries (read from hand-authored color.json)`)
 console.log(`  semantic light tokens:    ${Object.keys(semanticColor).length}`)
 console.log(`  dark overrides:           ${Object.keys(darkColor).length}`)
