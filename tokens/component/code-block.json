@@ -57,13 +57,6 @@
         "$extensions": {
           "looloo.tailwind": "text-xs"
         }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
       }
     },
     "copyButton": {

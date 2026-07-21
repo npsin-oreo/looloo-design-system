@@ -133,14 +133,6 @@
       "$extensions": {
         "looloo.tailwind": "disabled:opacity-50"
       }
-    },
-    "activeBackground": {
-      "$type": "color",
-      "$value": "{color.muted}",
-      "$description": "data-[state=on] / aria-pressed and hover.",
-      "$extensions": {
-        "looloo.tailwind": "data-[state=on]:bg-muted"
-      }
     }
   }
 }

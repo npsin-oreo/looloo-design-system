@@ -36,20 +36,6 @@
         "$extensions": {
           "looloo.tailwind": "shadow-md"
         }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{color.popover}",
-        "$extensions": {
-          "looloo.tailwind": "bg-popover"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.popover-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-popover-foreground"
-        }
       }
     },
     "subContent": {
@@ -151,36 +137,6 @@
           "looloo.tailwind": "data-disabled:opacity-50"
         }
       },
-      "focusBackground": {
-        "$type": "color",
-        "$value": "{color.accent}",
-        "$extensions": {
-          "looloo.tailwind": "focus:bg-accent"
-        }
-      },
-      "focusForeground": {
-        "$type": "color",
-        "$value": "{color.accent-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "focus:text-accent-foreground"
-        }
-      },
-      "destructiveForeground": {
-        "$type": "color",
-        "$value": "{color.destructive}",
-        "$description": "A row you cannot undo. Red TEXT on a normal background at rest — not a red row.",
-        "$extensions": {
-          "looloo.tailwind": "data-[variant=destructive]:text-destructive"
-        }
-      },
-      "destructiveFocusSurface": {
-        "$type": "color",
-        "$value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
-        "$description": "Destructive row on focus/hover — a 10% red wash. Alpha-baked: a Figma alias cannot carry opacity, so recompute if destructive moves.",
-        "$extensions": {
-          "looloo.tailwind": "data-[variant=destructive]:focus:bg-destructive/10"
-        }
-      },
       "indicatorInset": {
         "$type": "dimension",
         "$value": "{space.2}",
@@ -264,13 +220,6 @@
         "$value": "{font.tracking.widest}",
         "$extensions": {
           "looloo.tailwind": "tracking-widest"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
         }
       }
     }

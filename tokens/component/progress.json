@@ -1,9 +1,19 @@
 {
   "$description": "Captured 1:1 from components/ui/progress/progress.tsx. Track h-1 rounded-full bg-muted, indicator bg-primary.",
   "progress": {
-    "height": { "$type": "dimension", "$value": "{space.1}", "$extensions": { "looloo.tailwind": "h-1" } },
-    "radius": { "$type": "dimension", "$value": "{radius.full}", "$extensions": { "looloo.tailwind": "rounded-full" } },
-    "track": { "$type": "color", "$value": "{color.muted}", "$extensions": { "looloo.tailwind": "bg-muted" } },
-    "indicator": { "$type": "color", "$value": "{color.primary}", "$extensions": { "looloo.tailwind": "bg-primary" } }
+    "height": {
+      "$type": "dimension",
+      "$value": "{space.1}",
+      "$extensions": {
+        "looloo.tailwind": "h-1"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.full}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-full"
+      }
+    }
   }
 }

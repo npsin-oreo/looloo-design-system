@@ -5,8 +5,8 @@
   "note": "v2 contract. The root token-contract.json remains the legacy/published brand-config contract until the consumer swap.",
   "counts": {
     "primitive": 444,
-    "semantic": 63,
-    "component": 1175,
+    "semantic": 81,
+    "component": 819,
     "modes": [
       "comfortable",
       "compact",
@@ -45,14 +45,6 @@
       "layer": "component",
       "source": "tokens/component/accordion.json",
       "alias": "space.4"
-    },
-    "accordion.item.borderColor": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--accordion-item-border-color",
-      "layer": "component",
-      "source": "tokens/component/accordion.json",
-      "alias": "color.border"
     },
     "accordion.item.borderWidth": {
       "type": "dimension",
@@ -103,14 +95,6 @@
       "source": "tokens/component/accordion.json",
       "alias": "font.weight.medium"
     },
-    "accordion.trigger.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--accordion-trigger-foreground",
-      "layer": "component",
-      "source": "tokens/component/accordion.json",
-      "alias": "color.foreground"
-    },
     "accordion.trigger.iconSize": {
       "type": "dimension",
       "value": "1rem",
@@ -143,14 +127,6 @@
       "source": "tokens/component/alert.json",
       "description": "Right padding reserved for the action slot (pr-18 = 72px — no space token at 18)."
     },
-    "alert.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--alert-background",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "alias": "color.card"
-    },
     "alert.borderWidth": {
       "type": "dimension",
       "value": "1px",
@@ -159,140 +135,6 @@
       "source": "tokens/component/alert.json",
       "alias": "border.width.default"
     },
-    "alert.color.default-foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--alert-color-default-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "alias": "color.card-foreground",
-      "description": "Neutral title."
-    },
-    "alert.color.default-surface": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--alert-color-default-surface",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "alias": "color.card",
-      "description": "Neutral news. No tint: if every alert is coloured, colour stops meaning anything."
-    },
-    "alert.color.destructive-border": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--destructive) 25%, transparent)",
-      "cssVar": "--alert-color-destructive-border",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "description": "Red edge."
-    },
-    "alert.color.destructive-foreground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--alert-color-destructive-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "alias": "color.destructive",
-      "description": "Red title."
-    },
-    "alert.color.destructive-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
-      "cssVar": "--alert-color-destructive-surface",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "description": "A 10% red wash — this already went wrong. Still only 10%: a solid red panel is the one that makes the error message hardest to read."
-    },
-    "alert.color.info-border": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-info) 25%, transparent)",
-      "cssVar": "--alert-color-info-border",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "description": "Blue edge."
-    },
-    "alert.color.info-foreground": {
-      "type": "color",
-      "value": "oklch(0.546 0.215 262.881)",
-      "cssVar": "--alert-color-info-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "alias": "status.info",
-      "description": "blue.700."
-    },
-    "alert.color.info-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-info) 10%, transparent)",
-      "cssVar": "--alert-color-info-surface",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "description": "A 10% blue wash — context, not a problem."
-    },
-    "alert.color.success-border": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-success) 25%, transparent)",
-      "cssVar": "--alert-color-success-border",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "description": "The border is a stronger mix than the fill — it is what draws the box; the fill only tints it."
-    },
-    "alert.color.success-foreground": {
-      "type": "color",
-      "value": "oklch(0.527 0.137 150.069)",
-      "cssVar": "--alert-color-success-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "alias": "status.success",
-      "description": "green.700 — the readable step, NOT the 500 that the icon uses."
-    },
-    "alert.color.success-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-success) 10%, transparent)",
-      "cssVar": "--alert-color-success-surface",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "description": "A 10% green wash. Ten percent is the ceiling: past that the panel starts to compete with the text it is supposed to be carrying, and the contrast of the body copy drops."
-    },
-    "alert.color.warning-border": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-warning) 25%, transparent)",
-      "cssVar": "--alert-color-warning-border",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "description": "Amber edge."
-    },
-    "alert.color.warning-foreground": {
-      "type": "color",
-      "value": "oklch(0.555 0.146 48.998)",
-      "cssVar": "--alert-color-warning-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "alias": "status.warning-text",
-      "description": "amber.700 — amber.500 only reaches 2.1:1 on a light tint and is unreadable as text."
-    },
-    "alert.color.warning-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-warning) 10%, transparent)",
-      "cssVar": "--alert-color-warning-surface",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "description": "A 10% amber wash — something MIGHT go wrong."
-    },
-    "alert.descriptionForeground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--alert-description-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "alias": "color.muted-foreground"
-    },
-    "alert.destructiveForeground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--alert-destructive-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "alias": "color.destructive"
-    },
     "alert.fontSize": {
       "type": "dimension",
       "value": "0.875rem",
@@ -300,14 +142,6 @@
       "layer": "component",
       "source": "tokens/component/alert.json",
       "alias": "font.size.sm"
-    },
-    "alert.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--alert-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert.json",
-      "alias": "color.card-foreground"
     },
     "alert.gap": {
       "type": "dimension",
@@ -366,73 +200,6 @@
       "layer": "component",
       "source": "tokens/component/alert.json",
       "alias": "font.weight.medium"
-    },
-    "alertDialog.color.media-confirm-foreground": {
-      "type": "color",
-      "value": "oklch(0.527 0.137 150.069)",
-      "cssVar": "--alert-dialog-color-media-confirm-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert-dialog.json",
-      "alias": "status.success",
-      "description": "green.700 — 5.02:1 on the tint, passes AA as an icon/text colour with no separate text token needed (unlike warning, whose amber.500 fill is unreadable)."
-    },
-    "alertDialog.color.media-confirm-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-success) 10%, transparent)",
-      "cssVar": "--alert-dialog-color-media-confirm-surface",
-      "layer": "component",
-      "source": "tokens/component/alert-dialog.json",
-      "description": "Confirm: a 10% green tint. The three tones now read as one family — green (safe) / amber (undoable) / red (permanent) — instead of one neutral box sitting next to two coloured ones."
-    },
-    "alertDialog.color.media-destructive-foreground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--alert-dialog-color-media-destructive-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert-dialog.json",
-      "alias": "color.destructive",
-      "description": "Red icon."
-    },
-    "alertDialog.color.media-destructive-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
-      "cssVar": "--alert-dialog-color-media-destructive-surface",
-      "layer": "component",
-      "source": "tokens/component/alert-dialog.json",
-      "description": "Destructive: a 10% red tint. This cannot be undone."
-    },
-    "alertDialog.color.media-warning-foreground": {
-      "type": "color",
-      "value": "oklch(0.555 0.146 48.998)",
-      "cssVar": "--alert-dialog-color-media-warning-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert-dialog.json",
-      "alias": "status.warning-text",
-      "description": "amber.700 — NOT status.warning (amber.500), which only reaches 2.1:1 on a light tint."
-    },
-    "alertDialog.color.media-warning-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-warning) 10%, transparent)",
-      "cssVar": "--alert-dialog-color-media-warning-surface",
-      "layer": "component",
-      "source": "tokens/component/alert-dialog.json",
-      "description": "Warning: a 10% amber tint. Something will go wrong, but it can be undone."
-    },
-    "alertDialog.content.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--alert-dialog-content-background",
-      "layer": "component",
-      "source": "tokens/component/alert-dialog.json",
-      "alias": "color.popover"
-    },
-    "alertDialog.content.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--alert-dialog-content-foreground",
-      "layer": "component",
-      "source": "tokens/component/alert-dialog.json",
-      "alias": "color.popover-foreground"
     },
     "alertDialog.content.gap": {
       "type": "dimension",
@@ -518,14 +285,6 @@
       "source": "tokens/component/alert-dialog.json",
       "alias": "space.4"
     },
-    "alertDialog.media.background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--alert-dialog-media-background",
-      "layer": "component",
-      "source": "tokens/component/alert-dialog.json",
-      "alias": "color.muted"
-    },
     "alertDialog.media.iconSize": {
       "type": "dimension",
       "value": "1.5rem",
@@ -559,14 +318,6 @@
       "alias": "size.40",
       "description": "Media box, not a touch target — pinned to 40px when size.control.xl moved to 44."
     },
-    "alertDialog.overlay": {
-      "type": "color",
-      "value": "oklch(0 0 0 / 0.1)",
-      "cssVar": "--alert-dialog-overlay",
-      "layer": "component",
-      "source": "tokens/component/alert-dialog.json",
-      "alias": "surface.overlay"
-    },
     "alertDialog.title.fontSize": {
       "type": "dimension",
       "value": "1rem",
@@ -582,22 +333,6 @@
       "layer": "component",
       "source": "tokens/component/alert-dialog.json",
       "alias": "font.weight.medium"
-    },
-    "avatar.badge.background": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--avatar-badge-background",
-      "layer": "component",
-      "source": "tokens/component/avatar.json",
-      "alias": "color.primary"
-    },
-    "avatar.badge.foreground": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--avatar-badge-foreground",
-      "layer": "component",
-      "source": "tokens/component/avatar.json",
-      "alias": "color.primary-foreground"
     },
     "avatar.badge.iconSize": {
       "type": "dimension",
@@ -640,14 +375,6 @@
       "source": "tokens/component/avatar.json",
       "alias": "space.2"
     },
-    "avatar.fallback.background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--avatar-fallback-background",
-      "layer": "component",
-      "source": "tokens/component/avatar.json",
-      "alias": "color.muted"
-    },
     "avatar.fallback.fontSize": {
       "type": "dimension",
       "value": "0.875rem",
@@ -664,14 +391,6 @@
       "layer": "component",
       "source": "tokens/component/avatar.json",
       "alias": "font.size.xs"
-    },
-    "avatar.fallback.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--avatar-fallback-foreground",
-      "layer": "component",
-      "source": "tokens/component/avatar.json",
-      "alias": "color.muted-foreground"
     },
     "avatar.group.count.iconSize.default": {
       "type": "dimension",
@@ -757,218 +476,6 @@
       "source": "tokens/component/avatar.json",
       "alias": "size.control.xs"
     },
-    "badge.color.default-background": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--badge-color-default-background",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "color.primary"
-    },
-    "badge.color.default-foreground": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--badge-color-default-foreground",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "color.primary-foreground"
-    },
-    "badge.color.default-hover-surface": {
-      "type": "color",
-      "value": "oklch(0.459 0.066 199.308)",
-      "cssVar": "--badge-color-default-hover-surface",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "color.primary-hover",
-      "description": "Hover DARKENS to the 700 shade. It used to fade the fill to 80% (color-mix toward the page), which was fine when primary was near-black but drops white text on the teal brand to 3.38:1 — below AA. Alpha cannot be used on a mid-tone action colour."
-    },
-    "badge.color.destructive-background": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--badge-color-destructive-background",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "color.destructive"
-    },
-    "badge.color.destructive-background-opacity": {
-      "type": "number",
-      "value": 0.1,
-      "cssVar": "--badge-color-destructive-background-opacity",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "opacity.10"
-    },
-    "badge.color.destructive-foreground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--badge-color-destructive-foreground",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "color.destructive"
-    },
-    "badge.color.destructive-hover-opacity": {
-      "type": "number",
-      "value": 0.2,
-      "cssVar": "--badge-color-destructive-hover-opacity",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "opacity.20"
-    },
-    "badge.color.destructive-hover-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--destructive) 20%, transparent)",
-      "cssVar": "--badge-color-destructive-hover-surface",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "description": "Hover deepens the tint to 20%."
-    },
-    "badge.color.destructive-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
-      "cssVar": "--badge-color-destructive-surface",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "description": "10% tint, not a solid red fill."
-    },
-    "badge.color.info-foreground": {
-      "type": "color",
-      "value": "oklch(0.546 0.215 262.881)",
-      "cssVar": "--badge-color-info-foreground",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "status.info",
-      "description": "blue.600 — 4.6:1 as text."
-    },
-    "badge.color.info-hover-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-info) 20%, transparent)",
-      "cssVar": "--badge-color-info-hover-surface",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "description": "Hover deepens the tint to 20%."
-    },
-    "badge.color.info-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-info) 10%, transparent)",
-      "cssVar": "--badge-color-info-surface",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "description": "10% blue tint."
-    },
-    "badge.color.muted-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--badge-color-muted-background",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "color.muted"
-    },
-    "badge.color.muted-foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--badge-color-muted-foreground",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "color.muted-foreground"
-    },
-    "badge.color.outline-border": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--badge-color-outline-border",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "color.border"
-    },
-    "badge.color.outline-foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--badge-color-outline-foreground",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "color.foreground"
-    },
-    "badge.color.secondary-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--badge-color-secondary-background",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "color.secondary"
-    },
-    "badge.color.secondary-foreground": {
-      "type": "color",
-      "value": "oklch(0.21 0.032 264.665)",
-      "cssVar": "--badge-color-secondary-foreground",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "color.secondary-foreground"
-    },
-    "badge.color.secondary-hover-opacity": {
-      "type": "number",
-      "value": 0.8,
-      "cssVar": "--badge-color-secondary-hover-opacity",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "interaction.hover-opacity"
-    },
-    "badge.color.secondary-hover-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--secondary) 80%, transparent)",
-      "cssVar": "--badge-color-secondary-hover-surface",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "description": "Hover fill as a real color."
-    },
-    "badge.color.success-foreground": {
-      "type": "color",
-      "value": "oklch(0.527 0.137 150.069)",
-      "cssVar": "--badge-color-success-foreground",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "status.success",
-      "description": "green.700 — 4.5:1+ as text."
-    },
-    "badge.color.success-hover-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-success) 20%, transparent)",
-      "cssVar": "--badge-color-success-hover-surface",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "description": "Hover deepens the tint to 20%."
-    },
-    "badge.color.success-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-success) 10%, transparent)",
-      "cssVar": "--badge-color-success-surface",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "description": "Success badge = 10% tint + coloured text, same shape as destructive."
-    },
-    "badge.color.warning-foreground": {
-      "type": "color",
-      "value": "oklch(0.555 0.146 48.998)",
-      "cssVar": "--badge-color-warning-foreground",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "alias": "status.warning-text",
-      "description": "amber.700, NOT status.warning (amber.500) — the fill colour is only 2.1:1 as text."
-    },
-    "badge.color.warning-hover-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-warning) 20%, transparent)",
-      "cssVar": "--badge-color-warning-hover-surface",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "description": "Hover deepens the tint to 20%."
-    },
-    "badge.color.warning-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-warning) 10%, transparent)",
-      "cssVar": "--badge-color-warning-surface",
-      "layer": "component",
-      "source": "tokens/component/badge.json",
-      "description": "10% amber tint."
-    },
     "badge.fontSize": {
       "type": "dimension",
       "value": "0.75rem",
@@ -1043,14 +550,6 @@
       "alias": "space.2",
       "description": "Between stacked children inside the quote."
     },
-    "blockquote.borderColor": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--blockquote-border-color",
-      "layer": "component",
-      "source": "tokens/component/blockquote.json",
-      "alias": "color.border"
-    },
     "blockquote.borderWidth": {
       "type": "dimension",
       "value": "2px",
@@ -1066,22 +565,6 @@
       "layer": "component",
       "source": "tokens/component/blockquote.json",
       "alias": "font.size.sm"
-    },
-    "blockquote.cite.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--blockquote-cite-foreground",
-      "layer": "component",
-      "source": "tokens/component/blockquote.json",
-      "alias": "color.muted-foreground"
-    },
-    "blockquote.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--blockquote-foreground",
-      "layer": "component",
-      "source": "tokens/component/blockquote.json",
-      "alias": "color.foreground"
     },
     "blockquote.paddingLeft": {
       "type": "dimension",
@@ -1126,15 +609,6 @@
       "layer": "primitive",
       "source": "tokens/primitive/border.json"
     },
-    "breadcrumb.activeForeground": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--breadcrumb-active-foreground",
-      "layer": "component",
-      "source": "tokens/component/breadcrumb.json",
-      "alias": "color.brand.primary.600",
-      "description": "THE CURRENT PAGE. Brand teal, shade 600 (#217D80) — NOT the 300 tint (#60CFCB), which only reaches 1.86:1 on white and is unreadable as 14px text. 600 is the lightest shade of the ramp that clears WCAG AA (4.87:1)."
-    },
     "breadcrumb.ellipsis.iconSize": {
       "type": "dimension",
       "value": "1rem",
@@ -1160,15 +634,6 @@
       "source": "tokens/component/breadcrumb.json",
       "alias": "font.size.sm"
     },
-    "breadcrumb.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--breadcrumb-foreground",
-      "layer": "component",
-      "source": "tokens/component/breadcrumb.json",
-      "alias": "color.muted-foreground",
-      "description": "A crumb you can click, at rest. Quiet on purpose — the breadcrumb is a wayfinder, not content."
-    },
     "breadcrumb.gap": {
       "type": "dimension",
       "value": "0.375rem",
@@ -1177,15 +642,6 @@
       "source": "tokens/component/breadcrumb.json",
       "alias": "space.1-5",
       "description": "Gap between crumbs in the list."
-    },
-    "breadcrumb.hoverForeground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--breadcrumb-hover-foreground",
-      "layer": "component",
-      "source": "tokens/component/breadcrumb.json",
-      "alias": "color.foreground",
-      "description": "Link on hover — darkens to full foreground so the row reads as clickable."
     },
     "breadcrumb.itemGap": {
       "type": "dimension",
@@ -1212,186 +668,6 @@
       "layer": "component",
       "source": "tokens/component/breadcrumb.json",
       "alias": "size.14"
-    },
-    "button.color.default-background": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--button-color-default-background",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.primary"
-    },
-    "button.color.default-foreground": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--button-color-default-foreground",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.primary-foreground"
-    },
-    "button.color.default-hover-surface": {
-      "type": "color",
-      "value": "oklch(0.459 0.066 199.308)",
-      "cssVar": "--button-color-default-hover-surface",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.primary-hover",
-      "description": "Hover DARKENS to the 700 shade. It used to fade the fill to 80% (color-mix toward the page), which was fine when primary was near-black but drops white text on the teal brand to 3.38:1 — below AA. Alpha cannot be used on a mid-tone action colour."
-    },
-    "button.color.destructive-background": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--button-color-destructive-background",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.destructive",
-      "description": "Rendered at 10% — see destructive-background-opacity."
-    },
-    "button.color.destructive-background-opacity": {
-      "type": "number",
-      "value": 0.1,
-      "cssVar": "--button-color-destructive-background-opacity",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "opacity.10"
-    },
-    "button.color.destructive-foreground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--button-color-destructive-foreground",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.destructive",
-      "description": "The destructive button is a tinted surface with destructive TEXT — not a solid red fill."
-    },
-    "button.color.destructive-hover-opacity": {
-      "type": "number",
-      "value": 0.2,
-      "cssVar": "--button-color-destructive-hover-opacity",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "opacity.20"
-    },
-    "button.color.destructive-hover-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--destructive) 20%, transparent)",
-      "cssVar": "--button-color-destructive-hover-surface",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "description": "Destructive hover deepens the tint to 20%."
-    },
-    "button.color.destructive-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
-      "cssVar": "--button-color-destructive-surface",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "description": "The destructive button is a 10% tint, not a solid red fill."
-    },
-    "button.color.focus-ring": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--button-color-focus-ring",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.ring"
-    },
-    "button.color.focus-ring-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--button-color-focus-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "opacity.50"
-    },
-    "button.color.ghost-hover-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--button-color-ghost-hover-background",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.muted"
-    },
-    "button.color.ghost-hover-foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--button-color-ghost-hover-foreground",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.foreground"
-    },
-    "button.color.link-foreground": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--button-color-link-foreground",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.primary"
-    },
-    "button.color.outline-background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--button-color-outline-background",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.background"
-    },
-    "button.color.outline-border": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--button-color-outline-border",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.border"
-    },
-    "button.color.outline-hover-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--button-color-outline-hover-background",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.muted"
-    },
-    "button.color.outline-hover-foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--button-color-outline-hover-foreground",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.foreground"
-    },
-    "button.color.secondary-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--button-color-secondary-background",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.secondary"
-    },
-    "button.color.secondary-foreground": {
-      "type": "color",
-      "value": "oklch(0.21 0.032 264.665)",
-      "cssVar": "--button-color-secondary-foreground",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "color.secondary-foreground"
-    },
-    "button.color.secondary-hover-mix": {
-      "type": "number",
-      "value": 0.05,
-      "cssVar": "--button-color-secondary-hover-mix",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "alias": "interaction.secondary-hover-mix",
-      "description": "Hover mixes 5% foreground into the secondary fill."
-    },
-    "button.color.secondary-hover-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--secondary), var(--foreground) 5%)",
-      "cssVar": "--button-color-secondary-hover-surface",
-      "layer": "component",
-      "source": "tokens/component/button.json",
-      "description": "Secondary hover: 5% foreground mixed into the secondary fill."
     },
     "button.fontSize.md": {
       "type": "dimension",
@@ -1658,14 +934,6 @@
       "alias": "radius.ui.lg",
       "description": "The group's outer corners; inner ones collapse to 0."
     },
-    "buttonGroup.separator.color": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--button-group-separator-color",
-      "layer": "component",
-      "source": "tokens/component/button-group.json",
-      "alias": "color.input"
-    },
     "buttonGroup.separator.inset": {
       "type": "dimension",
       "value": "1px",
@@ -1674,14 +942,6 @@
       "source": "tokens/component/button-group.json",
       "alias": "border.width.default",
       "description": "mx-px / my-px — a hairline inset so the rule does not touch the outer border."
-    },
-    "buttonGroup.text.background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--button-group-text-background",
-      "layer": "component",
-      "source": "tokens/component/button-group.json",
-      "alias": "color.muted"
     },
     "buttonGroup.text.borderWidth": {
       "type": "dimension",
@@ -1848,39 +1108,6 @@
       "alias": "space.4",
       "description": "after:w-4 — the muted band the range ends paint past the cell so the row reads continuous."
     },
-    "calendar.day.rangeMiddleBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--calendar-day-range-middle-background",
-      "layer": "component",
-      "source": "tokens/component/calendar.json",
-      "alias": "color.muted"
-    },
-    "calendar.day.rangeMiddleForeground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--calendar-day-range-middle-foreground",
-      "layer": "component",
-      "source": "tokens/component/calendar.json",
-      "alias": "color.foreground"
-    },
-    "calendar.day.selectedBackground": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--calendar-day-selected-background",
-      "layer": "component",
-      "source": "tokens/component/calendar.json",
-      "alias": "color.primary",
-      "description": "Single selection and both range ends."
-    },
-    "calendar.day.selectedForeground": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--calendar-day-selected-foreground",
-      "layer": "component",
-      "source": "tokens/component/calendar.json",
-      "alias": "color.primary-foreground"
-    },
     "calendar.monthGap": {
       "type": "dimension",
       "value": "1rem",
@@ -1949,14 +1176,6 @@
       "source": "tokens/component/calendar.json",
       "alias": "font.weight.normal"
     },
-    "calendar.weekday.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--calendar-weekday-foreground",
-      "layer": "component",
-      "source": "tokens/component/calendar.json",
-      "alias": "color.muted-foreground"
-    },
     "card.bodyFontSize": {
       "type": "dimension",
       "value": "0.875rem",
@@ -1964,73 +1183,6 @@
       "layer": "component",
       "source": "tokens/component/card.json",
       "alias": "font.size.sm"
-    },
-    "card.color.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--card-color-background",
-      "layer": "component",
-      "source": "tokens/component/card.json",
-      "alias": "color.card"
-    },
-    "card.color.footer-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--card-color-footer-background",
-      "layer": "component",
-      "source": "tokens/component/card.json",
-      "alias": "color.muted",
-      "description": "Rendered at 50%."
-    },
-    "card.color.footer-background-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--card-color-footer-background-opacity",
-      "layer": "component",
-      "source": "tokens/component/card.json",
-      "alias": "opacity.50"
-    },
-    "card.color.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--card-color-foreground",
-      "layer": "component",
-      "source": "tokens/component/card.json",
-      "alias": "color.card-foreground"
-    },
-    "card.color.muted-foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--card-color-muted-foreground",
-      "layer": "component",
-      "source": "tokens/component/card.json",
-      "alias": "color.muted-foreground",
-      "description": "Card description."
-    },
-    "card.color.ring": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--card-color-ring",
-      "layer": "component",
-      "source": "tokens/component/card.json",
-      "alias": "color.foreground",
-      "description": "Hairline ring at 10% — the card's edge, in place of a border."
-    },
-    "card.color.ring-opacity": {
-      "type": "number",
-      "value": 0.1,
-      "cssVar": "--card-color-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/card.json",
-      "alias": "opacity.10"
-    },
-    "card.color.ring-paint": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--foreground) 10%, transparent)",
-      "cssVar": "--card-color-ring-paint",
-      "layer": "component",
-      "source": "tokens/component/card.json",
-      "description": "The card edge as a real color — a 10% ring, not a border."
     },
     "card.gap.md": {
       "type": "dimension",
@@ -2098,23 +1250,6 @@
       "source": "tokens/component/carousel.json",
       "alias": "radius.full"
     },
-    "chart.axisForeground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--chart-axis-foreground",
-      "layer": "component",
-      "source": "tokens/component/chart.json",
-      "alias": "color.muted-foreground"
-    },
-    "chart.cursorFill": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--chart-cursor-fill",
-      "layer": "component",
-      "source": "tokens/component/chart.json",
-      "alias": "color.muted",
-      "description": "The hover band behind the tooltip, and the radial-bar background sector."
-    },
     "chart.fontSize": {
       "type": "dimension",
       "value": "0.75rem",
@@ -2122,15 +1257,6 @@
       "layer": "component",
       "source": "tokens/component/chart.json",
       "alias": "font.size.xs"
-    },
-    "chart.gridColor": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--chart-grid-color",
-      "layer": "component",
-      "source": "tokens/component/chart.json",
-      "alias": "color.border",
-      "description": "Cartesian/polar grid and reference lines (rendered at 50% for the cartesian grid)."
     },
     "chart.heatmap.cellSize": {
       "type": "dimension",
@@ -2140,57 +1266,6 @@
       "source": "tokens/component/chart.json",
       "alias": "size.12",
       "description": "12px. Small enough that a year fits on one row of a dashboard, big enough to hover. Below ~10px the cell stops being a target and becomes a texture."
-    },
-    "chart.heatmap.color.empty": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--chart-heatmap-color-empty",
-      "layer": "component",
-      "source": "tokens/component/chart.json",
-      "alias": "color.muted",
-      "description": "NO data — not zero. The two are different claims, and a heatmap that paints them the same lies about the days a system was simply not recording."
-    },
-    "chart.heatmap.color.level1": {
-      "type": "color",
-      "value": "oklch(0.886 0.066 190.059)",
-      "cssVar": "--chart-heatmap-color-level1",
-      "layer": "component",
-      "source": "tokens/component/chart.json",
-      "alias": "color.brand.primary.200",
-      "description": "Level 1 of 5 — the lightest step that is still unmistakably the brand rather than a grey."
-    },
-    "chart.heatmap.color.level2": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--chart-heatmap-color-level2",
-      "layer": "component",
-      "source": "tokens/component/chart.json",
-      "alias": "color.brand.primary.300"
-    },
-    "chart.heatmap.color.level3": {
-      "type": "color",
-      "value": "oklch(0.639 0.097 195.875)",
-      "cssVar": "--chart-heatmap-color-level3",
-      "layer": "component",
-      "source": "tokens/component/chart.json",
-      "alias": "color.brand.primary.500"
-    },
-    "chart.heatmap.color.level4": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--chart-heatmap-color-level4",
-      "layer": "component",
-      "source": "tokens/component/chart.json",
-      "alias": "color.brand.primary.600"
-    },
-    "chart.heatmap.color.level5": {
-      "type": "color",
-      "value": "oklch(0.395 0.053 200.697)",
-      "cssVar": "--chart-heatmap-color-level5",
-      "layer": "component",
-      "source": "tokens/component/chart.json",
-      "alias": "color.brand.primary.800",
-      "description": "Level 5 of 5. FIVE steps, not more: the eye cannot rank more than about five shades of one hue reliably, and every extra step is a colour nobody can decode without the legend."
     },
     "chart.heatmap.gap": {
       "type": "dimension",
@@ -2234,14 +1309,6 @@
       "source": "tokens/component/chart.json",
       "alias": "space.2"
     },
-    "chart.legend.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--chart-legend-foreground",
-      "layer": "component",
-      "source": "tokens/component/chart.json",
-      "alias": "color.muted-foreground"
-    },
     "chart.legend.gap": {
       "type": "dimension",
       "value": "1rem",
@@ -2265,14 +1332,6 @@
       "layer": "component",
       "source": "tokens/component/chart.json",
       "alias": "space.1-5"
-    },
-    "chart.tooltip.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--chart-tooltip-background",
-      "layer": "component",
-      "source": "tokens/component/chart.json",
-      "alias": "color.background"
     },
     "chart.tooltip.borderWidth": {
       "type": "dimension",
@@ -2412,22 +1471,6 @@
       "source": "tokens/component/chat.json",
       "alias": "size.12"
     },
-    "chat.bubble.assistantBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--chat-bubble-assistant-background",
-      "layer": "component",
-      "source": "tokens/component/chat.json",
-      "alias": "color.muted"
-    },
-    "chat.bubble.assistantForeground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--chat-bubble-assistant-foreground",
-      "layer": "component",
-      "source": "tokens/component/chat.json",
-      "alias": "color.foreground"
-    },
     "chat.bubble.fontSize": {
       "type": "dimension",
       "value": "0.875rem",
@@ -2476,22 +1519,6 @@
       "layer": "component",
       "source": "tokens/component/chat.json",
       "alias": "radius.ui.2xl"
-    },
-    "chat.bubble.userBackground": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--chat-bubble-user-background",
-      "layer": "component",
-      "source": "tokens/component/chat.json",
-      "alias": "color.primary"
-    },
-    "chat.bubble.userForeground": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--chat-bubble-user-foreground",
-      "layer": "component",
-      "source": "tokens/component/chat.json",
-      "alias": "color.primary-foreground"
     },
     "chat.composer.borderWidth": {
       "type": "dimension",
@@ -2623,14 +1650,6 @@
       "source": "tokens/component/chat.json",
       "alias": "font.size.xs"
     },
-    "chat.message.metaForeground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--chat-message-meta-foreground",
-      "layer": "component",
-      "source": "tokens/component/chat.json",
-      "alias": "color.muted-foreground"
-    },
     "chat.message.metaGap": {
       "type": "dimension",
       "value": "0.5rem",
@@ -2686,14 +1705,6 @@
       "layer": "component",
       "source": "tokens/component/chat-tool-calls.json",
       "alias": "space.2"
-    },
-    "chatToolCalls.card.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--chat-tool-calls-card-background",
-      "layer": "component",
-      "source": "tokens/component/chat-tool-calls.json",
-      "alias": "color.card"
     },
     "chatToolCalls.card.borderWidth": {
       "type": "dimension",
@@ -2759,14 +1770,6 @@
       "source": "tokens/component/chat-tool-calls.json",
       "alias": "space.2"
     },
-    "chatToolCalls.status.errorForeground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--chat-tool-calls-status-error-foreground",
-      "layer": "component",
-      "source": "tokens/component/chat-tool-calls.json",
-      "alias": "color.destructive"
-    },
     "chatToolCalls.status.fontFamily": {
       "type": "fontFamily",
       "value": "Geist Mono",
@@ -2782,14 +1785,6 @@
       "layer": "component",
       "source": "tokens/component/chat-tool-calls.json",
       "alias": "font.size.xs"
-    },
-    "chatToolCalls.status.successForeground": {
-      "type": "color",
-      "value": "oklch(0.527 0.137 150.069)",
-      "cssVar": "--chat-tool-calls-status-success-foreground",
-      "layer": "component",
-      "source": "tokens/component/chat-tool-calls.json",
-      "alias": "status.success"
     },
     "chatToolCalls.trigger.focusRingWidth": {
       "type": "dimension",
@@ -2839,80 +1834,6 @@
       "source": "tokens/component/chat-tool-calls.json",
       "alias": "space.2"
     },
-    "checkbox.color.border": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--checkbox-color-border",
-      "layer": "component",
-      "source": "tokens/component/checkbox.json",
-      "alias": "color.input"
-    },
-    "checkbox.color.checked-background": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--checkbox-color-checked-background",
-      "layer": "component",
-      "source": "tokens/component/checkbox.json",
-      "alias": "color.primary"
-    },
-    "checkbox.color.checked-border": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--checkbox-color-checked-border",
-      "layer": "component",
-      "source": "tokens/component/checkbox.json",
-      "alias": "color.primary"
-    },
-    "checkbox.color.focus-border": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--checkbox-color-focus-border",
-      "layer": "component",
-      "source": "tokens/component/checkbox.json",
-      "alias": "color.ring"
-    },
-    "checkbox.color.focus-ring": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--checkbox-color-focus-ring",
-      "layer": "component",
-      "source": "tokens/component/checkbox.json",
-      "alias": "color.ring"
-    },
-    "checkbox.color.focus-ring-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--checkbox-color-focus-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/checkbox.json",
-      "alias": "opacity.50"
-    },
-    "checkbox.color.indicator-foreground": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--checkbox-color-indicator-foreground",
-      "layer": "component",
-      "source": "tokens/component/checkbox.json",
-      "alias": "color.white",
-      "description": "The tick is WHITE, always. DESIGN DECISION 2026-07-13: it used to be {color.primary-foreground}, which flips to near-black whenever the brand primary is light (our teal) — a black tick on a teal box. The indicator must stay white regardless of brand."
-    },
-    "checkbox.color.invalid-background": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--checkbox-color-invalid-background",
-      "layer": "component",
-      "source": "tokens/component/checkbox.json",
-      "alias": "color.destructive",
-      "description": "DESIGN DECISION 2026-07-13: when a CHECKED control is invalid, the box is filled with destructive — not primary. A teal (checked) box wearing a red (error) ring sends two conflicting signals at once; error wins, and the tick stays white so the checked state is still legible."
-    },
-    "checkbox.color.invalid-border": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--checkbox-color-invalid-border",
-      "layer": "component",
-      "source": "tokens/component/checkbox.json",
-      "alias": "color.destructive"
-    },
     "checkbox.indicatorSize": {
       "type": "dimension",
       "value": "0.875rem",
@@ -2961,14 +1882,6 @@
       "source": "tokens/component/citation.json",
       "alias": "font.weight.medium"
     },
-    "citation.chip.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--citation-chip-foreground",
-      "layer": "component",
-      "source": "tokens/component/citation.json",
-      "alias": "color.foreground"
-    },
     "citation.chip.gap": {
       "type": "dimension",
       "value": "0.375rem",
@@ -2976,22 +1889,6 @@
       "layer": "component",
       "source": "tokens/component/citation.json",
       "alias": "space.1-5"
-    },
-    "citation.chip.hoverBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--citation-chip-hover-background",
-      "layer": "component",
-      "source": "tokens/component/citation.json",
-      "alias": "color.accent"
-    },
-    "citation.chip.hoverForeground": {
-      "type": "color",
-      "value": "oklch(0.21 0.032 264.665)",
-      "cssVar": "--citation-chip-hover-foreground",
-      "layer": "component",
-      "source": "tokens/component/citation.json",
-      "alias": "color.accent-foreground"
     },
     "citation.chip.iconSize": {
       "type": "dimension",
@@ -3033,14 +1930,6 @@
       "source": "tokens/component/citation.json",
       "alias": "radius.ui.md"
     },
-    "citation.marker.background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--citation-marker-background",
-      "layer": "component",
-      "source": "tokens/component/citation.json",
-      "alias": "color.muted"
-    },
     "citation.marker.fontSize": {
       "type": "dimension",
       "value": "0.625rem",
@@ -3056,14 +1945,6 @@
       "layer": "component",
       "source": "tokens/component/citation.json",
       "alias": "font.weight.medium"
-    },
-    "citation.marker.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--citation-marker-foreground",
-      "layer": "component",
-      "source": "tokens/component/citation.json",
-      "alias": "color.muted-foreground"
     },
     "citation.marker.radius": {
       "type": "dimension",
@@ -3176,14 +2057,6 @@
       "layer": "component",
       "source": "tokens/component/code-block.json",
       "alias": "font.size.xs"
-    },
-    "codeBlock.header.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--code-block-header-foreground",
-      "layer": "component",
-      "source": "tokens/component/code-block.json",
-      "alias": "color.muted-foreground"
     },
     "codeBlock.header.paddingX": {
       "type": "dimension",
@@ -3949,6 +2822,42 @@
         "dark"
       ]
     },
+    "color.destructive-border": {
+      "type": "color",
+      "value": "oklch(0.808 0.103 19.571)",
+      "cssVar": "--destructive-border",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.red.200",
+      "description": "Destructive border. Was 25% tint. Dark: red.800.",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.destructive-surface": {
+      "type": "color",
+      "value": "oklch(0.971 0.013 17.38)",
+      "cssVar": "--destructive-surface",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.red.50",
+      "description": "Destructive SURFACE (solid tint). Was color-mix(destructive 10%). Dark: red.950.",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.destructive-surface-hover": {
+      "type": "color",
+      "value": "oklch(0.936 0.031 17.717)",
+      "cssVar": "--destructive-surface-hover",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.red.100",
+      "description": "Destructive surface, hover. Was 20% tint. Dark: red.900.",
+      "modes": [
+        "dark"
+      ]
+    },
     "color.emerald.100": {
       "type": "color",
       "value": "oklch(0.95 0.051 163.051)",
@@ -4358,6 +3267,18 @@
         "dark"
       ]
     },
+    "color.input-surface": {
+      "type": "color",
+      "value": "oklch(0.967 0.003 264.542)",
+      "cssVar": "--input-surface",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.gray.100",
+      "description": "Subtle input/command background (solid). Was color-mix(input 30%). Dark: gray.800.",
+      "modes": [
+        "dark"
+      ]
+    },
     "color.lime.100": {
       "type": "color",
       "value": "oklch(0.967 0.066 122.328)",
@@ -4455,6 +3376,18 @@
       "source": "tokens/semantic/color.json",
       "alias": "color.gray.500",
       "description": "Subtle surfaces and lower-emphasis content.",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.muted-surface": {
+      "type": "color",
+      "value": "oklch(0.985 0.002 247.839)",
+      "cssVar": "--muted-surface",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.gray.50",
+      "description": "Muted row/hover surface (solid). Was color-mix(muted 50%). Dark: gray.900.",
       "modes": [
         "dark"
       ]
@@ -4756,6 +3689,18 @@
         "dark"
       ]
     },
+    "color.primary-surface": {
+      "type": "color",
+      "value": "oklch(0.981 0.01 189.069)",
+      "cssVar": "--primary-surface",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.brand.primary.50",
+      "description": "Primary SURFACE (solid tint): selected table row, file-upload dropzone-active. Was color-mix(primary 10% / 8%). Dark: brand-primary.950.",
+      "modes": [
+        "dark"
+      ]
+    },
     "color.purple.100": {
       "type": "color",
       "value": "oklch(0.946 0.033 307.174)",
@@ -4922,6 +3867,18 @@
         "dark"
       ]
     },
+    "color.ring-subtle": {
+      "type": "color",
+      "value": "oklch(0.928 0.006 264.531)",
+      "cssVar": "--ring-subtle",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.gray.200",
+      "description": "Subtle ring/outline paint (solid). Was color-mix(foreground 10%). Dark: gray.700.",
+      "modes": [
+        "dark"
+      ]
+    },
     "color.rose.100": {
       "type": "color",
       "value": "oklch(0.941 0.03 12.58)",
@@ -5019,6 +3976,30 @@
       "source": "tokens/semantic/color.json",
       "alias": "color.gray.900",
       "description": "Lower-emphasis filled actions and supporting surfaces.",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.secondary-hover": {
+      "type": "color",
+      "value": "oklch(0.928 0.006 264.531)",
+      "cssVar": "--secondary-hover",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.gray.200",
+      "description": "Secondary control hover fill (solid). Was color-mix(secondary, foreground 5%). Dark: gray.700.",
+      "modes": [
+        "dark"
+      ]
+    },
+    "color.secondary-surface-hover": {
+      "type": "color",
+      "value": "oklch(0.967 0.003 264.542)",
+      "cssVar": "--secondary-surface-hover",
+      "layer": "semantic",
+      "source": "tokens/semantic/color.json",
+      "alias": "color.gray.100",
+      "description": "Secondary badge hover surface (solid). Was color-mix(secondary 80%). Dark: gray.800.",
       "modes": [
         "dark"
       ]
@@ -5701,14 +4682,6 @@
       "layer": "primitive",
       "source": "tokens/primitive/color.json"
     },
-    "combobox.chip.background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--combobox-chip-background",
-      "layer": "component",
-      "source": "tokens/component/combobox.json",
-      "alias": "color.muted"
-    },
     "combobox.chip.disabledOpacity": {
       "type": "number",
       "value": 0.5,
@@ -5818,22 +4791,6 @@
       "alias": "space.16",
       "description": "The typing area that trails the chips. It keeps a 64px floor so there is always somewhere to type — without it, enough chips would squeeze the caret out of the box entirely."
     },
-    "combobox.content.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--combobox-content-background",
-      "layer": "component",
-      "source": "tokens/component/combobox.json",
-      "alias": "color.popover"
-    },
-    "combobox.content.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--combobox-content-foreground",
-      "layer": "component",
-      "source": "tokens/component/combobox.json",
-      "alias": "color.popover-foreground"
-    },
     "combobox.content.maxHeight": {
       "type": "dimension",
       "value": "24rem",
@@ -5874,14 +4831,6 @@
       "source": "tokens/component/combobox.json",
       "alias": "font.size.sm"
     },
-    "combobox.empty.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--combobox-empty-foreground",
-      "layer": "component",
-      "source": "tokens/component/combobox.json",
-      "alias": "color.muted-foreground"
-    },
     "combobox.empty.paddingY": {
       "type": "dimension",
       "value": "0.5rem",
@@ -5913,22 +4862,6 @@
       "layer": "component",
       "source": "tokens/component/combobox.json",
       "alias": "space.2"
-    },
-    "combobox.item.highlightedBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--combobox-item-highlighted-background",
-      "layer": "component",
-      "source": "tokens/component/combobox.json",
-      "alias": "color.accent"
-    },
-    "combobox.item.highlightedForeground": {
-      "type": "color",
-      "value": "oklch(0.21 0.032 264.665)",
-      "cssVar": "--combobox-item-highlighted-foreground",
-      "layer": "component",
-      "source": "tokens/component/combobox.json",
-      "alias": "color.accent-foreground"
     },
     "combobox.item.iconSize": {
       "type": "dimension",
@@ -5978,14 +4911,6 @@
       "layer": "component",
       "source": "tokens/component/combobox.json",
       "alias": "font.size.xs"
-    },
-    "combobox.label.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--combobox-label-foreground",
-      "layer": "component",
-      "source": "tokens/component/combobox.json",
-      "alias": "color.muted-foreground"
     },
     "combobox.label.paddingX": {
       "type": "dimension",
@@ -6135,14 +5060,6 @@
       "source": "tokens/component/combobox.json",
       "alias": "shadow.xs"
     },
-    "command.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--command-background",
-      "layer": "component",
-      "source": "tokens/component/command.json",
-      "alias": "color.popover"
-    },
     "command.empty.fontSize": {
       "type": "dimension",
       "value": "0.875rem",
@@ -6160,14 +5077,6 @@
       "alias": "space.6",
       "description": "The 'no results' block. Generous vertical space on purpose: an empty list should read as an answer, not as a panel that failed to load."
     },
-    "command.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--command-foreground",
-      "layer": "component",
-      "source": "tokens/component/command.json",
-      "alias": "color.popover-foreground"
-    },
     "command.group.headingFontSize": {
       "type": "dimension",
       "value": "0.75rem",
@@ -6183,14 +5092,6 @@
       "layer": "component",
       "source": "tokens/component/command.json",
       "alias": "font.weight.medium"
-    },
-    "command.group.headingForeground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--command-group-heading-foreground",
-      "layer": "component",
-      "source": "tokens/component/command.json",
-      "alias": "color.muted-foreground"
     },
     "command.group.headingPaddingX": {
       "type": "dimension",
@@ -6215,22 +5116,6 @@
       "layer": "component",
       "source": "tokens/component/command.json",
       "alias": "space.1"
-    },
-    "command.input.background": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--input) 30%, transparent)",
-      "cssVar": "--command-input-background",
-      "layer": "component",
-      "source": "tokens/component/command.json",
-      "description": "The search field sits INSIDE the panel, so it is only a 30% wash of the normal input fill. A full input box here would read as a second surface stacked on the popover."
-    },
-    "command.input.borderColor": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--input) 30%, transparent)",
-      "cssVar": "--command-input-border-color",
-      "layer": "component",
-      "source": "tokens/component/command.json",
-      "description": "Same 30% wash as the fill. Alpha-baked in Figma — recompute if --input moves."
     },
     "command.input.height": {
       "type": "dimension",
@@ -6329,23 +5214,6 @@
       "alias": "radius.ui.lg",
       "description": "Items get a larger radius when the command lives inside a dialog."
     },
-    "command.item.selectedBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--command-item-selected-background",
-      "layer": "component",
-      "source": "tokens/component/command.json",
-      "alias": "color.muted",
-      "description": "cmdk selects with muted, not accent like the radix menus."
-    },
-    "command.item.selectedForeground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--command-item-selected-foreground",
-      "layer": "component",
-      "source": "tokens/component/command.json",
-      "alias": "color.foreground"
-    },
     "command.list.maxHeight": {
       "type": "dimension",
       "value": "18rem",
@@ -6396,22 +5264,6 @@
       "source": "tokens/component/command.json",
       "alias": "border.width.default"
     },
-    "contextMenu.content.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--context-menu-content-background",
-      "layer": "component",
-      "source": "tokens/component/context-menu.json",
-      "alias": "color.popover"
-    },
-    "contextMenu.content.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--context-menu-content-foreground",
-      "layer": "component",
-      "source": "tokens/component/context-menu.json",
-      "alias": "color.popover-foreground"
-    },
     "contextMenu.content.minWidth": {
       "type": "dimension",
       "value": "9rem",
@@ -6452,23 +5304,6 @@
       "source": "tokens/component/context-menu.json",
       "alias": "shadow.md"
     },
-    "contextMenu.item.destructiveFocusSurface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
-      "cssVar": "--context-menu-item-destructive-focus-surface",
-      "layer": "component",
-      "source": "tokens/component/context-menu.json",
-      "description": "Destructive row on focus/hover — a 10% red wash. Alpha-baked: a Figma alias cannot carry opacity, so recompute if destructive moves."
-    },
-    "contextMenu.item.destructiveForeground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--context-menu-item-destructive-foreground",
-      "layer": "component",
-      "source": "tokens/component/context-menu.json",
-      "alias": "color.destructive",
-      "description": "A row you cannot undo. Red TEXT on a normal background at rest — not a red row."
-    },
     "contextMenu.item.disabledOpacity": {
       "type": "number",
       "value": 0.5,
@@ -6476,22 +5311,6 @@
       "layer": "component",
       "source": "tokens/component/context-menu.json",
       "alias": "opacity.50"
-    },
-    "contextMenu.item.focusBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--context-menu-item-focus-background",
-      "layer": "component",
-      "source": "tokens/component/context-menu.json",
-      "alias": "color.accent"
-    },
-    "contextMenu.item.focusForeground": {
-      "type": "color",
-      "value": "oklch(0.21 0.032 264.665)",
-      "cssVar": "--context-menu-item-focus-foreground",
-      "layer": "component",
-      "source": "tokens/component/context-menu.json",
-      "alias": "color.accent-foreground"
     },
     "contextMenu.item.fontSize": {
       "type": "dimension",
@@ -6639,14 +5458,6 @@
       "source": "tokens/component/context-menu.json",
       "alias": "font.size.xs"
     },
-    "contextMenu.shortcut.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--context-menu-shortcut-foreground",
-      "layer": "component",
-      "source": "tokens/component/context-menu.json",
-      "alias": "color.muted-foreground"
-    },
     "contextMenu.shortcut.tracking": {
       "type": "dimension",
       "value": "1.6px",
@@ -6689,15 +5500,6 @@
       "source": "tokens/component/context-menu.json",
       "alias": "shadow.lg"
     },
-    "datePicker.emptyForeground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--date-picker-empty-foreground",
-      "layer": "component",
-      "source": "tokens/component/date-picker.json",
-      "alias": "color.muted-foreground",
-      "description": "Placeholder state when no date is picked."
-    },
     "datePicker.triggerFontWeight": {
       "type": "fontWeight",
       "value": 400,
@@ -6714,54 +5516,6 @@
       "layer": "component",
       "source": "tokens/component/date-picker.json",
       "description": "w-[240px] — literal in source, no space token at 240px."
-    },
-    "dialog.color.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--dialog-color-background",
-      "layer": "component",
-      "source": "tokens/component/dialog.json",
-      "alias": "color.popover"
-    },
-    "dialog.color.description-foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--dialog-color-description-foreground",
-      "layer": "component",
-      "source": "tokens/component/dialog.json",
-      "alias": "color.muted-foreground"
-    },
-    "dialog.color.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--dialog-color-foreground",
-      "layer": "component",
-      "source": "tokens/component/dialog.json",
-      "alias": "color.popover-foreground"
-    },
-    "dialog.color.overlay": {
-      "type": "color",
-      "value": "oklch(0 0 0 / 0.1)",
-      "cssVar": "--dialog-color-overlay",
-      "layer": "component",
-      "source": "tokens/component/dialog.json",
-      "alias": "surface.overlay"
-    },
-    "dialog.color.ring": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--dialog-color-ring",
-      "layer": "component",
-      "source": "tokens/component/dialog.json",
-      "alias": "color.foreground"
-    },
-    "dialog.color.ring-opacity": {
-      "type": "number",
-      "value": 0.1,
-      "cssVar": "--dialog-color-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/dialog.json",
-      "alias": "opacity.10"
     },
     "dialog.gap": {
       "type": "dimension",
@@ -6827,14 +5581,6 @@
       "source": "tokens/component/dialog.json",
       "alias": "font.weight.medium"
     },
-    "drawer.content.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--drawer-content-background",
-      "layer": "component",
-      "source": "tokens/component/drawer.json",
-      "alias": "color.popover"
-    },
     "drawer.content.borderWidth": {
       "type": "dimension",
       "value": "1px",
@@ -6851,14 +5597,6 @@
       "layer": "component",
       "source": "tokens/component/drawer.json",
       "alias": "font.size.sm"
-    },
-    "drawer.content.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--drawer-content-foreground",
-      "layer": "component",
-      "source": "tokens/component/drawer.json",
-      "alias": "color.popover-foreground"
     },
     "drawer.content.maxWidth": {
       "type": "dimension",
@@ -6902,14 +5640,6 @@
       "layer": "component",
       "source": "tokens/component/drawer.json",
       "alias": "space.4"
-    },
-    "drawer.handle.color": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--drawer-handle-color",
-      "layer": "component",
-      "source": "tokens/component/drawer.json",
-      "alias": "color.muted"
     },
     "drawer.handle.height": {
       "type": "dimension",
@@ -6959,30 +5689,6 @@
       "source": "tokens/component/drawer.json",
       "alias": "space.4"
     },
-    "drawer.overlay": {
-      "type": "color",
-      "value": "oklch(0 0 0 / 0.1)",
-      "cssVar": "--drawer-overlay",
-      "layer": "component",
-      "source": "tokens/component/drawer.json",
-      "alias": "surface.overlay"
-    },
-    "dropdownMenu.content.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--dropdown-menu-content-background",
-      "layer": "component",
-      "source": "tokens/component/dropdown-menu.json",
-      "alias": "color.popover"
-    },
-    "dropdownMenu.content.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--dropdown-menu-content-foreground",
-      "layer": "component",
-      "source": "tokens/component/dropdown-menu.json",
-      "alias": "color.popover-foreground"
-    },
     "dropdownMenu.content.minWidth": {
       "type": "dimension",
       "value": "8rem",
@@ -7024,14 +5730,6 @@
       "source": "tokens/component/dropdown-menu.json",
       "alias": "shadow.md"
     },
-    "dropdownMenu.item.destructiveForeground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--dropdown-menu-item-destructive-foreground",
-      "layer": "component",
-      "source": "tokens/component/dropdown-menu.json",
-      "alias": "color.destructive"
-    },
     "dropdownMenu.item.disabledOpacity": {
       "type": "number",
       "value": 0.5,
@@ -7039,22 +5737,6 @@
       "layer": "component",
       "source": "tokens/component/dropdown-menu.json",
       "alias": "opacity.50"
-    },
-    "dropdownMenu.item.focusBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--dropdown-menu-item-focus-background",
-      "layer": "component",
-      "source": "tokens/component/dropdown-menu.json",
-      "alias": "color.accent"
-    },
-    "dropdownMenu.item.focusForeground": {
-      "type": "color",
-      "value": "oklch(0.21 0.032 264.665)",
-      "cssVar": "--dropdown-menu-item-focus-foreground",
-      "layer": "component",
-      "source": "tokens/component/dropdown-menu.json",
-      "alias": "color.accent-foreground"
     },
     "dropdownMenu.item.fontSize": {
       "type": "dimension",
@@ -7187,14 +5869,6 @@
       "source": "tokens/component/dropdown-menu.json",
       "alias": "font.size.xs"
     },
-    "dropdownMenu.shortcut.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--dropdown-menu-shortcut-foreground",
-      "layer": "component",
-      "source": "tokens/component/dropdown-menu.json",
-      "alias": "color.muted-foreground"
-    },
     "dropdownMenu.shortcut.tracking": {
       "type": "dimension",
       "value": "1.6px",
@@ -7243,75 +5917,6 @@
       "alias": "border.width.default",
       "description": "border-dashed — dashed, not solid."
     },
-    "empty.color.media-destructive-foreground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--empty-color-media-destructive-foreground",
-      "layer": "component",
-      "source": "tokens/component/empty.json",
-      "alias": "color.destructive",
-      "description": "Red icon."
-    },
-    "empty.color.media-destructive-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
-      "cssVar": "--empty-color-media-destructive-surface",
-      "layer": "component",
-      "source": "tokens/component/empty.json",
-      "description": "Empty because something BROKE. This is not an empty state at heart — it is an error wearing one, and it must offer a retry rather than a create."
-    },
-    "empty.color.media-neutral-foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--empty-color-media-neutral-foreground",
-      "layer": "component",
-      "source": "tokens/component/empty.json",
-      "alias": "color.foreground",
-      "description": "Neutral icon."
-    },
-    "empty.color.media-neutral-surface": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--empty-color-media-neutral-surface",
-      "layer": "component",
-      "source": "tokens/component/empty.json",
-      "alias": "color.muted",
-      "description": "Nothing has gone wrong — there is simply nothing here yet, or nothing matched. Neutral."
-    },
-    "empty.color.media-success-foreground": {
-      "type": "color",
-      "value": "oklch(0.527 0.137 150.069)",
-      "cssVar": "--empty-color-media-success-foreground",
-      "layer": "component",
-      "source": "tokens/component/empty.json",
-      "alias": "status.success",
-      "description": "Green icon."
-    },
-    "empty.color.media-success-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-success) 10%, transparent)",
-      "cssVar": "--empty-color-media-success-surface",
-      "layer": "component",
-      "source": "tokens/component/empty.json",
-      "description": "Empty because the user FINISHED — inbox zero, no tasks left. The only empty state that is good news, and the only one that should not offer a way to fill it."
-    },
-    "empty.color.media-warning-foreground": {
-      "type": "color",
-      "value": "oklch(0.555 0.146 48.998)",
-      "cssVar": "--empty-color-media-warning-foreground",
-      "layer": "component",
-      "source": "tokens/component/empty.json",
-      "alias": "status.warning-text",
-      "description": "amber.700 — the readable step, not the amber.500 fill."
-    },
-    "empty.color.media-warning-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-warning) 10%, transparent)",
-      "cssVar": "--empty-color-media-warning-surface",
-      "layer": "component",
-      "source": "tokens/component/empty.json",
-      "description": "Empty because the user is not ALLOWED to see it. Nothing is broken and nothing is missing — offering a 'create' button here is a lie."
-    },
     "empty.content.gap": {
       "type": "dimension",
       "value": "0.5rem",
@@ -7327,14 +5932,6 @@
       "layer": "component",
       "source": "tokens/component/empty.json",
       "alias": "font.size.sm"
-    },
-    "empty.description.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--empty-description-foreground",
-      "layer": "component",
-      "source": "tokens/component/empty.json",
-      "alias": "color.muted-foreground"
     },
     "empty.description.lineHeight": {
       "type": "number",
@@ -7376,22 +5973,6 @@
       "source": "tokens/component/empty.json",
       "alias": "space.96",
       "description": "max-w-sm = 384px, on both the header and the content blocks."
-    },
-    "empty.media.background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--empty-media-background",
-      "layer": "component",
-      "source": "tokens/component/empty.json",
-      "alias": "color.muted"
-    },
-    "empty.media.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--empty-media-foreground",
-      "layer": "component",
-      "source": "tokens/component/empty.json",
-      "alias": "color.foreground"
     },
     "empty.media.iconSize": {
       "type": "dimension",
@@ -7456,78 +6037,6 @@
       "layer": "component",
       "source": "tokens/component/empty.json",
       "alias": "font.tracking.tight"
-    },
-    "file-upload.color.dropzone-active-border": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--file-upload-color-dropzone-active-border",
-      "layer": "component",
-      "source": "tokens/component/file-upload.json",
-      "alias": "color.primary",
-      "description": "Dragging over it. The border AND the fill change — a border alone is too quiet to confirm the drop will land, and a dropped file that goes nowhere is the worst outcome this component has."
-    },
-    "file-upload.color.dropzone-active-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--primary) 8%, transparent)",
-      "cssVar": "--file-upload-color-dropzone-active-surface",
-      "layer": "component",
-      "source": "tokens/component/file-upload.json",
-      "description": "8% brand wash while dragging. Alpha-baked in Figma."
-    },
-    "file-upload.color.dropzone-border": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--file-upload-color-dropzone-border",
-      "layer": "component",
-      "source": "tokens/component/file-upload.json",
-      "alias": "color.border"
-    },
-    "file-upload.color.media-error-foreground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--file-upload-color-media-error-foreground",
-      "layer": "component",
-      "source": "tokens/component/file-upload.json",
-      "alias": "color.destructive"
-    },
-    "file-upload.color.media-error-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--destructive) 12%, transparent)",
-      "cssVar": "--file-upload-color-media-error-surface",
-      "layer": "component",
-      "source": "tokens/component/file-upload.json"
-    },
-    "file-upload.color.media-idle-surface": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--file-upload-color-media-idle-surface",
-      "layer": "component",
-      "source": "tokens/component/file-upload.json",
-      "alias": "color.muted"
-    },
-    "file-upload.color.media-success-foreground": {
-      "type": "color",
-      "value": "oklch(0.527 0.137 150.069)",
-      "cssVar": "--file-upload-color-media-success-foreground",
-      "layer": "component",
-      "source": "tokens/component/file-upload.json",
-      "alias": "status.success"
-    },
-    "file-upload.color.media-success-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--status-success) 12%, transparent)",
-      "cssVar": "--file-upload-color-media-success-surface",
-      "layer": "component",
-      "source": "tokens/component/file-upload.json"
-    },
-    "file-upload.color.remove-foreground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--file-upload-color-remove-foreground",
-      "layer": "component",
-      "source": "tokens/component/file-upload.json",
-      "alias": "color.destructive",
-      "description": "Remove is destructive and says so — but it is an icon button, not a red block: the file is not gone until you click it."
     },
     "file-upload.dropzone.borderWidth": {
       "type": "dimension",
@@ -8068,14 +6577,6 @@
       "layer": "primitive",
       "source": "tokens/primitive/typography.json"
     },
-    "hoverCard.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--hover-card-background",
-      "layer": "component",
-      "source": "tokens/component/hover-card.json",
-      "alias": "color.popover"
-    },
     "hoverCard.fontSize": {
       "type": "dimension",
       "value": "0.875rem",
@@ -8083,14 +6584,6 @@
       "layer": "component",
       "source": "tokens/component/hover-card.json",
       "alias": "font.size.sm"
-    },
-    "hoverCard.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--hover-card-foreground",
-      "layer": "component",
-      "source": "tokens/component/hover-card.json",
-      "alias": "color.popover-foreground"
     },
     "hoverCard.padding": {
       "type": "dimension",
@@ -8273,112 +6766,6 @@
       "alias": "size.16",
       "description": "Clear (X) button — shown only when the field holds a value and `clearable` is set."
     },
-    "input.color.background": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--input-color-background",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "color.input",
-      "description": "Transparent in light mode; the input fill only shows in dark (30%)."
-    },
-    "input.color.background-opacity-dark": {
-      "type": "number",
-      "value": 0.3,
-      "cssVar": "--input-color-background-opacity-dark",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "opacity.30"
-    },
-    "input.color.border": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--input-color-border",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "color.input"
-    },
-    "input.color.clear-button": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--input-color-clear-button",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "color.muted-foreground",
-      "description": "The X glyph; goes to foreground on hover."
-    },
-    "input.color.disabled-background-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--input-color-disabled-background-opacity",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "opacity.50"
-    },
-    "input.color.focus-border": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--input-color-focus-border",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "color.ring"
-    },
-    "input.color.focus-ring": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--input-color-focus-ring",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "color.ring"
-    },
-    "input.color.focus-ring-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--input-color-focus-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "opacity.50"
-    },
-    "input.color.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--input-color-foreground",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "color.foreground"
-    },
-    "input.color.invalid-border": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--input-color-invalid-border",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "color.destructive"
-    },
-    "input.color.invalid-ring": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--input-color-invalid-ring",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "color.destructive"
-    },
-    "input.color.invalid-ring-opacity": {
-      "type": "number",
-      "value": 0.2,
-      "cssVar": "--input-color-invalid-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "opacity.20"
-    },
-    "input.color.placeholder": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--input-color-placeholder",
-      "layer": "component",
-      "source": "tokens/component/input.json",
-      "alias": "color.muted-foreground"
-    },
     "input.fontSize.md": {
       "type": "dimension",
       "value": "0.875rem",
@@ -8509,14 +6896,6 @@
       "layer": "component",
       "source": "tokens/component/input-group.json",
       "alias": "font.weight.medium"
-    },
-    "inputGroup.addon.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--input-group-addon-foreground",
-      "layer": "component",
-      "source": "tokens/component/input-group.json",
-      "alias": "color.muted-foreground"
     },
     "inputGroup.addon.gap": {
       "type": "dimension",
@@ -8655,14 +7034,6 @@
       "layer": "component",
       "source": "tokens/component/input-group.json",
       "alias": "space.2"
-    },
-    "inputOtp.caret.color": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--input-otp-caret-color",
-      "layer": "component",
-      "source": "tokens/component/input-otp.json",
-      "alias": "color.foreground"
     },
     "inputOtp.caret.height": {
       "type": "dimension",
@@ -8812,22 +7183,6 @@
       "alias": "space.4",
       "description": "Between media, content and actions. Wide (16px) on purpose: the three regions are different KINDS of thing, and a tight gap makes them read as one run-on line."
     },
-    "item.hoverBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--item-hover-background",
-      "layer": "component",
-      "source": "tokens/component/item.json",
-      "alias": "color.muted"
-    },
-    "item.media.background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--item-media-background",
-      "layer": "component",
-      "source": "tokens/component/item.json",
-      "alias": "color.muted"
-    },
     "item.media.iconSize": {
       "type": "dimension",
       "value": "1rem",
@@ -8868,14 +7223,6 @@
       "source": "tokens/component/item.json",
       "alias": "radius.ui.lg"
     },
-    "kbd.background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--kbd-background",
-      "layer": "component",
-      "source": "tokens/component/kbd.json",
-      "alias": "color.muted"
-    },
     "kbd.fontSize": {
       "type": "dimension",
       "value": "0.75rem",
@@ -8891,14 +7238,6 @@
       "layer": "component",
       "source": "tokens/component/kbd.json",
       "alias": "font.weight.medium"
-    },
-    "kbd.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--kbd-foreground",
-      "layer": "component",
-      "source": "tokens/component/kbd.json",
-      "alias": "color.muted-foreground"
     },
     "kbd.gap": {
       "type": "dimension",
@@ -8958,24 +7297,6 @@
       "layer": "component",
       "source": "tokens/component/kbd.json",
       "alias": "radius.ui.sm"
-    },
-    "label.color.optional": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--label-color-optional",
-      "layer": "component",
-      "source": "tokens/component/label.json",
-      "alias": "color.muted-foreground",
-      "description": "The optional marker recedes — it is metadata about the field, not the label itself."
-    },
-    "label.color.required": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--label-color-required",
-      "layer": "component",
-      "source": "tokens/component/label.json",
-      "alias": "color.destructive",
-      "description": "The required asterisk. Red because it rides the same 'you must deal with this' channel as an error — it is a signal, not decoration."
     },
     "label.disabledOpacity": {
       "type": "number",
@@ -9145,14 +7466,6 @@
       "alias": "space.4",
       "description": "h4 — mt-4."
     },
-    "markdown.inlineCode.background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--markdown-inline-code-background",
-      "layer": "component",
-      "source": "tokens/component/markdown.json",
-      "alias": "color.muted"
-    },
     "markdown.inlineCode.fontFamily": {
       "type": "fontFamily",
       "value": "Geist Mono",
@@ -9208,14 +7521,6 @@
       "layer": "component",
       "source": "tokens/component/markdown.json",
       "alias": "font.weight.medium"
-    },
-    "markdown.link.foreground": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--markdown-link-foreground",
-      "layer": "component",
-      "source": "tokens/component/markdown.json",
-      "alias": "color.primary"
     },
     "markdown.link.underlineOffset": {
       "type": "dimension",
@@ -9298,22 +7603,6 @@
       "source": "tokens/component/menubar.json",
       "alias": "radius.ui.lg"
     },
-    "menubar.content.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--menubar-content-background",
-      "layer": "component",
-      "source": "tokens/component/menubar.json",
-      "alias": "color.popover"
-    },
-    "menubar.content.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--menubar-content-foreground",
-      "layer": "component",
-      "source": "tokens/component/menubar.json",
-      "alias": "color.popover-foreground"
-    },
     "menubar.content.minWidth": {
       "type": "dimension",
       "value": "9rem",
@@ -9354,23 +7643,6 @@
       "source": "tokens/component/menubar.json",
       "alias": "shadow.md"
     },
-    "menubar.item.destructiveFocusSurface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--destructive) 10%, transparent)",
-      "cssVar": "--menubar-item-destructive-focus-surface",
-      "layer": "component",
-      "source": "tokens/component/menubar.json",
-      "description": "Destructive row on focus — a 10% red wash. Alpha-baked; recompute if destructive moves."
-    },
-    "menubar.item.destructiveForeground": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--menubar-item-destructive-foreground",
-      "layer": "component",
-      "source": "tokens/component/menubar.json",
-      "alias": "color.destructive",
-      "description": "A row you cannot undo — red text at rest, not a red row."
-    },
     "menubar.item.disabledOpacity": {
       "type": "number",
       "value": 0.5,
@@ -9378,22 +7650,6 @@
       "layer": "component",
       "source": "tokens/component/menubar.json",
       "alias": "opacity.50"
-    },
-    "menubar.item.focusBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--menubar-item-focus-background",
-      "layer": "component",
-      "source": "tokens/component/menubar.json",
-      "alias": "color.accent"
-    },
-    "menubar.item.focusForeground": {
-      "type": "color",
-      "value": "oklch(0.21 0.032 264.665)",
-      "cssVar": "--menubar-item-focus-foreground",
-      "layer": "component",
-      "source": "tokens/component/menubar.json",
-      "alias": "color.accent-foreground"
     },
     "menubar.item.fontSize": {
       "type": "dimension",
@@ -9558,23 +7814,6 @@
       "source": "tokens/component/menubar.json",
       "alias": "font.weight.medium"
     },
-    "menubar.trigger.hoverBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--menubar-trigger-hover-background",
-      "layer": "component",
-      "source": "tokens/component/menubar.json",
-      "alias": "color.muted",
-      "description": "A menu name on hover. The SAME fill as open (aria-expanded:bg-muted) — hovering a menubar name already previews what clicking does."
-    },
-    "menubar.trigger.openBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--menubar-trigger-open-background",
-      "layer": "component",
-      "source": "tokens/component/menubar.json",
-      "alias": "color.muted"
-    },
     "menubar.trigger.paddingX": {
       "type": "dimension",
       "value": "0.375rem",
@@ -9649,14 +7888,6 @@
       "source": "tokens/component/native-select.json",
       "alias": "size.control.sm"
     },
-    "nativeSelect.icon.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--native-select-icon-foreground",
-      "layer": "component",
-      "source": "tokens/component/native-select.json",
-      "alias": "color.muted-foreground"
-    },
     "nativeSelect.icon.inset": {
       "type": "dimension",
       "value": "0.625rem",
@@ -9721,95 +7952,6 @@
       "layer": "component",
       "source": "tokens/component/native-select.json",
       "description": "The small size CAPS its corner at 10px: rounded-[min(var(--radius-md),10px)]. A brand that sets a big --radius would otherwise turn a 28px-tall select into a pill. The token said 0.5rem, which was simply wrong — it tracked neither the scale nor the clamp."
-    },
-    "navigation.color.content-background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--navigation-color-content-background",
-      "layer": "component",
-      "source": "tokens/component/navigation.json",
-      "alias": "color.popover"
-    },
-    "navigation.color.content-foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--navigation-color-content-foreground",
-      "layer": "component",
-      "source": "tokens/component/navigation.json",
-      "alias": "color.popover-foreground"
-    },
-    "navigation.color.content-ring": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--navigation-color-content-ring",
-      "layer": "component",
-      "source": "tokens/component/navigation.json",
-      "alias": "color.foreground"
-    },
-    "navigation.color.content-ring-opacity": {
-      "type": "number",
-      "value": 0.1,
-      "cssVar": "--navigation-color-content-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/navigation.json",
-      "alias": "opacity.10"
-    },
-    "navigation.color.focus-ring": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--navigation-color-focus-ring",
-      "layer": "component",
-      "source": "tokens/component/navigation.json",
-      "alias": "color.ring"
-    },
-    "navigation.color.focus-ring-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--navigation-color-focus-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/navigation.json",
-      "alias": "opacity.50"
-    },
-    "navigation.color.indicator-color": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--navigation-color-indicator-color",
-      "layer": "component",
-      "source": "tokens/component/navigation.json",
-      "alias": "color.border"
-    },
-    "navigation.color.link-hover-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--navigation-color-link-hover-background",
-      "layer": "component",
-      "source": "tokens/component/navigation.json",
-      "alias": "color.muted",
-      "description": "A link in the panel on hover/focus — the same muted wash the trigger uses, so the panel feels like part of the same surface."
-    },
-    "navigation.color.trigger-hover-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--navigation-color-trigger-hover-background",
-      "layer": "component",
-      "source": "tokens/component/navigation.json",
-      "alias": "color.muted"
-    },
-    "navigation.color.trigger-open-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--navigation-color-trigger-open-background",
-      "layer": "component",
-      "source": "tokens/component/navigation.json",
-      "alias": "color.muted"
-    },
-    "navigation.color.trigger-open-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--navigation-color-trigger-open-opacity",
-      "layer": "component",
-      "source": "tokens/component/navigation.json",
-      "alias": "opacity.50"
     },
     "navigation.content.padding": {
       "type": "dimension",
@@ -10165,55 +8307,6 @@
       "alias": "size.control.xs",
       "description": "The close button is an icon-button at size xs (24px) — small enough not to compete with the content, big enough to hit."
     },
-    "popover.color.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--popover-color-background",
-      "layer": "component",
-      "source": "tokens/component/popover.json",
-      "alias": "color.popover"
-    },
-    "popover.color.close": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--popover-color-close",
-      "layer": "component",
-      "source": "tokens/component/popover.json",
-      "alias": "color.muted-foreground",
-      "description": "The X — quiet until hovered."
-    },
-    "popover.color.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--popover-color-foreground",
-      "layer": "component",
-      "source": "tokens/component/popover.json",
-      "alias": "color.popover-foreground"
-    },
-    "popover.color.muted-foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--popover-color-muted-foreground",
-      "layer": "component",
-      "source": "tokens/component/popover.json",
-      "alias": "color.muted-foreground"
-    },
-    "popover.color.ring": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--popover-color-ring",
-      "layer": "component",
-      "source": "tokens/component/popover.json",
-      "alias": "color.foreground"
-    },
-    "popover.color.ring-opacity": {
-      "type": "number",
-      "value": 0.1,
-      "cssVar": "--popover-color-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/popover.json",
-      "alias": "opacity.10"
-    },
     "popover.fontSize": {
       "type": "dimension",
       "value": "0.875rem",
@@ -10272,14 +8365,6 @@
       "source": "tokens/component/progress.json",
       "alias": "space.1"
     },
-    "progress.indicator": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--progress-indicator",
-      "layer": "component",
-      "source": "tokens/component/progress.json",
-      "alias": "color.primary"
-    },
     "progress.radius": {
       "type": "dimension",
       "value": "9999px",
@@ -10287,88 +8372,6 @@
       "layer": "component",
       "source": "tokens/component/progress.json",
       "alias": "radius.full"
-    },
-    "progress.track": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--progress-track",
-      "layer": "component",
-      "source": "tokens/component/progress.json",
-      "alias": "color.muted"
-    },
-    "radio.color.border": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--radio-color-border",
-      "layer": "component",
-      "source": "tokens/component/radio.json",
-      "alias": "color.input"
-    },
-    "radio.color.checked-background": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--radio-color-checked-background",
-      "layer": "component",
-      "source": "tokens/component/radio.json",
-      "alias": "color.primary"
-    },
-    "radio.color.checked-border": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--radio-color-checked-border",
-      "layer": "component",
-      "source": "tokens/component/radio.json",
-      "alias": "color.primary"
-    },
-    "radio.color.focus-border": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--radio-color-focus-border",
-      "layer": "component",
-      "source": "tokens/component/radio.json",
-      "alias": "color.ring"
-    },
-    "radio.color.focus-ring": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--radio-color-focus-ring",
-      "layer": "component",
-      "source": "tokens/component/radio.json",
-      "alias": "color.ring"
-    },
-    "radio.color.focus-ring-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--radio-color-focus-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/radio.json",
-      "alias": "opacity.50"
-    },
-    "radio.color.indicator-color": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--radio-color-indicator-color",
-      "layer": "component",
-      "source": "tokens/component/radio.json",
-      "alias": "color.white",
-      "description": "The dot is WHITE, always. DESIGN DECISION 2026-07-13: same fix as the checkbox tick — primary-foreground flips to near-black on a light brand primary."
-    },
-    "radio.color.invalid-background": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--radio-color-invalid-background",
-      "layer": "component",
-      "source": "tokens/component/radio.json",
-      "alias": "color.destructive",
-      "description": "DESIGN DECISION 2026-07-13: when a CHECKED control is invalid, the box is filled with destructive — not primary. A teal (checked) box wearing a red (error) ring sends two conflicting signals at once; error wins, and the tick stays white so the checked state is still legible."
-    },
-    "radio.color.invalid-border": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--radio-color-invalid-border",
-      "layer": "component",
-      "source": "tokens/component/radio.json",
-      "alias": "color.destructive"
     },
     "radio.groupGap": {
       "type": "dimension",
@@ -10538,14 +8541,6 @@
       "source": "tokens/primitive/radius.json",
       "description": "Static Figma-kit step — NOT what components render. Kept for parity with the kit export; use radius.ui.* for component work."
     },
-    "resizable.handle.color": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--resizable-handle-color",
-      "layer": "component",
-      "source": "tokens/component/resizable.json",
-      "alias": "color.border"
-    },
     "resizable.handle.gripHeight": {
       "type": "dimension",
       "value": "1rem",
@@ -10606,15 +8601,6 @@
       "alias": "space.2",
       "description": "8px. Thin enough to stay out of the way, thick enough to grab — the OS scrollbar it replaces is the thing being fixed, not imitated."
     },
-    "scroll-area.thumb.color": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--scroll-area-thumb-color",
-      "layer": "component",
-      "source": "tokens/component/scroll-area.json",
-      "alias": "color.border",
-      "description": "The thumb is the only visible part at rest. It is border-grey, not brand: a scrollbar is furniture, and a teal scrollbar would compete with the content it is helping you read."
-    },
     "scroll-area.thumb.radius": {
       "type": "dimension",
       "value": "9999px",
@@ -10622,119 +8608,6 @@
       "layer": "component",
       "source": "tokens/component/scroll-area.json",
       "alias": "radius.full"
-    },
-    "select.color.content-background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--select-color-content-background",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.popover"
-    },
-    "select.color.content-foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--select-color-content-foreground",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.popover-foreground"
-    },
-    "select.color.content-ring": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--select-color-content-ring",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.foreground"
-    },
-    "select.color.content-ring-opacity": {
-      "type": "number",
-      "value": 0.1,
-      "cssVar": "--select-color-content-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "opacity.10"
-    },
-    "select.color.focus-border": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--select-color-focus-border",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.ring"
-    },
-    "select.color.focus-ring": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--select-color-focus-ring",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.ring"
-    },
-    "select.color.focus-ring-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--select-color-focus-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "opacity.50"
-    },
-    "select.color.invalid-border": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--select-color-invalid-border",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.destructive"
-    },
-    "select.color.item-focus-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--select-color-item-focus-background",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.accent"
-    },
-    "select.color.item-focus-foreground": {
-      "type": "color",
-      "value": "oklch(0.21 0.032 264.665)",
-      "cssVar": "--select-color-item-focus-foreground",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.accent-foreground"
-    },
-    "select.color.separator-color": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--select-color-separator-color",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.border"
-    },
-    "select.color.trigger-background": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--select-color-trigger-background",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.input",
-      "description": "Transparent in light; 30% input fill in dark."
-    },
-    "select.color.trigger-border": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--select-color-trigger-border",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.input"
-    },
-    "select.color.trigger-placeholder": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--select-color-trigger-placeholder",
-      "layer": "component",
-      "source": "tokens/component/select.json",
-      "alias": "color.muted-foreground"
     },
     "select.content.maxHeight": {
       "type": "dimension",
@@ -10870,14 +8743,6 @@
       "source": "tokens/component/select.json",
       "alias": "radius.ui.lg"
     },
-    "separator.color": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--separator-color",
-      "layer": "component",
-      "source": "tokens/component/separator.json",
-      "alias": "color.border"
-    },
     "separator.thickness": {
       "type": "dimension",
       "value": "1px",
@@ -10922,39 +8787,6 @@
       "layer": "primitive",
       "source": "tokens/primitive/shadow.json"
     },
-    "sheet.color.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--sheet-color-background",
-      "layer": "component",
-      "source": "tokens/component/sheet.json",
-      "alias": "color.popover"
-    },
-    "sheet.color.border": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--sheet-color-border",
-      "layer": "component",
-      "source": "tokens/component/sheet.json",
-      "alias": "color.border",
-      "description": "Only the edge the sheet is docked to."
-    },
-    "sheet.color.description-foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--sheet-color-description-foreground",
-      "layer": "component",
-      "source": "tokens/component/sheet.json",
-      "alias": "color.muted-foreground"
-    },
-    "sheet.color.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--sheet-color-foreground",
-      "layer": "component",
-      "source": "tokens/component/sheet.json",
-      "alias": "color.popover-foreground"
-    },
     "sheet.gap": {
       "type": "dimension",
       "value": "1rem",
@@ -10969,14 +8801,6 @@
       "cssVar": "--sheet-max-width",
       "layer": "component",
       "source": "tokens/component/sheet.json"
-    },
-    "sheet.overlay": {
-      "type": "color",
-      "value": "oklch(0 0 0 / 0.1)",
-      "cssVar": "--sheet-overlay",
-      "layer": "component",
-      "source": "tokens/component/sheet.json",
-      "alias": "surface.overlay"
     },
     "sheet.padding": {
       "type": "dimension",
@@ -10993,98 +8817,6 @@
       "layer": "component",
       "source": "tokens/component/sheet.json",
       "alias": "shadow.lg"
-    },
-    "sidebar.color.background": {
-      "type": "color",
-      "value": "oklch(0.985 0.002 247.839)",
-      "cssVar": "--sidebar-color-background",
-      "layer": "component",
-      "source": "tokens/component/sidebar.json",
-      "alias": "color.sidebar"
-    },
-    "sidebar.color.border": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--sidebar-color-border",
-      "layer": "component",
-      "source": "tokens/component/sidebar.json",
-      "alias": "color.sidebar-border"
-    },
-    "sidebar.color.focus-ring": {
-      "type": "color",
-      "value": "oklch(0.714 0.019 261.325)",
-      "cssVar": "--sidebar-color-focus-ring",
-      "layer": "component",
-      "source": "tokens/component/sidebar.json",
-      "alias": "color.sidebar-ring"
-    },
-    "sidebar.color.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--sidebar-color-foreground",
-      "layer": "component",
-      "source": "tokens/component/sidebar.json",
-      "alias": "color.sidebar-foreground"
-    },
-    "sidebar.color.group-label-foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--sidebar-color-group-label-foreground",
-      "layer": "component",
-      "source": "tokens/component/sidebar.json",
-      "alias": "color.sidebar-foreground",
-      "description": "Group labels run at 70%."
-    },
-    "sidebar.color.group-label-opacity": {
-      "type": "number",
-      "value": 0.7,
-      "cssVar": "--sidebar-color-group-label-opacity",
-      "layer": "component",
-      "source": "tokens/component/sidebar.json",
-      "alias": "opacity.70"
-    },
-    "sidebar.color.item-active-background": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--sidebar-color-item-active-background",
-      "layer": "component",
-      "source": "tokens/component/sidebar.json",
-      "alias": "color.sidebar-primary",
-      "description": "The page you are ON. Brand teal — not the muted accent, which is what HOVER uses: if active and hover look the same, the sidebar cannot tell you where you are, only where your mouse is."
-    },
-    "sidebar.color.item-active-foreground": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--sidebar-color-item-active-foreground",
-      "layer": "component",
-      "source": "tokens/component/sidebar.json",
-      "alias": "color.sidebar-primary-foreground",
-      "description": "White on the teal active row (4.87:1)."
-    },
-    "sidebar.color.item-hover-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--sidebar-color-item-hover-background",
-      "layer": "component",
-      "source": "tokens/component/sidebar.json",
-      "alias": "color.sidebar-accent",
-      "description": "Hover stays the muted wash. It says 'you could go here', while active says 'you are here'."
-    },
-    "sidebar.color.item-hover-foreground": {
-      "type": "color",
-      "value": "oklch(0.21 0.032 264.665)",
-      "cssVar": "--sidebar-color-item-hover-foreground",
-      "layer": "component",
-      "source": "tokens/component/sidebar.json",
-      "alias": "color.sidebar-accent-foreground"
-    },
-    "sidebar.color.rail-color": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--sidebar-color-rail-color",
-      "layer": "component",
-      "source": "tokens/component/sidebar.json",
-      "alias": "color.sidebar-border"
     },
     "sidebar.defaultWidth": {
       "type": "dimension",
@@ -11593,14 +9325,6 @@
       "alias": "size.24",
       "description": "h-6 — button size xs / icon-xs, avatar sm."
     },
-    "skeleton.background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--skeleton-background",
-      "layer": "component",
-      "source": "tokens/component/skeleton.json",
-      "alias": "color.muted"
-    },
     "skeleton.radius": {
       "type": "dimension",
       "value": "calc(var(--radius) - 4px)",
@@ -11608,55 +9332,6 @@
       "layer": "component",
       "source": "tokens/component/skeleton.json",
       "alias": "radius.ui.md"
-    },
-    "slider.color.focus-ring": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--slider-color-focus-ring",
-      "layer": "component",
-      "source": "tokens/component/slider.json",
-      "alias": "color.ring"
-    },
-    "slider.color.focus-ring-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--slider-color-focus-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/slider.json",
-      "alias": "opacity.50"
-    },
-    "slider.color.range": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--slider-color-range",
-      "layer": "component",
-      "source": "tokens/component/slider.json",
-      "alias": "color.primary",
-      "description": "The filled portion of the track."
-    },
-    "slider.color.thumb-border": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--slider-color-thumb-border",
-      "layer": "component",
-      "source": "tokens/component/slider.json",
-      "alias": "color.primary"
-    },
-    "slider.color.track": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--slider-color-track",
-      "layer": "component",
-      "source": "tokens/component/slider.json",
-      "alias": "color.muted"
-    },
-    "slider.thumbBackground": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--slider-thumb-background",
-      "layer": "component",
-      "source": "tokens/component/slider.json",
-      "alias": "color.white"
     },
     "slider.thumbSize": {
       "type": "dimension",
@@ -11912,32 +9587,6 @@
       "source": "tokens/primitive/spacing.json",
       "description": "Hairline step (Tailwind space-px)."
     },
-    "spinner.color.inherit": {
-      "type": "color",
-      "value": "currentColor",
-      "cssVar": "--spinner-color-inherit",
-      "layer": "component",
-      "source": "tokens/component/spinner.json",
-      "description": "DEFAULT. The spinner takes the text colour of whatever it sits in — a button, a row, a cell. A spinner that is part of something else should not announce itself."
-    },
-    "spinner.color.on-brand": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--spinner-color-on-brand",
-      "layer": "component",
-      "source": "tokens/component/spinner.json",
-      "alias": "color.primary-foreground",
-      "description": "White — a spinner sitting ON a filled brand surface (inside a primary button while it submits)."
-    },
-    "spinner.color.primary": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--spinner-color-primary",
-      "layer": "component",
-      "source": "tokens/component/spinner.json",
-      "alias": "color.primary",
-      "description": "Brand teal. For a spinner that stands ALONE and IS the content of the moment — a page still loading, an empty panel waiting on data. Use it sparingly: if three spinners on one screen are all teal, none of them means anything."
-    },
     "spinner.duration": {
       "type": "duration",
       "value": "1000ms",
@@ -11974,6 +9623,18 @@
       "description": "Proposed. Not consumed yet.",
       "status": "proposed"
     },
+    "status.info-border": {
+      "type": "color",
+      "value": "oklch(0.882 0.057 254.128)",
+      "cssVar": "--status-info-border",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.blue.200",
+      "description": "Info border. Was 25% tint. Dark: blue.800.",
+      "modes": [
+        "dark"
+      ]
+    },
     "status.info-foreground": {
       "type": "color",
       "value": "oklch(1 0 0)",
@@ -11983,6 +9644,30 @@
       "alias": "color.white",
       "description": "Proposed. Not consumed yet.",
       "status": "proposed"
+    },
+    "status.info-surface": {
+      "type": "color",
+      "value": "oklch(0.97 0.014 254.604)",
+      "cssVar": "--status-info-surface",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.blue.50",
+      "description": "Info SURFACE (solid tint). Was color-mix(status-info 10%). Dark: blue.950.",
+      "modes": [
+        "dark"
+      ]
+    },
+    "status.info-surface-hover": {
+      "type": "color",
+      "value": "oklch(0.932 0.032 255.585)",
+      "cssVar": "--status-info-surface-hover",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.blue.100",
+      "description": "Info surface, hover. Was 20% tint. Dark: blue.900.",
+      "modes": [
+        "dark"
+      ]
     },
     "status.success": {
       "type": "color",
@@ -11994,6 +9679,18 @@
       "description": "Design sign-off 2026-07-08: green-700 (green-600 on white was 3.30:1 < AA). Not consumed yet.",
       "status": "proposed"
     },
+    "status.success-border": {
+      "type": "color",
+      "value": "oklch(0.925 0.081 155.995)",
+      "cssVar": "--status-success-border",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.green.200",
+      "description": "Success border/divider on a success surface. Was 25% tint. Dark: green.800.",
+      "modes": [
+        "dark"
+      ]
+    },
     "status.success-foreground": {
       "type": "color",
       "value": "oklch(1 0 0)",
@@ -12003,6 +9700,30 @@
       "alias": "color.white",
       "description": "Proposed. Not consumed yet.",
       "status": "proposed"
+    },
+    "status.success-surface": {
+      "type": "color",
+      "value": "oklch(0.982 0.018 155.826)",
+      "cssVar": "--status-success-surface",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.green.50",
+      "description": "Success SURFACE (solid tint). Was color-mix(status-success 10%). Dark: green.950.",
+      "modes": [
+        "dark"
+      ]
+    },
+    "status.success-surface-hover": {
+      "type": "color",
+      "value": "oklch(0.962 0.043 156.743)",
+      "cssVar": "--status-success-surface-hover",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.green.100",
+      "description": "Success surface, hover. Was 20% tint. Dark: green.900.",
+      "modes": [
+        "dark"
+      ]
     },
     "status.warning": {
       "type": "color",
@@ -12014,6 +9735,18 @@
       "description": "The warning FILL. Consumed by badge (as a 10% tint).",
       "status": "proposed"
     },
+    "status.warning-border": {
+      "type": "color",
+      "value": "oklch(0.924 0.115 95.746)",
+      "cssVar": "--status-warning-border",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.amber.200",
+      "description": "Warning border. Was 25% tint. Dark: amber.800.",
+      "modes": [
+        "dark"
+      ]
+    },
     "status.warning-foreground": {
       "type": "color",
       "value": "oklch(0.145 0 0)",
@@ -12023,6 +9756,30 @@
       "alias": "color.neutral.950",
       "description": "Text ON a solid warning fill.",
       "status": "proposed"
+    },
+    "status.warning-surface": {
+      "type": "color",
+      "value": "oklch(0.987 0.021 95.277)",
+      "cssVar": "--status-warning-surface",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.amber.50",
+      "description": "Warning SURFACE (solid tint). Was color-mix(status-warning 10%). Dark: amber.950.",
+      "modes": [
+        "dark"
+      ]
+    },
+    "status.warning-surface-hover": {
+      "type": "color",
+      "value": "oklch(0.962 0.058 95.617)",
+      "cssVar": "--status-warning-surface-hover",
+      "layer": "semantic",
+      "source": "tokens/semantic/status.json",
+      "alias": "color.amber.100",
+      "description": "Warning surface, hover. Was 20% tint. Dark: amber.900.",
+      "modes": [
+        "dark"
+      ]
     },
     "status.warning-text": {
       "type": "color",
@@ -12040,91 +9797,6 @@
       "layer": "semantic",
       "source": "tokens/semantic/surface.json",
       "description": "Modal scrim (alert-dialog/drawer/sheet): black @ 10% paired with supports-backdrop-filter:backdrop-blur-xs. DESIGN DECISION 2026-07-08: keep this (the rendered behavior); the Figma kit's 30% `background-color` extra (color.background-color) is superseded for scrim use — it remains only as a legacy kit value. Dialog itself renders no scrim. CONSUMED at runtime: bg-(--surface-overlay) in drawer.tsx, alert-dialog.tsx, sheet.tsx."
-    },
-    "switch.color.focus-border": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--switch-color-focus-border",
-      "layer": "component",
-      "source": "tokens/component/switch.json",
-      "alias": "color.ring"
-    },
-    "switch.color.focus-ring": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--switch-color-focus-ring",
-      "layer": "component",
-      "source": "tokens/component/switch.json",
-      "alias": "color.ring"
-    },
-    "switch.color.focus-ring-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--switch-color-focus-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/switch.json",
-      "alias": "opacity.50"
-    },
-    "switch.color.invalid-border": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--switch-color-invalid-border",
-      "layer": "component",
-      "source": "tokens/component/switch.json",
-      "alias": "color.destructive"
-    },
-    "switch.color.thumb-background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--switch-color-thumb-background",
-      "layer": "component",
-      "source": "tokens/component/switch.json",
-      "alias": "color.background",
-      "description": "The thumb is ALWAYS background (white) in light mode — checked or not. Only dark mode swaps it (see thumb-dark-*)."
-    },
-    "switch.color.thumb-checked-background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--switch-color-thumb-checked-background",
-      "layer": "component",
-      "source": "tokens/component/switch.json",
-      "alias": "color.background",
-      "description": "Same as unchecked in light mode. CORRECTION 2026-07-13: this used to say {color.primary-foreground}, which is the DARK-mode rule (dark:data-checked:bg-primary-foreground) — with a light teal primary that made the thumb near-black. The source was right; the token was wrong."
-    },
-    "switch.color.thumb-dark-checked-background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--switch-color-thumb-dark-checked-background",
-      "layer": "component",
-      "source": "tokens/component/switch.json",
-      "alias": "color.primary-foreground",
-      "description": "Dark mode only."
-    },
-    "switch.color.thumb-dark-unchecked-background": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--switch-color-thumb-dark-unchecked-background",
-      "layer": "component",
-      "source": "tokens/component/switch.json",
-      "alias": "color.foreground",
-      "description": "Dark mode only."
-    },
-    "switch.color.track-background": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--switch-color-track-background",
-      "layer": "component",
-      "source": "tokens/component/switch.json",
-      "alias": "color.input",
-      "description": "Unchecked track."
-    },
-    "switch.color.track-checked-background": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--switch-color-track-checked-background",
-      "layer": "component",
-      "source": "tokens/component/switch.json",
-      "alias": "color.primary"
     },
     "switch.radius": {
       "type": "dimension",
@@ -12224,95 +9896,6 @@
         "compact"
       ]
     },
-    "table.color.border-color": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--table-color-border-color",
-      "layer": "component",
-      "source": "tokens/component/table.json",
-      "alias": "color.border"
-    },
-    "table.color.caption-foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--table-color-caption-foreground",
-      "layer": "component",
-      "source": "tokens/component/table.json",
-      "alias": "color.muted-foreground"
-    },
-    "table.color.cell-control-background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--table-color-cell-control-background",
-      "layer": "component",
-      "source": "tokens/component/table.json",
-      "alias": "color.background",
-      "description": "Inputs and selects are bg-transparent by default, which is right on a page but WRONG in a table: the moment a row is hovered or selected, the field takes on the row wash and stops reading as a field — the border is left floating on a tinted block. Inside a cell they get an opaque background so the control stays a control no matter what the row is doing."
-    },
-    "table.color.footer-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--muted) 50%, transparent)",
-      "cssVar": "--table-color-footer-surface",
-      "layer": "component",
-      "source": "tokens/component/table.json",
-      "description": "The totals row. Same 50% wash as hover so it reads as part of the table, not as a second header."
-    },
-    "table.color.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--table-color-foreground",
-      "layer": "component",
-      "source": "tokens/component/table.json",
-      "alias": "color.foreground"
-    },
-    "table.color.header-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--table-color-header-background",
-      "layer": "component",
-      "source": "tokens/component/table.json",
-      "alias": "color.muted"
-    },
-    "table.color.header-foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--table-color-header-foreground",
-      "layer": "component",
-      "source": "tokens/component/table.json",
-      "alias": "color.muted-foreground"
-    },
-    "table.color.row-hover-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--table-color-row-hover-background",
-      "layer": "component",
-      "source": "tokens/component/table.json",
-      "alias": "color.muted"
-    },
-    "table.color.row-hover-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--table-color-row-hover-opacity",
-      "layer": "component",
-      "source": "tokens/component/table.json",
-      "alias": "opacity.50"
-    },
-    "table.color.row-hover-surface": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--muted) 50%, transparent)",
-      "cssVar": "--table-color-row-hover-surface",
-      "layer": "component",
-      "source": "tokens/component/table.json",
-      "description": "Hover — half-strength muted. Alpha-baked in Figma; recompute if --muted moves."
-    },
-    "table.color.row-selected-background": {
-      "type": "color",
-      "value": "color-mix(in oklch, var(--primary) 10%, transparent)",
-      "cssVar": "--table-color-row-selected-background",
-      "layer": "component",
-      "source": "tokens/component/table.json",
-      "description": "A selected row is a 10% BRAND wash — not muted grey. Selection is a decision the user made; hover is just where the mouse happens to be, so the two must not share a colour. 10% is enough to see across a long table and light enough to keep the text at full contrast."
-    },
     "table.fontSize": {
       "type": "dimension",
       "value": "0.875rem",
@@ -12368,71 +9951,6 @@
       "source": "tokens/component/table.json",
       "alias": "size.16",
       "description": "The sort affordance. Present only on columns that CAN be sorted — a sort icon on every column teaches people it means nothing."
-    },
-    "tabs.color.focus-border": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--tabs-color-focus-border",
-      "layer": "component",
-      "source": "tokens/component/tabs.json",
-      "alias": "color.ring"
-    },
-    "tabs.color.focus-ring": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--tabs-color-focus-ring",
-      "layer": "component",
-      "source": "tokens/component/tabs.json",
-      "alias": "color.ring"
-    },
-    "tabs.color.focus-ring-opacity": {
-      "type": "number",
-      "value": 0.5,
-      "cssVar": "--tabs-color-focus-ring-opacity",
-      "layer": "component",
-      "source": "tokens/component/tabs.json",
-      "alias": "opacity.50"
-    },
-    "tabs.color.indicator-color": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--tabs-color-indicator-color",
-      "layer": "component",
-      "source": "tokens/component/tabs.json",
-      "alias": "color.foreground",
-      "description": "The underline variant's active bar."
-    },
-    "tabs.color.list-background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--tabs-color-list-background",
-      "layer": "component",
-      "source": "tokens/component/tabs.json",
-      "alias": "color.muted"
-    },
-    "tabs.color.trigger-active-background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--tabs-color-trigger-active-background",
-      "layer": "component",
-      "source": "tokens/component/tabs.json",
-      "alias": "color.background"
-    },
-    "tabs.color.trigger-active-foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--tabs-color-trigger-active-foreground",
-      "layer": "component",
-      "source": "tokens/component/tabs.json",
-      "alias": "color.foreground"
-    },
-    "tabs.color.trigger-foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--tabs-color-trigger-foreground",
-      "layer": "component",
-      "source": "tokens/component/tabs.json",
-      "alias": "color.muted-foreground"
     },
     "tabs.indicatorThickness": {
       "type": "dimension",
@@ -12542,69 +10060,6 @@
       "source": "tokens/component/textarea.json",
       "alias": "size.16",
       "description": "Clear (X) button — an Icon instance, glyph = close. NOT in textarea.tsx yet; the design calls for it and the code should follow (see Input)."
-    },
-    "textarea.color.border": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--textarea-color-border",
-      "layer": "component",
-      "source": "tokens/component/textarea.json",
-      "alias": "color.input",
-      "description": "Resting border."
-    },
-    "textarea.color.clear-button": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--textarea-color-clear-button",
-      "layer": "component",
-      "source": "tokens/component/textarea.json",
-      "alias": "color.muted-foreground",
-      "description": "The X glyph."
-    },
-    "textarea.color.focus-border": {
-      "type": "color",
-      "value": "oklch(0.789 0.102 192.099)",
-      "cssVar": "--textarea-color-focus-border",
-      "layer": "component",
-      "source": "tokens/component/textarea.json",
-      "alias": "color.ring",
-      "description": "Focus."
-    },
-    "textarea.color.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--textarea-color-foreground",
-      "layer": "component",
-      "source": "tokens/component/textarea.json",
-      "alias": "color.foreground",
-      "description": "The value the user typed — the COMPLETE state. Never the placeholder colour."
-    },
-    "textarea.color.invalid-border": {
-      "type": "color",
-      "value": "oklch(0.577 0.215 27.325)",
-      "cssVar": "--textarea-color-invalid-border",
-      "layer": "component",
-      "source": "tokens/component/textarea.json",
-      "alias": "color.destructive",
-      "description": "Invalid."
-    },
-    "textarea.color.placeholder": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--textarea-color-placeholder",
-      "layer": "component",
-      "source": "tokens/component/textarea.json",
-      "alias": "color.muted-foreground",
-      "description": "Empty field only."
-    },
-    "textarea.color.resize-grip": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--textarea-color-resize-grip",
-      "layer": "component",
-      "source": "tokens/component/textarea.json",
-      "alias": "color.muted-foreground",
-      "description": "The grip lines."
     },
     "textarea.disabledOpacity": {
       "type": "number",
@@ -12746,15 +10201,6 @@
       "alias": "size.12",
       "description": "The native resize grip the browser paints in the bottom-right corner. textarea has NO resize-none, so it IS resizable — this is real, not decoration. (The textarea inside input-group DOES set resize-none and shows no grip.)"
     },
-    "thumbnail.background": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--thumbnail-background",
-      "layer": "component",
-      "source": "tokens/component/thumbnail.json",
-      "alias": "color.muted",
-      "description": "Shown behind the image and while the fallback is up."
-    },
     "thumbnail.borderWidth": {
       "type": "dimension",
       "value": "1px",
@@ -12762,14 +10208,6 @@
       "layer": "component",
       "source": "tokens/component/thumbnail.json",
       "alias": "border.width.default"
-    },
-    "thumbnail.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--thumbnail-foreground",
-      "layer": "component",
-      "source": "tokens/component/thumbnail.json",
-      "alias": "color.muted-foreground"
     },
     "thumbnail.radius": {
       "type": "dimension",
@@ -12787,38 +10225,6 @@
       "source": "tokens/component/timestamp.json",
       "alias": "font.size.sm"
     },
-    "timestamp.foreground": {
-      "type": "color",
-      "value": "oklch(0.551 0.023 264.364)",
-      "cssVar": "--timestamp-foreground",
-      "layer": "component",
-      "source": "tokens/component/timestamp.json",
-      "alias": "color.muted-foreground"
-    },
-    "toast.color.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--toast-color-background",
-      "layer": "component",
-      "source": "tokens/component/toast.json",
-      "alias": "color.popover"
-    },
-    "toast.color.border": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--toast-color-border",
-      "layer": "component",
-      "source": "tokens/component/toast.json",
-      "alias": "color.border"
-    },
-    "toast.color.foreground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--toast-color-foreground",
-      "layer": "component",
-      "source": "tokens/component/toast.json",
-      "alias": "color.popover-foreground"
-    },
     "toast.iconSize": {
       "type": "dimension",
       "value": "1rem",
@@ -12826,15 +10232,6 @@
       "layer": "component",
       "source": "tokens/component/toast.json",
       "alias": "size.16"
-    },
-    "toggle.activeBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--toggle-active-background",
-      "layer": "component",
-      "source": "tokens/component/toggle.json",
-      "alias": "color.muted",
-      "description": "data-[state=on] / aria-pressed and hover."
     },
     "toggle.borderWidth": {
       "type": "dimension",
@@ -13010,22 +10407,6 @@
       "source": "tokens/component/toggle-group.json",
       "description": "Size sm clamps: rounded-[min(var(--radius-md),10px)] → 8px at the kit default."
     },
-    "token.defaultBackground": {
-      "type": "color",
-      "value": "oklch(0.54 0.082 198.255)",
-      "cssVar": "--token-default-background",
-      "layer": "component",
-      "source": "tokens/component/token.json",
-      "alias": "color.primary"
-    },
-    "token.defaultForeground": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--token-default-foreground",
-      "layer": "component",
-      "source": "tokens/component/token.json",
-      "alias": "color.primary-foreground"
-    },
     "token.disabledOpacity": {
       "type": "number",
       "value": 0.5,
@@ -13155,22 +10536,6 @@
       "source": "tokens/component/token.json",
       "alias": "radius.ui.sm"
     },
-    "token.mutedBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--token-muted-background",
-      "layer": "component",
-      "source": "tokens/component/token.json",
-      "alias": "color.muted"
-    },
-    "token.mutedForeground": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--token-muted-foreground",
-      "layer": "component",
-      "source": "tokens/component/token.json",
-      "alias": "color.foreground"
-    },
     "token.paddingX.lg": {
       "type": "dimension",
       "value": "0.625rem",
@@ -13237,30 +10602,6 @@
       "source": "tokens/component/token.json",
       "alias": "radius.full"
     },
-    "token.secondaryBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--token-secondary-background",
-      "layer": "component",
-      "source": "tokens/component/token.json",
-      "alias": "color.secondary"
-    },
-    "token.secondaryForeground": {
-      "type": "color",
-      "value": "oklch(0.21 0.032 264.665)",
-      "cssVar": "--token-secondary-foreground",
-      "layer": "component",
-      "source": "tokens/component/token.json",
-      "alias": "color.secondary-foreground"
-    },
-    "toolbar.background": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--toolbar-background",
-      "layer": "component",
-      "source": "tokens/component/toolbar.json",
-      "alias": "color.background"
-    },
     "toolbar.borderWidth": {
       "type": "dimension",
       "value": "1px",
@@ -13318,22 +10659,6 @@
       "source": "tokens/component/toolbar.json",
       "alias": "size.control.md"
     },
-    "toolbar.button.hoverBackground": {
-      "type": "color",
-      "value": "oklch(0.967 0.003 264.542)",
-      "cssVar": "--toolbar-button-hover-background",
-      "layer": "component",
-      "source": "tokens/component/toolbar.json",
-      "alias": "color.accent"
-    },
-    "toolbar.button.hoverForeground": {
-      "type": "color",
-      "value": "oklch(0.21 0.032 264.665)",
-      "cssVar": "--toolbar-button-hover-foreground",
-      "layer": "component",
-      "source": "tokens/component/toolbar.json",
-      "alias": "color.accent-foreground"
-    },
     "toolbar.button.iconSize": {
       "type": "dimension",
       "value": "1rem",
@@ -13382,14 +10707,6 @@
       "source": "tokens/component/toolbar.json",
       "alias": "radius.ui.md"
     },
-    "toolbar.separator.color": {
-      "type": "color",
-      "value": "oklch(0.928 0.006 264.531)",
-      "cssVar": "--toolbar-separator-color",
-      "layer": "component",
-      "source": "tokens/component/toolbar.json",
-      "alias": "color.border"
-    },
     "toolbar.separator.height": {
       "type": "dimension",
       "value": "1.5rem",
@@ -13428,31 +10745,6 @@
       "cssVar": "--tooltip-arrow-size",
       "layer": "component",
       "source": "tokens/component/tooltip.json"
-    },
-    "tooltip.color.arrow-fill": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--tooltip-color-arrow-fill",
-      "layer": "component",
-      "source": "tokens/component/tooltip.json",
-      "alias": "color.foreground"
-    },
-    "tooltip.color.background": {
-      "type": "color",
-      "value": "oklch(0.13 0.027 261.692)",
-      "cssVar": "--tooltip-color-background",
-      "layer": "component",
-      "source": "tokens/component/tooltip.json",
-      "alias": "color.foreground",
-      "description": "Inverted: the tooltip paints with the FOREGROUND color."
-    },
-    "tooltip.color.foreground": {
-      "type": "color",
-      "value": "oklch(1 0 0)",
-      "cssVar": "--tooltip-color-foreground",
-      "layer": "component",
-      "source": "tokens/component/tooltip.json",
-      "alias": "color.background"
     },
     "tooltip.fontSize": {
       "type": "dimension",

@@ -61,34 +61,6 @@
         "$extensions": {
           "looloo.tailwind": "max-w-prose"
         }
-      },
-      "userBackground": {
-        "$type": "color",
-        "$value": "{color.primary}",
-        "$extensions": {
-          "looloo.tailwind": "bg-primary"
-        }
-      },
-      "userForeground": {
-        "$type": "color",
-        "$value": "{color.primary-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-primary-foreground"
-        }
-      },
-      "assistantBackground": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$extensions": {
-          "looloo.tailwind": "bg-muted"
-        }
-      },
-      "assistantForeground": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-foreground"
-        }
       }
     },
     "message": {
@@ -140,13 +112,6 @@
         "$value": "{font.size.xs}",
         "$extensions": {
           "looloo.tailwind": "text-xs"
-        }
-      },
-      "metaForeground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
         }
       }
     },

@@ -123,64 +123,6 @@
         "looloo.tailwind": "disabled:opacity-50"
       }
     },
-    "color": {
-      "border": {
-        "$type": "color",
-        "$value": "{color.input}",
-        "$description": "Resting border.",
-        "$extensions": {
-          "looloo.tailwind": "border-input"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$description": "The value the user typed — the COMPLETE state. Never the placeholder colour.",
-        "$extensions": {
-          "looloo.tailwind": "text-foreground"
-        }
-      },
-      "placeholder": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$description": "Empty field only.",
-        "$extensions": {
-          "looloo.tailwind": "placeholder:text-muted-foreground"
-        }
-      },
-      "focus-border": {
-        "$type": "color",
-        "$value": "{color.ring}",
-        "$description": "Focus.",
-        "$extensions": {
-          "looloo.tailwind": "focus-visible:border-ring"
-        }
-      },
-      "invalid-border": {
-        "$type": "color",
-        "$value": "{color.destructive}",
-        "$description": "Invalid.",
-        "$extensions": {
-          "looloo.tailwind": "aria-invalid:border-destructive"
-        }
-      },
-      "resize-grip": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$description": "The grip lines.",
-        "$extensions": {
-          "looloo.tailwind": "— (native UA)"
-        }
-      },
-      "clear-button": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$description": "The X glyph.",
-        "$extensions": {
-          "looloo.tailwind": "—"
-        }
-      }
-    },
     "resizeGrip": {
       "size": {
         "$type": "dimension",

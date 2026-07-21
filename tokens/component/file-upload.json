@@ -1,40 +1,154 @@
 {
   "$description": "Captured 1:1 from components/ui/file-upload/file-upload.tsx. A dropzone plus a list of file rows. Composed from existing parts — Progress for the bar, Button for the actions — so it owns only the dropzone and the row.",
   "file-upload": {
-    "gap": { "$type": "dimension", "$value": "{space.3}", "$description": "Dropzone → file list.", "$extensions": { "looloo.tailwind": "gap-3" } },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{space.3}",
+      "$description": "Dropzone → file list.",
+      "$extensions": {
+        "looloo.tailwind": "gap-3"
+      }
+    },
     "dropzone": {
-      "paddingY": { "$type": "dimension", "$value": "{space.8}", "$description": "The dropzone is TALL. It is a drop target before it is a button, and a thin strip is a target people miss.", "$extensions": { "looloo.tailwind": "py-8" } },
-      "paddingX": { "$type": "dimension", "$value": "{space.6}", "$extensions": { "looloo.tailwind": "px-6" } },
-      "gap": { "$type": "dimension", "$value": "{space.2}", "$extensions": { "looloo.tailwind": "gap-2" } },
-      "radius": { "$type": "dimension", "$value": "{radius.ui.lg}", "$extensions": { "looloo.tailwind": "rounded-lg" } },
-      "borderWidth": { "$type": "dimension", "$value": "{border.width.default}", "$description": "DASHED. The dashes say 'this space is waiting for something' — the same sentence the Empty state's border says, and it must not be solid, or the zone reads as a card you cannot drop into.", "$extensions": { "looloo.tailwind": "border border-dashed" } },
-      "iconSize": { "$type": "dimension", "$value": "{size.20}", "$extensions": { "looloo.tailwind": "size-5" } },
-      "iconBoxSize": { "$type": "dimension", "$value": "{size.control.lg}", "$extensions": { "looloo.tailwind": "size-9" } },
-      "iconBoxRadius": { "$type": "dimension", "$value": "{radius.ui.md}", "$extensions": { "looloo.tailwind": "rounded-md" } },
-      "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } },
-      "hintFontSize": { "$type": "dimension", "$value": "{font.size.xs}", "$extensions": { "looloo.tailwind": "text-xs" } }
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{space.8}",
+        "$description": "The dropzone is TALL. It is a drop target before it is a button, and a thin strip is a target people miss.",
+        "$extensions": {
+          "looloo.tailwind": "py-8"
+        }
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{space.6}",
+        "$extensions": {
+          "looloo.tailwind": "px-6"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.lg}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-lg"
+        }
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$description": "DASHED. The dashes say 'this space is waiting for something' — the same sentence the Empty state's border says, and it must not be solid, or the zone reads as a card you cannot drop into.",
+        "$extensions": {
+          "looloo.tailwind": "border border-dashed"
+        }
+      },
+      "iconSize": {
+        "$type": "dimension",
+        "$value": "{size.20}",
+        "$extensions": {
+          "looloo.tailwind": "size-5"
+        }
+      },
+      "iconBoxSize": {
+        "$type": "dimension",
+        "$value": "{size.control.lg}",
+        "$extensions": {
+          "looloo.tailwind": "size-9"
+        }
+      },
+      "iconBoxRadius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.md}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-md"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "hintFontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "text-xs"
+        }
+      }
     },
     "row": {
-      "padding": { "$type": "dimension", "$value": "{space.3}", "$extensions": { "looloo.tailwind": "p-3" } },
-      "gap": { "$type": "dimension", "$value": "{space.3}", "$extensions": { "looloo.tailwind": "gap-3" } },
-      "radius": { "$type": "dimension", "$value": "{radius.ui.lg}", "$extensions": { "looloo.tailwind": "rounded-lg" } },
-      "borderWidth": { "$type": "dimension", "$value": "{border.width.default}", "$extensions": { "looloo.tailwind": "border" } },
-      "mediaSize": { "$type": "dimension", "$value": "{size.control.lg}", "$description": "The file-type tile. It carries the STATE colour — success green, error red — because the row's own background stays neutral: a whole row of red for one failed upload buries the three that worked.", "$extensions": { "looloo.tailwind": "size-9" } },
-      "mediaRadius": { "$type": "dimension", "$value": "{radius.ui.md}", "$extensions": { "looloo.tailwind": "rounded-md" } },
-      "titleFontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } },
-      "statusFontSize": { "$type": "dimension", "$value": "{font.size.xs}", "$extensions": { "looloo.tailwind": "text-xs" } },
-      "progressGap": { "$type": "dimension", "$value": "{space.2}", "$description": "Bar → percentage. The number is not decoration: a bar with no number cannot tell you whether a stalled upload is at 5% or 95%.", "$extensions": { "looloo.tailwind": "gap-2" } }
-    },
-    "color": {
-      "dropzone-border": { "$type": "color", "$value": "{color.border}", "$extensions": { "looloo.tailwind": "border-border" } },
-      "dropzone-active-border": { "$type": "color", "$value": "{color.primary}", "$description": "Dragging over it. The border AND the fill change — a border alone is too quiet to confirm the drop will land, and a dropped file that goes nowhere is the worst outcome this component has.", "$extensions": { "looloo.tailwind": "data-[drag=true]:border-primary" } },
-      "dropzone-active-surface": { "$type": "color", "$value": "color-mix(in oklch, var(--primary) 8%, transparent)", "$description": "8% brand wash while dragging. Alpha-baked in Figma.", "$extensions": { "looloo.tailwind": "data-[drag=true]:bg-(--file-upload-color-dropzone-active-surface)" } },
-      "media-idle-surface": { "$type": "color", "$value": "{color.muted}", "$extensions": { "looloo.tailwind": "bg-muted" } },
-      "media-success-surface": { "$type": "color", "$value": "color-mix(in oklch, var(--status-success) 12%, transparent)", "$extensions": { "looloo.tailwind": "bg-(--file-upload-color-media-success-surface)" } },
-      "media-success-foreground": { "$type": "color", "$value": "{status.success}", "$extensions": { "looloo.tailwind": "text-(--file-upload-color-media-success-foreground)" } },
-      "media-error-surface": { "$type": "color", "$value": "color-mix(in oklch, var(--destructive) 12%, transparent)", "$extensions": { "looloo.tailwind": "bg-(--file-upload-color-media-error-surface)" } },
-      "media-error-foreground": { "$type": "color", "$value": "{color.destructive}", "$extensions": { "looloo.tailwind": "text-destructive" } },
-      "remove-foreground": { "$type": "color", "$value": "{color.destructive}", "$description": "Remove is destructive and says so — but it is an icon button, not a red block: the file is not gone until you click it.", "$extensions": { "looloo.tailwind": "text-destructive" } }
+      "padding": {
+        "$type": "dimension",
+        "$value": "{space.3}",
+        "$extensions": {
+          "looloo.tailwind": "p-3"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.3}",
+        "$extensions": {
+          "looloo.tailwind": "gap-3"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.lg}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-lg"
+        }
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{border.width.default}",
+        "$extensions": {
+          "looloo.tailwind": "border"
+        }
+      },
+      "mediaSize": {
+        "$type": "dimension",
+        "$value": "{size.control.lg}",
+        "$description": "The file-type tile. It carries the STATE colour — success green, error red — because the row's own background stays neutral: a whole row of red for one failed upload buries the three that worked.",
+        "$extensions": {
+          "looloo.tailwind": "size-9"
+        }
+      },
+      "mediaRadius": {
+        "$type": "dimension",
+        "$value": "{radius.ui.md}",
+        "$extensions": {
+          "looloo.tailwind": "rounded-md"
+        }
+      },
+      "titleFontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}",
+        "$extensions": {
+          "looloo.tailwind": "text-sm"
+        }
+      },
+      "statusFontSize": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}",
+        "$extensions": {
+          "looloo.tailwind": "text-xs"
+        }
+      },
+      "progressGap": {
+        "$type": "dimension",
+        "$value": "{space.2}",
+        "$description": "Bar → percentage. The number is not decoration: a bar with no number cannot tell you whether a stalled upload is at 5% or 95%.",
+        "$extensions": {
+          "looloo.tailwind": "gap-2"
+        }
+      }
     }
   }
 }

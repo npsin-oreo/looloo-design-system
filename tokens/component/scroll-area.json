@@ -19,14 +19,6 @@
       }
     },
     "thumb": {
-      "color": {
-        "$type": "color",
-        "$value": "{color.border}",
-        "$description": "The thumb is the only visible part at rest. It is border-grey, not brand: a scrollbar is furniture, and a teal scrollbar would compete with the content it is helping you read.",
-        "$extensions": {
-          "looloo.tailwind": "bg-border"
-        }
-      },
       "radius": {
         "$type": "dimension",
         "$value": "{radius.full}",

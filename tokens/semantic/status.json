@@ -58,6 +58,51 @@
       "$extensions": {
         "looloo.status": "proposed"
       }
+    },
+    "success-surface": {
+      "$type": "color",
+      "$value": "{color.green.50}",
+      "$description": "Success SURFACE (solid tint). Was color-mix(status-success 10%). Dark: green.950."
+    },
+    "success-surface-hover": {
+      "$type": "color",
+      "$value": "{color.green.100}",
+      "$description": "Success surface, hover. Was 20% tint. Dark: green.900."
+    },
+    "success-border": {
+      "$type": "color",
+      "$value": "{color.green.200}",
+      "$description": "Success border/divider on a success surface. Was 25% tint. Dark: green.800."
+    },
+    "warning-surface": {
+      "$type": "color",
+      "$value": "{color.amber.50}",
+      "$description": "Warning SURFACE (solid tint). Was color-mix(status-warning 10%). Dark: amber.950."
+    },
+    "warning-surface-hover": {
+      "$type": "color",
+      "$value": "{color.amber.100}",
+      "$description": "Warning surface, hover. Was 20% tint. Dark: amber.900."
+    },
+    "warning-border": {
+      "$type": "color",
+      "$value": "{color.amber.200}",
+      "$description": "Warning border. Was 25% tint. Dark: amber.800."
+    },
+    "info-surface": {
+      "$type": "color",
+      "$value": "{color.blue.50}",
+      "$description": "Info SURFACE (solid tint). Was color-mix(status-info 10%). Dark: blue.950."
+    },
+    "info-surface-hover": {
+      "$type": "color",
+      "$value": "{color.blue.100}",
+      "$description": "Info surface, hover. Was 20% tint. Dark: blue.900."
+    },
+    "info-border": {
+      "$type": "color",
+      "$value": "{color.blue.200}",
+      "$description": "Info border. Was 25% tint. Dark: blue.800."
     }
   }
 }

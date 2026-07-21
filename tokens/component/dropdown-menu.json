@@ -37,20 +37,6 @@
         "$extensions": {
           "looloo.tailwind": "shadow-md"
         }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{color.popover}",
-        "$extensions": {
-          "looloo.tailwind": "bg-popover"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.popover-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-popover-foreground"
-        }
       }
     },
     "subContent": {
@@ -139,27 +125,6 @@
         "$extensions": {
           "looloo.tailwind": "data-disabled:opacity-50"
         }
-      },
-      "focusBackground": {
-        "$type": "color",
-        "$value": "{color.accent}",
-        "$extensions": {
-          "looloo.tailwind": "focus:bg-accent"
-        }
-      },
-      "focusForeground": {
-        "$type": "color",
-        "$value": "{color.accent-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "focus:text-accent-foreground"
-        }
-      },
-      "destructiveForeground": {
-        "$type": "color",
-        "$value": "{color.destructive}",
-        "$extensions": {
-          "looloo.tailwind": "data-[variant=destructive]:text-destructive"
-        }
       }
     },
     "label": {
@@ -229,13 +194,6 @@
         "$value": "{font.tracking.widest}",
         "$extensions": {
           "looloo.tailwind": "tracking-widest"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
         }
       }
     }

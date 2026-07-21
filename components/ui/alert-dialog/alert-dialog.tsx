@@ -101,11 +101,11 @@ function AlertDialogFooter({
 
 const alertDialogTones = {
   confirm:
-    "bg-(--alert-dialog-color-media-confirm-surface) text-(--alert-dialog-color-media-confirm-foreground)",
+    "bg-(--status-success-surface) text-(--status-success)",
   warning:
-    "bg-(--alert-dialog-color-media-warning-surface) text-(--alert-dialog-color-media-warning-foreground)",
+    "bg-(--status-warning-surface) text-(--status-warning-text)",
   destructive:
-    "bg-(--alert-dialog-color-media-destructive-surface) text-(--alert-dialog-color-media-destructive-foreground)",
+    "bg-(--destructive-surface) text-(--destructive)",
 } as const
 
 /**

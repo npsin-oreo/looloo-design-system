@@ -39,13 +39,6 @@
         "$extensions": {
           "looloo.tailwind": "rounded-sm"
         }
-      },
-      "color": {
-        "$type": "color",
-        "$value": "{color.border}",
-        "$extensions": {
-          "looloo.tailwind": "bg-border"
-        }
       }
     }
   }

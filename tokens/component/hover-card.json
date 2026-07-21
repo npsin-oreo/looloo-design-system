@@ -1,13 +1,47 @@
 {
   "$description": "Captured 1:1 from components/ui/hover-card/hover-card.tsx. Fixed-width popover — w-64, and unlike popover.* it carries a ring instead of a border.",
   "hoverCard": {
-    "width": { "$type": "dimension", "$value": "{space.64}", "$extensions": { "looloo.tailwind": "w-64" } },
-    "radius": { "$type": "dimension", "$value": "{radius.ui.lg}", "$extensions": { "looloo.tailwind": "rounded-lg" } },
-    "padding": { "$type": "dimension", "$value": "{space.2-5}", "$extensions": { "looloo.tailwind": "p-2.5" } },
-    "fontSize": { "$type": "dimension", "$value": "{font.size.sm}", "$extensions": { "looloo.tailwind": "text-sm" } },
-    "ringWidth": { "$type": "dimension", "$value": "{border.width.default}", "$extensions": { "looloo.tailwind": "ring-1" } },
-    "shadow": { "$type": "shadow", "$value": "{shadow.md}", "$extensions": { "looloo.tailwind": "shadow-md" } },
-    "background": { "$type": "color", "$value": "{color.popover}", "$extensions": { "looloo.tailwind": "bg-popover" } },
-    "foreground": { "$type": "color", "$value": "{color.popover-foreground}", "$extensions": { "looloo.tailwind": "text-popover-foreground" } }
+    "width": {
+      "$type": "dimension",
+      "$value": "{space.64}",
+      "$extensions": {
+        "looloo.tailwind": "w-64"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.ui.lg}",
+      "$extensions": {
+        "looloo.tailwind": "rounded-lg"
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{space.2-5}",
+      "$extensions": {
+        "looloo.tailwind": "p-2.5"
+      }
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{font.size.sm}",
+      "$extensions": {
+        "looloo.tailwind": "text-sm"
+      }
+    },
+    "ringWidth": {
+      "$type": "dimension",
+      "$value": "{border.width.default}",
+      "$extensions": {
+        "looloo.tailwind": "ring-1"
+      }
+    },
+    "shadow": {
+      "$type": "shadow",
+      "$value": "{shadow.md}",
+      "$extensions": {
+        "looloo.tailwind": "shadow-md"
+      }
+    }
   }
 }

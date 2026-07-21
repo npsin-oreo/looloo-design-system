@@ -45,7 +45,7 @@ function Label({
           <span
             data-slot="label-required"
             aria-label="required"
-            className="text-(--label-color-required)"
+            className="text-(--destructive)"
           >
             *
           </span>
@@ -53,7 +53,7 @@ function Label({
         {requirement === "optional" ? (
           <span
             data-slot="label-optional"
-            className="text-(length:--label-optional-font-size) font-normal text-(--label-color-optional)"
+            className="text-(length:--label-optional-font-size) font-normal text-(--muted-foreground)"
           >
             {optionalText}
           </span>
