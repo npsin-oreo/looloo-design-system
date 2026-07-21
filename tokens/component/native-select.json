@@ -107,13 +107,6 @@
         "$extensions": {
           "looloo.tailwind": "right-2.5"
         }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
       }
     }
   }

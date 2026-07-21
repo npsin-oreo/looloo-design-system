@@ -8,51 +8,6 @@
         "looloo.tailwind": "size-3",
         "looloo.legacy": "0.75rem"
       }
-    },
-    "thumbBackground": {
-      "$type": "color",
-      "$value": "{color.white}",
-      "$extensions": {
-        "looloo.tailwind": "bg-white (pre-Phase-4)"
-      }
-    },
-    "color": {
-      "track": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$extensions": {
-          "looloo.tailwind": "bg-muted"
-        }
-      },
-      "range": {
-        "$type": "color",
-        "$value": "{color.primary}",
-        "$description": "The filled portion of the track.",
-        "$extensions": {
-          "looloo.tailwind": "bg-primary"
-        }
-      },
-      "thumb-border": {
-        "$type": "color",
-        "$value": "{color.primary}",
-        "$extensions": {
-          "looloo.tailwind": "border-primary"
-        }
-      },
-      "focus-ring": {
-        "$type": "color",
-        "$value": "{color.ring}",
-        "$extensions": {
-          "looloo.tailwind": "focus-visible:ring-ring/50"
-        }
-      },
-      "focus-ring-opacity": {
-        "$type": "number",
-        "$value": "{opacity.50}",
-        "$extensions": {
-          "looloo.tailwind": "ring-ring/50"
-        }
-      }
     }
   }
 }

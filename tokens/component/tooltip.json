@@ -43,30 +43,6 @@
       "$extensions": {
         "looloo.tailwind": "size-2.5"
       }
-    },
-    "color": {
-      "background": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$description": "Inverted: the tooltip paints with the FOREGROUND color.",
-        "$extensions": {
-          "looloo.tailwind": "bg-foreground"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.background}",
-        "$extensions": {
-          "looloo.tailwind": "text-background"
-        }
-      },
-      "arrow-fill": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$extensions": {
-          "looloo.tailwind": "fill-foreground"
-        }
-      }
     }
   }
 }

@@ -27,11 +27,19 @@ import { loadTokens, cssValue, repoRoot, GENERATED_HEADER } from "./lib-tokens.m
 import { toOklch } from "../lib-oklch.mjs"
 
 const { registry, overlays } = loadTokens()
-const outTokens = join(repoRoot, "dist", "tokens")
+
+// Theme SELECTION (Phase 4b): `--theme=<brand>` builds a brand's CSS (semantic resolves against
+// theme.<brand>.*). Default = neutral (white-label) → dist/tokens/; a brand → dist/tokens/brands/<brand>/.
+const themeArg = process.argv.indexOf("--theme")
+const activeTheme = themeArg > -1 ? process.argv[themeArg + 1] : "neutral"
+const outTokens =
+  activeTheme === "neutral"
+    ? join(repoRoot, "dist", "tokens")
+    : join(repoRoot, "dist", "tokens", "brands", activeTheme)
 mkdirSync(join(outTokens, "modes"), { recursive: true })
 mkdirSync(join(repoRoot, "dist", "themes"), { recursive: true })
 
-const line = (e) => `  ${e.cssVar}: ${cssValue(registry, e.token.$value)};`
+const line = (e) => `  ${e.cssVar}: ${cssValue(registry, e.token.$value, activeTheme)};`
 const byLayer = (layer) => [...registry.values()].filter((e) => e.layer === layer)
 
 /* ---------- primitive.css ---------- */
@@ -106,6 +114,14 @@ function compatLines(collKey, legacyPrefix, canonicalPrefix) {
   }
   return lines
 }
+/* deprecated component-tier color names — thin aliases for one deprecation window
+ * (the component color tier was collapsed into semantic; dropped at the next major) */
+const deprecatedColors = JSON.parse(
+  readFileSync(join(repoRoot, "tokens", "raw", "deprecated-component-colors.json"), "utf8")
+).aliases
+const deprecatedColorLines = Object.entries(deprecatedColors).map(
+  ([oldVar, target]) => `  ${oldVar}: ${target === "currentColor" ? "currentColor" : `var(${target})`};`
+)
 writeFileSync(
   join(outTokens, "compat.css"),
   GENERATED_HEADER("build-css.mjs") +
@@ -119,7 +135,12 @@ writeFileSync(
       ...compatLines("rdx-colors/light mode", "rdx", "rdx-not-promoted."), // no canonical match → literals
       ...compatLines("brand-color/Mode 1", "brand", "brand."),
     ].join("\n") +
-    "\n}\n"
+    "\n}\n\n" +
+    "/* DEPRECATED component color names (removed 2026-07-21, PR #33) — thin aliases to\n" +
+    " * the semantic tier for ONE deprecation window. Do not use in new code; migrate to\n" +
+    " * the target token. Dropped at the next major bump. Source of truth:\n" +
+    " * tokens/raw/deprecated-component-colors.json. */\n" +
+    ":root {\n" + deprecatedColorLines.join("\n") + "\n}\n"
 )
 
 /* ---------- modes ---------- */
@@ -146,7 +167,7 @@ for (const [name, selector] of Object.entries(MODE_SELECTOR)) {
   for (const { path, token } of overlay.entries) {
     const target = registry.get(path)
     if (!target) { skipped.push(path); continue }
-    lines.push(`  ${target.cssVar}: ${cssValue(registry, token.$value)};`)
+    lines.push(`  ${target.cssVar}: ${cssValue(registry, token.$value, activeTheme)};`)
   }
   writeFileSync(
     file,
@@ -173,7 +194,7 @@ for (const [name, overlay] of Object.entries(overlays.theme)) {
   for (const { path, token } of overlay.entries) {
     const target = registry.get(path)
     if (!target) { skipped.push(path); continue }
-    lines.push(`  ${target.cssVar}: ${cssValue(registry, token.$value)};`)
+    lines.push(`  ${target.cssVar}: ${cssValue(registry, token.$value, activeTheme)};`)
   }
   writeFileSync(
     file,

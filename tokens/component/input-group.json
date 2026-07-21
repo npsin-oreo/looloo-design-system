@@ -74,13 +74,6 @@
           "looloo.legacy": "1rem"
         }
       },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
-      },
       "blockPaddingX": {
         "$type": "dimension",
         "$value": "{space.2-5}",

@@ -53,13 +53,6 @@
         "$extensions": {
           "looloo.tailwind": "w-px"
         }
-      },
-      "color": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$extensions": {
-          "looloo.tailwind": "bg-foreground"
-        }
       }
     },
     "separator": {

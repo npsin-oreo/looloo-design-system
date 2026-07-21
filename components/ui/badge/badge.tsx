@@ -15,10 +15,10 @@ const badgeVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive focus-visible:shadow-(--focus-invalid-shadow) dark:bg-destructive/20 [a]:hover:bg-destructive/20",
         success:
-          "bg-(--badge-color-success-surface) text-(--badge-color-success-foreground) [a]:hover:bg-(--badge-color-success-hover-surface)",
+          "bg-(--status-success-surface) text-(--status-success) [a]:hover:bg-(--status-success-surface-hover)",
         warning:
-          "bg-(--badge-color-warning-surface) text-(--badge-color-warning-foreground) [a]:hover:bg-(--badge-color-warning-hover-surface)",
-        info: "bg-(--badge-color-info-surface) text-(--badge-color-info-foreground) [a]:hover:bg-(--badge-color-info-hover-surface)",
+          "bg-(--status-warning-surface) text-(--status-warning-text) [a]:hover:bg-(--status-warning-surface-hover)",
+        info: "bg-(--status-info-surface) text-(--status-info) [a]:hover:bg-(--status-info-surface-hover)",
         outline:
           "border-border text-foreground [a]:hover:bg-muted [a]:hover:text-muted-foreground",
         ghost:

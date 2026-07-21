@@ -42,13 +42,13 @@ const emptyMediaVariants = cva(
        */
       tone: {
         neutral:
-          "data-[variant=icon]:bg-(--empty-color-media-neutral-surface) data-[variant=icon]:text-(--empty-color-media-neutral-foreground)",
+          "data-[variant=icon]:bg-(--muted) data-[variant=icon]:text-(--foreground)",
         success:
-          "data-[variant=icon]:bg-(--empty-color-media-success-surface) data-[variant=icon]:text-(--empty-color-media-success-foreground)",
+          "data-[variant=icon]:bg-(--status-success-surface) data-[variant=icon]:text-(--status-success)",
         destructive:
-          "data-[variant=icon]:bg-(--empty-color-media-destructive-surface) data-[variant=icon]:text-(--empty-color-media-destructive-foreground)",
+          "data-[variant=icon]:bg-(--destructive-surface) data-[variant=icon]:text-(--destructive)",
         warning:
-          "data-[variant=icon]:bg-(--empty-color-media-warning-surface) data-[variant=icon]:text-(--empty-color-media-warning-foreground)",
+          "data-[variant=icon]:bg-(--status-warning-surface) data-[variant=icon]:text-(--status-warning-text)",
       },
     },
     defaultVariants: {

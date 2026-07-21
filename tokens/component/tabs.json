@@ -73,65 +73,6 @@
       "$extensions": {
         "looloo.tailwind": "h-0.5"
       }
-    },
-    "color": {
-      "list-background": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$extensions": {
-          "looloo.tailwind": "bg-muted"
-        }
-      },
-      "trigger-foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
-      },
-      "trigger-active-background": {
-        "$type": "color",
-        "$value": "{color.background}",
-        "$extensions": {
-          "looloo.tailwind": "data-[state=active]:bg-background"
-        }
-      },
-      "trigger-active-foreground": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$extensions": {
-          "looloo.tailwind": "data-[state=active]:text-foreground"
-        }
-      },
-      "indicator-color": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$description": "The underline variant's active bar.",
-        "$extensions": {
-          "looloo.tailwind": "bg-foreground"
-        }
-      },
-      "focus-border": {
-        "$type": "color",
-        "$value": "{color.ring}",
-        "$extensions": {
-          "looloo.tailwind": "focus-visible:border-ring"
-        }
-      },
-      "focus-ring": {
-        "$type": "color",
-        "$value": "{color.ring}",
-        "$extensions": {
-          "looloo.tailwind": "focus-visible:ring-ring/50"
-        }
-      },
-      "focus-ring-opacity": {
-        "$type": "number",
-        "$value": "{opacity.50}",
-        "$extensions": {
-          "looloo.tailwind": "ring-ring/50"
-        }
-      }
     }
   }
 }

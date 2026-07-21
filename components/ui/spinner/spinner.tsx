@@ -13,8 +13,8 @@ const spinnerVariants = cva("size-(--spinner-size) animate-spin", {
      */
     tone: {
       inherit: "text-current",
-      primary: "text-(--spinner-color-primary)",
-      "on-brand": "text-(--spinner-color-on-brand)",
+      primary: "text-(--primary)",
+      "on-brand": "text-(--primary-foreground)",
     },
   },
   defaultVariants: {

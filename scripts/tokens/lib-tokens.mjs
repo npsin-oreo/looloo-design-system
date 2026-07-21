@@ -81,6 +81,15 @@ export function loadTokens() {
       }
     }
   }
+  // Phase 4: the theme tier is an alias TARGET for semantic roles ({theme.<brand>.color.*}).
+  // Register it so cssValue can resolve + chain-skip it. It is NOT emitted as CSS vars —
+  // build-css only emits byLayer("primitive"|"semantic"|"component"), so no --theme-* leaks.
+  for (const [name, ov] of Object.entries(overlays.theme)) {
+    for (const { path, token } of ov.entries) {
+      const full = `theme.${name}.${path}`
+      registry.set(full, { path: full, layer: "theme", file: ov.file, cssVar: cssVarName("theme", full), token })
+    }
+  }
   return { registry, overlays }
 }
 
@@ -96,11 +105,30 @@ export function resolveValue(registry, value, seen = new Set()) {
 }
 
 /** Emit a token's $value as CSS: alias → var(--…), string with spaces → quoted. */
-export function cssValue(registry, value) {
+export function cssValue(registry, value, activeTheme = "neutral") {
+  // Theme SELECTION (Phase 4b): semantic roles reference {theme.neutral.*}; when building for a
+  // brand, resolve those against theme.<activeTheme>.* instead (falls back to neutral if absent).
+  const sub = (t) => {
+    if (activeTheme !== "neutral" && t.startsWith("theme.neutral.")) {
+      const alt = `theme.${activeTheme}.${t.slice("theme.neutral.".length)}`
+      if (registry.get(alt)) return alt
+    }
+    return t
+  }
   const target = aliasOf(value)
   if (target) {
-    const entry = registry.get(target)
+    let entry = registry.get(sub(target))
     if (!entry) throw new Error(`unresolved alias {${target}}`)
+    // Theme-tier chain-skip (Phase 4): a `theme.*` token never emits its own var — it is
+    // resolved THROUGH to the primitive it points at, so semantic roles that reference
+    // {theme.color.*} still emit var(--ll-color-*) (byte-identical, no --theme-* var leaks).
+    while (entry.layer === "theme") {
+      const next = aliasOf(entry.token.$value)
+      if (!next) return cssValue(registry, entry.token.$value, activeTheme) // theme leaf is a literal
+      const nextEntry = registry.get(sub(next))
+      if (!nextEntry) throw new Error(`unresolved alias {${next}} (via theme ${entry.path})`)
+      entry = nextEntry
+    }
     return `var(${entry.cssVar})`
   }
   if (typeof value === "number") return String(value)

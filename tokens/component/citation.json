@@ -31,20 +31,6 @@
         "$extensions": {
           "looloo.tailwind": "font-medium"
         }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{color.muted}",
-        "$extensions": {
-          "looloo.tailwind": "bg-muted"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
       }
     },
     "chip": {
@@ -110,27 +96,6 @@
         "$extensions": {
           "looloo.tailwind": "[&_svg]:size-3.5",
           "looloo.legacy": "0.875rem"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-foreground"
-        }
-      },
-      "hoverBackground": {
-        "$type": "color",
-        "$value": "{color.accent}",
-        "$extensions": {
-          "looloo.tailwind": "hover:bg-accent"
-        }
-      },
-      "hoverForeground": {
-        "$type": "color",
-        "$value": "{color.accent-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "hover:text-accent-foreground"
         }
       }
     }

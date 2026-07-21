@@ -58,30 +58,6 @@
           "looloo.legacy": "1rem"
         }
       }
-    },
-    "foreground": {
-      "$type": "color",
-      "$value": "{color.muted-foreground}",
-      "$extensions": {
-        "looloo.tailwind": "text-muted-foreground"
-      },
-      "$description": "A crumb you can click, at rest. Quiet on purpose — the breadcrumb is a wayfinder, not content."
-    },
-    "activeForeground": {
-      "$type": "color",
-      "$value": "{color.brand.primary.600}",
-      "$description": "THE CURRENT PAGE. Brand teal, shade 600 (#217D80) — NOT the 300 tint (#60CFCB), which only reaches 1.86:1 on white and is unreadable as 14px text. 600 is the lightest shade of the ramp that clears WCAG AA (4.87:1).",
-      "$extensions": {
-        "looloo.tailwind": "text-(--breadcrumb-active-foreground)"
-      }
-    },
-    "hoverForeground": {
-      "$type": "color",
-      "$value": "{color.foreground}",
-      "$description": "Link on hover — darkens to full foreground so the row reads as clickable.",
-      "$extensions": {
-        "looloo.tailwind": "hover:text-(--breadcrumb-hover-foreground)"
-      }
     }
   }
 }

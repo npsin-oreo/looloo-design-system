@@ -17,32 +17,6 @@
       "$extensions": {
         "looloo.tailwind": "animate-spin"
       }
-    },
-    "color": {
-      "inherit": {
-        "$type": "color",
-        "$value": "currentColor",
-        "$description": "DEFAULT. The spinner takes the text colour of whatever it sits in — a button, a row, a cell. A spinner that is part of something else should not announce itself.",
-        "$extensions": {
-          "looloo.tailwind": "text-current"
-        }
-      },
-      "primary": {
-        "$type": "color",
-        "$value": "{color.primary}",
-        "$description": "Brand teal. For a spinner that stands ALONE and IS the content of the moment — a page still loading, an empty panel waiting on data. Use it sparingly: if three spinners on one screen are all teal, none of them means anything.",
-        "$extensions": {
-          "looloo.tailwind": "text-(--spinner-color-primary)"
-        }
-      },
-      "on-brand": {
-        "$type": "color",
-        "$value": "{color.primary-foreground}",
-        "$description": "White — a spinner sitting ON a filled brand surface (inside a primary button while it submits).",
-        "$extensions": {
-          "looloo.tailwind": "text-(--spinner-color-on-brand)"
-        }
-      }
     }
   }
 }

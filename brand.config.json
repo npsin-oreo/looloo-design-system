@@ -53,7 +53,9 @@
     "semantic-background": "oklch(0.551 0.023 264.364)",
     "semantic-foreground": "oklch(1 0 0)",
     "semantic-border": "oklch(0.446 0.026 256.802)",
-    "primary-hover": "oklch(0.145 0 0)"
+    "primary-hover": "oklch(0.145 0 0)",
+    "brand-accent": "oklch(0.97 0 0)",
+    "brand-accent-foreground": "oklch(0.205 0 0)"
   },
   "dark": {
     "background": "oklch(0.145 0 0)",
@@ -91,6 +93,8 @@
     "semantic-background": "oklch(0.373 0.031 259.733)",
     "semantic-foreground": "oklch(1 0 0)",
     "semantic-border": "oklch(0.446 0.026 256.802)",
-    "primary-hover": "oklch(0.87 0 0)"
+    "primary-hover": "oklch(0.87 0 0)",
+    "brand-accent": "oklch(0.269 0 0)",
+    "brand-accent-foreground": "oklch(0.985 0 0)"
   }
 }

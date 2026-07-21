@@ -59,50 +59,6 @@
         "looloo.tailwind": "font-medium"
       }
     },
-    "color": {
-      "overlay": {
-        "$type": "color",
-        "$value": "{surface.overlay}",
-        "$extensions": {
-          "looloo.tailwind": "bg-(--surface-overlay)"
-        }
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{color.popover}",
-        "$extensions": {
-          "looloo.tailwind": "bg-popover"
-        }
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{color.popover-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-popover-foreground"
-        }
-      },
-      "description-foreground": {
-        "$type": "color",
-        "$value": "{color.muted-foreground}",
-        "$extensions": {
-          "looloo.tailwind": "text-muted-foreground"
-        }
-      },
-      "ring": {
-        "$type": "color",
-        "$value": "{color.foreground}",
-        "$extensions": {
-          "looloo.tailwind": "ring-foreground/10"
-        }
-      },
-      "ring-opacity": {
-        "$type": "number",
-        "$value": "{opacity.10}",
-        "$extensions": {
-          "looloo.tailwind": "ring-foreground/10"
-        }
-      }
-    },
     "$comment": "REMOVED 2026-07-13: the footer had a bg-muted/50 band with a top rule and a bleed past the content padding. That band's only job is to separate actions from CONTENT THAT SCROLLS — most dialogs are short, so it was drawing a divider that divided nothing and made one box read as two stacked cards. shadcn's own footer carries no surface; this kit had added it. The footer is now just the actions."
   }
 }
