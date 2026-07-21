@@ -48,10 +48,9 @@ jobs:
       # the legacy CSS (the parity gate that guards the consumer swap).
       - name: v2 tokens are reproducible, valid, and at parity with legacy CSS
         run: |
-          npm run tokens:migrate
           npm run tokens:theme
           git diff --exit-code tokens/ \
-            || { echo "::error::tokens/ drift — run \`npm run tokens:migrate && npm run tokens:theme\` and commit"; exit 1; }
+            || { echo "::error::tokens/ drift — run \`npm run tokens:theme\` and commit (all other tiers are hand-authored)"; exit 1; }
           npm run tokens:validate
           npm run tokens:build
           npm run icons:contract

@@ -43,7 +43,6 @@
     "brand:build": "node scripts/build-brand.mjs",
     "tokens:data": "node scripts/build-token-data.mjs",
     "tokens:import": "node scripts/import-figma-tokens.mjs",
-    "tokens:migrate": "node scripts/tokens/migrate-legacy-tokens.mjs",
     "tokens:theme": "node scripts/tokens/build-theme.mjs",
     "tokens:css-check": "node scripts/tokens/check-css-snapshot.mjs",
     "tokens:validate": "node scripts/tokens/validate.mjs",

@@ -4,8 +4,8 @@ Token tooling for the canonical `tokens/` layer (DS v2).
 
 | Script | npm | Status |
 |---|---|---|
-| `migrate-legacy-tokens.mjs` | `tokens:migrate` | ✅ regenerates the generated subset of `tokens/` from root `tokens.json` + `brand.config.json` |
-| `validate.mjs` | `tokens:validate` | ✅ structural validation (aliases, layers, override paths) |
+| `build-theme.mjs` | `tokens:theme` | ✅ Phase 4 — `brand.config.json` → `tokens/theme/<brand>.json` (the brand's tunable scalars + colour roles). `--name` for per-brand overlays. Replaced `migrate-legacy-tokens.mjs`, which is deleted (`tokens/` is now hand-authored; the theme tier is the only generated file). `tokens/raw/legacy.*.json` are frozen historical copies, still read by `build-css` compat |
+| `validate.mjs` | `tokens:validate` | ✅ structural validation (aliases, layers, override paths; theme tier merged into the resolution tree) |
 | `build-css.mjs` | `tokens:build` | ✅ emits `dist/tokens/{primitive,semantic,component,compat}.css` + `modes/*.css` + `dist/themes/*.css`. Var naming: primitives `--ll-*` (Tailwind v4 owns `--color-…`/`--text-…`); semantic keeps shipped shadcn names (`--background`); compat re-emits `--tw-…`/`--brand-…` as aliases and `--rdx-…` as frozen literals for published `ds-brand-build` consumers |
 | `build-ts.mjs` | `tokens:build` | ✅ emits `dist/tokens/tokens.ts` (resolved values + `tokenVar()` helper) |
 | `build-contract.mjs` | `tokens:build` | ✅ emits `.designops/token-contract.json` (v2 contract, deterministic; the ROOT `token-contract.json` stays the published/legacy contract) |
