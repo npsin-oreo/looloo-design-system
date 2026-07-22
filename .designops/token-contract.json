@@ -680,11 +680,12 @@
     },
     "button.fontSize.sm": {
       "type": "dimension",
-      "value": "0.8rem",
+      "value": "0.75rem",
       "cssVar": "--button-font-size-sm",
       "layer": "component",
       "source": "tokens/component/button.json",
-      "description": "Literal in source (text-[0.8rem]) — between xs and sm scale steps."
+      "alias": "font.size.xs",
+      "description": "12px. FIX 2026-07-21: was text-[0.8rem] (12.8px) — an off-scale half-pixel literal (same one Toggle/Calendar dropped 2026-07-14). Snapped to the xs step; distinct sm sizing comes from padding/height, not font."
     },
     "button.fontSize.xl": {
       "type": "dimension",
